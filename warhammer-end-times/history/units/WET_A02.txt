@@ -1,0 +1,15 @@
+division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Realm Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+units = {
+division = { name = "1. Wissenlander Realm Infantry" location = 35 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "2. Wissenlander Realm Infantry" location = 39 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "3. Wissenlander Realm Infantry" location = 36 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "4. Wissenlander Realm Infantry" location = 833 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "5. Wissenlander Realm Infantry" location = 35 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "6. Wissenlander Realm Infantry" location = 39 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Wissenlander Realm Cavalry" location = 35 division_template = "Realm Cavalry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+}
+instant_effect = {
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A02 } requested_factories = 5 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2200 producer = A02 }
+}

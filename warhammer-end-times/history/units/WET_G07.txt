@@ -1,0 +1,9 @@
+division_template = { name = "Boyz Mob" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Boar Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+units = {
+division = { name = "1. Bonenoses Boyz Mob" location = 281 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+}
+instant_effect = {
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = G07 } requested_factories = 2 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1350 producer = G07 }
+}

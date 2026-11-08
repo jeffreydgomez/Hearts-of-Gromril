@@ -1,0 +1,9 @@
+division_template = { name = "Clanrat Swarm" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } } }
+division_template = { name = "Mounted Vermin" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+units = {
+division = { name = "1. Carrion Clanrat Swarm" location = 6683 division_template = "Clanrat Swarm" start_equipment_factor = 1 start_experience_factor = 0.2 }
+}
+instant_effect = {
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = U31 } requested_factories = 2 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 675 producer = U31 }
+}

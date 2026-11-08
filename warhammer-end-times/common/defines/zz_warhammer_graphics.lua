@@ -1,0 +1,1 @@
+NDefines_Graphics.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 1024

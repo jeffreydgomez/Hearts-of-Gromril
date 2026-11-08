@@ -1,0 +1,7 @@
+wet_apply_political_permissions = {
+ if = { limit = { wet_can_join_faction = yes } set_rule = { can_join_factions = yes can_join_opposite_factions = yes } }
+ else = { set_rule = { can_join_factions = no can_join_opposite_factions = no } }
+ if = { limit = { wet_can_create_faction = yes } set_rule = { can_create_factions = yes } }
+ else = { set_rule = { can_create_factions = no } }
+ if = { limit = { has_elections = yes } set_politics = { elections_allowed = no } }
+}

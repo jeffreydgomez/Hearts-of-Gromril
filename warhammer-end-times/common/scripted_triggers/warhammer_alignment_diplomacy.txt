@@ -1,0 +1,73 @@
+wet_is_everchosen_leader = {
+ is_faction_leader = yes
+ has_country_flag = wet_everchosen_leader
+}
+wet_archaon_rules = {
+ has_country_leader = { character = WET_B99_leader ruling_only = yes }
+}
+wet_ai_ready_for_border_war = {
+ is_ai = yes
+ is_subject = no
+ has_capitulated = no
+ has_war = no
+ has_war_support > 0.39
+ OR = { has_government = fascism has_government = evil has_government = communism has_government = democratic }
+}
+# Target-country scope; ROOT remains the AI attacker in the monthly hook/event.
+wet_ai_border_target = {
+ exists = yes
+ has_capitulated = no
+ is_neighbor_of = ROOT
+ NOT = { tag = ROOT }
+ NOT = { is_in_faction_with = ROOT }
+ NOT = { is_subject_of = ROOT }
+ NOT = { has_war_with = ROOT }
+ NOT = { has_non_aggression_pact_with = ROOT }
+ NOT = { has_truce_with = ROOT }
+ ROOT = {
+  NOT = { is_subject_of = PREV }
+  NOT = { is_guaranteed_by = PREV }
+  strength_ratio = { tag = PREV ratio > 1.5 }
+ }
+ NOT = { is_guaranteed_by = ROOT }
+ OR = {
+  ROOT = { OR = { has_government = fascism has_government = evil has_government = communism } }
+  AND = {
+   ROOT = { has_government = democratic }
+   OR = { has_government = fascism has_government = evil }
+  }
+ }
+}
+wet_order_partner = {
+ exists = yes
+ is_ai = yes
+ is_subject = no
+ has_capitulated = no
+ has_government = democratic
+ has_war = no
+ NOT = { tag = ROOT }
+ NOT = { has_war_with = ROOT }
+}
+wet_order_alliance_partner = {
+ wet_order_partner = yes
+ wet_can_join_faction = yes
+ ROOT = { wet_can_join_faction = yes }
+ has_non_aggression_pact_with = ROOT
+ NOT = { is_in_faction_with = ROOT }
+ NOT = { AND = { is_in_faction = yes ROOT = { is_in_faction = yes } } }
+ OR = { is_in_faction = no faction_leader = { is_ai = yes has_government = democratic } }
+ ROOT = { OR = { is_in_faction = no faction_leader = { is_ai = yes has_government = democratic } } }
+ OR = { is_in_faction = yes wet_can_create_faction = yes ROOT = { OR = { is_in_faction = yes wet_can_create_faction = yes } } }
+}
+# Receiver country scope; ROOT is the current Everchosen leader.
+wet_call_to_chaos_target = {
+ exists = yes
+ has_capitulated = no
+ has_government = fascism
+ is_subject = no
+ NOT = { tag = ROOT }
+ OR = { is_in_faction = no is_in_faction_with = ROOT }
+ NOT = { has_war_with = ROOT }
+ NOT = { any_enemy_country = { is_in_faction_with = ROOT } }
+ ROOT = { wet_is_everchosen_leader = yes strength_ratio = { tag = PREV ratio > 1.0 } }
+}

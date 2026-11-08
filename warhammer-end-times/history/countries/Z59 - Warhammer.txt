@@ -1,0 +1,52 @@
+# Generated from EU4 at 2502.11.11; religion determines ruling ideology.
+set_research_slots = 2
+capital = 504
+set_stability = 0.65
+set_war_support = 0.80
+set_politics = { ruling_party = communism elections_allowed = no last_election = "2519.1.1" }
+set_rule = { can_join_factions = yes can_join_opposite_factions = yes can_create_factions = no }
+set_popularities = { democratic = 0 fascism = 3 communism = 90 neutrality = 7 evil = 0 }
+recruit_character = WET_Z59_leader
+
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 electronic_mechanical_engineering = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 transport = 1 }
+add_ideas = { limited_conscription civilian_economy export_focus }
+load_focus_tree = { tree = generic_focus }
+set_oob = "WET_Z59"
+if = { limit = { has_dlc = "Man the Guns" }
+set_technology = { early_ship_hull_light = 1 early_ship_hull_cruiser = 1 basic_battery = 1 basic_light_battery = 1 basic_torpedo = 1 }
+create_equipment_variant = { name = "War Galley Class" type = ship_hull_light_1 parent_version = 0 modules = { fixed_ship_battery_slot = ship_light_battery_1 fixed_ship_fire_control_system_slot = ship_fire_control_system_0 fixed_ship_engine_slot = light_ship_engine_1 fixed_ship_torpedo_slot = ship_torpedo_1 } }
+create_equipment_variant = { name = "Great Warship Class" type = ship_hull_cruiser_1 parent_version = 0 modules = { fixed_ship_battery_slot = ship_light_battery_1 fixed_ship_fire_control_system_slot = ship_fire_control_system_0 fixed_ship_engine_slot = cruiser_ship_engine_1 } }
+set_naval_oob = "WET_Z59_naval_mtg"
+else = { set_technology = { early_destroyer = 1 early_light_cruiser = 1 } set_naval_oob = "WET_Z59_naval_legacy" } }
+add_equipment_to_stockpile = { type = convoy_1 amount = 10 producer = Z59 }
+
+# Generic cultural cabinet, available to hire for political power.
+recruit_character = WET_Z59_advisor_steward
+recruit_character = WET_Z59_advisor_treasurer
+recruit_character = WET_Z59_advisor_builder
+recruit_character = WET_Z59_advisor_arsenal
+recruit_character = WET_Z59_advisor_court
+recruit_character = WET_Z59_advisor_warden
+recruit_character = WET_Z59_advisor_army_scholar
+recruit_character = WET_Z59_advisor_naval_scholar
+recruit_character = WET_Z59_advisor_air_scholar
+recruit_character = WET_Z59_advisor_army_chief
+recruit_character = WET_Z59_advisor_army_organizer
+recruit_character = WET_Z59_advisor_navy_chief
+recruit_character = WET_Z59_advisor_navy_navigator
+recruit_character = WET_Z59_advisor_air_chief
+recruit_character = WET_Z59_advisor_air_weather
+recruit_character = WET_Z59_advisor_infantry
+recruit_character = WET_Z59_advisor_quartermaster
+recruit_character = WET_Z59_advisor_specialist
+
+# Generic cultural field commanders.
+recruit_character = WET_Z59_commander_general_1
+recruit_character = WET_Z59_commander_general_2
+recruit_character = WET_Z59_commander_marshal
+recruit_character = WET_Z59_commander_admiral
+set_country_flag = wet_commanders_initialized
+
+# BEGIN WET starting racial spirits
+add_ideas = { wet_race_tigerkin wet_deathless_hosts }
+# END WET starting racial spirits

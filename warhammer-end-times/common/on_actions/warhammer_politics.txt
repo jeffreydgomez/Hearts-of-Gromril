@@ -1,0 +1,15 @@
+on_actions = {
+ on_startup = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_daily = { effect = { wet_apply_political_permissions = yes } }
+ on_release_as_free = { effect = { wet_apply_political_permissions = yes } }
+ on_release_as_puppet = { effect = { wet_apply_political_permissions = yes } }
+ on_puppet = { effect = { wet_apply_political_permissions = yes } }
+ # Refresh all creators as soon as a faction is formed; do not wait for the
+ # next daily pulse to close another country's native creation permission.
+ on_create_faction = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_faction_formed = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_assume_faction_leadership = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_ruling_party_change = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_leave_faction = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+ on_annex = { effect = { every_country = { wet_apply_political_permissions = yes } } }
+}

@@ -1,0 +1,61 @@
+on_actions = {
+ on_startup = { effect = { every_country = { wet_initialize_war_runtime_v2 = yes } } }
+ # The engine may replace custom faction templates with its generic template.
+ # A country flag, transferred on leadership change, identifies this faction.
+ on_assume_faction_leadership = {
+  effect = {
+   if = {
+    limit = { FROM = { has_country_flag = wet_everchosen_leader } }
+    FROM = { clr_country_flag = wet_everchosen_leader }
+    set_country_flag = wet_everchosen_leader
+   }
+  }
+ }
+ on_daily = {
+  effect = {
+   # One-time compatibility for saves made before the marker was introduced.
+   if = {
+    limit = { tag = B99 is_faction_leader = yes NOT = { has_global_flag = wet_everchosen_identity_initialized } }
+    set_country_flag = wet_everchosen_leader
+    set_global_flag = wet_everchosen_identity_initialized
+    log = "WET_EVERCHOSEN_IDENTITY_INITIALIZED leader=[ROOT.GetTag]"
+   }
+   if = {
+    limit = { has_country_flag = wet_everchosen_leader is_in_faction = no }
+    clr_country_flag = wet_everchosen_leader
+   }
+   wet_ai_daily_war_tick = yes
+  }
+ }
+ on_monthly = {
+  effect = {
+   wet_initialize_war_runtime_v2 = yes
+   if = { limit = { is_ai = yes wet_is_everchosen_leader = yes } random = { chance = 90 wet_ai_call_to_chaos = yes } }
+   if = {
+    limit = { wet_is_everchosen_leader = yes date > 2519.1.2 }
+    add_to_variable = { global.wet_everchosen_months = 1 }
+    log = "WET_EVERCHOSEN_CLOCK leader=[ROOT.GetTag] month=[?global.wet_everchosen_months]"
+    if = {
+     limit = { check_variable = { global.wet_everchosen_months > 2 } }
+     set_variable = { global.wet_everchosen_months = 0 }
+     wet_gather_everchosen = yes
+    }
+   }
+   if = {
+    limit = {
+     wet_ai_ready_for_border_war = yes
+     NOT = { has_country_flag = wet_ai_war_pending }
+     NOT = { has_country_flag = wet_ai_war_cooldown }
+    }
+    if = { limit = { has_government = fascism } random = { chance = 30 wet_ai_seek_border_war = yes } }
+    else_if = { limit = { has_government = evil } random = { chance = 30 wet_ai_seek_border_war = yes } }
+    else_if = { limit = { has_government = communism } random = { chance = 10 wet_ai_seek_border_war = yes } }
+    else_if = { limit = { has_government = democratic } random = { chance = 30 wet_ai_seek_border_war = yes } }
+   }
+   if = {
+    limit = { is_ai = yes is_subject = no has_capitulated = no has_government = democratic has_war = no }
+    random = { chance = 70 wet_ai_order_diplomacy = yes }
+   }
+  }
+ }
+}
