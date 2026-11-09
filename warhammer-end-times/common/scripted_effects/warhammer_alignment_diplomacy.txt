@@ -78,6 +78,20 @@ wet_measure_defending_bloc = {
  clear_array = wet_ai_defending_countries
 }
 
+wet_ai_schedule_border_war_search = {
+ if = {
+  limit = {
+   wet_ai_ready_for_border_war = yes
+   NOT = { has_country_flag = wet_ai_search_scheduled }
+   NOT = { has_country_flag = wet_ai_war_pending }
+   NOT = { has_country_flag = wet_ai_war_cooldown }
+  }
+  randomize_variable = { var = wet_ai_search_days distribution = uniform min = 1 max = 28 }
+  round_variable = wet_ai_search_days
+  set_country_flag = wet_ai_search_scheduled
+ }
+}
+
 wet_ai_seek_border_war = {
  # Keep the effect safe even when called outside the monthly hook.
  if = {
@@ -99,12 +113,14 @@ wet_ai_seek_border_war = {
      set_country_flag = wet_ai_campaign_active
      set_country_flag = wet_ai_war_preparing
      set_country_flag = wet_ai_war_cooldown
-     set_variable = { wet_ai_prepare_days = 45 }
-     set_variable = { wet_ai_pending_days = 60 }
+     randomize_variable = { var = wet_ai_prepare_days distribution = uniform min = 30 max = 60 }
+     round_variable = wet_ai_prepare_days
+     set_variable = { wet_ai_pending_days = wet_ai_prepare_days }
+     add_to_variable = { wet_ai_pending_days = 15 }
      set_variable = { wet_ai_goal_settle_days = 0 }
      if = { limit = { has_government = communism } set_variable = { wet_ai_cooldown_days = 180 } }
      else = { set_variable = { wet_ai_cooldown_days = 90 } }
-     log = "WET_WAR_PREPARE attacker=[ROOT.GetTag] target=[PREV.GetTag] prepare_ticks=45"
+     log = "WET_WAR_PREPARE attacker=[ROOT.GetTag] target=[PREV.GetTag] prepare_ticks=[?wet_ai_prepare_days]"
     }
     else = { clear_array = wet_ai_war_targets }
     clear_variable = wet_ai_available_manpower
@@ -136,7 +152,8 @@ wet_ai_finish_border_war_preparations = {
        create_wargoal = { type = wet_border_conquest target = PREV expire = 0 }
        set_country_flag = wet_ai_wargoal_ready
        set_country_flag = wet_ai_wargoal_settling
-       set_variable = { wet_ai_goal_settle_days = 1 }
+       randomize_variable = { var = wet_ai_goal_settle_days distribution = uniform min = 1 max = 7 }
+       round_variable = wet_ai_goal_settle_days
        log = "WET_WARGOAL_CREATED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
       }
       else_if = {
@@ -193,6 +210,8 @@ wet_initialize_war_runtime_v2 = {
  if = {
   limit = { NOT = { has_country_flag = wet_war_runtime_v2 } }
   wet_ai_clear_border_campaign = yes
+  clr_country_flag = wet_ai_search_scheduled
+  clear_variable = wet_ai_search_days
   clr_country_flag = wet_ai_war_cooldown
   clear_variable = wet_ai_cooldown_days
   set_country_flag = wet_war_runtime_v2
@@ -238,6 +257,23 @@ wet_ai_daily_war_tick = {
    }
   }
  }
+ # A successful monthly roll schedules a search on a different day for each AI.
+ # This runs after existing preparations so a new campaign gets its full delay.
+ if = {
+  limit = { has_country_flag = wet_ai_search_scheduled }
+  if = {
+   limit = { wet_ai_ready_for_border_war = yes NOT = { has_country_flag = wet_ai_war_pending } NOT = { has_country_flag = wet_ai_war_cooldown } }
+   add_to_variable = { wet_ai_search_days = -1 }
+   if = {
+    limit = { check_variable = { wet_ai_search_days < 1 } }
+    clr_country_flag = wet_ai_search_scheduled
+    clear_variable = wet_ai_search_days
+    wet_ai_seek_border_war = yes
+   }
+  }
+  else = { clr_country_flag = wet_ai_search_scheduled clear_variable = wet_ai_search_days }
+ }
+
 }
 # This effect runs in the partner country; ROOT is the initiator.
 wet_ai_order_alliance = {

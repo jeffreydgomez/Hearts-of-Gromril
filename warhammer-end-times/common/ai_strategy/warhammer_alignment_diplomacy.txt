@@ -11038,6 +11038,30 @@ wet_order_friendship_W08 = {
  ai_strategy = { type = alliance id = W08 value = 150 }
 }
 
+wet_prepare_border_war_WST = {
+ allowed = { is_ai = yes }
+ enable = {
+  wet_ai_ready_for_border_war = yes
+  has_country_flag = wet_ai_war_pending
+  is_in_array = { wet_ai_war_targets = WST }
+  WST = { wet_ai_border_target = yes }
+ }
+ abort_when_not_enabled = yes
+ ai_strategy = { type = prepare_for_war id = WST value = 200 }
+}
+wet_order_friendship_WST = {
+ allowed = { is_ai = yes }
+ enable = {
+  has_government = democratic
+  NOT = { tag = WST }
+  NOT = { has_war_with = WST }
+  WST = { exists = yes has_government = democratic }
+ }
+ abort_when_not_enabled = yes
+ ai_strategy = { type = befriend id = WST value = 200 }
+ ai_strategy = { type = alliance id = WST value = 150 }
+}
+
 wet_prepare_border_war_X01 = {
  allowed = { is_ai = yes }
  enable = {

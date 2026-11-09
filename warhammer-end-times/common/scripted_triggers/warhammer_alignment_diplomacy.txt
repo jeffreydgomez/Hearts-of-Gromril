@@ -6,6 +6,7 @@ wet_archaon_rules = {
  has_country_leader = { character = WET_B99_leader ruling_only = yes }
 }
 wet_ai_ready_for_border_war = {
+ NOT = { tag = WST }
  is_ai = yes
  is_subject = no
  has_capitulated = no
@@ -15,6 +16,7 @@ wet_ai_ready_for_border_war = {
 }
 # Target-country scope; ROOT remains the AI attacker in the monthly hook/event.
 wet_ai_border_target = {
+ NOT = { tag = WST }
  exists = yes
  has_capitulated = no
  is_neighbor_of = ROOT

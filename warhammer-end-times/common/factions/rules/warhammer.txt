@@ -4,9 +4,4 @@ change_leader_rule_influence = {
     has_enough_influence_for_leadership = yes
   }
 }
-wet_joining_rule_open = {
-  type = joining_rules
-  trigger = {
-    wet_can_join_faction = yes
-  }
-}
+wet_joining_rule_open = { type = joining_rules can_remove = { always = no } trigger = { wet_can_join_faction = yes wet_cultural_faction_eligible = yes } }

@@ -45,12 +45,13 @@ on_actions = {
     limit = {
      wet_ai_ready_for_border_war = yes
      NOT = { has_country_flag = wet_ai_war_pending }
+     NOT = { has_country_flag = wet_ai_search_scheduled }
      NOT = { has_country_flag = wet_ai_war_cooldown }
     }
-    if = { limit = { has_government = fascism } random = { chance = 30 wet_ai_seek_border_war = yes } }
-    else_if = { limit = { has_government = evil } random = { chance = 30 wet_ai_seek_border_war = yes } }
-    else_if = { limit = { has_government = communism } random = { chance = 10 wet_ai_seek_border_war = yes } }
-    else_if = { limit = { has_government = democratic } random = { chance = 30 wet_ai_seek_border_war = yes } }
+    if = { limit = { has_government = fascism } random = { chance = 15 wet_ai_schedule_border_war_search = yes } }
+    else_if = { limit = { has_government = evil } random = { chance = 15 wet_ai_schedule_border_war_search = yes } }
+    else_if = { limit = { has_government = communism } random = { chance = 5 wet_ai_schedule_border_war_search = yes } }
+    else_if = { limit = { has_government = democratic } random = { chance = 15 wet_ai_schedule_border_war_search = yes } }
    }
    if = {
     limit = { is_ai = yes is_subject = no has_capitulated = no has_government = democratic has_war = no }
