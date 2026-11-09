@@ -1,4 +1,6 @@
 wet_first_order_faction_name_available = { has_government = democratic NOT = { has_global_flag = wet_faction_name_used_order_1 } }
+wet_first_skaven_faction_name_available = { wet_name_is_skaven = yes NOT = { has_global_flag = wet_faction_name_used_skaven_1 } }
+wet_first_greenskin_faction_name_available = { wet_name_is_greenskin = yes NOT = { has_global_flag = wet_faction_name_used_greenskin_1 } }
 wet_name_is_high_elf = { OR = { original_tag = B65 original_tag = H01 original_tag = H02 original_tag = H03 original_tag = H04 original_tag = H05 original_tag = H06 original_tag = H07 original_tag = H09 original_tag = H10 original_tag = H11 original_tag = H19 original_tag = H25 original_tag = H26 original_tag = H27 original_tag = H28 original_tag = H29 original_tag = H30 original_tag = H32 original_tag = H33 original_tag = Y67 original_tag = Y72 } }
 wet_name_has_high_elf = { OR = { wet_name_is_high_elf = yes any_other_country = { is_in_faction_with = PREV wet_name_is_high_elf = yes } } }
 wet_name_all_high_elf = { wet_name_is_high_elf = yes NOT = { any_other_country = { is_in_faction_with = PREV NOT = { wet_name_is_high_elf = yes } } } }
@@ -26,7 +28,7 @@ wet_name_all_imperial = { wet_name_is_imperial = yes NOT = { any_other_country =
 wet_name_context_tri_elven = { wet_name_has_high_elf = yes wet_name_has_dark_elf = yes wet_name_has_wood_elf = yes }
 wet_name_context_elven = { wet_name_all_elven = yes }
 wet_name_context_dwarf = { wet_name_all_dwarf = yes }
-wet_name_context_skaven = { wet_name_all_skaven = yes }
+wet_name_context_skaven = { wet_name_is_skaven = yes }
 wet_name_context_greenskin = { wet_name_is_greenskin = yes }
 wet_name_context_imperial = { wet_name_is_imperial = yes any_other_country = { is_in_faction_with = PREV wet_name_is_imperial = yes } }
 wet_name_context_mixed = { OR = { AND = { has_government = democratic any_other_country = { is_in_faction_with = PREV NOT = { has_government = democratic } } } AND = { has_government = fascism any_other_country = { is_in_faction_with = PREV NOT = { has_government = fascism } } } AND = { has_government = communism any_other_country = { is_in_faction_with = PREV NOT = { has_government = communism } } } AND = { has_government = evil any_other_country = { is_in_faction_with = PREV NOT = { has_government = evil } } } AND = { has_government = neutrality any_other_country = { is_in_faction_with = PREV NOT = { has_government = neutrality } } } } }
