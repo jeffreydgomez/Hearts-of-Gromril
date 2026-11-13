@@ -1,0 +1,47 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      U25 = {
+        wet_skv_reconcile_benefits = yes
+      }
+    }
+  }
+  on_daily_U25 = {
+    effect = {
+      wet_skv_daily = yes
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      U25 = {
+        wet_skv_refresh_south_supply = yes
+        wet_skv_refresh_border_supply = yes
+        wet_skv_reconcile_pyramid = yes
+        wet_skv_reconcile_fellblade = yes
+      }
+    }
+  }
+  on_peace = {
+    effect = {
+      U25 = {
+        wet_skv_refresh_south_supply = yes
+        wet_skv_refresh_border_supply = yes
+        wet_skv_reconcile_pyramid = yes
+        wet_skv_reconcile_fellblade = yes
+      }
+    }
+  }
+  on_daily = {
+    effect = {
+      if = {
+        limit = {
+          NOT = {
+            tag = U25
+          }
+          has_country_flag = wet_skv_enabled
+        }
+        wet_skv_rebel_cleanup = yes
+      }
+    }
+  }
+}

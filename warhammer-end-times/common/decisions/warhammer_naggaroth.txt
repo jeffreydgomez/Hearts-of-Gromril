@@ -1,0 +1,6405 @@
+wet_nag_court = {
+  wet_nag_renew_summons = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+      tag = H12
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_morathi_available_focus_requirement_tt
+        wet_nag_morathi_available = yes
+      }
+      AND = {
+        NOT = {
+          has_country_flag = wet_nag_offer_surrender
+        }
+        check_variable = {
+          wet_nag_offer_surrender_cooldown
+          <
+          1
+        }
+        NOT = {
+          has_country_flag = wet_nag_offer_surrender_accepted
+        }
+        OR = {
+          NOT = {
+            has_country_flag = wet_nag_offer_surrender_attempted
+          }
+          H12 = {
+            has_political_power
+            >
+            24
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_surrender_attempted
+          }
+          H12 = {
+            add_political_power = -25
+          }
+        }
+        country_event = {
+          id = wet_naggaroth.101
+        }
+      }
+      hidden_effect = {
+        wet_nag_send_surrender = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_sever_morathi = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+    }
+    cost = 50
+    days_re_enable = 90
+    available = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+      controls_state = 812
+      AND = {
+        NOT = {
+          has_country_flag = wet_nag_morathi_severed
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      hidden_effect = {
+        set_country_flag = wet_nag_sever_morathi_active
+      }
+    }
+    remove_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            controls_state = 812
+            OR = {
+              has_completed_focus = WET_NAG_P04
+              has_completed_focus = WET_NAG_R02
+            }
+          }
+          remove_ideas = wet_nag_l05
+          remove_ideas = wet_nag_p05
+        }
+        else = {
+          add_political_power = 25
+        }
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_sever_morathi_active
+          }
+          clr_country_flag = wet_nag_sever_morathi_active
+          if = {
+            limit = {
+              controls_state = 812
+              OR = {
+                has_completed_focus = WET_NAG_P04
+                has_completed_focus = WET_NAG_R02
+              }
+            }
+            set_country_flag = wet_nag_morathi_severed
+            wet_nag_revoke_office = yes
+          }
+          else = {
+            add_political_power = 25
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        AND = {
+          controls_state = 812
+          OR = {
+            has_completed_focus = WET_NAG_P04
+            has_completed_focus = WET_NAG_R02
+          }
+        }
+      }
+    }
+    cancel_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_sever_morathi_active
+          }
+          clr_country_flag = wet_nag_sever_morathi_active
+          add_political_power = 25
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_arrange_departure = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      tag = H12
+      has_character = WET_H13_leader
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+      AND = {
+        NOT = {
+          OR = {
+            has_country_flag = wet_nag_morathi_dead
+            has_country_flag = wet_nag_morathi_exiled
+          }
+        }
+        NOT = {
+          has_country_flag = wet_nag_offer_departure
+        }
+        check_variable = {
+          wet_nag_offer_departure_cooldown
+          <
+          1
+        }
+        NOT = {
+          has_country_flag = wet_nag_offer_departure_accepted
+        }
+        OR = {
+          NOT = {
+            has_country_flag = wet_nag_offer_departure_attempted
+          }
+          H12 = {
+            has_political_power
+            >
+            24
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_departure_attempted
+          }
+          H12 = {
+            add_political_power = -25
+          }
+        }
+        country_event = {
+          id = wet_naggaroth.102
+        }
+      }
+      hidden_effect = {
+        wet_nag_send_departure = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_request_morathi_release = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        any_other_country = {
+          exists = yes
+          NOT = {
+            tag = H12
+          }
+          has_character = WET_H13_leader
+          NOT = {
+            has_country_leader = {
+              character = WET_H13_leader
+              ruling_only = yes
+            }
+          }
+          NOT = {
+            has_war_with = H12
+          }
+          H12 = {
+            NOT = {
+              has_country_flag = wet_nag_morathi_dead
+            }
+          }
+          NOT = {
+            has_country_flag = wet_nag_offer_release_morathi
+          }
+          check_variable = {
+            wet_nag_offer_release_morathi_cooldown
+            <
+            1
+          }
+          NOT = {
+            has_country_flag = wet_nag_offer_release_morathi_accepted
+          }
+          OR = {
+            NOT = {
+              has_country_flag = wet_nag_offer_release_morathi_attempted
+            }
+            H12 = {
+              has_political_power
+              >
+              24
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        every_other_country = {
+          limit = {
+            has_character = WET_H13_leader
+          }
+          if = {
+            limit = {
+              exists = yes
+              NOT = {
+                tag = H12
+              }
+              has_character = WET_H13_leader
+              NOT = {
+                has_country_leader = {
+                  character = WET_H13_leader
+                  ruling_only = yes
+                }
+              }
+              NOT = {
+                has_war_with = H12
+              }
+              H12 = {
+                NOT = {
+                  has_country_flag = wet_nag_morathi_dead
+                }
+              }
+              NOT = {
+                has_country_flag = wet_nag_offer_release_morathi
+              }
+              check_variable = {
+                wet_nag_offer_release_morathi_cooldown
+                <
+                1
+              }
+              NOT = {
+                has_country_flag = wet_nag_offer_release_morathi_accepted
+              }
+              OR = {
+                NOT = {
+                  has_country_flag = wet_nag_offer_release_morathi_attempted
+                }
+                H12 = {
+                  has_political_power
+                  >
+                  24
+                }
+              }
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_nag_offer_release_morathi_attempted
+              }
+              H12 = {
+                add_political_power = -25
+              }
+            }
+            country_event = {
+              id = wet_naggaroth.104
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        every_other_country = {
+          limit = {
+            has_character = WET_H13_leader
+          }
+          wet_nag_send_release_morathi = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_leave_chaos_faction = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_repudiated
+      is_in_faction = yes
+    }
+    cost = 0
+    days_re_enable = 30
+    available = {
+      is_subject = no
+      is_in_faction = yes
+      is_faction_leader = no
+      AND = {
+        has_country_flag = wet_nag_repudiated
+        faction_leader = {
+          has_government = fascism
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        faction_leader = {
+          remove_from_faction = H12
+        }
+      }
+      custom_effect_tooltip = wet_nag_leave_chaos_faction_outcome_tt
+      hidden_effect = {
+        faction_leader = {
+          remove_from_faction = H12
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
+wet_nag_campaigns = {
+  
+}
+wet_nag_diplomacy = {
+  wet_nag_constitution_council = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_A04
+        has_completed_focus = WET_NAG_I16
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        H06 = {
+          tag = H06
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_council
+          }
+          H12 = {
+            OR = {
+              wet_nag_compact_active = yes
+              has_country_flag = wet_nag_contested_phoenix_claim
+            }
+          }
+          NOT = {
+            has_country_flag = wet_nag_offer_constitution_council
+          }
+          check_variable = {
+            wet_nag_offer_constitution_council_cooldown
+            <
+            1
+          }
+          OR = {
+            NOT = {
+              has_country_flag = wet_nag_offer_constitution_council_attempted
+            }
+            H12 = {
+              has_political_power
+              >
+              24
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        H06 = {
+          if = {
+            limit = {
+              tag = H06
+              exists = yes
+              NOT = {
+                has_war_with = H12
+              }
+              NOT = {
+                has_government = fascism
+              }
+              NOT = {
+                has_government = communism
+              }
+              OR = {
+                is_subject = no
+                is_subject_of = H12
+              }
+              NOT = {
+                has_global_flag = wet_story_elven_settlement_malekith
+              }
+              NOT = {
+                has_global_flag = wet_story_elven_settlement_council
+              }
+              H12 = {
+                OR = {
+                  wet_nag_compact_active = yes
+                  has_country_flag = wet_nag_contested_phoenix_claim
+                }
+              }
+              NOT = {
+                has_country_flag = wet_nag_offer_constitution_council
+              }
+              check_variable = {
+                wet_nag_offer_constitution_council_cooldown
+                <
+                1
+              }
+              OR = {
+                NOT = {
+                  has_country_flag = wet_nag_offer_constitution_council_attempted
+                }
+                H12 = {
+                  has_political_power
+                  >
+                  24
+                }
+              }
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_nag_offer_constitution_council_attempted
+              }
+              H12 = {
+                add_political_power = -25
+              }
+            }
+            country_event = {
+              id = wet_naggaroth.121
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        H06 = {
+          wet_nag_send_constitution_council = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_constitution_malekith = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_NAG_A04
+        has_completed_focus = WET_NAG_I16
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        H06 = {
+          tag = H06
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_council
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+          H12 = {
+            has_country_leader = {
+              character = WET_H12_leader
+              ruling_only = yes
+            }
+          }
+          H12 = {
+            OR = {
+              wet_nag_compact_active = yes
+              has_country_flag = wet_nag_contested_phoenix_claim
+            }
+          }
+          NOT = {
+            has_country_flag = wet_nag_offer_constitution_malekith
+          }
+          check_variable = {
+            wet_nag_offer_constitution_malekith_cooldown
+            <
+            1
+          }
+          OR = {
+            NOT = {
+              has_country_flag = wet_nag_offer_constitution_malekith_attempted
+            }
+            H12 = {
+              has_political_power
+              >
+              24
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        H06 = {
+          if = {
+            limit = {
+              tag = H06
+              exists = yes
+              NOT = {
+                has_war_with = H12
+              }
+              NOT = {
+                has_government = fascism
+              }
+              NOT = {
+                has_government = communism
+              }
+              OR = {
+                is_subject = no
+                is_subject_of = H12
+              }
+              NOT = {
+                has_global_flag = wet_story_elven_settlement_council
+              }
+              NOT = {
+                has_global_flag = wet_story_elven_settlement_malekith
+              }
+              H12 = {
+                has_country_leader = {
+                  character = WET_H12_leader
+                  ruling_only = yes
+                }
+              }
+              H12 = {
+                OR = {
+                  wet_nag_compact_active = yes
+                  has_country_flag = wet_nag_contested_phoenix_claim
+                }
+              }
+              NOT = {
+                has_country_flag = wet_nag_offer_constitution_malekith
+              }
+              check_variable = {
+                wet_nag_offer_constitution_malekith_cooldown
+                <
+                1
+              }
+              OR = {
+                NOT = {
+                  has_country_flag = wet_nag_offer_constitution_malekith_attempted
+                }
+                H12 = {
+                  has_political_power
+                  >
+                  24
+                }
+              }
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_nag_offer_constitution_malekith_attempted
+              }
+              H12 = {
+                add_political_power = -25
+              }
+            }
+            country_event = {
+              id = wet_naggaroth.122
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        H06 = {
+          wet_nag_send_constitution_malekith = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_renounce_compact = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_asur_compact
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_asur_compact
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = wet_decision_subtract_from_variable_wet_nag_trust_minus50_0
+        remove_ideas = wet_nag_a06
+        remove_ideas = wet_nag_a08
+        remove_ideas = wet_nag_a10
+        remove_ideas = wet_nag_a13
+        remove_ideas = wet_nag_a16
+        diplomatic_relation = {
+          country = H06
+          relation = non_aggression_pact
+          active = no
+        }
+      }
+      hidden_effect = {
+        wet_nag_end_compact = yes
+        diplomatic_relation = {
+          country = H06
+          relation = non_aggression_pact
+          active = no
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 0
+    }
+  }
+}
+wet_nag_construction = {
+  wet_nag_claim_construction = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      OR = {
+        check_variable = {
+          wet_nag_claim_W01_0
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W01_1
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W01_2
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W03_factory
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W03_road
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W07
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W11
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W17_factory
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W17_port
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W18
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W21_a
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_W21_b
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_I08
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_I15_civ
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_I15_mil
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N01
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N02
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N04
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N10
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N19
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_I02
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_L02
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_A09
+          >
+          0
+        }
+        check_variable = {
+          wet_nag_claim_N17
+          >
+          0
+        }
+      }
+    }
+    cost = 0
+    days_re_enable = 7
+    available = {
+      AND = {
+        OR = {
+          check_variable = {
+            wet_nag_claim_W01_0
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W01_1
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W01_2
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W03_factory
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W03_road
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W07
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W11
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W17_factory
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W17_port
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W18
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W21_a
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_W21_b
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_I08
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_I15_civ
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_I15_mil
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N01
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N02
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N04
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N10
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N19
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_I02
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_L02
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_A09
+            >
+            0
+          }
+          check_variable = {
+            wet_nag_claim_N17
+            >
+            0
+          }
+        }
+      }
+    }
+    complete_effect = {
+      custom_effect_tooltip = wet_nag_claim_construction_outcome_tt
+      hidden_effect = {
+        wet_nag_spend_claims = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
+wet_nag_recovery = {
+  wet_nag_recover_P05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_P05
+      NOT = {
+        has_country_flag = wet_nag_reward_P05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      74
+      AND = {
+        has_country_flag = wet_nag_earned_P05
+        NOT = {
+          has_country_flag = wet_nag_reward_P05
+        }
+        wet_nag_morathi_custody = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -75
+        add_ideas = wet_nag_p05
+      }
+      hidden_effect = {
+        wet_nag_award_P05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_P06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_P06
+      NOT = {
+        has_country_flag = wet_nag_reward_P06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_character = WET_H13_leader
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_nag_earned_P06
+        NOT = {
+          has_country_flag = wet_nag_reward_P06
+        }
+        NOT = {
+          OR = {
+            has_country_flag = wet_nag_morathi_dead
+            has_country_flag = wet_nag_morathi_exiled
+          }
+        }
+        has_country_flag = wet_nag_morathi_departure_agreed
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_political_power = 25
+        custom_effect_tooltip = WET_NAG_P06_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_P06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_P07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_P07
+      NOT = {
+        has_country_flag = wet_nag_reward_P07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_nag_earned_P07
+        NOT = {
+          has_country_flag = wet_nag_reward_P07
+        }
+        wet_nag_morathi_custody = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_stability = -0.10
+        add_ideas = wet_nag_final_sentence
+        custom_effect_tooltip = WET_NAG_P07_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_P07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_P08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_P08
+      NOT = {
+        has_country_flag = wet_nag_reward_P08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_P08
+        NOT = {
+          has_country_flag = wet_nag_reward_P08
+        }
+        wet_nag_morathi_resolved = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_broken_web
+        custom_effect_tooltip = WET_NAG_P08_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_P08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_P10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_P10
+      NOT = {
+        has_country_flag = wet_nag_reward_P10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_P10
+        NOT = {
+          has_country_flag = wet_nag_reward_P10
+        }
+        has_country_flag = wet_nag_suppression_completed
+        NOT = {
+          has_country_flag = wet_nag_chaos_oath
+        }
+        wet_nag_no_chaos_faction = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_pleasure_cult
+        custom_effect_tooltip = WET_NAG_P10_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_P10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L01
+      NOT = {
+        has_country_flag = wet_nag_reward_L01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L01
+        NOT = {
+          has_country_flag = wet_nag_reward_L01
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l01
+        add_political_power = 50
+      }
+      hidden_effect = {
+        wet_nag_award_L01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L02
+      NOT = {
+        has_country_flag = wet_nag_reward_L02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L02
+        NOT = {
+          has_country_flag = wet_nag_reward_L02
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L02_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_L02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L03
+      NOT = {
+        has_country_flag = wet_nag_reward_L03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L03
+        NOT = {
+          has_country_flag = wet_nag_reward_L03
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l03
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 2
+          category = electronics
+        }
+      }
+      hidden_effect = {
+        wet_nag_award_L03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L04
+      NOT = {
+        has_country_flag = wet_nag_reward_L04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L04
+        NOT = {
+          has_country_flag = wet_nag_reward_L04
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L04_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_L04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L05
+      NOT = {
+        has_country_flag = wet_nag_reward_L05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_morathi_available_focus_requirement_tt
+        wet_nag_morathi_available = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L05
+        NOT = {
+          has_country_flag = wet_nag_reward_L05
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L05_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_L05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L06
+      NOT = {
+        has_country_flag = wet_nag_reward_L06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      has_government = neutrality
+      AND = {
+        has_country_flag = wet_nag_earned_L06
+        NOT = {
+          has_country_flag = wet_nag_reward_L06
+        }
+        NOT = {
+          has_country_flag = wet_nag_chaos_oath
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l06
+      }
+      hidden_effect = {
+        wet_nag_award_L06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L07
+      NOT = {
+        has_country_flag = wet_nag_reward_L07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L07
+        NOT = {
+          has_country_flag = wet_nag_reward_L07
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l07
+        custom_effect_tooltip = WET_NAG_L07_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_L07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L08
+      NOT = {
+        has_country_flag = wet_nag_reward_L08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      has_war = yes
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_nag_earned_L08
+        NOT = {
+          has_country_flag = wet_nag_reward_L08
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_nag_activate_rite_done
+        }
+        NOT = {
+          has_country_flag = wet_nag_rite_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L08_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_L08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L09
+      NOT = {
+        has_country_flag = wet_nag_reward_L09
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L09
+        NOT = {
+          has_country_flag = wet_nag_reward_L09
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_special_forces_generic
+        }
+      }
+      hidden_effect = {
+        wet_nag_award_L09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_L10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_L10
+      NOT = {
+        has_country_flag = wet_nag_reward_L10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_L10
+        NOT = {
+          has_country_flag = wet_nag_reward_L10
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l10
+        add_stability = -0.05
+      }
+      hidden_effect = {
+        wet_nag_award_L10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_R00 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_R00
+      NOT = {
+        has_country_flag = wet_nag_reward_R00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_NAG_C03
+      is_subject = no
+      NOT = {
+        has_war_with = H06
+      }
+      has_political_power
+      >
+      99
+      AND = {
+        has_country_flag = wet_nag_earned_R00
+        NOT = {
+          has_country_flag = wet_nag_reward_R00
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -100
+        add_stability = -0.10
+        custom_effect_tooltip = WET_NAG_R00_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_R00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_R01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_R01
+      NOT = {
+        has_country_flag = wet_nag_reward_R01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_nag_earned_R01
+        NOT = {
+          has_country_flag = wet_nag_reward_R01
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -50
+        custom_effect_tooltip = WET_NAG_R01_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_R01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_R03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_R03
+      NOT = {
+        has_country_flag = wet_nag_reward_R03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_R03
+        NOT = {
+          has_country_flag = wet_nag_reward_R03
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = -100
+        }
+        custom_effect_tooltip = WET_NAG_R03_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_R03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_R04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_R04
+      NOT = {
+        has_country_flag = wet_nag_reward_R04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_R04
+        NOT = {
+          has_country_flag = wet_nag_reward_R04
+        }
+        wet_nag_morathi_resolved = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_nag_court_reckoning
+          days = 180
+        }
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        wet_nag_award_R04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_R05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_R05
+      NOT = {
+        has_country_flag = wet_nag_reward_R05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_R05
+        NOT = {
+          has_country_flag = wet_nag_reward_R05
+        }
+        wet_nag_clean_court = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_pleasure_cult
+        custom_effect_tooltip = WET_NAG_R05_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_R05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W02
+      NOT = {
+        has_country_flag = wet_nag_reward_W02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W02
+        NOT = {
+          has_country_flag = wet_nag_reward_W02
+        }
+        OR = {
+          AND = {
+            411 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          411 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W02_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W03
+      NOT = {
+        has_country_flag = wet_nag_reward_W03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      411 = {
+        is_owned_by = H12
+        is_fully_controlled_by = H12
+      }
+      has_war = no
+      AND = {
+        has_country_flag = wet_nag_earned_W03
+        NOT = {
+          has_country_flag = wet_nag_reward_W03
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        411 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        411 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W06
+      NOT = {
+        has_country_flag = wet_nag_reward_W06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W06
+        NOT = {
+          has_country_flag = wet_nag_reward_W06
+        }
+        OR = {
+          AND = {
+            822 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            823 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            824 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            825 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          822 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          823 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          824 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          825 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W06_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W07
+      NOT = {
+        has_country_flag = wet_nag_reward_W07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_war = no
+      AND = {
+        has_country_flag = wet_nag_earned_W07
+        NOT = {
+          has_country_flag = wet_nag_reward_W07
+        }
+        822 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        823 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        824 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        825 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W07_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W09
+      NOT = {
+        has_country_flag = wet_nag_reward_W09
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W09
+        NOT = {
+          has_country_flag = wet_nag_reward_W09
+        }
+        OR = {
+          AND = {
+            138 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            139 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            140 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            141 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            142 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            143 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            144 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            145 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            146 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            147 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            148 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            160 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            161 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          138 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          139 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          140 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          141 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          142 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          143 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          144 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          145 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          146 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          147 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          148 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          160 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          161 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W09_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W10
+      NOT = {
+        has_country_flag = wet_nag_reward_W10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W10
+        NOT = {
+          has_country_flag = wet_nag_reward_W10
+        }
+        OR = {
+          AND = {
+            149 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            150 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            151 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            152 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            153 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            154 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            155 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            156 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            157 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            158 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            159 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            815 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          149 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          150 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          151 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          152 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          153 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          154 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          155 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          156 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          157 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          158 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          159 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          815 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W10_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W11 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W11
+      NOT = {
+        has_country_flag = wet_nag_reward_W11
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_war = no
+      AND = {
+        has_country_flag = wet_nag_earned_W11
+        NOT = {
+          has_country_flag = wet_nag_reward_W11
+        }
+        OR = {
+          138 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          139 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          140 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          141 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          142 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          143 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          144 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          145 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          146 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          147 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          148 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          160 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          161 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          150 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          151 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          152 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          153 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          155 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          156 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          157 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          158 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          159 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        navy_experience = 20
+        custom_effect_tooltip = WET_NAG_W11_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W14 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W14
+      NOT = {
+        has_country_flag = wet_nag_reward_W14
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W14
+        NOT = {
+          has_country_flag = wet_nag_reward_W14
+        }
+        OR = {
+          AND = {
+            806 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            807 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            809 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          806 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          807 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          809 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W14_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W15 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W15
+      NOT = {
+        has_country_flag = wet_nag_reward_W15
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W15
+        NOT = {
+          has_country_flag = wet_nag_reward_W15
+        }
+        OR = {
+          AND = {
+            5 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            6 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            7 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          5 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          6 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          7 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W15_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W16 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W16
+      NOT = {
+        has_country_flag = wet_nag_reward_W16
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W16
+        NOT = {
+          has_country_flag = wet_nag_reward_W16
+        }
+        OR = {
+          AND = {
+            310 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            311 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            312 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            544 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            808 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            810 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            811 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          310 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          311 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          312 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          544 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          808 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          810 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          811 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W16_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W17 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W17
+      NOT = {
+        has_country_flag = wet_nag_reward_W17
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_war = no
+      AND = {
+        has_country_flag = wet_nag_earned_W17
+        NOT = {
+          has_country_flag = wet_nag_reward_W17
+        }
+        OR = {
+          311 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          312 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          544 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          806 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          807 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          809 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          810 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W17_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W18 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W18
+      NOT = {
+        has_country_flag = wet_nag_reward_W18
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W18
+        NOT = {
+          has_country_flag = wet_nag_reward_W18
+        }
+        count_triggers = {
+          amount = 3
+          5 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          6 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          7 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          310 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          311 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          312 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          544 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          806 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          807 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          808 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          809 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          810 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          811 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w18
+        custom_effect_tooltip = WET_NAG_W18_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_W18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W22 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W22
+      NOT = {
+        has_country_flag = wet_nag_reward_W22
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W22
+        NOT = {
+          has_country_flag = wet_nag_reward_W22
+        }
+        wet_nag_western_hegemony = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w22
+        add_political_power = 75
+      }
+      hidden_effect = {
+        wet_nag_award_W22 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_W23 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_W23
+      NOT = {
+        has_country_flag = wet_nag_reward_W23
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_W23
+        NOT = {
+          has_country_flag = wet_nag_reward_W23
+        }
+        wet_nag_all_western_rule = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w23
+        add_political_power = 100
+      }
+      hidden_effect = {
+        wet_nag_award_W23 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_S01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_S01
+      NOT = {
+        has_country_flag = wet_nag_reward_S01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      NOT = {
+        is_in_faction_with = H06
+      }
+      NOT = {
+        has_non_aggression_pact_with = H06
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_S01
+        NOT = {
+          has_country_flag = wet_nag_reward_S01
+        }
+        NOT = {
+          has_country_flag = wet_nag_asur_compact
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_vengeance
+      }
+      hidden_effect = {
+        wet_nag_award_S01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_S02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_S02
+      NOT = {
+        has_country_flag = wet_nag_reward_S02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      H06 = {
+        exists = yes
+        NOT = {
+          has_government = fascism
+        }
+        NOT = {
+          has_government = communism
+        }
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_S02
+        NOT = {
+          has_country_flag = wet_nag_reward_S02
+        }
+        NOT = {
+          has_offensive_war_with = H06
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_S02_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I05
+      NOT = {
+        has_country_flag = wet_nag_reward_I05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_I05
+        NOT = {
+          has_country_flag = wet_nag_reward_I05
+        }
+        OR = {
+          AND = {
+            8 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            9 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            11 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            44 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            49 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            112 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            136 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            164 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            165 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            166 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            208 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            276 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            324 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            369 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            371 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            398 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            413 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            531 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            540 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            670 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            933 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            942 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            949 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            950 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            951 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1034 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1039 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1044 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1054 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1064 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1206 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          8 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          9 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          11 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          44 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          49 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          112 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          136 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          164 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          165 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          166 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          208 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          276 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          324 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          369 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          371 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          398 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          413 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          531 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          540 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          670 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          933 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          942 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          949 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          950 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          951 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1034 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1039 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1044 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1054 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1064 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1206 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+        }
+        NOT = {
+          has_country_flag = wet_nag_asur_compact
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I05_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I06
+      NOT = {
+        has_country_flag = wet_nag_reward_I06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_I06
+        NOT = {
+          has_country_flag = wet_nag_reward_I06
+        }
+        OR = {
+          8 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          9 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          11 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          44 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          112 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          164 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          165 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          166 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          208 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          324 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          369 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          398 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          413 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          531 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          540 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          670 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          933 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          942 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          949 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          950 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          951 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1034 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1039 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1044 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1054 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1064 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1206 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_NAG_I06_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I08
+      NOT = {
+        has_country_flag = wet_nag_reward_I08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_I08
+        NOT = {
+          has_country_flag = wet_nag_reward_I08
+        }
+        OR = {
+          1064 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          11 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I08_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I09
+      NOT = {
+        has_country_flag = wet_nag_reward_I09
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 9
+      controls_state = 949
+      AND = {
+        has_country_flag = wet_nag_earned_I09
+        NOT = {
+          has_country_flag = wet_nag_reward_I09
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        wet_nag_award_I09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I10
+      NOT = {
+        has_country_flag = wet_nag_reward_I10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 670
+      AND = {
+        has_country_flag = wet_nag_earned_I10
+        NOT = {
+          has_country_flag = wet_nag_reward_I10
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        wet_nag_award_I10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I11 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I11
+      NOT = {
+        has_country_flag = wet_nag_reward_I11
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_I11
+        NOT = {
+          has_country_flag = wet_nag_reward_I11
+        }
+        wet_nag_island_control70 = yes
+        OR = {
+          H06 = {
+            has_capitulated = yes
+          }
+          AND = {
+            NOT = {
+              has_war_with = H06
+            }
+            wet_nag_island_rule70 = yes
+          }
+          H06 = {
+            has_country_flag = wet_nag_island_terms_agreed
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I11_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I12 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I12
+      NOT = {
+        has_country_flag = wet_nag_reward_I12
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_I12
+        NOT = {
+          has_country_flag = wet_nag_reward_I12
+        }
+        OR = {
+          wet_nag_island_rule70 = yes
+          H06 = {
+            exists = yes
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I12_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I13 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I13
+      NOT = {
+        has_country_flag = wet_nag_reward_I13
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      has_war = no
+      AND = {
+        has_country_flag = wet_nag_earned_I13
+        NOT = {
+          has_country_flag = wet_nag_reward_I13
+        }
+        wet_nag_island_rule70 = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 100
+      }
+      hidden_effect = {
+        wet_nag_award_I13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I14 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I14
+      NOT = {
+        has_country_flag = wet_nag_reward_I14
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      OR = {
+        8 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        9 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        11 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        44 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        49 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        112 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        136 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        164 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        165 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        166 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        208 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        276 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        324 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        369 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        371 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        398 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        413 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        531 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        540 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        670 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        933 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        942 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        949 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        950 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        951 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1034 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1039 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1044 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1054 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1064 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1206 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_I14
+        NOT = {
+          has_country_flag = wet_nag_reward_I14
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i14
+        custom_effect_tooltip = WET_NAG_I14_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I16 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I16
+      NOT = {
+        has_country_flag = wet_nag_reward_I16
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      74
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      has_political_power
+      >
+      74
+      AND = {
+        has_country_flag = wet_nag_earned_I16
+        NOT = {
+          has_country_flag = wet_nag_reward_I16
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_nag_ratify_conquered_crown_done
+        }
+        has_country_flag = wet_nag_contested_phoenix_claim
+        NOT = {
+          OR = {
+            has_global_flag = wet_story_elven_settlement_council
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+        }
+        H06 = {
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          has_country_flag = wet_nag_constitution_malekith_accepted
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I16_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_I16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_I17 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_I17
+      NOT = {
+        has_country_flag = wet_nag_reward_I17
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 812
+      AND = {
+        has_country_flag = wet_nag_earned_I17
+        NOT = {
+          has_country_flag = wet_nag_reward_I17
+        }
+        wet_nag_island_rule70 = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i17
+      }
+      hidden_effect = {
+        wet_nag_award_I17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A01
+      NOT = {
+        has_country_flag = wet_nag_reward_A01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      24
+      AND = {
+        has_country_flag = wet_nag_earned_A01
+        NOT = {
+          has_country_flag = wet_nag_reward_A01
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -25
+        custom_effect_tooltip = WET_NAG_A01_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A03
+      NOT = {
+        has_country_flag = wet_nag_reward_A03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      OR = {
+        has_completed_focus = WET_NAG_P10
+        has_completed_focus = WET_NAG_R05
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A03
+        NOT = {
+          has_country_flag = wet_nag_reward_A03
+        }
+        wet_nag_clean_court = yes
+        H06 = {
+          wet_nag_asur_government = yes
+          has_country_flag = wet_nag_talks_accepted
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_NAG_A03_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A04
+      NOT = {
+        has_country_flag = wet_nag_reward_A04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_nag_earned_A04
+        NOT = {
+          has_country_flag = wet_nag_reward_A04
+        }
+        wet_nag_clean_court = yes
+        NOT = {
+          has_country_flag = wet_nag_broken_compact
+        }
+        H06 = {
+          wet_nag_asur_government = yes
+          has_country_flag = wet_nag_security_terms_accepted
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A04_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A05
+      NOT = {
+        has_country_flag = wet_nag_reward_A05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A05
+        NOT = {
+          has_country_flag = wet_nag_reward_A05
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A05_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A06
+      NOT = {
+        has_country_flag = wet_nag_reward_A06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A06
+        NOT = {
+          has_country_flag = wet_nag_reward_A06
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        navy_experience = 25
+        add_ideas = wet_nag_a06
+      }
+      hidden_effect = {
+        wet_nag_award_A06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A07
+      NOT = {
+        has_country_flag = wet_nag_reward_A07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_nag_earned_A07
+        NOT = {
+          has_country_flag = wet_nag_reward_A07
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -50
+        custom_effect_tooltip = WET_NAG_A07_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A08
+      NOT = {
+        has_country_flag = wet_nag_reward_A08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A08
+        NOT = {
+          has_country_flag = wet_nag_reward_A08
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_ideas = wet_nag_a08
+      }
+      hidden_effect = {
+        wet_nag_award_A08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A09
+      NOT = {
+        has_country_flag = wet_nag_reward_A09
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A09
+        NOT = {
+          has_country_flag = wet_nag_reward_A09
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A09_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A10
+      NOT = {
+        has_country_flag = wet_nag_reward_A10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A10
+        NOT = {
+          has_country_flag = wet_nag_reward_A10
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a10
+      }
+      hidden_effect = {
+        wet_nag_award_A10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A11 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A11
+      NOT = {
+        has_country_flag = wet_nag_reward_A11
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A11
+        NOT = {
+          has_country_flag = wet_nag_reward_A11
+        }
+        wet_nag_route_asur = yes
+        H06 = {
+          any_enemy_country = {
+            has_government = fascism
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A11_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A12 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A12
+      NOT = {
+        has_country_flag = wet_nag_reward_A12
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A12
+        NOT = {
+          has_country_flag = wet_nag_reward_A12
+        }
+        H06 = {
+          is_in_faction = yes
+          faction_leader = {
+            wet_nag_rules_allow_admission = yes
+            NOT = {
+              wet_faction_is_skaven_host = yes
+            }
+            NOT = {
+              wet_faction_is_greenskin_host = yes
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A12_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A13 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A13
+      NOT = {
+        has_country_flag = wet_nag_reward_A13
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_NAG_A07
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A13
+        NOT = {
+          has_country_flag = wet_nag_reward_A13
+        }
+        wet_nag_shared_chaos_war = yes
+        has_military_access_to = H06
+        H06 = {
+          has_military_access_to = H12
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a13
+      }
+      hidden_effect = {
+        wet_nag_award_A13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A14 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A14
+      NOT = {
+        has_country_flag = wet_nag_reward_A14
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A14
+        NOT = {
+          has_country_flag = wet_nag_reward_A14
+        }
+        NOT = {
+          has_global_flag = wet_story_elven_settlement_malekith
+        }
+        H06 = {
+          has_country_flag = wet_nag_constitution_council_accepted
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_stability = 0.05
+        custom_effect_tooltip = WET_NAG_A14_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A15 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A15
+      NOT = {
+        has_country_flag = wet_nag_reward_A15
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A15
+        NOT = {
+          has_country_flag = wet_nag_reward_A15
+        }
+        NOT = {
+          has_global_flag = wet_story_elven_settlement_council
+        }
+        H06 = {
+          has_country_flag = wet_nag_constitution_malekith_accepted
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_ideas = wet_nag_constitutional_legitimacy
+        custom_effect_tooltip = WET_NAG_A15_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_A15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_A16 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_A16
+      NOT = {
+        has_country_flag = wet_nag_reward_A16
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      OR = {
+        has_completed_focus = WET_NAG_A14
+        has_completed_focus = WET_NAG_A15
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      AND = {
+        has_country_flag = wet_nag_earned_A16
+        NOT = {
+          has_country_flag = wet_nag_reward_A16
+        }
+        has_country_flag = wet_nag_joint_defence_earned
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a16
+      }
+      hidden_effect = {
+        wet_nag_award_A16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_N18 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_N18
+      NOT = {
+        has_country_flag = wet_nag_reward_N18
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_NAG_N03
+      AND = {
+        has_country_flag = wet_nag_earned_N18
+        NOT = {
+          has_country_flag = wet_nag_reward_N18
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        wet_nag_award_N18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_nag_recover_N19 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = H12
+    }
+    visible = {
+      has_country_flag = wet_nag_earned_N19
+      NOT = {
+        has_country_flag = wet_nag_reward_N19
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_NAG_N16
+      AND = {
+        has_country_flag = wet_nag_earned_N19
+        NOT = {
+          has_country_flag = wet_nag_reward_N19
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n19
+        custom_effect_tooltip = WET_NAG_N19_special_tt
+      }
+      hidden_effect = {
+        wet_nag_award_N19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}

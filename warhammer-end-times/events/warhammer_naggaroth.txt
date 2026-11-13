@@ -1,0 +1,2587 @@
+add_namespace = wet_naggaroth
+country_event = {
+  id = wet_naggaroth.100
+  title = wet_naggaroth.100.t
+  desc = wet_naggaroth.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.100.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.101
+  title = wet_naggaroth.101.t
+  desc = wet_naggaroth.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.101.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_surrender
+        }
+        clr_country_flag = wet_nag_offer_surrender
+        set_variable = {
+          wet_nag_offer_surrender_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_surrender_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.101.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_surrender
+      tag = H12
+      wet_nag_morathi_available = yes
+    }
+    effect_tooltip = {
+      remove_ideas = wet_nag_l05
+      remove_ideas = wet_nag_p05
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_surrender
+          tag = H12
+          wet_nag_morathi_available = yes
+        }
+        clr_country_flag = wet_nag_offer_surrender
+        set_variable = {
+          wet_nag_offer_surrender_days = 0
+        }
+        set_country_flag = wet_nag_morathi_custody
+        wet_nag_revoke_office = yes
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_surrender_accepted
+        }
+        set_variable = {
+          wet_nag_offer_surrender_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_surrender
+          }
+          clr_country_flag = wet_nag_offer_surrender
+          set_variable = {
+            wet_nag_offer_surrender_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_surrender_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.102
+  title = wet_naggaroth.102.t
+  desc = wet_naggaroth.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.102.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_departure
+        }
+        clr_country_flag = wet_nag_offer_departure
+        set_variable = {
+          wet_nag_offer_departure_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_departure_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.102.1
+    ai_chance = {
+      factor = 50
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_departure
+      tag = H12
+      has_character = WET_H13_leader
+      NOT = {
+        OR = {
+          has_country_flag = wet_nag_morathi_dead
+          has_country_flag = wet_nag_morathi_exiled
+        }
+      }
+      OR = {
+        has_completed_focus = WET_NAG_P04
+        has_completed_focus = WET_NAG_R02
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.102.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_departure
+          tag = H12
+          has_character = WET_H13_leader
+          NOT = {
+            OR = {
+              has_country_flag = wet_nag_morathi_dead
+              has_country_flag = wet_nag_morathi_exiled
+            }
+          }
+          OR = {
+            has_completed_focus = WET_NAG_P04
+            has_completed_focus = WET_NAG_R02
+          }
+        }
+        clr_country_flag = wet_nag_offer_departure
+        set_variable = {
+          wet_nag_offer_departure_days = 0
+        }
+        set_country_flag = wet_nag_morathi_departure_agreed
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_departure_accepted
+        }
+        set_variable = {
+          wet_nag_offer_departure_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_departure
+          }
+          clr_country_flag = wet_nag_offer_departure
+          set_variable = {
+            wet_nag_offer_departure_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_departure_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.103
+  title = wet_naggaroth.103.t
+  desc = wet_naggaroth.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.103.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_appointment
+        }
+        clr_country_flag = wet_nag_offer_appointment
+        set_variable = {
+          wet_nag_offer_appointment_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_appointment_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.103.1
+    ai_chance = {
+      factor = 75
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_appointment
+      tag = H12
+      wet_nag_morathi_available = yes
+      wet_nag_patronage = yes
+      NOT = {
+        has_country_flag = wet_nag_morathi_serving
+      }
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_nag_l05
+      if = {
+        limit = {
+          always = yes
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_appointment
+          tag = H12
+          wet_nag_morathi_available = yes
+          wet_nag_patronage = yes
+          NOT = {
+            has_country_flag = wet_nag_morathi_serving
+          }
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_appointment
+        set_variable = {
+          wet_nag_offer_appointment_days = 0
+        }
+        set_country_flag = wet_nag_morathi_serving
+        add_ideas = wet_nag_l05
+        if = {
+          limit = {
+            always = yes
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_appointment_accepted
+        }
+        set_variable = {
+          wet_nag_offer_appointment_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_appointment
+          }
+          clr_country_flag = wet_nag_offer_appointment
+          set_variable = {
+            wet_nag_offer_appointment_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_appointment_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.104
+  title = wet_naggaroth.104.t
+  desc = wet_naggaroth.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.104.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_release_morathi
+        }
+        clr_country_flag = wet_nag_offer_release_morathi
+        set_variable = {
+          wet_nag_offer_release_morathi_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_release_morathi_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.104.1
+    ai_chance = {
+      factor = 25
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_release_morathi
+      exists = yes
+      NOT = {
+        tag = H12
+      }
+      has_character = WET_H13_leader
+      NOT = {
+        has_country_leader = {
+          character = WET_H13_leader
+          ruling_only = yes
+        }
+      }
+      NOT = {
+        has_war_with = H12
+      }
+      H12 = {
+        NOT = {
+          has_country_flag = wet_nag_morathi_dead
+        }
+      }
+    }
+    effect_tooltip = {
+      WET_H13_leader = {
+        set_nationality = H12
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_release_morathi
+          exists = yes
+          NOT = {
+            tag = H12
+          }
+          has_character = WET_H13_leader
+          NOT = {
+            has_country_leader = {
+              character = WET_H13_leader
+              ruling_only = yes
+            }
+          }
+          NOT = {
+            has_war_with = H12
+          }
+          H12 = {
+            NOT = {
+              has_country_flag = wet_nag_morathi_dead
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_release_morathi
+        set_variable = {
+          wet_nag_offer_release_morathi_days = 0
+        }
+        WET_H13_leader = {
+          set_nationality = H12
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_release_morathi_accepted
+        }
+        set_variable = {
+          wet_nag_offer_release_morathi_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_release_morathi
+          }
+          clr_country_flag = wet_nag_offer_release_morathi
+          set_variable = {
+            wet_nag_offer_release_morathi_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_release_morathi_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.105
+  title = wet_naggaroth.105.t
+  desc = wet_naggaroth.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.105.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.106
+  title = wet_naggaroth.106.t
+  desc = wet_naggaroth.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.106.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H20
+        }
+        clr_country_flag = wet_nag_offer_submission_H20
+        set_variable = {
+          wet_nag_offer_submission_H20_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_submission_H20_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.106.1
+    ai_chance = {
+      factor = 20
+      modifier = {
+        strength_ratio = {
+          tag = H12
+          ratio
+          <
+          0.5
+        }
+        factor = 3
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_submission_H20
+      tag = H20
+      wet_name_is_dark_elf = yes
+      wet_nag_subject_offer_legal = yes
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+      if = {
+        limit = {
+          is_subject_of = H12
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H20
+          tag = H20
+          wet_name_is_dark_elf = yes
+          wet_nag_subject_offer_legal = yes
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_submission_H20
+        set_variable = {
+          wet_nag_offer_submission_H20_days = 0
+        }
+        H12 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = H12
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_submission_H20_accepted
+        }
+        set_variable = {
+          wet_nag_offer_submission_H20_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_submission_H20
+          }
+          clr_country_flag = wet_nag_offer_submission_H20
+          set_variable = {
+            wet_nag_offer_submission_H20_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_submission_H20_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.107
+  title = wet_naggaroth.107.t
+  desc = wet_naggaroth.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.107.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H21
+        }
+        clr_country_flag = wet_nag_offer_submission_H21
+        set_variable = {
+          wet_nag_offer_submission_H21_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_submission_H21_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.107.1
+    ai_chance = {
+      factor = 20
+      modifier = {
+        strength_ratio = {
+          tag = H12
+          ratio
+          <
+          0.5
+        }
+        factor = 3
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_submission_H21
+      tag = H21
+      wet_name_is_dark_elf = yes
+      wet_nag_subject_offer_legal = yes
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+      if = {
+        limit = {
+          is_subject_of = H12
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H21
+          tag = H21
+          wet_name_is_dark_elf = yes
+          wet_nag_subject_offer_legal = yes
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_submission_H21
+        set_variable = {
+          wet_nag_offer_submission_H21_days = 0
+        }
+        H12 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = H12
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_submission_H21_accepted
+        }
+        set_variable = {
+          wet_nag_offer_submission_H21_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_submission_H21
+          }
+          clr_country_flag = wet_nag_offer_submission_H21
+          set_variable = {
+            wet_nag_offer_submission_H21_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_submission_H21_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.108
+  title = wet_naggaroth.108.t
+  desc = wet_naggaroth.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.108.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H22
+        }
+        clr_country_flag = wet_nag_offer_submission_H22
+        set_variable = {
+          wet_nag_offer_submission_H22_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_submission_H22_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.108.1
+    ai_chance = {
+      factor = 20
+      modifier = {
+        strength_ratio = {
+          tag = H12
+          ratio
+          <
+          0.5
+        }
+        factor = 3
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_submission_H22
+      tag = H22
+      wet_name_is_dark_elf = yes
+      wet_nag_subject_offer_legal = yes
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+      if = {
+        limit = {
+          is_subject_of = H12
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H22
+          tag = H22
+          wet_name_is_dark_elf = yes
+          wet_nag_subject_offer_legal = yes
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_submission_H22
+        set_variable = {
+          wet_nag_offer_submission_H22_days = 0
+        }
+        H12 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = H12
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_submission_H22_accepted
+        }
+        set_variable = {
+          wet_nag_offer_submission_H22_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_submission_H22
+          }
+          clr_country_flag = wet_nag_offer_submission_H22
+          set_variable = {
+            wet_nag_offer_submission_H22_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_submission_H22_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.109
+  title = wet_naggaroth.109.t
+  desc = wet_naggaroth.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.109.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H23
+        }
+        clr_country_flag = wet_nag_offer_submission_H23
+        set_variable = {
+          wet_nag_offer_submission_H23_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_submission_H23_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.109.1
+    ai_chance = {
+      factor = 20
+      modifier = {
+        strength_ratio = {
+          tag = H12
+          ratio
+          <
+          0.5
+        }
+        factor = 3
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_submission_H23
+      tag = H23
+      wet_name_is_dark_elf = yes
+      wet_nag_subject_offer_legal = yes
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+      if = {
+        limit = {
+          is_subject_of = H12
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_submission_H23
+          tag = H23
+          wet_name_is_dark_elf = yes
+          wet_nag_subject_offer_legal = yes
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_submission_H23
+        set_variable = {
+          wet_nag_offer_submission_H23_days = 0
+        }
+        H12 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = H12
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_submission_H23_accepted
+        }
+        set_variable = {
+          wet_nag_offer_submission_H23_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_submission_H23
+          }
+          clr_country_flag = wet_nag_offer_submission_H23
+          set_variable = {
+            wet_nag_offer_submission_H23_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_submission_H23_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.110
+  title = wet_naggaroth.110.t
+  desc = wet_naggaroth.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.110.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_arnheim_accord
+        }
+        clr_country_flag = wet_nag_offer_arnheim_accord
+        set_variable = {
+          wet_nag_offer_arnheim_accord_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_arnheim_accord_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.110.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_arnheim_accord
+      tag = H19
+      exists = yes
+      has_government = democratic
+      NOT = {
+        has_war_with = H12
+      }
+    }
+    effect_tooltip = {
+      add_opinion_modifier = {
+        target = H12
+        modifier = wet_nag_cooperation
+        days = 730
+      }
+      H12 = {
+        add_opinion_modifier = {
+          target = PREV
+          modifier = wet_nag_cooperation
+          days = 730
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_arnheim_accord
+          tag = H19
+          exists = yes
+          has_government = democratic
+          NOT = {
+            has_war_with = H12
+          }
+        }
+        clr_country_flag = wet_nag_offer_arnheim_accord
+        set_variable = {
+          wet_nag_offer_arnheim_accord_days = 0
+        }
+        add_opinion_modifier = {
+          target = H12
+          modifier = wet_nag_cooperation
+          days = 730
+        }
+        H12 = {
+          add_opinion_modifier = {
+            target = PREV
+            modifier = wet_nag_cooperation
+            days = 730
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_arnheim_accord_accepted
+        }
+        set_variable = {
+          wet_nag_offer_arnheim_accord_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_arnheim_accord
+          }
+          clr_country_flag = wet_nag_offer_arnheim_accord
+          set_variable = {
+            wet_nag_offer_arnheim_accord_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_arnheim_accord_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.111
+  title = wet_naggaroth.111.t
+  desc = wet_naggaroth.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.111.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_island_settlement
+        }
+        clr_country_flag = wet_nag_offer_island_settlement
+        set_variable = {
+          wet_nag_offer_island_settlement_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_island_settlement_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.111.1
+    ai_chance = {
+      factor = 35
+      modifier = {
+        strength_ratio = {
+          tag = H12
+          ratio
+          <
+          0.5
+        }
+        factor = 2
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_island_settlement
+      tag = H06
+      wet_nag_subject_offer_legal = yes
+      H12 = {
+        wet_nag_island_control70 = yes
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_island_settlement
+          tag = H06
+          wet_nag_subject_offer_legal = yes
+          H12 = {
+            wet_nag_island_control70 = yes
+          }
+        }
+        clr_country_flag = wet_nag_offer_island_settlement
+        set_variable = {
+          wet_nag_offer_island_settlement_days = 0
+        }
+        H12 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = H12
+          }
+          set_country_flag = wet_nag_offer_island_settlement_accepted
+        }
+        set_variable = {
+          wet_nag_offer_island_settlement_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_island_settlement
+          }
+          clr_country_flag = wet_nag_offer_island_settlement
+          set_variable = {
+            wet_nag_offer_island_settlement_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_island_settlement_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.112
+  title = wet_naggaroth.112.t
+  desc = wet_naggaroth.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.112.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_slaanesh_pact
+        }
+        clr_country_flag = wet_nag_offer_slaanesh_pact
+        set_variable = {
+          wet_nag_offer_slaanesh_pact_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_slaanesh_pact_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.112.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_slaanesh_pact
+      OR = {
+        tag = R04
+        tag = B35
+      }
+      exists = yes
+      is_subject = no
+      has_government = fascism
+      NOT = {
+        has_war_with = H12
+      }
+      NOT = {
+        has_non_aggression_pact_with = H12
+      }
+      H12 = {
+        wet_nag_patronage = yes
+        is_subject = no
+      }
+      H12 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        diplomatic_relation = {
+          country = PREV
+          relation = non_aggression_pact
+          active = yes
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        H12 = {
+          add_political_power = -25
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_slaanesh_pact
+          OR = {
+            tag = R04
+            tag = B35
+          }
+          exists = yes
+          is_subject = no
+          has_government = fascism
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_non_aggression_pact_with = H12
+          }
+          H12 = {
+            wet_nag_patronage = yes
+            is_subject = no
+          }
+          H12 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_nag_offer_slaanesh_pact
+        set_variable = {
+          wet_nag_offer_slaanesh_pact_days = 0
+        }
+        H12 = {
+          diplomatic_relation = {
+            country = PREV
+            relation = non_aggression_pact
+            active = yes
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          H12 = {
+            add_political_power = -25
+          }
+        }
+        set_variable = {
+          wet_nag_offer_slaanesh_pact_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_slaanesh_pact
+          }
+          clr_country_flag = wet_nag_offer_slaanesh_pact
+          set_variable = {
+            wet_nag_offer_slaanesh_pact_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_slaanesh_pact_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.113
+  title = wet_naggaroth.113.t
+  desc = wet_naggaroth.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.113.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_asur_contact
+        }
+        clr_country_flag = wet_nag_offer_asur_contact
+        set_variable = {
+          wet_nag_offer_asur_contact_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_asur_contact_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.113.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        H12 = {
+          wet_nag_clean_court = yes
+        }
+        factor = 2
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_asur_contact
+      tag = H06
+      wet_nag_asur_government = yes
+      H12 = {
+        exists = yes
+        has_completed_focus = WET_NAG_S02
+        NOT = {
+          has_country_flag = wet_nag_broken_compact
+        }
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.113.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_asur_contact
+          tag = H06
+          wet_nag_asur_government = yes
+          H12 = {
+            exists = yes
+            has_completed_focus = WET_NAG_S02
+            NOT = {
+              has_country_flag = wet_nag_broken_compact
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_asur_contact
+        set_variable = {
+          wet_nag_offer_asur_contact_days = 0
+        }
+        set_country_flag = wet_nag_talks_accepted
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_asur_contact_accepted
+        }
+        set_variable = {
+          wet_nag_offer_asur_contact_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_asur_contact
+          }
+          clr_country_flag = wet_nag_offer_asur_contact
+          set_variable = {
+            wet_nag_offer_asur_contact_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_asur_contact_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.114
+  title = wet_naggaroth.114.t
+  desc = wet_naggaroth.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.114.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_asur_terms
+        }
+        clr_country_flag = wet_nag_offer_asur_terms
+        set_variable = {
+          wet_nag_offer_asur_terms_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_asur_terms_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.114.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_asur_terms
+      tag = H06
+      wet_nag_asur_government = yes
+      has_country_flag = wet_nag_talks_accepted
+      H12 = {
+        has_completed_focus = WET_NAG_S02
+        wet_nag_clean_court = yes
+        NOT = {
+          has_country_flag = wet_nag_broken_compact
+        }
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.114.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_asur_terms
+          tag = H06
+          wet_nag_asur_government = yes
+          has_country_flag = wet_nag_talks_accepted
+          H12 = {
+            has_completed_focus = WET_NAG_S02
+            wet_nag_clean_court = yes
+            NOT = {
+              has_country_flag = wet_nag_broken_compact
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_asur_terms
+        set_variable = {
+          wet_nag_offer_asur_terms_days = 0
+        }
+        set_country_flag = wet_nag_security_terms_accepted
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_asur_terms_accepted
+        }
+        set_variable = {
+          wet_nag_offer_asur_terms_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_asur_terms
+          }
+          clr_country_flag = wet_nag_offer_asur_terms
+          set_variable = {
+            wet_nag_offer_asur_terms_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_asur_terms_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.115
+  title = wet_naggaroth.115.t
+  desc = wet_naggaroth.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.115.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_captives
+        }
+        clr_country_flag = wet_nag_offer_captives
+        set_variable = {
+          wet_nag_offer_captives_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_captives_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.115.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_captives
+      tag = H06
+      wet_nag_asur_government = yes
+      H12 = {
+        wet_nag_compact_active = yes
+        NOT = {
+          has_country_flag = wet_ult_captive_exchange_paid
+        }
+      }
+      H12 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        add_stability = -0.05
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        H12 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_captives
+          tag = H06
+          wet_nag_asur_government = yes
+          H12 = {
+            wet_nag_compact_active = yes
+            NOT = {
+              has_country_flag = wet_ult_captive_exchange_paid
+            }
+          }
+          H12 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_nag_offer_captives
+        set_variable = {
+          wet_nag_offer_captives_days = 0
+        }
+        H12 = {
+          add_stability = -0.05
+          add_to_variable = {
+            wet_nag_trust = 25
+          }
+          add_tech_bonus = {
+            name = wet_nag_research_bonus
+            bonus = 0.5
+            uses = 1
+            category = industry
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          H12 = {
+            add_political_power = -75
+          }
+          set_country_flag = wet_nag_offer_captives_accepted
+        }
+        set_variable = {
+          wet_nag_offer_captives_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_captives
+          }
+          clr_country_flag = wet_nag_offer_captives
+          set_variable = {
+            wet_nag_offer_captives_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_captives_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.116
+  title = wet_naggaroth.116.t
+  desc = wet_naggaroth.116.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.116.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_western_charter
+        }
+        clr_country_flag = wet_nag_offer_western_charter
+        set_variable = {
+          wet_nag_offer_western_charter_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_western_charter_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.116.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_western_charter
+      OR = {
+        tag = H19
+        tag = V04
+      }
+      exists = yes
+      is_subject = no
+      NOT = {
+        has_war_with = H12
+      }
+      NOT = {
+        has_government = fascism
+      }
+      NOT = {
+        has_government = communism
+      }
+      H12 = {
+        wet_nag_compact_active = yes
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.116.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_western_charter
+          OR = {
+            tag = H19
+            tag = V04
+          }
+          exists = yes
+          is_subject = no
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          H12 = {
+            wet_nag_compact_active = yes
+          }
+        }
+        clr_country_flag = wet_nag_offer_western_charter
+        set_variable = {
+          wet_nag_offer_western_charter_days = 0
+        }
+        set_country_flag = wet_nag_charter_signatory
+        H12 = {
+          wet_nag_clean_goals = yes
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_nag_offer_western_charter_accepted
+        }
+        set_variable = {
+          wet_nag_offer_western_charter_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_western_charter
+          }
+          clr_country_flag = wet_nag_offer_western_charter
+          set_variable = {
+            wet_nag_offer_western_charter_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_western_charter_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.117
+  title = wet_naggaroth.117.t
+  desc = wet_naggaroth.117.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.117.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_arms
+        }
+        clr_country_flag = wet_nag_offer_arms
+        set_variable = {
+          wet_nag_offer_arms_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        set_variable = {
+          wet_nag_offer_arms_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.117.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_arms
+      tag = H06
+      wet_nag_asur_government = yes
+      H12 = {
+        wet_nag_compact_active = yes
+        wet_nag_route_asur = yes
+        has_equipment = {
+          infantry_equipment
+          >
+          499
+        }
+      }
+      H12 = {
+        check_variable = {
+          wet_nag_aid_cooldown
+          <
+          1
+        }
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 500
+          target = H06
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_arms
+          tag = H06
+          wet_nag_asur_government = yes
+          H12 = {
+            wet_nag_compact_active = yes
+            wet_nag_route_asur = yes
+            has_equipment = {
+              infantry_equipment
+              >
+              499
+            }
+          }
+          H12 = {
+            check_variable = {
+              wet_nag_aid_cooldown
+              <
+              1
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_arms
+        set_variable = {
+          wet_nag_offer_arms_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        H12 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 500
+            target = H06
+          }
+          set_country_flag = wet_nag_aid_delivered
+        }
+        H12 = {
+          set_variable = {
+            wet_nag_aid_cooldown = 90
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_nag_offer_arms_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_arms
+          }
+          clr_country_flag = wet_nag_offer_arms
+          set_variable = {
+            wet_nag_offer_arms_days = 0
+          }
+          H12 = {
+            clr_country_flag = wet_nag_pending_aid
+          }
+          set_variable = {
+            wet_nag_offer_arms_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.118
+  title = wet_naggaroth.118.t
+  desc = wet_naggaroth.118.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.118.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_relief_arms
+        }
+        clr_country_flag = wet_nag_offer_relief_arms
+        set_variable = {
+          wet_nag_offer_relief_arms_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        set_variable = {
+          wet_nag_offer_relief_arms_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.118.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_relief_arms
+      tag = H06
+      wet_nag_asur_government = yes
+      H12 = {
+        wet_nag_compact_active = yes
+        wet_nag_route_asur = yes
+        has_equipment = {
+          infantry_equipment
+          >
+          499
+        }
+      }
+      any_enemy_country = {
+        has_government = fascism
+      }
+      H12 = {
+        check_variable = {
+          wet_nag_aid_cooldown
+          <
+          1
+        }
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 500
+          target = H06
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_relief_arms
+          tag = H06
+          wet_nag_asur_government = yes
+          H12 = {
+            wet_nag_compact_active = yes
+            wet_nag_route_asur = yes
+            has_equipment = {
+              infantry_equipment
+              >
+              499
+            }
+          }
+          any_enemy_country = {
+            has_government = fascism
+          }
+          H12 = {
+            check_variable = {
+              wet_nag_aid_cooldown
+              <
+              1
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_relief_arms
+        set_variable = {
+          wet_nag_offer_relief_arms_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        H12 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 500
+            target = H06
+          }
+          set_country_flag = wet_nag_aid_delivered
+          if = {
+            limit = {
+              NOT = {
+                has_country_flag = wet_nag_relief_trust_paid
+              }
+            }
+            set_country_flag = wet_nag_relief_trust_paid
+            add_to_variable = {
+              wet_nag_trust = 20
+            }
+          }
+        }
+        H12 = {
+          set_variable = {
+            wet_nag_aid_cooldown = 90
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_nag_offer_relief_arms_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_relief_arms
+          }
+          clr_country_flag = wet_nag_offer_relief_arms
+          set_variable = {
+            wet_nag_offer_relief_arms_days = 0
+          }
+          H12 = {
+            clr_country_flag = wet_nag_pending_aid
+          }
+          set_variable = {
+            wet_nag_offer_relief_arms_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.119
+  title = wet_naggaroth.119.t
+  desc = wet_naggaroth.119.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.119.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_relief_convoys
+        }
+        clr_country_flag = wet_nag_offer_relief_convoys
+        set_variable = {
+          wet_nag_offer_relief_convoys_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        set_variable = {
+          wet_nag_offer_relief_convoys_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.119.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_relief_convoys
+      tag = H06
+      wet_nag_asur_government = yes
+      H12 = {
+        wet_nag_compact_active = yes
+        wet_nag_route_asur = yes
+        has_equipment = {
+          convoy
+          >
+          19
+        }
+      }
+      any_enemy_country = {
+        has_government = fascism
+      }
+      H12 = {
+        check_variable = {
+          wet_nag_aid_cooldown
+          <
+          1
+        }
+      }
+    }
+    effect_tooltip = {
+      H12 = {
+        send_equipment = {
+          equipment = convoy
+          amount = 20
+          target = H06
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_relief_convoys
+          tag = H06
+          wet_nag_asur_government = yes
+          H12 = {
+            wet_nag_compact_active = yes
+            wet_nag_route_asur = yes
+            has_equipment = {
+              convoy
+              >
+              19
+            }
+          }
+          any_enemy_country = {
+            has_government = fascism
+          }
+          H12 = {
+            check_variable = {
+              wet_nag_aid_cooldown
+              <
+              1
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_relief_convoys
+        set_variable = {
+          wet_nag_offer_relief_convoys_days = 0
+        }
+        H12 = {
+          clr_country_flag = wet_nag_pending_aid
+        }
+        H12 = {
+          send_equipment = {
+            equipment = convoy
+            amount = 20
+            target = H06
+          }
+          set_country_flag = wet_nag_aid_delivered
+          if = {
+            limit = {
+              NOT = {
+                has_country_flag = wet_nag_relief_trust_paid
+              }
+            }
+            set_country_flag = wet_nag_relief_trust_paid
+            add_to_variable = {
+              wet_nag_trust = 20
+            }
+          }
+        }
+        H12 = {
+          set_variable = {
+            wet_nag_aid_cooldown = 90
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_nag_offer_relief_convoys_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_relief_convoys
+          }
+          clr_country_flag = wet_nag_offer_relief_convoys
+          set_variable = {
+            wet_nag_offer_relief_convoys_days = 0
+          }
+          H12 = {
+            clr_country_flag = wet_nag_pending_aid
+          }
+          set_variable = {
+            wet_nag_offer_relief_convoys_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.120
+  title = wet_naggaroth.120.t
+  desc = wet_naggaroth.120.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.120.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_admission
+        }
+        clr_country_flag = wet_nag_offer_admission
+        set_variable = {
+          wet_nag_offer_admission_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_admission_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.120.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_admission
+      wet_nag_rules_allow_admission = yes
+      NOT = {
+        wet_faction_is_skaven_host = yes
+      }
+      NOT = {
+        wet_faction_is_greenskin_host = yes
+      }
+      H06 = {
+        is_in_faction_with = PREV
+      }
+      H12 = {
+        wet_nag_compact_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_to_faction = H12
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_admission
+          wet_nag_rules_allow_admission = yes
+          NOT = {
+            wet_faction_is_skaven_host = yes
+          }
+          NOT = {
+            wet_faction_is_greenskin_host = yes
+          }
+          H06 = {
+            is_in_faction_with = PREV
+          }
+          H12 = {
+            wet_nag_compact_active = yes
+          }
+        }
+        clr_country_flag = wet_nag_offer_admission
+        set_variable = {
+          wet_nag_offer_admission_days = 0
+        }
+        add_to_faction = H12
+        if = {
+          limit = {
+            is_in_faction_with = H12
+          }
+        }
+        set_variable = {
+          wet_nag_offer_admission_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_admission
+          }
+          clr_country_flag = wet_nag_offer_admission
+          set_variable = {
+            wet_nag_offer_admission_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_admission_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.121
+  title = wet_naggaroth.121.t
+  desc = wet_naggaroth.121.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.121.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_constitution_council
+        }
+        clr_country_flag = wet_nag_offer_constitution_council
+        set_variable = {
+          wet_nag_offer_constitution_council_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_constitution_council_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.121.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_constitution_council
+      tag = H06
+      exists = yes
+      NOT = {
+        has_war_with = H12
+      }
+      NOT = {
+        has_government = fascism
+      }
+      NOT = {
+        has_government = communism
+      }
+      OR = {
+        is_subject = no
+        is_subject_of = H12
+      }
+      NOT = {
+        has_global_flag = wet_story_elven_settlement_malekith
+      }
+      NOT = {
+        has_global_flag = wet_story_elven_settlement_council
+      }
+      H12 = {
+        OR = {
+          wet_nag_compact_active = yes
+          has_country_flag = wet_nag_contested_phoenix_claim
+        }
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.121.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_constitution_council
+          tag = H06
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_council
+          }
+          H12 = {
+            OR = {
+              wet_nag_compact_active = yes
+              has_country_flag = wet_nag_contested_phoenix_claim
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_constitution_council
+        set_variable = {
+          wet_nag_offer_constitution_council_days = 0
+        }
+        set_country_flag = wet_nag_constitution_council_accepted
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_nag_offer_constitution_council_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_constitution_council
+          }
+          clr_country_flag = wet_nag_offer_constitution_council
+          set_variable = {
+            wet_nag_offer_constitution_council_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_constitution_council_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_naggaroth.122
+  title = wet_naggaroth.122.t
+  desc = wet_naggaroth.122.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_naggaroth.122.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_constitution_malekith
+        }
+        clr_country_flag = wet_nag_offer_constitution_malekith
+        set_variable = {
+          wet_nag_offer_constitution_malekith_days = 0
+        }
+        set_variable = {
+          wet_nag_offer_constitution_malekith_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_naggaroth.122.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = H12
+      }
+    }
+    trigger = {
+      has_country_flag = wet_nag_offer_constitution_malekith
+      tag = H06
+      exists = yes
+      NOT = {
+        has_war_with = H12
+      }
+      NOT = {
+        has_government = fascism
+      }
+      NOT = {
+        has_government = communism
+      }
+      OR = {
+        is_subject = no
+        is_subject_of = H12
+      }
+      NOT = {
+        has_global_flag = wet_story_elven_settlement_council
+      }
+      NOT = {
+        has_global_flag = wet_story_elven_settlement_malekith
+      }
+      H12 = {
+        has_country_leader = {
+          character = WET_H12_leader
+          ruling_only = yes
+        }
+      }
+      H12 = {
+        OR = {
+          wet_nag_compact_active = yes
+          has_country_flag = wet_nag_contested_phoenix_claim
+        }
+      }
+    }
+    custom_effect_tooltip = wet_naggaroth.122.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_nag_offer_constitution_malekith
+          tag = H06
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_council
+          }
+          NOT = {
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+          H12 = {
+            has_country_leader = {
+              character = WET_H12_leader
+              ruling_only = yes
+            }
+          }
+          H12 = {
+            OR = {
+              wet_nag_compact_active = yes
+              has_country_flag = wet_nag_contested_phoenix_claim
+            }
+          }
+        }
+        clr_country_flag = wet_nag_offer_constitution_malekith
+        set_variable = {
+          wet_nag_offer_constitution_malekith_days = 0
+        }
+        set_country_flag = wet_nag_constitution_malekith_accepted
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_nag_offer_constitution_malekith_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_nag_offer_constitution_malekith
+          }
+          clr_country_flag = wet_nag_offer_constitution_malekith
+          set_variable = {
+            wet_nag_offer_constitution_malekith_days = 0
+          }
+          set_variable = {
+            wet_nag_offer_constitution_malekith_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}

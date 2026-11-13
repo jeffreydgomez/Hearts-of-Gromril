@@ -2,17 +2,36 @@
 state = {
   id = 540
   name = "STATE_540"
-  manpower = 641961
+  manpower = 392391
   state_category = town
   resources = { oil = 5 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 11 }
+    set_variable = { wet_pop_faith = 6 }
+    set_variable = { wet_pop_taint = 1 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = H06 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = H06
     add_core_of = H06
     victory_points = { 2266 1 }
     buildings = {
       infrastructure = 1
       industrial_complex = 1
-      arms_factory = 1
       2266 = { naval_base = 1 }
     }
   }

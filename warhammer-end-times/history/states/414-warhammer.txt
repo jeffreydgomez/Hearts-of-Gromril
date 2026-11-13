@@ -3,17 +3,37 @@ state = {
   id = 414
   name = "STATE_414"
   manpower = 619824
-  state_category = town
+  state_category = galleons_graveyard
   resources = { aluminium = 26 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 12 }
+    set_variable = { wet_pop_faith = 66 }
+    set_variable = { wet_pop_taint = 4 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = V19 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = V19
     add_core_of = V19
     victory_points = { 5305 5 }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
+      industrial_complex = 5
+      arms_factory = 5
+      dockyard = 5
       5305 = { landmark_wet_the_maelstrom = 1 landmark_wet_galleons_graveyard_gp = 1 landmark_wet_noctilus_training_grounds = 1 supply_node = 1 naval_base = 1 }
     }
   }

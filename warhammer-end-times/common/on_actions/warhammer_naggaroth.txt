@@ -1,0 +1,88 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      H12 = {
+        wet_nag_reconcile_benefits = yes
+      }
+    }
+  }
+  on_daily_H12 = {
+    effect = {
+      wet_nag_daily = yes
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      if = {
+        limit = {
+          tag = H12
+          wet_nag_compact_active = yes
+          FROM = {
+            has_government = fascism
+            has_war_with = H12
+            has_war_with = H06
+          }
+          FROM.FROM = {
+            OR = {
+              state = 108
+              state = 154
+              state = 651
+              state = 652
+              state = 653
+              state = 654
+              state = 655
+              state = 657
+              state = 802
+              state = 803
+              state = 804
+              state = 805
+              state = 812
+              state = 813
+              state = 814
+              state = 816
+              state = 817
+              state = 818
+              state = 819
+              state = 820
+              state = 821
+              state = 8
+              state = 9
+              state = 11
+              state = 44
+              state = 49
+              state = 112
+              state = 136
+              state = 164
+              state = 165
+              state = 166
+              state = 208
+              state = 276
+              state = 324
+              state = 369
+              state = 371
+              state = 398
+              state = 413
+              state = 531
+              state = 540
+              state = 670
+              state = 933
+              state = 942
+              state = 949
+              state = 950
+              state = 951
+              state = 1034
+              state = 1039
+              state = 1044
+              state = 1054
+              state = 1064
+              state = 1206
+            }
+          }
+        }
+        FROM.FROM = {
+          set_state_flag = wet_nag_recovered_by_host
+        }
+      }
+    }
+  }
+}

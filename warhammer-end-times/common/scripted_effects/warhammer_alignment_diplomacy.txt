@@ -1,24 +1,3 @@
-wet_gather_everchosen = {
- log = "WET_EVERCHOSEN_GATHER leader=[ROOT.GetTag]"
- every_other_country = {
-  limit = {
-   exists = yes
-   has_capitulated = no
-   has_government = fascism
-   is_in_faction = no
-   OR = { is_subject = no is_subject_of = ROOT }
-   NOT = { has_war_with = ROOT }
-   NOT = { any_enemy_country = { is_in_faction_with = ROOT } }
-   OR = {
-    is_neighbor_of = ROOT
-    any_neighbor_country = { is_subject_of = ROOT }
-   }
-  }
-  ROOT = { add_to_faction = PREV }
-  log = "WET_EVERCHOSEN_RECRUIT country=[THIS.GetTag] leader=[ROOT.GetTag]"
- }
-}
-
 wet_archaon_bind_subjects = {
  every_subject_country = {
   # One mutually exclusive branch per subject: no same-use cascade to annexation.
@@ -157,7 +136,7 @@ wet_ai_finish_border_war_preparations = {
        log = "WET_WARGOAL_CREATED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
       }
       else_if = {
-       limit = { has_war = no can_declare_war_on = PREV }
+       limit = { wet_ai_ready_for_border_war = yes has_war = no can_declare_war_on = PREV }
        declare_war_on = { target = PREV type = wet_border_conquest }
        log = "WET_WAR_DECLARED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
        wet_ai_clear_border_campaign = yes
@@ -223,8 +202,8 @@ wet_ai_daily_war_tick = {
  # Abandon the planned attack as soon as any war starts, including during
  # preparation or goal registration. Never keep a goal for a second war.
  if = {
-  limit = { has_country_flag = wet_ai_war_pending has_war = yes }
-  log = "WET_WAR_CANCEL attacker_already_at_war attacker=[ROOT.GetTag]"
+  limit = { has_country_flag = wet_ai_war_pending OR = { has_war = yes AND = { is_in_faction = yes is_faction_leader = no } } }
+  log = "WET_WAR_CANCEL attacker_at_war_or_nonleader_member attacker=[ROOT.GetTag]"
   wet_ai_clear_border_campaign = yes
  }
  if = {
@@ -314,10 +293,9 @@ wet_ai_order_alliance = {
 wet_ai_order_contact = {
  ROOT = { clear_array = wet_order_partner_targets add_to_array = { wet_order_partner_targets = PREV } }
  if = {
-  limit = { NOT = { has_non_aggression_pact_with = ROOT } }
-  ROOT = { diplomatic_relation = { country = PREV relation = non_aggression_pact active = yes } }
+  limit = { wet_order_alliance_partner = yes }
+  random = { chance = 50 wet_ai_order_alliance = yes }
  }
- else = { random = { chance = 50 wet_ai_order_alliance = yes } }
  ROOT = { clear_array = wet_order_partner_targets }
 }
 
@@ -326,33 +304,38 @@ wet_ai_order_diplomacy = {
   limit = { any_other_country = { wet_order_alliance_partner = yes } }
   random_other_country = { limit = { wet_order_alliance_partner = yes } wet_ai_order_contact = yes }
  }
- else_if = {
-  limit = { any_neighbor_country = { wet_order_partner = yes NOT = { is_in_faction_with = ROOT } NOT = { has_non_aggression_pact_with = ROOT } } }
-  random_neighbor_country = { limit = { wet_order_partner = yes NOT = { is_in_faction_with = ROOT } NOT = { has_non_aggression_pact_with = ROOT } } wet_ai_order_contact = yes }
- }
- else = {
-  random_other_country = { limit = { wet_order_partner = yes NOT = { is_in_faction_with = ROOT } NOT = { has_non_aggression_pact_with = ROOT } } wet_ai_order_contact = yes }
- }
 }
-# Receiver scope. Cost is paid by the diplomatic action, or by the
-# explicit monthly AI caller, never twice. Guards prevent duplicate subjugation.
 wet_call_to_chaos_complete = {
  if = {
   limit = { wet_call_to_chaos_target = yes }
-  ROOT = {
-   set_autonomy = { target = PREV autonomy_state = autonomy_puppet freedom_level = 0 end_wars = no end_civil_wars = no }
-   if = { limit = { NOT = { is_in_faction_with = PREV } } add_to_faction = PREV }
-  }
-  log = "WET_CALL_TO_CHAOS leader=[ROOT.GetTag] puppet=[THIS.GetTag]"
+  log = "WET_ABSORPTION action=call_to_chaos attacker=[ROOT.GetTag] target=[THIS.GetTag]"
+  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
  }
 }
 wet_ai_call_to_chaos = {
  if = {
-  limit = { is_ai = yes wet_is_everchosen_leader = yes NOT = { has_political_power < 30 } }
-  random_other_country = {
+  limit = { is_ai = yes wet_archaon_rules = yes NOT = { has_political_power < 30 } }
+  random_neighbor_country = {
    limit = { wet_call_to_chaos_target = yes }
    ROOT = { add_political_power = -30 }
    wet_call_to_chaos_complete = yes
+  }
+ }
+}
+wet_join_the_waaagh_complete = {
+ if = {
+  limit = { wet_join_the_waaagh_target = yes }
+  log = "WET_ABSORPTION action=join_the_waaagh attacker=[ROOT.GetTag] target=[THIS.GetTag]"
+  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+ }
+}
+wet_ai_join_the_waaagh = {
+ if = {
+  limit = { is_ai = yes wet_waaagh_leader = yes NOT = { has_political_power < 30 } }
+  random_neighbor_country = {
+   limit = { wet_join_the_waaagh_target = yes }
+   ROOT = { add_political_power = -30 }
+   wet_join_the_waaagh_complete = yes
   }
  }
 }

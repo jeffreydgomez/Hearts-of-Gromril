@@ -6,13 +6,33 @@ state = {
   state_category = town
   resources = { oil = 2 steel = 23 coal = 2 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 2 }
+    set_variable = { wet_pop_faith = 21 }
+    set_variable = { wet_pop_taint = 0 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = B17 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = B17
     add_core_of = B17
     victory_points = { 869 1 }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      industrial_complex = 2
+      arms_factory = 2
       866 = { naval_base = 1 }
     }
   }

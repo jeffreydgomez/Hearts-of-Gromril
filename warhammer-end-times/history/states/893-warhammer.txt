@@ -3,18 +3,37 @@ state = {
   id = 893
   name = "STATE_893"
   manpower = 398459
-  state_category = town
+  state_category = rural
   resources = { tungsten = 2 }
   history = {
-    owner = I50
-    add_core_of = I50
-    victory_points = { 7025 5 }
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 14 }
+    set_variable = { wet_pop_faith = 58 }
+    set_variable = { wet_pop_taint = 0 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = I41 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
+    owner = I41
+    add_core_of = I41
+    victory_points = { 7025 1 }
     buildings = {
       infrastructure = 1
       industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      7025 = { landmark_wet_smoothscale_foreign_port = 1 supply_node = 1 naval_base = 1 }
+      7025 = { landmark_wet_smoothscale_foreign_port = 1 naval_base = 1 }
     }
   }
   provinces = { 7025 }

@@ -1,0 +1,1741 @@
+add_namespace = wet_bretonnia
+country_event = {
+  id = wet_bretonnia.100
+  title = wet_bretonnia.100.t
+  desc = wet_bretonnia.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.100.0
+    ai_chance = {
+      factor = 1
+    }
+    custom_effect_tooltip = wet_bretonnia.100.0_outcome
+    hidden_effect = {
+      set_country_flag = wet_brt_crisis_announced
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.101
+  title = wet_bretonnia.101.t
+  desc = wet_bretonnia.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.101.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.102
+  title = wet_bretonnia.102.t
+  desc = wet_bretonnia.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.102.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.103
+  title = wet_bretonnia.103.t
+  desc = wet_bretonnia.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.103.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_settlement
+        }
+        clr_country_flag = wet_brt_offer_settlement
+        set_variable = {
+          wet_brt_offer_settlement_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_settlement_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.103.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_settlement
+      tag = A20
+      exists = yes
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        has_country_flag = wet_brt_crisis_started
+        capital_scope = {
+          is_fully_controlled_by = A15
+        }
+      }
+    }
+    custom_effect_tooltip = wet_bretonnia.103.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_settlement
+          tag = A20
+          exists = yes
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            has_country_flag = wet_brt_crisis_started
+            capital_scope = {
+              is_fully_controlled_by = A15
+            }
+          }
+        }
+        clr_country_flag = wet_brt_offer_settlement
+        set_variable = {
+          wet_brt_offer_settlement_days = 0
+        }
+        set_country_flag = wet_brt_negotiated_settlement
+        A15 = {
+          set_country_flag = wet_brt_negotiated_settlement
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_brt_offer_settlement_accepted
+        }
+        set_variable = {
+          wet_brt_offer_settlement_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_settlement
+          }
+          clr_country_flag = wet_brt_offer_settlement
+          set_variable = {
+            wet_brt_offer_settlement_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_settlement_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.104
+  title = wet_bretonnia.104.t
+  desc = wet_bretonnia.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.104.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_prison_access
+        }
+        clr_country_flag = wet_brt_offer_prison_access
+        set_variable = {
+          wet_brt_offer_prison_access_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_prison_access_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.104.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_prison_access
+      exists = yes
+      NOT = {
+        tag = A15
+      }
+      NOT = {
+        has_war_with = A15
+      }
+      NOT = {
+        has_country_flag = wet_karaz_sealed
+      }
+      OR = {
+        has_country_flag = wet_brt_kemmler_custody
+        has_country_flag = wet_brt_krell_custody
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_prison_access
+          exists = yes
+          NOT = {
+            tag = A15
+          }
+          NOT = {
+            has_war_with = A15
+          }
+          NOT = {
+            has_country_flag = wet_karaz_sealed
+          }
+          OR = {
+            has_country_flag = wet_brt_kemmler_custody
+            has_country_flag = wet_brt_krell_custody
+          }
+        }
+        clr_country_flag = wet_brt_offer_prison_access
+        set_variable = {
+          wet_brt_offer_prison_access_days = 0
+        }
+        give_military_access = A15
+        set_country_flag = wet_brt_prison_consent
+        A15 = {
+          set_country_flag = wet_brt_court_searched
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_brt_offer_prison_access_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_prison_access
+          }
+          clr_country_flag = wet_brt_offer_prison_access
+          set_variable = {
+            wet_brt_offer_prison_access_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_prison_access_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.105
+  title = wet_bretonnia.105.t
+  desc = wet_bretonnia.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.105.0
+    ai_chance = {
+      factor = 75
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_ultimatum_pending
+        }
+        if = {
+          limit = {
+            A15 = {
+              wet_brt_legal_a20 = yes
+              has_political_power
+              >
+              74
+            }
+          }
+          A15 = {
+            create_wargoal = {
+              type = annex_everything
+              target = A20
+              expire = 180
+            }
+            if = {
+              limit = {
+                has_wargoal_against = A20
+              }
+              add_political_power = -75
+            }
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_ultimatum_pending
+        }
+        clr_country_flag = wet_brt_ultimatum_pending
+        set_variable = {
+          wet_brt_ultimatum_days = 0
+        }
+        A15 = {
+          set_variable = {
+            wet_brt_ultimatum_cooldown = 180
+          }
+        }
+        if = {
+          limit = {
+            A15 = {
+              wet_brt_legal_a20 = yes
+              has_political_power
+              >
+              74
+            }
+          }
+          A15 = {
+            create_wargoal = {
+              type = annex_everything
+              target = A20
+              expire = 180
+            }
+            if = {
+              limit = {
+                has_wargoal_against = A20
+              }
+              add_political_power = -75
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.105.1
+    ai_chance = {
+      factor = 25
+    }
+    trigger = {
+      has_country_flag = wet_brt_ultimatum_pending
+      A15 = {
+        wet_brt_legal_a20 = yes
+        has_political_power
+        >
+        74
+      }
+      is_in_faction = no
+      A15 = {
+        is_in_faction = no
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        set_autonomy = {
+          target = A20
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+        if = {
+          limit = {
+            A20 = {
+              is_subject_of = A15
+            }
+          }
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_ultimatum_pending
+          A15 = {
+            wet_brt_legal_a20 = yes
+            has_political_power
+            >
+            74
+          }
+          is_in_faction = no
+          A15 = {
+            is_in_faction = no
+          }
+        }
+        clr_country_flag = wet_brt_ultimatum_pending
+        set_variable = {
+          wet_brt_ultimatum_days = 0
+        }
+        A15 = {
+          set_variable = {
+            wet_brt_ultimatum_cooldown = 180
+          }
+        }
+        A15 = {
+          set_autonomy = {
+            target = A20
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+          if = {
+            limit = {
+              A20 = {
+                is_subject_of = A15
+              }
+            }
+            add_political_power = -75
+            set_country_flag = wet_brt_submission
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.106
+  title = wet_bretonnia.106.t
+  desc = wet_bretonnia.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.106.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_access_a01
+        }
+        clr_country_flag = wet_brt_offer_access_a01
+        set_variable = {
+          wet_brt_offer_access_a01_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_access_a01_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.106.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_access_a01
+      tag = A01
+      exists = yes
+      is_subject = no
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        exists = yes
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_access_a01
+          tag = A01
+          exists = yes
+          is_subject = no
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            exists = yes
+          }
+        }
+        clr_country_flag = wet_brt_offer_access_a01
+        set_variable = {
+          wet_brt_offer_access_a01_days = 0
+        }
+        give_military_access = A15
+        set_country_flag = wet_brt_host_consent
+        set_country_flag = wet_brt_security_consent
+        if = {
+          limit = {
+            A15 = {
+              has_military_access_to = PREV
+            }
+          }
+        }
+        set_variable = {
+          wet_brt_offer_access_a01_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_access_a01
+          }
+          clr_country_flag = wet_brt_offer_access_a01
+          set_variable = {
+            wet_brt_offer_access_a01_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_access_a01_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.107
+  title = wet_bretonnia.107.t
+  desc = wet_bretonnia.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.107.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_pact_a01
+        }
+        clr_country_flag = wet_brt_offer_pact_a01
+        set_variable = {
+          wet_brt_offer_pact_a01_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_pact_a01_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.107.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_pact_a01
+      tag = A01
+      exists = yes
+      is_subject = no
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        exists = yes
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = A15
+        relation = non_aggression_pact
+        active = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_pact_a01
+          tag = A01
+          exists = yes
+          is_subject = no
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            exists = yes
+          }
+        }
+        clr_country_flag = wet_brt_offer_pact_a01
+        set_variable = {
+          wet_brt_offer_pact_a01_days = 0
+        }
+        diplomatic_relation = {
+          country = A15
+          relation = non_aggression_pact
+          active = yes
+        }
+        if = {
+          limit = {
+            has_non_aggression_pact_with = A15
+          }
+          set_country_flag = wet_brt_offer_pact_a01_accepted
+        }
+        set_variable = {
+          wet_brt_offer_pact_a01_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_pact_a01
+          }
+          clr_country_flag = wet_brt_offer_pact_a01
+          set_variable = {
+            wet_brt_offer_pact_a01_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_pact_a01_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.108
+  title = wet_bretonnia.108.t
+  desc = wet_bretonnia.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.108.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_access_u04
+        }
+        clr_country_flag = wet_brt_offer_access_u04
+        set_variable = {
+          wet_brt_offer_access_u04_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_access_u04_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.108.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_access_u04
+      tag = U04
+      exists = yes
+      is_subject = no
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        exists = yes
+      }
+      NOT = {
+        has_country_flag = wet_karaz_sealed
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_access_u04
+          tag = U04
+          exists = yes
+          is_subject = no
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            exists = yes
+          }
+          NOT = {
+            has_country_flag = wet_karaz_sealed
+          }
+        }
+        clr_country_flag = wet_brt_offer_access_u04
+        set_variable = {
+          wet_brt_offer_access_u04_days = 0
+        }
+        give_military_access = A15
+        set_country_flag = wet_brt_host_consent
+        set_country_flag = wet_brt_security_consent
+        if = {
+          limit = {
+            A15 = {
+              has_military_access_to = PREV
+            }
+          }
+        }
+        set_variable = {
+          wet_brt_offer_access_u04_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_access_u04
+          }
+          clr_country_flag = wet_brt_offer_access_u04
+          set_variable = {
+            wet_brt_offer_access_u04_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_access_u04_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.109
+  title = wet_bretonnia.109.t
+  desc = wet_bretonnia.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.109.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_pact_u04
+        }
+        clr_country_flag = wet_brt_offer_pact_u04
+        set_variable = {
+          wet_brt_offer_pact_u04_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_pact_u04_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.109.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_pact_u04
+      tag = U04
+      exists = yes
+      is_subject = no
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        exists = yes
+      }
+      NOT = {
+        has_country_flag = wet_karaz_sealed
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = A15
+        relation = non_aggression_pact
+        active = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_pact_u04
+          tag = U04
+          exists = yes
+          is_subject = no
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            exists = yes
+          }
+          NOT = {
+            has_country_flag = wet_karaz_sealed
+          }
+        }
+        clr_country_flag = wet_brt_offer_pact_u04
+        set_variable = {
+          wet_brt_offer_pact_u04_days = 0
+        }
+        diplomatic_relation = {
+          country = A15
+          relation = non_aggression_pact
+          active = yes
+        }
+        if = {
+          limit = {
+            has_non_aggression_pact_with = A15
+          }
+          set_country_flag = wet_brt_offer_pact_u04_accepted
+        }
+        set_variable = {
+          wet_brt_offer_pact_u04_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_pact_u04
+          }
+          clr_country_flag = wet_brt_offer_pact_u04
+          set_variable = {
+            wet_brt_offer_pact_u04_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_pact_u04_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.110
+  title = wet_bretonnia.110.t
+  desc = wet_bretonnia.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.110.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_research
+        }
+        clr_country_flag = wet_brt_offer_research
+        set_variable = {
+          wet_brt_offer_research_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_research_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.110.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_research
+      tag = A01
+      exists = yes
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        has_political_power
+        >
+        49
+      }
+      A15 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        add_tech_bonus = {
+          name = wet_brt_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        A15 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_research
+          tag = A01
+          exists = yes
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            has_political_power
+            >
+            49
+          }
+          A15 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_brt_offer_research
+        set_variable = {
+          wet_brt_offer_research_days = 0
+        }
+        A15 = {
+          add_tech_bonus = {
+            name = wet_brt_research_bonus
+            bonus = 0.5
+            uses = 1
+            category = industry
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          A15 = {
+            add_political_power = -50
+          }
+          set_country_flag = wet_brt_offer_research_accepted
+        }
+        set_variable = {
+          wet_brt_offer_research_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_research
+          }
+          clr_country_flag = wet_brt_offer_research
+          set_variable = {
+            wet_brt_offer_research_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_research_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.111
+  title = wet_bretonnia.111.t
+  desc = wet_bretonnia.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.111.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_aid_a29
+        }
+        clr_country_flag = wet_brt_offer_aid_a29
+        set_variable = {
+          wet_brt_offer_aid_a29_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_aid
+        }
+        set_variable = {
+          wet_brt_offer_aid_a29_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.111.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_aid_a29
+      tag = A29
+      exists = yes
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          249
+        }
+        check_variable = {
+          wet_brt_aid_cooldown
+          <
+          1
+        }
+        OR = {
+          is_neighbor_of = PREV
+          AND = {
+            any_controlled_state = {
+              naval_base
+              >
+              0
+            }
+            has_equipment = {
+              convoy
+              >
+              0
+            }
+            PREV = {
+              any_controlled_state = {
+                naval_base
+                >
+                0
+              }
+            }
+          }
+        }
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 250
+          target = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_aid_a29
+          tag = A29
+          exists = yes
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              249
+            }
+            check_variable = {
+              wet_brt_aid_cooldown
+              <
+              1
+            }
+            OR = {
+              is_neighbor_of = PREV
+              AND = {
+                any_controlled_state = {
+                  naval_base
+                  >
+                  0
+                }
+                has_equipment = {
+                  convoy
+                  >
+                  0
+                }
+                PREV = {
+                  any_controlled_state = {
+                    naval_base
+                    >
+                    0
+                  }
+                }
+              }
+            }
+          }
+        }
+        clr_country_flag = wet_brt_offer_aid_a29
+        set_variable = {
+          wet_brt_offer_aid_a29_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_aid
+        }
+        A15 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 250
+            target = PREV
+          }
+          set_variable = {
+            wet_brt_aid_cooldown = 90
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_brt_offer_aid_a29_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_aid_a29
+          }
+          clr_country_flag = wet_brt_offer_aid_a29
+          set_variable = {
+            wet_brt_offer_aid_a29_days = 0
+          }
+          A15 = {
+            clr_country_flag = wet_brt_pending_aid
+          }
+          set_variable = {
+            wet_brt_offer_aid_a29_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.112
+  title = wet_bretonnia.112.t
+  desc = wet_bretonnia.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.112.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_aid_a01
+        }
+        clr_country_flag = wet_brt_offer_aid_a01
+        set_variable = {
+          wet_brt_offer_aid_a01_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_aid
+        }
+        set_variable = {
+          wet_brt_offer_aid_a01_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.112.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_aid_a01
+      tag = A01
+      exists = yes
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          249
+        }
+        check_variable = {
+          wet_brt_aid_cooldown
+          <
+          1
+        }
+        OR = {
+          is_neighbor_of = PREV
+          AND = {
+            any_controlled_state = {
+              naval_base
+              >
+              0
+            }
+            has_equipment = {
+              convoy
+              >
+              0
+            }
+            PREV = {
+              any_controlled_state = {
+                naval_base
+                >
+                0
+              }
+            }
+          }
+        }
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 250
+          target = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_aid_a01
+          tag = A01
+          exists = yes
+          NOT = {
+            has_war_with = A15
+          }
+          A15 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              249
+            }
+            check_variable = {
+              wet_brt_aid_cooldown
+              <
+              1
+            }
+            OR = {
+              is_neighbor_of = PREV
+              AND = {
+                any_controlled_state = {
+                  naval_base
+                  >
+                  0
+                }
+                has_equipment = {
+                  convoy
+                  >
+                  0
+                }
+                PREV = {
+                  any_controlled_state = {
+                    naval_base
+                    >
+                    0
+                  }
+                }
+              }
+            }
+          }
+        }
+        clr_country_flag = wet_brt_offer_aid_a01
+        set_variable = {
+          wet_brt_offer_aid_a01_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_aid
+        }
+        A15 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 250
+            target = PREV
+          }
+          set_variable = {
+            wet_brt_aid_cooldown = 90
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_brt_offer_aid_a01_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_aid_a01
+          }
+          clr_country_flag = wet_brt_offer_aid_a01
+          set_variable = {
+            wet_brt_offer_aid_a01_days = 0
+          }
+          A15 = {
+            clr_country_flag = wet_brt_pending_aid
+          }
+          set_variable = {
+            wet_brt_offer_aid_a01_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.113
+  title = wet_bretonnia.113.t
+  desc = wet_bretonnia.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.113.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_alliance
+        }
+        clr_country_flag = wet_brt_offer_alliance
+        set_variable = {
+          wet_brt_offer_alliance_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_alliance
+        }
+        set_variable = {
+          wet_brt_offer_alliance_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.113.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_alliance
+      wet_brt_grand_leader = yes
+      NOT = {
+        has_war_with = A15
+      }
+      NOT = {
+        any_enemy_country = {
+          tag = A15
+        }
+      }
+      A15 = {
+        is_subject = no
+        is_in_faction = no
+        has_government = democratic
+        NOT = {
+          any_enemy_country = {
+            is_in_faction_with = PREV.PREV
+          }
+        }
+      }
+      OR = {
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        AND = {
+          is_in_faction_with = A01
+          A01 = {
+            exists = yes
+            has_government = democratic
+            has_completed_focus = WET_REI_E24
+            has_completed_focus = WET_REI_E14
+          }
+          A15 = {
+            NOT = {
+              OR = {
+                threat
+                <
+                0.25
+              }
+            }
+            wet_rei_war_veto_clear = yes
+          }
+        }
+      }
+    }
+    effect_tooltip = {
+      add_to_faction = A15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_alliance
+          wet_brt_grand_leader = yes
+          NOT = {
+            has_war_with = A15
+          }
+          NOT = {
+            any_enemy_country = {
+              tag = A15
+            }
+          }
+          A15 = {
+            is_subject = no
+            is_in_faction = no
+            has_government = democratic
+            NOT = {
+              any_enemy_country = {
+                is_in_faction_with = PREV.PREV
+              }
+            }
+          }
+          OR = {
+            NOT = {
+              OR = {
+                threat
+                <
+                1
+              }
+            }
+            AND = {
+              is_in_faction_with = A01
+              A01 = {
+                exists = yes
+                has_government = democratic
+                has_completed_focus = WET_REI_E24
+                has_completed_focus = WET_REI_E14
+              }
+              A15 = {
+                NOT = {
+                  OR = {
+                    threat
+                    <
+                    0.25
+                  }
+                }
+                wet_rei_war_veto_clear = yes
+              }
+            }
+          }
+        }
+        clr_country_flag = wet_brt_offer_alliance
+        set_variable = {
+          wet_brt_offer_alliance_days = 0
+        }
+        A15 = {
+          clr_country_flag = wet_brt_pending_alliance
+        }
+        A15 = {
+          if = {
+            limit = {
+              threat
+              <
+              1
+            }
+            set_country_flag = wet_rei_coalition_transaction
+            wet_apply_political_permissions = yes
+          }
+        }
+        add_to_faction = A15
+        A15 = {
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A15
+          }
+        }
+        set_variable = {
+          wet_brt_offer_alliance_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_alliance
+          }
+          clr_country_flag = wet_brt_offer_alliance
+          set_variable = {
+            wet_brt_offer_alliance_days = 0
+          }
+          A15 = {
+            clr_country_flag = wet_brt_pending_alliance
+          }
+          set_variable = {
+            wet_brt_offer_alliance_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.114
+  title = wet_bretonnia.114.t
+  desc = wet_bretonnia.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.114.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_relief_host
+        }
+        clr_country_flag = wet_brt_offer_relief_host
+        set_variable = {
+          wet_brt_offer_relief_host_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_relief_host_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.114.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_relief_host
+      exists = yes
+      is_in_faction_with = A15
+      NOT = {
+        tag = A15
+      }
+      NOT = {
+        has_war_with = A15
+      }
+      NOT = {
+        has_country_flag = wet_karaz_sealed
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A15
+    }
+    custom_effect_tooltip = wet_bretonnia.114.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_relief_host
+          exists = yes
+          is_in_faction_with = A15
+          NOT = {
+            tag = A15
+          }
+          NOT = {
+            has_war_with = A15
+          }
+          NOT = {
+            has_country_flag = wet_karaz_sealed
+          }
+        }
+        clr_country_flag = wet_brt_offer_relief_host
+        set_variable = {
+          wet_brt_offer_relief_host_days = 0
+        }
+        give_military_access = A15
+        set_country_flag = wet_brt_host_consent
+        set_country_flag = wet_brt_security_consent
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_brt_offer_relief_host_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_relief_host
+          }
+          clr_country_flag = wet_brt_offer_relief_host
+          set_variable = {
+            wet_brt_offer_relief_host_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_relief_host_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.115
+  title = wet_bretonnia.115.t
+  desc = wet_bretonnia.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.115.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_security
+        }
+        clr_country_flag = wet_brt_offer_security
+        set_variable = {
+          wet_brt_offer_security_days = 0
+        }
+        set_variable = {
+          wet_brt_offer_security_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_bretonnia.115.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A15
+      }
+    }
+    trigger = {
+      has_country_flag = wet_brt_offer_security
+      exists = yes
+      NOT = {
+        has_war_with = A15
+      }
+      controls_state = 896
+      NOT = {
+        tag = A74
+      }
+      NOT = {
+        has_country_flag = wet_karaz_sealed
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A15
+    }
+    custom_effect_tooltip = wet_bretonnia.115.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_brt_offer_security
+          exists = yes
+          NOT = {
+            has_war_with = A15
+          }
+          controls_state = 896
+          NOT = {
+            tag = A74
+          }
+          NOT = {
+            has_country_flag = wet_karaz_sealed
+          }
+        }
+        clr_country_flag = wet_brt_offer_security
+        set_variable = {
+          wet_brt_offer_security_days = 0
+        }
+        give_military_access = A15
+        set_country_flag = wet_brt_security_consent
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_brt_offer_security_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_brt_offer_security
+          }
+          clr_country_flag = wet_brt_offer_security
+          set_variable = {
+            wet_brt_offer_security_days = 0
+          }
+          set_variable = {
+            wet_brt_offer_security_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}

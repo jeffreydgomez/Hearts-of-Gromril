@@ -2,17 +2,37 @@
 state = {
   id = 588
   name = "STATE_588"
-  manpower = 3276215
+  manpower = 2495212
   state_category = city
   resources = { tungsten = 10 steel = 17 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 5 }
+    set_variable = { wet_pop_faith = 1 }
+    set_variable = { wet_pop_taint = 1 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = U04 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = U04
     add_core_of = U04
     victory_points = { 744 5 }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
+      industrial_complex = 3
+      arms_factory = 3
       744 = { landmark_wet_karaz_a_karak = 1 supply_node = 1 }
     }
   }

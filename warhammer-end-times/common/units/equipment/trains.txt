@@ -1,0 +1,59 @@
+equipments = {
+  train_equipment = {
+    is_archetype = yes
+    is_buildable = no
+    active = no
+    type = train
+    picture = archetype_train
+    group_by = archetype
+    sprite = train
+    interface_category = interface_category_land
+    armor_value = 0
+    lend_lease_cost = 20
+    build_cost_ic = 70
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2493
+  }
+  train_equipment_1 = {
+    archetype = train_equipment
+    priority = 10
+    armor_value = 0
+    build_cost_ic = 70
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2493
+  }
+  train_equipment_2 = {
+    archetype = train_equipment
+    parent = train_equipment_1
+    priority = 20
+    build_cost_ic = 50
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2523
+  }
+  train_equipment_3 = {
+    archetype = train_equipment
+    parent = train_equipment_1
+    priority = 30
+    armor_value = 250
+    air_attack = 18
+    build_cost_ic = 105
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2519
+  }
+}

@@ -1,0 +1,4568 @@
+add_namespace = wet_reikland
+country_event = {
+  id = wet_reikland.1
+  title = wet_reikland.1.t
+  desc = wet_reikland.1.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.1.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.2
+  title = wet_reikland.2.t
+  desc = wet_reikland.2.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.2.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.100
+  title = wet_reikland.100.t
+  desc = wet_reikland.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.100.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_return
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_return
+        }
+        clr_country_flag = wet_rei_offer_return
+        set_variable = {
+          wet_rei_offer_return_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.100.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_return
+      wet_rei_return_target = yes
+      OR = {
+        has_country_flag = wet_rei_return_subsidy
+        AND = {
+          NOT = {
+            has_country_flag = wet_rei_return_attempted
+          }
+          A01 = {
+            has_completed_focus = WET_REI_R02
+          }
+        }
+        A01 = {
+          has_political_power
+          >
+          24
+        }
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_rei_return_subsidy
+          }
+          OR = {
+            has_country_flag = wet_rei_return_attempted
+            NOT = {
+              A01 = {
+                has_completed_focus = WET_REI_R02
+              }
+            }
+          }
+        }
+        A01 = {
+          add_political_power = -25
+        }
+      }
+      give_military_access = A01
+      A01 = {
+        give_military_access = PREV
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_return
+          wet_rei_return_target = yes
+          OR = {
+            has_country_flag = wet_rei_return_subsidy
+            AND = {
+              NOT = {
+                has_country_flag = wet_rei_return_attempted
+              }
+              A01 = {
+                has_completed_focus = WET_REI_R02
+              }
+            }
+            A01 = {
+              has_political_power
+              >
+              24
+            }
+          }
+        }
+        if = {
+          limit = {
+            NOT = {
+              has_country_flag = wet_rei_return_subsidy
+            }
+            OR = {
+              has_country_flag = wet_rei_return_attempted
+              NOT = {
+                A01 = {
+                  has_completed_focus = WET_REI_R02
+                }
+              }
+            }
+          }
+          A01 = {
+            add_political_power = -25
+          }
+        }
+        set_country_flag = wet_rei_elector_compact
+        give_military_access = A01
+        A01 = {
+          give_military_access = PREV
+        }
+        set_country_flag = wet_rei_return_attempted
+        clr_country_flag = wet_rei_return_subsidy
+        clr_country_flag = wet_rei_offer_return
+        set_variable = {
+          wet_rei_offer_return_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_return
+          }
+          clr_country_flag = wet_rei_offer_return
+          set_variable = {
+            wet_rei_offer_return_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.101
+  title = wet_reikland.101.t
+  desc = wet_reikland.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.101.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_summons
+        }
+        if = {
+          limit = {
+            wet_rei_return_target = yes
+            A01 = {
+              has_completed_focus = WET_REI_R04
+              NOT = {
+                has_idea = wet_rei_disunity
+              }
+            }
+          }
+          A01 = {
+            create_wargoal = {
+              type = puppet_wargoal_focus
+              target = PREV
+              expire = 180
+            }
+          }
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_summons
+        }
+        if = {
+          limit = {
+            wet_rei_return_target = yes
+            A01 = {
+              has_completed_focus = WET_REI_R04
+              NOT = {
+                has_idea = wet_rei_disunity
+              }
+            }
+          }
+          A01 = {
+            create_wargoal = {
+              type = puppet_wargoal_focus
+              target = PREV
+              expire = 180
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_summons
+        set_variable = {
+          wet_rei_offer_summons_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.101.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_summons
+      wet_rei_return_target = yes
+      A01 = {
+        has_completed_focus = WET_REI_R04
+        NOT = {
+          has_idea = wet_rei_disunity
+        }
+        strength_ratio = {
+          tag = PREV
+          ratio
+          >
+          1.25
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -25
+      }
+      give_military_access = A01
+      A01 = {
+        give_military_access = PREV
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_summons
+          wet_rei_return_target = yes
+          A01 = {
+            has_completed_focus = WET_REI_R04
+            NOT = {
+              has_idea = wet_rei_disunity
+            }
+            strength_ratio = {
+              tag = PREV
+              ratio
+              >
+              1.25
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        A01 = {
+          add_political_power = -25
+        }
+        set_country_flag = wet_rei_elector_compact
+        give_military_access = A01
+        A01 = {
+          give_military_access = PREV
+        }
+        clr_country_flag = wet_rei_offer_summons
+        set_variable = {
+          wet_rei_offer_summons_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_summons
+          }
+          if = {
+            limit = {
+              wet_rei_return_target = yes
+              A01 = {
+                has_completed_focus = WET_REI_R04
+                NOT = {
+                  has_idea = wet_rei_disunity
+                }
+              }
+            }
+            A01 = {
+              create_wargoal = {
+                type = puppet_wargoal_focus
+                target = PREV
+                expire = 180
+              }
+            }
+          }
+          clr_country_flag = wet_rei_offer_summons
+          set_variable = {
+            wet_rei_offer_summons_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.102
+  title = wet_reikland.102.t
+  desc = wet_reikland.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.102.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_dominion
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_dominion
+        }
+        clr_country_flag = wet_rei_offer_dominion
+        set_variable = {
+          wet_rei_offer_dominion_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.102.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_dominion
+      wet_rei_loose_elector = yes
+      wet_rei_peaceful_partner = yes
+      is_in_faction = no
+      wet_rei_war_veto_clear = yes
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      A01 = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_dominion
+          freedom_level = 0.5
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+      if = {
+        limit = {
+          has_idea = wet_rei_disunity
+        }
+        remove_ideas = wet_rei_disunity
+        add_ideas = wet_rei_resistance
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_dominion
+          wet_rei_loose_elector = yes
+          wet_rei_peaceful_partner = yes
+          is_in_faction = no
+          wet_rei_war_veto_clear = yes
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        A01 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_dominion
+            freedom_level = 0.5
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+        clr_country_flag = wet_rei_elector_compact
+        wet_rei_relieve_disunity = yes
+        clr_country_flag = wet_rei_offer_dominion
+        set_variable = {
+          wet_rei_offer_dominion_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_dominion
+          }
+          clr_country_flag = wet_rei_offer_dominion
+          set_variable = {
+            wet_rei_offer_dominion_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.103
+  title = wet_reikland.103.t
+  desc = wet_reikland.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.103.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_integration
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_integration
+        }
+        clr_country_flag = wet_rei_offer_integration
+        set_variable = {
+          wet_rei_offer_integration_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.103.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_integration
+      wet_rei_peaceful_partner = yes
+      is_subject_of = A01
+      has_war = no
+      A01 = {
+        has_war = no
+        has_completed_focus = WET_REI_I09
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    custom_effect_tooltip = wet_reikland.103.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_integration
+          wet_rei_peaceful_partner = yes
+          is_subject_of = A01
+          has_war = no
+          A01 = {
+            has_war = no
+            has_completed_focus = WET_REI_I09
+          }
+        }
+        set_country_flag = wet_rei_integration_consent
+        clr_country_flag = wet_rei_offer_integration
+        set_variable = {
+          wet_rei_offer_integration_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_integration
+          }
+          clr_country_flag = wet_rei_offer_integration
+          set_variable = {
+            wet_rei_offer_integration_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.104
+  title = wet_reikland.104.t
+  desc = wet_reikland.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.104.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland
+        }
+        clr_country_flag = wet_rei_offer_westerland
+        set_variable = {
+          wet_rei_offer_westerland_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.104.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_westerland
+      wet_rei_peaceful_partner = yes
+      tag = A12
+      is_subject = no
+      is_in_faction = no
+      wet_rei_war_veto_clear = yes
+      A01 = {
+        has_political_power
+        >
+        99
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -100
+      }
+      A01 = {
+        set_autonomy = {
+          target = A12
+          autonomy_state = autonomy_dominion
+          freedom_level = 0.5
+          end_wars = no
+          end_civil_wars = no
+        }
+        add_timed_idea = {
+          idea = wet_rei_marienburg_privileges
+          days = 365
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland
+          wet_rei_peaceful_partner = yes
+          tag = A12
+          is_subject = no
+          is_in_faction = no
+          wet_rei_war_veto_clear = yes
+          A01 = {
+            has_political_power
+            >
+            99
+          }
+        }
+        A01 = {
+          add_political_power = -100
+        }
+        A01 = {
+          set_autonomy = {
+            target = A12
+            autonomy_state = autonomy_dominion
+            freedom_level = 0.5
+            end_wars = no
+            end_civil_wars = no
+          }
+          add_timed_idea = {
+            idea = wet_rei_marienburg_privileges
+            days = 365
+          }
+        }
+        clr_country_flag = wet_rei_offer_westerland
+        set_variable = {
+          wet_rei_offer_westerland_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_westerland
+          }
+          clr_country_flag = wet_rei_offer_westerland
+          set_variable = {
+            wet_rei_offer_westerland_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.105
+  title = wet_reikland.105.t
+  desc = wet_reikland.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.105.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland_summons
+        }
+        if = {
+          limit = {
+            wet_rei_peaceful_partner = yes
+            tag = A12
+            is_subject = no
+            is_in_faction = no
+            wet_rei_war_veto_clear = yes
+            A01 = {
+              NOT = {
+                has_idea = wet_rei_disunity
+              }
+            }
+          }
+          A01 = {
+            create_wargoal = {
+              type = puppet_wargoal_focus
+              target = A12
+              expire = 180
+            }
+          }
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland_summons
+        }
+        if = {
+          limit = {
+            wet_rei_peaceful_partner = yes
+            tag = A12
+            is_subject = no
+            is_in_faction = no
+            wet_rei_war_veto_clear = yes
+            A01 = {
+              NOT = {
+                has_idea = wet_rei_disunity
+              }
+            }
+          }
+          A01 = {
+            create_wargoal = {
+              type = puppet_wargoal_focus
+              target = A12
+              expire = 180
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_westerland_summons
+        set_variable = {
+          wet_rei_offer_westerland_summons_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.105.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        A01 = {
+          has_completed_focus = WET_REI_R02
+        }
+      }
+      modifier = {
+        add = 20
+        strength_ratio = {
+          tag = A01
+          ratio
+          <
+          0.67
+        }
+      }
+      modifier = {
+        factor = 0.5
+        strength_ratio = {
+          tag = A01
+          ratio
+          >
+          1.5
+        }
+      }
+      modifier = {
+        add = 10
+        has_opinion = {
+          target = A01
+          value
+          >
+          50
+        }
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_westerland_summons
+      wet_rei_peaceful_partner = yes
+      tag = A12
+      is_subject = no
+      is_in_faction = no
+      wet_rei_war_veto_clear = yes
+      A01 = {
+        has_completed_focus = WET_REI_R03
+        has_completed_focus = WET_REI_R04
+        NOT = {
+          has_idea = wet_rei_disunity
+        }
+        strength_ratio = {
+          tag = A12
+          ratio
+          >
+          1.25
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        99
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -100
+      }
+      A01 = {
+        set_autonomy = {
+          target = A12
+          autonomy_state = autonomy_dominion
+          freedom_level = 0.5
+          end_wars = no
+          end_civil_wars = no
+        }
+        add_timed_idea = {
+          idea = wet_rei_marienburg_privileges
+          days = 365
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_westerland_summons
+          wet_rei_peaceful_partner = yes
+          tag = A12
+          is_subject = no
+          is_in_faction = no
+          wet_rei_war_veto_clear = yes
+          A01 = {
+            has_completed_focus = WET_REI_R03
+            has_completed_focus = WET_REI_R04
+            NOT = {
+              has_idea = wet_rei_disunity
+            }
+            strength_ratio = {
+              tag = A12
+              ratio
+              >
+              1.25
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            99
+          }
+        }
+        A01 = {
+          add_political_power = -100
+        }
+        A01 = {
+          set_autonomy = {
+            target = A12
+            autonomy_state = autonomy_dominion
+            freedom_level = 0.5
+            end_wars = no
+            end_civil_wars = no
+          }
+          add_timed_idea = {
+            idea = wet_rei_marienburg_privileges
+            days = 365
+          }
+        }
+        clr_country_flag = wet_rei_offer_westerland_summons
+        set_variable = {
+          wet_rei_offer_westerland_summons_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_westerland_summons
+          }
+          if = {
+            limit = {
+              wet_rei_peaceful_partner = yes
+              tag = A12
+              is_subject = no
+              is_in_faction = no
+              wet_rei_war_veto_clear = yes
+              A01 = {
+                NOT = {
+                  has_idea = wet_rei_disunity
+                }
+              }
+            }
+            A01 = {
+              create_wargoal = {
+                type = puppet_wargoal_focus
+                target = A12
+                expire = 180
+              }
+            }
+          }
+          clr_country_flag = wet_rei_offer_westerland_summons
+          set_variable = {
+            wet_rei_offer_westerland_summons_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.106
+  title = wet_reikland.106.t
+  desc = wet_reikland.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.106.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_pledge
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_pledge
+        }
+        clr_country_flag = wet_rei_offer_pledge
+        set_variable = {
+          wet_rei_offer_pledge_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.106.1
+    ai_chance = {
+      factor = 40
+      modifier = {
+        add = 20
+        threat
+        >
+        0.49
+      }
+      modifier = {
+        add = 20
+        has_non_aggression_pact_with = A01
+      }
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_pledge
+      wet_rei_coalition_target = yes
+      OR = {
+        is_in_faction = no
+        is_faction_leader = yes
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    custom_effect_tooltip = wet_reikland.106.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_pledge
+          wet_rei_coalition_target = yes
+          OR = {
+            is_in_faction = no
+            is_faction_leader = yes
+          }
+        }
+        set_country_flag = wet_rei_founder_pledge
+        clr_country_flag = wet_rei_offer_pledge
+        set_variable = {
+          wet_rei_offer_pledge_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_pledge
+          }
+          clr_country_flag = wet_rei_offer_pledge
+          set_variable = {
+            wet_rei_offer_pledge_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.107
+  title = wet_reikland.107.t
+  desc = wet_reikland.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.107.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_U04
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_U04
+        }
+        clr_country_flag = wet_rei_offer_leader_U04
+        set_variable = {
+          wet_rei_offer_leader_U04_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.107.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_leader_U04
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      has_government = democratic
+      A01 = {
+        has_government = democratic
+        has_completed_focus = WET_REI_E14
+      }
+      A01 = {
+        has_political_power
+        >
+        74
+      }
+      U04 = {
+        wet_rei_coalition_target = yes
+        is_in_faction = no
+        A01 = {
+          has_completed_focus = WET_REI_E14
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+        has_country_flag = wet_rei_invitation_accepted
+      }
+    }
+    effect_tooltip = {
+      U04 = {
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -75
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_U04
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          is_in_faction_with = A01
+          has_government = democratic
+          A01 = {
+            has_government = democratic
+            has_completed_focus = WET_REI_E14
+          }
+          A01 = {
+            has_political_power
+            >
+            74
+          }
+          U04 = {
+            wet_rei_coalition_target = yes
+            is_in_faction = no
+            A01 = {
+              has_completed_focus = WET_REI_E14
+              is_in_faction = yes
+              faction_leader = {
+                has_government = democratic
+              }
+            }
+            has_country_flag = wet_rei_invitation_accepted
+          }
+        }
+        U04 = {
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -75
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        clr_country_flag = wet_rei_offer_leader_U04
+        set_variable = {
+          wet_rei_offer_leader_U04_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_leader_U04
+          }
+          clr_country_flag = wet_rei_offer_leader_U04
+          set_variable = {
+            wet_rei_offer_leader_U04_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.108
+  title = wet_reikland.108.t
+  desc = wet_reikland.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.108.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_U04
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_U04
+        }
+        clr_country_flag = wet_rei_offer_invite_U04
+        set_variable = {
+          wet_rei_offer_invite_U04_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.108.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_invite_U04
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        74
+      }
+      OR = {
+        NOT = {
+          has_country_flag = wet_rei_dwarf_closed
+        }
+        has_country_flag = wet_rei_dwarf_reopened
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          A01 = {
+            is_faction_leader = yes
+          }
+        }
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -75
+          }
+        }
+      }
+      else = {
+        A01 = {
+          faction_leader = {
+            if = {
+              limit = {
+                wet_rei_peaceful_partner = yes
+                is_faction_leader = yes
+                is_in_faction_with = A01
+                has_government = democratic
+                A01 = {
+                  has_government = democratic
+                  has_completed_focus = WET_REI_E14
+                }
+                A01 = {
+                  has_political_power
+                  >
+                  74
+                }
+                U04 = {
+                  wet_rei_coalition_target = yes
+                  is_in_faction = no
+                  A01 = {
+                    has_completed_focus = WET_REI_E14
+                    is_in_faction = yes
+                    faction_leader = {
+                      has_government = democratic
+                    }
+                  }
+                  has_country_flag = wet_rei_invitation_accepted
+                }
+                NOT = {
+                  has_country_flag = wet_rei_offer_leader_U04
+                }
+                check_variable = {
+                  wet_rei_offer_leader_U04_cooldown
+                  <
+                  1
+                }
+              }
+              country_event = {
+                id = wet_reikland.107
+              }
+            }
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_U04
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            74
+          }
+          OR = {
+            NOT = {
+              has_country_flag = wet_rei_dwarf_closed
+            }
+            has_country_flag = wet_rei_dwarf_reopened
+          }
+        }
+        set_country_flag = wet_rei_invitation_accepted
+        if = {
+          limit = {
+            A01 = {
+              is_faction_leader = yes
+            }
+          }
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -75
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        else = {
+          A01 = {
+            faction_leader = {
+              wet_rei_send_leader_U04 = yes
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_invite_U04
+        set_variable = {
+          wet_rei_offer_invite_U04_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_invite_U04
+          }
+          clr_country_flag = wet_rei_offer_invite_U04
+          set_variable = {
+            wet_rei_offer_invite_U04_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.109
+  title = wet_reikland.109.t
+  desc = wet_reikland.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.109.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A29
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A29
+        }
+        clr_country_flag = wet_rei_offer_leader_A29
+        set_variable = {
+          wet_rei_offer_leader_A29_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.109.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_leader_A29
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      has_government = democratic
+      A01 = {
+        has_government = democratic
+        has_completed_focus = WET_REI_E14
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+      A29 = {
+        wet_rei_coalition_target = yes
+        is_in_faction = no
+        A01 = {
+          has_completed_focus = WET_REI_E14
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+        has_country_flag = wet_rei_invitation_accepted
+      }
+    }
+    effect_tooltip = {
+      A29 = {
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A29
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          is_in_faction_with = A01
+          has_government = democratic
+          A01 = {
+            has_government = democratic
+            has_completed_focus = WET_REI_E14
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+          A29 = {
+            wet_rei_coalition_target = yes
+            is_in_faction = no
+            A01 = {
+              has_completed_focus = WET_REI_E14
+              is_in_faction = yes
+              faction_leader = {
+                has_government = democratic
+              }
+            }
+            has_country_flag = wet_rei_invitation_accepted
+          }
+        }
+        A29 = {
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        clr_country_flag = wet_rei_offer_leader_A29
+        set_variable = {
+          wet_rei_offer_leader_A29_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_leader_A29
+          }
+          clr_country_flag = wet_rei_offer_leader_A29
+          set_variable = {
+            wet_rei_offer_leader_A29_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.110
+  title = wet_reikland.110.t
+  desc = wet_reikland.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.110.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A29
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A29
+        }
+        clr_country_flag = wet_rei_offer_invite_A29
+        set_variable = {
+          wet_rei_offer_invite_A29_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.110.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_invite_A29
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          A01 = {
+            is_faction_leader = yes
+          }
+        }
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      else = {
+        A01 = {
+          faction_leader = {
+            if = {
+              limit = {
+                wet_rei_peaceful_partner = yes
+                is_faction_leader = yes
+                is_in_faction_with = A01
+                has_government = democratic
+                A01 = {
+                  has_government = democratic
+                  has_completed_focus = WET_REI_E14
+                }
+                A01 = {
+                  has_political_power
+                  >
+                  49
+                }
+                A29 = {
+                  wet_rei_coalition_target = yes
+                  is_in_faction = no
+                  A01 = {
+                    has_completed_focus = WET_REI_E14
+                    is_in_faction = yes
+                    faction_leader = {
+                      has_government = democratic
+                    }
+                  }
+                  has_country_flag = wet_rei_invitation_accepted
+                }
+                NOT = {
+                  has_country_flag = wet_rei_offer_leader_A29
+                }
+                check_variable = {
+                  wet_rei_offer_leader_A29_cooldown
+                  <
+                  1
+                }
+              }
+              country_event = {
+                id = wet_reikland.109
+              }
+            }
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A29
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        set_country_flag = wet_rei_invitation_accepted
+        if = {
+          limit = {
+            A01 = {
+              is_faction_leader = yes
+            }
+          }
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        else = {
+          A01 = {
+            faction_leader = {
+              wet_rei_send_leader_A29 = yes
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_invite_A29
+        set_variable = {
+          wet_rei_offer_invite_A29_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_invite_A29
+          }
+          clr_country_flag = wet_rei_offer_invite_A29
+          set_variable = {
+            wet_rei_offer_invite_A29_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.111
+  title = wet_reikland.111.t
+  desc = wet_reikland.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.111.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A15
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A15
+        }
+        clr_country_flag = wet_rei_offer_leader_A15
+        set_variable = {
+          wet_rei_offer_leader_A15_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.111.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_leader_A15
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      has_government = democratic
+      A01 = {
+        has_government = democratic
+        has_completed_focus = WET_REI_E14
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+      A15 = {
+        wet_rei_coalition_target = yes
+        is_in_faction = no
+        A01 = {
+          has_completed_focus = WET_REI_E14
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+        has_country_flag = wet_rei_invitation_accepted
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_A15
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          is_in_faction_with = A01
+          has_government = democratic
+          A01 = {
+            has_government = democratic
+            has_completed_focus = WET_REI_E14
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+          A15 = {
+            wet_rei_coalition_target = yes
+            is_in_faction = no
+            A01 = {
+              has_completed_focus = WET_REI_E14
+              is_in_faction = yes
+              faction_leader = {
+                has_government = democratic
+              }
+            }
+            has_country_flag = wet_rei_invitation_accepted
+          }
+        }
+        A15 = {
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        clr_country_flag = wet_rei_offer_leader_A15
+        set_variable = {
+          wet_rei_offer_leader_A15_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_leader_A15
+          }
+          clr_country_flag = wet_rei_offer_leader_A15
+          set_variable = {
+            wet_rei_offer_leader_A15_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.112
+  title = wet_reikland.112.t
+  desc = wet_reikland.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.112.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A15
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A15
+        }
+        clr_country_flag = wet_rei_offer_invite_A15
+        set_variable = {
+          wet_rei_offer_invite_A15_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.112.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_invite_A15
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          A01 = {
+            is_faction_leader = yes
+          }
+        }
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      else = {
+        A01 = {
+          faction_leader = {
+            if = {
+              limit = {
+                wet_rei_peaceful_partner = yes
+                is_faction_leader = yes
+                is_in_faction_with = A01
+                has_government = democratic
+                A01 = {
+                  has_government = democratic
+                  has_completed_focus = WET_REI_E14
+                }
+                A01 = {
+                  has_political_power
+                  >
+                  49
+                }
+                A15 = {
+                  wet_rei_coalition_target = yes
+                  is_in_faction = no
+                  A01 = {
+                    has_completed_focus = WET_REI_E14
+                    is_in_faction = yes
+                    faction_leader = {
+                      has_government = democratic
+                    }
+                  }
+                  has_country_flag = wet_rei_invitation_accepted
+                }
+                NOT = {
+                  has_country_flag = wet_rei_offer_leader_A15
+                }
+                check_variable = {
+                  wet_rei_offer_leader_A15_cooldown
+                  <
+                  1
+                }
+              }
+              country_event = {
+                id = wet_reikland.111
+              }
+            }
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_A15
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        set_country_flag = wet_rei_invitation_accepted
+        if = {
+          limit = {
+            A01 = {
+              is_faction_leader = yes
+            }
+          }
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        else = {
+          A01 = {
+            faction_leader = {
+              wet_rei_send_leader_A15 = yes
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_invite_A15
+        set_variable = {
+          wet_rei_offer_invite_A15_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_invite_A15
+          }
+          clr_country_flag = wet_rei_offer_invite_A15
+          set_variable = {
+            wet_rei_offer_invite_A15_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.113
+  title = wet_reikland.113.t
+  desc = wet_reikland.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.113.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_H06
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_H06
+        }
+        clr_country_flag = wet_rei_offer_leader_H06
+        set_variable = {
+          wet_rei_offer_leader_H06_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.113.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_leader_H06
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      has_government = democratic
+      A01 = {
+        has_government = democratic
+        has_completed_focus = WET_REI_E14
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+      H06 = {
+        wet_rei_coalition_target = yes
+        is_in_faction = no
+        A01 = {
+          has_completed_focus = WET_REI_E14
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+        has_country_flag = wet_rei_invitation_accepted
+      }
+    }
+    effect_tooltip = {
+      H06 = {
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_H06
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          is_in_faction_with = A01
+          has_government = democratic
+          A01 = {
+            has_government = democratic
+            has_completed_focus = WET_REI_E14
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+          H06 = {
+            wet_rei_coalition_target = yes
+            is_in_faction = no
+            A01 = {
+              has_completed_focus = WET_REI_E14
+              is_in_faction = yes
+              faction_leader = {
+                has_government = democratic
+              }
+            }
+            has_country_flag = wet_rei_invitation_accepted
+          }
+        }
+        H06 = {
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        clr_country_flag = wet_rei_offer_leader_H06
+        set_variable = {
+          wet_rei_offer_leader_H06_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_leader_H06
+          }
+          clr_country_flag = wet_rei_offer_leader_H06
+          set_variable = {
+            wet_rei_offer_leader_H06_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.114
+  title = wet_reikland.114.t
+  desc = wet_reikland.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.114.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_H06
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_H06
+        }
+        clr_country_flag = wet_rei_offer_invite_H06
+        set_variable = {
+          wet_rei_offer_invite_H06_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.114.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_invite_H06
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          A01 = {
+            is_faction_leader = yes
+          }
+        }
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -50
+          }
+        }
+      }
+      else = {
+        A01 = {
+          faction_leader = {
+            if = {
+              limit = {
+                wet_rei_peaceful_partner = yes
+                is_faction_leader = yes
+                is_in_faction_with = A01
+                has_government = democratic
+                A01 = {
+                  has_government = democratic
+                  has_completed_focus = WET_REI_E14
+                }
+                A01 = {
+                  has_political_power
+                  >
+                  49
+                }
+                H06 = {
+                  wet_rei_coalition_target = yes
+                  is_in_faction = no
+                  A01 = {
+                    has_completed_focus = WET_REI_E14
+                    is_in_faction = yes
+                    faction_leader = {
+                      has_government = democratic
+                    }
+                  }
+                  has_country_flag = wet_rei_invitation_accepted
+                }
+                NOT = {
+                  has_country_flag = wet_rei_offer_leader_H06
+                }
+                check_variable = {
+                  wet_rei_offer_leader_H06_cooldown
+                  <
+                  1
+                }
+              }
+              country_event = {
+                id = wet_reikland.113
+              }
+            }
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_H06
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        set_country_flag = wet_rei_invitation_accepted
+        if = {
+          limit = {
+            A01 = {
+              is_faction_leader = yes
+            }
+          }
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -50
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        else = {
+          A01 = {
+            faction_leader = {
+              wet_rei_send_leader_H06 = yes
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_invite_H06
+        set_variable = {
+          wet_rei_offer_invite_H06_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_invite_H06
+          }
+          clr_country_flag = wet_rei_offer_invite_H06
+          set_variable = {
+            wet_rei_offer_invite_H06_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.115
+  title = wet_reikland.115.t
+  desc = wet_reikland.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.115.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_I25
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_I25
+        }
+        clr_country_flag = wet_rei_offer_leader_I25
+        set_variable = {
+          wet_rei_offer_leader_I25_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.115.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_leader_I25
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      has_government = democratic
+      A01 = {
+        has_government = democratic
+        has_completed_focus = WET_REI_E14
+      }
+      A01 = {
+        has_political_power
+        >
+        74
+      }
+      I25 = {
+        wet_rei_coalition_target = yes
+        is_in_faction = no
+        A01 = {
+          has_completed_focus = WET_REI_E14
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+        has_country_flag = wet_rei_invitation_accepted
+      }
+    }
+    effect_tooltip = {
+      I25 = {
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -75
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_leader_I25
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          is_in_faction_with = A01
+          has_government = democratic
+          A01 = {
+            has_government = democratic
+            has_completed_focus = WET_REI_E14
+          }
+          A01 = {
+            has_political_power
+            >
+            74
+          }
+          I25 = {
+            wet_rei_coalition_target = yes
+            is_in_faction = no
+            A01 = {
+              has_completed_focus = WET_REI_E14
+              is_in_faction = yes
+              faction_leader = {
+                has_government = democratic
+              }
+            }
+            has_country_flag = wet_rei_invitation_accepted
+          }
+        }
+        I25 = {
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -75
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        clr_country_flag = wet_rei_offer_leader_I25
+        set_variable = {
+          wet_rei_offer_leader_I25_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_leader_I25
+          }
+          clr_country_flag = wet_rei_offer_leader_I25
+          set_variable = {
+            wet_rei_offer_leader_I25_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.116
+  title = wet_reikland.116.t
+  desc = wet_reikland.116.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.116.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_I25
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_I25
+        }
+        clr_country_flag = wet_rei_offer_invite_I25
+        set_variable = {
+          wet_rei_offer_invite_I25_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.116.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_invite_I25
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          A01 = {
+            is_faction_leader = yes
+          }
+        }
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A01
+          }
+          A01 = {
+            add_political_power = -75
+          }
+        }
+      }
+      else = {
+        A01 = {
+          faction_leader = {
+            if = {
+              limit = {
+                wet_rei_peaceful_partner = yes
+                is_faction_leader = yes
+                is_in_faction_with = A01
+                has_government = democratic
+                A01 = {
+                  has_government = democratic
+                  has_completed_focus = WET_REI_E14
+                }
+                A01 = {
+                  has_political_power
+                  >
+                  74
+                }
+                I25 = {
+                  wet_rei_coalition_target = yes
+                  is_in_faction = no
+                  A01 = {
+                    has_completed_focus = WET_REI_E14
+                    is_in_faction = yes
+                    faction_leader = {
+                      has_government = democratic
+                    }
+                  }
+                  has_country_flag = wet_rei_invitation_accepted
+                }
+                NOT = {
+                  has_country_flag = wet_rei_offer_leader_I25
+                }
+                check_variable = {
+                  wet_rei_offer_leader_I25_cooldown
+                  <
+                  1
+                }
+              }
+              country_event = {
+                id = wet_reikland.115
+              }
+            }
+          }
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_invite_I25
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        set_country_flag = wet_rei_invitation_accepted
+        if = {
+          limit = {
+            A01 = {
+              is_faction_leader = yes
+            }
+          }
+          set_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          A01 = {
+            faction_leader = {
+              add_to_faction = PREV.PREV
+            }
+          }
+          clr_country_flag = wet_rei_coalition_transaction
+          wet_apply_political_permissions = yes
+          set_country_flag = wet_rei_ally_compact
+          if = {
+            limit = {
+              is_in_faction_with = A01
+            }
+            A01 = {
+              add_political_power = -75
+            }
+          }
+          clr_country_flag = wet_rei_invitation_accepted
+        }
+        else = {
+          A01 = {
+            faction_leader = {
+              wet_rei_send_leader_I25 = yes
+            }
+          }
+        }
+        clr_country_flag = wet_rei_offer_invite_I25
+        set_variable = {
+          wet_rei_offer_invite_I25_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_invite_I25
+          }
+          clr_country_flag = wet_rei_offer_invite_I25
+          set_variable = {
+            wet_rei_offer_invite_I25_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.117
+  title = wet_reikland.117.t
+  desc = wet_reikland.117.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.117.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_generic_invite
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_generic_invite
+        }
+        clr_country_flag = wet_rei_offer_generic_invite
+        set_variable = {
+          wet_rei_offer_generic_invite_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.117.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_generic_invite
+      wet_rei_coalition_target = yes
+      is_in_faction = no
+      A01 = {
+        has_completed_focus = WET_REI_E14
+        is_in_faction = yes
+        faction_leader = {
+          has_government = democratic
+        }
+      }
+      A01 = {
+        is_faction_leader = yes
+        has_completed_focus = WET_REI_E17
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      A01 = {
+        faction_leader = {
+          add_to_faction = PREV.PREV
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_generic_invite
+          wet_rei_coalition_target = yes
+          is_in_faction = no
+          A01 = {
+            has_completed_focus = WET_REI_E14
+            is_in_faction = yes
+            faction_leader = {
+              has_government = democratic
+            }
+          }
+          A01 = {
+            is_faction_leader = yes
+            has_completed_focus = WET_REI_E17
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        set_country_flag = wet_rei_coalition_transaction
+        wet_apply_political_permissions = yes
+        A01 = {
+          faction_leader = {
+            add_to_faction = PREV.PREV
+          }
+        }
+        clr_country_flag = wet_rei_coalition_transaction
+        wet_apply_political_permissions = yes
+        set_country_flag = wet_rei_ally_compact
+        clr_country_flag = wet_rei_offer_generic_invite
+        set_variable = {
+          wet_rei_offer_generic_invite_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_generic_invite
+          }
+          clr_country_flag = wet_rei_offer_generic_invite
+          set_variable = {
+            wet_rei_offer_generic_invite_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.119
+  title = wet_reikland.119.t
+  desc = wet_reikland.119.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.119.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_bretonnian_aid
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_bretonnian_aid
+        }
+        clr_country_flag = wet_rei_offer_bretonnian_aid
+        set_variable = {
+          wet_rei_offer_bretonnian_aid_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.119.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_bretonnian_aid
+      tag = A15
+      wet_rei_order_member = yes
+      has_equipment = {
+        infantry_equipment
+        >
+        499
+      }
+      A01 = {
+        has_war = yes
+        controls_state = 1
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -500
+      }
+      A01 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 500
+          producer = A15
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_bretonnian_aid
+          tag = A15
+          wet_rei_order_member = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          A01 = {
+            has_war = yes
+            controls_state = 1
+          }
+        }
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -500
+        }
+        A01 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 500
+            producer = A15
+          }
+        }
+        clr_country_flag = wet_rei_offer_bretonnian_aid
+        set_variable = {
+          wet_rei_offer_bretonnian_aid_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_bretonnian_aid
+          }
+          clr_country_flag = wet_rei_offer_bretonnian_aid
+          set_variable = {
+            wet_rei_offer_bretonnian_aid_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.120
+  title = wet_reikland.120.t
+  desc = wet_reikland.120.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.120.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nagash
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nagash
+        }
+        clr_country_flag = wet_rei_offer_nagash
+        set_variable = {
+          wet_rei_offer_nagash_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.120.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_nagash
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      A01 = {
+        is_in_faction = no
+      }
+      tag = U24
+      has_government = communism
+    }
+    effect_tooltip = {
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nagash
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          A01 = {
+            is_in_faction = no
+          }
+          tag = U24
+          has_government = communism
+        }
+        A01 = {
+          set_country_flag = wet_rei_nagash_accepted
+        }
+        clr_country_flag = wet_rei_offer_nagash
+        set_variable = {
+          wet_rei_offer_nagash_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_nagash
+          }
+          clr_country_flag = wet_rei_offer_nagash
+          set_variable = {
+            wet_rei_offer_nagash_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.121
+  title = wet_reikland.121.t
+  desc = wet_reikland.121.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.121.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_waaagh
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_waaagh
+        }
+        clr_country_flag = wet_rei_offer_waaagh
+        set_variable = {
+          wet_rei_offer_waaagh_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.121.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_waaagh
+      wet_rei_peaceful_partner = yes
+      is_faction_leader = yes
+      A01 = {
+        is_in_faction = no
+      }
+      tag = G24
+      has_government = waaagh
+    }
+    effect_tooltip = {
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_waaagh
+          wet_rei_peaceful_partner = yes
+          is_faction_leader = yes
+          A01 = {
+            is_in_faction = no
+          }
+          tag = G24
+          has_government = waaagh
+        }
+        A01 = {
+          set_country_flag = wet_rei_waaagh_accepted
+        }
+        clr_country_flag = wet_rei_offer_waaagh
+        set_variable = {
+          wet_rei_offer_waaagh_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_waaagh
+          }
+          clr_country_flag = wet_rei_offer_waaagh
+          set_variable = {
+            wet_rei_offer_waaagh_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.122
+  title = wet_reikland.122.t
+  desc = wet_reikland.122.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.122.0
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          is_subject_of = A01
+        }
+        A01 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_free
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+      }
+      if = {
+        limit = {
+          is_in_faction_with = A01
+          is_faction_leader = no
+        }
+        leave_faction = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          is_subject_of = A01
+        }
+        A01 = {
+          set_autonomy = {
+            target = PREV
+            autonomy_state = autonomy_free
+            end_wars = no
+            end_civil_wars = no
+          }
+        }
+      }
+      clr_country_flag = wet_rei_elector_compact
+      if = {
+        limit = {
+          is_in_faction_with = A01
+          is_faction_leader = no
+        }
+        leave_faction = yes
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.122.1
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      add_stability = 0.02
+    }
+    hidden_effect = {
+      add_stability = 0.02
+    }
+  }
+  option = {
+    name = wet_reikland.122.2
+    ai_chance = {
+      factor = 1
+    }
+    custom_effect_tooltip = wet_reikland.122.2_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          A01 = {
+            has_government = communism
+          }
+        }
+        wet_focus_choose_undead = yes
+      }
+      else_if = {
+        limit = {
+          A01 = {
+            has_government = waaagh
+          }
+        }
+        wet_focus_choose_waaagh = yes
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.123
+  title = wet_reikland.123.t
+  desc = wet_reikland.123.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.123.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_sites
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_sites
+        }
+        clr_country_flag = wet_rei_offer_sites
+        set_variable = {
+          wet_rei_offer_sites_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.123.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_sites
+      wet_rei_peaceful_partner = yes
+      any_owned_state = {
+        OR = {
+          state = 895
+          state = 1200
+          state = 456
+          state = 127
+          state = 765
+          state = 477
+          state = 946
+        }
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A01
+      A01 = {
+        give_military_access = PREV
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    custom_effect_tooltip = wet_reikland.123.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_sites
+          wet_rei_peaceful_partner = yes
+          any_owned_state = {
+            OR = {
+              state = 895
+              state = 1200
+              state = 456
+              state = 127
+              state = 765
+              state = 477
+              state = 946
+            }
+          }
+        }
+        set_country_flag = wet_rei_project_consent
+        give_military_access = A01
+        A01 = {
+          give_military_access = PREV
+        }
+        clr_country_flag = wet_rei_offer_sites
+        set_variable = {
+          wet_rei_offer_sites_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_sites
+          }
+          clr_country_flag = wet_rei_offer_sites
+          set_variable = {
+            wet_rei_offer_sites_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.124
+  title = wet_reikland.124.t
+  desc = wet_reikland.124.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.124.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_protection
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_protection
+        }
+        clr_country_flag = wet_rei_offer_protection
+        set_variable = {
+          wet_rei_offer_protection_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.124.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_protection
+      wet_rei_elector = yes
+      wet_rei_peaceful_partner = yes
+      is_subject = no
+      NOT = {
+        is_guaranteed_by = A01
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      add_political_power = 50
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_protection
+          wet_rei_elector = yes
+          wet_rei_peaceful_partner = yes
+          is_subject = no
+          NOT = {
+            is_guaranteed_by = A01
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        A01 = {
+          give_guarantee = PREV
+        }
+        add_political_power = 50
+        clr_country_flag = wet_rei_offer_protection
+        set_variable = {
+          wet_rei_offer_protection_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_protection
+          }
+          clr_country_flag = wet_rei_offer_protection
+          set_variable = {
+            wet_rei_offer_protection_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.125
+  title = wet_reikland.125.t
+  desc = wet_reikland.125.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.125.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_relief
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_relief
+        }
+        clr_country_flag = wet_rei_offer_relief
+        set_variable = {
+          wet_rei_offer_relief_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.125.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_relief
+      wet_rei_elector = yes
+      wet_rei_peaceful_partner = yes
+      A13 = {
+        has_offensive_war_with = PREV
+      }
+      A01 = {
+        NOT = {
+          has_idea = wet_rei_disunity
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      A01 = {
+        create_wargoal = {
+          type = annex_everything
+          target = A13
+          expire = 180
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_relief
+          wet_rei_elector = yes
+          wet_rei_peaceful_partner = yes
+          A13 = {
+            has_offensive_war_with = PREV
+          }
+          A01 = {
+            NOT = {
+              has_idea = wet_rei_disunity
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        A01 = {
+          create_wargoal = {
+            type = annex_everything
+            target = A13
+            expire = 180
+          }
+        }
+        clr_country_flag = wet_rei_offer_relief
+        set_variable = {
+          wet_rei_offer_relief_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_relief
+          }
+          clr_country_flag = wet_rei_offer_relief
+          set_variable = {
+            wet_rei_offer_relief_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.126
+  title = wet_reikland.126.t
+  desc = wet_reikland.126.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.126.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_volkmar
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_volkmar
+        }
+        clr_country_flag = wet_rei_offer_volkmar
+        set_variable = {
+          wet_rei_offer_volkmar_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.126.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_volkmar
+      tag = A80
+      wet_rei_peaceful_partner = yes
+      wet_rei_volkmar_available = yes
+      A01 = {
+        has_completed_focus = WET_REI_I12
+        has_equipment = {
+          infantry_equipment
+          >
+          499
+        }
+      }
+      A13 = {
+        exists = yes
+        OR = {
+          has_offensive_war_with = A01
+          has_offensive_war_with = A80
+        }
+      }
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      A01 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -500
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    custom_effect_tooltip = wet_reikland.126.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_volkmar
+          tag = A80
+          wet_rei_peaceful_partner = yes
+          wet_rei_volkmar_available = yes
+          A01 = {
+            has_completed_focus = WET_REI_I12
+            has_equipment = {
+              infantry_equipment
+              >
+              499
+            }
+          }
+          A13 = {
+            exists = yes
+            OR = {
+              has_offensive_war_with = A01
+              has_offensive_war_with = A80
+            }
+          }
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        A01 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -500
+          }
+          set_country_flag = wet_rei_crusade_active
+          set_variable = {
+            wet_rei_crusade_days = 120
+          }
+        }
+        clr_country_flag = wet_rei_offer_volkmar
+        set_variable = {
+          wet_rei_offer_volkmar_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_volkmar
+          }
+          clr_country_flag = wet_rei_offer_volkmar
+          set_variable = {
+            wet_rei_offer_volkmar_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_reikland.127
+  title = wet_reikland.127.t
+  desc = wet_reikland.127.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_reikland.127.0
+    ai_chance = {
+      factor = 40
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nuln
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nuln
+        }
+        clr_country_flag = wet_rei_offer_nuln
+        set_variable = {
+          wet_rei_offer_nuln_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.2
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_reikland.127.1
+    ai_chance = {
+      factor = 40
+    }
+    trigger = {
+      has_country_flag = wet_rei_offer_nuln
+      tag = A63
+      wet_rei_peaceful_partner = yes
+      A01 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      A01 = {
+        add_political_power = -50
+      }
+      add_political_power = 50
+      A01 = {
+        add_timed_idea = {
+          idea = wet_rei_nuln_contract
+          days = 365
+        }
+      }
+      A01 = {
+        country_event = {
+          id = wet_reikland.1
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_rei_offer_nuln
+          tag = A63
+          wet_rei_peaceful_partner = yes
+          A01 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        A01 = {
+          add_political_power = -50
+        }
+        add_political_power = 50
+        A01 = {
+          add_timed_idea = {
+            idea = wet_rei_nuln_contract
+            days = 365
+          }
+        }
+        clr_country_flag = wet_rei_offer_nuln
+        set_variable = {
+          wet_rei_offer_nuln_days = 0
+        }
+        A01 = {
+          country_event = {
+            id = wet_reikland.1
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_rei_offer_nuln
+          }
+          clr_country_flag = wet_rei_offer_nuln
+          set_variable = {
+            wet_rei_offer_nuln_days = 0
+          }
+          A01 = {
+            country_event = {
+              id = wet_reikland.2
+            }
+          }
+        }
+      }
+    }
+  }
+}

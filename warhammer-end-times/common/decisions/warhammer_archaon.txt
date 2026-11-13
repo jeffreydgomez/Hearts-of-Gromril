@@ -1,0 +1,4086 @@
+wet_arc_campaigns = {
+  wet_arc_coastal_access = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K14
+    }
+    cost = 25
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_K14
+    }
+    target_trigger = {
+      FROM = {
+        wet_arc_target = yes
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        check_variable = {
+          wet_arc_coast_uses
+          <
+          3
+        }
+        FROM = {
+          wet_arc_target = yes
+          is_neighbor_of = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+      }
+      hidden_effect = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+        add_to_variable = {
+          wet_arc_coast_uses = 1
+        }
+      }
+    }
+    days_re_enable = 30
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_infiltration = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T20
+    }
+    cost = 50
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_T20
+    }
+    target_trigger = {
+      FROM = {
+        wet_arc_target = yes
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          wet_arc_target = yes
+        }
+      }
+    }
+    days_remove = 90
+    complete_effect = {
+      set_country_flag = wet_arc_infiltration_active
+    }
+    remove_effect = {
+      custom_effect_tooltip = wet_arc_infiltration_outcome_tt
+      hidden_effect = {
+        clr_country_flag = wet_arc_infiltration_active
+        set_country_flag = wet_arc_network_ready
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          wet_arc_target = yes
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_infiltration_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_gate_sabotage = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T21
+    }
+    cost = 50
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_T21
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_war_with = B99
+      }
+    }
+    available = {
+      AND = {
+        has_country_flag = wet_arc_network_ready
+        FROM = {
+          has_war_with = B99
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_gate_sabotage_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        random_list = {
+          70 = {
+            FROM = {
+              add_timed_idea = {
+                idea = wet_arc_sabotaged_gates
+                days = 90
+              }
+              random_owned_controlled_state = {
+                limit = {
+                  bunker
+                  >
+                  0
+                }
+                damage_building = {
+                  type = bunker
+                  damage = 2
+                }
+              }
+            }
+          }
+          30 = {
+            army_experience = 10
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_gate_sabotage_active
+        random_list = {
+          70 = {
+            FROM = {
+              add_timed_idea = {
+                idea = wet_arc_sabotaged_gates
+                days = 90
+              }
+              random_owned_controlled_state = {
+                limit = {
+                  bunker
+                  >
+                  0
+                }
+                damage_building = {
+                  type = bunker
+                  damage = 2
+                }
+              }
+            }
+          }
+          30 = {
+            army_experience = 10
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          has_war_with = B99
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_gate_sabotage_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_false_orders = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T23
+    }
+    cost = 75
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_T23
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_war_with = B99
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          has_war_with = B99
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_false_orders_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        FROM = {
+          add_timed_idea = {
+            idea = wet_arc_false_orders
+            days = 90
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_false_orders_active
+        FROM = {
+          add_timed_idea = {
+            idea = wet_arc_false_orders
+            days = 90
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          has_war_with = B99
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_false_orders_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_honour_goldtooth_contract = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_country_flag = wet_arc_goldtooth_contract
+    }
+    cost = 0
+    available = {
+      I01 = {
+        exists = yes
+        is_subject_of = B99
+      }
+      has_war = no
+      AND = {
+        has_country_flag = wet_arc_goldtooth_contract
+        any_owned_state = {
+          wet_arc_region_mourn = yes
+          is_fully_controlled_by = B99
+          NOT = {
+            is_capital = yes
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        every_owned_state = {
+          limit = {
+            wet_arc_region_mourn = yes
+            is_fully_controlled_by = B99
+            NOT = {
+              is_capital = yes
+            }
+          }
+          I01 = {
+            transfer_state = PREV
+          }
+        }
+      }
+      hidden_effect = {
+        every_owned_state = {
+          limit = {
+            wet_arc_region_mourn = yes
+            is_fully_controlled_by = B99
+            NOT = {
+              is_capital = yes
+            }
+          }
+          I01 = {
+            transfer_state = PREV
+          }
+        }
+      }
+    }
+    days_re_enable = 30
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_honour_monkey_compact = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_country_flag = wet_arc_monkey_compact
+    }
+    cost = 0
+    available = {
+      I35 = {
+        exists = yes
+        is_in_faction_with = B99
+      }
+      has_war = no
+      AND = {
+        has_country_flag = wet_arc_monkey_compact
+        any_owned_state = {
+          wet_arc_region_cathay = yes
+          is_fully_controlled_by = B99
+          NOT = {
+            is_capital = yes
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        every_owned_state = {
+          limit = {
+            wet_arc_region_cathay = yes
+            is_fully_controlled_by = B99
+            NOT = {
+              is_capital = yes
+            }
+          }
+          I35 = {
+            transfer_state = PREV
+          }
+        }
+      }
+      hidden_effect = {
+        every_owned_state = {
+          limit = {
+            wet_arc_region_cathay = yes
+            is_fully_controlled_by = B99
+            NOT = {
+              is_capital = yes
+            }
+          }
+          I35 = {
+            transfer_state = PREV
+          }
+        }
+      }
+    }
+    days_re_enable = 30
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_restore_R01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K00
+    }
+    cost = 50
+    available = {
+      NOT = {
+        exists = R01
+      }
+      AND = {
+        any_owned_state = {
+          is_core_of = R01
+          is_fully_controlled_by = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        release = R01
+        R01 = {
+          country_event = {
+            id = wet_archaon.10
+          }
+        }
+      }
+      hidden_effect = {
+        release = R01
+        R01 = {
+          country_event = {
+            id = wet_archaon.10
+          }
+        }
+      }
+    }
+    days_re_enable = 90
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_restore_R03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T00
+    }
+    cost = 50
+    available = {
+      NOT = {
+        exists = R03
+      }
+      AND = {
+        any_owned_state = {
+          is_core_of = R03
+          is_fully_controlled_by = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        release = R03
+        R03 = {
+          country_event = {
+            id = wet_archaon.11
+          }
+        }
+      }
+      hidden_effect = {
+        release = R03
+        R03 = {
+          country_event = {
+            id = wet_archaon.11
+          }
+        }
+      }
+    }
+    days_re_enable = 90
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_restore_R02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N00
+    }
+    cost = 50
+    available = {
+      NOT = {
+        exists = R02
+      }
+      AND = {
+        any_owned_state = {
+          is_core_of = R02
+          is_fully_controlled_by = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        release = R02
+        R02 = {
+          country_event = {
+            id = wet_archaon.12
+          }
+        }
+      }
+      hidden_effect = {
+        release = R02
+        R02 = {
+          country_event = {
+            id = wet_archaon.12
+          }
+        }
+      }
+    }
+    days_re_enable = 90
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_restore_R04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S00
+    }
+    cost = 50
+    available = {
+      NOT = {
+        exists = R04
+      }
+      AND = {
+        any_owned_state = {
+          is_core_of = R04
+          is_fully_controlled_by = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        release = R04
+        R04 = {
+          country_event = {
+            id = wet_archaon.13
+          }
+        }
+      }
+      hidden_effect = {
+        release = R04
+        R04 = {
+          country_event = {
+            id = wet_archaon.13
+          }
+        }
+      }
+    }
+    days_re_enable = 90
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_unbind_vortex = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU13
+    }
+    cost = 100
+    available = {
+      AND = {
+        wet_arc_holds_vortex = yes
+        NOT = {
+          OR = {
+            has_global_flag = wet_story_vortex_unbound
+            has_global_flag = wet_story_vortex_stabilized
+            has_country_flag = wet_arc_vortex_salvaged
+          }
+        }
+      }
+    }
+    days_remove = 90
+    complete_effect = {
+      set_country_flag = wet_arc_unbind_vortex_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            wet_arc_holds_vortex = yes
+            NOT = {
+              OR = {
+                has_global_flag = wet_story_vortex_unbound
+                has_global_flag = wet_story_vortex_stabilized
+              }
+            }
+          }
+          if = {
+            limit = {
+              has_country_flag = wet_arc_ward_knowledge
+            }
+            531 = {
+              remove_building = {
+                type = landmark_wet_gp_great_vortex
+                level = 1
+                province = 2343
+              }
+            }
+            add_timed_idea = {
+              idea = wet_arc_vortex_power
+              days = 365
+            }
+          }
+          else = {
+            random_list = {
+              70 = {
+                531 = {
+                  remove_building = {
+                    type = landmark_wet_gp_great_vortex
+                    level = 1
+                    province = 2343
+                  }
+                }
+                add_timed_idea = {
+                  idea = wet_arc_vortex_power
+                  days = 365
+                }
+              }
+              30 = {
+                add_stability = -0.03
+              }
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_unbind_vortex_active
+        if = {
+          limit = {
+            wet_arc_holds_vortex = yes
+            NOT = {
+              OR = {
+                has_global_flag = wet_story_vortex_unbound
+                has_global_flag = wet_story_vortex_stabilized
+              }
+            }
+          }
+          if = {
+            limit = {
+              has_country_flag = wet_arc_ward_knowledge
+            }
+            wet_arc_unbind_vortex = yes
+          }
+          else = {
+            random_list = {
+              70 = {
+                wet_arc_unbind_vortex = yes
+              }
+              30 = {
+                add_stability = -0.03
+              }
+            }
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      OR = {
+        NOT = {
+          wet_arc_holds_vortex = yes
+        }
+        has_global_flag = wet_story_vortex_unbound
+        has_global_flag = wet_story_vortex_stabilized
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_unbind_vortex_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_salvage_vortex = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU13
+      NOT = {
+        has_country_flag = wet_arc_salvage_vortex_done
+      }
+    }
+    cost = 25
+    available = {
+      AND = {
+        wet_arc_holds_vortex = yes
+        NOT = {
+          has_country_flag = wet_arc_unbind_vortex_active
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
+        }
+      }
+      hidden_effect = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
+        }
+        set_country_flag = wet_arc_vortex_salvaged
+        set_country_flag = wet_arc_salvage_vortex_done
+      }
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_assault_auric = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO06
+    }
+    cost = 75
+    available = {
+      has_war = yes
+      AND = {
+        has_global_flag = wet_story_auric_bastion_raised
+        NOT = {
+          has_global_flag = wet_story_auric_bastion_broken
+        }
+        wet_arc_contact_old_world = yes
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_assault_auric_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_arc_auric_assault
+          days = 180
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_assault_auric_active
+        set_country_flag = wet_arc_auric_prepared
+        add_timed_idea = {
+          idea = wet_arc_auric_assault
+          days = 180
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        OR = {
+          has_global_flag = wet_story_auric_bastion_raised
+          NOT = {
+            has_global_flag = wet_story_auric_bastion_broken
+          }
+          wet_arc_contact_old_world = yes
+          has_war = yes
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_assault_auric_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_sabotage_auric = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO06
+    }
+    cost = 50
+    available = {
+      has_war = yes
+      AND = {
+        has_global_flag = wet_story_auric_bastion_raised
+        NOT = {
+          has_global_flag = wet_story_auric_bastion_broken
+        }
+        wet_arc_contact_old_world = yes
+        has_country_flag = wet_arc_network_ready
+      }
+    }
+    days_remove = 90
+    complete_effect = {
+      set_country_flag = wet_arc_sabotage_auric_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_arc_auric_assault
+          days = 180
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_sabotage_auric_active
+        set_country_flag = wet_arc_auric_prepared
+        add_timed_idea = {
+          idea = wet_arc_auric_assault
+          days = 180
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        OR = {
+          has_global_flag = wet_story_auric_bastion_raised
+          NOT = {
+            has_global_flag = wet_story_auric_bastion_broken
+          }
+          wet_arc_contact_old_world = yes
+          has_war = yes
+          has_country_flag = wet_arc_network_ready
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_sabotage_auric_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_frontier_campaign = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO25
+    }
+    cost = 50
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_KO25
+    }
+    target_trigger = {
+      FROM = {
+        wet_arc_target = yes
+        is_neighbor_of = B99
+        NOT = {
+          wet_arc_owns_old_world = yes
+        }
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          wet_arc_target = yes
+          is_neighbor_of = B99
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+      }
+      hidden_effect = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+      }
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_great_bastion_assault = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC02
+    }
+    cost = 75
+    available = {
+      AND = {
+        wet_arc_contact_cathay = yes
+        445 = {
+          controller = {
+            has_war_with = B99
+          }
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_great_bastion_assault_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_arc_great_bastion_assault
+          days = 180
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_great_bastion_assault_active
+        set_country_flag = wet_arc_great_bastion_prepared
+        add_timed_idea = {
+          idea = wet_arc_great_bastion_assault
+          days = 180
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        OR = {
+          wet_arc_contact_cathay = yes
+          445 = {
+            controller = {
+              has_war_with = B99
+            }
+          }
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_great_bastion_assault_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_great_bastion_sabotage = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC02
+    }
+    cost = 50
+    available = {
+      AND = {
+        wet_arc_contact_cathay = yes
+        445 = {
+          controller = {
+            has_war_with = B99
+          }
+        }
+        has_country_flag = wet_arc_network_ready
+      }
+    }
+    days_remove = 90
+    complete_effect = {
+      set_country_flag = wet_arc_great_bastion_sabotage_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_arc_great_bastion_assault
+          days = 180
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_great_bastion_sabotage_active
+        set_country_flag = wet_arc_great_bastion_prepared
+        add_timed_idea = {
+          idea = wet_arc_great_bastion_assault
+          days = 180
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        OR = {
+          wet_arc_contact_cathay = yes
+          445 = {
+            controller = {
+              has_war_with = B99
+            }
+          }
+          has_country_flag = wet_arc_network_ready
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_great_bastion_sabotage_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_plague_supply = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N29
+    }
+    cost = 25
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_N29
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_war_with = B99
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        has_country_flag = wet_arc_plague_hosts_ready
+        NOT = {
+          OR = {
+            has_country_flag = wet_arc_plague_supply_active
+            has_country_flag = wet_arc_plague_coastal_active
+            has_country_flag = wet_arc_plague_siege_active
+          }
+        }
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_plague_supply_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        FROM = {
+          add_timed_idea = {
+            idea = wet_arc_plague_supply
+            days = 180
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_plague_supply_active
+        if = {
+          limit = {
+            FROM = {
+              has_war_with = B99
+              is_neighbor_of = B99
+            }
+          }
+          FROM = {
+            add_timed_idea = {
+              idea = wet_arc_plague_supply
+              days = 180
+            }
+          }
+          set_country_flag = wet_arc_plague_success
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_plague_supply_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_plague_coastal = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N29
+    }
+    cost = 25
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_N29
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_war_with = B99
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        has_country_flag = wet_arc_plague_hosts_ready
+        NOT = {
+          OR = {
+            has_country_flag = wet_arc_plague_supply_active
+            has_country_flag = wet_arc_plague_coastal_active
+            has_country_flag = wet_arc_plague_siege_active
+          }
+        }
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+        wet_arc_port = yes
+        FROM = {
+          any_owned_state = {
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_plague_coastal_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        FROM = {
+          add_timed_idea = {
+            idea = wet_arc_plague_coastal
+            days = 180
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_plague_coastal_active
+        if = {
+          limit = {
+            FROM = {
+              has_war_with = B99
+              is_neighbor_of = B99
+            }
+          }
+          FROM = {
+            add_timed_idea = {
+              idea = wet_arc_plague_coastal
+              days = 180
+            }
+          }
+          set_country_flag = wet_arc_plague_success
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_plague_coastal_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_plague_siege = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N29
+    }
+    cost = 25
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_N29
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_war_with = B99
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        has_country_flag = wet_arc_plague_hosts_ready
+        NOT = {
+          OR = {
+            has_country_flag = wet_arc_plague_supply_active
+            has_country_flag = wet_arc_plague_coastal_active
+            has_country_flag = wet_arc_plague_siege_active
+          }
+        }
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+      }
+    }
+    days_remove = 60
+    complete_effect = {
+      set_country_flag = wet_arc_plague_siege_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        FROM = {
+          add_timed_idea = {
+            idea = wet_arc_plague_siege
+            days = 180
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_plague_siege_active
+        if = {
+          limit = {
+            FROM = {
+              has_war_with = B99
+              is_neighbor_of = B99
+            }
+          }
+          FROM = {
+            add_timed_idea = {
+              idea = wet_arc_plague_siege
+              days = 180
+            }
+          }
+          set_country_flag = wet_arc_plague_success
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          has_war_with = B99
+          is_neighbor_of = B99
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_plague_siege_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_pyramid_assault = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N31
+    }
+    cost = 100
+    available = {
+      AND = {
+        wet_arc_pyramid_access = yes
+        NOT = {
+          has_global_flag = wet_story_black_pyramid_destroyed
+        }
+        OR = {
+          wet_arc_holds_black_pyramid = yes
+          838 = {
+            controller = {
+              has_war_with = B99
+            }
+          }
+        }
+      }
+    }
+    days_remove = 90
+    complete_effect = {
+      set_country_flag = wet_arc_pyramid_assault_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            has_country_flag = wet_arc_skaven_pyramid_support
+          }
+          838 = {
+            remove_building = {
+              type = landmark_wet_black_pyramid_of_nagash
+              level = 1
+              province = 967
+            }
+          }
+          if = {
+            limit = {
+              U24 = {
+                exists = yes
+              }
+            }
+            U24 = {
+              country_event = {
+                id = wet_archaon.41
+              }
+            }
+          }
+        }
+        else = {
+          random_list = {
+            70 = {
+              838 = {
+                remove_building = {
+                  type = landmark_wet_black_pyramid_of_nagash
+                  level = 1
+                  province = 967
+                }
+              }
+              if = {
+                limit = {
+                  U24 = {
+                    exists = yes
+                  }
+                }
+                U24 = {
+                  country_event = {
+                    id = wet_archaon.41
+                  }
+                }
+              }
+            }
+            30 = {
+              army_experience = 15
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_pyramid_assault_active
+        if = {
+          limit = {
+            wet_arc_pyramid_access = yes
+            NOT = {
+              has_global_flag = wet_story_black_pyramid_destroyed
+            }
+          }
+          if = {
+            limit = {
+              has_country_flag = wet_arc_skaven_pyramid_support
+            }
+            wet_arc_destroy_pyramid = yes
+          }
+          else = {
+            random_list = {
+              70 = {
+                wet_arc_destroy_pyramid = yes
+              }
+              30 = {
+                army_experience = 15
+              }
+            }
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      OR = {
+        NOT = {
+          wet_arc_pyramid_access = yes
+        }
+        has_global_flag = wet_story_black_pyramid_destroyed
+        NOT = {
+          OR = {
+            wet_arc_holds_black_pyramid = yes
+            838 = {
+              controller = {
+                has_war_with = B99
+              }
+            }
+          }
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_pyramid_assault_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_iron_oath = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S12
+    }
+    cost = 50
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_S12
+    }
+    target_trigger = {
+      FROM = {
+        wet_arc_target = yes
+        has_government = fascism
+        is_neighbor_of = B99
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          wet_arc_target = yes
+          has_government = fascism
+          is_neighbor_of = B99
+          OR = {
+            has_country_flag = wet_arc_oath_refused
+            has_country_flag = wet_arc_oath_broken
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+      }
+      hidden_effect = {
+        create_wargoal = {
+          type = annex_everything
+          target = FROM
+          expire = 0
+        }
+      }
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_oathbreaker_notice = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S14
+    }
+    cost = 25
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_S14
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        has_country_flag = wet_arc_oath_broken
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          has_country_flag = wet_arc_oath_broken
+          wet_arc_target = yes
+          is_neighbor_of = B99
+        }
+      }
+    }
+    days_remove = 30
+    complete_effect = {
+      set_country_flag = wet_arc_oathbreaker_notice_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        if = {
+          limit = {
+            FROM = {
+              wet_arc_target = yes
+            }
+          }
+          create_wargoal = {
+            type = annex_everything
+            target = FROM
+            expire = 0
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_oathbreaker_notice_active
+        if = {
+          limit = {
+            FROM = {
+              wet_arc_target = yes
+            }
+          }
+          create_wargoal = {
+            type = annex_everything
+            target = FROM
+            expire = 0
+          }
+        }
+      }
+    }
+    cancel_trigger = {
+      NOT = {
+        FROM = {
+          wet_arc_target = yes
+        }
+      }
+    }
+    cancel_effect = {
+      clr_country_flag = wet_arc_oathbreaker_notice_active
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_terminate_spheres = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S36
+    }
+    cost = 0
+    target_root_trigger = {
+      has_completed_focus = WET_ARC_S36
+    }
+    target_trigger = {
+      FROM = {
+        exists = yes
+        OR = {
+          has_country_flag = wet_arc_skaven_compact
+          has_country_flag = wet_arc_waaagh_compact
+        }
+      }
+    }
+    available = {
+      AND = {
+        FROM = {
+          OR = {
+            has_country_flag = wet_arc_skaven_compact
+            has_country_flag = wet_arc_waaagh_compact
+          }
+        }
+      }
+    }
+    days_remove = 30
+    complete_effect = {
+      set_country_flag = wet_arc_terminate_spheres_active
+    }
+    remove_effect = {
+      effect_tooltip = {
+        FROM = {
+          remove_ideas = wet_arc_waaagh_coordination
+          if = {
+            limit = {
+              has_country_flag = wet_arc_created_skaven_pact
+            }
+            diplomatic_relation = {
+              country = B99
+              relation = non_aggression_pact
+              active = no
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        clr_country_flag = wet_arc_terminate_spheres_active
+        FROM = {
+          clr_country_flag = wet_arc_skaven_compact
+          clr_country_flag = wet_arc_waaagh_compact
+          remove_ideas = wet_arc_waaagh_coordination
+          if = {
+            limit = {
+              has_country_flag = wet_arc_created_skaven_pact
+            }
+            diplomatic_relation = {
+              country = B99
+              relation = non_aggression_pact
+              active = no
+            }
+            clr_country_flag = wet_arc_created_skaven_pact
+          }
+        }
+      }
+    }
+    days_re_enable = 180
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_C01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_C01
+      has_country_flag = wet_arc_claim_C01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_C01_done
+      }
+    }
+    cost = 0
+    available = {
+      is_subject = no
+      is_faction_leader = yes
+      AND = {
+        wet_arc_live_ruler = yes
+        has_country_flag = wet_arc_claim_C01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_arc_everchosen
+        add_offsite_building = {
+          type = arms_factory
+          level = 20
+        }
+        custom_effect_tooltip = WET_ARC_C01_special_tt
+      }
+      hidden_effect = {
+        add_ideas = wet_arc_everchosen
+        set_global_flag = wet_story_archaon_coronated
+        set_country_flag = wet_arc_active
+        add_corps_commander_role = {
+          character = WET_B99_leader
+          traits = {
+            brilliant_strategist
+          }
+          skill = 5
+          attack_skill = 5
+          defense_skill = 4
+          planning_skill = 5
+          logistics_skill = 4
+        }
+        set_portraits = {
+          character = WET_B99_leader
+          army = {
+            large = GFX_WET_portrait_B99
+            small = GFX_WET_portrait_B99
+          }
+        }
+        add_offsite_building = {
+          type = arms_factory
+          level = 20
+        }
+        clr_country_flag = wet_arc_claim_C01_pending
+        set_country_flag = wet_arc_claim_C01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KN01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KN01
+      has_country_flag = wet_arc_claim_KN01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KN01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_naggaroth = yes
+        has_country_flag = wet_arc_claim_KN01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        add_political_power = 25
+        clr_country_flag = wet_arc_claim_KN01_pending
+        set_country_flag = wet_arc_claim_KN01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KN07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KN07
+      has_country_flag = wet_arc_claim_KN07_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KN07_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_holds_naggarond = yes
+        has_country_flag = wet_arc_claim_KN07_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        add_war_support = 0.05
+        clr_country_flag = wet_arc_claim_KN07_pending
+        set_country_flag = wet_arc_claim_KN07_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KN18 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KN18
+      has_country_flag = wet_arc_claim_KN18_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KN18_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_progress_naggaroth = yes
+        wet_arc_holds_naggarond = yes
+        has_country_flag = wet_arc_claim_KN18_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KN18_construction_0_tt
+        custom_effect_tooltip = WET_ARC_KN18_construction_1_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_naggaroth_subjugated
+        add_to_variable = {
+          wet_arc_arms_factory_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
+        add_to_variable = {
+          wet_arc_dockyard_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
+        clr_country_flag = wet_arc_claim_KN18_pending
+        set_country_flag = wet_arc_claim_KN18_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KU01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU01
+      has_country_flag = wet_arc_claim_KU01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KU01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_fleet = yes
+        has_country_flag = wet_arc_claim_KU01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KU01_special_tt
+      }
+      hidden_effect = {
+        wet_arc_all_goals_ulthuan = yes
+        clr_country_flag = wet_arc_claim_KU01_pending
+        set_country_flag = wet_arc_claim_KU01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KU05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU05
+      has_country_flag = wet_arc_claim_KU05_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KU05_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_ulthuan_port = yes
+        has_country_flag = wet_arc_claim_KU05_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_equipment_to_stockpile = {
+          type = convoy
+          amount = 20
+          producer = B99
+        }
+        custom_effect_tooltip = WET_ARC_KU05_special_tt
+      }
+      hidden_effect = {
+        add_equipment_to_stockpile = {
+          type = convoy
+          amount = 20
+          producer = B99
+        }
+        8 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        9 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        11 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        44 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        112 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        164 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        165 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        166 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        208 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        324 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        369 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        398 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        413 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        531 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        540 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        670 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        933 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        942 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        949 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        950 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        951 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1034 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1039 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1044 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1054 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1064 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        1206 = {
+          if = {
+            limit = {
+              wet_arc_controlled = yes
+              naval_base
+              >
+              0
+            }
+            damage_building = {
+              type = naval_base
+              damage = -10
+            }
+          }
+        }
+        clr_country_flag = wet_arc_claim_KU05_pending
+        set_country_flag = wet_arc_claim_KU05_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KU13 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU13
+      has_country_flag = wet_arc_claim_KU13_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KU13_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_holds_vortex = yes
+        has_country_flag = wet_arc_claim_KU13_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
+        }
+        unlock_decision_tooltip = wet_arc_unbind_vortex
+        unlock_decision_tooltip = wet_arc_salvage_vortex
+      }
+      hidden_effect = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
+        }
+        set_country_flag = wet_arc_vortex_access
+        clr_country_flag = wet_arc_claim_KU13_pending
+        set_country_flag = wet_arc_claim_KU13_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KU18 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KU18
+      has_country_flag = wet_arc_claim_KU18_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KU18_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_ulthuan_all = yes
+        has_country_flag = wet_arc_claim_KU18_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KU18_construction_0_tt
+        custom_effect_tooltip = WET_ARC_KU18_construction_1_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_ulthuan_subjugated
+        add_to_variable = {
+          wet_arc_dockyard_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        add_to_variable = {
+          wet_arc_naval_base_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        clr_country_flag = wet_arc_claim_KU18_pending
+        set_country_flag = wet_arc_claim_KU18_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KO01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO01
+      has_country_flag = wet_arc_claim_KO01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KO01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_old_world = yes
+        has_country_flag = wet_arc_claim_KO01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KO01_special_tt
+      }
+      hidden_effect = {
+        wet_arc_goals_old_world = yes
+        clr_country_flag = wet_arc_claim_KO01_pending
+        set_country_flag = wet_arc_claim_KO01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KO04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO04
+      has_country_flag = wet_arc_claim_KO04_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KO04_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_kislev_fallen = yes
+        has_country_flag = wet_arc_claim_KO04_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        custom_effect_tooltip = WET_ARC_KO04_construction_0_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_kislev_collapsed
+        add_war_support = 0.05
+        add_to_variable = {
+          wet_arc_infrastructure_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        clr_country_flag = wet_arc_claim_KO04_pending
+        set_country_flag = wet_arc_claim_KO04_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KO16 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO16
+      has_country_flag = wet_arc_claim_KO16_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KO16_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_empire_fallen = yes
+        has_country_flag = wet_arc_claim_KO16_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_war_support = 0.05
+        custom_effect_tooltip = WET_ARC_KO16_special_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_middenheim_fallen
+        army_experience = 25
+        add_war_support = 0.05
+        country_event = {
+          id = wet_archaon.40
+        }
+        clr_country_flag = wet_arc_claim_KO16_pending
+        set_country_flag = wet_arc_claim_KO16_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KO26 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KO26
+      has_country_flag = wet_arc_claim_KO26_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KO26_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_progress_old_world = yes
+        has_country_flag = wet_arc_claim_KO26_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KO26_construction_0_tt
+        custom_effect_tooltip = WET_ARC_KO26_construction_1_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_arc_old_world_settled
+        add_to_variable = {
+          wet_arc_industrial_complex_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        add_to_variable = {
+          wet_arc_supply_node_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
+        clr_country_flag = wet_arc_claim_KO26_pending
+        set_country_flag = wet_arc_claim_KO26_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KD01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KD01
+      has_country_flag = wet_arc_claim_KD01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KD01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_darklands = yes
+        has_country_flag = wet_arc_claim_KD01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KD01_special_tt
+      }
+      hidden_effect = {
+        wet_arc_goals_darklands = yes
+        clr_country_flag = wet_arc_claim_KD01_pending
+        set_country_flag = wet_arc_claim_KD01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KD17 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KD17
+      has_country_flag = wet_arc_claim_KD17_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KD17_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_progress_darklands = yes
+        wet_arc_holds_zharr = yes
+        has_country_flag = wet_arc_claim_KD17_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = excavation_tech
+        }
+        custom_effect_tooltip = WET_ARC_KD17_construction_0_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_darklands_subjugated
+        add_to_variable = {
+          wet_arc_arms_factory_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = excavation_tech
+        }
+        clr_country_flag = wet_arc_claim_KD17_pending
+        set_country_flag = wet_arc_claim_KD17_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KM01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KM01
+      has_country_flag = wet_arc_claim_KM01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KM01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_mourn = yes
+        has_country_flag = wet_arc_claim_KM01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        add_political_power = 25
+        clr_country_flag = wet_arc_claim_KM01_pending
+        set_country_flag = wet_arc_claim_KM01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KM05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KM05
+      has_country_flag = wet_arc_claim_KM05_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KM05_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      99
+      AND = {
+        has_country_flag = wet_arc_claim_KM05_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KM05_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            I01 = {
+              wet_arc_offer_target = yes
+            }
+          }
+          I01 = {
+            country_event = {
+              id = wet_archaon.110
+              hours = 6
+            }
+          }
+        }
+        else = {
+          wet_arc_all_goals_mourn = yes
+        }
+        clr_country_flag = wet_arc_claim_KM05_pending
+        set_country_flag = wet_arc_claim_KM05_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KM16 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KM16
+      has_country_flag = wet_arc_claim_KM16_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KM16_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_progress_mourn = yes
+        has_country_flag = wet_arc_claim_KM16_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        custom_effect_tooltip = WET_ARC_KM16_construction_0_tt
+        custom_effect_tooltip = WET_ARC_KM16_construction_1_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_mourn_subjugated
+        add_war_support = 0.05
+        add_to_variable = {
+          wet_arc_industrial_complex_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
+        add_to_variable = {
+          wet_arc_infrastructure_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        clr_country_flag = wet_arc_claim_KM16_pending
+        set_country_flag = wet_arc_claim_KM16_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KC01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC01
+      has_country_flag = wet_arc_claim_KC01_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KC01_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_cathay = yes
+        has_country_flag = wet_arc_claim_KC01_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KC01_special_tt
+      }
+      hidden_effect = {
+        wet_arc_goals_cathay = yes
+        clr_country_flag = wet_arc_claim_KC01_pending
+        set_country_flag = wet_arc_claim_KC01_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KC09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC09
+      has_country_flag = wet_arc_claim_KC09_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KC09_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_holds_weijin = yes
+        wet_arc_control60_cathay = yes
+        has_country_flag = wet_arc_claim_KC09_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        add_war_support = 0.05
+        clr_country_flag = wet_arc_claim_KC09_pending
+        set_country_flag = wet_arc_claim_KC09_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KC18 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC18
+      has_country_flag = wet_arc_claim_KC18_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KC18_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_progress_cathay = yes
+        wet_arc_holds_weijin = yes
+        has_country_flag = wet_arc_claim_KC18_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = industry
+        }
+        custom_effect_tooltip = WET_ARC_KC18_construction_0_tt
+      }
+      hidden_effect = {
+        set_global_flag = wet_story_cathay_subjugated
+        add_to_variable = {
+          wet_arc_industrial_complex_credits = 2
+        }
+        wet_arc_spend_construction_credits = yes
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = industry
+        }
+        clr_country_flag = wet_arc_claim_KC18_pending
+        set_country_flag = wet_arc_claim_KC18_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_K05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K05
+      has_country_flag = wet_arc_claim_K05_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_K05_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      99
+      AND = {
+        has_country_flag = wet_arc_claim_K05_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_K05_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_character = WET_B90_leader
+            NOT = {
+              has_country_flag = wet_arc_recruit_B90_done
+            }
+          }
+          country_event = {
+            id = wet_archaon.222
+          }
+        }
+        else_if = {
+          limit = {
+            any_country = {
+              wet_arc_recruit_B90_eligible = yes
+            }
+          }
+          random_country = {
+            limit = {
+              wet_arc_recruit_B90_eligible = yes
+            }
+            country_event = {
+              id = wet_archaon.202
+            }
+          }
+        }
+        else = {
+          add_tech_bonus = {
+            name = wet_arc_research_bonus
+            bonus = 1.0
+            uses = 1
+            category = armor
+          }
+          army_experience = 15
+        }
+        clr_country_flag = wet_arc_claim_K05_pending
+        set_country_flag = wet_arc_claim_K05_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_K07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K07
+      has_country_flag = wet_arc_claim_K07_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_K07_done
+      }
+    }
+    cost = 0
+    available = {
+      has_equipment = {
+        infantry_equipment
+        >
+        499
+      }
+      AND = {
+        always = yes
+        NOT = {
+          has_country_flag = wet_arc_household_drill_done
+        }
+        has_country_flag = wet_arc_claim_K07_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_K07_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_K07
+            NOT = {
+              has_country_flag = wet_arc_household_drill_done
+            }
+            has_equipment = {
+              infantry_equipment
+              >
+              499
+            }
+          }
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -500
+          }
+          remove_ideas = wet_arc_household_attack
+          add_ideas = wet_arc_household_attack_2
+          set_country_flag = wet_arc_household_drill_done
+        }
+        clr_country_flag = wet_arc_claim_K07_pending
+        set_country_flag = wet_arc_claim_K07_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_K10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K10
+      has_country_flag = wet_arc_claim_K10_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_K10_done
+      }
+    }
+    cost = 0
+    available = {
+      has_war = yes
+      has_political_power
+      >
+      24
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_claim_K10_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_doctrine_cost_reduction = {
+          name = wet_arc_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+        custom_effect_tooltip = WET_ARC_K10_special_tt
+      }
+      hidden_effect = {
+        add_doctrine_cost_reduction = {
+          name = wet_arc_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_K10
+            has_war = yes
+            has_political_power
+            >
+            24
+          }
+          add_political_power = -25
+          add_timed_idea = {
+            idea = wet_arc_campaign_planning
+            days = 180
+          }
+        }
+        clr_country_flag = wet_arc_claim_K10_pending
+        set_country_flag = wet_arc_claim_K10_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_K12 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K12
+      has_country_flag = wet_arc_claim_K12_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_K12_done
+      }
+    }
+    cost = 0
+    available = {
+      has_war = yes
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_claim_K12_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = engineers_tech
+        }
+        custom_effect_tooltip = WET_ARC_K12_special_tt
+      }
+      hidden_effect = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = engineers_tech
+        }
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_K12
+            has_war = yes
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          add_timed_idea = {
+            idea = wet_arc_siege_preparation
+            days = 180
+          }
+        }
+        clr_country_flag = wet_arc_claim_K12_pending
+        set_country_flag = wet_arc_claim_K12_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_K21 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_K21
+      has_country_flag = wet_arc_claim_K21_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_K21_done
+      }
+    }
+    cost = 0
+    available = {
+      has_war = yes
+      NOT = {
+        has_idea = wet_arc_theatre_staff
+      }
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_claim_K21_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        custom_effect_tooltip = WET_ARC_K21_special_tt
+      }
+      hidden_effect = {
+        add_war_support = 0.05
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_K21
+            has_war = yes
+            NOT = {
+              has_idea = wet_arc_theatre_staff
+            }
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          add_timed_idea = {
+            idea = wet_arc_theatre_staff
+            days = 180
+          }
+        }
+        clr_country_flag = wet_arc_claim_K21_pending
+        set_country_flag = wet_arc_claim_K21_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_T04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T04
+      has_country_flag = wet_arc_claim_T04_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_T04_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      99
+      AND = {
+        has_country_flag = wet_arc_claim_T04_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_T04_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_character = WET_B84_leader
+            NOT = {
+              has_country_flag = wet_arc_recruit_B84_done
+            }
+          }
+          country_event = {
+            id = wet_archaon.224
+          }
+        }
+        else_if = {
+          limit = {
+            any_country = {
+              wet_arc_recruit_B84_eligible = yes
+            }
+          }
+          random_country = {
+            limit = {
+              wet_arc_recruit_B84_eligible = yes
+            }
+            country_event = {
+              id = wet_archaon.204
+            }
+          }
+        }
+        else = {
+          add_tech_bonus = {
+            name = wet_arc_research_bonus
+            bonus = 1.0
+            uses = 1
+            category = electronics
+          }
+          army_experience = 15
+        }
+        clr_country_flag = wet_arc_claim_T04_pending
+        set_country_flag = wet_arc_claim_T04_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_T10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T10
+      has_country_flag = wet_arc_claim_T10_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_T10_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      99
+      AND = {
+        wet_arc_ten_factories = yes
+        has_country_flag = wet_arc_claim_T10_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -100
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        add_political_power = -100
+        add_research_slot = 1
+        clr_country_flag = wet_arc_claim_T10_pending
+        set_country_flag = wet_arc_claim_T10_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_T13 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T13
+      has_country_flag = wet_arc_claim_T13_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_T13_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      149
+      AND = {
+        wet_arc_twentyfive_factories = yes
+        has_country_flag = wet_arc_claim_T13_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -150
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        add_political_power = -150
+        add_research_slot = 1
+        clr_country_flag = wet_arc_claim_T13_pending
+        set_country_flag = wet_arc_claim_T13_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_T22 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T22
+      has_country_flag = wet_arc_claim_T22_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_T22_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      74
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_network_ready
+        has_country_flag = wet_arc_claim_T22_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_T22_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_T22
+            has_country_flag = wet_arc_network_ready
+            has_political_power
+            >
+            74
+          }
+          add_political_power = -75
+          set_country_flag = wet_arc_steal_lore_active
+          clr_country_flag = wet_arc_steal_lore_active
+          random_list = {
+            70 = {
+              add_tech_bonus = {
+                name = wet_arc_research_bonus
+                bonus = 1.0
+                uses = 1
+                category = industry
+              }
+            }
+            30 = {
+              army_experience = 10
+            }
+          }
+        }
+        clr_country_flag = wet_arc_claim_T22_pending
+        set_country_flag = wet_arc_claim_T22_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_T35 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_T35
+      has_country_flag = wet_arc_claim_T35_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_T35_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        check_variable = {
+          num_deployed_planes
+          >
+          249
+        }
+        has_country_flag = wet_arc_claim_T35_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_arc_sky_of_change
+        add_doctrine_cost_reduction = {
+          name = wet_arc_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = air_doctrine
+        }
+      }
+      hidden_effect = {
+        add_ideas = wet_arc_sky_of_change
+        add_doctrine_cost_reduction = {
+          name = wet_arc_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = air_doctrine
+        }
+        clr_country_flag = wet_arc_claim_T35_pending
+        set_country_flag = wet_arc_claim_T35_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N26 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N26
+      has_country_flag = wet_arc_claim_N26_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N26_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        has_country_flag = wet_arc_glottkin_dossier
+        NOT = {
+          has_global_flag = wet_arc_glottkin_recruited
+        }
+        has_country_flag = wet_arc_claim_N26_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_N26_special_tt
+      }
+      hidden_effect = {
+        country_event = {
+          id = wet_archaon.241
+        }
+        clr_country_flag = wet_arc_claim_N26_pending
+        set_country_flag = wet_arc_claim_N26_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N19 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N19
+      has_country_flag = wet_arc_claim_N19_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N19_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_twentyfive_factories = yes
+        has_country_flag = wet_arc_claim_N19_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_mobilised_industry
+        add_ideas = wet_arc_mobilised_industry_2
+      }
+      hidden_effect = {
+        remove_ideas = wet_arc_mobilised_industry
+        add_ideas = wet_arc_mobilised_industry_2
+        clr_country_flag = wet_arc_claim_N19_pending
+        set_country_flag = wet_arc_claim_N19_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N34 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N34
+      has_country_flag = wet_arc_claim_N34_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N34_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        NOT = {
+          has_country_flag = wet_arc_reforge_equipment_done
+        }
+        has_country_flag = wet_arc_claim_N34_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_ARC_N34_special_tt
+      }
+      hidden_effect = {
+        army_experience = 25
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_N34
+            NOT = {
+              has_country_flag = wet_arc_reforge_equipment_done
+            }
+            always = yes
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          set_country_flag = wet_arc_reforge_equipment_active
+          clr_country_flag = wet_arc_reforge_equipment_active
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 1000
+            producer = B99
+          }
+          set_country_flag = wet_arc_reforge_equipment_done
+        }
+        clr_country_flag = wet_arc_claim_N34_pending
+        set_country_flag = wet_arc_claim_N34_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N28 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N28
+      has_country_flag = wet_arc_claim_N28_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N28_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      74
+      AND = {
+        always = yes
+        NOT = {
+          has_country_flag = wet_arc_prepare_plague_hosts_done
+        }
+        NOT = {
+          has_country_flag = wet_arc_plague_hosts_ready
+        }
+        has_country_flag = wet_arc_claim_N28_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_N28_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_N28
+            NOT = {
+              has_country_flag = wet_arc_prepare_plague_hosts_done
+            }
+            NOT = {
+              has_country_flag = wet_arc_plague_hosts_ready
+            }
+            has_political_power
+            >
+            74
+          }
+          add_political_power = -75
+          set_country_flag = wet_arc_plague_hosts_ready
+          set_country_flag = wet_arc_prepare_plague_hosts_done
+        }
+        clr_country_flag = wet_arc_claim_N28_pending
+        set_country_flag = wet_arc_claim_N28_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N30 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N30
+      has_country_flag = wet_arc_claim_N30_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N30_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        has_country_flag = wet_arc_plague_success
+        has_country_flag = wet_arc_claim_N30_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        army_experience = 25
+        add_war_support = 0.05
+        clr_country_flag = wet_arc_claim_N30_pending
+        set_country_flag = wet_arc_claim_N30_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_N32 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_N32
+      has_country_flag = wet_arc_claim_N32_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_N32_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        has_global_flag = wet_story_black_pyramid_destroyed
+        has_country_flag = wet_arc_claim_N32_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        army_experience = 25
+      }
+      hidden_effect = {
+        add_war_support = 0.05
+        army_experience = 25
+        clr_country_flag = wet_arc_claim_N32_pending
+        set_country_flag = wet_arc_claim_N32_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_S04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S04
+      has_country_flag = wet_arc_claim_S04_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_S04_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      99
+      AND = {
+        has_country_flag = wet_arc_claim_S04_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = -100
+        add_stability = -0.03
+        add_timed_idea = {
+          idea = wet_arc_northern_contract
+          days = 365
+        }
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = armor
+        }
+      }
+      hidden_effect = {
+        add_political_power = -100
+        add_stability = -0.03
+        add_timed_idea = {
+          idea = wet_arc_northern_contract
+          days = 365
+        }
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = armor
+        }
+        clr_country_flag = wet_arc_claim_S04_pending
+        set_country_flag = wet_arc_claim_S04_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_S06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S06
+      has_country_flag = wet_arc_claim_S06_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_S06_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_court_grievance
+        has_country_flag = wet_arc_claim_S06_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_S06_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_S06
+            has_country_flag = wet_arc_court_grievance
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          clr_country_flag = wet_arc_court_grievance
+          add_stability = 0.03
+        }
+        clr_country_flag = wet_arc_claim_S06_pending
+        set_country_flag = wet_arc_claim_S06_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_S23 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S23
+      has_country_flag = wet_arc_claim_S23_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_S23_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        any_subject_country = {
+          exists = yes
+        }
+        has_country_flag = wet_arc_claim_S23_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_S23_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_S23
+            any_subject_country = {
+              exists = yes
+            }
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          add_timed_idea = {
+            idea = wet_arc_inspectors
+            days = 365
+          }
+          clr_country_flag = wet_arc_court_grievance
+        }
+        clr_country_flag = wet_arc_claim_S23_pending
+        set_country_flag = wet_arc_claim_S23_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_S25 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S25
+      has_country_flag = wet_arc_claim_S25_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_S25_done
+      }
+    }
+    cost = 0
+    available = {
+      has_war = no
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        any_subject_country = {
+          exists = yes
+        }
+        has_country_flag = wet_arc_claim_S25_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = logistics_tech
+        }
+        custom_effect_tooltip = WET_ARC_S25_construction_0_tt
+        custom_effect_tooltip = WET_ARC_S25_special_tt
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_arc_supply_node_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = logistics_tech
+        }
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_S25
+            has_war = no
+            any_subject_country = {
+              exists = yes
+            }
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          add_stability = 0.03
+          every_subject_country = {
+            add_to_variable = {
+              wet_arc_loyalty = 5
+            }
+          }
+        }
+        clr_country_flag = wet_arc_claim_S25_pending
+        set_country_flag = wet_arc_claim_S25_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_S35 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_S35
+      has_country_flag = wet_arc_claim_S35_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_S35_done
+      }
+    }
+    cost = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        always = yes
+        has_country_flag = wet_arc_waaagh_dispute
+        has_country_flag = wet_arc_claim_S35_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_S35_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_ARC_S35
+            has_country_flag = wet_arc_waaagh_dispute
+            has_political_power
+            >
+            49
+          }
+          add_political_power = -50
+          clr_country_flag = wet_arc_waaagh_dispute
+          add_stability = 0.03
+        }
+        clr_country_flag = wet_arc_claim_S35_pending
+        set_country_flag = wet_arc_claim_S35_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_arc_claim_KC00 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      original_tag = B99
+    }
+    visible = {
+      has_completed_focus = WET_ARC_KC00
+      has_country_flag = wet_arc_claim_KC00_pending
+      NOT = {
+        has_country_flag = wet_arc_claim_KC00_done
+      }
+    }
+    cost = 0
+    available = {
+      AND = {
+        wet_arc_contact_steppes = yes
+        has_country_flag = wet_arc_claim_KC00_pending
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_ARC_KC00_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            G36 = {
+              wet_arc_offer_target = yes
+            }
+          }
+          G36 = {
+            country_event = {
+              id = wet_archaon.120
+              hours = 6
+            }
+          }
+        }
+        else = {
+          wet_arc_all_goals_steppes = yes
+        }
+        clr_country_flag = wet_arc_claim_KC00_pending
+        set_country_flag = wet_arc_claim_KC00_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}

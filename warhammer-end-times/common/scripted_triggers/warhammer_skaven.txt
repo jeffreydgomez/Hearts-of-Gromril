@@ -1,0 +1,1497 @@
+wet_skv_protected = {
+  OR = {
+    tag = U25
+    tag = WST
+    is_subject_of = U25
+    is_in_faction_with = U25
+    has_non_aggression_pact_with = U25
+    has_truce_with = U25
+    AND = {
+      has_country_flag = wet_skv_pact_signatory
+      NOT = {
+        has_war_with = U25
+      }
+    }
+  }
+}
+wet_skv_hostile = {
+  exists = yes
+  NOT = {
+    wet_skv_protected = yes
+  }
+}
+wet_skv_covert_access = {
+  U25 = {
+    OR = {
+      is_neighbor_of = PREV
+      has_military_access_to = PREV
+      AND = {
+        any_owned_state = {
+          naval_base
+          >
+          0
+          is_fully_controlled_by = U25
+        }
+        has_equipment = {
+          convoy
+          >
+          9
+        }
+        PREV = {
+          any_owned_state = {
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+  }
+}
+wet_skv_land_route = {
+  is_fully_controlled_by = U25
+  955 = {
+    is_fully_controlled_by = U25
+  }
+  U25 = {
+    can_build_railway = {
+      start_state = 955
+      target_state = PREV
+      build_only_on_allied = yes
+      controller_priority = {
+        base = -1
+        modifier = {
+          add = 2
+          tag = U25
+        }
+      }
+    }
+  }
+}
+wet_skv_operational = {
+  tag = U25
+  exists = yes
+  has_country_flag = wet_skv_enabled
+  has_capitulated = no
+}
+wet_skv_major_capacity = {
+  OR = {
+    AND = {
+      NOT = {
+        has_completed_focus = WET_SKV_O11
+      }
+      check_variable = {
+        wet_skv_major_active
+        <
+        1
+      }
+    }
+    AND = {
+      has_completed_focus = WET_SKV_O11
+      check_variable = {
+        wet_skv_major_active
+        <
+        2
+      }
+    }
+  }
+}
+wet_skv_eshin_service = {
+  OR = {
+    has_country_flag = wet_skv_service_eshin
+    has_country_flag = wet_skv_internal_eshin
+  }
+}
+wet_skv_moulder_service = {
+  OR = {
+    has_country_flag = wet_skv_service_moulder
+    has_country_flag = wet_skv_internal_moulder
+  }
+}
+wet_skv_nagash_leader = {
+  exists = yes
+  is_subject = no
+  is_faction_leader = yes
+  OR = {
+    has_country_flag = wet_faction_nagash
+    has_faction_template = wet_faction_nagash
+  }
+}
+wet_skv_chaos_leader = {
+  exists = yes
+  is_subject = no
+  wet_is_everchosen_leader = yes
+}
+wet_skv_empire_leader = {
+  exists = yes
+  is_subject = no
+  is_faction_leader = yes
+  OR = {
+    has_country_flag = wet_faction_grand_alliance
+    has_faction_template = wet_named_faction_order_1
+  }
+}
+wet_skv_pact_live = {
+  exists = yes
+  has_country_flag = wet_skv_pact_signatory
+  has_non_aggression_pact_with = U25
+  NOT = {
+    has_war_with = U25
+  }
+}
+wet_skv_in_old_world = {
+  capital_scope = {
+    OR = {
+      state = 1
+      state = 2
+      state = 3
+      state = 4
+      state = 10
+      state = 13
+      state = 14
+      state = 15
+      state = 16
+      state = 39
+      state = 40
+      state = 41
+      state = 42
+      state = 43
+      state = 45
+      state = 46
+      state = 47
+      state = 48
+      state = 50
+      state = 51
+      state = 52
+      state = 53
+      state = 54
+      state = 55
+      state = 56
+      state = 57
+      state = 58
+      state = 59
+      state = 60
+      state = 61
+      state = 62
+      state = 63
+      state = 64
+      state = 65
+      state = 66
+      state = 67
+      state = 68
+      state = 69
+      state = 70
+      state = 71
+      state = 72
+      state = 73
+      state = 74
+      state = 75
+      state = 76
+      state = 77
+      state = 78
+      state = 79
+      state = 80
+      state = 81
+      state = 82
+      state = 83
+      state = 84
+      state = 85
+      state = 86
+      state = 87
+      state = 88
+      state = 89
+      state = 90
+      state = 91
+      state = 92
+      state = 93
+      state = 94
+      state = 95
+      state = 96
+      state = 97
+      state = 98
+      state = 99
+      state = 100
+      state = 101
+      state = 104
+      state = 105
+      state = 106
+      state = 107
+      state = 109
+      state = 110
+      state = 111
+      state = 127
+      state = 128
+      state = 129
+      state = 130
+      state = 131
+      state = 132
+      state = 133
+      state = 134
+      state = 135
+      state = 137
+      state = 167
+      state = 169
+      state = 170
+      state = 171
+      state = 206
+      state = 209
+      state = 210
+      state = 274
+      state = 282
+      state = 283
+      state = 284
+      state = 285
+      state = 286
+      state = 287
+      state = 289
+      state = 290
+      state = 295
+      state = 296
+      state = 299
+      state = 313
+      state = 325
+      state = 326
+      state = 327
+      state = 328
+      state = 332
+      state = 344
+      state = 359
+      state = 360
+      state = 361
+      state = 370
+      state = 395
+      state = 396
+      state = 397
+      state = 402
+      state = 403
+      state = 404
+      state = 405
+      state = 406
+      state = 407
+      state = 408
+      state = 410
+      state = 412
+      state = 415
+      state = 416
+      state = 417
+      state = 418
+      state = 419
+      state = 430
+      state = 431
+      state = 444
+      state = 446
+      state = 447
+      state = 448
+      state = 449
+      state = 452
+      state = 453
+      state = 454
+      state = 455
+      state = 456
+      state = 472
+      state = 473
+      state = 477
+      state = 478
+      state = 482
+      state = 483
+      state = 484
+      state = 485
+      state = 487
+      state = 488
+      state = 489
+      state = 490
+      state = 492
+      state = 532
+      state = 533
+      state = 534
+      state = 535
+      state = 536
+      state = 537
+      state = 538
+      state = 539
+      state = 552
+      state = 556
+      state = 559
+      state = 560
+      state = 561
+      state = 562
+      state = 563
+      state = 564
+      state = 565
+      state = 566
+      state = 567
+      state = 568
+      state = 569
+      state = 570
+      state = 571
+      state = 572
+      state = 573
+      state = 574
+      state = 575
+      state = 576
+      state = 577
+      state = 578
+      state = 579
+      state = 580
+      state = 581
+      state = 582
+      state = 583
+      state = 584
+      state = 585
+      state = 586
+      state = 587
+      state = 588
+      state = 592
+      state = 593
+      state = 594
+      state = 595
+      state = 596
+      state = 619
+      state = 620
+      state = 621
+      state = 630
+      state = 631
+      state = 636
+      state = 637
+      state = 639
+      state = 640
+      state = 641
+      state = 642
+      state = 658
+      state = 659
+      state = 660
+      state = 661
+      state = 662
+      state = 663
+      state = 664
+      state = 665
+      state = 666
+      state = 668
+      state = 669
+      state = 671
+      state = 744
+      state = 745
+      state = 746
+      state = 747
+      state = 751
+      state = 752
+      state = 753
+      state = 754
+      state = 755
+      state = 756
+      state = 757
+      state = 758
+      state = 759
+      state = 760
+      state = 761
+      state = 762
+      state = 763
+      state = 764
+      state = 765
+      state = 766
+      state = 767
+      state = 768
+      state = 769
+      state = 801
+      state = 828
+      state = 829
+      state = 858
+      state = 866
+      state = 867
+      state = 889
+      state = 890
+      state = 894
+      state = 895
+      state = 896
+      state = 897
+      state = 898
+      state = 899
+      state = 900
+      state = 901
+      state = 902
+      state = 903
+      state = 904
+      state = 905
+      state = 906
+      state = 908
+      state = 909
+      state = 910
+      state = 928
+      state = 929
+      state = 930
+      state = 931
+      state = 932
+      state = 934
+      state = 935
+      state = 936
+      state = 937
+      state = 938
+      state = 939
+      state = 940
+      state = 941
+      state = 943
+      state = 945
+      state = 946
+      state = 952
+      state = 953
+      state = 954
+      state = 955
+      state = 956
+      state = 957
+      state = 958
+      state = 959
+      state = 960
+      state = 961
+      state = 962
+      state = 963
+      state = 964
+      state = 979
+      state = 980
+      state = 981
+      state = 984
+      state = 986
+      state = 987
+      state = 988
+      state = 989
+      state = 990
+      state = 991
+      state = 992
+      state = 993
+      state = 994
+      state = 995
+      state = 996
+      state = 1019
+      state = 1020
+      state = 1021
+      state = 1022
+      state = 1037
+      state = 1038
+      state = 1041
+      state = 1042
+      state = 1043
+      state = 1045
+      state = 1046
+      state = 1047
+      state = 1057
+      state = 1058
+      state = 1059
+      state = 1060
+      state = 1061
+      state = 1062
+      state = 1063
+      state = 1065
+      state = 1067
+      state = 1069
+      state = 1070
+      state = 1071
+      state = 1072
+      state = 1073
+      state = 1075
+      state = 1076
+      state = 1077
+      state = 1078
+      state = 1079
+      state = 1080
+      state = 1081
+      state = 1084
+      state = 1085
+      state = 1166
+      state = 1167
+      state = 1168
+      state = 1169
+      state = 1170
+      state = 1171
+      state = 1172
+      state = 1173
+      state = 1174
+      state = 1175
+      state = 1176
+      state = 1185
+      state = 1188
+      state = 1189
+      state = 1199
+      state = 1200
+      state = 1201
+      state = 1202
+      state = 1209
+      state = 1234
+    }
+  }
+}
+wet_skv_south_secured = {
+  46 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  50 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  101 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  167 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  169 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  395 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  403 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  404 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  536 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  537 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  538 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  539 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  552 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  661 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  671 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  747 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  753 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  760 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  829 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  900 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  901 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  904 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  932 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  937 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  940 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  941 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  943 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1061 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1067 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1070 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1071 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1075 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+  1175 = {
+    is_fully_controlled_by = U25
+    is_owned_by = U25
+  }
+}
+wet_skv_eastern_footholds = {
+  count_triggers = {
+    amount = 2
+    106 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    107 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    128 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    129 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    282 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    286 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    287 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    289 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    290 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    299 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    313 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    396 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    402 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    431 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    455 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    534 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    535 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    559 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    560 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    561 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    562 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    563 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    564 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    565 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    566 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    567 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    568 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    569 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    570 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    572 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    573 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    574 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    575 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    576 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    577 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    578 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    580 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    581 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    582 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    584 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    585 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    586 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    587 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    588 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    630 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    639 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    745 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    746 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    761 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    767 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    768 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    769 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    894 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    905 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    928 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    929 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    931 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    934 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    935 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    952 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    953 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    954 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    957 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    958 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    963 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    979 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    980 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    981 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    986 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    987 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    988 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    989 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    990 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    991 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    992 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    993 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    994 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    995 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    996 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1019 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1020 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1021 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1060 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1062 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1063 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1166 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1171 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1172 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1173 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1174 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+    1209 = {
+      is_fully_controlled_by = U25
+      wet_skv_land_route = yes
+    }
+  }
+}
+wet_skv_border_secured = {
+  count_triggers = {
+    amount = 2
+    13 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    14 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    15 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    40 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    87 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    96 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    109 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    110 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    111 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    130 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    131 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    328 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    405 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    449 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    488 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    489 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    490 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    594 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    595 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    596 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    619 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    620 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    621 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    640 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    641 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    642 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    664 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    665 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    763 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    959 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    960 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    961 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    962 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    1076 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    1077 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    1078 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    1169 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+    1170 = {
+      is_fully_controlled_by = U25
+      is_owned_by = U25
+    }
+  }
+}
+wet_skv_admission_eligible = {
+  exists = yes
+  wet_name_is_skaven = yes
+  is_subject = no
+  is_in_faction = no
+  NOT = {
+    has_war_with = U25
+  }
+  NOT = {
+    any_enemy_country = {
+      is_in_faction_with = U25
+    }
+  }
+  wet_can_join_faction = yes
+  U25 = {
+    exists = yes
+    is_in_faction = yes
+    wet_name_is_skaven = yes
+    has_political_power
+    >
+    49
+    faction_leader = {
+      wet_faction_is_skaven_host = yes
+      wet_can_join_faction = yes
+      NOT = {
+        has_war_with = PREV.PREV
+      }
+    }
+  }
+}
+wet_skv_op_karl_target = {
+  has_character = WET_A01_leader
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_karl_valid = {
+  wet_skv_op_karl_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_karl_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_thorgrim_target = {
+  has_character = WET_U04_leader
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_thorgrim_valid = {
+  wet_skv_op_thorgrim_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_thorgrim_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_louen_target = {
+  has_character = WET_A15_leader
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_louen_valid = {
+  wet_skv_op_louen_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_louen_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_champion_target = {
+  has_government = fascism
+  NOT = {
+    wet_is_everchosen_leader = yes
+  }
+  any_character = {
+    is_unit_leader = yes
+    NOT = {
+      is_country_leader = yes
+    }
+  }
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_champion_valid = {
+  wet_skv_op_champion_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_champion_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+  any_character = {
+    has_character_flag = wet_skv_champion_target
+    is_unit_leader = yes
+    NOT = {
+      is_country_leader = yes
+    }
+  }
+}
+wet_skv_op_cell_target = {
+  has_war_with = U25
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_cell_valid = {
+  wet_skv_op_cell_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_cell_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_breach_target = {
+  has_war_with = U25
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_breach_valid = {
+  wet_skv_op_breach_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_breach_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_supply_target = {
+  has_war_with = U25
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_supply_valid = {
+  wet_skv_op_supply_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_supply_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_sabotage_target = {
+  capital_scope = {
+    arms_factory
+    >
+    0
+  }
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_sabotage_valid = {
+  wet_skv_op_sabotage_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_sabotage_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_theft_target = {
+  has_tech = construction2
+  U25 = {
+    NOT = {
+      has_tech = construction2
+    }
+  }
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_theft_valid = {
+  wet_skv_op_theft_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_theft_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_pyramid_site = {
+  has_state_flag = wet_skv_black_pyramid_site
+  check_variable = {
+    wet_skv_pyramid_site_generation = global.wet_skv_pyramid_generation
+  }
+}
+wet_skv_pyramid_owner = {
+  exists = yes
+  has_country_flag = wet_skv_pyramid_active
+  any_owned_state = {
+    wet_skv_pyramid_site = yes
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_pyramid_build_valid = {
+  wet_skv_nagash_leader = yes
+  has_country_flag = wet_skv_pyramid_building
+  any_owned_state = {
+    has_state_flag = wet_skv_pyramid_construction
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_pyramid_target = {
+  wet_skv_pyramid_owner = yes
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_pyramid_valid = {
+  wet_skv_pyramid_owner = yes
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+  check_variable = {
+    wet_skv_op_pyramid_generation = global.wet_skv_pyramid_generation
+  }
+  any_owned_state = {
+    wet_skv_pyramid_site = yes
+    is_in_array = {
+      PREV.wet_skv_op_pyramid_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_fellblade_holder = {
+  exists = yes
+  has_country_flag = wet_skv_fellblade_custodian
+  any_controlled_state = {
+    has_state_flag = wet_skv_fellblade_site
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_op_fellblade_target = {
+  wet_skv_fellblade_holder = yes
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_fellblade_valid = {
+  wet_skv_fellblade_holder = yes
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+  check_variable = {
+    wet_skv_op_fellblade_generation = global.wet_skv_fellblade_generation
+  }
+  any_controlled_state = {
+    has_state_flag = wet_skv_fellblade_site
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_apocalypse_target = {
+  OR = {
+    has_country_flag = wet_skv_pyramid_active
+    has_country_flag = wet_skv_world_project_active
+  }
+}
+wet_skv_op_counter_target = {
+  wet_skv_apocalypse_target = yes
+  wet_skv_hostile = yes
+  wet_skv_covert_access = yes
+}
+wet_skv_op_counter_valid = {
+  wet_skv_op_counter_target = yes
+  any_owned_state = {
+    is_in_array = {
+      PREV.wet_skv_op_counter_site = THIS
+    }
+    is_fully_controlled_by = PREV
+  }
+}
+wet_skv_director_alive = {
+  OR = {
+    AND = {
+      has_country_flag = wet_skv_director_Ikit
+      has_character = WET_SKV_Ikit
+    }
+    AND = {
+      has_country_flag = wet_skv_director_Zingetail
+      has_character = WET_SKV_Zingetail
+    }
+    AND = {
+      has_country_flag = wet_skv_director_SeerEngineer
+      has_character = WET_SKV_SeerEngineer
+    }
+  }
+}
+wet_skv_moon_launch_ready = {
+  has_country_flag = wet_skv_apocalypse
+  NOT = {
+    has_country_flag = wet_skv_surface_rule
+  }
+  has_country_flag = wet_skv_fire_authorised
+  has_completed_focus = WET_SKV_T24
+  is_special_project_completed = sp:sp_wet_skv_moon
+  wet_skv_director_alive = yes
+  has_country_flag = wet_skv_moon_device_ready
+  NOT = {
+    has_country_flag = wet_skv_moon_decommissioned
+  }
+  NOT = {
+    has_country_flag = wet_skv_world_project_disabled
+  }
+  NOT = {
+    has_global_flag = wet_story_morrslieb_shattered
+  }
+  955 = {
+    is_owned_by = U25
+    is_fully_controlled_by = U25
+    nuclear_facility
+    >
+    0
+  }
+  NOT = {
+    any_country = {
+      wet_skv_pact_live = yes
+      has_country_flag = wet_skv_launch_prohibited
+    }
+  }
+}

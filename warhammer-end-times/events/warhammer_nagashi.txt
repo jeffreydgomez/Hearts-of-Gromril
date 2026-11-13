@@ -1,0 +1,4806 @@
+add_namespace = wet_nagashi
+country_event = {
+  id = wet_nagashi.100
+  title = wet_nagashi.100.t
+  desc = wet_nagashi.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.100.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_covenant
+        }
+        clr_country_flag = wet_ngs_offer_covenant
+        set_variable = {
+          wet_ngs_offer_covenant_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_covenant_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.100.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_covenant
+      wet_ngs_court_eligible = yes
+      wet_ngs_named_agent_present = yes
+      NOT = {
+        has_country_flag = wet_ngs_withdrawn
+      }
+      NOT = {
+        has_country_flag = wet_ngs_pledged
+      }
+      U24 = {
+        exists = yes
+      }
+      U24 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          NOT = {
+            has_non_aggression_pact_with = U24
+          }
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+      }
+      add_ideas = wet_ngs_covenant
+      if = {
+        limit = {
+          has_non_aggression_pact_with = U24
+          has_country_flag = wet_ngs_pledged
+        }
+        U24 = {
+          add_political_power = -25
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_covenant
+          wet_ngs_court_eligible = yes
+          wet_ngs_named_agent_present = yes
+          NOT = {
+            has_country_flag = wet_ngs_withdrawn
+          }
+          NOT = {
+            has_country_flag = wet_ngs_pledged
+          }
+          U24 = {
+            exists = yes
+          }
+          U24 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_ngs_offer_covenant
+        set_variable = {
+          wet_ngs_offer_covenant_days = 0
+        }
+        set_country_flag = wet_ngs_pledged
+        clr_country_flag = wet_ngs_withdrawn
+        set_variable = {
+          wet_ngs_grievance = 0
+        }
+        if = {
+          limit = {
+            NOT = {
+              has_non_aggression_pact_with = U24
+            }
+          }
+          diplomatic_relation = {
+            country = U24
+            relation = non_aggression_pact
+            active = yes
+          }
+        }
+        add_ideas = wet_ngs_covenant
+        if = {
+          limit = {
+            NOT = {
+              has_country_flag = wet_ngs_raise_budget_set
+            }
+          }
+          set_country_flag = wet_ngs_raise_budget_set
+          set_variable = {
+            wet_ngs_raise_months = 24
+          }
+          clear_array = wet_ngs_raise_states
+          every_owned_state = {
+            limit = {
+              impassable = no
+            }
+            set_variable = {
+              wet_ngs_raise_amount = state_population_k
+            }
+            multiply_variable = {
+              wet_ngs_raise_amount = 10
+            }
+            PREV = {
+              add_to_array = {
+                wet_ngs_raise_states = PREV
+              }
+            }
+          }
+        }
+        U24 = {
+          wet_ngs_count_agents = yes
+        }
+        if = {
+          limit = {
+            has_non_aggression_pact_with = U24
+            has_country_flag = wet_ngs_pledged
+          }
+          U24 = {
+            add_political_power = -25
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_covenant_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_covenant
+          }
+          clr_country_flag = wet_ngs_offer_covenant
+          set_variable = {
+            wet_ngs_offer_covenant_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_covenant_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.101
+  title = wet_nagashi.101.t
+  desc = wet_nagashi.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.101.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_reconciliation
+        }
+        clr_country_flag = wet_ngs_offer_reconciliation
+        set_variable = {
+          wet_ngs_offer_reconciliation_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_reconciliation_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.101.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_reconciliation
+      wet_ngs_court_eligible = yes
+      wet_ngs_named_agent_present = yes
+      has_country_flag = wet_ngs_withdrawn
+      NOT = {
+        has_country_flag = wet_ngs_pledged
+      }
+      U24 = {
+        has_completed_focus = WET_NGS_M21
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          NOT = {
+            has_non_aggression_pact_with = U24
+          }
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+      }
+      add_ideas = wet_ngs_covenant
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_reconciliation
+          wet_ngs_court_eligible = yes
+          wet_ngs_named_agent_present = yes
+          has_country_flag = wet_ngs_withdrawn
+          NOT = {
+            has_country_flag = wet_ngs_pledged
+          }
+          U24 = {
+            has_completed_focus = WET_NGS_M21
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_reconciliation
+        set_variable = {
+          wet_ngs_offer_reconciliation_days = 0
+        }
+        set_country_flag = wet_ngs_pledged
+        clr_country_flag = wet_ngs_withdrawn
+        set_variable = {
+          wet_ngs_grievance = 0
+        }
+        if = {
+          limit = {
+            NOT = {
+              has_non_aggression_pact_with = U24
+            }
+          }
+          diplomatic_relation = {
+            country = U24
+            relation = non_aggression_pact
+            active = yes
+          }
+        }
+        add_ideas = wet_ngs_covenant
+        if = {
+          limit = {
+            NOT = {
+              has_country_flag = wet_ngs_raise_budget_set
+            }
+          }
+          set_country_flag = wet_ngs_raise_budget_set
+          set_variable = {
+            wet_ngs_raise_months = 24
+          }
+          clear_array = wet_ngs_raise_states
+          every_owned_state = {
+            limit = {
+              impassable = no
+            }
+            set_variable = {
+              wet_ngs_raise_amount = state_population_k
+            }
+            multiply_variable = {
+              wet_ngs_raise_amount = 10
+            }
+            PREV = {
+              add_to_array = {
+                wet_ngs_raise_states = PREV
+              }
+            }
+          }
+        }
+        U24 = {
+          wet_ngs_count_agents = yes
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -50
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_reconciliation_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_reconciliation
+          }
+          clr_country_flag = wet_ngs_offer_reconciliation
+          set_variable = {
+            wet_ngs_offer_reconciliation_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_reconciliation_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.102
+  title = wet_nagashi.102.t
+  desc = wet_nagashi.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.102.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_research_exchange
+        }
+        clr_country_flag = wet_ngs_offer_research_exchange
+        set_variable = {
+          wet_ngs_offer_research_exchange_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_research_exchange_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.102.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_research_exchange
+      wet_ngs_court_eligible = yes
+      has_country_flag = wet_ngs_pledged
+      U24 = {
+        has_completed_focus = WET_NGS_M20
+        wet_ngs_six_agents = yes
+      }
+      U24 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      add_tech_bonus = {
+        name = wet_ngs_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = electronics
+      }
+      U24 = {
+        add_tech_bonus = {
+          name = wet_ngs_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = electronics
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -25
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_research_exchange
+          wet_ngs_court_eligible = yes
+          has_country_flag = wet_ngs_pledged
+          U24 = {
+            has_completed_focus = WET_NGS_M20
+            wet_ngs_six_agents = yes
+          }
+          U24 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_ngs_offer_research_exchange
+        set_variable = {
+          wet_ngs_offer_research_exchange_days = 0
+        }
+        add_tech_bonus = {
+          name = wet_ngs_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = electronics
+        }
+        U24 = {
+          add_tech_bonus = {
+            name = wet_ngs_research_bonus
+            bonus = 0.5
+            uses = 1
+            category = electronics
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -25
+          }
+          set_country_flag = wet_ngs_offer_research_exchange_accepted
+        }
+        set_variable = {
+          wet_ngs_offer_research_exchange_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_research_exchange
+          }
+          clr_country_flag = wet_ngs_offer_research_exchange
+          set_variable = {
+            wet_ngs_offer_research_exchange_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_research_exchange_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.103
+  title = wet_nagashi.103.t
+  desc = wet_nagashi.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.103.0
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      add_opinion_modifier = {
+        target = U24
+        modifier = wet_ngs_relic_theft
+      }
+    }
+    hidden_effect = {
+      add_opinion_modifier = {
+        target = U24
+        modifier = wet_ngs_relic_theft
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.104
+  title = wet_nagashi.104.t
+  desc = wet_nagashi.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.104.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_expedition_access
+        }
+        clr_country_flag = wet_ngs_offer_expedition_access
+        set_variable = {
+          wet_ngs_offer_expedition_access_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_expedition_access_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.104.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_expedition_access
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        NOT = {
+          has_military_access_to = PREV
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      give_military_access = U24
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -25
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_expedition_access
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            NOT = {
+              has_military_access_to = PREV
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_ngs_offer_expedition_access
+        set_variable = {
+          wet_ngs_offer_expedition_access_days = 0
+        }
+        give_military_access = U24
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -25
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_expedition_access_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_expedition_access
+          }
+          clr_country_flag = wet_ngs_offer_expedition_access
+          set_variable = {
+            wet_ngs_offer_expedition_access_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_expedition_access_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.105
+  title = wet_nagashi.105.t
+  desc = wet_nagashi.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.105.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.105.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_volkmar
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.106
+  title = wet_nagashi.106.t
+  desc = wet_nagashi.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.106.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.107
+  title = wet_nagashi.107.t
+  desc = wet_nagashi.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.107.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.108
+  title = wet_nagashi.108.t
+  desc = wet_nagashi.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.108.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_volkmar_handover
+        }
+        clr_country_flag = wet_ngs_offer_volkmar_handover
+        set_variable = {
+          wet_ngs_offer_volkmar_handover_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_volkmar_handover_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.108.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_volkmar_handover
+      tag = A13
+      exists = yes
+      has_country_flag = wet_ngs_pledged
+      has_country_flag = wet_rei_volkmar_custodian
+      325 = {
+        is_fully_controlled_by = A13
+      }
+      A80 = {
+        has_country_flag = wet_rei_volkmar_captive
+        has_character = WET_A80_leader
+      }
+      NOT = {
+        has_global_flag = wet_ngs_volkmar_captive
+      }
+      NOT = {
+        has_global_flag = wet_story_volkmar_dead
+      }
+      U24 = {
+        capital_scope = {
+          is_fully_controlled_by = U24
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        A80 = {
+          if = {
+            limit = {
+              has_government = democratic
+              has_country_leader = {
+                character = WET_A80_leader
+                ruling_only = yes
+              }
+              has_character = WET_A80_commander_marshal
+            }
+            add_country_leader_role = {
+              character = WET_A80_commander_marshal
+              promote_leader = yes
+              country_leader = {
+                ideology = wet_order_cult_of_sigmar
+                expire = "2902.1.31.1"
+                traits = {
+                  
+                }
+              }
+            }
+          }
+          remove_country_leader_role = {
+            character = WET_A80_leader
+            ideology = wet_order_cult_of_sigmar
+          }
+          WET_A80_leader = {
+            set_nationality = U24
+          }
+          country_event = {
+            id = wet_nagashi.106
+          }
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_volkmar_handover
+          tag = A13
+          exists = yes
+          has_country_flag = wet_ngs_pledged
+          has_country_flag = wet_rei_volkmar_custodian
+          325 = {
+            is_fully_controlled_by = A13
+          }
+          A80 = {
+            has_country_flag = wet_rei_volkmar_captive
+            has_character = WET_A80_leader
+          }
+          NOT = {
+            has_global_flag = wet_ngs_volkmar_captive
+          }
+          NOT = {
+            has_global_flag = wet_story_volkmar_dead
+          }
+          U24 = {
+            capital_scope = {
+              is_fully_controlled_by = U24
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_volkmar_handover
+        set_variable = {
+          wet_ngs_offer_volkmar_handover_days = 0
+        }
+        U24 = {
+          A80 = {
+            if = {
+              limit = {
+                has_government = democratic
+                has_country_leader = {
+                  character = WET_A80_leader
+                  ruling_only = yes
+                }
+                has_character = WET_A80_commander_marshal
+              }
+              add_country_leader_role = {
+                character = WET_A80_commander_marshal
+                promote_leader = yes
+                country_leader = {
+                  ideology = wet_order_cult_of_sigmar
+                  expire = "2902.1.31.1"
+                  traits = {
+                    
+                  }
+                }
+              }
+            }
+            remove_country_leader_role = {
+              character = WET_A80_leader
+              ideology = wet_order_cult_of_sigmar
+            }
+            WET_A80_leader = {
+              set_nationality = U24
+            }
+            country_event = {
+              id = wet_nagashi.106
+            }
+          }
+          set_global_flag = wet_ngs_volkmar_captive
+          set_country_flag = wet_ngs_volkmar_custodian
+          capital_scope = {
+            set_state_flag = wet_ngs_volkmar_prison
+          }
+          add_to_variable = {
+            global.wet_ngs_volkmar_generation = 1
+          }
+          A80 = {
+            set_country_flag = wet_rei_volkmar_captive
+          }
+          A13 = {
+            clr_country_flag = wet_rei_volkmar_custodian
+          }
+          set_global_flag = wet_story_volkmar_captured
+          wet_ngs_bonus_volkmar = yes
+          wet_ngs_count_victims = yes
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -50
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_volkmar_handover_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_volkmar_handover
+          }
+          clr_country_flag = wet_ngs_offer_volkmar_handover
+          set_variable = {
+            wet_ngs_offer_volkmar_handover_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_volkmar_handover_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.109
+  title = wet_nagashi.109.t
+  desc = wet_nagashi.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.109.0
+    ai_chance = {
+      factor = 80
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_volkmar
+    }
+  }
+  option = {
+    name = wet_nagashi.109.1
+    ai_chance = {
+      factor = 20
+    }
+    trigger = {
+      has_global_flag = wet_ngs_volkmar_captive
+      NOT = {
+        has_global_flag = wet_ngs_volkmar_dead
+      }
+      has_character = WET_A80_leader
+      any_controlled_state = {
+        has_state_flag = wet_ngs_volkmar_prison
+        is_fully_controlled_by = PREV
+      }
+      has_country_flag = wet_ngs_ransom_volkmar
+      has_country_flag = wet_ngs_volkmar_custodian
+      check_variable = {
+        wet_ngs_ransom_volkmar_token = global.wet_ngs_volkmar_generation
+      }
+      A80 = {
+        has_political_power
+        >
+        149
+      }
+    }
+    effect_tooltip = {
+      A80 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      if = {
+        limit = {
+          has_global_flag = wet_ngs_volkmar_captive
+          NOT = {
+            has_global_flag = wet_ngs_volkmar_dead
+          }
+        }
+        every_country = {
+          limit = {
+            has_character = WET_A80_leader
+          }
+          WET_A80_leader = {
+            set_nationality = A80
+          }
+        }
+        A80 = {
+          country_event = {
+            id = wet_nagashi.107
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_volkmar
+      A80 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      wet_ngs_release_volkmar = yes
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.110
+  title = wet_nagashi.110.t
+  desc = wet_nagashi.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.110.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.110.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_morgiana
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.111
+  title = wet_nagashi.111.t
+  desc = wet_nagashi.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.111.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.112
+  title = wet_nagashi.112.t
+  desc = wet_nagashi.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.112.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.113
+  title = wet_nagashi.113.t
+  desc = wet_nagashi.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.113.0
+    ai_chance = {
+      factor = 80
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_morgiana
+    }
+  }
+  option = {
+    name = wet_nagashi.113.1
+    ai_chance = {
+      factor = 20
+    }
+    trigger = {
+      has_global_flag = wet_ngs_morgiana_captive
+      NOT = {
+        has_global_flag = wet_ngs_morgiana_dead
+      }
+      has_character = WET_NGS_Morgiana
+      any_controlled_state = {
+        has_state_flag = wet_ngs_morgiana_prison
+        is_fully_controlled_by = PREV
+      }
+      has_country_flag = wet_ngs_ransom_morgiana
+      has_country_flag = wet_ngs_morgiana_custodian
+      check_variable = {
+        wet_ngs_ransom_morgiana_token = global.wet_ngs_morgiana_generation
+      }
+      A15 = {
+        has_political_power
+        >
+        149
+      }
+    }
+    effect_tooltip = {
+      A15 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      if = {
+        limit = {
+          has_global_flag = wet_ngs_morgiana_captive
+          NOT = {
+            has_global_flag = wet_ngs_morgiana_dead
+          }
+        }
+        every_country = {
+          limit = {
+            has_character = WET_NGS_Morgiana
+          }
+          WET_NGS_Morgiana = {
+            set_nationality = A15
+          }
+        }
+        A15 = {
+          country_event = {
+            id = wet_nagashi.112
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_morgiana
+      A15 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      wet_ngs_release_morgiana = yes
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.114
+  title = wet_nagashi.114.t
+  desc = wet_nagashi.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.114.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.114.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_aliathra
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.115
+  title = wet_nagashi.115.t
+  desc = wet_nagashi.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.115.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.116
+  title = wet_nagashi.116.t
+  desc = wet_nagashi.116.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.116.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.117
+  title = wet_nagashi.117.t
+  desc = wet_nagashi.117.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.117.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_aliathra_handover
+        }
+        clr_country_flag = wet_ngs_offer_aliathra_handover
+        set_variable = {
+          wet_ngs_offer_aliathra_handover_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_aliathra_handover_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.117.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_aliathra_handover
+      tag = A13
+      exists = yes
+      has_country_flag = wet_ngs_pledged
+      has_country_flag = wet_ult_custodian
+      H06 = {
+        wet_ult_captive = yes
+        has_character = WET_ULT_Aliathra
+      }
+      any_controlled_state = {
+        has_state_flag = wet_ult_prison
+        is_fully_controlled_by = A13
+      }
+      U24 = {
+        capital_scope = {
+          is_fully_controlled_by = U24
+        }
+      }
+      check_variable = {
+        wet_ngs_aliathra_handover_token = H06.wet_ult_custody_generation
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          U24 = {
+            wet_ngs_holds_aliathra = yes
+          }
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_aliathra_handover
+          tag = A13
+          exists = yes
+          has_country_flag = wet_ngs_pledged
+          has_country_flag = wet_ult_custodian
+          H06 = {
+            wet_ult_captive = yes
+            has_character = WET_ULT_Aliathra
+          }
+          any_controlled_state = {
+            has_state_flag = wet_ult_prison
+            is_fully_controlled_by = A13
+          }
+          U24 = {
+            capital_scope = {
+              is_fully_controlled_by = U24
+            }
+          }
+          check_variable = {
+            wet_ngs_aliathra_handover_token = H06.wet_ult_custody_generation
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_aliathra_handover
+        set_variable = {
+          wet_ngs_offer_aliathra_handover_days = 0
+        }
+        U24 = {
+          set_variable = {
+            wet_ult_custody_token = H06.wet_ult_custody_generation
+          }
+          set_country_flag = wet_ult_custody_transfer_accepted
+          wet_ult_accept_custody = yes
+          wet_ngs_bonus_aliathra = yes
+          wet_ngs_count_victims = yes
+        }
+        if = {
+          limit = {
+            U24 = {
+              wet_ngs_holds_aliathra = yes
+            }
+          }
+          U24 = {
+            add_political_power = -50
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_aliathra_handover_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_aliathra_handover
+          }
+          clr_country_flag = wet_ngs_offer_aliathra_handover
+          set_variable = {
+            wet_ngs_offer_aliathra_handover_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_aliathra_handover_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.118
+  title = wet_nagashi.118.t
+  desc = wet_nagashi.118.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.118.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.118.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_emil
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.119
+  title = wet_nagashi.119.t
+  desc = wet_nagashi.119.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.119.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.120
+  title = wet_nagashi.120.t
+  desc = wet_nagashi.120.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.120.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.121
+  title = wet_nagashi.121.t
+  desc = wet_nagashi.121.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.121.0
+    ai_chance = {
+      factor = 80
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_emil
+    }
+  }
+  option = {
+    name = wet_nagashi.121.1
+    ai_chance = {
+      factor = 20
+    }
+    trigger = {
+      has_global_flag = wet_ngs_emil_captive
+      NOT = {
+        has_global_flag = wet_ngs_emil_dead
+      }
+      has_character = WET_A82_leader
+      any_controlled_state = {
+        has_state_flag = wet_ngs_emil_prison
+        is_fully_controlled_by = PREV
+      }
+      has_country_flag = wet_ngs_ransom_emil
+      has_country_flag = wet_ngs_emil_custodian
+      check_variable = {
+        wet_ngs_ransom_emil_token = global.wet_ngs_emil_generation
+      }
+      A82 = {
+        has_political_power
+        >
+        149
+      }
+    }
+    effect_tooltip = {
+      A82 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      if = {
+        limit = {
+          has_global_flag = wet_ngs_emil_captive
+          NOT = {
+            has_global_flag = wet_ngs_emil_dead
+          }
+        }
+        every_country = {
+          limit = {
+            has_character = WET_A82_leader
+          }
+          WET_A82_leader = {
+            set_nationality = A82
+          }
+        }
+        A82 = {
+          country_event = {
+            id = wet_nagashi.120
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_emil
+      A82 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      wet_ngs_release_emil = yes
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.122
+  title = wet_nagashi.122.t
+  desc = wet_nagashi.122.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.122.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.122.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_alarielle
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.123
+  title = wet_nagashi.123.t
+  desc = wet_nagashi.123.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.123.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.124
+  title = wet_nagashi.124.t
+  desc = wet_nagashi.124.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.124.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.125
+  title = wet_nagashi.125.t
+  desc = wet_nagashi.125.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.125.0
+    ai_chance = {
+      factor = 80
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_alarielle
+    }
+  }
+  option = {
+    name = wet_nagashi.125.1
+    ai_chance = {
+      factor = 20
+    }
+    trigger = {
+      has_global_flag = wet_ngs_alarielle_captive
+      NOT = {
+        has_global_flag = wet_ngs_alarielle_dead
+      }
+      has_character = WET_H08_leader
+      any_controlled_state = {
+        has_state_flag = wet_ngs_alarielle_prison
+        is_fully_controlled_by = PREV
+      }
+      has_country_flag = wet_ngs_ransom_alarielle
+      has_country_flag = wet_ngs_alarielle_custodian
+      check_variable = {
+        wet_ngs_ransom_alarielle_token = global.wet_ngs_alarielle_generation
+      }
+      H06 = {
+        has_political_power
+        >
+        149
+      }
+    }
+    effect_tooltip = {
+      H06 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      if = {
+        limit = {
+          has_global_flag = wet_ngs_alarielle_captive
+          NOT = {
+            has_global_flag = wet_ngs_alarielle_dead
+          }
+        }
+        every_country = {
+          limit = {
+            has_character = WET_H08_leader
+          }
+          WET_H08_leader = {
+            set_nationality = H06
+          }
+        }
+        H06 = {
+          country_event = {
+            id = wet_nagashi.124
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_alarielle
+      H06 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      wet_ngs_release_alarielle = yes
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.126
+  title = wet_nagashi.126.t
+  desc = wet_nagashi.126.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.126.0
+    ai_chance = {
+      factor = 15
+    }
+  }
+  option = {
+    name = wet_nagashi.126.1
+    ai_chance = {
+      factor = 85
+    }
+    trigger = {
+      has_political_power
+      >
+      49
+    }
+    effect_tooltip = {
+      add_political_power = -50
+    }
+    hidden_effect = {
+      add_political_power = -50
+      set_country_flag = {
+        flag = wet_ngs_guard_mazdamundi
+        days = 120
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.127
+  title = wet_nagashi.127.t
+  desc = wet_nagashi.127.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.127.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.128
+  title = wet_nagashi.128.t
+  desc = wet_nagashi.128.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.128.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.129
+  title = wet_nagashi.129.t
+  desc = wet_nagashi.129.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.129.0
+    ai_chance = {
+      factor = 80
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_mazdamundi
+    }
+  }
+  option = {
+    name = wet_nagashi.129.1
+    ai_chance = {
+      factor = 20
+    }
+    trigger = {
+      has_global_flag = wet_ngs_mazdamundi_captive
+      NOT = {
+        has_global_flag = wet_ngs_mazdamundi_dead
+      }
+      has_character = WET_V04_leader
+      any_controlled_state = {
+        has_state_flag = wet_ngs_mazdamundi_prison
+        is_fully_controlled_by = PREV
+      }
+      has_country_flag = wet_ngs_ransom_mazdamundi
+      has_country_flag = wet_ngs_mazdamundi_custodian
+      check_variable = {
+        wet_ngs_ransom_mazdamundi_token = global.wet_ngs_mazdamundi_generation
+      }
+      V04 = {
+        has_political_power
+        >
+        149
+      }
+    }
+    effect_tooltip = {
+      V04 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      if = {
+        limit = {
+          has_global_flag = wet_ngs_mazdamundi_captive
+          NOT = {
+            has_global_flag = wet_ngs_mazdamundi_dead
+          }
+        }
+        every_country = {
+          limit = {
+            has_character = WET_V04_leader
+          }
+          WET_V04_leader = {
+            set_nationality = V04
+          }
+        }
+        V04 = {
+          country_event = {
+            id = wet_nagashi.128
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      clr_country_flag = wet_ngs_ransom_mazdamundi
+      V04 = {
+        add_political_power = -150
+      }
+      add_political_power = 150
+      wet_ngs_release_mazdamundi = yes
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.130
+  title = wet_nagashi.130.t
+  desc = wet_nagashi.130.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.130.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_dolmen
+        }
+        clr_country_flag = wet_ngs_offer_dolmen
+        set_variable = {
+          wet_ngs_offer_dolmen_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_dolmen_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.130.1
+    ai_chance = {
+      factor = 5
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_dolmen
+      exists = yes
+      NOT = {
+        has_war_with = U24
+      }
+      994 = {
+        is_owned_by = PREV
+        is_fully_controlled_by = PREV
+      }
+    }
+    effect_tooltip = {
+      give_military_access = U24
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_dolmen
+          exists = yes
+          NOT = {
+            has_war_with = U24
+          }
+          994 = {
+            is_owned_by = PREV
+            is_fully_controlled_by = PREV
+          }
+        }
+        clr_country_flag = wet_ngs_offer_dolmen
+        set_variable = {
+          wet_ngs_offer_dolmen_days = 0
+        }
+        set_country_flag = wet_ngs_dolmen_permission
+        give_military_access = U24
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_dolmen_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_dolmen
+          }
+          clr_country_flag = wet_ngs_offer_dolmen
+          set_variable = {
+            wet_ngs_offer_dolmen_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_dolmen_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.131
+  title = wet_nagashi.131.t
+  desc = wet_nagashi.131.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.131.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_soul_tithe
+        }
+        clr_country_flag = wet_ngs_offer_soul_tithe
+        set_variable = {
+          wet_ngs_offer_soul_tithe_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_soul_tithe_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.131.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_soul_tithe
+      wet_ngs_court_eligible = yes
+      has_country_flag = wet_ngs_pledged
+      has_political_power
+      >
+      39
+      NOT = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+      U24 = {
+        NOT = {
+          has_country_flag = wet_ngs_project_funded
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      add_political_power = -40
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -25
+        }
+      }
+    }
+    custom_effect_tooltip = wet_nagashi.131.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_soul_tithe
+          wet_ngs_court_eligible = yes
+          has_country_flag = wet_ngs_pledged
+          has_political_power
+          >
+          39
+          NOT = {
+            has_country_flag = wet_ngs_soul_donor
+          }
+          U24 = {
+            NOT = {
+              has_country_flag = wet_ngs_project_funded
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_ngs_offer_soul_tithe
+        set_variable = {
+          wet_ngs_offer_soul_tithe_days = 0
+        }
+        add_political_power = -40
+        set_country_flag = wet_ngs_soul_donor
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -25
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_soul_tithe_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_soul_tithe
+          }
+          clr_country_flag = wet_ngs_offer_soul_tithe
+          set_variable = {
+            wet_ngs_offer_soul_tithe_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_soul_tithe_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.132
+  title = wet_nagashi.132.t
+  desc = wet_nagashi.132.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.132.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.133
+  title = wet_nagashi.133.t
+  desc = wet_nagashi.133.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.133.0
+    ai_chance = {
+      factor = 1
+    }
+    hidden_effect = {
+      set_global_flag = wet_story_settra_refused
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.134
+  title = wet_nagashi.134.t
+  desc = wet_nagashi.134.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.134.0
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      add_political_power = 50
+    }
+    hidden_effect = {
+      set_global_flag = wet_story_settra_mortarch
+      add_political_power = 50
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.135
+  title = wet_nagashi.135.t
+  desc = wet_nagashi.135.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.135.0
+    ai_chance = {
+      factor = 100
+    }
+    effect_tooltip = {
+      U24 = {
+        country_event = {
+          id = wet_nagashi.133
+        }
+      }
+    }
+    hidden_effect = {
+      set_global_flag = wet_story_settra_refused
+      U24 = {
+        country_event = {
+          id = wet_nagashi.133
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.135.1
+    ai_chance = {
+      factor = 0
+    }
+    trigger = {
+      is_ai = no
+      has_character = WET_Z01_leader
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+      U24 = {
+        country_event = {
+          id = wet_nagashi.134
+        }
+      }
+    }
+    hidden_effect = {
+      set_global_flag = wet_story_settra_mortarch
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+      U24 = {
+        country_event = {
+          id = wet_nagashi.134
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.136
+  title = wet_nagashi.136.t
+  desc = wet_nagashi.136.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.136.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_living
+        }
+        clr_country_flag = wet_ngs_offer_compact_living
+        set_variable = {
+          wet_ngs_offer_compact_living_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_compact_living_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.136.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_compact_living
+      wet_ngs_living_leader = yes
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        has_country_flag = wet_ngs_policy_living
+        NOT = {
+          has_country_flag = wet_ngs_renunciation_notice
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_living
+          wet_ngs_living_leader = yes
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_country_flag = wet_ngs_policy_living
+            NOT = {
+              has_country_flag = wet_ngs_renunciation_notice
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_compact_living
+        set_variable = {
+          wet_ngs_offer_compact_living_days = 0
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+        set_country_flag = wet_ngs_pact_signatory
+        set_country_flag = wet_ngs_pact_living
+        U24 = {
+          clear_array = wet_ngs_pact_partner
+          add_to_array = {
+            wet_ngs_pact_partner = PREV
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_compact_living_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_compact_living
+          }
+          clr_country_flag = wet_ngs_offer_compact_living
+          set_variable = {
+            wet_ngs_offer_compact_living_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_compact_living_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.137
+  title = wet_nagashi.137.t
+  desc = wet_nagashi.137.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.137.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_rats
+        }
+        clr_country_flag = wet_ngs_offer_compact_rats
+        set_variable = {
+          wet_ngs_offer_compact_rats_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_compact_rats_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.137.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_compact_rats
+      wet_ngs_rats_leader = yes
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        has_country_flag = wet_ngs_policy_rats
+        NOT = {
+          has_country_flag = wet_ngs_renunciation_notice
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_rats
+          wet_ngs_rats_leader = yes
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_country_flag = wet_ngs_policy_rats
+            NOT = {
+              has_country_flag = wet_ngs_renunciation_notice
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_compact_rats
+        set_variable = {
+          wet_ngs_offer_compact_rats_days = 0
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+        set_country_flag = wet_ngs_pact_signatory
+        set_country_flag = wet_ngs_pact_rats
+        U24 = {
+          clear_array = wet_ngs_pact_partner
+          add_to_array = {
+            wet_ngs_pact_partner = PREV
+          }
+        }
+        if = {
+          limit = {
+            tag = U25
+          }
+          U24 = {
+            set_country_flag = wet_skv_pact_signatory
+            set_country_flag = wet_skv_pact_nagash
+          }
+          set_country_flag = wet_skv_pact_nagash
+          clear_array = wet_skv_pact_partner
+          add_to_array = {
+            wet_skv_pact_partner = U24
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_compact_rats_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_compact_rats
+          }
+          clr_country_flag = wet_ngs_offer_compact_rats
+          set_variable = {
+            wet_ngs_offer_compact_rats_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_compact_rats_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.138
+  title = wet_nagashi.138.t
+  desc = wet_nagashi.138.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.138.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_chaos
+        }
+        clr_country_flag = wet_ngs_offer_compact_chaos
+        set_variable = {
+          wet_ngs_offer_compact_chaos_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_compact_chaos_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.138.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_compact_chaos
+      wet_ngs_chaos_leader = yes
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        has_country_flag = wet_ngs_policy_chaos
+        NOT = {
+          has_country_flag = wet_ngs_renunciation_notice
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_compact_chaos
+          wet_ngs_chaos_leader = yes
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_country_flag = wet_ngs_policy_chaos
+            NOT = {
+              has_country_flag = wet_ngs_renunciation_notice
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_compact_chaos
+        set_variable = {
+          wet_ngs_offer_compact_chaos_days = 0
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+        set_country_flag = wet_ngs_pact_signatory
+        set_country_flag = wet_ngs_pact_chaos
+        U24 = {
+          clear_array = wet_ngs_pact_partner
+          add_to_array = {
+            wet_ngs_pact_partner = PREV
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_compact_chaos_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_compact_chaos
+          }
+          clr_country_flag = wet_ngs_offer_compact_chaos
+          set_variable = {
+            wet_ngs_offer_compact_chaos_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_compact_chaos_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.139
+  title = wet_nagashi.139.t
+  desc = wet_nagashi.139.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.139.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_living
+        }
+        clr_country_flag = wet_ngs_offer_passage_living
+        set_variable = {
+          wet_ngs_offer_passage_living_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_passage_living_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.139.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_passage_living
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_living
+    }
+    effect_tooltip = {
+      give_military_access = U24
+      add_opinion_modifier = {
+        target = U24
+        modifier = wet_ngs_friendship
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_living
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_living
+        }
+        clr_country_flag = wet_ngs_offer_passage_living
+        set_variable = {
+          wet_ngs_offer_passage_living_days = 0
+        }
+        give_military_access = U24
+        add_opinion_modifier = {
+          target = U24
+          modifier = wet_ngs_friendship
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_passage_living_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_passage_living
+          }
+          clr_country_flag = wet_ngs_offer_passage_living
+          set_variable = {
+            wet_ngs_offer_passage_living_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_passage_living_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.140
+  title = wet_nagashi.140.t
+  desc = wet_nagashi.140.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.140.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_northern
+        }
+        clr_country_flag = wet_ngs_offer_passage_northern
+        set_variable = {
+          wet_ngs_offer_passage_northern_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_passage_northern_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.140.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_passage_northern
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      give_military_access = U24
+      add_opinion_modifier = {
+        target = U24
+        modifier = wet_ngs_friendship
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_northern
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_passage_northern
+        set_variable = {
+          wet_ngs_offer_passage_northern_days = 0
+        }
+        give_military_access = U24
+        add_opinion_modifier = {
+          target = U24
+          modifier = wet_ngs_friendship
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -50
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_passage_northern_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_passage_northern
+          }
+          clr_country_flag = wet_ngs_offer_passage_northern
+          set_variable = {
+            wet_ngs_offer_passage_northern_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_passage_northern_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.141
+  title = wet_nagashi.141.t
+  desc = wet_nagashi.141.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.141.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_independent
+        }
+        clr_country_flag = wet_ngs_offer_passage_independent
+        set_variable = {
+          wet_ngs_offer_passage_independent_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_passage_independent_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.141.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_passage_independent
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      give_military_access = U24
+      add_opinion_modifier = {
+        target = U24
+        modifier = wet_ngs_friendship
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_passage_independent
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_passage_independent
+        set_variable = {
+          wet_ngs_offer_passage_independent_days = 0
+        }
+        give_military_access = U24
+        add_opinion_modifier = {
+          target = U24
+          modifier = wet_ngs_friendship
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -50
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_passage_independent_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_passage_independent
+          }
+          clr_country_flag = wet_ngs_offer_passage_independent
+          set_variable = {
+            wet_ngs_offer_passage_independent_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_passage_independent_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.142
+  title = wet_nagashi.142.t
+  desc = wet_nagashi.142.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.142.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_harkon_passage
+        }
+        clr_country_flag = wet_ngs_offer_harkon_passage
+        set_variable = {
+          wet_ngs_offer_harkon_passage_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_harkon_passage_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.142.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_harkon_passage
+      tag = V01
+      exists = yes
+      has_country_flag = wet_ngs_pledged
+      NOT = {
+        has_war_with = U24
+      }
+    }
+    effect_tooltip = {
+      give_military_access = U24
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_harkon_passage
+          tag = V01
+          exists = yes
+          has_country_flag = wet_ngs_pledged
+          NOT = {
+            has_war_with = U24
+          }
+        }
+        clr_country_flag = wet_ngs_offer_harkon_passage
+        set_variable = {
+          wet_ngs_offer_harkon_passage_days = 0
+        }
+        give_military_access = U24
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_harkon_passage_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_harkon_passage
+          }
+          clr_country_flag = wet_ngs_offer_harkon_passage
+          set_variable = {
+            wet_ngs_offer_harkon_passage_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_harkon_passage_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.143
+  title = wet_nagashi.143.t
+  desc = wet_nagashi.143.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.143.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_exchange_living
+        }
+        clr_country_flag = wet_ngs_offer_exchange_living
+        set_variable = {
+          wet_ngs_offer_exchange_living_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_exchange_living_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.143.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_exchange_living
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_living
+      wet_ngs_covert_access = yes
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+      U24 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          249
+        }
+      }
+    }
+    effect_tooltip = {
+      send_equipment = {
+        equipment = support_equipment
+        amount = 100
+        target = U24
+      }
+      U24 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 250
+          target = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_exchange_living
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_living
+          wet_ngs_covert_access = yes
+          has_equipment = {
+            support_equipment
+            >
+            99
+          }
+          U24 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              249
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_exchange_living
+        set_variable = {
+          wet_ngs_offer_exchange_living_days = 0
+        }
+        send_equipment = {
+          equipment = support_equipment
+          amount = 100
+          target = U24
+        }
+        U24 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 250
+            target = PREV
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_exchange_living_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_exchange_living
+          }
+          clr_country_flag = wet_ngs_offer_exchange_living
+          set_variable = {
+            wet_ngs_offer_exchange_living_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_exchange_living_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.144
+  title = wet_nagashi.144.t
+  desc = wet_nagashi.144.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.144.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_exchange_chaos
+        }
+        clr_country_flag = wet_ngs_offer_exchange_chaos
+        set_variable = {
+          wet_ngs_offer_exchange_chaos_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_exchange_chaos_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.144.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_exchange_chaos
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_chaos
+      wet_ngs_covert_access = yes
+      has_equipment = {
+        support_equipment
+        >
+        149
+      }
+      U24 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          299
+        }
+      }
+    }
+    effect_tooltip = {
+      send_equipment = {
+        equipment = support_equipment
+        amount = 150
+        target = U24
+      }
+      U24 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 300
+          target = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_exchange_chaos
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_chaos
+          wet_ngs_covert_access = yes
+          has_equipment = {
+            support_equipment
+            >
+            149
+          }
+          U24 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              299
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_exchange_chaos
+        set_variable = {
+          wet_ngs_offer_exchange_chaos_days = 0
+        }
+        send_equipment = {
+          equipment = support_equipment
+          amount = 150
+          target = U24
+        }
+        U24 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 300
+            target = PREV
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_exchange_chaos_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_exchange_chaos
+          }
+          clr_country_flag = wet_ngs_offer_exchange_chaos
+          set_variable = {
+            wet_ngs_offer_exchange_chaos_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_exchange_chaos_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.145
+  title = wet_nagashi.145.t
+  desc = wet_nagashi.145.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.145.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_workshop_lore
+        }
+        clr_country_flag = wet_ngs_offer_workshop_lore
+        set_variable = {
+          wet_ngs_offer_workshop_lore_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_workshop_lore_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.145.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_workshop_lore
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_rats
+      U24 = {
+        has_equipment = {
+          support_equipment
+          >
+          99
+        }
+        NOT = {
+          has_country_flag = wet_ngs_lore_purchased
+        }
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        send_equipment = {
+          equipment = support_equipment
+          amount = 100
+          target = PREV
+        }
+        add_tech_bonus = {
+          name = wet_ngs_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_workshop_lore
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_rats
+          U24 = {
+            has_equipment = {
+              support_equipment
+              >
+              99
+            }
+            NOT = {
+              has_country_flag = wet_ngs_lore_purchased
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_workshop_lore
+        set_variable = {
+          wet_ngs_offer_workshop_lore_days = 0
+        }
+        U24 = {
+          send_equipment = {
+            equipment = support_equipment
+            amount = 100
+            target = PREV
+          }
+          add_tech_bonus = {
+            name = wet_ngs_research_bonus
+            bonus = 0.5
+            uses = 1
+            category = industry
+          }
+          set_country_flag = wet_ngs_lore_purchased
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          set_country_flag = wet_ngs_offer_workshop_lore_accepted
+        }
+        set_variable = {
+          wet_ngs_offer_workshop_lore_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_workshop_lore
+          }
+          clr_country_flag = wet_ngs_offer_workshop_lore
+          set_variable = {
+            wet_ngs_offer_workshop_lore_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_workshop_lore_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.146
+  title = wet_nagashi.146.t
+  desc = wet_nagashi.146.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.146.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_independent_nap
+        }
+        clr_country_flag = wet_ngs_offer_independent_nap
+        set_variable = {
+          wet_ngs_offer_independent_nap_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_independent_nap_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.146.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_independent_nap
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      NOT = {
+        has_non_aggression_pact_with = U24
+      }
+      U24 = {
+        has_country_flag = wet_ngs_policy_independent
+      }
+    }
+    effect_tooltip = {
+      diplomatic_relation = {
+        country = U24
+        relation = non_aggression_pact
+        active = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_independent_nap
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          NOT = {
+            has_non_aggression_pact_with = U24
+          }
+          U24 = {
+            has_country_flag = wet_ngs_policy_independent
+          }
+        }
+        clr_country_flag = wet_ngs_offer_independent_nap
+        set_variable = {
+          wet_ngs_offer_independent_nap_days = 0
+        }
+        diplomatic_relation = {
+          country = U24
+          relation = non_aggression_pact
+          active = yes
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_independent_nap_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_independent_nap
+          }
+          clr_country_flag = wet_ngs_offer_independent_nap
+          set_variable = {
+            wet_ngs_offer_independent_nap_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_independent_nap_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.147
+  title = wet_nagashi.147.t
+  desc = wet_nagashi.147.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.147.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_independent_aid
+        }
+        clr_country_flag = wet_ngs_offer_independent_aid
+        set_variable = {
+          wet_ngs_offer_independent_aid_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_independent_aid_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.147.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_independent_aid
+      exists = yes
+      NOT = {
+        tag = U24
+      }
+      NOT = {
+        tag = WST
+      }
+      NOT = {
+        has_war_with = U24
+      }
+      wet_ngs_covert_access = yes
+      U24 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          249
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        send_equipment = {
+          equipment = infantry_equipment
+          amount = 250
+          target = PREV
+        }
+      }
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -50
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_independent_aid
+          exists = yes
+          NOT = {
+            tag = U24
+          }
+          NOT = {
+            tag = WST
+          }
+          NOT = {
+            has_war_with = U24
+          }
+          wet_ngs_covert_access = yes
+          U24 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              249
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_ngs_offer_independent_aid
+        set_variable = {
+          wet_ngs_offer_independent_aid_days = 0
+        }
+        U24 = {
+          send_equipment = {
+            equipment = infantry_equipment
+            amount = 250
+            target = PREV
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -50
+          }
+          set_country_flag = wet_ngs_offer_independent_aid_accepted
+        }
+        set_variable = {
+          wet_ngs_offer_independent_aid_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_independent_aid
+          }
+          clr_country_flag = wet_ngs_offer_independent_aid
+          set_variable = {
+            wet_ngs_offer_independent_aid_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_independent_aid_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.148
+  title = wet_nagashi.148.t
+  desc = wet_nagashi.148.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.148.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.149
+  title = wet_nagashi.149.t
+  desc = wet_nagashi.149.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.149.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_invite_court
+        }
+        clr_country_flag = wet_ngs_offer_invite_court
+        set_variable = {
+          wet_ngs_offer_invite_court_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_invite_court_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.149.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_invite_court
+      wet_ngs_court_eligible = yes
+      has_country_flag = wet_ngs_pledged
+      is_in_faction = no
+      wet_can_join_faction = yes
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = U24
+        }
+      }
+      U24 = {
+        is_faction_leader = yes
+        wet_can_join_faction = yes
+        wet_ngs_restored = yes
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        add_to_faction = PREV
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_invite_court
+          wet_ngs_court_eligible = yes
+          has_country_flag = wet_ngs_pledged
+          is_in_faction = no
+          wet_can_join_faction = yes
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = U24
+            }
+          }
+          U24 = {
+            is_faction_leader = yes
+            wet_can_join_faction = yes
+            wet_ngs_restored = yes
+          }
+        }
+        clr_country_flag = wet_ngs_offer_invite_court
+        set_variable = {
+          wet_ngs_offer_invite_court_days = 0
+        }
+        U24 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_invite_court_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_invite_court
+          }
+          clr_country_flag = wet_ngs_offer_invite_court
+          set_variable = {
+            wet_ngs_offer_invite_court_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_invite_court_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.150
+  title = wet_nagashi.150.t
+  desc = wet_nagashi.150.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.150.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_nagash_government
+        }
+        clr_country_flag = wet_ngs_offer_nagash_government
+        set_variable = {
+          wet_ngs_offer_nagash_government_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_nagash_government_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.150.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_nagash_government
+      wet_ngs_court_eligible = yes
+      has_country_flag = wet_ngs_pledged
+      communism
+      >
+      0.349
+      NOT = {
+        has_government = communism
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          tag = A13
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = B16
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = A20
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = A68
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = B27
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = V01
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = U18
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          tag = A74
+        }
+        set_politics = {
+          ruling_party = communism
+          elections_allowed = no
+        }
+      }
+      if = {
+        limit = {
+          has_government = communism
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_nagash_government
+          wet_ngs_court_eligible = yes
+          has_country_flag = wet_ngs_pledged
+          communism
+          >
+          0.349
+          NOT = {
+            has_government = communism
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_nagash_government
+        set_variable = {
+          wet_ngs_offer_nagash_government_days = 0
+        }
+        if = {
+          limit = {
+            tag = A13
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = B16
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = A20
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = A68
+          }
+          set_country_leader_ideology = wet_undead_nagash_worship
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = B27
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = V01
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = U18
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            tag = A74
+          }
+          set_country_leader_ideology = wet_undead_vampiric
+          set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+          }
+        }
+        if = {
+          limit = {
+            has_government = communism
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_nagash_government_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_nagash_government
+          }
+          clr_country_flag = wet_ngs_offer_nagash_government
+          set_variable = {
+            wet_ngs_offer_nagash_government_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_nagash_government_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.151
+  title = wet_nagashi.151.t
+  desc = wet_nagashi.151.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.151.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_call_mortarch
+        }
+        clr_country_flag = wet_ngs_offer_call_mortarch
+        set_variable = {
+          wet_ngs_offer_call_mortarch_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_call_mortarch_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.151.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_call_mortarch
+      wet_ngs_court_eligible = yes
+      has_country_flag = wet_ngs_pledged
+      is_in_faction_with = U24
+      any_of_scopes = {
+        array = wet_ngs_called_enemy
+        wet_ngs_everchosen_enemy = yes
+        NOT = {
+          wet_ngs_protected = yes
+        }
+        PREV = {
+          can_declare_war_on = PREV
+        }
+      }
+    }
+    effect_tooltip = {
+      for_each_scope_loop = {
+        array = wet_ngs_called_enemy
+        if = {
+          limit = {
+            wet_ngs_everchosen_enemy = yes
+            PREV = {
+              can_declare_war_on = PREV
+            }
+          }
+          PREV = {
+            add_to_war = {
+              targeted_alliance = U24
+              enemy = PREV
+              hostility_reason = asked_to_join
+              single_target_only = yes
+            }
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_call_mortarch
+          wet_ngs_court_eligible = yes
+          has_country_flag = wet_ngs_pledged
+          is_in_faction_with = U24
+          any_of_scopes = {
+            array = wet_ngs_called_enemy
+            wet_ngs_everchosen_enemy = yes
+            NOT = {
+              wet_ngs_protected = yes
+            }
+            PREV = {
+              can_declare_war_on = PREV
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_call_mortarch
+        set_variable = {
+          wet_ngs_offer_call_mortarch_days = 0
+        }
+        for_each_scope_loop = {
+          array = wet_ngs_called_enemy
+          if = {
+            limit = {
+              wet_ngs_everchosen_enemy = yes
+              PREV = {
+                can_declare_war_on = PREV
+              }
+            }
+            PREV = {
+              add_to_war = {
+                targeted_alliance = U24
+                enemy = PREV
+                hostility_reason = asked_to_join
+                single_target_only = yes
+              }
+            }
+          }
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_call_mortarch_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_call_mortarch
+          }
+          clr_country_flag = wet_ngs_offer_call_mortarch
+          set_variable = {
+            wet_ngs_offer_call_mortarch_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_call_mortarch_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.152
+  title = wet_nagashi.152.t
+  desc = wet_nagashi.152.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.152.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_joint_living
+        }
+        clr_country_flag = wet_ngs_offer_joint_living
+        set_variable = {
+          wet_ngs_offer_joint_living_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_joint_living_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.152.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_joint_living
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_living
+      U24 = {
+        OR = {
+          is_ai = no
+          wet_ngs_ai_goal_slot_free = yes
+        }
+        has_country_flag = wet_ngs_common_war_pending
+        wet_ngs_restored = yes
+        any_of_scopes = {
+          array = wet_ngs_common_enemy
+          wet_ngs_goal_legal = yes
+          has_war_with = PREV.PREV
+        }
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        for_each_scope_loop = {
+          array = wet_ngs_common_enemy
+          if = {
+            limit = {
+              wet_ngs_goal_legal = yes
+              has_war_with = PREV.PREV
+              U24 = {
+                OR = {
+                  is_ai = no
+                  wet_ngs_ai_goal_slot_free = yes
+                }
+              }
+            }
+            U24 = {
+              create_wargoal = {
+                type = take_state_focus
+                target = PREV
+                generator = PREV.owned_states
+                expire = 30
+              }
+              declare_war_on = {
+                target = PREV
+                type = take_state_focus
+                generator = PREV.owned_states
+              }
+            }
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_joint_living
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_living
+          U24 = {
+            OR = {
+              is_ai = no
+              wet_ngs_ai_goal_slot_free = yes
+            }
+            has_country_flag = wet_ngs_common_war_pending
+            wet_ngs_restored = yes
+            any_of_scopes = {
+              array = wet_ngs_common_enemy
+              wet_ngs_goal_legal = yes
+              has_war_with = PREV.PREV
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_joint_living
+        set_variable = {
+          wet_ngs_offer_joint_living_days = 0
+        }
+        U24 = {
+          for_each_scope_loop = {
+            array = wet_ngs_common_enemy
+            if = {
+              limit = {
+                wet_ngs_goal_legal = yes
+                has_war_with = PREV.PREV
+                U24 = {
+                  OR = {
+                    is_ai = no
+                    wet_ngs_ai_goal_slot_free = yes
+                  }
+                }
+              }
+              U24 = {
+                create_wargoal = {
+                  type = take_state_focus
+                  target = PREV
+                  generator = PREV.owned_states
+                  expire = 30
+                }
+                if = {
+                  limit = {
+                    is_ai = yes
+                  }
+                  set_country_flag = wet_ngs_goal_issued_today
+                }
+                declare_war_on = {
+                  target = PREV
+                  type = take_state_focus
+                  generator = PREV.owned_states
+                }
+              }
+            }
+          }
+          clr_country_flag = wet_ngs_common_war_pending
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_joint_living_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_joint_living
+          }
+          clr_country_flag = wet_ngs_offer_joint_living
+          set_variable = {
+            wet_ngs_offer_joint_living_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_joint_living_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.153
+  title = wet_nagashi.153.t
+  desc = wet_nagashi.153.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.153.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_joint_rats
+        }
+        clr_country_flag = wet_ngs_offer_joint_rats
+        set_variable = {
+          wet_ngs_offer_joint_rats_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_joint_rats_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.153.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_joint_rats
+      wet_ngs_pact_live = yes
+      has_country_flag = wet_ngs_pact_rats
+      U24 = {
+        OR = {
+          is_ai = no
+          wet_ngs_ai_goal_slot_free = yes
+        }
+        has_country_flag = wet_ngs_common_war_pending
+        wet_ngs_restored = yes
+        any_of_scopes = {
+          array = wet_ngs_common_enemy
+          wet_ngs_goal_legal = yes
+          has_war_with = PREV.PREV
+        }
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        for_each_scope_loop = {
+          array = wet_ngs_common_enemy
+          if = {
+            limit = {
+              wet_ngs_goal_legal = yes
+              has_war_with = PREV.PREV
+              U24 = {
+                OR = {
+                  is_ai = no
+                  wet_ngs_ai_goal_slot_free = yes
+                }
+              }
+            }
+            U24 = {
+              create_wargoal = {
+                type = take_state_focus
+                target = PREV
+                generator = PREV.owned_states
+                expire = 30
+              }
+              declare_war_on = {
+                target = PREV
+                type = take_state_focus
+                generator = PREV.owned_states
+              }
+            }
+          }
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_joint_rats
+          wet_ngs_pact_live = yes
+          has_country_flag = wet_ngs_pact_rats
+          U24 = {
+            OR = {
+              is_ai = no
+              wet_ngs_ai_goal_slot_free = yes
+            }
+            has_country_flag = wet_ngs_common_war_pending
+            wet_ngs_restored = yes
+            any_of_scopes = {
+              array = wet_ngs_common_enemy
+              wet_ngs_goal_legal = yes
+              has_war_with = PREV.PREV
+            }
+          }
+        }
+        clr_country_flag = wet_ngs_offer_joint_rats
+        set_variable = {
+          wet_ngs_offer_joint_rats_days = 0
+        }
+        U24 = {
+          for_each_scope_loop = {
+            array = wet_ngs_common_enemy
+            if = {
+              limit = {
+                wet_ngs_goal_legal = yes
+                has_war_with = PREV.PREV
+                U24 = {
+                  OR = {
+                    is_ai = no
+                    wet_ngs_ai_goal_slot_free = yes
+                  }
+                }
+              }
+              U24 = {
+                create_wargoal = {
+                  type = take_state_focus
+                  target = PREV
+                  generator = PREV.owned_states
+                  expire = 30
+                }
+                if = {
+                  limit = {
+                    is_ai = yes
+                  }
+                  set_country_flag = wet_ngs_goal_issued_today
+                }
+                declare_war_on = {
+                  target = PREV
+                  type = take_state_focus
+                  generator = PREV.owned_states
+                }
+              }
+            }
+          }
+          clr_country_flag = wet_ngs_common_war_pending
+        }
+        if = {
+          limit = {
+            always = yes
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_joint_rats_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_joint_rats
+          }
+          clr_country_flag = wet_ngs_offer_joint_rats
+          set_variable = {
+            wet_ngs_offer_joint_rats_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_joint_rats_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.154
+  title = wet_nagashi.154.t
+  desc = wet_nagashi.154.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.154.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_submission
+        }
+        clr_country_flag = wet_ngs_offer_submission
+        set_variable = {
+          wet_ngs_offer_submission_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_submission_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.154.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_submission
+      exists = yes
+      is_subject = no
+      is_faction_leader = no
+      wet_ngs_target_N00 = yes
+      OR = {
+        has_capitulated = yes
+        surrender_progress
+        >
+        0.5
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          is_subject_of = U24
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_submission
+          exists = yes
+          is_subject = no
+          is_faction_leader = no
+          wet_ngs_target_N00 = yes
+          OR = {
+            has_capitulated = yes
+            surrender_progress
+            >
+            0.5
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_submission
+        set_variable = {
+          wet_ngs_offer_submission_days = 0
+        }
+        U24 = {
+          puppet = PREV
+        }
+        if = {
+          limit = {
+            is_subject_of = U24
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_submission_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_submission
+          }
+          clr_country_flag = wet_ngs_offer_submission
+          set_variable = {
+            wet_ngs_offer_submission_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_submission_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nagashi.155
+  title = wet_nagashi.155.t
+  desc = wet_nagashi.155.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nagashi.155.0
+    ai_chance = {
+      factor = 15
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_bastion_aid
+        }
+        clr_country_flag = wet_ngs_offer_bastion_aid
+        set_variable = {
+          wet_ngs_offer_bastion_aid_days = 0
+        }
+        set_variable = {
+          wet_ngs_offer_bastion_aid_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nagashi.155.1
+    ai_chance = {
+      factor = 85
+      modifier = {
+        add = 10
+        is_in_faction_with = U24
+      }
+    }
+    trigger = {
+      has_country_flag = wet_ngs_offer_bastion_aid
+      tag = A01
+      exists = yes
+      NOT = {
+        has_war_with = U24
+      }
+      wet_ngs_covert_access = yes
+      has_global_flag = wet_story_auric_bastion_raised
+      has_global_flag = wet_story_auric_bastion_broken
+      wet_rei_bastion_sites = yes
+      U24 = {
+        has_equipment = {
+          support_equipment
+          >
+          249
+        }
+      }
+      U24 = {
+        has_political_power
+        >
+        74
+      }
+    }
+    effect_tooltip = {
+      U24 = {
+        send_equipment = {
+          equipment = support_equipment
+          amount = 250
+          target = A01
+        }
+      }
+      add_political_power = 75
+      if = {
+        limit = {
+          always = yes
+        }
+        U24 = {
+          add_political_power = -75
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_ngs_offer_bastion_aid
+          tag = A01
+          exists = yes
+          NOT = {
+            has_war_with = U24
+          }
+          wet_ngs_covert_access = yes
+          has_global_flag = wet_story_auric_bastion_raised
+          has_global_flag = wet_story_auric_bastion_broken
+          wet_rei_bastion_sites = yes
+          U24 = {
+            has_equipment = {
+              support_equipment
+              >
+              249
+            }
+          }
+          U24 = {
+            has_political_power
+            >
+            74
+          }
+        }
+        clr_country_flag = wet_ngs_offer_bastion_aid
+        set_variable = {
+          wet_ngs_offer_bastion_aid_days = 0
+        }
+        U24 = {
+          send_equipment = {
+            equipment = support_equipment
+            amount = 250
+            target = A01
+          }
+        }
+        add_political_power = 75
+        if = {
+          limit = {
+            always = yes
+          }
+          U24 = {
+            add_political_power = -75
+          }
+        }
+        set_variable = {
+          wet_ngs_offer_bastion_aid_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_ngs_offer_bastion_aid
+          }
+          clr_country_flag = wet_ngs_offer_bastion_aid
+          set_variable = {
+            wet_ngs_offer_bastion_aid_days = 0
+          }
+          set_variable = {
+            wet_ngs_offer_bastion_aid_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}

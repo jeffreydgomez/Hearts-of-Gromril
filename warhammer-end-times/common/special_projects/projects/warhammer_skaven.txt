@@ -1,0 +1,507 @@
+sp_wet_skv_doom = {
+  specialization = specialization_nuclear
+  icon = GFX_sp_nuclear_bomb
+  allowed = {
+    original_tag = U25
+  }
+  visible = {
+    FROM = {
+      has_completed_focus = WET_SKV_T05
+    }
+  }
+  available = {
+    FROM = {
+      has_tech = atomic_research
+      has_country_flag = wet_skv_funded_doom
+      has_completed_focus = WET_SKV_T05
+    }
+  }
+  prototype_time = 90
+  complexity = 25
+  resource_cost = {
+    resources = {
+      steel = 6
+      tungsten = 3
+      chromium = 6
+    }
+  }
+  breakthrough_cost = {
+    specialization_nuclear = 0
+  }
+  ai_will_do = {
+    base = 20
+  }
+  empty_reward_weight = {
+    base = 0
+  }
+  unique_prototype_rewards = {
+    sp_wet_skv_doom_prototype = {
+      fire_only_once = no
+      weight = {
+        base = 1
+      }
+      option = {
+        token = sp_wet_skv_doom_prototype_risk
+        default = yes
+        iteration_output = {
+          country_effects = {
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_doom = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_doom = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+      option = {
+        token = sp_wet_skv_doom_prototype_safe
+        iteration_output = {
+          country_effects = {
+            if = {
+              limit = {
+                has_political_power
+                >
+                74
+              }
+              add_political_power = -75
+              set_country_flag = wet_skv_safety
+            }
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_doom = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_doom = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  project_output = {
+    country_effects = {
+      set_country_flag = wet_skv_research_doom
+      set_technology = {
+        nuclear_reactor = 1
+        popup = no
+      }
+    }
+  }
+}
+sp_wet_skv_storm = {
+  specialization = specialization_land
+  icon = GFX_sp_land_flamethrower_tank
+  allowed = {
+    original_tag = U25
+  }
+  visible = {
+    FROM = {
+      has_completed_focus = WET_SKV_T12
+    }
+  }
+  available = {
+    FROM = {
+      OR = {
+        has_tech = basic_medium_tank
+        has_tech = basic_medium_tank_chassis
+      }
+      has_country_flag = wet_skv_funded_storm
+      has_completed_focus = WET_SKV_T12
+      wet_skv_moulder_service = yes
+      has_country_flag = wet_skv_service_skryre
+      OR = {
+        has_country_flag = wet_skv_storm_ranged
+        has_country_flag = wet_skv_storm_grinder
+      }
+    }
+  }
+  prototype_time = 90
+  complexity = 34
+  resource_cost = {
+    resources = {
+      steel = 4
+      rubber = 4
+      chromium = 2
+    }
+  }
+  breakthrough_cost = {
+    specialization_land = 0
+  }
+  ai_will_do = {
+    base = 20
+  }
+  empty_reward_weight = {
+    base = 0
+  }
+  unique_prototype_rewards = {
+    sp_wet_skv_storm_prototype = {
+      fire_only_once = no
+      weight = {
+        base = 1
+      }
+      option = {
+        token = sp_wet_skv_storm_prototype_risk
+        default = yes
+        iteration_output = {
+          country_effects = {
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_storm = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_storm = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+      option = {
+        token = sp_wet_skv_storm_prototype_safe
+        iteration_output = {
+          country_effects = {
+            if = {
+              limit = {
+                has_political_power
+                >
+                74
+              }
+              add_political_power = -75
+              set_country_flag = wet_skv_safety
+            }
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_storm = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_storm = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  project_output = {
+    country_effects = {
+      set_country_flag = wet_skv_research_storm
+    }
+  }
+}
+sp_wet_skv_moon = {
+  specialization = specialization_nuclear
+  icon = GFX_sp_nuclear_reactor
+  allowed = {
+    original_tag = U25
+  }
+  visible = {
+    FROM = {
+      has_completed_focus = WET_SKV_T22
+    }
+  }
+  available = {
+    FROM = {
+      has_tech = atomic_research
+      has_country_flag = wet_skv_funded_moon
+      has_completed_focus = WET_SKV_T22
+      wet_skv_director_alive = yes
+      NOT = {
+        has_country_flag = wet_skv_moon_decommissioned
+      }
+      955 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        nuclear_facility
+        >
+        0
+      }
+    }
+  }
+  prototype_time = 180
+  complexity = 25
+  resource_cost = {
+    resources = {
+      steel = 10
+      chromium = 6
+      tungsten = 3
+    }
+  }
+  breakthrough_cost = {
+    specialization_nuclear = 0
+  }
+  ai_will_do = {
+    base = 20
+  }
+  empty_reward_weight = {
+    base = 0
+  }
+  unique_prototype_rewards = {
+    sp_wet_skv_moon_prototype = {
+      fire_only_once = no
+      weight = {
+        base = 1
+      }
+      option = {
+        token = sp_wet_skv_moon_prototype_risk
+        default = yes
+        iteration_output = {
+          country_effects = {
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_skv_director_Ikit
+              }
+              add_to_variable = {
+                wet_skv_mishap_chance = 5
+              }
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_skv_moon_rushed
+              }
+              add_to_variable = {
+                wet_skv_mishap_chance = 10
+              }
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_moon = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_moon = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+      option = {
+        token = sp_wet_skv_moon_prototype_safe
+        iteration_output = {
+          country_effects = {
+            if = {
+              limit = {
+                has_political_power
+                >
+                74
+              }
+              add_political_power = -75
+              set_country_flag = wet_skv_safety
+            }
+            set_variable = {
+              wet_skv_mishap_chance = 20
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_skv_director_Ikit
+              }
+              add_to_variable = {
+                wet_skv_mishap_chance = 5
+              }
+            }
+            if = {
+              limit = {
+                has_country_flag = wet_skv_moon_rushed
+              }
+              add_to_variable = {
+                wet_skv_mishap_chance = 10
+              }
+            }
+            set_variable = {
+              wet_skv_no_mishap = 100
+            }
+            subtract_from_variable = {
+              wet_skv_no_mishap = wet_skv_mishap_chance
+            }
+            random_list = {
+              wet_skv_mishap_chance = {
+                if = {
+                  limit = {
+                    has_country_flag = wet_skv_safety
+                  }
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -50
+                  }
+                  clr_country_flag = wet_skv_safety
+                  sp:sp_wet_skv_moon = {
+                    add_project_progress_ratio = -0.05
+                  }
+                }
+                else = {
+                  add_equipment_to_stockpile = {
+                    type = support_equipment
+                    amount = -100
+                  }
+                  sp:sp_wet_skv_moon = {
+                    add_project_progress_ratio = -0.1
+                  }
+                }
+              }
+              wet_skv_no_mishap = {
+                army_experience = 5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  project_output = {
+    country_effects = {
+      set_country_flag = wet_skv_research_moon
+      set_country_flag = wet_skv_moon_device_ready
+    }
+  }
+}

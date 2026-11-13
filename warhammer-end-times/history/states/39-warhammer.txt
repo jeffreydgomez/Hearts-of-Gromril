@@ -1,11 +1,27 @@
-# EU4 area: arden_area; source provinces: 304 311 320 321 392
+# EU4 area: arden_area; source provinces: 311 320 321 392
 state = {
   id = 39
   name = "STATE_39"
-  manpower = 1062556
+  manpower = 885463
   state_category = town
-  resources = { aluminium = 29 tungsten = 1 steel = 5 coal = 1 }
+  resources = { aluminium = 24 tungsten = 1 steel = 4 coal = 1 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 12 }
+    set_variable = { wet_pop_faith = 31 }
+    set_variable = { wet_pop_taint = 1 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = A15 }
+    # END WET inhabitants
+
+
+
+
+
+
+
     owner = A15
     add_core_of = A15
     add_core_of = Y08
@@ -16,6 +32,6 @@ state = {
       arms_factory = 1
     }
   }
-  provinces = { 314 321 331 332 406 }
+  provinces = { 321 331 332 406 }
   local_supplies = 0.0
 }

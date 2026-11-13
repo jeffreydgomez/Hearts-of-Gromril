@@ -1,0 +1,52 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      A29 = {
+        wet_kis_reconcile_exile = yes
+        wet_kis_spend_claims = yes
+      }
+    }
+  }
+  on_daily_A29 = {
+    effect = {
+      wet_kis_daily = yes
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      if = {
+        limit = {
+          wet_kis_hostile_actor = yes
+          FROM = {
+            NOT = {
+              tag = WST
+            }
+          }
+          has_war_with = FROM
+        }
+        set_country_flag = wet_kis_recorded_conquest
+      }
+    }
+  }
+  on_capitulation = {
+    effect = {
+      if = {
+        limit = {
+          tag = A29
+        }
+        wet_kis_establish_exile = yes
+        wet_kis_reconcile_exile = yes
+      }
+    }
+  }
+  on_uncapitulation = {
+    effect = {
+      if = {
+        limit = {
+          tag = A29
+        }
+        wet_kis_reconcile_exile = yes
+      }
+    }
+  }
+}

@@ -6,13 +6,33 @@ state = {
   state_category = large_town
   resources = { tungsten = 6 steel = 11 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 4 }
+    set_variable = { wet_pop_faith = 15 }
+    set_variable = { wet_pop_taint = 0 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = H12 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = H12
     add_core_of = H12
     victory_points = { 2357 1 }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      industrial_complex = 3
+      arms_factory = 2
       2357 = { landmark_wet_convent_of_sorcery = 1 }
     }
   }

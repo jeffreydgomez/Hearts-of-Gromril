@@ -1,0 +1,131 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      U24 = {
+        wet_ngs_count_agents = yes
+        wet_ngs_reconcile_benefits = yes
+      }
+    }
+  }
+  on_daily_U24 = {
+    effect = {
+      wet_ngs_daily = yes
+    }
+  }
+  on_monthly_U24 = {
+    effect = {
+      wet_ngs_monthly = yes
+    }
+  }
+  on_declare_war = {
+    effect = {
+      U24 = {
+        wet_ngs_snapshot_battlefields = yes
+      }
+    }
+  }
+  on_war_relation_added = {
+    effect = {
+      U24 = {
+        wet_ngs_snapshot_battlefields = yes
+      }
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      U24 = {
+        if = {
+          limit = {
+            wet_ngs_operational = yes
+          }
+          wet_ngs_reconcile_custody = yes
+          wet_ngs_check_settra = yes
+        }
+      }
+    }
+  }
+  on_peace = {
+    effect = {
+      U24 = {
+        if = {
+          limit = {
+            wet_ngs_operational = yes
+          }
+          wet_ngs_reconcile_custody = yes
+          wet_ngs_check_settra = yes
+        }
+      }
+    }
+  }
+  on_capitulation_immediate = {
+    effect = {
+      if = {
+        limit = {
+          tag = Z01
+          is_ai = yes
+          has_character = WET_Z01_leader
+          has_country_leader = {
+            character = WET_Z01_leader
+            ruling_only = yes
+          }
+          U24 = {
+            wet_ngs_restored = yes
+          }
+          capital_scope = {
+            controller = {
+              OR = {
+                tag = U24
+                is_subject_of = U24
+              }
+            }
+          }
+          FROM = {
+            OR = {
+              tag = U24
+              is_subject_of = U24
+            }
+          }
+        }
+        remove_country_leader_role = {
+          character = WET_Z01_leader
+          ideology = wet_unaligned_nehekharan_pantheon
+        }
+        WET_Z01_leader = {
+          set_nationality = U24
+        }
+        U24 = {
+          set_country_flag = wet_ngs_settra_captive
+        }
+      }
+      if = {
+        limit = {
+          is_in_array = {
+            U24.wet_ngs_north_target = THIS
+          }
+          FROM = {
+            OR = {
+              tag = U24
+              is_in_faction_with = U24
+            }
+          }
+        }
+        U24 = {
+          set_country_flag = wet_ngs_north_victory
+        }
+      }
+    }
+  }
+  on_daily = {
+    effect = {
+      if = {
+        limit = {
+          NOT = {
+            tag = U24
+          }
+          has_country_flag = wet_ngs_enabled
+        }
+        wet_ngs_rebel_cleanup = yes
+      }
+    }
+  }
+}

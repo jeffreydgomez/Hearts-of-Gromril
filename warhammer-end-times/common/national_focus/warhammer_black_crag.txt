@@ -1,0 +1,5528 @@
+focus_tree = {
+  id = WET_black_crag_focus
+  country = {
+    factor = 0
+    modifier = {
+      add = 100
+      tag = G24
+    }
+  }
+  default = no
+  reset_on_civilwar = no
+  initial_show_position = {
+    focus = WET_GRN_C00
+  }
+  continuous_focus_position = {
+    x = 450
+    y = 2400
+  }
+  focus = {
+    id = WET_GRN_C00
+    icon = GFX_goal_generic_national_unity
+    x = 3
+    y = 0
+    cost = 2
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C00
+        wet_grn_award_C00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_C01
+    icon = GFX_goal_generic_national_unity
+    x = 3
+    y = 1
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_C00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C01
+        wet_grn_award_C01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_C02
+    icon = GFX_goal_generic_national_unity
+    x = 3
+    y = 2
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_C01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C02
+        wet_grn_award_C02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_C03
+    icon = GFX_goal_generic_national_unity
+    x = 3
+    y = 3
+    cost = 1
+    prerequisite = {
+      focus = WET_GRN_C02
+    }
+    mutually_exclusive = {
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_C03_requirement
+        wet_grn_grimgor_here = yes
+        wet_grn_skarsnik_available = yes
+      }
+    }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_C03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_C03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C03
+        wet_grn_award_C03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 5
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_C04
+    icon = GFX_goal_generic_army_doctrines
+    x = 1
+    y = 3
+    cost = 1
+    prerequisite = {
+      focus = WET_GRN_C02
+    }
+    mutually_exclusive = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_C04_requirement
+        wet_grn_grimgor_here = yes
+      }
+    }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_C04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_C04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C04
+        wet_grn_award_C04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_C05
+    icon = GFX_goal_generic_intelligence_exchange
+    x = 5
+    y = 3
+    cost = 1
+    prerequisite = {
+      focus = WET_GRN_C02
+    }
+    mutually_exclusive = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_C05_requirement
+        wet_grn_skarsnik_available = yes
+      }
+    }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_C05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_C05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_C05
+        wet_grn_award_C05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_GRN_G00
+    icon = GFX_goal_generic_army_doctrines
+    x = 0
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_G24_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_g00
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_g00
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_G00
+        wet_grn_award_G00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_G01
+    icon = GFX_goal_generic_army_doctrines
+    x = 0
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_G24_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_g01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_g01
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_G01
+        wet_grn_award_G01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_G02
+    icon = GFX_goal_generic_army_doctrines
+    x = 0
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_G01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_G24_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      show_ideas_tooltip = wet_focus_preview_wet_grn_g02
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        show_ideas_tooltip = wet_focus_preview_wet_grn_g02
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_G02
+        wet_grn_award_G02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_G03
+    icon = GFX_goal_generic_army_doctrines
+    x = 0
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_G02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_G24_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_G03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_G03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_G03
+        wet_grn_award_G03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_G04
+    icon = GFX_goal_generic_army_doctrines
+    x = 0
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_G03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_G24_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_g04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_g04
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_G04
+        wet_grn_award_G04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_T00
+    icon = GFX_goal_generic_army_doctrines
+    x = 2
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_GRN_JointOffice
+        ruling_only = yes
+      }
+      has_character = WET_G24_leader
+      has_character = WET_U38_leader
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_t00
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_t00
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_T00
+        wet_grn_award_T00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_T01
+    icon = GFX_goal_generic_army_doctrines
+    x = 2
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_T00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_GRN_JointOffice
+        ruling_only = yes
+      }
+      has_character = WET_G24_leader
+      has_character = WET_U38_leader
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_t01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_t01
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_T01
+        wet_grn_award_T01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_T02
+    icon = GFX_goal_generic_army_doctrines
+    x = 2
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_T01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_GRN_JointOffice
+        ruling_only = yes
+      }
+      has_character = WET_G24_leader
+      has_character = WET_U38_leader
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_t02
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_t02
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_T02
+        wet_grn_award_T02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_T03
+    icon = GFX_goal_generic_army_doctrines
+    x = 2
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_T02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_GRN_JointOffice
+        ruling_only = yes
+      }
+      has_character = WET_G24_leader
+      has_character = WET_U38_leader
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_t03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_t03
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_T03
+        wet_grn_award_T03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_T04
+    icon = GFX_goal_generic_army_doctrines
+    x = 2
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_T03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_GRN_JointOffice
+        ruling_only = yes
+      }
+      has_character = WET_G24_leader
+      has_character = WET_U38_leader
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.25
+        uses = 1
+        category = land_doctrine
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_t04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.25
+          uses = 1
+          category = land_doctrine
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_t04
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_T04
+        wet_grn_award_T04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_K00
+    icon = GFX_goal_generic_secret_weapon
+    x = 6
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_U38_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_k00
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_k00
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_K00
+        wet_grn_award_K00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_K01
+    icon = GFX_goal_generic_army_doctrines
+    x = 6
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_K00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_U38_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_k01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_k01
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_K01
+        wet_grn_award_K01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_K02
+    icon = GFX_goal_generic_army_doctrines
+    x = 6
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_K01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_U38_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_K02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_K02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_K02
+        wet_grn_award_K02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_K03
+    icon = GFX_goal_generic_consumer_goods
+    x = 6
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_K02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_U38_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_k03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_k03
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_K03
+        wet_grn_award_K03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_K04
+    icon = GFX_goal_generic_army_doctrines
+    x = 6
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_K03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      has_country_leader = {
+        character = WET_U38_leader
+        ruling_only = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_k04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_k04
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_K04
+        wet_grn_award_K04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U00
+    icon = GFX_goal_generic_major_war
+    x = 4
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U00
+        wet_grn_award_U00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U01
+    icon = GFX_goal_generic_army_doctrines
+    x = 4
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_U00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_grn_badlands_march
+        days = 180
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_grn_badlands_march
+          days = 180
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U01
+        wet_grn_award_U01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U02
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 4
+    y = 6
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_U01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_U02_requirement
+        check_variable = {
+          wet_grn_absorptions
+          >
+          0
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      show_ideas_tooltip = wet_focus_preview_wet_grn_u02
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        show_ideas_tooltip = wet_focus_preview_wet_grn_u02
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U02
+        wet_grn_award_U02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U03
+    icon = GFX_goal_generic_army_doctrines
+    x = 8
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_U00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      NOT = {
+        has_idea = wet_grn_muster
+      }
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_U03_requirement
+        always = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_U03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_U03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U03
+        wet_grn_award_U03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U04
+    icon = GFX_goal_generic_trade
+    x = 4
+    y = 7
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_U02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_U04_requirement
+        check_variable = {
+          wet_grn_absorptions
+          >
+          2
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+      show_ideas_tooltip = wet_focus_preview_wet_grn_u04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        show_ideas_tooltip = wet_focus_preview_wet_grn_u04
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U04
+        wet_grn_award_U04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_U05
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 4
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_U04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_U05
+      custom_effect_tooltip = WET_GRN_U05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_U05
+        custom_effect_tooltip = WET_GRN_U05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_U05
+        wet_grn_award_U05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W00
+    icon = GFX_goal_generic_demand_territory
+    x = 15
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W00
+        wet_grn_award_W00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W01
+    icon = GFX_goal_generic_demand_territory
+    x = 13
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = engineers_tech
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_w01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = engineers_tech
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_w01
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W01
+        wet_grn_award_W01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W02
+    icon = GFX_goal_generic_demand_territory
+    x = 12
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W02
+        wet_grn_award_W02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W03
+    icon = GFX_goal_generic_demand_territory
+    x = 10
+    y = 7
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_W02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      96 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+      96 = {
+        add_building_construction = {
+          type = naval_base
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        96 = {
+          add_building_construction = {
+            type = naval_base
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W03
+        wet_grn_award_W03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W04
+    icon = GFX_goal_generic_construct_naval_dockyard
+    x = 11
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = mio_cat_tech_all_screen_ship_and_modules
+      }
+      96 = {
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = mio_cat_tech_all_screen_ship_and_modules
+        }
+        96 = {
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W04
+        wet_grn_award_W04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W05
+    icon = GFX_goal_generic_demand_territory
+    x = 14
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W05
+        wet_grn_award_W05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W06
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 14
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_W06_requirement
+        count_triggers = {
+          amount = 3
+          13 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          14 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          15 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          40 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          87 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          96 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          109 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          110 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          111 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          130 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          131 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          328 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          405 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          449 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          488 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          489 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          490 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          594 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          595 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          596 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          619 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          620 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          621 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          640 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          641 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          642 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          664 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          665 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          763 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          959 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          960 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          961 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          962 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          1076 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          1077 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          1078 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          1169 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          1170 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W06
+        wet_grn_award_W06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W07
+    icon = GFX_goal_generic_demand_territory
+    x = 17
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_w07
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_w07
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W07
+        wet_grn_award_W07 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W08
+    icon = GFX_goal_generic_national_unity
+    x = 17
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W08
+        wet_grn_award_W08 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W09
+    icon = GFX_goal_generic_demand_territory
+    x = 16
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W09
+        wet_grn_award_W09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W10
+    icon = GFX_goal_generic_demand_territory
+    x = 16
+    y = 8
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_W09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      852 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W10
+        wet_grn_award_W10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W11
+    icon = GFX_goal_generic_demand_territory
+    x = 18
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W11
+        wet_grn_award_W11 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W12
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 18
+    y = 9
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W10
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W12
+        wet_grn_award_W12 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W13
+    icon = GFX_goal_generic_demand_territory
+    x = 14
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W13_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W13_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W13
+        wet_grn_award_W13 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W14
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 13
+    y = 9
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        46 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        169 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        403 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        404 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        538 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        671 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        760 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        901 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        904 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        932 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        937 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        943 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        955 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1061 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1067 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1071 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1075 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1175 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W14_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W14_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W14
+        wet_grn_award_W14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W15
+    icon = GFX_goal_generic_demand_territory
+    x = 15
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W15
+        wet_grn_award_W15 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_W16
+    icon = GFX_goal_generic_construct_naval_dockyard
+    x = 11
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_W16_requirement
+        any_owned_state = {
+          is_fully_controlled_by = G24
+          is_coastal = yes
+          naval_base
+          >
+          0
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_W16
+      custom_effect_tooltip = WET_GRN_W16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_W16
+        custom_effect_tooltip = WET_GRN_W16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W16
+        wet_grn_award_W16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W17
+    icon = GFX_goal_generic_trade
+    x = 11
+    y = 10
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_W16
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        technology = landing_craft
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_w17
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          technology = landing_craft
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_w17
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W17
+        wet_grn_award_W17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W18
+    icon = GFX_goal_generic_demand_territory
+    x = 13
+    y = 10
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_W03
+      focus = WET_GRN_W10
+      focus = WET_GRN_W14
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        96 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        852 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        46 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        169 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        403 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        404 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        538 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        671 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        760 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        901 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        904 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        932 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        937 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        943 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        955 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1061 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1067 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1071 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1075 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1175 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W18
+        wet_grn_award_W18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_W19
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 13
+    y = 11
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_W18
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_W19_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_W19_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_W19
+        wet_grn_award_W19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E00
+    icon = GFX_goal_generic_demand_territory
+    x = 24
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E00
+        wet_grn_award_E00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 5
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E01
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 21
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_e01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_e01
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E01
+        wet_grn_award_E01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E02
+    icon = GFX_goal_generic_demand_territory
+    x = 21
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E02
+        wet_grn_award_E02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 5
+        is_historical_focus_on = yes
+      }
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_E03
+    icon = GFX_goal_generic_demand_territory
+    x = 20
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E03
+        wet_grn_award_E03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E04
+    icon = GFX_goal_generic_demand_territory
+    x = 22
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E04
+        wet_grn_award_E04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E05
+    icon = GFX_goal_generic_demand_territory
+    x = 22
+    y = 8
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_E04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      1208 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E05
+        wet_grn_award_E05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E06
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 23
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = industry
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_e06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_e06
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E06
+        wet_grn_award_E06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E07
+    icon = GFX_goal_generic_demand_territory
+    x = 20
+    y = 9
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_E05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      show_ideas_tooltip = wet_focus_preview_wet_grn_e07
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        show_ideas_tooltip = wet_focus_preview_wet_grn_e07
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E07
+        wet_grn_award_E07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E08
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 25
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_e08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_e08
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E08
+        wet_grn_award_E08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E09
+    icon = GFX_goal_generic_trade
+    x = 25
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E09
+        wet_grn_award_E09 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_E10
+    icon = GFX_goal_generic_demand_territory
+    x = 24
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E10_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E10_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E10
+        wet_grn_award_E10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E11
+    icon = GFX_goal_generic_demand_territory
+    x = 24
+    y = 8
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_E10
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      782 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E11
+        wet_grn_award_E11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E12
+    icon = GFX_goal_generic_army_doctrines
+    x = 25
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E11
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.75
+        uses = 1
+        category = cat_medium_armor
+      }
+      add_ideas = wet_grn_E12
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.75
+          uses = 1
+          category = cat_medium_armor
+        }
+        add_ideas = wet_grn_E12
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E12
+        wet_grn_award_E12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E13
+    icon = GFX_goal_generic_demand_territory
+    x = 26
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E13_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E13_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E13
+        wet_grn_award_E13 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_E14
+    icon = GFX_goal_generic_army_doctrines
+    x = 27
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E14
+        wet_grn_award_E14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E15
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 27
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E13
+      focus = WET_GRN_E14
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+      custom_effect_tooltip = WET_GRN_E15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+        custom_effect_tooltip = WET_GRN_E15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E15
+        wet_grn_award_E15 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_E16
+    icon = GFX_goal_generic_national_unity
+    x = 27
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_E15
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_E16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_E16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E16
+        wet_grn_award_E16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E17
+    icon = GFX_goal_generic_fortify_city
+    x = 26
+    y = 10
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_E16
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      445 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E17
+        wet_grn_award_E17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E18
+    icon = GFX_goal_generic_demand_territory
+    x = 24
+    y = 11
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_E05
+      focus = WET_GRN_E11
+      focus = WET_GRN_E17
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        1208 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        782 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        445 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E18
+        wet_grn_award_E18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_E19
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 24
+    y = 12
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_E18
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_e19
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_e19
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_E19
+        wet_grn_award_E19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_M00
+    icon = GFX_goal_generic_demand_territory
+    x = 34
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = mountaineers_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = mountaineers_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_M00
+        wet_grn_award_M00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_N00
+    icon = GFX_goal_generic_major_war
+    x = 32
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_M00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N00_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N00_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N00
+        wet_grn_award_N00 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N01
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 31
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = engineers_tech
+      }
+      custom_effect_tooltip = WET_GRN_N01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = engineers_tech
+        }
+        custom_effect_tooltip = WET_GRN_N01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N01
+        wet_grn_award_N01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N02
+    icon = GFX_goal_generic_national_unity
+    x = 32
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N02
+        wet_grn_award_N02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N03
+    icon = GFX_goal_generic_national_unity
+    x = 33
+    y = 8
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_N02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      588 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N03
+        wet_grn_award_N03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_N04
+    icon = GFX_goal_generic_trade
+    x = 30
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N04
+        wet_grn_award_N04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N05
+    icon = GFX_goal_generic_demand_territory
+    x = 29
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N05
+        wet_grn_award_N05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N06
+    icon = GFX_goal_generic_demand_territory
+    x = 30
+    y = 9
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N06
+        wet_grn_award_N06 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N07
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 31
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N07
+        wet_grn_award_N07 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N08
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 31
+    y = 10
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N06
+      focus = WET_GRN_N07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        935 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1209 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_n08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_n08
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N08
+        wet_grn_award_N08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_N09
+    icon = GFX_goal_generic_demand_territory
+    x = 30
+    y = 11
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_N08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_N09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_N09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N09
+        wet_grn_award_N09 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_N10
+    icon = GFX_goal_generic_demand_territory
+    x = 32
+    y = 11
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_N03
+      focus = WET_GRN_N08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        588 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        935 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        1209 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_N10
+        wet_grn_award_N10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S00
+    icon = GFX_goal_generic_demand_territory
+    x = 36
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_M00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      299 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+      299 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+        299 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S00
+        wet_grn_award_S00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S01
+    icon = GFX_goal_generic_demand_territory
+    x = 35
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_S01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_S01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S01
+        wet_grn_award_S01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_S02
+    icon = GFX_goal_generic_demand_territory
+    x = 34
+    y = 7
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_S01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      1166 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S02
+        wet_grn_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S03
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 36
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_S03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_S03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S03
+        wet_grn_award_S03 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_S04
+    icon = GFX_goal_generic_demand_territory
+    x = 36
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_S04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_S04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S04
+        wet_grn_award_S04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_S05
+    icon = GFX_goal_generic_demand_territory
+    x = 37
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S05
+        wet_grn_award_S05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S06
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 38
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_S06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_S06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S06
+        wet_grn_award_S06 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_S07
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 38
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_S07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_S07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S07
+        wet_grn_award_S07 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_S08
+    icon = GFX_goal_generic_demand_territory
+    x = 37
+    y = 9
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_S07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      586 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+      587 = {
+        is_owned_by = G24
+        is_fully_controlled_by = G24
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 40
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 40
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S08
+        wet_grn_award_S08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S09
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 37
+    y = 10
+    cost = 4
+    prerequisite = {
+      focus = WET_GRN_S04
+      focus = WET_GRN_S08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        AND = {
+          569 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          570 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+        }
+        AND = {
+          586 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          587 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      show_ideas_tooltip = wet_focus_preview_wet_grn_s09
+    }
+    completion_reward = {
+      effect_tooltip = {
+        show_ideas_tooltip = wet_focus_preview_wet_grn_s09
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S09
+        wet_grn_award_S09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_S10
+    icon = GFX_goal_generic_demand_territory
+    x = 35
+    y = 10
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_S02
+      focus = WET_GRN_S08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      OR = {
+        1166 = {
+          is_owned_by = G24
+          is_fully_controlled_by = G24
+        }
+        AND = {
+          586 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+          587 = {
+            is_owned_by = G24
+            is_fully_controlled_by = G24
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_S10
+        wet_grn_award_S10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_B00
+    icon = GFX_goal_generic_consumer_goods
+    x = 43
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B00
+        wet_grn_award_B00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B01
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 41
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      106 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        106 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B01
+        wet_grn_award_B01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B02
+    icon = GFX_goal_generic_small_arms
+    x = 41
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_B02
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = infantry_weapons
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_B02
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B02
+        wet_grn_award_B02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B03
+    icon = GFX_goal_generic_small_arms
+    x = 40
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_B03
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = support_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_B03
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = support_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B03
+        wet_grn_award_B03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B04
+    icon = GFX_goal_generic_army_artillery
+    x = 42
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.75
+        uses = 1
+        category = artillery
+      }
+      add_ideas = wet_grn_B04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.75
+          uses = 1
+          category = artillery
+        }
+        add_ideas = wet_grn_B04
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B04
+        wet_grn_award_B04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B05
+    icon = GFX_goal_generic_cavalry
+    x = 45
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_B05
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = cat_medium_armor
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_B05
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_medium_armor
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B05
+        wet_grn_award_B05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B06
+    icon = GFX_goal_generic_production
+    x = 45
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_b06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_b06
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B06
+        wet_grn_award_B06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B07
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 46
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_B07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_B07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B07
+        wet_grn_award_B07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B08
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 44
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_grn_B08
+      show_ideas_tooltip = wet_focus_preview_wet_grn_b08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_grn_B08
+        show_ideas_tooltip = wet_focus_preview_wet_grn_b08
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B08
+        wet_grn_award_B08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B09
+    icon = GFX_goal_generic_scientific_exchange
+    x = 46
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_GRN_B07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_grn_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = industry
+      }
+      show_ideas_tooltip = wet_focus_preview_wet_grn_b09
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_grn_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+        show_ideas_tooltip = wet_focus_preview_wet_grn_b09
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B09
+        wet_grn_award_B09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B10
+    icon = GFX_focus_generic_education
+    x = 46
+    y = 9
+    cost = 7
+    prerequisite = {
+      focus = WET_GRN_B09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_research_slot = 1
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B10
+        wet_grn_award_B10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_B11
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 42
+    y = 8
+    cost = 7
+    prerequisite = {
+      focus = WET_GRN_B03
+    }
+    prerequisite = {
+      focus = WET_GRN_B04
+    }
+    prerequisite = {
+      focus = WET_GRN_B08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_B11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_B11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_B11
+        wet_grn_award_B11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_GRN_F00
+    icon = GFX_goal_generic_major_war
+    x = 54
+    y = 4
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_C03
+      focus = WET_GRN_C04
+      focus = WET_GRN_C05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F00_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      custom_effect_tooltip = WET_GRN_F00_special_tt
+      unlock_decision_tooltip = wet_grn_select_F06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_GRN_F00_special_tt
+        unlock_decision_tooltip = wet_grn_select_F06
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F00
+        wet_grn_award_F00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_F21
+    icon = GFX_goal_generic_major_war
+    x = 54
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F21_requirement
+        has_country_flag = wet_grn_final_victory
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 100
+      army_experience = 75
+      add_doctrine_cost_reduction = {
+        name = wet_grn_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 100
+        army_experience = 75
+        add_doctrine_cost_reduction = {
+          name = wet_grn_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F21
+        wet_grn_award_F21 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_GRN_F01
+    icon = GFX_goal_generic_major_war
+    x = 48
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F01_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_other_country = {
+          wet_grn_faction_F01 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            has_war_with = G24
+            AND = {
+              has_country_flag = wet_grn_ai_ready
+              G24 = {
+                has_war = no
+              }
+            }
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F01
+        random_other_country = {
+          limit = {
+            wet_grn_faction_F01 = yes
+            wet_grn_war_legal = yes
+            wet_grn_unused_faction = yes
+            OR = {
+              G24 = {
+                is_ai = no
+              }
+              has_war_with = G24
+              AND = {
+                has_country_flag = wet_grn_ai_ready
+                G24 = {
+                  has_war = no
+                }
+              }
+            }
+          }
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F01 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F01_special_tt
+      custom_effect_tooltip = WET_GRN_F01_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F01_special_tt
+        custom_effect_tooltip = WET_GRN_F01_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F01
+        wet_grn_award_F01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 5
+        is_historical_focus_on = yes
+      }
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_F02
+    icon = GFX_goal_generic_major_alliance
+    x = 50
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F02_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_other_country = {
+          wet_grn_faction_F02 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            has_war_with = G24
+            AND = {
+              has_country_flag = wet_grn_ai_ready
+              G24 = {
+                has_war = no
+              }
+            }
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F02
+        random_other_country = {
+          limit = {
+            wet_grn_faction_F02 = yes
+            wet_grn_war_legal = yes
+            wet_grn_unused_faction = yes
+            OR = {
+              G24 = {
+                is_ai = no
+              }
+              has_war_with = G24
+              AND = {
+                has_country_flag = wet_grn_ai_ready
+                G24 = {
+                  has_war = no
+                }
+              }
+            }
+          }
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F02 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F02_special_tt
+      custom_effect_tooltip = WET_GRN_F02_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F02_special_tt
+        custom_effect_tooltip = WET_GRN_F02_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F02
+        wet_grn_award_F02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_F03
+    icon = GFX_goal_generic_major_war
+    x = 52
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F03_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_other_country = {
+          wet_grn_faction_F03 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            has_war_with = G24
+            AND = {
+              has_country_flag = wet_grn_ai_ready
+              G24 = {
+                has_war = no
+              }
+            }
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F03
+        random_other_country = {
+          limit = {
+            wet_grn_faction_F03 = yes
+            wet_grn_war_legal = yes
+            wet_grn_unused_faction = yes
+            OR = {
+              G24 = {
+                is_ai = no
+              }
+              has_war_with = G24
+              AND = {
+                has_country_flag = wet_grn_ai_ready
+                G24 = {
+                  has_war = no
+                }
+              }
+            }
+          }
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F03 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F03_special_tt
+      custom_effect_tooltip = WET_GRN_F03_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F03_special_tt
+        custom_effect_tooltip = WET_GRN_F03_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F03
+        wet_grn_award_F03 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_F04
+    icon = GFX_goal_generic_major_war
+    x = 56
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F04_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_other_country = {
+          wet_grn_faction_F04 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            has_war_with = G24
+            AND = {
+              has_country_flag = wet_grn_ai_ready
+              G24 = {
+                has_war = no
+              }
+            }
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F04
+        random_other_country = {
+          limit = {
+            wet_grn_faction_F04 = yes
+            wet_grn_war_legal = yes
+            wet_grn_unused_faction = yes
+            OR = {
+              G24 = {
+                is_ai = no
+              }
+              has_war_with = G24
+              AND = {
+                has_country_flag = wet_grn_ai_ready
+                G24 = {
+                  has_war = no
+                }
+              }
+            }
+          }
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F04 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F04_special_tt
+      custom_effect_tooltip = WET_GRN_F04_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F04_special_tt
+        custom_effect_tooltip = WET_GRN_F04_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F04
+        wet_grn_award_F04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_F05
+    icon = GFX_goal_generic_major_alliance
+    x = 58
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F05_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_other_country = {
+          wet_grn_faction_F05 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            has_war_with = G24
+            AND = {
+              has_country_flag = wet_grn_ai_ready
+              G24 = {
+                has_war = no
+              }
+            }
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F05
+        random_other_country = {
+          limit = {
+            wet_grn_faction_F05 = yes
+            wet_grn_war_legal = yes
+            wet_grn_unused_faction = yes
+            OR = {
+              G24 = {
+                is_ai = no
+              }
+              has_war_with = G24
+              AND = {
+                has_country_flag = wet_grn_ai_ready
+                G24 = {
+                  has_war = no
+                }
+              }
+            }
+          }
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F05 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F05_special_tt
+      custom_effect_tooltip = WET_GRN_F05_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F05_special_tt
+        custom_effect_tooltip = WET_GRN_F05_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F05
+        wet_grn_award_F05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_GRN_F06
+    icon = GFX_goal_generic_major_war
+    x = 60
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_GRN_F00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_grn_opening_done_focus_requirement_tt
+        wet_grn_opening_done = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_GRN_F06_requirement
+        NOT = {
+          OR = {
+            threat
+            <
+            1
+          }
+        }
+        any_of_scopes = {
+          array = wet_grn_choice_F06
+          wet_grn_faction_F06 = yes
+          wet_grn_war_legal = yes
+          wet_grn_unused_faction = yes
+          OR = {
+            G24 = {
+              is_ai = no
+            }
+            G24 = {
+              has_war = no
+            }
+            has_war_with = G24
+          }
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        clear_array = wet_grn_bound_F06
+        for_each_scope_loop = {
+          array = wet_grn_choice_F06
+          G24 = {
+            add_to_array = {
+              wet_grn_bound_F06 = PREV
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_GRN_F06_special_tt
+      unlock_decision_tooltip = wet_grn_another_faction
+      custom_effect_tooltip = WET_GRN_F06_target
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_GRN_F06_special_tt
+        unlock_decision_tooltip = wet_grn_another_faction
+        custom_effect_tooltip = WET_GRN_F06_target
+      }
+      hidden_effect = {
+        set_country_flag = wet_grn_earned_F06
+        wet_grn_award_F06 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+}

@@ -1,0 +1,4462 @@
+focus_tree = {
+  id = WET_kislev_focus
+  country = {
+    factor = 0
+    modifier = {
+      add = 100
+      tag = A29
+    }
+  }
+  default = no
+  reset_on_civilwar = no
+  initial_show_position = {
+    focus = WET_KIS_W00
+  }
+  continuous_focus_position = {
+    x = 2928
+    y = 1600
+  }
+  focus = {
+    id = WET_KIS_W00
+    icon = GFX_goal_generic_radar
+    x = 22
+    y = 0
+    cost = 2
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W00
+        wet_kis_award_W00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W01
+    icon = GFX_goal_generic_cavalry
+    x = 21
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_W01_requirement
+        wet_kis_frontier_activity = yes
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        wet_kis_warning_1_capture = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_riders_absent
+        days = 60
+      }
+      custom_effect_tooltip = WET_KIS_W01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_riders_absent
+          days = 60
+        }
+        custom_effect_tooltip = WET_KIS_W01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W01
+        wet_kis_award_W01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 3
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W02
+    icon = GFX_goal_generic_cavalry
+    x = 23
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_w02
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_w02
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W02
+        wet_kis_award_W02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W03
+    icon = GFX_focus_generic_secret_service_agency
+    x = 22
+    y = 2
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W01
+      focus = WET_KIS_W02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W03
+        wet_kis_award_W03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W04
+    icon = GFX_goal_generic_propaganda
+    x = 21
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W03
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_W04_requirement
+        wet_kis_invasion_preparations = yes
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        wet_kis_warning_2_capture = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_witness_escorts
+        days = 60
+      }
+      custom_effect_tooltip = WET_KIS_W04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_witness_escorts
+          days = 60
+        }
+        custom_effect_tooltip = WET_KIS_W04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W04
+        wet_kis_award_W04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 3
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W05
+    icon = GFX_goal_generic_consumer_goods
+    x = 23
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W03
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_w05
+      add_fuel = 10000
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_w05
+        add_fuel = 10000
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W05
+        wet_kis_award_W05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W06
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 22
+    y = 4
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W04
+      focus = WET_KIS_W05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_W06_requirement
+        wet_kis_fighting_everchosen = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W06
+        wet_kis_award_W06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W07
+    icon = GFX_goal_generic_cavalry
+    x = 21
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W06
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_W07_requirement
+        wet_kis_fighting_everchosen = yes
+        OR = {
+          wet_kis_warning_route = yes
+          has_country_flag = wet_kis_couriers_departed
+        }
+      }
+    }
+    select_effect = {
+      hidden_effect = {
+        wet_kis_warning_3_capture = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_W07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_W07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W07
+        wet_kis_award_W07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 2
+        wet_kis_escape_route = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W08
+    icon = GFX_goal_generic_army_doctrines
+    x = 23
+    y = 5
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W06
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_W07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_W08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_W08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W08
+        wet_kis_award_W08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 4
+        has_capitulated = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W09
+    icon = GFX_goal_generic_radar
+    x = 22
+    y = 6
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W07
+      focus = WET_KIS_W08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_signal_fires
+        days = 180
+      }
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_signal_fires
+          days = 180
+        }
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W09
+        wet_kis_award_W09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W10
+    icon = GFX_goal_generic_major_alliance
+    x = 21
+    y = 7
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_W09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_W10_requirement
+        has_country_flag = wet_kis_warning_delivered
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 30
+      custom_effect_tooltip = WET_KIS_W10_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 30
+        custom_effect_tooltip = WET_KIS_W10_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W10
+        wet_kis_award_W10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W11
+    icon = GFX_goal_generic_army_doctrines
+    x = 23
+    y = 7
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W09
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_doctrine_cost_reduction = {
+        name = wet_kis_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W11
+        wet_kis_award_W11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S00
+    icon = GFX_goal_generic_national_unity
+    x = 18
+    y = 0
+    cost = 2
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S00
+        wet_kis_award_S00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S01
+    icon = GFX_focus_generic_home_defense
+    x = 17
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_S00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_S02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_s01
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_s01
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S01
+        wet_kis_award_S01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S02
+    icon = GFX_goal_generic_defence
+    x = 19
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_S00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_S01
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_S02_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_long_defence_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_long_defence_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_S02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_S02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S02
+        wet_kis_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 3
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S03
+    icon = GFX_goal_generic_defence
+    x = 17
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_S01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_s03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_s03
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S03
+        wet_kis_award_S03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S04
+    icon = GFX_goal_generic_major_war
+    x = 19
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_S02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_S04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_S04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S04
+        wet_kis_award_S04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S05
+    icon = GFX_goal_generic_national_unity
+    x = 18
+    y = 3
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_S03
+      focus = WET_KIS_S04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_war_support = 0.05
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S05
+        wet_kis_award_S05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_M00
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 30
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M00
+        wet_kis_award_M00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M10
+    icon = GFX_goal_generic_national_unity
+    x = 26
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M20
+      focus = WET_KIS_M30
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m10
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = support_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m10
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = support_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M10
+        wet_kis_award_M10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M11
+    icon = GFX_focus_generic_winter_warfare
+    x = 26
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m11
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m11
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M11
+        wet_kis_award_M11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M12
+    icon = GFX_goal_generic_radar
+    x = 26
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M11
+    }
+    available = {
+      has_war = yes
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+      NOT = {
+        has_idea = wet_kis_frostward
+      }
+      has_political_power
+      >
+      74
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_M12_requirement
+        always = yes
+        any_controlled_state = {
+          wet_kis_home = yes
+        }
+        check_variable = {
+          wet_kis_frostward_cooldown
+          <
+          1
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_M12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M12
+        wet_kis_award_M12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M13
+    icon = GFX_focus_generic_winter_warfare
+    x = 25
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M12
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M14
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m13
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m13
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M13
+        wet_kis_award_M13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M14
+    icon = GFX_focus_generic_winter_warfare
+    x = 27
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_M12
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M13
+    }
+    available = {
+      has_equipment = {
+        support_equipment
+        >
+        199
+      }
+      has_political_power
+      >
+      74
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_M14_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_great_winter_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_great_winter_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_M14_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M14_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M14
+        wet_kis_award_M14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M20
+    icon = GFX_goal_generic_army_doctrines
+    x = 30
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M10
+      focus = WET_KIS_M30
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m20
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = cat_light_armor
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m20
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_light_armor
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M20
+        wet_kis_award_M20 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M21
+    icon = GFX_focus_generic_industrial_experts
+    x = 30
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M20
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m21
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m21
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M21
+        wet_kis_award_M21 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M22
+    icon = GFX_goal_generic_major_war
+    x = 30
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M21
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m22
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m22
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M22
+        wet_kis_award_M22 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M23
+    icon = GFX_goal_generic_cavalry
+    x = 29
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M22
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M24
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m23
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m23
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M23
+        wet_kis_award_M23 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M24
+    icon = GFX_goal_generic_cavalry
+    x = 31
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_M22
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M23
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_M24_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_great_charge_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_great_charge_spent
+        }
+        has_fuel
+        >
+        4999
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_M24_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M24_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M24
+        wet_kis_award_M24 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M30
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 34
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M00
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M10
+      focus = WET_KIS_M20
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m30
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = infantry_weapons
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m30
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M30
+        wet_kis_award_M30 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 3
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M31
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 34
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M30
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m31
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 300
+        producer = A29
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m31
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 300
+          producer = A29
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M31
+        wet_kis_award_M31 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M32
+    icon = GFX_goal_generic_army_doctrines
+    x = 34
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_M31
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m32
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = artillery
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m32
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = artillery
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M32
+        wet_kis_award_M32 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M33
+    icon = GFX_goal_generic_small_arms
+    x = 33
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M32
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M34
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m33
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m33
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M33
+        wet_kis_award_M33 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M34
+    icon = GFX_goal_generic_defence
+    x = 35
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_M32
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_M33
+    }
+    available = {
+      has_equipment = {
+        infantry_equipment
+        >
+        299
+      }
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_M34_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_last_stand_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_last_stand_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_M34_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M34_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M34
+        wet_kis_award_M34 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M40
+    icon = GFX_goal_generic_army_doctrines
+    x = 31
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_M13
+      focus = WET_KIS_M14
+      focus = WET_KIS_M23
+      focus = WET_KIS_M24
+      focus = WET_KIS_M33
+      focus = WET_KIS_M34
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m40
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m40
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M40
+        wet_kis_award_M40 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D00
+    icon = GFX_goal_generic_fortify_city
+    x = 3
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D00
+        wet_kis_award_D00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D01
+    icon = GFX_goal_generic_fortify_city
+    x = 0
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_D00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      631 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        631 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D01
+        wet_kis_award_D01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D02
+    icon = GFX_goal_generic_occupy_states_coastal
+    x = 2
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_D00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      370 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      370 = {
+        add_building_construction = {
+          type = naval_base
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        370 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        370 = {
+          add_building_construction = {
+            type = naval_base
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D02
+        wet_kis_award_D02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D03
+    icon = GFX_goal_generic_fortify_city
+    x = 4
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_D00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = engineers_tech
+      }
+      295 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = engineers_tech
+        }
+        295 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D03
+        wet_kis_award_D03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D04
+    icon = GFX_goal_generic_fortify_city
+    x = 2
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_D01
+    }
+    prerequisite = {
+      focus = WET_KIS_D02
+    }
+    prerequisite = {
+      focus = WET_KIS_D03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_d04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_d04
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D04
+        wet_kis_award_D04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D05
+    icon = GFX_goal_generic_fortify_city
+    x = 1
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_D04
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_D06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_d05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_d05
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D05
+        wet_kis_award_D05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D06
+    icon = GFX_goal_generic_defence
+    x = 3
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_D04
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_D05
+    }
+    available = {
+      OR = {
+        controls_state = 631
+        controls_state = 370
+        controls_state = 295
+      }
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_D06_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_city_stand_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_city_stand_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_D06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_D06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D06
+        wet_kis_award_D06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D07
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 6
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_D00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      631 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      344 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        631 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        344 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D07
+        wet_kis_award_D07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D08
+    icon = GFX_focus_generic_home_defense
+    x = 2
+    y = 4
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_D05
+      focus = WET_KIS_D06
+    }
+    available = {
+      controls_state = 631
+      controls_state = 370
+      controls_state = 295
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_D08_requirement
+        check_variable = {
+          wet_kis_claim_D01
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D02_infra
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D02_port
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D03
+          <
+          1
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_war_support = 0.05
+      army_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        army_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D08
+        wet_kis_award_D08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D09
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 6
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_D07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D09
+        wet_kis_award_D09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_P00
+    icon = GFX_goal_generic_production
+    x = 11
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P00
+        wet_kis_award_P00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P01
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 8
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      370 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+      unlock_decision_tooltip = wet_kis_relocate_P01_132
+      unlock_decision_tooltip = wet_kis_relocate_P01_295
+      unlock_decision_tooltip = wet_kis_relocate_P01_327
+      unlock_decision_tooltip = wet_kis_relocate_P01_344
+      unlock_decision_tooltip = wet_kis_relocate_P01_631
+      unlock_decision_tooltip = wet_kis_relocate_P01_897
+      unlock_decision_tooltip = wet_kis_relocate_P01_984
+      unlock_decision_tooltip = wet_kis_relocate_P01_1188
+    }
+    completion_reward = {
+      effect_tooltip = {
+        370 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+        unlock_decision_tooltip = wet_kis_relocate_P01_132
+        unlock_decision_tooltip = wet_kis_relocate_P01_295
+        unlock_decision_tooltip = wet_kis_relocate_P01_327
+        unlock_decision_tooltip = wet_kis_relocate_P01_344
+        unlock_decision_tooltip = wet_kis_relocate_P01_631
+        unlock_decision_tooltip = wet_kis_relocate_P01_897
+        unlock_decision_tooltip = wet_kis_relocate_P01_984
+        unlock_decision_tooltip = wet_kis_relocate_P01_1188
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P01
+        wet_kis_award_P01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P02
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 10
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      631 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+      unlock_decision_tooltip = wet_kis_relocate_P02_132
+      unlock_decision_tooltip = wet_kis_relocate_P02_295
+      unlock_decision_tooltip = wet_kis_relocate_P02_327
+      unlock_decision_tooltip = wet_kis_relocate_P02_344
+      unlock_decision_tooltip = wet_kis_relocate_P02_370
+      unlock_decision_tooltip = wet_kis_relocate_P02_897
+      unlock_decision_tooltip = wet_kis_relocate_P02_984
+      unlock_decision_tooltip = wet_kis_relocate_P02_1188
+    }
+    completion_reward = {
+      effect_tooltip = {
+        631 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+        unlock_decision_tooltip = wet_kis_relocate_P02_132
+        unlock_decision_tooltip = wet_kis_relocate_P02_295
+        unlock_decision_tooltip = wet_kis_relocate_P02_327
+        unlock_decision_tooltip = wet_kis_relocate_P02_344
+        unlock_decision_tooltip = wet_kis_relocate_P02_370
+        unlock_decision_tooltip = wet_kis_relocate_P02_897
+        unlock_decision_tooltip = wet_kis_relocate_P02_984
+        unlock_decision_tooltip = wet_kis_relocate_P02_1188
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P02
+        wet_kis_award_P02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P03
+    icon = GFX_goal_generic_trade
+    x = 12
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_p03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_p03
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P03
+        wet_kis_award_P03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P04
+    icon = GFX_goal_generic_consumer_goods
+    x = 8
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_P01
+      focus = WET_KIS_P02
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_P05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_p04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_p04
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P04
+        wet_kis_award_P04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P05
+    icon = GFX_goal_generic_production
+    x = 10
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_P01
+      focus = WET_KIS_P02
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_P04
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_P05_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_night_shifts_done
+        }
+        num_of_controlled_factories
+        >
+        0
+        NOT = {
+          has_country_flag = wet_kis_night_shifts_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_P05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_P05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P05
+        wet_kis_award_P05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P06
+    icon = GFX_focus_generic_education
+    x = 10
+    y = 3
+    cost = 7
+    prerequisite = {
+      focus = WET_KIS_P03
+    }
+    prerequisite = {
+      focus = WET_KIS_P04
+      focus = WET_KIS_P05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_research_slot = 1
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P06
+        wet_kis_award_P06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P07
+    icon = GFX_goal_generic_consumer_goods
+    x = 14
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 10000
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = 200
+        producer = A29
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 10000
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 200
+          producer = A29
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P07
+        wet_kis_award_P07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_L00
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 40
+    y = 0
+    cost = 2
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L00_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L00_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L00
+        wet_kis_award_L00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L01
+    icon = GFX_goal_generic_improve_relations
+    x = 37
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_L00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L01
+        wet_kis_award_L01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L02
+    icon = GFX_goal_generic_national_unity
+    x = 39
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_L00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L02
+        wet_kis_award_L02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L03
+    icon = GFX_goal_generic_military_deal
+    x = 41
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_L00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L03
+        wet_kis_award_L03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L04
+    icon = GFX_goal_generic_defence
+    x = 43
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_L00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L04
+        wet_kis_award_L04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L05
+    icon = GFX_goal_generic_alliance
+    x = 37
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_L01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_L05_requirement
+        wet_kis_can_ask_alliance = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L05
+        wet_kis_award_L05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L06
+    icon = GFX_goal_generic_trade
+    x = 40
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_L02
+      focus = WET_KIS_L03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L06
+        wet_kis_award_L06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L07
+    icon = GFX_goal_generic_alliance
+    x = 37
+    y = 3
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_L05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_L07_requirement
+        wet_kis_shared_order_war = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_southern_staff
+        days = 180
+      }
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_southern_staff
+          days = 180
+        }
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L07
+        wet_kis_award_L07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_H00
+    icon = GFX_focus_generic_home_defense
+    x = 45
+    y = 0
+    cost = 2
+    available = {
+      controls_state = 631
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_H00_requirement
+        OR = {
+          check_variable = {
+            wet_kis_war_days
+            >
+            179
+          }
+          has_country_flag = wet_kis_invasion_survived
+        }
+        count_triggers = {
+          amount = 6
+          132 = {
+            is_fully_controlled_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      add_doctrine_cost_reduction = {
+        name = wet_kis_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_H00
+        wet_kis_award_H00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_H01
+    icon = GFX_goal_generic_demand_territory
+    x = 45
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_H00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_reclaim_oblasts
+        days = 180
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_reclaim_oblasts
+          days = 180
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_H01
+        wet_kis_award_H01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_H02
+    icon = GFX_goal_generic_trade
+    x = 45
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_H01
+    }
+    available = {
+      controls_state = 631
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_H02_requirement
+        count_triggers = {
+          amount = 6
+          132 = {
+            is_fully_controlled_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_markets
+        days = 180
+      }
+      custom_effect_tooltip = WET_KIS_H02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_markets
+          days = 180
+        }
+        custom_effect_tooltip = WET_KIS_H02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_H02
+        wet_kis_award_H02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_H03
+    icon = GFX_goal_generic_national_unity
+    x = 47
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_H02
+      focus = WET_KIS_X07
+    }
+    available = {
+      is_subject = no
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_H03_requirement
+        count_triggers = {
+          amount = 9
+          132 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+        }
+        NOT = {
+          wet_kis_fighting_everchosen = yes
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_h03
+      add_stability = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_h03
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_H03
+        wet_kis_award_H03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_H04
+    icon = GFX_goal_generic_occupy_start_war
+    x = 47
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_H03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_H04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_H04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_H04
+        wet_kis_award_H04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KIS_X00
+    icon = GFX_focus_generic_government_in_exile
+    x = 47
+    y = 0
+    cost = 2
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X00_requirement
+        OR = {
+          AND = {
+            has_war = yes
+            NOT = {
+              count_triggers = {
+                amount = 7
+                132 = {
+                  is_fully_controlled_by = A29
+                }
+                295 = {
+                  is_fully_controlled_by = A29
+                }
+                327 = {
+                  is_fully_controlled_by = A29
+                }
+                344 = {
+                  is_fully_controlled_by = A29
+                }
+                370 = {
+                  is_fully_controlled_by = A29
+                }
+                631 = {
+                  is_fully_controlled_by = A29
+                }
+                897 = {
+                  is_fully_controlled_by = A29
+                }
+                984 = {
+                  is_fully_controlled_by = A29
+                }
+                1188 = {
+                  is_fully_controlled_by = A29
+                }
+              }
+            }
+          }
+          AND = {
+            has_capitulated = yes
+            is_government_in_exile = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X00
+        wet_kis_award_X00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X01
+    icon = GFX_goal_generic_demand_territory
+    x = 47
+    y = 1
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_X00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X01_requirement
+        wet_kis_escape_route = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_X01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_X01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X01
+        wet_kis_award_X01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X02
+    icon = GFX_focus_generic_government_in_exile
+    x = 56
+    y = 0
+    cost = 3
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X02_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_x02
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_x02
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X02
+        wet_kis_award_X02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X03
+    icon = GFX_goal_generic_propaganda
+    x = 58
+    y = 1
+    cost = 2
+    prerequisite = {
+      focus = WET_KIS_X02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X03_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 30
+      custom_effect_tooltip = WET_KIS_X03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 30
+        custom_effect_tooltip = WET_KIS_X03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X03
+        wet_kis_award_X03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X04
+    icon = GFX_goal_generic_army_doctrines
+    x = 56
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X04_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      army_experience = 25
+      add_doctrine_cost_reduction = {
+        name = wet_kis_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X04
+        wet_kis_award_X04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X05
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 57
+    y = 8
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_E11
+      focus = WET_KIS_E15
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X05_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_road_home
+        days = 180
+      }
+      custom_effect_tooltip = WET_KIS_X05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_road_home
+          days = 180
+        }
+        custom_effect_tooltip = WET_KIS_X05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X05
+        wet_kis_award_X05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X06
+    icon = GFX_focus_generic_home_defense
+    x = 49
+    y = 0
+    cost = 2
+    available = {
+      631 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_X06_requirement
+        has_country_flag = wet_kis_was_exiled
+        count_triggers = {
+          amount = 3
+          132 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 25
+      add_stability = 0.05
+      custom_effect_tooltip = WET_KIS_X06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        add_stability = 0.05
+        custom_effect_tooltip = WET_KIS_X06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X06
+        wet_kis_award_X06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_X07
+    icon = GFX_focus_generic_economic_recovery
+    x = 49
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_X06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_kis_rebuilding
+        days = 365
+      }
+      custom_effect_tooltip = WET_KIS_X07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_rebuilding
+          days = 365
+        }
+        custom_effect_tooltip = WET_KIS_X07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_X07
+        wet_kis_award_X07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_W12
+    icon = GFX_goal_generic_radar
+    x = 23
+    y = 8
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_W11
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_w12
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_w12
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W12
+        wet_kis_award_W12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_W13
+    icon = GFX_goal_generic_improve_relations
+    x = 21
+    y = 8
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_W10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_W13_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_W13_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_W13
+        wet_kis_award_W13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S06
+    icon = GFX_goal_generic_national_unity
+    x = 18
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_S05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_s06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_s06
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S06
+        wet_kis_award_S06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_S07
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 18
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_S06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_s07
+      add_stability = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_s07
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_S07
+        wet_kis_award_S07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_M15
+    icon = GFX_focus_generic_secret_service_agency
+    x = 25
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M13
+      focus = WET_KIS_M14
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m15
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = recon_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m15
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = recon_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M15
+        wet_kis_award_M15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M25
+    icon = GFX_goal_generic_cavalry
+    x = 29
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M23
+      focus = WET_KIS_M24
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m25
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m25
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M25
+        wet_kis_award_M25 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_M35
+    icon = GFX_goal_generic_army_doctrines
+    x = 34
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_M33
+      focus = WET_KIS_M34
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_m35
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = artillery
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_m35
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = artillery
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_M35
+        wet_kis_award_M35 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D10
+    icon = GFX_goal_generic_fortify_city
+    x = 6
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_D09
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      132 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      132 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        132 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        132 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D10
+        wet_kis_award_D10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D11
+    icon = GFX_goal_generic_defence
+    x = 6
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_D10
+    }
+    available = {
+      controls_state = 327
+      has_political_power
+      >
+      24
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_D11_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_forest_screen_done
+        }
+        wet_kis_fighting_everchosen = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_D11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_D11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D11
+        wet_kis_award_D11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_D12
+    icon = GFX_goal_generic_fortify_city
+    x = 2
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_D08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_d12
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_d12
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_D12
+        wet_kis_award_D12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_P08
+    icon = GFX_goal_generic_trade
+    x = 15
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_P07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 5000
+      custom_effect_tooltip = WET_KIS_P08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 5000
+        custom_effect_tooltip = WET_KIS_P08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P08
+        wet_kis_award_P08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P09
+    icon = GFX_focus_generic_industrial_experts
+    x = 13
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_P03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_p09
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_p09
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P09
+        wet_kis_award_P09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_P10
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 10
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_P06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_kis_p10
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = industry
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_p10
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_P10
+        wet_kis_award_P10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KIS_L08
+    icon = GFX_goal_generic_military_deal
+    x = 37
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_L07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L08
+        wet_kis_award_L08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_L09
+    icon = GFX_goal_generic_build_navy
+    x = 40
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_L06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_L09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_L09
+        wet_kis_award_L09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KIS_E00
+    icon = GFX_goal_generic_national_unity
+    x = 53
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_X02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E00_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 50
+      add_stability = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E00
+        wet_kis_award_E00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E01
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 52
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E01_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_e01
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e01
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E01
+        wet_kis_award_E01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E02
+    icon = GFX_goal_generic_consumer_goods
+    x = 54
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_E00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E02_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E02
+        wet_kis_award_E02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E03
+    icon = GFX_goal_generic_army_doctrines
+    x = 52
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E03_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E03
+        wet_kis_award_E03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E04
+    icon = GFX_goal_generic_alliance
+    x = 51
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_E03
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_E05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E04_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_e04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e04
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E04
+        wet_kis_award_E04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E05
+    icon = GFX_goal_generic_major_war
+    x = 53
+    y = 4
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_E03
+    }
+    mutually_exclusive = {
+      focus = WET_KIS_E04
+    }
+    available = {
+      has_equipment = {
+        infantry_equipment
+        >
+        249
+      }
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E05_requirement
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_exile_spearhead_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_exile_spearhead_spent
+        }
+        wet_kis_liberation_approach = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E05
+        wet_kis_award_E05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E06
+    icon = GFX_goal_generic_army_doctrines
+    x = 56
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_X02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E06_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_e06
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e06
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E06
+        wet_kis_award_E06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E07
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 56
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E07_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E07
+        wet_kis_award_E07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E08
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 56
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E08_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E08
+        wet_kis_award_E08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E09
+    icon = GFX_goal_generic_demand_territory
+    x = 56
+    y = 5
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_X04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E09_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_e09
+      custom_effect_tooltip = WET_KIS_E09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e09
+        custom_effect_tooltip = WET_KIS_E09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E09
+        wet_kis_award_E09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E10
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 56
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_E09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E10_requirement
+        wet_kis_exile_active = yes
+        has_army_size = {
+          size
+          >
+          1
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_ideas = wet_kis_e10
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e10
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E10
+        wet_kis_award_E10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E11
+    icon = GFX_focus_generic_reinforcing_the_supply_network
+    x = 56
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E10
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E11_requirement
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_return_supply_done
+        }
+        wet_kis_liberation_approach = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      army_experience = 25
+      custom_effect_tooltip = WET_KIS_E11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_KIS_E11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E11
+        wet_kis_award_E11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E12
+    icon = GFX_focus_generic_secret_service_agency
+    x = 58
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KIS_X03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E12_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KIS_E12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KIS_E12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E12
+        wet_kis_award_E12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E13
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 58
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E12
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E13_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E13_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E13_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E13
+        wet_kis_award_E13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E14
+    icon = GFX_goal_generic_improve_relations
+    x = 58
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_KIS_E13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E14_requirement
+        wet_kis_exile_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      army_experience = 25
+      add_tech_bonus = {
+        name = wet_kis_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E14
+        wet_kis_award_E14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KIS_E15
+    icon = GFX_goal_generic_occupy_start_war
+    x = 58
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KIS_E14
+    }
+    available = {
+      has_political_power
+      >
+      74
+      custom_trigger_tooltip = {
+        tooltip = WET_KIS_E15_requirement
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_open_gates_done
+        }
+        wet_kis_liberation_approach = yes
+        any_state = {
+          wet_kis_occupied_home = yes
+          has_state_flag = wet_kis_contact
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = no
+    available_if_capitulated = yes
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KIS_E15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_kis_earned_E15
+        wet_kis_award_E15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+}

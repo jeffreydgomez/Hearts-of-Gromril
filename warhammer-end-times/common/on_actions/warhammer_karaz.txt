@@ -1,0 +1,29 @@
+on_actions = {
+  on_daily_U04 = {
+    effect = {
+      wet_karaz_daily = yes
+    }
+  }
+  on_join_faction = {
+    effect = {
+      if = {
+        limit = {
+          tag = U04
+        }
+        wet_karaz_record_alliance = yes
+      }
+    }
+  }
+  on_offer_join_faction = {
+    effect = {
+      FROM = {
+        if = {
+          limit = {
+            tag = U04
+          }
+          wet_karaz_record_alliance = yes
+        }
+      }
+    }
+  }
+}

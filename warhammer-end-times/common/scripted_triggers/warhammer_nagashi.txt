@@ -1,0 +1,1340 @@
+wet_ngs_operational = {
+  tag = U24
+  exists = yes
+  has_country_flag = wet_ngs_enabled
+}
+wet_ngs_restored = {
+  has_country_flag = wet_ngs_restored
+  has_character = WET_U24_leader
+}
+wet_ngs_protected = {
+  OR = {
+    tag = U24
+    tag = WST
+    is_subject_of = U24
+    is_in_faction_with = U24
+    has_non_aggression_pact_with = U24
+    has_truce_with = U24
+    is_guaranteed_by = U24
+    has_guaranteed = U24
+    has_country_flag = wet_ngs_pledged
+  }
+}
+wet_ngs_hostile = {
+  exists = yes
+  NOT = {
+    wet_ngs_protected = yes
+  }
+}
+wet_ngs_goal_legal = {
+  wet_ngs_hostile = yes
+  is_subject = no
+  NOT = {
+    has_war_with = U24
+  }
+  U24 = {
+    can_declare_war_on = PREV
+  }
+}
+wet_ngs_court_country = {
+  OR = {
+    tag = A13
+    tag = B16
+    tag = A20
+    tag = A68
+    tag = B27
+    tag = V01
+    tag = U18
+    tag = A74
+  }
+}
+wet_ngs_named_agent_present = {
+  OR = {
+    AND = {
+      tag = A13
+      has_character = WET_A13_leader
+    }
+    AND = {
+      tag = B16
+      has_character = WET_B16_leader
+    }
+    AND = {
+      tag = A20
+      has_character = WET_A20_leader
+    }
+    AND = {
+      tag = A68
+      has_character = WET_A68_leader
+    }
+    AND = {
+      tag = B27
+      has_character = WET_B27_leader
+    }
+    AND = {
+      tag = V01
+      has_character = WET_V01_leader
+    }
+    AND = {
+      tag = U18
+      has_character = WET_U18_leader
+    }
+    AND = {
+      tag = A74
+      has_character = WET_A74_leader
+    }
+  }
+}
+wet_ngs_court_eligible = {
+  exists = yes
+  is_subject = no
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_war_with = U24
+  }
+  wet_ngs_court_country = yes
+}
+wet_ngs_agent_A13 = {
+  A13 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_A13_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_B16 = {
+  B16 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_B16_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_A20 = {
+  A20 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_A20_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_A68 = {
+  A68 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_A68_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_B27 = {
+  B27 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_B27_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_V01 = {
+  V01 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_V01_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_U18 = {
+  U18 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_U18_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+}
+wet_ngs_agent_A74 = {
+  A74 = {
+    wet_ngs_court_eligible = yes
+    has_country_flag = wet_ngs_pledged
+    has_character = WET_A74_leader
+    NOT = {
+      has_country_flag = wet_ngs_withdrawn
+    }
+  }
+  NOT = {
+    A15 = {
+      has_country_flag = wet_brt_kemmler_custody
+    }
+  }
+}
+wet_ngs_three_agents = {
+  check_variable = {
+    wet_ngs_effective_agents
+    >
+    2
+  }
+}
+wet_ngs_six_agents = {
+  check_variable = {
+    wet_ngs_active_courts
+    >
+    5
+  }
+}
+wet_ngs_holds_A01 = {
+  has_country_flag = wet_ngs_relic_A01
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A01_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A02 = {
+  has_country_flag = wet_ngs_relic_A02
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A02_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A03 = {
+  has_country_flag = wet_ngs_relic_A03
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A03_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A04 = {
+  has_country_flag = wet_ngs_relic_A04
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A04_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A05 = {
+  has_country_flag = wet_ngs_relic_A05
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A05_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A06 = {
+  has_country_flag = wet_ngs_relic_A06
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A06_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A07 = {
+  has_country_flag = wet_ngs_relic_A07
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A07_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A08 = {
+  has_country_flag = wet_ngs_relic_A08
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A08_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A09 = {
+  has_country_flag = wet_ngs_relic_A09
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A09_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A10 = {
+  has_country_flag = wet_ngs_relic_A10
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A10_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A11 = {
+  has_country_flag = wet_brt_staff_custodian
+  any_owned_state = {
+    has_state_flag = wet_brt_staff_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A12 = {
+  has_country_flag = wet_ngs_relic_A12
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A12_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A13 = {
+  has_country_flag = wet_ngs_relic_A13
+  any_owned_state = {
+    has_state_flag = wet_ngs_relic_A13_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_A14 = {
+  has_country_flag = wet_skv_fellblade_custodian
+  any_owned_state = {
+    has_state_flag = wet_skv_fellblade_site
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_seven_relics = {
+  count_triggers = {
+    amount = 7
+    wet_ngs_holds_A01 = yes
+    wet_ngs_holds_A02 = yes
+    wet_ngs_holds_A03 = yes
+    wet_ngs_holds_A04 = yes
+    wet_ngs_holds_A05 = yes
+    wet_ngs_holds_A06 = yes
+    wet_ngs_holds_A07 = yes
+    wet_ngs_holds_A08 = yes
+    wet_ngs_holds_A09 = yes
+    wet_ngs_holds_A10 = yes
+    wet_ngs_holds_A11 = yes
+    wet_ngs_holds_A12 = yes
+    wet_ngs_holds_A13 = yes
+    wet_ngs_holds_A14 = yes
+  }
+}
+wet_ngs_covert_access = {
+  OR = {
+    U24 = {
+      OR = {
+        is_neighbor_of = PREV
+        has_military_access_to = PREV
+      }
+    }
+    AND = {
+      U24 = {
+        any_owned_state = {
+          naval_base
+          >
+          0
+          is_fully_controlled_by = U24
+        }
+        has_equipment = {
+          convoy
+          >
+          19
+        }
+      }
+      any_owned_state = {
+        naval_base
+        >
+        0
+        is_fully_controlled_by = PREV
+      }
+    }
+    any_owned_state = {
+      any_neighbor_state = {
+        controller = {
+          OR = {
+            tag = U24
+            has_country_flag = wet_ngs_pledged
+            U24 = {
+              has_military_access_to = PREV
+            }
+          }
+        }
+      }
+    }
+  }
+}
+wet_ngs_holds_volkmar = {
+  has_global_flag = wet_ngs_volkmar_captive
+  NOT = {
+    has_global_flag = wet_ngs_volkmar_dead
+  }
+  has_country_flag = wet_ngs_volkmar_custodian
+  any_owned_state = {
+    has_state_flag = wet_ngs_volkmar_prison
+    is_fully_controlled_by = U24
+  }
+  has_character = WET_A80_leader
+}
+wet_ngs_can_seize_volkmar = {
+  A80 = {
+    exists = yes
+    has_character = WET_A80_leader
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ngs_volkmar_captive
+  }
+  NOT = {
+    has_global_flag = wet_ngs_volkmar_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+  A80 = {
+    NOT = {
+      has_country_flag = wet_rei_volkmar_captive
+    }
+  }
+}
+wet_ngs_holds_morgiana = {
+  has_global_flag = wet_ngs_morgiana_captive
+  NOT = {
+    has_global_flag = wet_ngs_morgiana_dead
+  }
+  has_country_flag = wet_ngs_morgiana_custodian
+  any_owned_state = {
+    has_state_flag = wet_ngs_morgiana_prison
+    is_fully_controlled_by = U24
+  }
+  has_character = WET_NGS_Morgiana
+}
+wet_ngs_can_seize_morgiana = {
+  A15 = {
+    exists = yes
+    has_character = WET_NGS_Morgiana
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ngs_morgiana_captive
+  }
+  NOT = {
+    has_global_flag = wet_ngs_morgiana_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_aliathra = {
+  has_global_flag = wet_ult_aliathra_captive
+  NOT = {
+    has_global_flag = wet_story_aliathra_dead
+  }
+  has_country_flag = wet_ult_custodian
+  any_owned_state = {
+    has_state_flag = wet_ult_prison
+    is_fully_controlled_by = U24
+  }
+  H06 = {
+    has_character = WET_ULT_Aliathra
+  }
+}
+wet_ngs_can_seize_aliathra = {
+  H06 = {
+    exists = yes
+    has_character = WET_ULT_Aliathra
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ult_aliathra_captive
+  }
+  NOT = {
+    has_global_flag = wet_story_aliathra_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_emil = {
+  has_global_flag = wet_ngs_emil_captive
+  NOT = {
+    has_global_flag = wet_ngs_emil_dead
+  }
+  has_country_flag = wet_ngs_emil_custodian
+  any_owned_state = {
+    has_state_flag = wet_ngs_emil_prison
+    is_fully_controlled_by = U24
+  }
+  has_character = WET_A82_leader
+}
+wet_ngs_can_seize_emil = {
+  A82 = {
+    exists = yes
+    has_character = WET_A82_leader
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ngs_emil_captive
+  }
+  NOT = {
+    has_global_flag = wet_ngs_emil_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_alarielle = {
+  has_global_flag = wet_ngs_alarielle_captive
+  NOT = {
+    has_global_flag = wet_ngs_alarielle_dead
+  }
+  has_country_flag = wet_ngs_alarielle_custodian
+  any_owned_state = {
+    has_state_flag = wet_ngs_alarielle_prison
+    is_fully_controlled_by = U24
+  }
+  has_character = WET_H08_leader
+}
+wet_ngs_can_seize_alarielle = {
+  H06 = {
+    exists = yes
+    has_character = WET_H08_leader
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ngs_alarielle_captive
+  }
+  NOT = {
+    has_global_flag = wet_ngs_alarielle_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_holds_mazdamundi = {
+  has_global_flag = wet_ngs_mazdamundi_captive
+  NOT = {
+    has_global_flag = wet_ngs_mazdamundi_dead
+  }
+  has_country_flag = wet_ngs_mazdamundi_custodian
+  any_owned_state = {
+    has_state_flag = wet_ngs_mazdamundi_prison
+    is_fully_controlled_by = U24
+  }
+  has_character = WET_V04_leader
+}
+wet_ngs_can_seize_mazdamundi = {
+  V04 = {
+    exists = yes
+    has_character = WET_V04_leader
+    wet_ngs_hostile = yes
+    wet_ngs_covert_access = yes
+  }
+  NOT = {
+    has_global_flag = wet_ngs_mazdamundi_captive
+  }
+  NOT = {
+    has_global_flag = wet_ngs_mazdamundi_dead
+  }
+  capital_scope = {
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_three_victims = {
+  count_triggers = {
+    amount = 3
+    wet_ngs_holds_volkmar = yes
+    wet_ngs_holds_morgiana = yes
+    wet_ngs_holds_aliathra = yes
+    wet_ngs_holds_emil = yes
+    wet_ngs_holds_alarielle = yes
+    wet_ngs_holds_mazdamundi = yes
+  }
+}
+wet_ngs_three_selected = {
+  count_triggers = {
+    amount = 3
+    AND = {
+      wet_ngs_holds_volkmar = yes
+      has_country_flag = wet_ngs_selected_volkmar
+    }
+    AND = {
+      wet_ngs_holds_morgiana = yes
+      has_country_flag = wet_ngs_selected_morgiana
+    }
+    AND = {
+      wet_ngs_holds_aliathra = yes
+      has_country_flag = wet_ngs_selected_aliathra
+    }
+    AND = {
+      wet_ngs_holds_emil = yes
+      has_country_flag = wet_ngs_selected_emil
+    }
+    AND = {
+      wet_ngs_holds_alarielle = yes
+      has_country_flag = wet_ngs_selected_alarielle
+    }
+    AND = {
+      wet_ngs_holds_mazdamundi = yes
+      has_country_flag = wet_ngs_selected_mazdamundi
+    }
+  }
+}
+wet_ngs_dolmen_access = {
+  994 = {
+    OR = {
+      is_fully_controlled_by = U24
+      AND = {
+        is_fully_controlled_by = OWNER
+        owner = {
+          has_country_flag = wet_ngs_dolmen_permission
+          NOT = {
+            has_war_with = U24
+          }
+          U24 = {
+            has_military_access_to = PREV
+          }
+        }
+      }
+    }
+  }
+}
+wet_ngs_three_donors = {
+  count_triggers = {
+    amount = 3
+    AND = {
+      wet_ngs_agent_A13 = yes
+      A13 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_B16 = yes
+      B16 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_A20 = yes
+      A20 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_A68 = yes
+      A68 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_B27 = yes
+      B27 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_V01 = yes
+      V01 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_U18 = yes
+      U18 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+    AND = {
+      wet_ngs_agent_A74 = yes
+      A74 = {
+        has_country_flag = wet_ngs_soul_donor
+      }
+    }
+  }
+}
+wet_ngs_charge_ready = {
+  OR = {
+    AND = {
+      has_country_flag = wet_ngs_charge_valaya
+      wet_ngs_dolmen_access = yes
+      NOT = {
+        has_global_flag = wet_story_valaya_consumed
+      }
+    }
+    has_country_flag = wet_ngs_charge_warpstone
+    AND = {
+      has_country_flag = wet_ngs_charge_souls
+      OR = {
+        wet_ngs_three_donors = yes
+        has_country_flag = wet_ngs_project_funded
+      }
+    }
+  }
+}
+wet_ngs_ritual_ready = {
+  287 = {
+    is_owned_by = U24
+    is_fully_controlled_by = U24
+  }
+  has_country_flag = wet_ngs_vessel_made
+  287 = {
+    has_state_flag = wet_ngs_vessel_site
+  }
+  wet_ngs_seven_relics = yes
+  wet_ngs_three_victims = yes
+  has_character = WET_U24_leader
+  NOT = {
+    has_country_flag = wet_ngs_restored
+  }
+}
+wet_ngs_nehekhara_secured = {
+  275 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  643 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  644 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  645 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  646 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  647 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  648 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  649 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  650 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  831 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  832 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  833 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  834 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  835 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  836 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  837 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  838 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  839 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  840 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  841 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  842 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  843 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  844 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  845 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  846 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  847 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  848 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  849 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  850 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  851 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  852 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  854 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  855 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  856 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  857 = {
+    owner = {
+      OR = {
+        tag = U24
+        is_subject_of = U24
+      }
+    }
+    is_fully_controlled_by = OWNER
+  }
+  852 = {
+    is_owned_by = U24
+    is_fully_controlled_by = U24
+  }
+  838 = {
+    is_owned_by = U24
+    is_fully_controlled_by = U24
+  }
+}
+wet_ngs_everchosen_enemy = {
+  has_war_with = U24
+  OR = {
+    wet_is_everchosen_leader = yes
+    faction_leader = {
+      wet_is_everchosen_leader = yes
+    }
+  }
+}
+wet_ngs_south_enemy = {
+  has_war_with = U24
+  OR = {
+    OR = {
+      owns_state = 275
+      owns_state = 643
+      owns_state = 644
+      owns_state = 645
+      owns_state = 646
+      owns_state = 647
+      owns_state = 648
+      owns_state = 649
+      owns_state = 650
+      owns_state = 831
+      owns_state = 832
+      owns_state = 833
+      owns_state = 834
+      owns_state = 835
+      owns_state = 836
+      owns_state = 837
+      owns_state = 838
+      owns_state = 839
+      owns_state = 840
+      owns_state = 841
+      owns_state = 842
+      owns_state = 843
+      owns_state = 844
+      owns_state = 845
+      owns_state = 846
+      owns_state = 847
+      owns_state = 848
+      owns_state = 849
+      owns_state = 850
+      owns_state = 851
+      owns_state = 852
+      owns_state = 854
+      owns_state = 855
+      owns_state = 856
+      owns_state = 857
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 275
+        owns_state = 643
+        owns_state = 644
+        owns_state = 645
+        owns_state = 646
+        owns_state = 647
+        owns_state = 648
+        owns_state = 649
+        owns_state = 650
+        owns_state = 831
+        owns_state = 832
+        owns_state = 833
+        owns_state = 834
+        owns_state = 835
+        owns_state = 836
+        owns_state = 837
+        owns_state = 838
+        owns_state = 839
+        owns_state = 840
+        owns_state = 841
+        owns_state = 842
+        owns_state = 843
+        owns_state = 844
+        owns_state = 845
+        owns_state = 846
+        owns_state = 847
+        owns_state = 848
+        owns_state = 849
+        owns_state = 850
+        owns_state = 851
+        owns_state = 852
+        owns_state = 854
+        owns_state = 855
+        owns_state = 856
+        owns_state = 857
+      }
+    }
+  }
+}
+wet_ngs_target_H03 = {
+  OR = {
+    OR = {
+      owns_state = 163
+      owns_state = 302
+      owns_state = 1020
+      owns_state = 303
+      owns_state = 304
+      owns_state = 305
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 163
+        owns_state = 302
+        owns_state = 1020
+        owns_state = 303
+        owns_state = 304
+        owns_state = 305
+      }
+    }
+  }
+}
+wet_ngs_target_H06 = {
+  OR = {
+    OR = {
+      owns_state = 163
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 163
+      }
+    }
+  }
+}
+wet_ngs_target_H08 = {
+  OR = {
+    OR = {
+      owns_state = 302
+      owns_state = 1020
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 302
+        owns_state = 1020
+      }
+    }
+  }
+}
+wet_ngs_target_N00 = {
+  OR = {
+    OR = {
+      owns_state = 275
+      owns_state = 643
+      owns_state = 644
+      owns_state = 645
+      owns_state = 646
+      owns_state = 647
+      owns_state = 648
+      owns_state = 649
+      owns_state = 650
+      owns_state = 831
+      owns_state = 832
+      owns_state = 833
+      owns_state = 834
+      owns_state = 835
+      owns_state = 836
+      owns_state = 837
+      owns_state = 838
+      owns_state = 839
+      owns_state = 840
+      owns_state = 841
+      owns_state = 842
+      owns_state = 843
+      owns_state = 844
+      owns_state = 845
+      owns_state = 846
+      owns_state = 847
+      owns_state = 848
+      owns_state = 849
+      owns_state = 850
+      owns_state = 851
+      owns_state = 852
+      owns_state = 854
+      owns_state = 855
+      owns_state = 856
+      owns_state = 857
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 275
+        owns_state = 643
+        owns_state = 644
+        owns_state = 645
+        owns_state = 646
+        owns_state = 647
+        owns_state = 648
+        owns_state = 649
+        owns_state = 650
+        owns_state = 831
+        owns_state = 832
+        owns_state = 833
+        owns_state = 834
+        owns_state = 835
+        owns_state = 836
+        owns_state = 837
+        owns_state = 838
+        owns_state = 839
+        owns_state = 840
+        owns_state = 841
+        owns_state = 842
+        owns_state = 843
+        owns_state = 844
+        owns_state = 845
+        owns_state = 846
+        owns_state = 847
+        owns_state = 848
+        owns_state = 849
+        owns_state = 850
+        owns_state = 851
+        owns_state = 852
+        owns_state = 854
+        owns_state = 855
+        owns_state = 856
+        owns_state = 857
+      }
+    }
+  }
+}
+wet_ngs_target_N01 = {
+  OR = {
+    OR = {
+      owns_state = 643
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 643
+      }
+    }
+  }
+}
+wet_ngs_target_N05 = {
+  OR = {
+    OR = {
+      owns_state = 844
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 844
+      }
+    }
+  }
+}
+wet_ngs_target_N07 = {
+  OR = {
+    OR = {
+      owns_state = 275
+      owns_state = 833
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 275
+        owns_state = 833
+      }
+    }
+  }
+}
+wet_ngs_target_N08 = {
+  OR = {
+    OR = {
+      owns_state = 852
+    }
+    any_subject_country = {
+      OR = {
+        owns_state = 852
+      }
+    }
+  }
+}
+wet_ngs_nurgle = {
+  OR = {
+    
+  }
+}
+wet_ngs_pact_live = {
+  exists = yes
+  has_country_flag = wet_ngs_pact_signatory
+  has_non_aggression_pact_with = U24
+  NOT = {
+    has_war_with = U24
+  }
+}
+wet_ngs_living_leader = {
+  exists = yes
+  is_subject = no
+  is_faction_leader = yes
+  OR = {
+    has_country_flag = wet_faction_grand_alliance
+    has_faction_template = wet_named_faction_order_1
+  }
+}
+wet_ngs_rats_leader = {
+  exists = yes
+  is_subject = no
+  is_faction_leader = yes
+  wet_faction_is_skaven_host = yes
+}
+wet_ngs_chaos_leader = {
+  exists = yes
+  is_subject = no
+  wet_is_everchosen_leader = yes
+}
+wet_ngs_mannfred_betrayal_blocked = {
+  U24 = {
+    has_country_flag = wet_ngs_mannfred_excluded
+  }
+  A13 = {
+    has_character = WET_A13_leader
+    NOT = {
+      has_military_access_to = U24
+    }
+    NOT = {
+      is_in_faction_with = U24
+    }
+  }
+}
+wet_ngs_ai_goal_slot_free = {
+  is_ai = yes
+  has_war = no
+  NOT = {
+    has_country_flag = wet_ngs_goal_issued_today
+  }
+  NOT = {
+    has_country_flag = wet_ai_war_pending
+  }
+  NOT = {
+    any_other_country = {
+      U24 = {
+        has_wargoal_against = PREV
+      }
+    }
+  }
+}

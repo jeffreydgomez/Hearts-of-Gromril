@@ -1,0 +1,7349 @@
+focus_tree = {
+  id = WET_naggaroth_focus
+  country = {
+    factor = 0
+    modifier = {
+      add = 100
+      tag = H12
+    }
+  }
+  default = no
+  reset_on_civilwar = no
+  initial_show_position = {
+    focus = WET_NAG_S00
+  }
+  continuous_focus_position = {
+    x = 400
+    y = 2080
+  }
+  focus = {
+    id = WET_NAG_C00
+    icon = GFX_goal_generic_national_unity
+    x = 24
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_C00
+        wet_nag_award_C00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_C01
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 24
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_C00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = decryption_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_C01
+        wet_nag_award_C01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_C02
+    icon = GFX_focus_generic_national_security
+    x = 20
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_C01
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_C03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      remove_ideas = wet_arc_pleasure_cult
+      add_stability = -0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_pleasure_cult
+        add_stability = -0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_C02
+        wet_nag_award_C02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_C03
+    icon = GFX_goal_generic_national_unity
+    x = 28
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_C01
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_C02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_c03
+      custom_effect_tooltip = WET_NAG_C03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_c03
+        custom_effect_tooltip = WET_NAG_C03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_C03
+        wet_nag_award_C03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P01
+    icon = GFX_goal_generic_defence
+    x = 18
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_C02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_investigators
+      custom_effect_tooltip = WET_NAG_P01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_investigators
+        custom_effect_tooltip = WET_NAG_P01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P01
+        wet_nag_award_P01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P02
+    icon = GFX_goal_generic_political_pressure
+    x = 17
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_P01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_stability = -0.03
+      add_timed_idea = {
+        idea = wet_nag_confiscated_estates
+        days = 180
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_stability = -0.03
+        add_timed_idea = {
+          idea = wet_nag_confiscated_estates
+          days = 180
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P02
+        wet_nag_award_P02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P03
+    icon = GFX_goal_generic_radar
+    x = 22
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_C02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = electronics
+      }
+      add_ideas = wet_nag_lawful_sorcery
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = electronics
+        }
+        add_ideas = wet_nag_lawful_sorcery
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P03
+        wet_nag_award_P03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P04
+    icon = GFX_goal_generic_national_unity
+    x = 19
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_P01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_P04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_P04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P04
+        wet_nag_award_P04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P05
+    icon = GFX_goal_generic_political_pressure
+    x = 16
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_P04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_P06
+      focus = WET_NAG_P07
+    }
+    available = {
+      has_political_power
+      >
+      74
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_P05_requirements
+        wet_nag_morathi_custody = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -75
+      add_ideas = wet_nag_p05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -75
+        add_ideas = wet_nag_p05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P05
+        wet_nag_award_P05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P06
+    icon = GFX_goal_generic_national_unity
+    x = 18
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_P04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_P05
+      focus = WET_NAG_P07
+    }
+    available = {
+      has_character = WET_H13_leader
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_P06_requirements
+        NOT = {
+          OR = {
+            has_country_flag = wet_nag_morathi_dead
+            has_country_flag = wet_nag_morathi_exiled
+          }
+        }
+        has_country_flag = wet_nag_morathi_departure_agreed
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -50
+      add_political_power = 25
+      custom_effect_tooltip = WET_NAG_P06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_political_power = 25
+        custom_effect_tooltip = WET_NAG_P06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P06
+        wet_nag_award_P06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P07
+    icon = GFX_goal_generic_political_pressure
+    x = 20
+    y = 5
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_P04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_P05
+      focus = WET_NAG_P06
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_P07_requirements
+        wet_nag_morathi_custody = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -50
+      add_stability = -0.10
+      add_ideas = wet_nag_final_sentence
+      custom_effect_tooltip = WET_NAG_P07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_stability = -0.10
+        add_ideas = wet_nag_final_sentence
+        custom_effect_tooltip = WET_NAG_P07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P07
+        wet_nag_award_P07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P08
+    icon = GFX_focus_generic_secret_service_agency
+    x = 22
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_P04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_P08_requirements
+        wet_nag_morathi_resolved = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_broken_web
+      custom_effect_tooltip = WET_NAG_P08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_broken_web
+        custom_effect_tooltip = WET_NAG_P08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P08
+        wet_nag_award_P08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P09
+    icon = GFX_goal_generic_national_unity
+    x = 23
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_P03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_war_support = 0.05
+      add_ideas = wet_nag_khaine
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        add_ideas = wet_nag_khaine
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P09
+        wet_nag_award_P09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_P10
+    icon = GFX_goal_generic_national_unity
+    x = 22
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_P08
+    }
+    prerequisite = {
+      focus = WET_NAG_P09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_P10_requirements
+        has_country_flag = wet_nag_suppression_completed
+        NOT = {
+          has_country_flag = wet_nag_chaos_oath
+        }
+        wet_nag_no_chaos_faction = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      remove_ideas = wet_arc_pleasure_cult
+      custom_effect_tooltip = WET_NAG_P10_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_pleasure_cult
+        custom_effect_tooltip = WET_NAG_P10_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_P10
+        wet_nag_award_P10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L01
+    icon = GFX_goal_generic_trade
+    x = 26
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_C03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_l01
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l01
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L01
+        wet_nag_award_L01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L02
+    icon = GFX_goal_generic_trade
+    x = 25
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_L01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_L02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L02
+        wet_nag_award_L02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L03
+    icon = GFX_goal_generic_secret_weapon
+    x = 30
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_C03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_l03
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 2
+        category = electronics
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l03
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 2
+          category = electronics
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L03
+        wet_nag_award_L03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L04
+    icon = GFX_goal_generic_improve_relations
+    x = 27
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_L01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_L04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L04
+        wet_nag_award_L04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L05
+    icon = GFX_goal_generic_national_unity
+    x = 29
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_L03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_morathi_available_focus_requirement_tt
+        wet_nag_morathi_available = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_L05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L05
+        wet_nag_award_L05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L06
+    icon = GFX_goal_generic_national_unity
+    x = 26
+    y = 5
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_L04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_L07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      has_government = neutrality
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_L06_requirements
+        NOT = {
+          has_country_flag = wet_nag_chaos_oath
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_l06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l06
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L06
+        wet_nag_award_L06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L07
+    icon = GFX_goal_generic_secret_weapon
+    x = 28
+    y = 5
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_L04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_L06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_l07
+      custom_effect_tooltip = WET_NAG_L07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l07
+        custom_effect_tooltip = WET_NAG_L07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L07
+        wet_nag_award_L07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L08
+    icon = GFX_goal_generic_trade
+    x = 31
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_L03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+      has_war = yes
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_L08_requirements
+        always = yes
+        NOT = {
+          has_country_flag = wet_nag_activate_rite_done
+        }
+        NOT = {
+          has_country_flag = wet_nag_rite_spent
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_L08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_L08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L08
+        wet_nag_award_L08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L09
+    icon = GFX_goal_generic_army_doctrines
+    x = 31
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_L08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = cat_special_forces_generic
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_special_forces_generic
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L09
+        wet_nag_award_L09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_L10
+    icon = GFX_goal_generic_trade
+    x = 27
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_L06
+      focus = WET_NAG_L07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_patronage_focus_requirement_tt
+        wet_nag_patronage = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_l10
+      add_stability = -0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_l10
+        add_stability = -0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_L10
+        wet_nag_award_L10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R00
+    icon = GFX_goal_generic_improve_relations
+    x = 44
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_C03
+    }
+    prerequisite = {
+      focus = WET_NAG_S02
+    }
+    available = {
+      is_subject = no
+      NOT = {
+        has_war_with = H06
+      }
+      has_political_power
+      >
+      99
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -100
+      add_stability = -0.10
+      custom_effect_tooltip = WET_NAG_R00_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -100
+        add_stability = -0.10
+        custom_effect_tooltip = WET_NAG_R00_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R00
+        wet_nag_award_R00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R01
+    icon = GFX_goal_generic_political_pressure
+    x = 43
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_R00
+    }
+    available = {
+      has_political_power
+      >
+      49
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -50
+      custom_effect_tooltip = WET_NAG_R01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -50
+        custom_effect_tooltip = WET_NAG_R01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R01
+        wet_nag_award_R01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R02
+    icon = GFX_goal_generic_national_unity
+    x = 45
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_R00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_R02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_R02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R02
+        wet_nag_award_R02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R03
+    icon = GFX_focus_generic_national_security
+    x = 43
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_R01
+    }
+    available = {
+      has_political_power
+      >
+      49
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -50
+      add_equipment_to_stockpile = {
+        type = support_equipment
+        amount = -100
+      }
+      custom_effect_tooltip = WET_NAG_R03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -50
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = -100
+        }
+        custom_effect_tooltip = WET_NAG_R03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R03
+        wet_nag_award_R03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R04
+    icon = GFX_goal_generic_national_unity
+    x = 45
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_R02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_R04_requirements
+        wet_nag_morathi_resolved = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_nag_court_reckoning
+        days = 180
+      }
+      add_stability = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_nag_court_reckoning
+          days = 180
+        }
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R04
+        wet_nag_award_R04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_R05
+    icon = GFX_goal_generic_trade
+    x = 44
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_R03
+    }
+    prerequisite = {
+      focus = WET_NAG_R04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_R05_requirements
+        wet_nag_clean_court = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      remove_ideas = wet_arc_pleasure_cult
+      custom_effect_tooltip = WET_NAG_R05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        remove_ideas = wet_arc_pleasure_cult
+        custom_effect_tooltip = WET_NAG_R05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_R05
+        wet_nag_award_R05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_W00
+    icon = GFX_goal_generic_scientific_exchange
+    x = 7
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W00
+        wet_nag_award_W00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W01
+    icon = GFX_goal_generic_fortify_city
+    x = 1
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 5000
+      657 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      655 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      814 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 5000
+        657 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        655 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        814 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W01
+        wet_nag_award_W01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W02
+    icon = GFX_goal_generic_demand_territory
+    x = 0
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W02_requirements
+        OR = {
+          AND = {
+            411 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          411 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W02
+        wet_nag_award_W02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W03
+    icon = GFX_goal_generic_trade
+    x = 0
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_W02
+    }
+    available = {
+      411 = {
+        is_owned_by = H12
+        is_fully_controlled_by = H12
+      }
+      has_war = no
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      411 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      411 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        411 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        411 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W03
+        wet_nag_award_W03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W04
+    icon = GFX_goal_generic_fortify_city
+    x = 2
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w04
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W04
+        wet_nag_award_W04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W05
+    icon = GFX_goal_generic_trade
+    x = 4
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W05
+        wet_nag_award_W05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W06
+    icon = GFX_goal_generic_demand_territory
+    x = 4
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W06_requirements
+        OR = {
+          AND = {
+            822 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            823 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            824 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            825 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          822 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          823 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          824 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          825 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W06
+        wet_nag_award_W06 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W07
+    icon = GFX_goal_generic_trade
+    x = 4
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_W06
+    }
+    available = {
+      has_war = no
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W07_requirements
+        822 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        823 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        824 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        825 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W07
+        wet_nag_award_W07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W08
+    icon = GFX_goal_generic_amphibious_assault
+    x = 7
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w08
+      navy_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w08
+        navy_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W08
+        wet_nag_award_W08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_W09
+    icon = GFX_goal_generic_amphibious_assault
+    x = 6
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W09_requirements
+        OR = {
+          AND = {
+            138 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            139 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            140 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            141 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            142 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            143 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            144 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            145 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            146 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            147 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            148 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            160 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            161 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          138 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          139 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          140 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          141 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          142 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          143 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          144 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          145 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          146 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          147 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          148 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          160 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+          161 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_western_fleet = yes
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W09
+        wet_nag_award_W09 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W10
+    icon = GFX_goal_generic_demand_territory
+    x = 8
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W10_requirements
+        OR = {
+          AND = {
+            149 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            150 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            151 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            152 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            153 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            154 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            155 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            156 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            157 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            158 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            159 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            815 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          149 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          150 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          151 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          152 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          153 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          154 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          155 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          156 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          157 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          158 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          159 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+          815 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            OR = {
+              any_neighbor_state = {
+                is_owned_by = H12
+                is_fully_controlled_by = H12
+              }
+              H12 = {
+                wet_nag_western_fleet = yes
+              }
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W10_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W10_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W10
+        wet_nag_award_W10 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W11
+    icon = GFX_goal_generic_trade
+    x = 7
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_W09
+      focus = WET_NAG_W10
+    }
+    available = {
+      has_war = no
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W11_requirements
+        OR = {
+          138 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          139 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          140 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          141 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          142 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          143 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          144 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          145 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          146 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          147 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          148 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          160 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          161 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          150 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          151 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          152 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          153 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          155 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          156 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          157 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          158 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          159 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      navy_experience = 20
+      custom_effect_tooltip = WET_NAG_W11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        navy_experience = 20
+        custom_effect_tooltip = WET_NAG_W11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W11
+        wet_nag_award_W11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W12
+    icon = GFX_focus_generic_industrial_experts
+    x = 7
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W11
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+      custom_effect_tooltip = WET_NAG_W12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        custom_effect_tooltip = WET_NAG_W12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W12
+        wet_nag_award_W12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W13
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 12
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w13
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w13
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W13
+        wet_nag_award_W13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W14
+    icon = GFX_goal_generic_improve_relations
+    x = 10
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W14_requirements
+        OR = {
+          AND = {
+            806 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            807 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            809 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          806 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          807 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          809 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W14_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W14_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W14
+        wet_nag_award_W14 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W15
+    icon = GFX_goal_generic_demand_territory
+    x = 12
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W15_requirements
+        OR = {
+          AND = {
+            5 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            6 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            7 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          5 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          6 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          7 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W15
+        wet_nag_award_W15 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_W16
+    icon = GFX_goal_generic_demand_territory
+    x = 14
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W13
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W16_requirements
+        OR = {
+          AND = {
+            310 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            311 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            312 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            544 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            808 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            810 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            811 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          310 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          311 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          312 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          544 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          808 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          810 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+          811 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            any_neighbor_state = {
+              is_owned_by = H12
+              is_fully_controlled_by = H12
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W16
+        wet_nag_award_W16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W17
+    icon = GFX_goal_generic_occupy_states_coastal
+    x = 12
+    y = 3
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_W14
+      focus = WET_NAG_W15
+      focus = WET_NAG_W16
+    }
+    available = {
+      has_war = no
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W17_requirements
+        OR = {
+          311 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          312 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          544 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          806 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          807 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          809 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          810 = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W17_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W17_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W17
+        wet_nag_award_W17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W18
+    icon = GFX_goal_generic_national_unity
+    x = 12
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W17
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W18_requirements
+        count_triggers = {
+          amount = 3
+          5 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          6 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          7 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          310 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          311 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          312 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          544 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          806 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          807 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          808 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          809 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          810 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+          811 = {
+            owner = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+            controller = {
+              OR = {
+                tag = H12
+                is_subject_of = H12
+              }
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w18
+      custom_effect_tooltip = WET_NAG_W18_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w18
+        custom_effect_tooltip = WET_NAG_W18_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W18
+        wet_nag_award_W18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W19
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 14
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W19_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W19_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W19
+        wet_nag_award_W19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W20
+    icon = GFX_focus_generic_industrial_experts
+    x = 8
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W07
+      focus = WET_NAG_W12
+      focus = WET_NAG_W18
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w20
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = support_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w20
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = support_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W20
+        wet_nag_award_W20 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W21
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 7
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_W20
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_W21_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_W21_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W21
+        wet_nag_award_W21 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W22
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 9
+    y = 6
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_W20
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W22_requirements
+        wet_nag_western_hegemony = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w22
+      add_political_power = 75
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w22
+        add_political_power = 75
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W22
+        wet_nag_award_W22 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_W23
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 9
+    y = 7
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_W22
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_W23_requirements
+        wet_nag_all_western_rule = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_w23
+      add_political_power = 100
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_w23
+        add_political_power = 100
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_W23
+        wet_nag_award_W23 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_S00
+    icon = GFX_goal_generic_demand_territory
+    x = 40
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_S00
+        wet_nag_award_S00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_S01
+    icon = GFX_goal_generic_major_war
+    x = 37
+    y = 1
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_S00
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_S02
+    }
+    available = {
+      NOT = {
+        is_in_faction_with = H06
+      }
+      NOT = {
+        has_non_aggression_pact_with = H06
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_S01_requirements
+        NOT = {
+          has_country_flag = wet_nag_asur_compact
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_vengeance
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_vengeance
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_S01
+        wet_nag_award_S01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_S02
+    icon = GFX_goal_generic_major_alliance
+    x = 43
+    y = 1
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_S00
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_S01
+    }
+    available = {
+      H06 = {
+        exists = yes
+        NOT = {
+          has_government = fascism
+        }
+        NOT = {
+          has_government = communism
+        }
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_S02_requirements
+        NOT = {
+          has_offensive_war_with = H06
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_S02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_S02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_S02
+        wet_nag_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 4
+        H06 = {
+          wet_ult_cooperation_window = yes
+          NOT = {
+            has_country_flag = wet_ult_strong_dossier
+          }
+        }
+      }
+      modifier = {
+        factor = 8
+        H06 = {
+          wet_ult_cooperation_window = yes
+          has_country_flag = wet_ult_strong_dossier
+        }
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_I01
+    icon = GFX_goal_generic_amphibious_assault
+    x = 36
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_S01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_i01
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = naval_equipment
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i01
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = naval_equipment
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I01
+        wet_nag_award_I01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_I02
+    icon = GFX_goal_generic_army_doctrines
+    x = 36
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_i02
+      custom_effect_tooltip = WET_NAG_I02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i02
+        custom_effect_tooltip = WET_NAG_I02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I02
+        wet_nag_award_I02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_I03
+    icon = GFX_goal_generic_intelligence_exchange
+    x = 38
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_S01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_i03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i03
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I03
+        wet_nag_award_I03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I04
+    icon = GFX_goal_generic_major_war
+    x = 36
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = marine_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = marine_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I04
+        wet_nag_award_I04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_I05
+    icon = GFX_goal_generic_demand_territory
+    x = 36
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I05_requirements
+        OR = {
+          AND = {
+            8 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            9 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            11 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            44 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            49 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            112 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            136 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            164 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            165 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            166 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            208 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            276 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            324 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            369 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            371 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            398 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            413 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            531 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            540 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            670 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            933 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            942 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            949 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            950 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            951 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1034 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1039 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1044 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1054 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1064 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+            1206 = {
+              owner = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+              controller = {
+                OR = {
+                  tag = H12
+                  is_subject_of = H12
+                }
+              }
+            }
+          }
+          8 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          9 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          11 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          44 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          49 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          112 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          136 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          164 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          165 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          166 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          208 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          276 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          324 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          369 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          371 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          398 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          413 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          531 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          540 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          670 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          933 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          942 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          949 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          950 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          951 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1034 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1039 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1044 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1054 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1064 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+          1206 = {
+            owner = {
+              wet_nag_legal_enemy = yes
+              is_subject = no
+              H12 = {
+                can_declare_war_on = PREV
+              }
+            }
+            H12 = {
+              wet_nag_invasion_fleet = yes
+            }
+          }
+        }
+        NOT = {
+          has_country_flag = wet_nag_asur_compact
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I05
+        wet_nag_award_I05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_NAG_I06
+    icon = GFX_goal_generic_amphibious_assault
+    x = 36
+    y = 6
+    cost = 2
+    prerequisite = {
+      focus = WET_NAG_I05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I06_requirements
+        OR = {
+          8 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          9 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          11 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          44 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          112 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          164 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          165 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          166 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          208 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          324 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          369 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          398 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          413 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          531 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          540 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          670 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          933 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          942 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          949 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          950 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          951 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1034 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1039 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1044 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1054 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1064 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          1206 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      custom_effect_tooltip = WET_NAG_I06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_NAG_I06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I06
+        wet_nag_award_I06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I07
+    icon = GFX_goal_generic_major_war
+    x = 34
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_nag_inner_approaches
+        days = 180
+      }
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = engineers_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_nag_inner_approaches
+          days = 180
+        }
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = engineers_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I07
+        wet_nag_award_I07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I08
+    icon = GFX_goal_generic_trade
+    x = 36
+    y = 7
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_I06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I08_requirements
+        OR = {
+          1064 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+          11 = {
+            is_controlled_by = H12
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I08
+        wet_nag_award_I08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I09
+    icon = GFX_goal_generic_trade
+    x = 38
+    y = 7
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_I06
+    }
+    available = {
+      controls_state = 9
+      controls_state = 949
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      add_war_support = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I09
+        wet_nag_award_I09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I10
+    icon = GFX_goal_generic_major_war
+    x = 35
+    y = 8
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_I07
+      focus = WET_NAG_I08
+    }
+    available = {
+      controls_state = 670
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I10
+        wet_nag_award_I10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I11
+    icon = GFX_goal_generic_major_war
+    x = 35
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I10
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I11_requirements
+        wet_nag_island_control70 = yes
+        OR = {
+          H06 = {
+            has_capitulated = yes
+          }
+          AND = {
+            NOT = {
+              has_war_with = H06
+            }
+            wet_nag_island_rule70 = yes
+          }
+          H06 = {
+            has_country_flag = wet_nag_island_terms_agreed
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I11
+        wet_nag_award_I11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I12
+    icon = GFX_goal_generic_improve_relations
+    x = 35
+    y = 10
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_I11
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I12_requirements
+        OR = {
+          wet_nag_island_rule70 = yes
+          H06 = {
+            exists = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I12
+        wet_nag_award_I12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I13
+    icon = GFX_goal_generic_national_unity
+    x = 34
+    y = 11
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_I12
+    }
+    available = {
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      has_war = no
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I13_requirements
+        wet_nag_island_rule70 = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 100
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 100
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I13
+        wet_nag_award_I13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I14
+    icon = GFX_focus_generic_industrial_experts
+    x = 36
+    y = 11
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I12
+    }
+    available = {
+      OR = {
+        8 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        9 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        11 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        44 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        49 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        112 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        136 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        164 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        165 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        166 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        208 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        276 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        324 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        369 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        371 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        398 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        413 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        531 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        540 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        670 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        933 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        942 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        949 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        950 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        951 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1034 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1039 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1044 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1054 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1064 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+        1206 = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_i14
+      custom_effect_tooltip = WET_NAG_I14_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i14
+        custom_effect_tooltip = WET_NAG_I14_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I14
+        wet_nag_award_I14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I15
+    icon = GFX_goal_generic_trade
+    x = 37
+    y = 12
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I14
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I15
+        wet_nag_award_I15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I16
+    icon = GFX_focus_generic_monarchy_2
+    x = 33
+    y = 12
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_I13
+    }
+    available = {
+      has_political_power
+      >
+      74
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      has_political_power
+      >
+      74
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I16_requirements
+        always = yes
+        NOT = {
+          has_country_flag = wet_nag_ratify_conquered_crown_done
+        }
+        has_country_flag = wet_nag_contested_phoenix_claim
+        NOT = {
+          OR = {
+            has_global_flag = wet_story_elven_settlement_council
+            has_global_flag = wet_story_elven_settlement_malekith
+          }
+        }
+        H06 = {
+          exists = yes
+          NOT = {
+            has_war_with = H12
+          }
+          NOT = {
+            has_government = fascism
+          }
+          NOT = {
+            has_government = communism
+          }
+          OR = {
+            is_subject = no
+            is_subject_of = H12
+          }
+          has_country_flag = wet_nag_constitution_malekith_accepted
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_I16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_I16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I16
+        wet_nag_award_I16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_I17
+    icon = GFX_goal_generic_trade
+    x = 35
+    y = 12
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_I13
+    }
+    prerequisite = {
+      focus = WET_NAG_I14
+    }
+    available = {
+      controls_state = 812
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_I17_requirements
+        wet_nag_island_rule70 = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_i17
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_i17
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_I17
+        wet_nag_award_I17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_A01
+    icon = GFX_goal_generic_navy_doctrines_tactics
+    x = 42
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_S02
+    }
+    available = {
+      has_political_power
+      >
+      24
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -25
+      custom_effect_tooltip = WET_NAG_A01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -25
+        custom_effect_tooltip = WET_NAG_A01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A01
+        wet_nag_award_A01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A02
+    icon = GFX_goal_generic_improve_relations
+    x = 42
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_A01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A02
+        wet_nag_award_A02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A03
+    icon = GFX_goal_generic_intelligence_exchange
+    x = 43
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A02
+    }
+    prerequisite = {
+      focus = WET_NAG_P10
+      focus = WET_NAG_R05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A03_requirements
+        wet_nag_clean_court = yes
+        H06 = {
+          wet_nag_asur_government = yes
+          has_country_flag = wet_nag_talks_accepted
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_NAG_A03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_NAG_A03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A03
+        wet_nag_award_A03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A04
+    icon = GFX_goal_generic_improve_relations
+    x = 43
+    y = 8
+    cost = 3
+    prerequisite = {
+      focus = WET_NAG_A03
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A04_requirements
+        wet_nag_clean_court = yes
+        NOT = {
+          has_country_flag = wet_nag_broken_compact
+        }
+        H06 = {
+          wet_nag_asur_government = yes
+          has_country_flag = wet_nag_security_terms_accepted
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A04
+        wet_nag_award_A04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A05
+    icon = GFX_goal_generic_intelligence_exchange
+    x = 39
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A05
+        wet_nag_award_A05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A06
+    icon = GFX_goal_generic_defence
+    x = 41
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      navy_experience = 25
+      add_ideas = wet_nag_a06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        navy_experience = 25
+        add_ideas = wet_nag_a06
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A06
+        wet_nag_award_A06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_A07
+    icon = GFX_goal_generic_army_doctrines
+    x = 43
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A04
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      has_political_power
+      >
+      49
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = -50
+      custom_effect_tooltip = WET_NAG_A07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = -50
+        custom_effect_tooltip = WET_NAG_A07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A07
+        wet_nag_award_A07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A08
+    icon = GFX_goal_generic_army_doctrines
+    x = 40
+    y = 10
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A05
+      focus = WET_NAG_A06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 25
+      add_ideas = wet_nag_a08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 25
+        add_ideas = wet_nag_a08
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A08
+        wet_nag_award_A08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A09
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 38
+    y = 11
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A09
+        wet_nag_award_A09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A10
+    icon = GFX_goal_generic_defence
+    x = 40
+    y = 11
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_a10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a10
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A10
+        wet_nag_award_A10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A11
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 42
+    y = 10
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A11_requirements
+        wet_nag_route_asur = yes
+        H06 = {
+          any_enemy_country = {
+            has_government = fascism
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A11
+        wet_nag_award_A11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A12
+    icon = GFX_goal_generic_major_alliance
+    x = 44
+    y = 10
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A12_requirements
+        H06 = {
+          is_in_faction = yes
+          faction_leader = {
+            wet_nag_rules_allow_admission = yes
+            NOT = {
+              wet_faction_is_skaven_host = yes
+            }
+            NOT = {
+              wet_faction_is_greenskin_host = yes
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_NAG_A12_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_NAG_A12_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A12
+        wet_nag_award_A12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A13
+    icon = GFX_goal_generic_army_doctrines
+    x = 42
+    y = 11
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A08
+    }
+    prerequisite = {
+      focus = WET_NAG_A07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A13_requirements
+        wet_nag_shared_chaos_war = yes
+        has_military_access_to = H06
+        H06 = {
+          has_military_access_to = H12
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_a13
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a13
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A13
+        wet_nag_award_A13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A14
+    icon = GFX_goal_generic_national_unity
+    x = 45
+    y = 9
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_A15
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A14_requirements
+        NOT = {
+          has_global_flag = wet_story_elven_settlement_malekith
+        }
+        H06 = {
+          has_country_flag = wet_nag_constitution_council_accepted
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_stability = 0.05
+      custom_effect_tooltip = WET_NAG_A14_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_stability = 0.05
+        custom_effect_tooltip = WET_NAG_A14_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A14
+        wet_nag_award_A14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A15
+    icon = GFX_goal_generic_national_unity
+    x = 47
+    y = 9
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_A04
+    }
+    mutually_exclusive = {
+      focus = WET_NAG_A14
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      has_country_leader = {
+        character = WET_H12_leader
+        ruling_only = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A15_requirements
+        NOT = {
+          has_global_flag = wet_story_elven_settlement_council
+        }
+        H06 = {
+          has_country_flag = wet_nag_constitution_malekith_accepted
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      add_ideas = wet_nag_constitutional_legitimacy
+      custom_effect_tooltip = WET_NAG_A15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        add_ideas = wet_nag_constitutional_legitimacy
+        custom_effect_tooltip = WET_NAG_A15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A15
+        wet_nag_award_A15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_A16
+    icon = GFX_goal_generic_major_alliance
+    x = 45
+    y = 12
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_A13
+    }
+    prerequisite = {
+      focus = WET_NAG_A14
+      focus = WET_NAG_A15
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = wet_nag_compact_active_focus_requirement_tt
+        wet_nag_compact_active = yes
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_NAG_A16_requirements
+        has_country_flag = wet_nag_joint_defence_earned
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_a16
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_a16
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_A16
+        wet_nag_award_A16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_NAG_N00
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 54
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N00
+        wet_nag_award_N00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N01
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 49
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      812 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        812 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N01
+        wet_nag_award_N01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N02
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 51
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      817 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        817 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N02
+        wet_nag_award_N02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N03
+    icon = GFX_goal_generic_scientific_exchange
+    x = 53
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 2
+        category = electronics
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 2
+          category = electronics
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N03
+        wet_nag_award_N03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N04
+    icon = GFX_goal_generic_construct_naval_dockyard
+    x = 56
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      803 = {
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        803 = {
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N04
+        wet_nag_award_N04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N05
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 50
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N01
+    }
+    prerequisite = {
+      focus = WET_NAG_N02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n05
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = industry
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n05
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N05
+        wet_nag_award_N05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N06
+    icon = GFX_goal_generic_fortify_city
+    x = 52
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_N02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n06
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N06
+        wet_nag_award_N06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N07
+    icon = GFX_goal_generic_radar
+    x = 54
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n07
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n07
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N07
+        wet_nag_award_N07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N08
+    icon = GFX_goal_generic_navy_doctrines_tactics
+    x = 56
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      navy_experience = 25
+      add_doctrine_cost_reduction = {
+        name = wet_nag_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = naval_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        navy_experience = 25
+        add_doctrine_cost_reduction = {
+          name = wet_nag_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = naval_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N08
+        wet_nag_award_N08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_N09
+    icon = GFX_goal_generic_navy_doctrines_tactics
+    x = 55
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n09
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n09
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N09
+        wet_nag_award_N09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_N10
+    icon = GFX_goal_generic_construct_naval_dockyard
+    x = 57
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n10
+      custom_effect_tooltip = WET_NAG_N10_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n10
+        custom_effect_tooltip = WET_NAG_N10_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N10
+        wet_nag_award_N10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_N11
+    icon = GFX_focus_generic_naval_discipline
+    x = 56
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_N09
+    }
+    prerequisite = {
+      focus = WET_NAG_N10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n11
+      navy_experience = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n11
+        navy_experience = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N11
+        wet_nag_award_N11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_NAVY
+    }
+  }
+  focus = {
+    id = WET_NAG_N12
+    icon = GFX_goal_generic_small_arms
+    x = 60
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_NAG_N00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n12
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n12
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N12
+        wet_nag_award_N12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_N13
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 58
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N12
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n13
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = infantry_weapons
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n13
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N13
+        wet_nag_award_N13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_N14
+    icon = GFX_goal_generic_cavalry
+    x = 60
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N12
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = cat_light_armor
+      }
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_light_armor
+        }
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N14
+        wet_nag_award_N14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_N15
+    icon = GFX_goal_generic_secret_weapon
+    x = 62
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N12
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n15
+      add_tech_bonus = {
+        name = wet_nag_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = cat_heavy_armor
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n15
+        add_tech_bonus = {
+          name = wet_nag_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = cat_heavy_armor
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N15
+        wet_nag_award_N15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_N16
+    icon = GFX_goal_generic_army_doctrines
+    x = 60
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N13
+      focus = WET_NAG_N14
+      focus = WET_NAG_N15
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n16
+      add_doctrine_cost_reduction = {
+        name = wet_nag_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n16
+        add_doctrine_cost_reduction = {
+          name = wet_nag_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N16
+        wet_nag_award_N16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_NAG_N17
+    icon = GFX_focus_generic_reinforcing_the_supply_network
+    x = 49
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_NAG_N05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n17
+      add_fuel = 10000
+      812 = {
+        add_building_construction = {
+          type = fuel_silo
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n17
+        add_fuel = 10000
+        812 = {
+          add_building_construction = {
+            type = fuel_silo
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N17
+        wet_nag_award_N17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N18
+    icon = GFX_focus_generic_education
+    x = 51
+    y = 3
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_N03
+    }
+    prerequisite = {
+      focus = WET_NAG_N05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_research_slot = 1
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N18
+        wet_nag_award_N18 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_NAG_N19
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 54
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_NAG_N16
+    }
+    prerequisite = {
+      focus = WET_NAG_N17
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_nag_n19
+      custom_effect_tooltip = WET_NAG_N19_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_nag_n19
+        custom_effect_tooltip = WET_NAG_N19_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_nag_earned_N19
+        wet_nag_award_N19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+}

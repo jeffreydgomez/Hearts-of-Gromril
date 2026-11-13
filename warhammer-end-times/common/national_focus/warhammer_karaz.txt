@@ -1,0 +1,4608 @@
+focus_tree = {
+  id = WET_karaz_focus
+  country = {
+    factor = 0
+    modifier = {
+      add = 100
+      tag = U04
+    }
+  }
+  default = no
+  reset_on_civilwar = no
+  initial_show_position = {
+    focus = WET_KARAZ_C00
+  }
+  continuous_focus_position = {
+    x = 450
+    y = 1250
+  }
+  focus = {
+    id = WET_KARAZ_I00
+    icon = GFX_goal_generic_production
+    x = 18
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I00
+        wet_karaz_award_I00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I01
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 14
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      588 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 2
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        588 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I01
+        wet_karaz_award_I01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I02
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 18
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      1209 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 2
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        1209 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 2
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I02
+        wet_karaz_award_I02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I03
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 20
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      581 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      581 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        581 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        581 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I03
+        wet_karaz_award_I03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I04
+    icon = GFX_goal_generic_trade
+    x = 13
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      768 = {
+        add_building_construction = {
+          type = steel
+          level = 8
+          instant_build = yes
+        }
+      }
+      768 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        768 = {
+          add_building_construction = {
+            type = steel
+            level = 8
+            instant_build = yes
+          }
+        }
+        768 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I04
+        wet_karaz_award_I04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I05
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 20
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I05
+      630 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      894 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I05
+        630 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        894 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I05
+        wet_karaz_award_I05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I06
+    icon = GFX_goal_generic_army_artillery
+    x = 18
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = artillery
+      }
+      custom_effect_tooltip = WET_KARAZ_I06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = artillery
+        }
+        custom_effect_tooltip = WET_KARAZ_I06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I06
+        wet_karaz_award_I06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I07
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 12
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_I07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_I07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I07
+        wet_karaz_award_I07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I08
+    icon = GFX_focus_generic_education
+    x = 20
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I05
+      focus = WET_KARAZ_I06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 2
+        category = industry
+      }
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 2
+          category = industry
+        }
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I08
+        wet_karaz_award_I08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I09
+    icon = GFX_goal_generic_production
+    x = 16
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I09
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I09
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I09
+        wet_karaz_award_I09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I10
+    icon = GFX_focus_generic_education
+    x = 15
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_I07
+    }
+    prerequisite = {
+      focus = WET_KARAZ_I08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_research_slot = 1
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_research_slot = 1
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I10
+        wet_karaz_award_I10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I11
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 15
+    y = 5
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_I09
+    }
+    prerequisite = {
+      focus = WET_KARAZ_I10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I11
+      custom_effect_tooltip = WET_KARAZ_I11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I11
+        custom_effect_tooltip = WET_KARAZ_I11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I11
+        wet_karaz_award_I11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F00
+    icon = GFX_goal_generic_scientific_exchange
+    x = 27
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F00
+        wet_karaz_award_F00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F01
+    icon = GFX_goal_generic_fortify_city
+    x = 25
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      581 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      905 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      905 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      894 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      431 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        581 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        905 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        905 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        894 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        431 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F01
+        wet_karaz_award_F01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F02
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 27
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      1209 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      1209 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      1060 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        1209 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        1209 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        1060 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F02
+        wet_karaz_award_F02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F03
+    icon = GFX_goal_generic_fortify_city
+    x = 29
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      953 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      953 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      767 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      767 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      767 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      767 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      1060 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        953 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        953 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        767 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        767 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        767 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        767 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        1060 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F03
+        wet_karaz_award_F03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F04
+    icon = GFX_goal_generic_trade
+    x = 28
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F01
+      focus = WET_KARAZ_F02
+      focus = WET_KARAZ_F03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 10000
+      add_ideas = wet_karaz_F04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 10000
+        add_ideas = wet_karaz_F04
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F04
+        wet_karaz_award_F04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F05
+    icon = GFX_goal_generic_fortify_city
+    x = 27
+    y = 3
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_F04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      588 = {
+        add_building_construction = {
+          type = bunker
+          level = 2
+          instant_build = yes
+        }
+      }
+      581 = {
+        add_building_construction = {
+          type = bunker
+          level = 2
+          instant_build = yes
+        }
+      }
+      1209 = {
+        add_building_construction = {
+          type = bunker
+          level = 2
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        588 = {
+          add_building_construction = {
+            type = bunker
+            level = 2
+            instant_build = yes
+          }
+        }
+        581 = {
+          add_building_construction = {
+            type = bunker
+            level = 2
+            instant_build = yes
+          }
+        }
+        1209 = {
+          add_building_construction = {
+            type = bunker
+            level = 2
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F05
+        wet_karaz_award_F05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F06
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 29
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_F04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_F06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_F06
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F06
+        wet_karaz_award_F06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F07
+    icon = GFX_goal_generic_defence
+    x = 27
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_F07
+      add_doctrine_cost_reduction = {
+        name = wet_karaz_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_F07
+        add_doctrine_cost_reduction = {
+          name = wet_karaz_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F07
+        wet_karaz_award_F07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F08
+    icon = GFX_goal_generic_defence
+    x = 28
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F06
+    }
+    prerequisite = {
+      focus = WET_KARAZ_F07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_F08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_F08
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F08
+        wet_karaz_award_F08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G00
+    icon = GFX_goal_generic_demand_territory
+    x = 38
+    y = 0
+    cost = 2
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G00
+        wet_karaz_award_G00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G01
+    icon = GFX_goal_generic_occupy_start_war
+    x = 32
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G01_requirement
+        OR = {
+          wet_karaz_lane_G01_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G01_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G01
+        wet_karaz_award_G01 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G02
+    icon = GFX_goal_generic_occupy_start_war
+    x = 34
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G02_requirement
+        OR = {
+          wet_karaz_lane_G02_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G02_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G02
+        wet_karaz_award_G02 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G03
+    icon = GFX_goal_generic_trade
+    x = 36
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G03_requirement
+        OR = {
+          wet_karaz_lane_G03_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G03_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G03
+        wet_karaz_award_G03 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G04
+    icon = GFX_goal_generic_major_war
+    x = 38
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G04_requirement
+        OR = {
+          wet_karaz_lane_G04_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G04_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G04
+        wet_karaz_award_G04 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G05
+    icon = GFX_goal_generic_occupy_start_war
+    x = 40
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G05_requirement
+        OR = {
+          wet_karaz_lane_G05_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G05_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G05
+        wet_karaz_award_G05 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G06
+    icon = GFX_goal_generic_occupy_start_war
+    x = 42
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G06_requirement
+        OR = {
+          wet_karaz_lane_G06_secured = yes
+          any_other_country = {
+            wet_karaz_lane_G06_target = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G06
+        wet_karaz_award_G06 = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G07
+    icon = GFX_goal_generic_demand_territory
+    x = 33
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G01
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G07_requirement
+        wet_karaz_lane_G01_secured = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      286 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        286 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G07
+        wet_karaz_award_G07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G08
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 35
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G08_requirement
+        wet_karaz_lane_G02_secured = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      954 = {
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      954 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        954 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        954 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G08
+        wet_karaz_award_G08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G09
+    icon = GFX_focus_generic_economic_recovery
+    x = 39
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G03
+      focus = WET_KARAZ_G04
+      focus = WET_KARAZ_G05
+      focus = WET_KARAZ_G06
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G09_requirement
+        OR = {
+          AND = {
+            has_completed_focus = WET_KARAZ_G03
+            wet_karaz_lane_G03_secured = yes
+          }
+          AND = {
+            has_completed_focus = WET_KARAZ_G04
+            wet_karaz_lane_G04_secured = yes
+          }
+          AND = {
+            has_completed_focus = WET_KARAZ_G05
+            wet_karaz_lane_G05_secured = yes
+          }
+          AND = {
+            has_completed_focus = WET_KARAZ_G06
+            wet_karaz_lane_G06_secured = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 20
+      custom_effect_tooltip = WET_KARAZ_G09_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 20
+        custom_effect_tooltip = WET_KARAZ_G09_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G09
+        wet_karaz_award_G09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G10
+    icon = GFX_goal_generic_major_war
+    x = 36
+    y = 3
+    cost = 2
+    prerequisite = {
+      focus = WET_KARAZ_G07
+      focus = WET_KARAZ_G08
+      focus = WET_KARAZ_G09
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+      add_war_support = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G10
+        wet_karaz_award_G10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G11
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 36
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_G10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_G11
+      custom_effect_tooltip = WET_KARAZ_G11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_G11
+        custom_effect_tooltip = WET_KARAZ_G11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G11
+        wet_karaz_award_G11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_C00
+    icon = GFX_goal_generic_national_unity
+    x = 4
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_C00
+        wet_karaz_award_C00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_C01
+    icon = GFX_focus_generic_home_defense
+    x = 1
+    y = 1
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_C00
+    }
+    mutually_exclusive = {
+      focus = WET_KARAZ_C02
+    }
+    available = {
+      is_subject = no
+      is_in_faction = no
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_sealed_holds
+      custom_effect_tooltip = WET_KARAZ_C01_special_tt
+      unlock_decision_tooltip = wet_karaz_revoke_access
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_sealed_holds
+        custom_effect_tooltip = WET_KARAZ_C01_special_tt
+        unlock_decision_tooltip = wet_karaz_revoke_access
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_C01
+        wet_karaz_award_C01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_C02
+    icon = GFX_goal_generic_alliance
+    x = 7
+    y = 1
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_C00
+    }
+    mutually_exclusive = {
+      focus = WET_KARAZ_C01
+    }
+    available = {
+      has_government = democratic
+      is_subject = no
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_C02_requirement
+        OR = {
+          is_in_faction = no
+          faction_leader = {
+            has_government = democratic
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_C02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_C02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_C02
+        wet_karaz_award_C02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+      modifier = {
+        factor = 2
+        is_historical_focus_on = yes
+      }
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S01
+    icon = GFX_focus_generic_reinforcing_the_supply_network
+    x = 2
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_C01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 20000
+      custom_effect_tooltip = WET_KARAZ_S01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 20000
+        custom_effect_tooltip = WET_KARAZ_S01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S01
+        wet_karaz_award_S01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S02
+    icon = GFX_goal_generic_fortify_city
+    x = 3
+    y = 3
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_S01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_S02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_S02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S02
+        wet_karaz_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S03
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 2
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_S02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_S03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_S03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S03
+        wet_karaz_award_S03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S04
+    icon = GFX_goal_generic_defence
+    x = 3
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_S03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_S04
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_S04
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S04
+        wet_karaz_award_S04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S05
+    icon = GFX_goal_generic_fortify_city
+    x = 4
+    y = 6
+    cost = 10
+    prerequisite = {
+      focus = WET_KARAZ_S04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_S05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_S05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S05
+        wet_karaz_award_S05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S06
+    icon = GFX_goal_generic_defence
+    x = 4
+    y = 7
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_S05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_S06_requirement
+        581 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6569
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        905 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6571
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        905 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6572
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        894 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6584
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        431 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6587
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        1209 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6503
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        1209 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6504
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        1060 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 748
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        953 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6478
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        953 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6479
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        767 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6481
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        767 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6482
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        767 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6484
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        767 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 6494
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+        1060 = {
+          is_owned_by = U04
+          is_fully_controlled_by = U04
+          any_province_building_level = {
+            province = {
+              id = 1510
+            }
+            building = bunker
+            level
+            >
+            4
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_S06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_S06
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S06
+        wet_karaz_award_S06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O01
+    icon = GFX_goal_generic_alliance
+    x = 7
+    y = 2
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_C02
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_O01_requirement
+        wet_karaz_order_member = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 20
+      custom_effect_tooltip = WET_KARAZ_O01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 20
+        custom_effect_tooltip = WET_KARAZ_O01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O01
+        wet_karaz_award_O01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O02
+    icon = GFX_goal_generic_army_doctrines
+    x = 5
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_O02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_O02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O02
+        wet_karaz_award_O02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O03
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 9
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_O03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_O03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O03
+        wet_karaz_award_O03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O04
+    icon = GFX_goal_generic_military_deal
+    x = 6
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = support_tech
+      }
+      custom_effect_tooltip = WET_KARAZ_O04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = support_tech
+        }
+        custom_effect_tooltip = WET_KARAZ_O04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O04
+        wet_karaz_award_O04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O05
+    icon = GFX_goal_generic_army_doctrines
+    x = 8
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_O05
+      add_doctrine_cost_reduction = {
+        name = wet_karaz_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_O05
+        add_doctrine_cost_reduction = {
+          name = wet_karaz_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O05
+        wet_karaz_award_O05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O06
+    icon = GFX_goal_generic_major_alliance
+    x = 7
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O04
+    }
+    prerequisite = {
+      focus = WET_KARAZ_O05
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_O06_requirement
+        wet_karaz_order_member = yes
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_O06
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_O06
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O06
+        wet_karaz_award_O06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I12
+    icon = GFX_goal_generic_scientific_exchange
+    x = 22
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_I00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = excavation_tech
+      }
+      588 = {
+        add_building_construction = {
+          type = steel
+          level = 4
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = excavation_tech
+        }
+        588 = {
+          add_building_construction = {
+            type = steel
+            level = 4
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I12
+        wet_karaz_award_I12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I13
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 22
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I12
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I13
+      1209 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I13
+        1209 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I13
+        wet_karaz_award_I13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I15
+    icon = GFX_focus_generic_industrial_experts
+    x = 14
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      768 = {
+        add_building_construction = {
+          type = steel
+          level = 6
+          instant_build = yes
+        }
+      }
+      768 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        768 = {
+          add_building_construction = {
+            type = steel
+            level = 6
+            instant_build = yes
+          }
+        }
+        768 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I15
+        wet_karaz_award_I15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I16
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 18
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_I06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = artillery
+      }
+      custom_effect_tooltip = WET_KARAZ_I16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = artillery
+        }
+        custom_effect_tooltip = WET_KARAZ_I16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I16
+        wet_karaz_award_I16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I17
+    icon = GFX_goal_generic_production
+    x = 17
+    y = 4
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_I09
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I17
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I17
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I17
+        wet_karaz_award_I17 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_I19
+    icon = GFX_goal_generic_production
+    x = 19
+    y = 5
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_I13
+    }
+    prerequisite = {
+      focus = WET_KARAZ_I17
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_I19
+      custom_effect_tooltip = WET_KARAZ_I19_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_I19
+        custom_effect_tooltip = WET_KARAZ_I19_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_I19
+        wet_karaz_award_I19 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_INDUSTRY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F10
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 30
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 1
+        uses = 1
+        category = engineers_tech
+      }
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 1
+          uses = 1
+          category = engineers_tech
+        }
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F10
+        wet_karaz_award_F10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F11
+    icon = GFX_goal_generic_fortify_city
+    x = 24
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_F01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_timed_idea = {
+        idea = wet_karaz_F11
+        days = 365
+      }
+      905 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_karaz_F11
+          days = 365
+        }
+        905 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F11
+        wet_karaz_award_F11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F12
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 26
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      1060 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      1060 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        1060 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        1060 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F12
+        wet_karaz_award_F12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_F13
+    icon = GFX_goal_generic_fortify_city
+    x = 30
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_F03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      953 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      953 = {
+        add_building_construction = {
+          type = bunker
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        953 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        953 = {
+          add_building_construction = {
+            type = bunker
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_F13
+        wet_karaz_award_F13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G12
+    icon = GFX_focus_generic_secret_service_agency
+    x = 44
+    y = 1
+    cost = 3
+    prerequisite = {
+      focus = WET_KARAZ_G00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = recon_tech
+      }
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = recon_tech
+        }
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G12
+        wet_karaz_award_G12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G13
+    icon = GFX_goal_generic_trade
+    x = 32
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_G07
+    }
+    available = {
+      286 = {
+        is_owned_by = U04
+        is_fully_controlled_by = U04
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      286 = {
+        add_building_construction = {
+          type = steel
+          level = 6
+          instant_build = yes
+        }
+      }
+      286 = {
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        286 = {
+          add_building_construction = {
+            type = steel
+            level = 6
+            instant_build = yes
+          }
+        }
+        286 = {
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G13
+        wet_karaz_award_G13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G14
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 34
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_G08
+    }
+    available = {
+      954 = {
+        is_owned_by = U04
+        is_fully_controlled_by = U04
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 5000
+      954 = {
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 5000
+        954 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G14
+        wet_karaz_award_G14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G15
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 42
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_G09
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_G15_requirement
+        OR = {
+          769 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          286 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          405 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          954 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          402 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          116 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          119 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+          121 = {
+            has_state_flag = wet_karaz_G09_site
+            is_owned_by = U04
+            is_fully_controlled_by = U04
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G15_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G15_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G15
+        wet_karaz_award_G15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_G16
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 36
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_G11
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_G16_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_G16_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_G16
+        wet_karaz_award_G16 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S07
+    icon = GFX_focus_generic_reinforcing_the_supply_network
+    x = 0
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_C01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_fuel = 10000
+      custom_effect_tooltip = WET_KARAZ_S07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_fuel = 10000
+        custom_effect_tooltip = WET_KARAZ_S07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S07
+        wet_karaz_award_S07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S08
+    icon = GFX_goal_generic_improve_relations
+    x = 1
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_S01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 1
+        uses = 1
+        category = hospital_tech
+      }
+      add_ideas = wet_karaz_S08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 1
+          uses = 1
+          category = hospital_tech
+        }
+        add_ideas = wet_karaz_S08
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S08
+        wet_karaz_award_S08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S10
+    icon = GFX_goal_generic_consumer_goods
+    x = 1
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_S03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_S10
+      add_fuel = 15000
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_S10
+        add_fuel = 15000
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S10
+        wet_karaz_award_S10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_S11
+    icon = GFX_goal_generic_defence
+    x = 2
+    y = 6
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_S04
+    }
+    available = {
+      has_political_power
+      >
+      49
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_S11_requirement
+        always = yes
+        NOT = {
+          has_country_flag = wet_karaz_reserve_spent
+        }
+        NOT = {
+          has_country_flag = wet_karaz_last_reserve_done
+        }
+        wet_karaz_sealed_active = yes
+        has_defensive_war = yes
+        NOT = {
+          OR = {
+            has_stability
+            <
+            0.05
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      custom_effect_tooltip = WET_KARAZ_S11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KARAZ_S11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_S11
+        wet_karaz_award_S11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O08
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 10
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_O08
+      1209 = {
+        add_building_construction = {
+          type = fuel_silo
+          level = 1
+          instant_build = yes
+        }
+      }
+      custom_effect_tooltip = wet_focus_deferred_construction_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_O08
+        1209 = {
+          add_building_construction = {
+            type = fuel_silo
+            level = 1
+            instant_build = yes
+          }
+        }
+        custom_effect_tooltip = wet_focus_deferred_construction_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O08
+        wet_karaz_award_O08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O09
+    icon = GFX_goal_generic_fortify_city
+    x = 5
+    y = 5
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_O04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O09
+        wet_karaz_award_O09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_O11
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 4
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_O02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_O11
+      custom_effect_tooltip = WET_KARAZ_O11_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_O11
+        custom_effect_tooltip = WET_KARAZ_O11_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_O11
+        wet_karaz_award_O11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A00
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 48
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A00
+        wet_karaz_award_A00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A01
+    icon = GFX_goal_generic_defence
+    x = 46
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_A00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A01
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A01
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A01
+        wet_karaz_award_A01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A02
+    icon = GFX_goal_generic_army_doctrines
+    x = 46
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 1
+        uses = 1
+        category = infantry_weapons
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 1
+          uses = 1
+          category = infantry_weapons
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A02
+        wet_karaz_award_A02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A03
+    icon = GFX_goal_generic_army_doctrines
+    x = 46
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A02
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A03
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A03
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A03
+        wet_karaz_award_A03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A04
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 48
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_A00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 1
+        uses = 1
+        category = recon_tech
+      }
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 1
+          uses = 1
+          category = recon_tech
+        }
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A04
+        wet_karaz_award_A04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A05
+    icon = GFX_goal_generic_army_doctrines
+    x = 48
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A04
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A05
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = mountaineers_tech
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A05
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = mountaineers_tech
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A05
+        wet_karaz_award_A05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A06
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 48
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A06
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A06
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A06
+        wet_karaz_award_A06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A07
+    icon = GFX_goal_generic_army_artillery
+    x = 50
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_A00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = artillery
+      }
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = artillery
+        }
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A07
+        wet_karaz_award_A07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A08
+    icon = GFX_goal_generic_army_artillery
+    x = 50
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A07
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A08
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A08
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A08
+        wet_karaz_award_A08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A09
+    icon = GFX_goal_generic_army_artillery
+    x = 50
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A08
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A09
+      army_experience = 20
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A09
+        army_experience = 20
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A09
+        wet_karaz_award_A09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A10
+    icon = GFX_goal_generic_army_doctrines
+    x = 48
+    y = 4
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_A03
+      focus = WET_KARAZ_A06
+      focus = WET_KARAZ_A09
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A10
+      add_doctrine_cost_reduction = {
+        name = wet_karaz_doctrine_bonus
+        cost_reduction = 0.5
+        uses = 1
+        category = land_doctrine
+      }
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A10
+        add_doctrine_cost_reduction = {
+          name = wet_karaz_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A10
+        wet_karaz_award_A10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_A11
+    icon = GFX_goal_generic_army_doctrines
+    x = 48
+    y = 5
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_A10
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_A11
+      army_experience = 30
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_A11
+        army_experience = 30
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_A11
+        wet_karaz_award_A11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_ARMY
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H00
+    icon = GFX_focus_generic_advisors
+    x = 54
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H00
+        wet_karaz_award_H00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H01
+    icon = GFX_focus_generic_advisors
+    x = 52
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_H00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 75
+      army_experience = 10
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 75
+        army_experience = 10
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H01
+        wet_karaz_award_H01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H02
+    icon = GFX_goal_generic_construct_civ_factory
+    x = 52
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_H01
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_H02
+      custom_effect_tooltip = WET_KARAZ_H02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_H02
+        custom_effect_tooltip = WET_KARAZ_H02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H02
+        wet_karaz_award_H02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H03
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 54
+    y = 1
+    cost = 4
+    prerequisite = {
+      focus = WET_KARAZ_H00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_H03
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_H03
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H03
+        wet_karaz_award_H03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H04
+    icon = GFX_goal_generic_improve_relations
+    x = 54
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_H03
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = hospital_tech
+      }
+      add_war_support = 0.05
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = hospital_tech
+        }
+        add_war_support = 0.05
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H04
+        wet_karaz_award_H04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H05
+    icon = GFX_goal_generic_construct_mil_factory
+    x = 56
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_H00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_tech_bonus = {
+        name = wet_karaz_research_bonus
+        bonus = 0.5
+        uses = 1
+        category = infantry_weapons
+      }
+      army_experience = 15
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_tech_bonus = {
+          name = wet_karaz_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
+        army_experience = 15
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H05
+        wet_karaz_award_H05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H06
+    icon = GFX_goal_generic_allies_build_infantry
+    x = 54
+    y = 3
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_H02
+      focus = WET_KARAZ_H04
+      focus = WET_KARAZ_H05
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_H06
+      add_political_power = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_H06
+        add_political_power = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H06
+        wet_karaz_award_H06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_H07
+    icon = GFX_goal_generic_national_unity
+    x = 54
+    y = 4
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_H06
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_H07
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_H07
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_H07
+        wet_karaz_award_H07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P00
+    icon = GFX_goal_generic_national_unity
+    x = 64
+    y = 0
+    cost = 3
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P00
+        wet_karaz_award_P00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P01
+    icon = GFX_goal_generic_improve_relations
+    x = 58
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P01_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P01_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P01
+        wet_karaz_award_P01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P02
+    icon = GFX_goal_generic_national_unity
+    x = 60
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P02_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P02_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P02
+        wet_karaz_award_P02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P03
+    icon = GFX_focus_generic_merchant_fleet
+    x = 62
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P03_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P03_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P03
+        wet_karaz_award_P03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P04
+    icon = GFX_goal_generic_national_unity
+    x = 64
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P04_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P04_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P04
+        wet_karaz_award_P04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P05
+    icon = GFX_goal_generic_improve_relations
+    x = 66
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P05_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P05_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P05
+        wet_karaz_award_P05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P06
+    icon = GFX_goal_generic_improve_relations
+    x = 68
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P06_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P06_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P06
+        wet_karaz_award_P06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P07
+    icon = GFX_goal_generic_national_unity
+    x = 70
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P00
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 25
+      custom_effect_tooltip = WET_KARAZ_P07_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KARAZ_P07_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P07
+        wet_karaz_award_P07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P08
+    icon = GFX_focus_generic_monarchist_sentiment
+    x = 64
+    y = 2
+    cost = 5
+    prerequisite = {
+      focus = WET_KARAZ_P01
+      focus = WET_KARAZ_P02
+      focus = WET_KARAZ_P03
+      focus = WET_KARAZ_P04
+      focus = WET_KARAZ_P05
+      focus = WET_KARAZ_P06
+      focus = WET_KARAZ_P07
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_P08_requirement
+        OR = {
+          U07 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U21 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U13 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U14 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U15 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U16 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B14 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U22 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U37 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B02 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B04 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B05 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B19 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U36 = {
+            wet_karaz_direct_puppet = yes
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_political_power = 50
+      custom_effect_tooltip = WET_KARAZ_P08_special_tt
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_political_power = 50
+        custom_effect_tooltip = WET_KARAZ_P08_special_tt
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P08
+        wet_karaz_award_P08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+  focus = {
+    id = WET_KARAZ_P09
+    icon = GFX_goal_generic_national_unity
+    x = 64
+    y = 3
+    cost = 7
+    prerequisite = {
+      focus = WET_KARAZ_P08
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_P09_requirement
+        count_triggers = {
+          amount = 3
+          U07 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U21 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U13 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U14 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U15 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U16 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B14 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U22 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U37 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B02 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B04 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B05 = {
+            wet_karaz_direct_puppet = yes
+          }
+          B19 = {
+            wet_karaz_direct_puppet = yes
+          }
+          U36 = {
+            wet_karaz_direct_puppet = yes
+          }
+        }
+        count_triggers = {
+          amount = 2
+          OR = {
+            U07 = {
+              wet_karaz_direct_puppet = yes
+            }
+            U21 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            U13 = {
+              wet_karaz_direct_puppet = yes
+            }
+            U14 = {
+              wet_karaz_direct_puppet = yes
+            }
+            U15 = {
+              wet_karaz_direct_puppet = yes
+            }
+            U16 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            B14 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            U22 = {
+              wet_karaz_direct_puppet = yes
+            }
+            U37 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            B02 = {
+              wet_karaz_direct_puppet = yes
+            }
+            B04 = {
+              wet_karaz_direct_puppet = yes
+            }
+            B05 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            B19 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+          OR = {
+            U36 = {
+              wet_karaz_direct_puppet = yes
+            }
+          }
+        }
+      }
+    }
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
+    complete_tooltip = {
+      add_ideas = wet_karaz_P09
+      army_experience = 25
+    }
+    completion_reward = {
+      effect_tooltip = {
+        add_ideas = wet_karaz_P09
+        army_experience = 25
+      }
+      hidden_effect = {
+        set_country_flag = wet_karaz_earned_P09
+        wet_karaz_award_P09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 10
+    }
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+  }
+}

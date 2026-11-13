@@ -1,0 +1,80 @@
+equipments = {
+  motorized_equipment = {
+    is_archetype = yes
+    picture = archetype_motorized_equipment
+    is_buildable = no
+    type = {
+      motorized
+    }
+    group_by = archetype
+    interface_category = interface_category_land
+    maximum_speed = 12
+    reliability = 0.8
+    hardness = 0.1
+    breakthrough = 5
+    lend_lease_cost = 5
+    build_cost_ic = 2.5
+    supply_truck = yes
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2519
+  }
+  motorized_equipment_0 = {
+    archetype = motorized_equipment
+    priority = 30
+    maximum_speed = 10
+    reliability = 0.65
+    breakthrough = 2
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2519
+  }
+  motorized_equipment_1 = {
+    archetype = motorized_equipment
+    parent = motorized_equipment_0
+    priority = 30
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2519
+  }
+  motorbike_equipment = {
+    is_archetype = yes
+    picture = archetype_motorized_equipment
+    is_buildable = no
+    type = {
+      motorized
+      support
+    }
+    group_by = archetype
+    interface_category = interface_category_land
+    maximum_speed = 12
+    reliability = 0.9
+    breakthrough = 1
+    lend_lease_cost = 2
+    build_cost_ic = 1.5
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+    year = 2521
+  }
+  motorbike_equipment_1 = {
+    archetype = motorbike_equipment
+    priority = 1
+    resources = {
+      aluminium = 2
+      coal = 1
+    }
+    fuel_consumption = 0.25
+  }
+}

@@ -1,15 +1,20 @@
 # Generated from EU4 at 2502.11.11; religion determines ruling ideology.
 set_research_slots = 2
-set_stability = 0.30
-set_war_support = 0.95
+set_technology = { wet_light_cavalry = 1 }
+set_stability = 0.28
+set_war_support = 0.94
 set_politics = { ruling_party = fascism elections_allowed = no last_election = "2519.1.1" }
 set_rule = { can_join_factions = yes can_join_opposite_factions = yes can_create_factions = no }
-set_popularities = { democratic = 0 fascism = 92 communism = 0 neutrality = 8 evil = 0 }
+set_popularities = { democratic = 0 neutrality = 8 fascism = 92 communism = 0 waaagh = 0 horned_rat = 0 }
 recruit_character = WET_Y08_leader
 
 # BEGIN WET starting racial spirits
 add_ideas = { wet_race_beastmen }
 # END WET starting racial spirits
+
+# BEGIN WET starting laws
+add_ideas = { all_adults_serve war_economy closed_economy }
+# END WET starting laws
 
 # Generic cultural cabinet, available to hire for political power.
 recruit_character = WET_Y08_advisor_steward
@@ -36,3 +41,12 @@ recruit_character = WET_Y08_commander_general_1
 recruit_character = WET_Y08_commander_general_2
 recruit_character = WET_Y08_commander_marshal
 set_country_flag = wet_commanders_initialized
+
+# BEGIN WET inhabitants
+set_variable = { wet_country_race = 1 }
+set_variable = { wet_country_faith = 9 }
+set_variable = { wet_country_alignment = 3 }
+set_variable = { wet_country_taint = 3 }
+set_variable = { wet_country_policy = 1 }
+add_ideas = wet_population_policy_convert
+# END WET inhabitants

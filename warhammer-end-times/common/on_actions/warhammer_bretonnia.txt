@@ -1,0 +1,99 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      A15 = {
+        wet_brt_refresh_rulers = yes
+        wet_brt_reconcile_benefits = yes
+      }
+    }
+  }
+  on_daily_A15 = {
+    effect = {
+      wet_brt_daily = yes
+    }
+  }
+  on_peace = {
+    effect = {
+      A15 = {
+        wet_brt_refresh_disorder = yes
+        wet_brt_reconcile_benefits = yes
+      }
+      A20 = {
+        wet_brt_tick_broken = yes
+      }
+    }
+  }
+  on_war_relation_added = {
+    effect = {
+      A15 = {
+        wet_brt_start_crisis = yes
+      }
+    }
+  }
+  on_declare_war = {
+    effect = {
+      if = {
+        limit = {
+          OR = {
+            AND = {
+              tag = A15
+              FROM = {
+                tag = A20
+              }
+            }
+            AND = {
+              tag = A20
+              FROM = {
+                tag = A15
+              }
+            }
+          }
+        }
+        A15 = {
+          wet_brt_start_crisis = yes
+        }
+      }
+      if = {
+        limit = {
+          tag = A74
+          FROM = {
+            tag = A15
+          }
+        }
+        A15 = {
+          set_country_flag = wet_brt_a74_aggression
+        }
+      }
+    }
+  }
+  on_capitulation_immediate = {
+    effect = {
+      if = {
+        limit = {
+          tag = A74
+        }
+        wet_brt_barrow_fall = yes
+      }
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      A15 = {
+        wet_brt_refresh_prisons = yes
+      }
+    }
+  }
+  on_daily = {
+    effect = {
+      if = {
+        limit = {
+          NOT = {
+            tag = A15
+          }
+          has_country_flag = wet_brt_enabled
+        }
+        wet_brt_rebel_cleanup = yes
+      }
+    }
+  }
+}

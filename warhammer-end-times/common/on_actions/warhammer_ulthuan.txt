@@ -1,0 +1,41 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      H06 = {
+        wet_ult_reconcile_benefits = yes
+      }
+    }
+  }
+  on_daily_H06 = {
+    effect = {
+      wet_ult_daily = yes
+    }
+  }
+  on_declare_war = {
+    effect = {
+      if = {
+        limit = {
+          tag = H12
+          FROM = {
+            tag = H06
+          }
+        }
+        H06 = {
+          set_country_flag = wet_ult_attacked_by_h12
+        }
+      }
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      H06 = {
+        if = {
+          limit = {
+            has_global_flag = wet_ult_aliathra_captive
+          }
+          wet_ult_refresh_custody = yes
+        }
+      }
+    }
+  }
+}

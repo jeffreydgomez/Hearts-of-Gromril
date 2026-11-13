@@ -1,0 +1,21 @@
+# New-campaign introductions. Flags guard repeated initialization/queued delivery.
+on_actions = {
+  on_startup = {
+    effect = {
+      if = {
+        limit = { NOT = { has_global_flag = wet_starting_flavor_initialized } }
+        set_global_flag = wet_starting_flavor_initialized
+        every_country = {
+          limit = {
+            is_ai = no
+            exists = yes
+            NOT = { tag = WST }
+            NOT = { has_country_flag = wet_starting_flavor_seen }
+            NOT = { has_country_flag = wet_starting_flavor_queued }
+          }
+          wet_show_starting_flavor = yes
+        }
+      }
+    }
+  }
+}

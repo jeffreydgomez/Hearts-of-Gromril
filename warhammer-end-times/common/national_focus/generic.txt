@@ -1866,17 +1866,21 @@ focus_tree = {
       FOCUS_FILTER_POLITICAL
     }
     available_if_capitulated = yes
-    completion_reward = {
-      add_timed_idea = {
-        idea = collectivist_ethos_focus
-        days = 1095
-      }
-    }
-    ai_will_do = {
-      factor = 1
-    }
     available = {
       always = yes
+    }
+    completion_reward = {
+      custom_effect_tooltip = wet_powers_beyond_mortality_tt
+    }
+    ai_will_do = {
+      factor = 0.1
+      modifier = {
+        factor = 100
+        OR = {
+          has_government = fascism
+          has_government = communism
+        }
+      }
     }
   }
   focus = {
@@ -1896,17 +1900,25 @@ focus_tree = {
       FOCUS_FILTER_POLITICAL
     }
     available_if_capitulated = yes
+    available = {
+      always = yes
+    }
     completion_reward = {
       add_timed_idea = {
         idea = nationalism
         days = 720
       }
+      custom_effect_tooltip = wet_choose_chaos_tt
+      hidden_effect = {
+        wet_focus_choose_chaos = yes
+      }
     }
     ai_will_do = {
-      factor = 1
-    }
-    available = {
-      always = yes
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = fascism
+      }
     }
   }
   focus = {
@@ -1926,17 +1938,34 @@ focus_tree = {
       FOCUS_FILTER_POLITICAL
     }
     available_if_capitulated = yes
+    available = {
+      always = yes
+      NOT = {
+        OR = {
+          tag = R07
+          tag = R08
+          tag = R09
+          tag = R10
+          tag = R11
+        }
+      }
+    }
     completion_reward = {
       add_timed_idea = {
         idea = internationalism
         days = 720
       }
+      custom_effect_tooltip = wet_choose_undead_tt
+      hidden_effect = {
+        wet_focus_choose_undead = yes
+      }
     }
     ai_will_do = {
-      factor = 1
-    }
-    available = {
-      always = yes
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = communism
+      }
     }
   }
   focus = {
@@ -1959,11 +1988,20 @@ focus_tree = {
     completion_reward = {
       add_ideas = liberty_ethos_focus
     }
-    ai_will_do = {
-      factor = 1
-    }
     available = {
       always = yes
+    }
+    ai_will_do = {
+      factor = 0.1
+      modifier = {
+        factor = 100
+        OR = {
+          has_government = democratic
+          has_government = neutrality
+          has_government = waaagh
+          has_government = horned_rat
+        }
+      }
     }
   }
   focus = {
@@ -2031,9 +2069,6 @@ focus_tree = {
     prerequisite = {
       focus = liberty_ethos
     }
-    mutually_exclusive = {
-      focus = interventionism_focus
-    }
     x = 0
     y = 1
     relative_position_id = liberty_ethos
@@ -2042,22 +2077,36 @@ focus_tree = {
       FOCUS_FILTER_POLITICAL
     }
     available_if_capitulated = yes
-    completion_reward = {
-      if = {
-        limit = {
-          NOT = {
-            has_idea = neutrality_idea
-          }
-        }
-        add_ideas = neutrality_idea
-      }
-      add_political_power = 150
-    }
-    ai_will_do = {
-      factor = 1
+    mutually_exclusive = {
+      focus = interventionism_focus
+      focus = wet_waaagh_focus
+      focus = wet_horned_rat_focus
     }
     available = {
       always = yes
+      NOT = {
+        OR = {
+          tag = R07
+          tag = R08
+          tag = R09
+          tag = R10
+          tag = R11
+        }
+      }
+    }
+    completion_reward = {
+      add_political_power = 150
+      custom_effect_tooltip = wet_choose_order_tt
+      hidden_effect = {
+        wet_focus_choose_order = yes
+      }
+    }
+    ai_will_do = {
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = democratic
+      }
     }
   }
   focus = {
@@ -2065,9 +2114,6 @@ focus_tree = {
     icon = GFX_goal_generic_political_pressure
     prerequisite = {
       focus = liberty_ethos
-    }
-    mutually_exclusive = {
-      focus = neutrality_focus
     }
     x = 2
     y = 1
@@ -2077,6 +2123,22 @@ focus_tree = {
       FOCUS_FILTER_POLITICAL
     }
     available_if_capitulated = yes
+    mutually_exclusive = {
+      focus = neutrality_focus
+      focus = wet_waaagh_focus
+      focus = wet_horned_rat_focus
+    }
+    available = {
+      NOT = {
+        OR = {
+          tag = R07
+          tag = R08
+          tag = R09
+          tag = R10
+          tag = R11
+        }
+      }
+    }
     completion_reward = {
       if = {
         limit = {
@@ -2088,9 +2150,17 @@ focus_tree = {
         can_send_volunteers = yes
       }
       add_political_power = 150
+      custom_effect_tooltip = wet_choose_unaligned_tt
+      hidden_effect = {
+        wet_focus_choose_unaligned = yes
+      }
     }
     ai_will_do = {
-      factor = 1
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = neutrality
+      }
     }
   }
   focus = {
@@ -2140,9 +2210,6 @@ focus_tree = {
   focus = {
     id = volunteer_corps
     icon = GFX_goal_generic_allies_build_infantry
-    prerequisite = {
-      focus = interventionism_focus
-    }
     x = 0
     y = 1
     relative_position_id = interventionism_focus
@@ -2156,6 +2223,11 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 1
+    }
+    prerequisite = {
+      focus = interventionism_focus
+      focus = wet_waaagh_focus
+      focus = wet_horned_rat_focus
     }
   }
   focus = {
@@ -2220,6 +2292,10 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 1
+      modifier = {
+        factor = 0.05
+        has_war = yes
+      }
     }
   }
   focus = {
@@ -2396,6 +2472,96 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 1
+    }
+  }
+  focus = {
+    icon = GFX_goal_generic_political_pressure
+    prerequisite = {
+      focus = liberty_ethos
+    }
+    y = 1
+    relative_position_id = liberty_ethos
+    cost = 10
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+    available_if_capitulated = yes
+    id = wet_waaagh_focus
+    x = 4
+    mutually_exclusive = {
+      focus = neutrality_focus
+      focus = interventionism_focus
+      focus = wet_horned_rat_focus
+    }
+    available = {
+      NOT = {
+        OR = {
+          tag = R07
+          tag = R08
+          tag = R09
+          tag = R10
+          tag = R11
+        }
+      }
+    }
+    completion_reward = {
+      add_political_power = 150
+      custom_effect_tooltip = wet_choose_waaagh_tt
+      hidden_effect = {
+        wet_focus_choose_waaagh = yes
+      }
+    }
+    ai_will_do = {
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = waaagh
+      }
+    }
+  }
+  focus = {
+    icon = GFX_goal_generic_political_pressure
+    prerequisite = {
+      focus = liberty_ethos
+    }
+    y = 1
+    relative_position_id = liberty_ethos
+    cost = 10
+    search_filters = {
+      FOCUS_FILTER_POLITICAL
+    }
+    available_if_capitulated = yes
+    id = wet_horned_rat_focus
+    x = 6
+    mutually_exclusive = {
+      focus = neutrality_focus
+      focus = interventionism_focus
+      focus = wet_waaagh_focus
+    }
+    available = {
+      NOT = {
+        OR = {
+          tag = R07
+          tag = R08
+          tag = R09
+          tag = R10
+          tag = R11
+        }
+      }
+    }
+    completion_reward = {
+      add_political_power = 150
+      custom_effect_tooltip = wet_choose_horned_rat_tt
+      hidden_effect = {
+        wet_focus_choose_horned_rat = yes
+      }
+    }
+    ai_will_do = {
+      factor = 0.1
+      modifier = {
+        factor = 100
+        has_government = horned_rat
+      }
     }
   }
 }

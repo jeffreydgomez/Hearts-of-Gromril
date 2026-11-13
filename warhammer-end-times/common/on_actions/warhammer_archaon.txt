@@ -1,0 +1,32 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      B99 = {
+        wet_arc_count_industry = yes
+      }
+    }
+  }
+  on_daily_B99 = {
+    effect = {
+      wet_arc_count_industry = yes
+      if = {
+        limit = {
+          has_country_flag = wet_arc_active
+        }
+        wet_arc_spend_construction_credits = yes
+      }
+    }
+  }
+  on_monthly = {
+    effect = {
+      B99 = {
+        if = {
+          limit = {
+            has_country_flag = wet_arc_active
+          }
+          wet_arc_monthly = yes
+        }
+      }
+    }
+  }
+}

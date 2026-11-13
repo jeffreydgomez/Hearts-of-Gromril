@@ -1,0 +1,5646 @@
+wet_inc_join_everchosen = {
+  if = {
+    limit = {
+      wet_inc_can_join_everchosen = yes
+    }
+    set_country_flag = wet_inc_faction_transaction
+    wet_apply_political_permissions = yes
+    random_country = {
+      limit = {
+        exists = yes
+        is_faction_leader = yes
+        has_country_flag = wet_everchosen_leader
+      }
+      add_to_faction = PREV
+    }
+    clr_country_flag = wet_inc_faction_transaction
+    wet_apply_political_permissions = yes
+  }
+}
+wet_inc_reject_other_factions = {
+  if = {
+    limit = {
+      wet_is_daemonic_incursion = yes
+      is_in_faction = yes
+      OR = {
+        faction_leader = {
+          NOT = {
+            has_country_flag = wet_everchosen_leader
+          }
+        }
+        AND = {
+          NOT = {
+            has_country_flag = wet_inc_everchosen_admitted
+          }
+          wet_inc_bordering_everchosen = no
+        }
+      }
+    }
+    faction_leader = {
+      remove_from_faction = PREV
+    }
+  }
+  else_if = {
+    limit = {
+      wet_is_daemonic_incursion = yes
+      is_in_faction = yes
+    }
+    set_country_flag = wet_inc_everchosen_admitted
+  }
+}
+wet_inc_bretonnia_spawn_285 = {
+  R07 = {
+    set_state_owner = 285
+    add_state_core = 285
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 285
+  }
+  R07 = {
+    set_province_controller = 315
+    set_capital = {
+      state = 285
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  285 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 315
+      division = "division_template = \"Horror Legions\" location = 315 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=285 province=315"
+}
+wet_inc_bretonnia_spawn_447 = {
+  R07 = {
+    set_state_owner = 447
+    add_state_core = 447
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 447
+  }
+  R07 = {
+    set_province_controller = 272
+    set_capital = {
+      state = 447
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  447 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 272
+      division = "division_template = \"Horror Legions\" location = 272 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=447 province=272"
+}
+wet_inc_bretonnia_spawn_42 = {
+  R07 = {
+    set_state_owner = 42
+    add_state_core = 42
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 42
+  }
+  R07 = {
+    set_province_controller = 297
+    set_capital = {
+      state = 42
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  42 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 297
+      division = "division_template = \"Horror Legions\" location = 297 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=42 province=297"
+}
+wet_inc_bretonnia_spawn_908 = {
+  R07 = {
+    set_state_owner = 908
+    add_state_core = 908
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 908
+  }
+  R07 = {
+    set_province_controller = 300
+    set_capital = {
+      state = 908
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  908 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 300
+      division = "division_template = \"Horror Legions\" location = 300 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=908 province=300"
+}
+wet_inc_bretonnia_spawn_754 = {
+  R07 = {
+    set_state_owner = 754
+    add_state_core = 754
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 754
+  }
+  R07 = {
+    set_province_controller = 241
+    set_capital = {
+      state = 754
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  754 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 241
+      division = "division_template = \"Horror Legions\" location = 241 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=754 province=241"
+}
+wet_inc_bretonnia_spawn_415 = {
+  R07 = {
+    set_state_owner = 415
+    add_state_core = 415
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 415
+  }
+  R07 = {
+    set_province_controller = 268
+    set_capital = {
+      state = 415
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  415 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 268
+      division = "division_template = \"Horror Legions\" location = 268 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=415 province=268"
+}
+wet_inc_bretonnia_spawn_209 = {
+  R07 = {
+    set_state_owner = 209
+    add_state_core = 209
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 209
+  }
+  R07 = {
+    set_province_controller = 319
+    set_capital = {
+      state = 209
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  209 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 319
+      division = "division_template = \"Horror Legions\" location = 319 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=209 province=319"
+}
+wet_inc_bretonnia_spawn_744 = {
+  R07 = {
+    set_state_owner = 744
+    add_state_core = 744
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 744
+  }
+  R07 = {
+    set_province_controller = 509
+    set_capital = {
+      state = 744
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  744 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 509
+      division = "division_template = \"Horror Legions\" location = 509 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=744 province=509"
+}
+wet_inc_bretonnia_spawn_903 = {
+  R07 = {
+    set_state_owner = 903
+    add_state_core = 903
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 903
+  }
+  R07 = {
+    set_province_controller = 277
+    set_capital = {
+      state = 903
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  903 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 277
+      division = "division_template = \"Horror Legions\" location = 277 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=903 province=277"
+}
+wet_inc_bretonnia_spawn_444 = {
+  R07 = {
+    set_state_owner = 444
+    add_state_core = 444
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 444
+  }
+  R07 = {
+    set_province_controller = 242
+    set_capital = {
+      state = 444
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  444 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 242
+      division = "division_template = \"Horror Legions\" location = 242 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=444 province=242"
+}
+wet_inc_bretonnia_spawn_274 = {
+  R07 = {
+    set_state_owner = 274
+    add_state_core = 274
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 274
+  }
+  R07 = {
+    set_province_controller = 732
+    set_capital = {
+      state = 274
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  274 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 732
+      division = "division_template = \"Horror Legions\" location = 732 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=274 province=732"
+}
+wet_inc_bretonnia_spawn_39 = {
+  R07 = {
+    set_state_owner = 39
+    add_state_core = 39
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 39
+  }
+  R07 = {
+    set_province_controller = 332
+    set_capital = {
+      state = 39
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  39 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 332
+      division = "division_template = \"Horror Legions\" location = 332 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=39 province=332"
+}
+wet_inc_bretonnia_spawn_454 = {
+  R07 = {
+    set_state_owner = 454
+    add_state_core = 454
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 454
+  }
+  R07 = {
+    set_province_controller = 284
+    set_capital = {
+      state = 454
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  454 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 284
+      division = "division_template = \"Horror Legions\" location = 284 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=454 province=284"
+}
+wet_inc_bretonnia_spawn_764 = {
+  R07 = {
+    set_state_owner = 764
+    add_state_core = 764
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 764
+  }
+  R07 = {
+    set_province_controller = 253
+    set_capital = {
+      state = 764
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  764 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 253
+      division = "division_template = \"Horror Legions\" location = 253 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=764 province=253"
+}
+wet_inc_bretonnia_spawn_930 = {
+  R07 = {
+    set_state_owner = 930
+    add_state_core = 930
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 930
+  }
+  R07 = {
+    set_province_controller = 244
+    set_capital = {
+      state = 930
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  930 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 244
+      division = "division_template = \"Horror Legions\" location = 244 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=930 province=244"
+}
+wet_inc_bretonnia_spawn_430 = {
+  R07 = {
+    set_state_owner = 430
+    add_state_core = 430
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 430
+  }
+  R07 = {
+    set_province_controller = 290
+    set_capital = {
+      state = 430
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  430 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 290
+      division = "division_template = \"Horror Legions\" location = 290 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=430 province=290"
+}
+wet_inc_bretonnia_spawn_283 = {
+  R07 = {
+    set_state_owner = 283
+    add_state_core = 283
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 283
+  }
+  R07 = {
+    set_province_controller = 325
+    set_capital = {
+      state = 283
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  283 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 325
+      division = "division_template = \"Horror Legions\" location = 325 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=283 province=325"
+}
+wet_inc_bretonnia_spawn_766 = {
+  R07 = {
+    set_state_owner = 766
+    add_state_core = 766
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 766
+  }
+  R07 = {
+    set_province_controller = 296
+    set_capital = {
+      state = 766
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  766 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 296
+      division = "division_template = \"Horror Legions\" location = 296 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=766 province=296"
+}
+wet_inc_bretonnia_spawn_170 = {
+  R07 = {
+    set_state_owner = 170
+    add_state_core = 170
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 170
+  }
+  R07 = {
+    set_province_controller = 220
+    set_capital = {
+      state = 170
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  170 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 220
+      division = "division_template = \"Horror Legions\" location = 220 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=170 province=220"
+}
+wet_inc_bretonnia_spawn_45 = {
+  R07 = {
+    set_state_owner = 45
+    add_state_core = 45
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 45
+  }
+  R07 = {
+    set_province_controller = 273
+    set_capital = {
+      state = 45
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  45 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 273
+      division = "division_template = \"Horror Legions\" location = 273 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=45 province=273"
+}
+wet_inc_bretonnia_spawn_16 = {
+  R07 = {
+    set_state_owner = 16
+    add_state_core = 16
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 16
+  }
+  R07 = {
+    set_province_controller = 239
+    set_capital = {
+      state = 16
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  16 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 239
+      division = "division_template = \"Horror Legions\" location = 239 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=16 province=239"
+}
+wet_inc_bretonnia_spawn_660 = {
+  R07 = {
+    set_state_owner = 660
+    add_state_core = 660
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 660
+  }
+  R07 = {
+    set_province_controller = 305
+    set_capital = {
+      state = 660
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  660 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 305
+      division = "division_template = \"Horror Legions\" location = 305 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=660 province=305"
+}
+wet_inc_bretonnia_spawn_137 = {
+  R07 = {
+    set_state_owner = 137
+    add_state_core = 137
+    declare_war_on = {
+      target = A15
+      type = annex_everything
+    }
+  }
+  A15 = {
+    set_state_controller = 137
+  }
+  R07 = {
+    set_province_controller = 234
+    set_capital = {
+      state = 137
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R07
+  }
+  137 = {
+    set_state_flag = wet_brt_incursion_site
+    create_unit = {
+      owner = R07
+      count = 12
+      prioritize_location = 234
+      division = "division_template = \"Horror Legions\" location = 234 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R07 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R07
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R07
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_bretonnia_spawned
+  clr_country_flag = wet_inc_bretonnia_pending
+  set_variable = {
+    wet_inc_bretonnia_days = 0
+  }
+  country_event = {
+    id = wet_incursions.2
+  }
+  log = "WET_INCURSION spawned=R07 defender=A15 state=137 province=234"
+}
+wet_inc_bretonnia_try_spawn = {
+  if = {
+    limit = {
+      tag = A15
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_inc_bretonnia_pending
+      NOT = {
+        check_variable = {
+          wet_inc_bretonnia_days
+          >
+          0
+        }
+      }
+      NOT = {
+        has_global_flag = wet_inc_bretonnia_spawned
+      }
+      R07 = {
+        exists = no
+      }
+    }
+    if = {
+      limit = {
+        wet_inc_bretonnia_site_285 = yes
+      }
+      wet_inc_bretonnia_spawn_285 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_447 = yes
+      }
+      wet_inc_bretonnia_spawn_447 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_42 = yes
+      }
+      wet_inc_bretonnia_spawn_42 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_908 = yes
+      }
+      wet_inc_bretonnia_spawn_908 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_754 = yes
+      }
+      wet_inc_bretonnia_spawn_754 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_415 = yes
+      }
+      wet_inc_bretonnia_spawn_415 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_209 = yes
+      }
+      wet_inc_bretonnia_spawn_209 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_744 = yes
+      }
+      wet_inc_bretonnia_spawn_744 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_903 = yes
+      }
+      wet_inc_bretonnia_spawn_903 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_444 = yes
+      }
+      wet_inc_bretonnia_spawn_444 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_274 = yes
+      }
+      wet_inc_bretonnia_spawn_274 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_39 = yes
+      }
+      wet_inc_bretonnia_spawn_39 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_454 = yes
+      }
+      wet_inc_bretonnia_spawn_454 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_764 = yes
+      }
+      wet_inc_bretonnia_spawn_764 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_930 = yes
+      }
+      wet_inc_bretonnia_spawn_930 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_430 = yes
+      }
+      wet_inc_bretonnia_spawn_430 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_283 = yes
+      }
+      wet_inc_bretonnia_spawn_283 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_766 = yes
+      }
+      wet_inc_bretonnia_spawn_766 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_170 = yes
+      }
+      wet_inc_bretonnia_spawn_170 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_45 = yes
+      }
+      wet_inc_bretonnia_spawn_45 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_16 = yes
+      }
+      wet_inc_bretonnia_spawn_16 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_660 = yes
+      }
+      wet_inc_bretonnia_spawn_660 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_bretonnia_site_137 = yes
+      }
+      wet_inc_bretonnia_spawn_137 = yes
+    }
+    else = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_inc_bretonnia_delayed
+          }
+        }
+        set_country_flag = wet_inc_bretonnia_delayed
+        country_event = {
+          id = wet_incursions.3
+        }
+      }
+    }
+  }
+}
+wet_inc_bretonnia_begin_warning = {
+  if = {
+    limit = {
+      tag = A15
+      NOT = {
+        has_global_flag = wet_inc_bretonnia_warned
+      }
+    }
+    set_global_flag = wet_inc_bretonnia_queued
+    set_global_flag = wet_inc_bretonnia_warned
+    set_country_flag = wet_inc_bretonnia_pending
+    random_list = {
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 20
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 21
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 22
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 23
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 24
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 25
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 26
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 27
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 28
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 29
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_bretonnia_days = 30
+        }
+      }
+    }
+  }
+}
+wet_inc_bretonnia_daily = {
+  if = {
+    limit = {
+      has_country_flag = wet_inc_bretonnia_pending
+      NOT = {
+        has_global_flag = wet_inc_bretonnia_spawned
+      }
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_inc_bretonnia_days
+          >
+          0
+        }
+      }
+      subtract_from_variable = {
+        wet_inc_bretonnia_days = 1
+      }
+    }
+    wet_inc_bretonnia_try_spawn = yes
+  }
+  if = {
+    limit = {
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_incursions_scenario
+      date
+      >
+      2520.4.30
+      NOT = {
+        has_global_flag = wet_inc_bretonnia_queued
+      }
+      R07 = {
+        exists = no
+      }
+    }
+    set_global_flag = wet_inc_bretonnia_queued
+    country_event = {
+      id = wet_incursions.1
+    }
+  }
+}
+wet_inc_ulthuan_spawn_136 = {
+  R08 = {
+    set_state_owner = 136
+    add_state_core = 136
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 136
+  }
+  R08 = {
+    set_province_controller = 2202
+    set_capital = {
+      state = 136
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  136 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2202
+      division = "division_template = \"Daemonette Legions\" location = 2202 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=136 province=2202"
+}
+wet_inc_ulthuan_spawn_531 = {
+  R08 = {
+    set_state_owner = 531
+    add_state_core = 531
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 531
+  }
+  R08 = {
+    set_province_controller = 2228
+    set_capital = {
+      state = 531
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  531 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2228
+      division = "division_template = \"Daemonette Legions\" location = 2228 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=531 province=2228"
+}
+wet_inc_ulthuan_spawn_165 = {
+  R08 = {
+    set_state_owner = 165
+    add_state_core = 165
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 165
+  }
+  R08 = {
+    set_province_controller = 2157
+    set_capital = {
+      state = 165
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  165 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2157
+      division = "division_template = \"Daemonette Legions\" location = 2157 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=165 province=2157"
+}
+wet_inc_ulthuan_spawn_166 = {
+  R08 = {
+    set_state_owner = 166
+    add_state_core = 166
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 166
+  }
+  R08 = {
+    set_province_controller = 2226
+    set_capital = {
+      state = 166
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  166 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2226
+      division = "division_template = \"Daemonette Legions\" location = 2226 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=166 province=2226"
+}
+wet_inc_ulthuan_spawn_164 = {
+  R08 = {
+    set_state_owner = 164
+    add_state_core = 164
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 164
+  }
+  R08 = {
+    set_province_controller = 2224
+    set_capital = {
+      state = 164
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  164 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2224
+      division = "division_template = \"Daemonette Legions\" location = 2224 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=164 province=2224"
+}
+wet_inc_ulthuan_spawn_1054 = {
+  R08 = {
+    set_state_owner = 1054
+    add_state_core = 1054
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1054
+  }
+  R08 = {
+    set_province_controller = 2159
+    set_capital = {
+      state = 1054
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1054 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2159
+      division = "division_template = \"Daemonette Legions\" location = 2159 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1054 province=2159"
+}
+wet_inc_ulthuan_spawn_670 = {
+  R08 = {
+    set_state_owner = 670
+    add_state_core = 670
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 670
+  }
+  R08 = {
+    set_province_controller = 472
+    set_capital = {
+      state = 670
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  670 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 472
+      division = "division_template = \"Daemonette Legions\" location = 472 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=670 province=472"
+}
+wet_inc_ulthuan_spawn_942 = {
+  R08 = {
+    set_state_owner = 942
+    add_state_core = 942
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 942
+  }
+  R08 = {
+    set_province_controller = 2142
+    set_capital = {
+      state = 942
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  942 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2142
+      division = "division_template = \"Daemonette Legions\" location = 2142 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=942 province=2142"
+}
+wet_inc_ulthuan_spawn_8 = {
+  R08 = {
+    set_state_owner = 8
+    add_state_core = 8
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 8
+  }
+  R08 = {
+    set_province_controller = 2151
+    set_capital = {
+      state = 8
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  8 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2151
+      division = "division_template = \"Daemonette Legions\" location = 2151 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=8 province=2151"
+}
+wet_inc_ulthuan_spawn_112 = {
+  R08 = {
+    set_state_owner = 112
+    add_state_core = 112
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 112
+  }
+  R08 = {
+    set_province_controller = 2295
+    set_capital = {
+      state = 112
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  112 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2295
+      division = "division_template = \"Daemonette Legions\" location = 2295 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=112 province=2295"
+}
+wet_inc_ulthuan_spawn_371 = {
+  R08 = {
+    set_state_owner = 371
+    add_state_core = 371
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 371
+  }
+  R08 = {
+    set_province_controller = 2324
+    set_capital = {
+      state = 371
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  371 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2324
+      division = "division_template = \"Daemonette Legions\" location = 2324 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=371 province=2324"
+}
+wet_inc_ulthuan_spawn_1206 = {
+  R08 = {
+    set_state_owner = 1206
+    add_state_core = 1206
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1206
+  }
+  R08 = {
+    set_province_controller = 2309
+    set_capital = {
+      state = 1206
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1206 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2309
+      division = "division_template = \"Daemonette Legions\" location = 2309 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1206 province=2309"
+}
+wet_inc_ulthuan_spawn_11 = {
+  R08 = {
+    set_state_owner = 11
+    add_state_core = 11
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 11
+  }
+  R08 = {
+    set_province_controller = 2248
+    set_capital = {
+      state = 11
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  11 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2248
+      division = "division_template = \"Daemonette Legions\" location = 2248 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=11 province=2248"
+}
+wet_inc_ulthuan_spawn_1034 = {
+  R08 = {
+    set_state_owner = 1034
+    add_state_core = 1034
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1034
+  }
+  R08 = {
+    set_province_controller = 2250
+    set_capital = {
+      state = 1034
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1034 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2250
+      division = "division_template = \"Daemonette Legions\" location = 2250 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1034 province=2250"
+}
+wet_inc_ulthuan_spawn_276 = {
+  R08 = {
+    set_state_owner = 276
+    add_state_core = 276
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 276
+  }
+  R08 = {
+    set_province_controller = 2298
+    set_capital = {
+      state = 276
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  276 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2298
+      division = "division_template = \"Daemonette Legions\" location = 2298 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=276 province=2298"
+}
+wet_inc_ulthuan_spawn_324 = {
+  R08 = {
+    set_state_owner = 324
+    add_state_core = 324
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 324
+  }
+  R08 = {
+    set_province_controller = 2236
+    set_capital = {
+      state = 324
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  324 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2236
+      division = "division_template = \"Daemonette Legions\" location = 2236 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=324 province=2236"
+}
+wet_inc_ulthuan_spawn_369 = {
+  R08 = {
+    set_state_owner = 369
+    add_state_core = 369
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 369
+  }
+  R08 = {
+    set_province_controller = 2213
+    set_capital = {
+      state = 369
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  369 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2213
+      division = "division_template = \"Daemonette Legions\" location = 2213 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=369 province=2213"
+}
+wet_inc_ulthuan_spawn_1044 = {
+  R08 = {
+    set_state_owner = 1044
+    add_state_core = 1044
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1044
+  }
+  R08 = {
+    set_province_controller = 2307
+    set_capital = {
+      state = 1044
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1044 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2307
+      division = "division_template = \"Daemonette Legions\" location = 2307 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1044 province=2307"
+}
+wet_inc_ulthuan_spawn_44 = {
+  R08 = {
+    set_state_owner = 44
+    add_state_core = 44
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 44
+  }
+  R08 = {
+    set_province_controller = 2220
+    set_capital = {
+      state = 44
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  44 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2220
+      division = "division_template = \"Daemonette Legions\" location = 2220 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=44 province=2220"
+}
+wet_inc_ulthuan_spawn_398 = {
+  R08 = {
+    set_state_owner = 398
+    add_state_core = 398
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 398
+  }
+  R08 = {
+    set_province_controller = 2161
+    set_capital = {
+      state = 398
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  398 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2161
+      division = "division_template = \"Daemonette Legions\" location = 2161 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=398 province=2161"
+}
+wet_inc_ulthuan_spawn_951 = {
+  R08 = {
+    set_state_owner = 951
+    add_state_core = 951
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 951
+  }
+  R08 = {
+    set_province_controller = 2233
+    set_capital = {
+      state = 951
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  951 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2233
+      division = "division_template = \"Daemonette Legions\" location = 2233 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=951 province=2233"
+}
+wet_inc_ulthuan_spawn_1064 = {
+  R08 = {
+    set_state_owner = 1064
+    add_state_core = 1064
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1064
+  }
+  R08 = {
+    set_province_controller = 2240
+    set_capital = {
+      state = 1064
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1064 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2240
+      division = "division_template = \"Daemonette Legions\" location = 2240 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1064 province=2240"
+}
+wet_inc_ulthuan_spawn_413 = {
+  R08 = {
+    set_state_owner = 413
+    add_state_core = 413
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 413
+  }
+  R08 = {
+    set_province_controller = 2199
+    set_capital = {
+      state = 413
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  413 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2199
+      division = "division_template = \"Daemonette Legions\" location = 2199 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=413 province=2199"
+}
+wet_inc_ulthuan_spawn_1039 = {
+  R08 = {
+    set_state_owner = 1039
+    add_state_core = 1039
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 1039
+  }
+  R08 = {
+    set_province_controller = 2315
+    set_capital = {
+      state = 1039
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  1039 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2315
+      division = "division_template = \"Daemonette Legions\" location = 2315 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=1039 province=2315"
+}
+wet_inc_ulthuan_spawn_950 = {
+  R08 = {
+    set_state_owner = 950
+    add_state_core = 950
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 950
+  }
+  R08 = {
+    set_province_controller = 2322
+    set_capital = {
+      state = 950
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  950 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2322
+      division = "division_template = \"Daemonette Legions\" location = 2322 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=950 province=2322"
+}
+wet_inc_ulthuan_spawn_9 = {
+  R08 = {
+    set_state_owner = 9
+    add_state_core = 9
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 9
+  }
+  R08 = {
+    set_province_controller = 2292
+    set_capital = {
+      state = 9
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  9 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2292
+      division = "division_template = \"Daemonette Legions\" location = 2292 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=9 province=2292"
+}
+wet_inc_ulthuan_spawn_540 = {
+  R08 = {
+    set_state_owner = 540
+    add_state_core = 540
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 540
+  }
+  R08 = {
+    set_province_controller = 2266
+    set_capital = {
+      state = 540
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  540 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2266
+      division = "division_template = \"Daemonette Legions\" location = 2266 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=540 province=2266"
+}
+wet_inc_ulthuan_spawn_933 = {
+  R08 = {
+    set_state_owner = 933
+    add_state_core = 933
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 933
+  }
+  R08 = {
+    set_province_controller = 2212
+    set_capital = {
+      state = 933
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  933 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2212
+      division = "division_template = \"Daemonette Legions\" location = 2212 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=933 province=2212"
+}
+wet_inc_ulthuan_spawn_208 = {
+  R08 = {
+    set_state_owner = 208
+    add_state_core = 208
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 208
+  }
+  R08 = {
+    set_province_controller = 2341
+    set_capital = {
+      state = 208
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  208 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2341
+      division = "division_template = \"Daemonette Legions\" location = 2341 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=208 province=2341"
+}
+wet_inc_ulthuan_spawn_949 = {
+  R08 = {
+    set_state_owner = 949
+    add_state_core = 949
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 949
+  }
+  R08 = {
+    set_province_controller = 2256
+    set_capital = {
+      state = 949
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  949 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2256
+      division = "division_template = \"Daemonette Legions\" location = 2256 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=949 province=2256"
+}
+wet_inc_ulthuan_spawn_49 = {
+  R08 = {
+    set_state_owner = 49
+    add_state_core = 49
+    declare_war_on = {
+      target = H06
+      type = annex_everything
+    }
+  }
+  H06 = {
+    set_state_controller = 49
+  }
+  R08 = {
+    set_province_controller = 2184
+    set_capital = {
+      state = 49
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R08
+  }
+  49 = {
+    create_unit = {
+      owner = R08
+      count = 12
+      prioritize_location = 2184
+      division = "division_template = \"Daemonette Legions\" location = 2184 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R08 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R08
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R08
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_ulthuan_spawned
+  clr_country_flag = wet_inc_ulthuan_pending
+  set_variable = {
+    wet_inc_ulthuan_days = 0
+  }
+  country_event = {
+    id = wet_incursions.12
+  }
+  log = "WET_INCURSION spawned=R08 defender=H06 state=49 province=2184"
+}
+wet_inc_ulthuan_try_spawn = {
+  if = {
+    limit = {
+      tag = H06
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_inc_ulthuan_pending
+      NOT = {
+        check_variable = {
+          wet_inc_ulthuan_days
+          >
+          0
+        }
+      }
+      NOT = {
+        has_global_flag = wet_inc_ulthuan_spawned
+      }
+      R08 = {
+        exists = no
+      }
+    }
+    if = {
+      limit = {
+        wet_inc_ulthuan_site_136 = yes
+      }
+      wet_inc_ulthuan_spawn_136 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_531 = yes
+      }
+      wet_inc_ulthuan_spawn_531 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_165 = yes
+      }
+      wet_inc_ulthuan_spawn_165 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_166 = yes
+      }
+      wet_inc_ulthuan_spawn_166 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_164 = yes
+      }
+      wet_inc_ulthuan_spawn_164 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1054 = yes
+      }
+      wet_inc_ulthuan_spawn_1054 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_670 = yes
+      }
+      wet_inc_ulthuan_spawn_670 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_942 = yes
+      }
+      wet_inc_ulthuan_spawn_942 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_8 = yes
+      }
+      wet_inc_ulthuan_spawn_8 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_112 = yes
+      }
+      wet_inc_ulthuan_spawn_112 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_371 = yes
+      }
+      wet_inc_ulthuan_spawn_371 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1206 = yes
+      }
+      wet_inc_ulthuan_spawn_1206 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_11 = yes
+      }
+      wet_inc_ulthuan_spawn_11 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1034 = yes
+      }
+      wet_inc_ulthuan_spawn_1034 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_276 = yes
+      }
+      wet_inc_ulthuan_spawn_276 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_324 = yes
+      }
+      wet_inc_ulthuan_spawn_324 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_369 = yes
+      }
+      wet_inc_ulthuan_spawn_369 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1044 = yes
+      }
+      wet_inc_ulthuan_spawn_1044 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_44 = yes
+      }
+      wet_inc_ulthuan_spawn_44 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_398 = yes
+      }
+      wet_inc_ulthuan_spawn_398 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_951 = yes
+      }
+      wet_inc_ulthuan_spawn_951 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1064 = yes
+      }
+      wet_inc_ulthuan_spawn_1064 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_413 = yes
+      }
+      wet_inc_ulthuan_spawn_413 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_1039 = yes
+      }
+      wet_inc_ulthuan_spawn_1039 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_950 = yes
+      }
+      wet_inc_ulthuan_spawn_950 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_9 = yes
+      }
+      wet_inc_ulthuan_spawn_9 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_540 = yes
+      }
+      wet_inc_ulthuan_spawn_540 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_933 = yes
+      }
+      wet_inc_ulthuan_spawn_933 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_208 = yes
+      }
+      wet_inc_ulthuan_spawn_208 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_949 = yes
+      }
+      wet_inc_ulthuan_spawn_949 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_ulthuan_site_49 = yes
+      }
+      wet_inc_ulthuan_spawn_49 = yes
+    }
+    else = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_inc_ulthuan_delayed
+          }
+        }
+        set_country_flag = wet_inc_ulthuan_delayed
+        country_event = {
+          id = wet_incursions.13
+        }
+      }
+    }
+  }
+}
+wet_inc_ulthuan_begin_warning = {
+  if = {
+    limit = {
+      tag = H06
+      NOT = {
+        has_global_flag = wet_inc_ulthuan_warned
+      }
+    }
+    set_global_flag = wet_inc_ulthuan_queued
+    set_global_flag = wet_inc_ulthuan_warned
+    set_country_flag = wet_inc_ulthuan_pending
+    random_list = {
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 20
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 21
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 22
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 23
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 24
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 25
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 26
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 27
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 28
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 29
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_ulthuan_days = 30
+        }
+      }
+    }
+  }
+}
+wet_inc_ulthuan_daily = {
+  if = {
+    limit = {
+      has_country_flag = wet_inc_ulthuan_pending
+      NOT = {
+        has_global_flag = wet_inc_ulthuan_spawned
+      }
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_inc_ulthuan_days
+          >
+          0
+        }
+      }
+      subtract_from_variable = {
+        wet_inc_ulthuan_days = 1
+      }
+    }
+    wet_inc_ulthuan_try_spawn = yes
+  }
+  if = {
+    limit = {
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_incursions_scenario
+      date
+      >
+      2521.8.31
+      NOT = {
+        has_global_flag = wet_inc_ulthuan_queued
+      }
+      R08 = {
+        exists = no
+      }
+    }
+    set_global_flag = wet_inc_ulthuan_queued
+    country_event = {
+      id = wet_incursions.11
+    }
+  }
+}
+wet_inc_xahutec_spawn_707 = {
+  R09 = {
+    set_state_owner = 707
+    add_state_core = 707
+    declare_war_on = {
+      target = V07
+      type = annex_everything
+    }
+  }
+  V07 = {
+    set_state_controller = 707
+  }
+  R09 = {
+    set_province_controller = 2392
+    set_capital = {
+      state = 707
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R09
+  }
+  707 = {
+    create_unit = {
+      owner = R09
+      count = 12
+      prioritize_location = 2392
+      division = "division_template = \"Bloodletter Legions\" location = 2392 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R09 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R09
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R09
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_xahutec_spawned
+  clr_country_flag = wet_inc_xahutec_pending
+  set_variable = {
+    wet_inc_xahutec_days = 0
+  }
+  country_event = {
+    id = wet_incursions.22
+  }
+  log = "WET_INCURSION spawned=R09 defender=V07 state=707 province=2392"
+}
+wet_inc_xahutec_spawn_692 = {
+  R09 = {
+    set_state_owner = 692
+    add_state_core = 692
+    declare_war_on = {
+      target = V07
+      type = annex_everything
+    }
+  }
+  V07 = {
+    set_state_controller = 692
+  }
+  R09 = {
+    set_province_controller = 2483
+    set_capital = {
+      state = 692
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R09
+  }
+  692 = {
+    create_unit = {
+      owner = R09
+      count = 12
+      prioritize_location = 2483
+      division = "division_template = \"Bloodletter Legions\" location = 2483 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R09 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R09
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R09
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_xahutec_spawned
+  clr_country_flag = wet_inc_xahutec_pending
+  set_variable = {
+    wet_inc_xahutec_days = 0
+  }
+  country_event = {
+    id = wet_incursions.22
+  }
+  log = "WET_INCURSION spawned=R09 defender=V07 state=692 province=2483"
+}
+wet_inc_xahutec_spawn_691 = {
+  R09 = {
+    set_state_owner = 691
+    add_state_core = 691
+    declare_war_on = {
+      target = V07
+      type = annex_everything
+    }
+  }
+  V07 = {
+    set_state_controller = 691
+  }
+  R09 = {
+    set_province_controller = 3350
+    set_capital = {
+      state = 691
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R09
+  }
+  691 = {
+    create_unit = {
+      owner = R09
+      count = 12
+      prioritize_location = 3350
+      division = "division_template = \"Bloodletter Legions\" location = 3350 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R09 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R09
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R09
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_xahutec_spawned
+  clr_country_flag = wet_inc_xahutec_pending
+  set_variable = {
+    wet_inc_xahutec_days = 0
+  }
+  country_event = {
+    id = wet_incursions.22
+  }
+  log = "WET_INCURSION spawned=R09 defender=V07 state=691 province=3350"
+}
+wet_inc_xahutec_try_spawn = {
+  if = {
+    limit = {
+      tag = V07
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_inc_xahutec_pending
+      NOT = {
+        check_variable = {
+          wet_inc_xahutec_days
+          >
+          0
+        }
+      }
+      NOT = {
+        has_global_flag = wet_inc_xahutec_spawned
+      }
+      R09 = {
+        exists = no
+      }
+    }
+    if = {
+      limit = {
+        wet_inc_xahutec_site_707 = yes
+      }
+      wet_inc_xahutec_spawn_707 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_xahutec_site_692 = yes
+      }
+      wet_inc_xahutec_spawn_692 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_xahutec_site_691 = yes
+      }
+      wet_inc_xahutec_spawn_691 = yes
+    }
+    else = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_inc_xahutec_delayed
+          }
+        }
+        set_country_flag = wet_inc_xahutec_delayed
+        country_event = {
+          id = wet_incursions.23
+        }
+      }
+    }
+  }
+}
+wet_inc_xahutec_begin_warning = {
+  if = {
+    limit = {
+      tag = V07
+      NOT = {
+        has_global_flag = wet_inc_xahutec_warned
+      }
+    }
+    set_global_flag = wet_inc_xahutec_queued
+    set_global_flag = wet_inc_xahutec_warned
+    set_country_flag = wet_inc_xahutec_pending
+    random_list = {
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 20
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 21
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 22
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 23
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 24
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 25
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 26
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 27
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 28
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 29
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_xahutec_days = 30
+        }
+      }
+    }
+  }
+}
+wet_inc_xahutec_daily = {
+  if = {
+    limit = {
+      has_country_flag = wet_inc_xahutec_pending
+      NOT = {
+        has_global_flag = wet_inc_xahutec_spawned
+      }
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_inc_xahutec_days
+          >
+          0
+        }
+      }
+      subtract_from_variable = {
+        wet_inc_xahutec_days = 1
+      }
+    }
+    wet_inc_xahutec_try_spawn = yes
+  }
+  if = {
+    limit = {
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_incursions_scenario
+      date
+      >
+      2520.2.28
+      NOT = {
+        has_global_flag = wet_inc_xahutec_queued
+      }
+      R09 = {
+        exists = no
+      }
+    }
+    set_global_flag = wet_inc_xahutec_queued
+    country_event = {
+      id = wet_incursions.21
+    }
+  }
+}
+wet_inc_cathay_spawn_200 = {
+  R10 = {
+    set_state_owner = 200
+    add_state_core = 200
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 200
+  }
+  R10 = {
+    set_province_controller = 4736
+    set_capital = {
+      state = 200
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  200 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 4736
+      division = "division_template = \"Horror Legions\" location = 4736 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=200 province=4736"
+}
+wet_inc_cathay_spawn_173 = {
+  R10 = {
+    set_state_owner = 173
+    add_state_core = 173
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 173
+  }
+  R10 = {
+    set_province_controller = 5401
+    set_capital = {
+      state = 173
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  173 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 5401
+      division = "division_template = \"Horror Legions\" location = 5401 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=173 province=5401"
+}
+wet_inc_cathay_spawn_192 = {
+  R10 = {
+    set_state_owner = 192
+    add_state_core = 192
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 192
+  }
+  R10 = {
+    set_province_controller = 4703
+    set_capital = {
+      state = 192
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  192 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 4703
+      division = "division_template = \"Horror Legions\" location = 4703 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=192 province=4703"
+}
+wet_inc_cathay_spawn_204 = {
+  R10 = {
+    set_state_owner = 204
+    add_state_core = 204
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 204
+  }
+  R10 = {
+    set_province_controller = 5239
+    set_capital = {
+      state = 204
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  204 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 5239
+      division = "division_template = \"Horror Legions\" location = 5239 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=204 province=5239"
+}
+wet_inc_cathay_spawn_203 = {
+  R10 = {
+    set_state_owner = 203
+    add_state_core = 203
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 203
+  }
+  R10 = {
+    set_province_controller = 5275
+    set_capital = {
+      state = 203
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  203 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 5275
+      division = "division_template = \"Horror Legions\" location = 5275 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=203 province=5275"
+}
+wet_inc_cathay_spawn_187 = {
+  R10 = {
+    set_state_owner = 187
+    add_state_core = 187
+    declare_war_on = {
+      target = I25
+      type = annex_everything
+    }
+  }
+  I25 = {
+    set_state_controller = 187
+  }
+  R10 = {
+    set_province_controller = 4727
+    set_capital = {
+      state = 187
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R10
+  }
+  187 = {
+    create_unit = {
+      owner = R10
+      count = 12
+      prioritize_location = 4727
+      division = "division_template = \"Horror Legions\" location = 4727 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R10 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R10
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R10
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_cathay_spawned
+  clr_country_flag = wet_inc_cathay_pending
+  set_variable = {
+    wet_inc_cathay_days = 0
+  }
+  country_event = {
+    id = wet_incursions.32
+  }
+  log = "WET_INCURSION spawned=R10 defender=I25 state=187 province=4727"
+}
+wet_inc_cathay_try_spawn = {
+  if = {
+    limit = {
+      tag = I25
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_inc_cathay_pending
+      NOT = {
+        check_variable = {
+          wet_inc_cathay_days
+          >
+          0
+        }
+      }
+      NOT = {
+        has_global_flag = wet_inc_cathay_spawned
+      }
+      R10 = {
+        exists = no
+      }
+    }
+    if = {
+      limit = {
+        wet_inc_cathay_site_200 = yes
+      }
+      wet_inc_cathay_spawn_200 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_cathay_site_173 = yes
+      }
+      wet_inc_cathay_spawn_173 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_cathay_site_192 = yes
+      }
+      wet_inc_cathay_spawn_192 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_cathay_site_204 = yes
+      }
+      wet_inc_cathay_spawn_204 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_cathay_site_203 = yes
+      }
+      wet_inc_cathay_spawn_203 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_cathay_site_187 = yes
+      }
+      wet_inc_cathay_spawn_187 = yes
+    }
+    else = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_inc_cathay_delayed
+          }
+        }
+        set_country_flag = wet_inc_cathay_delayed
+        country_event = {
+          id = wet_incursions.33
+        }
+      }
+    }
+  }
+}
+wet_inc_cathay_begin_warning = {
+  if = {
+    limit = {
+      tag = I25
+      NOT = {
+        has_global_flag = wet_inc_cathay_warned
+      }
+    }
+    set_global_flag = wet_inc_cathay_queued
+    set_global_flag = wet_inc_cathay_warned
+    set_country_flag = wet_inc_cathay_pending
+    random_list = {
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 20
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 21
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 22
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 23
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 24
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 25
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 26
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 27
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 28
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 29
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_cathay_days = 30
+        }
+      }
+    }
+  }
+}
+wet_inc_cathay_daily = {
+  if = {
+    limit = {
+      has_country_flag = wet_inc_cathay_pending
+      NOT = {
+        has_global_flag = wet_inc_cathay_spawned
+      }
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_inc_cathay_days
+          >
+          0
+        }
+      }
+      subtract_from_variable = {
+        wet_inc_cathay_days = 1
+      }
+    }
+    wet_inc_cathay_try_spawn = yes
+  }
+  if = {
+    limit = {
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_incursions_scenario
+      date
+      >
+      2520.10.31
+      NOT = {
+        has_global_flag = wet_inc_cathay_queued
+      }
+      R10 = {
+        exists = no
+      }
+    }
+    set_global_flag = wet_inc_cathay_queued
+    country_event = {
+      id = wet_incursions.31
+    }
+  }
+}
+wet_inc_araby_spawn_33 = {
+  R11 = {
+    set_state_owner = 33
+    add_state_core = 33
+    declare_war_on = {
+      target = Z14
+      type = annex_everything
+    }
+  }
+  Z14 = {
+    set_state_controller = 33
+  }
+  R11 = {
+    set_province_controller = 1200
+    set_capital = {
+      state = 33
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R11
+  }
+  33 = {
+    create_unit = {
+      owner = R11
+      count = 12
+      prioritize_location = 1200
+      division = "division_template = \"Daemonette Legions\" location = 1200 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R11 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R11
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R11
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_araby_spawned
+  clr_country_flag = wet_inc_araby_pending
+  set_variable = {
+    wet_inc_araby_days = 0
+  }
+  country_event = {
+    id = wet_incursions.42
+  }
+  log = "WET_INCURSION spawned=R11 defender=Z14 state=33 province=1200"
+}
+wet_inc_araby_spawn_19 = {
+  R11 = {
+    set_state_owner = 19
+    add_state_core = 19
+    declare_war_on = {
+      target = Z14
+      type = annex_everything
+    }
+  }
+  Z14 = {
+    set_state_controller = 19
+  }
+  R11 = {
+    set_province_controller = 1220
+    set_capital = {
+      state = 19
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R11
+  }
+  19 = {
+    create_unit = {
+      owner = R11
+      count = 12
+      prioritize_location = 1220
+      division = "division_template = \"Daemonette Legions\" location = 1220 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R11 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R11
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R11
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_araby_spawned
+  clr_country_flag = wet_inc_araby_pending
+  set_variable = {
+    wet_inc_araby_days = 0
+  }
+  country_event = {
+    id = wet_incursions.42
+  }
+  log = "WET_INCURSION spawned=R11 defender=Z14 state=19 province=1220"
+}
+wet_inc_araby_spawn_38 = {
+  R11 = {
+    set_state_owner = 38
+    add_state_core = 38
+    declare_war_on = {
+      target = Z14
+      type = annex_everything
+    }
+  }
+  Z14 = {
+    set_state_controller = 38
+  }
+  R11 = {
+    set_province_controller = 1215
+    set_capital = {
+      state = 38
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R11
+  }
+  38 = {
+    create_unit = {
+      owner = R11
+      count = 12
+      prioritize_location = 1215
+      division = "division_template = \"Daemonette Legions\" location = 1215 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R11 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R11
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R11
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_araby_spawned
+  clr_country_flag = wet_inc_araby_pending
+  set_variable = {
+    wet_inc_araby_days = 0
+  }
+  country_event = {
+    id = wet_incursions.42
+  }
+  log = "WET_INCURSION spawned=R11 defender=Z14 state=38 province=1215"
+}
+wet_inc_araby_spawn_18 = {
+  R11 = {
+    set_state_owner = 18
+    add_state_core = 18
+    declare_war_on = {
+      target = Z14
+      type = annex_everything
+    }
+  }
+  Z14 = {
+    set_state_controller = 18
+  }
+  R11 = {
+    set_province_controller = 1161
+    set_capital = {
+      state = 18
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R11
+  }
+  18 = {
+    create_unit = {
+      owner = R11
+      count = 12
+      prioritize_location = 1161
+      division = "division_template = \"Daemonette Legions\" location = 1161 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R11 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R11
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R11
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_araby_spawned
+  clr_country_flag = wet_inc_araby_pending
+  set_variable = {
+    wet_inc_araby_days = 0
+  }
+  country_event = {
+    id = wet_incursions.42
+  }
+  log = "WET_INCURSION spawned=R11 defender=Z14 state=18 province=1161"
+}
+wet_inc_araby_spawn_17 = {
+  R11 = {
+    set_state_owner = 17
+    add_state_core = 17
+    declare_war_on = {
+      target = Z14
+      type = annex_everything
+    }
+  }
+  Z14 = {
+    set_state_controller = 17
+  }
+  R11 = {
+    set_province_controller = 2020
+    set_capital = {
+      state = 17
+      remember_old_capital = no
+    }
+    load_oob = WET_incursion_R11
+  }
+  17 = {
+    create_unit = {
+      owner = R11
+      count = 12
+      prioritize_location = 2020
+      division = "division_template = \"Daemonette Legions\" location = 2020 start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+    }
+  }
+  R11 = {
+    add_offsite_building = {
+      type = industrial_complex
+      level = 10
+    }
+    add_offsite_building = {
+      type = arms_factory
+      level = 10
+    }
+    add_manpower = 150000
+    add_equipment_to_stockpile = {
+      type = infantry_equipment_1
+      amount = 3000
+      producer = R11
+    }
+    add_equipment_production = {
+      equipment = {
+        type = infantry_equipment_1
+        creator = R11
+      }
+      requested_factories = 10
+      progress = 0.1
+      efficiency = 0.5
+    }
+    wet_apply_political_permissions = yes
+    wet_inc_join_everchosen = yes
+  }
+  set_global_flag = wet_inc_araby_spawned
+  clr_country_flag = wet_inc_araby_pending
+  set_variable = {
+    wet_inc_araby_days = 0
+  }
+  country_event = {
+    id = wet_incursions.42
+  }
+  log = "WET_INCURSION spawned=R11 defender=Z14 state=17 province=2020"
+}
+wet_inc_araby_try_spawn = {
+  if = {
+    limit = {
+      tag = Z14
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_inc_araby_pending
+      NOT = {
+        check_variable = {
+          wet_inc_araby_days
+          >
+          0
+        }
+      }
+      NOT = {
+        has_global_flag = wet_inc_araby_spawned
+      }
+      R11 = {
+        exists = no
+      }
+    }
+    if = {
+      limit = {
+        wet_inc_araby_site_33 = yes
+      }
+      wet_inc_araby_spawn_33 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_araby_site_19 = yes
+      }
+      wet_inc_araby_spawn_19 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_araby_site_38 = yes
+      }
+      wet_inc_araby_spawn_38 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_araby_site_18 = yes
+      }
+      wet_inc_araby_spawn_18 = yes
+    }
+    else_if = {
+      limit = {
+        wet_inc_araby_site_17 = yes
+      }
+      wet_inc_araby_spawn_17 = yes
+    }
+    else = {
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_inc_araby_delayed
+          }
+        }
+        set_country_flag = wet_inc_araby_delayed
+        country_event = {
+          id = wet_incursions.43
+        }
+      }
+    }
+  }
+}
+wet_inc_araby_begin_warning = {
+  if = {
+    limit = {
+      tag = Z14
+      NOT = {
+        has_global_flag = wet_inc_araby_warned
+      }
+    }
+    set_global_flag = wet_inc_araby_queued
+    set_global_flag = wet_inc_araby_warned
+    set_country_flag = wet_inc_araby_pending
+    random_list = {
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 20
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 21
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 22
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 23
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 24
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 25
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 26
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 27
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 28
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 29
+        }
+      }
+      1 = {
+        set_variable = {
+          wet_inc_araby_days = 30
+        }
+      }
+    }
+  }
+}
+wet_inc_araby_daily = {
+  if = {
+    limit = {
+      has_country_flag = wet_inc_araby_pending
+      NOT = {
+        has_global_flag = wet_inc_araby_spawned
+      }
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_inc_araby_days
+          >
+          0
+        }
+      }
+      subtract_from_variable = {
+        wet_inc_araby_days = 1
+      }
+    }
+    wet_inc_araby_try_spawn = yes
+  }
+  if = {
+    limit = {
+      exists = yes
+      has_capitulated = no
+      has_country_flag = wet_incursions_scenario
+      date
+      >
+      2521.4.30
+      NOT = {
+        has_global_flag = wet_inc_araby_queued
+      }
+      R11 = {
+        exists = no
+      }
+    }
+    set_global_flag = wet_inc_araby_queued
+    country_event = {
+      id = wet_incursions.41
+    }
+  }
+}

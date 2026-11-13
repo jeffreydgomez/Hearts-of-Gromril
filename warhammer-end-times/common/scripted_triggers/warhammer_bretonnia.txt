@@ -1,0 +1,630 @@
+wet_brt_r07_occupies_core = {
+  R07 = {
+    OR = {
+      controls_province = 213
+      controls_province = 218
+      controls_province = 220
+      controls_province = 221
+      controls_province = 222
+      controls_province = 223
+      controls_province = 224
+      controls_province = 225
+      controls_province = 229
+      controls_province = 230
+      controls_province = 233
+      controls_province = 234
+      controls_province = 235
+      controls_province = 236
+      controls_province = 237
+      controls_province = 238
+      controls_province = 239
+      controls_province = 240
+      controls_province = 241
+      controls_province = 242
+      controls_province = 244
+      controls_province = 245
+      controls_province = 246
+      controls_province = 247
+      controls_province = 248
+      controls_province = 249
+      controls_province = 250
+      controls_province = 253
+      controls_province = 254
+      controls_province = 255
+      controls_province = 257
+      controls_province = 258
+      controls_province = 259
+      controls_province = 260
+      controls_province = 263
+      controls_province = 264
+      controls_province = 265
+      controls_province = 266
+      controls_province = 268
+      controls_province = 269
+      controls_province = 271
+      controls_province = 272
+      controls_province = 273
+      controls_province = 276
+      controls_province = 277
+      controls_province = 278
+      controls_province = 279
+      controls_province = 281
+      controls_province = 282
+      controls_province = 283
+      controls_province = 284
+      controls_province = 285
+      controls_province = 286
+      controls_province = 287
+      controls_province = 288
+      controls_province = 289
+      controls_province = 290
+      controls_province = 291
+      controls_province = 293
+      controls_province = 294
+      controls_province = 295
+      controls_province = 296
+      controls_province = 297
+      controls_province = 298
+      controls_province = 299
+      controls_province = 300
+      controls_province = 301
+      controls_province = 302
+      controls_province = 303
+      controls_province = 304
+      controls_province = 305
+      controls_province = 306
+      controls_province = 307
+      controls_province = 308
+      controls_province = 309
+      controls_province = 310
+      controls_province = 311
+      controls_province = 312
+      controls_province = 313
+      controls_province = 314
+      controls_province = 315
+      controls_province = 316
+      controls_province = 317
+      controls_province = 318
+      controls_province = 319
+      controls_province = 320
+      controls_province = 321
+      controls_province = 322
+      controls_province = 325
+      controls_province = 326
+      controls_province = 327
+      controls_province = 328
+      controls_province = 329
+      controls_province = 330
+      controls_province = 331
+      controls_province = 332
+      controls_province = 333
+      controls_province = 334
+      controls_province = 405
+      controls_province = 406
+      controls_province = 509
+      controls_province = 732
+      controls_province = 5969
+    }
+  }
+}
+wet_brt_civil_war = {
+  has_country_flag = wet_brt_crisis_started
+  has_war_with = A20
+}
+wet_brt_preparation = {
+  NOT = {
+    has_country_flag = wet_brt_crisis_started
+  }
+  NOT = {
+    has_war_with = A20
+  }
+  A20 = {
+    exists = yes
+    is_subject = no
+    NOT = {
+      is_in_faction_with = A15
+    }
+  }
+}
+wet_brt_incursion = {
+  has_global_flag = wet_inc_bretonnia_spawned
+  has_war_with = R07
+}
+wet_brt_liberated_site = {
+  is_owned_by = A15
+  controller = {
+    NOT = {
+      has_war_with = A15
+    }
+    OR = {
+      tag = A15
+      AND = {
+        has_country_flag = wet_brt_security_consent
+        A15 = {
+          has_military_access_to = PREV
+        }
+      }
+    }
+    PREV = {
+      is_fully_controlled_by = PREV
+    }
+  }
+}
+wet_brt_incursion_resolved = {
+  has_global_flag = wet_inc_bretonnia_spawned
+  NOT = {
+    has_war_with = R07
+  }
+  NOT = {
+    wet_brt_r07_occupies_core = yes
+  }
+  NOT = {
+    any_core_state = {
+      controller = {
+        tag = R07
+      }
+    }
+  }
+  any_state = {
+    has_state_flag = wet_brt_incursion_site
+  }
+  NOT = {
+    any_state = {
+      has_state_flag = wet_brt_incursion_site
+      NOT = {
+        wet_brt_liberated_site = yes
+      }
+    }
+  }
+}
+wet_brt_settled = {
+  has_country_flag = wet_brt_crisis_started
+  NOT = {
+    has_war_with = A20
+  }
+  capital_scope = {
+    is_fully_controlled_by = A15
+  }
+  OR = {
+    A20 = {
+      exists = no
+    }
+    A20 = {
+      is_subject_of = A15
+    }
+    has_country_flag = wet_brt_negotiated_settlement
+    AND = {
+      801 = {
+        is_owned_by = A15
+        is_fully_controlled_by = A15
+      }
+      1234 = {
+        is_owned_by = A15
+        is_fully_controlled_by = A15
+      }
+    }
+  }
+}
+wet_brt_mousillon_clear = {
+  NOT = {
+    has_war_with = A20
+  }
+  OR = {
+    wet_brt_settled = yes
+    A20 = {
+      exists = no
+    }
+    A20 = {
+      is_subject_of = A15
+    }
+    has_country_flag = wet_brt_negotiated_settlement
+  }
+}
+wet_brt_barrow_campaign = {
+  has_war_with = A74
+}
+wet_brt_barrow_resolved = {
+  NOT = {
+    has_war_with = A74
+  }
+  896 = {
+    controller = {
+      NOT = {
+        tag = A74
+      }
+      NOT = {
+        has_war_with = A15
+      }
+      OR = {
+        tag = A15
+        is_subject_of = A15
+        AND = {
+          has_country_flag = wet_brt_security_consent
+          A15 = {
+            has_military_access_to = PREV
+          }
+        }
+      }
+    }
+  }
+}
+wet_brt_barrow_clear = {
+  NOT = {
+    has_war_with = A74
+  }
+  NOT = {
+    any_core_state = {
+      controller = {
+        tag = A74
+      }
+    }
+  }
+}
+wet_brt_commitment = {
+  wet_brt_incursion_resolved = yes
+  wet_brt_mousillon_clear = yes
+  wet_brt_barrow_clear = yes
+}
+wet_brt_everchosen = {
+  exists = yes
+  is_subject = no
+  has_country_flag = wet_everchosen_leader
+}
+wet_brt_everchosen_belligerent = {
+  exists = yes
+  has_war_with = A15
+  OR = {
+    wet_brt_everchosen = yes
+    AND = {
+      is_in_faction = yes
+      faction_leader = {
+        wet_brt_everchosen = yes
+      }
+    }
+  }
+}
+wet_brt_everchosen_war = {
+  any_enemy_country = {
+    wet_brt_everchosen_belligerent = yes
+  }
+}
+wet_brt_everchosen_defeated = {
+  NOT = {
+    any_country = {
+      wet_brt_everchosen = yes
+    }
+  }
+}
+wet_brt_joint_war = {
+  any_enemy_country = {
+    wet_brt_everchosen_belligerent = yes
+    any_enemy_country = {
+      NOT = {
+        tag = A15
+      }
+      is_in_faction_with = A15
+    }
+  }
+}
+wet_brt_grand_leader = {
+  exists = yes
+  is_faction_leader = yes
+  has_government = democratic
+  OR = {
+    has_country_flag = wet_faction_grand_alliance
+    has_faction_template = wet_named_faction_order_1
+  }
+}
+wet_brt_grand_member = {
+  is_in_faction = yes
+  faction_leader = {
+    wet_brt_grand_leader = yes
+  }
+}
+wet_brt_emergency_free = {
+  check_variable = {
+    wet_brt_days_muster
+    <
+    1
+  }
+  check_variable = {
+    wet_brt_days_errentry
+    <
+    1
+  }
+}
+wet_brt_home = {
+  OR = {
+    state = 16
+    state = 39
+    state = 42
+    state = 45
+    state = 137
+    state = 170
+    state = 209
+    state = 274
+    state = 283
+    state = 285
+    state = 415
+    state = 430
+    state = 444
+    state = 447
+    state = 454
+    state = 660
+    state = 744
+    state = 754
+    state = 764
+    state = 766
+    state = 903
+    state = 908
+    state = 930
+  }
+}
+wet_brt_duel_valid = {
+  wet_brt_civil_war = yes
+  has_character = WET_BRT_GreenKnight
+  NOT = {
+    has_country_flag = wet_brt_green_dead
+  }
+  A20 = {
+    has_country_flag = wet_brt_duel_incumbent_valid
+  }
+}
+wet_brt_court_access = {
+  has_country_flag = wet_brt_barrow_location
+  any_state = {
+    has_state_flag = wet_brt_barrow_court
+    is_fully_controlled_by = A15
+  }
+}
+wet_brt_prison_access = {
+  OR = {
+    tag = A15
+    AND = {
+      has_country_flag = wet_brt_prison_consent
+      NOT = {
+        has_war_with = A15
+      }
+      A15 = {
+        has_military_access_to = PREV
+        OR = {
+          is_neighbor_of = PREV
+          AND = {
+            has_equipment = {
+              convoy
+              >
+              19
+            }
+            any_controlled_state = {
+              naval_base
+              >
+              0
+            }
+            PREV = {
+              any_controlled_state = {
+                naval_base
+                >
+                0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+wet_brt_kemmler_captive = {
+  has_country_flag = wet_brt_court_searched
+  NOT = {
+    has_global_flag = wet_brt_kemmler_dead
+  }
+  any_country = {
+    has_country_flag = wet_brt_kemmler_custody
+    has_character = WET_A74_leader
+    wet_brt_prison_access = yes
+    any_controlled_state = {
+      has_state_flag = wet_brt_kemmler_prison
+      is_fully_controlled_by = PREV
+    }
+  }
+}
+wet_brt_krell_captive = {
+  has_country_flag = wet_brt_court_searched
+  NOT = {
+    has_global_flag = wet_brt_krell_sealed
+  }
+  any_country = {
+    has_country_flag = wet_brt_krell_custody
+    has_character = WET_BRT_Krell
+    wet_brt_prison_access = yes
+    any_controlled_state = {
+      has_state_flag = wet_brt_krell_prison
+      is_fully_controlled_by = PREV
+    }
+  }
+}
+wet_brt_staff_safe = {
+  has_global_flag = wet_brt_staff_exists
+  has_country_flag = wet_brt_staff_custodian
+  any_state = {
+    has_state_flag = wet_brt_staff_site
+    is_owned_by = A15
+    is_fully_controlled_by = A15
+  }
+}
+wet_brt_legal_a20 = {
+  exists = yes
+  is_subject = no
+  NOT = {
+    is_guaranteed_by = A20
+  }
+  A20 = {
+    exists = yes
+    is_subject = no
+    NOT = {
+      has_government = democratic
+    }
+    NOT = {
+      has_war_with = A15
+    }
+    NOT = {
+      is_in_faction_with = A15
+    }
+    NOT = {
+      has_truce_with = A15
+    }
+    NOT = {
+      has_non_aggression_pact_with = A15
+    }
+    NOT = {
+      is_guaranteed_by = A15
+    }
+  }
+  OR = {
+    is_neighbor_of = A20
+    AND = {
+      any_owned_state = {
+        is_fully_controlled_by = A15
+        naval_base
+        >
+        0
+      }
+      has_equipment = {
+        convoy
+        >
+        19
+      }
+      A20 = {
+        any_owned_state = {
+          naval_base
+          >
+          0
+        }
+      }
+    }
+  }
+}
+wet_brt_legal_a74 = {
+  exists = yes
+  is_subject = no
+  NOT = {
+    is_guaranteed_by = A74
+  }
+  A74 = {
+    exists = yes
+    is_subject = no
+    NOT = {
+      has_government = democratic
+    }
+    NOT = {
+      has_war_with = A15
+    }
+    NOT = {
+      is_in_faction_with = A15
+    }
+    NOT = {
+      has_truce_with = A15
+    }
+    NOT = {
+      has_non_aggression_pact_with = A15
+    }
+    NOT = {
+      is_guaranteed_by = A15
+    }
+  }
+  OR = {
+    is_neighbor_of = A74
+    AND = {
+      any_owned_state = {
+        is_fully_controlled_by = A15
+        naval_base
+        >
+        0
+      }
+      has_equipment = {
+        convoy
+        >
+        19
+      }
+      A74 = {
+        any_owned_state = {
+          naval_base
+          >
+          0
+        }
+      }
+    }
+  }
+}
+wet_brt_host = {
+  exists = yes
+  has_country_flag = wet_brt_host_consent
+  NOT = {
+    has_war_with = A15
+  }
+  NOT = {
+    has_country_flag = wet_karaz_sealed
+  }
+  A15 = {
+    has_military_access_to = PREV
+  }
+  capital_scope = {
+    is_fully_controlled_by = PREV
+    OR = {
+      A15 = {
+        capital_scope = {
+          has_railway_connection = {
+            start_state = THIS
+            target_state = PREV.PREV
+            build_only_on_allied = yes
+          }
+        }
+      }
+      AND = {
+        owner = {
+          any_owned_state = {
+            is_fully_controlled_by = PREV
+            naval_base
+            >
+            0
+            has_railway_connection = {
+              start_state = THIS
+              target_state = PREV.PREV
+              build_only_on_allied = yes
+            }
+          }
+        }
+        A15 = {
+          has_equipment = {
+            convoy
+            >
+            19
+          }
+          any_owned_state = {
+            is_fully_controlled_by = A15
+            naval_base
+            >
+            0
+          }
+        }
+      }
+    }
+  }
+}
+wet_brt_expedition_ready = {
+  num_divisions
+  >
+  0
+  any_country = {
+    wet_brt_host = yes
+  }
+  OR = {
+    wet_brt_everchosen_war = yes
+    any_country = {
+      wet_brt_everchosen = yes
+      A15 = {
+        can_declare_war_on = PREV
+      }
+    }
+  }
+}

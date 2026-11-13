@@ -1,0 +1,382 @@
+wet_focus_choose_chaos = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = fascism
+      }
+    }
+    set_country_leader_ideology = wet_chaos_generic
+    add_popularity = {
+      ideology = fascism
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = fascism
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_human
+    }
+    swap_ideas = {
+      remove_idea = wet_race_human
+      add_idea = wet_race_chaos_mortals
+    }
+  }
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}
+wet_focus_choose_undead = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = communism
+      }
+    }
+    set_country_leader_ideology = wet_undead_generic
+    add_popularity = {
+      ideology = communism
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = communism
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_high_elf
+    }
+    swap_ideas = {
+      remove_idea = wet_race_high_elf
+      add_idea = wet_race_undead_high_elf
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_dark_elf
+    }
+    swap_ideas = {
+      remove_idea = wet_race_dark_elf
+      add_idea = wet_race_undead_dark_elf
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_wood_elf
+    }
+    swap_ideas = {
+      remove_idea = wet_race_wood_elf
+      add_idea = wet_race_undead_wood_elf
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_forest_spirit
+    }
+    swap_ideas = {
+      remove_idea = wet_race_forest_spirit
+      add_idea = wet_race_undead_forest_spirit
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_dwarf
+    }
+    swap_ideas = {
+      remove_idea = wet_race_dwarf
+      add_idea = wet_race_undead_dwarf
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_dwarf
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_dwarf
+      add_idea = wet_race_undead_chaos_dwarf
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_halfling
+    }
+    swap_ideas = {
+      remove_idea = wet_race_halfling
+      add_idea = wet_race_undead_halfling
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_orc
+    }
+    swap_ideas = {
+      remove_idea = wet_race_orc
+      add_idea = wet_race_undead_orc
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_goblin
+    }
+    swap_ideas = {
+      remove_idea = wet_race_goblin
+      add_idea = wet_race_undead_goblin
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_gnoblar
+    }
+    swap_ideas = {
+      remove_idea = wet_race_gnoblar
+      add_idea = wet_race_undead_gnoblar
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_skaven
+    }
+    swap_ideas = {
+      remove_idea = wet_race_skaven
+      add_idea = wet_race_undead_skaven
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_old_ones
+    }
+    swap_ideas = {
+      remove_idea = wet_race_old_ones
+      add_idea = wet_race_undead_old_ones
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_ogre
+    }
+    swap_ideas = {
+      remove_idea = wet_race_ogre
+      add_idea = wet_race_undead_ogre
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_beastmen
+    }
+    swap_ideas = {
+      remove_idea = wet_race_beastmen
+      add_idea = wet_race_undead_beastmen
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_fimir
+    }
+    swap_ideas = {
+      remove_idea = wet_race_fimir
+      add_idea = wet_race_undead_fimir
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_giant
+    }
+    swap_ideas = {
+      remove_idea = wet_race_giant
+      add_idea = wet_race_undead_giant
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_snakefolk
+    }
+    swap_ideas = {
+      remove_idea = wet_race_snakefolk
+      add_idea = wet_race_undead_snakefolk
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_tigerkin
+    }
+    swap_ideas = {
+      remove_idea = wet_race_tigerkin
+      add_idea = wet_race_undead_tigerkin
+    }
+  }
+  add_ideas = wet_deathless_hosts
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}
+wet_focus_choose_order = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = democratic
+      }
+    }
+    set_country_leader_ideology = wet_order_generic
+    add_popularity = {
+      ideology = democratic
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = democratic
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}
+wet_focus_choose_unaligned = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = neutrality
+      }
+    }
+    set_country_leader_ideology = wet_unaligned_generic
+    add_popularity = {
+      ideology = neutrality
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = neutrality
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}
+wet_focus_choose_waaagh = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = waaagh
+      }
+    }
+    set_country_leader_ideology = wet_waaagh_generic
+    add_popularity = {
+      ideology = waaagh
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = waaagh
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}
+wet_focus_choose_horned_rat = {
+  if = {
+    limit = {
+      NOT = {
+        has_government = horned_rat
+      }
+    }
+    set_country_leader_ideology = wet_horned_rat_generic
+    add_popularity = {
+      ideology = horned_rat
+      popularity = 0.60
+    }
+    set_politics = {
+      ruling_party = horned_rat
+      elections_allowed = no
+    }
+  }
+  set_politics = {
+    elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  wet_apply_political_permissions = yes
+  wet_enforce_cultural_member = yes
+  if = {
+    limit = {
+      has_global_flag = wet_population_started
+    }
+    wet_pop_refresh_realm = yes
+  }
+}

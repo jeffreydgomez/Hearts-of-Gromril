@@ -1,0 +1,3914 @@
+wet_kis_campaigns = {
+  wet_kis_request_first_aid_A01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        A01 = {
+          wet_kis_route_partner = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          OR = {
+            AND = {
+              tag = A01
+              A29 = {
+                OR = {
+                  has_completed_focus = WET_KIS_W04
+                  has_country_flag = wet_kis_altdorf_cooperation
+                }
+              }
+            }
+            AND = {
+              OR = {
+                tag = A15
+                tag = U04
+              }
+              has_country_flag = wet_kis_secondary_warning_delivered
+              A29 = {
+                has_completed_focus = WET_KIS_W13
+              }
+            }
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid
+          }
+          check_variable = {
+            wet_kis_offer_first_aid_cooldown
+            <
+            1
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid_accepted
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_aid
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        A01 = {
+          if = {
+            limit = {
+              wet_kis_route_partner = yes
+              has_equipment = {
+                infantry_equipment
+                >
+                499
+              }
+              OR = {
+                AND = {
+                  tag = A01
+                  A29 = {
+                    OR = {
+                      has_completed_focus = WET_KIS_W04
+                      has_country_flag = wet_kis_altdorf_cooperation
+                    }
+                  }
+                }
+                AND = {
+                  OR = {
+                    tag = A15
+                    tag = U04
+                  }
+                  has_country_flag = wet_kis_secondary_warning_delivered
+                  A29 = {
+                    has_completed_focus = WET_KIS_W13
+                  }
+                }
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid
+              }
+              check_variable = {
+                wet_kis_offer_first_aid_cooldown
+                <
+                1
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid_accepted
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_aid
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.102
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        A01 = {
+          wet_kis_send_first_aid = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_request_first_aid_A15 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        A15 = {
+          wet_kis_route_partner = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          OR = {
+            AND = {
+              tag = A01
+              A29 = {
+                OR = {
+                  has_completed_focus = WET_KIS_W04
+                  has_country_flag = wet_kis_altdorf_cooperation
+                }
+              }
+            }
+            AND = {
+              OR = {
+                tag = A15
+                tag = U04
+              }
+              has_country_flag = wet_kis_secondary_warning_delivered
+              A29 = {
+                has_completed_focus = WET_KIS_W13
+              }
+            }
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid
+          }
+          check_variable = {
+            wet_kis_offer_first_aid_cooldown
+            <
+            1
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid_accepted
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_aid
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        A15 = {
+          if = {
+            limit = {
+              wet_kis_route_partner = yes
+              has_equipment = {
+                infantry_equipment
+                >
+                499
+              }
+              OR = {
+                AND = {
+                  tag = A01
+                  A29 = {
+                    OR = {
+                      has_completed_focus = WET_KIS_W04
+                      has_country_flag = wet_kis_altdorf_cooperation
+                    }
+                  }
+                }
+                AND = {
+                  OR = {
+                    tag = A15
+                    tag = U04
+                  }
+                  has_country_flag = wet_kis_secondary_warning_delivered
+                  A29 = {
+                    has_completed_focus = WET_KIS_W13
+                  }
+                }
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid
+              }
+              check_variable = {
+                wet_kis_offer_first_aid_cooldown
+                <
+                1
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid_accepted
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_aid
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.102
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        A15 = {
+          wet_kis_send_first_aid = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_request_first_aid_U04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        U04 = {
+          wet_kis_route_partner = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          OR = {
+            AND = {
+              tag = A01
+              A29 = {
+                OR = {
+                  has_completed_focus = WET_KIS_W04
+                  has_country_flag = wet_kis_altdorf_cooperation
+                }
+              }
+            }
+            AND = {
+              OR = {
+                tag = A15
+                tag = U04
+              }
+              has_country_flag = wet_kis_secondary_warning_delivered
+              A29 = {
+                has_completed_focus = WET_KIS_W13
+              }
+            }
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid
+          }
+          check_variable = {
+            wet_kis_offer_first_aid_cooldown
+            <
+            1
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid_accepted
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_aid
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        U04 = {
+          if = {
+            limit = {
+              wet_kis_route_partner = yes
+              has_equipment = {
+                infantry_equipment
+                >
+                499
+              }
+              OR = {
+                AND = {
+                  tag = A01
+                  A29 = {
+                    OR = {
+                      has_completed_focus = WET_KIS_W04
+                      has_country_flag = wet_kis_altdorf_cooperation
+                    }
+                  }
+                }
+                AND = {
+                  OR = {
+                    tag = A15
+                    tag = U04
+                  }
+                  has_country_flag = wet_kis_secondary_warning_delivered
+                  A29 = {
+                    has_completed_focus = WET_KIS_W13
+                  }
+                }
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid
+              }
+              check_variable = {
+                wet_kis_offer_first_aid_cooldown
+                <
+                1
+              }
+              NOT = {
+                has_country_flag = wet_kis_offer_first_aid_accepted
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_aid
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.102
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        U04 = {
+          wet_kis_send_first_aid = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_host_A01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_L04
+        has_completed_focus = WET_KIS_X00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        A01 = {
+          wet_kis_host_candidate = yes
+          NOT = {
+            has_country_flag = wet_kis_offer_host
+          }
+          check_variable = {
+            wet_kis_offer_host_cooldown
+            <
+            1
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_host
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        A01 = {
+          if = {
+            limit = {
+              wet_kis_host_candidate = yes
+              NOT = {
+                has_country_flag = wet_kis_offer_host
+              }
+              check_variable = {
+                wet_kis_offer_host_cooldown
+                <
+                1
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_host
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.107
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        A01 = {
+          wet_kis_send_host = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_host_A15 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_L04
+        has_completed_focus = WET_KIS_X00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        A15 = {
+          wet_kis_host_candidate = yes
+          NOT = {
+            has_country_flag = wet_kis_offer_host
+          }
+          check_variable = {
+            wet_kis_offer_host_cooldown
+            <
+            1
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_host
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        A15 = {
+          if = {
+            limit = {
+              wet_kis_host_candidate = yes
+              NOT = {
+                has_country_flag = wet_kis_offer_host
+              }
+              check_variable = {
+                wet_kis_offer_host_cooldown
+                <
+                1
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_host
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.107
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        A15 = {
+          wet_kis_send_host = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_host_U04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_L04
+        has_completed_focus = WET_KIS_X00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        U04 = {
+          wet_kis_host_candidate = yes
+          NOT = {
+            has_country_flag = wet_kis_offer_host
+          }
+          check_variable = {
+            wet_kis_offer_host_cooldown
+            <
+            1
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_host
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        U04 = {
+          if = {
+            limit = {
+              wet_kis_host_candidate = yes
+              NOT = {
+                has_country_flag = wet_kis_offer_host
+              }
+              check_variable = {
+                wet_kis_offer_host_cooldown
+                <
+                1
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_host
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.107
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        U04 = {
+          wet_kis_send_host = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
+wet_kis_couriers = {
+  
+}
+wet_kis_emergencies = {
+  wet_kis_withdrawal_free = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_W06
+        has_completed_focus = WET_KIS_X00
+      }
+      has_completed_focus = WET_KIS_W08
+      NOT = {
+        has_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_KIS_W08
+      AND = {
+        wet_kis_withdrawal_ready = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+      }
+      hidden_effect = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+        set_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_withdrawal_discounted = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_W06
+        has_completed_focus = WET_KIS_X00
+      }
+      has_completed_focus = WET_KIS_D09
+      NOT = {
+        has_completed_focus = WET_KIS_W08
+      }
+      NOT = {
+        has_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    cost = 25
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_KIS_D09
+      NOT = {
+        has_completed_focus = WET_KIS_W08
+      }
+      AND = {
+        wet_kis_withdrawal_ready = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+      }
+      hidden_effect = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+        set_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_withdrawal_ordinary = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      OR = {
+        has_completed_focus = WET_KIS_W06
+        has_completed_focus = WET_KIS_X00
+      }
+      NOT = {
+        OR = {
+          has_completed_focus = WET_KIS_W08
+          has_completed_focus = WET_KIS_D09
+        }
+      }
+      NOT = {
+        has_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    cost = 50
+    days_re_enable = 0
+    available = {
+      NOT = {
+        OR = {
+          has_completed_focus = WET_KIS_W08
+          has_completed_focus = WET_KIS_D09
+        }
+      }
+      AND = {
+        wet_kis_withdrawal_ready = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+      }
+      hidden_effect = {
+        add_timed_idea = {
+          idea = wet_kis_withdrawal
+          days = 30
+        }
+        set_country_flag = wet_kis_withdrawal_used
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
+wet_kis_reconstruction = {
+  wet_kis_relocate_P01_132 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        132 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        132 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        132 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_295 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        295 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        295 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        295 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_327 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        327 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        327 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        327 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_344 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        344 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        344 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        344 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_631 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        631 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        631 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        631 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_897 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        897 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        897 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        897 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_984 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        984 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        984 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        984 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P01_1188 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P01
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P01_age
+          >
+          179
+        }
+        1188 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              industrial_complex
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        1188 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        1188 = {
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P01 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_132 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        132 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        132 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        132 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_295 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        295 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        295 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        295 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_327 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        327 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        327 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        327 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_344 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        344 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        344 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        344 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_370 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        370 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        370 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        370 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_897 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        897 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        897 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        897 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_984 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        984 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        984 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        984 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_relocate_P02_1188 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P02
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+        check_variable = {
+          wet_kis_claim_P02_age
+          >
+          179
+        }
+        1188 = {
+          is_owned_by = A29
+          is_fully_controlled_by = A29
+          impassable = no
+          NOT = {
+            OR = {
+              arms_factory
+              >
+              4
+            }
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        1188 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+      hidden_effect = {
+        1188 = {
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+          A29 = {
+            subtract_from_variable = {
+              wet_kis_claim_P02 = 1
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_W06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_W06
+      has_country_flag = wet_kis_earned_W06
+      NOT = {
+        has_country_flag = wet_kis_reward_W06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_W06
+        NOT = {
+          has_country_flag = wet_kis_reward_W06
+        }
+        wet_kis_fighting_everchosen = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 10
+      }
+      hidden_effect = {
+        wet_kis_award_W06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_W10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_W10
+      has_country_flag = wet_kis_earned_W10
+      NOT = {
+        has_country_flag = wet_kis_reward_W10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_W10
+        NOT = {
+          has_country_flag = wet_kis_reward_W10
+        }
+        has_country_flag = wet_kis_warning_delivered
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 30
+        custom_effect_tooltip = WET_KIS_W10_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_W10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_S02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_S02
+      has_country_flag = wet_kis_earned_S02
+      NOT = {
+        has_country_flag = wet_kis_reward_S02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_S02
+        NOT = {
+          has_country_flag = wet_kis_reward_S02
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_long_defence_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_long_defence_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_S02_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_S02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_M12 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_M12
+      has_country_flag = wet_kis_earned_M12
+      NOT = {
+        has_country_flag = wet_kis_reward_M12
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_war = yes
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+      NOT = {
+        has_idea = wet_kis_frostward
+      }
+      has_political_power
+      >
+      74
+      AND = {
+        has_country_flag = wet_kis_earned_M12
+        NOT = {
+          has_country_flag = wet_kis_reward_M12
+        }
+        always = yes
+        any_controlled_state = {
+          wet_kis_home = yes
+        }
+        check_variable = {
+          wet_kis_frostward_cooldown
+          <
+          1
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M12_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_M12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_M14 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_M14
+      has_country_flag = wet_kis_earned_M14
+      NOT = {
+        has_country_flag = wet_kis_reward_M14
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_equipment = {
+        support_equipment
+        >
+        199
+      }
+      has_political_power
+      >
+      74
+      AND = {
+        has_country_flag = wet_kis_earned_M14
+        NOT = {
+          has_country_flag = wet_kis_reward_M14
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_great_winter_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_great_winter_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M14_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_M14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_M24 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_M24
+      has_country_flag = wet_kis_earned_M24
+      NOT = {
+        has_country_flag = wet_kis_reward_M24
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_M24
+        NOT = {
+          has_country_flag = wet_kis_reward_M24
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_great_charge_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_great_charge_spent
+        }
+        has_fuel
+        >
+        4999
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M24_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_M24 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_M34 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_M34
+      has_country_flag = wet_kis_earned_M34
+      NOT = {
+        has_country_flag = wet_kis_reward_M34
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_equipment = {
+        infantry_equipment
+        >
+        299
+      }
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_M34
+        NOT = {
+          has_country_flag = wet_kis_reward_M34
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_last_stand_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_last_stand_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_M34_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_M34 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_D06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_D06
+      has_country_flag = wet_kis_earned_D06
+      NOT = {
+        has_country_flag = wet_kis_reward_D06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      OR = {
+        controls_state = 631
+        controls_state = 370
+        controls_state = 295
+      }
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_D06
+        NOT = {
+          has_country_flag = wet_kis_reward_D06
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_city_stand_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_city_stand_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_D06_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_D06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_D08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_D08
+      has_country_flag = wet_kis_earned_D08
+      NOT = {
+        has_country_flag = wet_kis_reward_D08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 631
+      controls_state = 370
+      controls_state = 295
+      AND = {
+        has_country_flag = wet_kis_earned_D08
+        NOT = {
+          has_country_flag = wet_kis_reward_D08
+        }
+        check_variable = {
+          wet_kis_claim_D01
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D02_infra
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D02_port
+          <
+          1
+        }
+        check_variable = {
+          wet_kis_claim_D03
+          <
+          1
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_war_support = 0.05
+        army_experience = 25
+      }
+      hidden_effect = {
+        wet_kis_award_D08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_P05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_P05
+      has_country_flag = wet_kis_earned_P05
+      NOT = {
+        has_country_flag = wet_kis_reward_P05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_P05
+        NOT = {
+          has_country_flag = wet_kis_reward_P05
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_night_shifts_done
+        }
+        num_of_controlled_factories
+        >
+        0
+        NOT = {
+          has_country_flag = wet_kis_night_shifts_spent
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_P05_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_P05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_L05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_L05
+      has_country_flag = wet_kis_earned_L05
+      NOT = {
+        has_country_flag = wet_kis_reward_L05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_L05
+        NOT = {
+          has_country_flag = wet_kis_reward_L05
+        }
+        wet_kis_can_ask_alliance = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_L05_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_L05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_L07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_L07
+      has_country_flag = wet_kis_earned_L07
+      NOT = {
+        has_country_flag = wet_kis_reward_L07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_L07
+        NOT = {
+          has_country_flag = wet_kis_reward_L07
+        }
+        wet_kis_shared_order_war = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_southern_staff
+          days = 180
+        }
+        army_experience = 20
+      }
+      hidden_effect = {
+        wet_kis_award_L07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_H00 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_H00
+      has_country_flag = wet_kis_earned_H00
+      NOT = {
+        has_country_flag = wet_kis_reward_H00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 631
+      AND = {
+        has_country_flag = wet_kis_earned_H00
+        NOT = {
+          has_country_flag = wet_kis_reward_H00
+        }
+        OR = {
+          check_variable = {
+            wet_kis_war_days
+            >
+            179
+          }
+          has_country_flag = wet_kis_invasion_survived
+        }
+        count_triggers = {
+          amount = 6
+          132 = {
+            is_fully_controlled_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        wet_kis_award_H00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_H02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_H02
+      has_country_flag = wet_kis_earned_H02
+      NOT = {
+        has_country_flag = wet_kis_reward_H02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 631
+      AND = {
+        has_country_flag = wet_kis_earned_H02
+        NOT = {
+          has_country_flag = wet_kis_reward_H02
+        }
+        count_triggers = {
+          amount = 6
+          132 = {
+            is_fully_controlled_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_markets
+          days = 180
+        }
+        custom_effect_tooltip = WET_KIS_H02_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_H02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_H03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_H03
+      has_country_flag = wet_kis_earned_H03
+      NOT = {
+        has_country_flag = wet_kis_reward_H03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      is_subject = no
+      AND = {
+        has_country_flag = wet_kis_earned_H03
+        NOT = {
+          has_country_flag = wet_kis_reward_H03
+        }
+        count_triggers = {
+          amount = 9
+          132 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+        }
+        NOT = {
+          wet_kis_fighting_everchosen = yes
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_h03
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        wet_kis_award_H03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X00 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X00
+      has_country_flag = wet_kis_earned_X00
+      NOT = {
+        has_country_flag = wet_kis_reward_X00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X00
+        NOT = {
+          has_country_flag = wet_kis_reward_X00
+        }
+        OR = {
+          AND = {
+            has_war = yes
+            NOT = {
+              count_triggers = {
+                amount = 7
+                132 = {
+                  is_fully_controlled_by = A29
+                }
+                295 = {
+                  is_fully_controlled_by = A29
+                }
+                327 = {
+                  is_fully_controlled_by = A29
+                }
+                344 = {
+                  is_fully_controlled_by = A29
+                }
+                370 = {
+                  is_fully_controlled_by = A29
+                }
+                631 = {
+                  is_fully_controlled_by = A29
+                }
+                897 = {
+                  is_fully_controlled_by = A29
+                }
+                984 = {
+                  is_fully_controlled_by = A29
+                }
+                1188 = {
+                  is_fully_controlled_by = A29
+                }
+              }
+            }
+          }
+          AND = {
+            has_capitulated = yes
+            is_government_in_exile = yes
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+      }
+      hidden_effect = {
+        wet_kis_award_X00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X01
+      has_country_flag = wet_kis_earned_X01
+      NOT = {
+        has_country_flag = wet_kis_reward_X01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X01
+        NOT = {
+          has_country_flag = wet_kis_reward_X01
+        }
+        wet_kis_escape_route = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_X01_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_X01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X06
+      has_country_flag = wet_kis_earned_X06
+      NOT = {
+        has_country_flag = wet_kis_reward_X06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      631 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+      }
+      AND = {
+        has_country_flag = wet_kis_earned_X06
+        NOT = {
+          has_country_flag = wet_kis_reward_X06
+        }
+        has_country_flag = wet_kis_was_exiled
+        count_triggers = {
+          amount = 3
+          132 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          295 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          327 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          344 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          370 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          631 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          897 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          984 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+          1188 = {
+            is_fully_controlled_by = A29
+            is_owned_by = A29
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+        add_stability = 0.05
+        custom_effect_tooltip = WET_KIS_X06_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_X06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_D11 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_D11
+      has_country_flag = wet_kis_earned_D11
+      NOT = {
+        has_country_flag = wet_kis_reward_D11
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      controls_state = 327
+      has_political_power
+      >
+      24
+      AND = {
+        has_country_flag = wet_kis_earned_D11
+        NOT = {
+          has_country_flag = wet_kis_reward_D11
+        }
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_forest_screen_done
+        }
+        wet_kis_fighting_everchosen = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_D11_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_D11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
+wet_kis_exile_operations = {
+  wet_kis_native_host = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      is_government_in_exile = yes
+      NOT = {
+        wet_kis_exile_active = yes
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      is_government_in_exile = yes
+      AND = {
+        NOT = {
+          wet_kis_exile_active = yes
+        }
+        any_other_country = {
+          wet_kis_order_partner = yes
+          is_hosting_exile = A29
+          NOT = {
+            has_country_flag = wet_kis_offer_native_host
+          }
+          check_variable = {
+            wet_kis_offer_native_host_cooldown
+            <
+            1
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_host
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        every_other_country = {
+          limit = {
+            is_hosting_exile = A29
+          }
+          if = {
+            limit = {
+              wet_kis_order_partner = yes
+              is_hosting_exile = A29
+              NOT = {
+                has_country_flag = wet_kis_offer_native_host
+              }
+              check_variable = {
+                wet_kis_offer_native_host_cooldown
+                <
+                1
+              }
+              A29 = {
+                NOT = {
+                  has_country_flag = wet_kis_pending_host
+                }
+              }
+            }
+            country_event = {
+              id = wet_kislev.108
+            }
+          }
+        }
+      }
+      hidden_effect = {
+        every_other_country = {
+          limit = {
+            is_hosting_exile = A29
+          }
+          wet_kis_send_native_host = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_establish_exile = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_capitulated = yes
+      is_government_in_exile = no
+    }
+    cost = 0
+    days_re_enable = 30
+    available = {
+      has_capitulated = yes
+      is_government_in_exile = no
+      AND = {
+        any_other_country = {
+          wet_kis_native_host_legal = yes
+        }
+      }
+    }
+    complete_effect = {
+      custom_effect_tooltip = wet_kis_establish_exile_outcome_tt
+      hidden_effect = {
+        wet_kis_establish_exile = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X02
+      has_country_flag = wet_kis_earned_X02
+      NOT = {
+        has_country_flag = wet_kis_reward_X02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X02
+        NOT = {
+          has_country_flag = wet_kis_reward_X02
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_x02
+      }
+      hidden_effect = {
+        wet_kis_award_X02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X03
+      has_country_flag = wet_kis_earned_X03
+      NOT = {
+        has_country_flag = wet_kis_reward_X03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X03
+        NOT = {
+          has_country_flag = wet_kis_reward_X03
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 30
+        custom_effect_tooltip = WET_KIS_X03_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_X03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X04
+      has_country_flag = wet_kis_earned_X04
+      NOT = {
+        has_country_flag = wet_kis_reward_X04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X04
+        NOT = {
+          has_country_flag = wet_kis_reward_X04
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      hidden_effect = {
+        wet_kis_award_X04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_X05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_X05
+      has_country_flag = wet_kis_earned_X05
+      NOT = {
+        has_country_flag = wet_kis_reward_X05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_X05
+        NOT = {
+          has_country_flag = wet_kis_reward_X05
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_timed_idea = {
+          idea = wet_kis_road_home
+          days = 180
+        }
+        custom_effect_tooltip = WET_KIS_X05_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_X05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E00 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E00
+      has_country_flag = wet_kis_earned_E00
+      NOT = {
+        has_country_flag = wet_kis_reward_E00
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E00
+        NOT = {
+          has_country_flag = wet_kis_reward_E00
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 50
+        add_stability = 0.05
+      }
+      hidden_effect = {
+        wet_kis_award_E00 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E01 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E01
+      has_country_flag = wet_kis_earned_E01
+      NOT = {
+        has_country_flag = wet_kis_reward_E01
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E01
+        NOT = {
+          has_country_flag = wet_kis_reward_E01
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e01
+        add_political_power = 25
+      }
+      hidden_effect = {
+        wet_kis_award_E01 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E02 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E02
+      has_country_flag = wet_kis_earned_E02
+      NOT = {
+        has_country_flag = wet_kis_reward_E02
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E02
+        NOT = {
+          has_country_flag = wet_kis_reward_E02
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E02_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E02 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E03 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E03
+      has_country_flag = wet_kis_earned_E03
+      NOT = {
+        has_country_flag = wet_kis_reward_E03
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E03
+        NOT = {
+          has_country_flag = wet_kis_reward_E03
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E03_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E03 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E04
+      has_country_flag = wet_kis_earned_E04
+      NOT = {
+        has_country_flag = wet_kis_reward_E04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E04
+        NOT = {
+          has_country_flag = wet_kis_reward_E04
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e04
+      }
+      hidden_effect = {
+        wet_kis_award_E04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E05 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E05
+      has_country_flag = wet_kis_earned_E05
+      NOT = {
+        has_country_flag = wet_kis_reward_E05
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_equipment = {
+        infantry_equipment
+        >
+        249
+      }
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_E05
+        NOT = {
+          has_country_flag = wet_kis_reward_E05
+        }
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_activate_exile_spearhead_done
+        }
+        wet_kis_emergency_ready = yes
+        NOT = {
+          has_country_flag = wet_kis_exile_spearhead_spent
+        }
+        wet_kis_liberation_approach = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E05_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E05 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E06 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E06
+      has_country_flag = wet_kis_earned_E06
+      NOT = {
+        has_country_flag = wet_kis_reward_E06
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E06
+        NOT = {
+          has_country_flag = wet_kis_reward_E06
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e06
+        army_experience = 20
+      }
+      hidden_effect = {
+        wet_kis_award_E06 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E07 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E07
+      has_country_flag = wet_kis_earned_E07
+      NOT = {
+        has_country_flag = wet_kis_reward_E07
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E07
+        NOT = {
+          has_country_flag = wet_kis_reward_E07
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E07_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E07 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E08
+      has_country_flag = wet_kis_earned_E08
+      NOT = {
+        has_country_flag = wet_kis_reward_E08
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E08
+        NOT = {
+          has_country_flag = wet_kis_reward_E08
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E08_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E08 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E09 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E09
+      has_country_flag = wet_kis_earned_E09
+      NOT = {
+        has_country_flag = wet_kis_reward_E09
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E09
+        NOT = {
+          has_country_flag = wet_kis_reward_E09
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e09
+        custom_effect_tooltip = WET_KIS_E09_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E09 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E10 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E10
+      has_country_flag = wet_kis_earned_E10
+      NOT = {
+        has_country_flag = wet_kis_reward_E10
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E10
+        NOT = {
+          has_country_flag = wet_kis_reward_E10
+        }
+        wet_kis_exile_active = yes
+        has_army_size = {
+          size
+          >
+          1
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_ideas = wet_kis_e10
+        army_experience = 15
+      }
+      hidden_effect = {
+        wet_kis_award_E10 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E11 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E11
+      has_country_flag = wet_kis_earned_E11
+      NOT = {
+        has_country_flag = wet_kis_reward_E11
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      49
+      AND = {
+        has_country_flag = wet_kis_earned_E11
+        NOT = {
+          has_country_flag = wet_kis_reward_E11
+        }
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_return_supply_done
+        }
+        wet_kis_liberation_approach = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        custom_effect_tooltip = WET_KIS_E11_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E11 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E12 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E12
+      has_country_flag = wet_kis_earned_E12
+      NOT = {
+        has_country_flag = wet_kis_reward_E12
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E12
+        NOT = {
+          has_country_flag = wet_kis_reward_E12
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        add_political_power = 25
+        custom_effect_tooltip = WET_KIS_E12_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E12 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E13 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E13
+      has_country_flag = wet_kis_earned_E13
+      NOT = {
+        has_country_flag = wet_kis_reward_E13
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E13
+        NOT = {
+          has_country_flag = wet_kis_reward_E13
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E13_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E13 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E14 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E14
+      has_country_flag = wet_kis_earned_E14
+      NOT = {
+        has_country_flag = wet_kis_reward_E14
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      AND = {
+        has_country_flag = wet_kis_earned_E14
+        NOT = {
+          has_country_flag = wet_kis_reward_E14
+        }
+        wet_kis_exile_active = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        army_experience = 25
+        add_tech_bonus = {
+          name = wet_kis_research_bonus
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
+      }
+      hidden_effect = {
+        wet_kis_award_E14 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_kis_claim_E15 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A29
+    }
+    visible = {
+      has_completed_focus = WET_KIS_E15
+      has_country_flag = wet_kis_earned_E15
+      NOT = {
+        has_country_flag = wet_kis_reward_E15
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_political_power
+      >
+      74
+      AND = {
+        has_country_flag = wet_kis_earned_E15
+        NOT = {
+          has_country_flag = wet_kis_reward_E15
+        }
+        wet_kis_exile_active = yes
+        always = yes
+        NOT = {
+          has_country_flag = wet_kis_open_gates_done
+        }
+        wet_kis_liberation_approach = yes
+        any_state = {
+          wet_kis_occupied_home = yes
+          has_state_flag = wet_kis_contact
+        }
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_KIS_E15_special_tt
+      }
+      hidden_effect = {
+        wet_kis_award_E15 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}

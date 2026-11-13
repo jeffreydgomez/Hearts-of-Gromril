@@ -1,0 +1,2345 @@
+add_namespace = wet_kislev
+country_event = {
+  id = wet_kislev.100
+  title = wet_kislev.100.t
+  desc = wet_kislev.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.100.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.101
+  title = wet_kislev.101.t
+  desc = wet_kislev.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.101.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_access
+        }
+        clr_country_flag = wet_kis_offer_access
+        set_variable = {
+          wet_kis_offer_access_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_access_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.101.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_access
+      wet_kis_order_partner = yes
+      NOT = {
+        AND = {
+          tag = U04
+          has_country_flag = wet_karaz_sealed
+        }
+      }
+    }
+    effect_tooltip = {
+      give_military_access = A29
+      A29 = {
+        give_military_access = PREV
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_access
+          wet_kis_order_partner = yes
+          NOT = {
+            AND = {
+              tag = U04
+              has_country_flag = wet_karaz_sealed
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_access
+        set_variable = {
+          wet_kis_offer_access_days = 0
+        }
+        give_military_access = A29
+        A29 = {
+          give_military_access = PREV
+        }
+        set_country_flag = wet_kis_offer_access_accepted
+        set_variable = {
+          wet_kis_offer_access_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_access
+          }
+          clr_country_flag = wet_kis_offer_access
+          set_variable = {
+            wet_kis_offer_access_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_access_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.102
+  title = wet_kislev.102.t
+  desc = wet_kislev.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.102.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_first_aid
+        }
+        clr_country_flag = wet_kis_offer_first_aid
+        set_variable = {
+          wet_kis_offer_first_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_first_aid_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.102.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_first_aid
+      wet_kis_route_partner = yes
+      has_equipment = {
+        infantry_equipment
+        >
+        499
+      }
+      OR = {
+        AND = {
+          tag = A01
+          A29 = {
+            OR = {
+              has_completed_focus = WET_KIS_W04
+              has_country_flag = wet_kis_altdorf_cooperation
+            }
+          }
+        }
+        AND = {
+          OR = {
+            tag = A15
+            tag = U04
+          }
+          has_country_flag = wet_kis_secondary_warning_delivered
+          A29 = {
+            has_completed_focus = WET_KIS_W13
+          }
+        }
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -500
+      }
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 500
+          producer = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_first_aid
+          wet_kis_route_partner = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          OR = {
+            AND = {
+              tag = A01
+              A29 = {
+                OR = {
+                  has_completed_focus = WET_KIS_W04
+                  has_country_flag = wet_kis_altdorf_cooperation
+                }
+              }
+            }
+            AND = {
+              OR = {
+                tag = A15
+                tag = U04
+              }
+              has_country_flag = wet_kis_secondary_warning_delivered
+              A29 = {
+                has_completed_focus = WET_KIS_W13
+              }
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_first_aid
+        set_variable = {
+          wet_kis_offer_first_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -500
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 500
+            producer = PREV
+          }
+        }
+        set_country_flag = wet_kis_offer_first_aid_accepted
+        set_variable = {
+          wet_kis_offer_first_aid_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_first_aid
+          }
+          clr_country_flag = wet_kis_offer_first_aid
+          set_variable = {
+            wet_kis_offer_first_aid_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_first_aid_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.103
+  title = wet_kislev.103.t
+  desc = wet_kislev.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.103.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_altdorf
+        }
+        clr_country_flag = wet_kis_offer_altdorf
+        set_variable = {
+          wet_kis_offer_altdorf_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_altdorf_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.103.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_altdorf
+      tag = A01
+      wet_kis_route_partner = yes
+    }
+    effect_tooltip = {
+      if = {
+        limit = {
+          wet_kis_route_partner = yes
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          OR = {
+            AND = {
+              tag = A01
+              A29 = {
+                OR = {
+                  has_completed_focus = WET_KIS_W04
+                  has_country_flag = wet_kis_altdorf_cooperation
+                }
+              }
+            }
+            AND = {
+              OR = {
+                tag = A15
+                tag = U04
+              }
+              has_country_flag = wet_kis_secondary_warning_delivered
+              A29 = {
+                has_completed_focus = WET_KIS_W13
+              }
+            }
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid
+          }
+          check_variable = {
+            wet_kis_offer_first_aid_cooldown
+            <
+            1
+          }
+          NOT = {
+            has_country_flag = wet_kis_offer_first_aid_accepted
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_pending_aid
+            }
+          }
+        }
+        country_event = {
+          id = wet_kislev.102
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_altdorf
+          tag = A01
+          wet_kis_route_partner = yes
+        }
+        clr_country_flag = wet_kis_offer_altdorf
+        set_variable = {
+          wet_kis_offer_altdorf_days = 0
+        }
+        A29 = {
+          set_country_flag = wet_kis_altdorf_cooperation
+        }
+        wet_kis_send_first_aid = yes
+        set_country_flag = wet_kis_offer_altdorf_accepted
+        set_variable = {
+          wet_kis_offer_altdorf_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_altdorf
+          }
+          clr_country_flag = wet_kis_offer_altdorf
+          set_variable = {
+            wet_kis_offer_altdorf_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_altdorf_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.104
+  title = wet_kislev.104.t
+  desc = wet_kislev.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.104.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_dwarf_aid
+        }
+        clr_country_flag = wet_kis_offer_dwarf_aid
+        set_variable = {
+          wet_kis_offer_dwarf_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_dwarf_aid_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.104.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_dwarf_aid
+      wet_kis_route_partner = yes
+      OR = {
+        tag = U04
+      }
+      has_equipment = {
+        infantry_equipment
+        >
+        249
+      }
+      has_equipment = {
+        support_equipment
+        >
+        99
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -250
+      }
+      add_equipment_to_stockpile = {
+        type = support_equipment
+        amount = -100
+      }
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 250
+          producer = PREV
+        }
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = 100
+          producer = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_dwarf_aid
+          wet_kis_route_partner = yes
+          OR = {
+            tag = U04
+          }
+          has_equipment = {
+            infantry_equipment
+            >
+            249
+          }
+          has_equipment = {
+            support_equipment
+            >
+            99
+          }
+        }
+        clr_country_flag = wet_kis_offer_dwarf_aid
+        set_variable = {
+          wet_kis_offer_dwarf_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -250
+        }
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = -100
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 250
+            producer = PREV
+          }
+          add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 100
+            producer = PREV
+          }
+        }
+        set_country_flag = wet_kis_offer_dwarf_aid_accepted
+        set_variable = {
+          wet_kis_offer_dwarf_aid_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_dwarf_aid
+          }
+          clr_country_flag = wet_kis_offer_dwarf_aid
+          set_variable = {
+            wet_kis_offer_dwarf_aid_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_dwarf_aid_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.105
+  title = wet_kislev.105.t
+  desc = wet_kislev.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.105.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_bretonnian_aid
+        }
+        clr_country_flag = wet_kis_offer_bretonnian_aid
+        set_variable = {
+          wet_kis_offer_bretonnian_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_bretonnian_aid_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.105.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_bretonnian_aid
+      wet_kis_route_partner = yes
+      OR = {
+        tag = A15
+      }
+      has_equipment = {
+        wet_cavalry_equipment
+        >
+        249
+      }
+      has_fuel
+      >
+      4999
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = wet_cavalry_equipment
+        amount = -250
+      }
+      add_fuel = -5000
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = wet_cavalry_equipment
+          amount = 250
+          producer = PREV
+        }
+        add_fuel = 5000
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_bretonnian_aid
+          wet_kis_route_partner = yes
+          OR = {
+            tag = A15
+          }
+          has_equipment = {
+            wet_cavalry_equipment
+            >
+            249
+          }
+          has_fuel
+          >
+          4999
+        }
+        clr_country_flag = wet_kis_offer_bretonnian_aid
+        set_variable = {
+          wet_kis_offer_bretonnian_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_equipment_to_stockpile = {
+          type = wet_cavalry_equipment
+          amount = -250
+        }
+        add_fuel = -5000
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = wet_cavalry_equipment
+            amount = 250
+            producer = PREV
+          }
+          add_fuel = 5000
+        }
+        set_country_flag = wet_kis_offer_bretonnian_aid_accepted
+        set_variable = {
+          wet_kis_offer_bretonnian_aid_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_bretonnian_aid
+          }
+          clr_country_flag = wet_kis_offer_bretonnian_aid
+          set_variable = {
+            wet_kis_offer_bretonnian_aid_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_bretonnian_aid_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.106
+  title = wet_kislev.106.t
+  desc = wet_kislev.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.106.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_repeat_aid
+        }
+        clr_country_flag = wet_kis_offer_repeat_aid
+        set_variable = {
+          wet_kis_offer_repeat_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        A29 = {
+          set_variable = {
+            wet_kis_offer_repeat_aid_sender_cooldown = 90
+          }
+        }
+        set_variable = {
+          wet_kis_offer_repeat_aid_cooldown = 90
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.106.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_repeat_aid
+      wet_kis_route_partner = yes
+      OR = {
+        tag = A01
+        tag = A15
+        tag = U04
+      }
+      has_equipment = {
+        infantry_equipment
+        >
+        499
+      }
+      A29 = {
+        check_variable = {
+          wet_kis_offer_repeat_aid_sender_cooldown
+          <
+          1
+        }
+      }
+      A29 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -500
+      }
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 500
+          producer = PREV
+        }
+      }
+      A29 = {
+        add_political_power = -25
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_repeat_aid
+          wet_kis_route_partner = yes
+          OR = {
+            tag = A01
+            tag = A15
+            tag = U04
+          }
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          A29 = {
+            check_variable = {
+              wet_kis_offer_repeat_aid_sender_cooldown
+              <
+              1
+            }
+          }
+          A29 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_kis_offer_repeat_aid
+        set_variable = {
+          wet_kis_offer_repeat_aid_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        A29 = {
+          set_variable = {
+            wet_kis_offer_repeat_aid_sender_cooldown = 90
+          }
+        }
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -500
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 500
+            producer = PREV
+          }
+        }
+        A29 = {
+          add_political_power = -25
+        }
+        set_variable = {
+          wet_kis_offer_repeat_aid_cooldown = 90
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_repeat_aid
+          }
+          clr_country_flag = wet_kis_offer_repeat_aid
+          set_variable = {
+            wet_kis_offer_repeat_aid_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          A29 = {
+            set_variable = {
+              wet_kis_offer_repeat_aid_sender_cooldown = 90
+            }
+          }
+          set_variable = {
+            wet_kis_offer_repeat_aid_cooldown = 90
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.107
+  title = wet_kislev.107.t
+  desc = wet_kislev.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.107.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_host
+        }
+        clr_country_flag = wet_kis_offer_host
+        set_variable = {
+          wet_kis_offer_host_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_host
+        }
+        set_variable = {
+          wet_kis_offer_host_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.107.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_host
+      wet_kis_host_candidate = yes
+    }
+    effect_tooltip = {
+      give_military_access = A29
+      A29 = {
+        give_military_access = PREV
+      }
+    }
+    custom_effect_tooltip = wet_kislev.107.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_host
+          wet_kis_host_candidate = yes
+        }
+        clr_country_flag = wet_kis_offer_host
+        set_variable = {
+          wet_kis_offer_host_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_host
+        }
+        give_military_access = A29
+        A29 = {
+          give_military_access = PREV
+        }
+        set_country_flag = wet_kis_host_consent
+        set_variable = {
+          wet_kis_offer_host_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_host
+          }
+          clr_country_flag = wet_kis_offer_host
+          set_variable = {
+            wet_kis_offer_host_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_host
+          }
+          set_variable = {
+            wet_kis_offer_host_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.108
+  title = wet_kislev.108.t
+  desc = wet_kislev.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.108.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_native_host
+        }
+        clr_country_flag = wet_kis_offer_native_host
+        set_variable = {
+          wet_kis_offer_native_host_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_host
+        }
+        set_variable = {
+          wet_kis_offer_native_host_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.108.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_native_host
+      wet_kis_order_partner = yes
+      is_hosting_exile = A29
+    }
+    custom_effect_tooltip = wet_kislev.108.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_native_host
+          wet_kis_order_partner = yes
+          is_hosting_exile = A29
+        }
+        clr_country_flag = wet_kis_offer_native_host
+        set_variable = {
+          wet_kis_offer_native_host_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_host
+        }
+        set_country_flag = wet_kis_host_consent
+        set_variable = {
+          wet_kis_offer_native_host_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_native_host
+          }
+          clr_country_flag = wet_kis_offer_native_host
+          set_variable = {
+            wet_kis_offer_native_host_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_host
+          }
+          set_variable = {
+            wet_kis_offer_native_host_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.109
+  title = wet_kislev.109.t
+  desc = wet_kislev.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.109.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_alliance_programme
+        }
+        clr_country_flag = wet_kis_offer_alliance_programme
+        set_variable = {
+          wet_kis_offer_alliance_programme_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_alliance_programme_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.109.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_alliance_programme
+      tag = A01
+      wet_kis_order_partner = yes
+      has_political_power
+      >
+      49
+      is_in_faction = yes
+      faction_leader = {
+        has_government = democratic
+      }
+      has_completed_focus = WET_REI_E14
+      has_completed_focus = WET_REI_E24
+      A29 = {
+        wet_kis_can_ask_alliance = yes
+        is_in_faction = no
+        wet_rei_coalition_target = yes
+        NOT = {
+          has_country_flag = wet_rei_offer_invite_A29
+        }
+        check_variable = {
+          wet_rei_offer_invite_A29_cooldown
+          <
+          1
+        }
+      }
+    }
+    custom_effect_tooltip = wet_kislev.109.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_alliance_programme
+          tag = A01
+          wet_kis_order_partner = yes
+          has_political_power
+          >
+          49
+          is_in_faction = yes
+          faction_leader = {
+            has_government = democratic
+          }
+          has_completed_focus = WET_REI_E14
+          has_completed_focus = WET_REI_E24
+          A29 = {
+            wet_kis_can_ask_alliance = yes
+            is_in_faction = no
+            wet_rei_coalition_target = yes
+            NOT = {
+              has_country_flag = wet_rei_offer_invite_A29
+            }
+            check_variable = {
+              wet_rei_offer_invite_A29_cooldown
+              <
+              1
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_alliance_programme
+        set_variable = {
+          wet_kis_offer_alliance_programme_days = 0
+        }
+        A29 = {
+          wet_rei_send_invite_A29 = yes
+        }
+        set_variable = {
+          wet_kis_offer_alliance_programme_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_alliance_programme
+          }
+          clr_country_flag = wet_kis_offer_alliance_programme
+          set_variable = {
+            wet_kis_offer_alliance_programme_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_alliance_programme_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.110
+  title = wet_kislev.110.t
+  desc = wet_kislev.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.110.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_alliance_ordinary
+        }
+        clr_country_flag = wet_kis_offer_alliance_ordinary
+        set_variable = {
+          wet_kis_offer_alliance_ordinary_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_alliance_ordinary_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.110.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_alliance_ordinary
+      wet_kis_order_partner = yes
+      is_faction_leader = yes
+      NOT = {
+        OR = {
+          threat
+          <
+          1.0
+        }
+      }
+      A29 = {
+        is_subject = no
+        is_in_faction = no
+        wet_can_join_faction = yes
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A29
+        }
+      }
+    }
+    effect_tooltip = {
+      add_to_faction = A29
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_alliance_ordinary
+          wet_kis_order_partner = yes
+          is_faction_leader = yes
+          NOT = {
+            OR = {
+              threat
+              <
+              1.0
+            }
+          }
+          A29 = {
+            is_subject = no
+            is_in_faction = no
+            wet_can_join_faction = yes
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A29
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_alliance_ordinary
+        set_variable = {
+          wet_kis_offer_alliance_ordinary_days = 0
+        }
+        add_to_faction = A29
+        set_variable = {
+          wet_kis_offer_alliance_ordinary_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_alliance_ordinary
+          }
+          clr_country_flag = wet_kis_offer_alliance_ordinary
+          set_variable = {
+            wet_kis_offer_alliance_ordinary_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_alliance_ordinary_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.111
+  title = wet_kislev.111.t
+  desc = wet_kislev.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.111.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_officers
+        }
+        clr_country_flag = wet_kis_offer_officers
+        set_variable = {
+          wet_kis_offer_officers_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_officers
+        }
+        set_variable = {
+          wet_kis_offer_officers_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.111.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_officers
+      wet_kis_route_partner = yes
+      OR = {
+        tag = A01
+        tag = U04
+      }
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_officers_agreed
+        }
+      }
+      A29 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      A29 = {
+        army_experience = 20
+        add_doctrine_cost_reduction = {
+          name = wet_kis_doctrine_bonus
+          cost_reduction = 0.5
+          uses = 1
+          category = land_doctrine
+        }
+      }
+      A29 = {
+        add_political_power = -25
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_officers
+          wet_kis_route_partner = yes
+          OR = {
+            tag = A01
+            tag = U04
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_officers_agreed
+            }
+          }
+          A29 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_kis_offer_officers
+        set_variable = {
+          wet_kis_offer_officers_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_officers
+        }
+        A29 = {
+          set_country_flag = wet_kis_officers_agreed
+          army_experience = 20
+          add_doctrine_cost_reduction = {
+            name = wet_kis_doctrine_bonus
+            cost_reduction = 0.5
+            uses = 1
+            category = land_doctrine
+          }
+        }
+        A29 = {
+          add_political_power = -25
+        }
+        set_country_flag = wet_kis_offer_officers_accepted
+        set_variable = {
+          wet_kis_offer_officers_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_officers
+          }
+          clr_country_flag = wet_kis_offer_officers
+          set_variable = {
+            wet_kis_offer_officers_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_officers
+          }
+          set_variable = {
+            wet_kis_offer_officers_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.112
+  title = wet_kislev.112.t
+  desc = wet_kislev.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.112.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_convoys
+        }
+        clr_country_flag = wet_kis_offer_convoys
+        set_variable = {
+          wet_kis_offer_convoys_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_convoys_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.112.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_convoys
+      wet_kis_order_partner = yes
+      any_controlled_state = {
+        naval_base
+        >
+        0
+      }
+      has_equipment = {
+        convoy
+        >
+        9
+      }
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_convoys_received
+        }
+        OR = {
+          any_controlled_state = {
+            naval_base
+            >
+            0
+          }
+          wet_kis_exile_active = yes
+        }
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = convoy
+        amount = -10
+      }
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = convoy
+          amount = 10
+          producer = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_convoys
+          wet_kis_order_partner = yes
+          any_controlled_state = {
+            naval_base
+            >
+            0
+          }
+          has_equipment = {
+            convoy
+            >
+            9
+          }
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_convoys_received
+            }
+            OR = {
+              any_controlled_state = {
+                naval_base
+                >
+                0
+              }
+              wet_kis_exile_active = yes
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_convoys
+        set_variable = {
+          wet_kis_offer_convoys_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_equipment_to_stockpile = {
+          type = convoy
+          amount = -10
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = convoy
+            amount = 10
+            producer = PREV
+          }
+          set_country_flag = wet_kis_convoys_received
+        }
+        set_country_flag = wet_kis_offer_convoys_accepted
+        set_variable = {
+          wet_kis_offer_convoys_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_convoys
+          }
+          clr_country_flag = wet_kis_offer_convoys
+          set_variable = {
+            wet_kis_offer_convoys_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_convoys_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.113
+  title = wet_kislev.113.t
+  desc = wet_kislev.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.113.0
+    ai_chance = {
+      factor = 1
+    }
+    hidden_effect = {
+      set_country_flag = wet_kis_warned_by_A29
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.114
+  title = wet_kislev.114.t
+  desc = wet_kislev.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.114.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_southern_resolve
+        }
+        clr_country_flag = wet_kis_offer_southern_resolve
+        set_variable = {
+          wet_kis_offer_southern_resolve_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_southern_resolve_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.114.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_southern_resolve
+      wet_kis_order_partner = yes
+      has_country_flag = wet_kis_warned_by_A29
+    }
+    effect_tooltip = {
+      add_war_support = 0.03
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_southern_resolve
+          wet_kis_order_partner = yes
+          has_country_flag = wet_kis_warned_by_A29
+        }
+        clr_country_flag = wet_kis_offer_southern_resolve
+        set_variable = {
+          wet_kis_offer_southern_resolve_days = 0
+        }
+        add_war_support = 0.03
+        set_country_flag = wet_kis_offer_southern_resolve_accepted
+        set_variable = {
+          wet_kis_offer_southern_resolve_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_southern_resolve
+          }
+          clr_country_flag = wet_kis_offer_southern_resolve
+          set_variable = {
+            wet_kis_offer_southern_resolve_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_southern_resolve_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.115
+  title = wet_kislev.115.t
+  desc = wet_kislev.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.115.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_warning
+        }
+        clr_country_flag = wet_kis_offer_exile_warning
+        set_variable = {
+          wet_kis_offer_exile_warning_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_exile_warning_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.115.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_exile_warning
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_exile_warning
+        }
+      }
+    }
+    effect_tooltip = {
+      add_war_support = 0.05
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_warning
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_exile_warning
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_exile_warning
+        set_variable = {
+          wet_kis_offer_exile_warning_days = 0
+        }
+        add_war_support = 0.05
+        A29 = {
+          set_country_flag = wet_kis_received_exile_warning
+        }
+        set_country_flag = wet_kis_offer_exile_warning_accepted
+        set_variable = {
+          wet_kis_offer_exile_warning_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_exile_warning
+          }
+          clr_country_flag = wet_kis_offer_exile_warning
+          set_variable = {
+            wet_kis_offer_exile_warning_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_exile_warning_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.116
+  title = wet_kislev.116.t
+  desc = wet_kislev.116.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.116.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_relief
+        }
+        clr_country_flag = wet_kis_offer_exile_relief
+        set_variable = {
+          wet_kis_offer_exile_relief_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_exile_relief_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.116.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_exile_relief
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_exile_relief
+        }
+      }
+      has_fuel
+      >
+      1999
+      A29 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      add_fuel = -2000
+      A29 = {
+        add_fuel = 2000
+        add_timed_idea = {
+          idea = wet_kis_relief
+          days = 90
+        }
+      }
+      A29 = {
+        add_political_power = -25
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_relief
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_exile_relief
+            }
+          }
+          has_fuel
+          >
+          1999
+          A29 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_kis_offer_exile_relief
+        set_variable = {
+          wet_kis_offer_exile_relief_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_fuel = -2000
+        A29 = {
+          add_fuel = 2000
+          add_timed_idea = {
+            idea = wet_kis_relief
+            days = 90
+          }
+        }
+        A29 = {
+          set_country_flag = wet_kis_received_exile_relief
+        }
+        A29 = {
+          add_political_power = -25
+        }
+        set_country_flag = wet_kis_offer_exile_relief_accepted
+        set_variable = {
+          wet_kis_offer_exile_relief_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_exile_relief
+          }
+          clr_country_flag = wet_kis_offer_exile_relief
+          set_variable = {
+            wet_kis_offer_exile_relief_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_exile_relief_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.117
+  title = wet_kislev.117.t
+  desc = wet_kislev.117.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.117.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_council
+        }
+        clr_country_flag = wet_kis_offer_exile_council
+        set_variable = {
+          wet_kis_offer_exile_council_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_exile_council_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.117.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_exile_council
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_exile_council
+        }
+      }
+    }
+    effect_tooltip = {
+      A29 = {
+        army_experience = 20
+        add_timed_idea = {
+          idea = wet_kis_exile_council
+          days = 180
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_council
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_exile_council
+            }
+          }
+        }
+        clr_country_flag = wet_kis_offer_exile_council
+        set_variable = {
+          wet_kis_offer_exile_council_days = 0
+        }
+        A29 = {
+          army_experience = 20
+          add_timed_idea = {
+            idea = wet_kis_exile_council
+            days = 180
+          }
+        }
+        A29 = {
+          set_country_flag = wet_kis_received_exile_council
+        }
+        set_country_flag = wet_kis_offer_exile_council_accepted
+        set_variable = {
+          wet_kis_offer_exile_council_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_exile_council
+          }
+          clr_country_flag = wet_kis_offer_exile_council
+          set_variable = {
+            wet_kis_offer_exile_council_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_exile_council_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.118
+  title = wet_kislev.118.t
+  desc = wet_kislev.118.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.118.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_training
+        }
+        clr_country_flag = wet_kis_offer_exile_training
+        set_variable = {
+          wet_kis_offer_exile_training_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_exile_training_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.118.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_exile_training
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_exile_training
+        }
+      }
+      A29 = {
+        has_equipment = {
+          infantry_equipment
+          >
+          99
+        }
+      }
+      A29 = {
+        has_political_power
+        >
+        24
+      }
+    }
+    effect_tooltip = {
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -100
+        }
+        add_timed_idea = {
+          idea = wet_kis_exile_training
+          days = 180
+        }
+      }
+      A29 = {
+        add_political_power = -25
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_training
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_exile_training
+            }
+          }
+          A29 = {
+            has_equipment = {
+              infantry_equipment
+              >
+              99
+            }
+          }
+          A29 = {
+            has_political_power
+            >
+            24
+          }
+        }
+        clr_country_flag = wet_kis_offer_exile_training
+        set_variable = {
+          wet_kis_offer_exile_training_days = 0
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -100
+          }
+          add_timed_idea = {
+            idea = wet_kis_exile_training
+            days = 180
+          }
+        }
+        A29 = {
+          set_country_flag = wet_kis_received_exile_training
+        }
+        A29 = {
+          add_political_power = -25
+        }
+        set_country_flag = wet_kis_offer_exile_training_accepted
+        set_variable = {
+          wet_kis_offer_exile_training_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_exile_training
+          }
+          clr_country_flag = wet_kis_offer_exile_training
+          set_variable = {
+            wet_kis_offer_exile_training_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_exile_training_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.119
+  title = wet_kislev.119.t
+  desc = wet_kislev.119.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.119.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_arms
+        }
+        clr_country_flag = wet_kis_offer_exile_arms
+        set_variable = {
+          wet_kis_offer_exile_arms_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        set_variable = {
+          wet_kis_offer_exile_arms_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.119.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_exile_arms
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_exile_arms
+        }
+      }
+      has_equipment = {
+        infantry_equipment
+        >
+        499
+      }
+      has_equipment = {
+        support_equipment
+        >
+        49
+      }
+    }
+    effect_tooltip = {
+      add_equipment_to_stockpile = {
+        type = infantry_equipment
+        amount = -500
+      }
+      add_equipment_to_stockpile = {
+        type = support_equipment
+        amount = -50
+      }
+      A29 = {
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = 500
+          producer = PREV
+        }
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = 50
+          producer = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_exile_arms
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_exile_arms
+            }
+          }
+          has_equipment = {
+            infantry_equipment
+            >
+            499
+          }
+          has_equipment = {
+            support_equipment
+            >
+            49
+          }
+        }
+        clr_country_flag = wet_kis_offer_exile_arms
+        set_variable = {
+          wet_kis_offer_exile_arms_days = 0
+        }
+        A29 = {
+          clr_country_flag = wet_kis_pending_aid
+        }
+        add_equipment_to_stockpile = {
+          type = infantry_equipment
+          amount = -500
+        }
+        add_equipment_to_stockpile = {
+          type = support_equipment
+          amount = -50
+        }
+        A29 = {
+          add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 500
+            producer = PREV
+          }
+          add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 50
+            producer = PREV
+          }
+        }
+        A29 = {
+          set_country_flag = wet_kis_received_exile_arms
+        }
+        set_country_flag = wet_kis_offer_exile_arms_accepted
+        set_variable = {
+          wet_kis_offer_exile_arms_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_exile_arms
+          }
+          clr_country_flag = wet_kis_offer_exile_arms
+          set_variable = {
+            wet_kis_offer_exile_arms_days = 0
+          }
+          A29 = {
+            clr_country_flag = wet_kis_pending_aid
+          }
+          set_variable = {
+            wet_kis_offer_exile_arms_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_kislev.120
+  title = wet_kislev.120.t
+  desc = wet_kislev.120.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_kislev.120.0
+    ai_chance = {
+      factor = 35
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_liberation_plan
+        }
+        clr_country_flag = wet_kis_offer_liberation_plan
+        set_variable = {
+          wet_kis_offer_liberation_plan_days = 0
+        }
+        set_variable = {
+          wet_kis_offer_liberation_plan_cooldown = 180
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_kislev.120.1
+    ai_chance = {
+      factor = 45
+      modifier = {
+        add = 20
+        is_in_faction_with = A29
+      }
+    }
+    trigger = {
+      has_country_flag = wet_kis_offer_liberation_plan
+      wet_kis_current_host = yes
+      A29 = {
+        NOT = {
+          has_country_flag = wet_kis_received_liberation_plan
+        }
+      }
+      has_war_together_with = A29
+    }
+    custom_effect_tooltip = wet_kislev.120.1_outcome
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_kis_offer_liberation_plan
+          wet_kis_current_host = yes
+          A29 = {
+            NOT = {
+              has_country_flag = wet_kis_received_liberation_plan
+            }
+          }
+          has_war_together_with = A29
+        }
+        clr_country_flag = wet_kis_offer_liberation_plan
+        set_variable = {
+          wet_kis_offer_liberation_plan_days = 0
+        }
+        set_country_flag = wet_kis_liberation_partner
+        A29 = {
+          set_country_flag = wet_kis_liberation_plan_accepted
+        }
+        A29 = {
+          set_country_flag = wet_kis_received_liberation_plan
+        }
+        set_country_flag = wet_kis_offer_liberation_plan_accepted
+        set_variable = {
+          wet_kis_offer_liberation_plan_cooldown = 180
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_kis_offer_liberation_plan
+          }
+          clr_country_flag = wet_kis_offer_liberation_plan
+          set_variable = {
+            wet_kis_offer_liberation_plan_days = 0
+          }
+          set_variable = {
+            wet_kis_offer_liberation_plan_cooldown = 180
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 scripted_diplomatic_actions = {
  wet_call_to_chaos = {
-  allowed = { ROOT = { wet_is_everchosen_leader = yes } has_government = fascism NOT = { tag = ROOT } }
-  visible = { ROOT = { wet_is_everchosen_leader = yes } has_government = fascism NOT = { tag = ROOT } }
+  allowed = { ROOT = { wet_archaon_rules = yes } has_government = fascism NOT = { OR = { tag = R01 tag = R02 tag = R03 tag = R04 tag = R07 tag = R08 tag = R09 tag = R10 tag = R11 } } NOT = { tag = ROOT } }
+  visible = { ROOT = { wet_archaon_rules = yes } has_government = fascism NOT = { OR = { tag = R01 tag = R02 tag = R03 tag = R04 tag = R07 tag = R08 tag = R09 tag = R10 tag = R11 } } NOT = { tag = ROOT } }
   selectable = { wet_call_to_chaos_target = yes }
   can_be_sent = { wet_call_to_chaos_target = yes ROOT = { NOT = { has_political_power < 30 } } }
   requires_acceptance = no
@@ -12,6 +12,21 @@ scripted_diplomatic_actions = {
   accept_title = wet_call_to_chaos_accept
   accept_description = wet_call_to_chaos_accept_desc
   complete_effect = { wet_call_to_chaos_complete = yes }
+  ai_desire = { base = 1000 }
+ }
+ wet_join_the_waaagh = {
+  allowed = { ROOT = { wet_waaagh_leader = yes } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
+  visible = { ROOT = { wet_waaagh_leader = yes } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
+  selectable = { wet_join_the_waaagh_target = yes }
+  can_be_sent = { wet_join_the_waaagh_target = yes ROOT = { NOT = { has_political_power < 30 } } }
+  requires_acceptance = no
+  cost = 30
+  show_acceptance_on_action_button = no
+  icon = 1
+  send_description = wet_join_the_waaagh_send
+  accept_title = wet_join_the_waaagh_accept
+  accept_description = wet_join_the_waaagh_accept_desc
+  complete_effect = { wet_join_the_waaagh_complete = yes }
   ai_desire = { base = 1000 }
  }
 }

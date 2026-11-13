@@ -1,0 +1,23 @@
+wet_rei_campaigns = {
+  icon = generic_political_discourse
+  allowed = {
+    tag = A01
+  }
+  visible = {
+    tag = A01
+  }
+}
+wet_rei_constitution = {
+  icon = generic_political_discourse
+  allowed = {
+    always = yes
+  }
+  visible = {
+    OR = {
+      has_idea = wet_rei_disunity
+      has_idea = wet_rei_resistance
+      has_country_flag = wet_rei_integration_consent
+      has_country_flag = wet_rei_project_consent
+    }
+  }
+}

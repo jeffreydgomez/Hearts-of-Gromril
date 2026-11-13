@@ -2,18 +2,38 @@
 state = {
   id = 324
   name = "STATE_324"
-  manpower = 1217513
+  manpower = 744191
   state_category = large_town
   resources = { oil = 2 rubber = 27 tungsten = 2 steel = 29 coal = 2 }
   history = {
+    # BEGIN WET inhabitants
+    set_state_flag = wet_inhabitants_initialized
+    set_variable = { wet_pop_race = 11 }
+    set_variable = { wet_pop_faith = 6 }
+    set_variable = { wet_pop_taint = 1 }
+    set_variable = { wet_purge_days = 0 }
+    set_variable = { wet_population_loss_remainder = 0 }
+    add_to_array = { wet_population_controller = H06 }
+    # END WET inhabitants
+
+
+
+
+
+
+
+
+
+
+
     owner = H06
     add_core_of = H06
     victory_points = { 2236 1 }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
+      industrial_complex = 2
       arms_factory = 1
-      dockyard = 1
+      dockyard = 2
       2236 = { landmark_wet_gp_hall_of_dragons = 1 naval_base = 1 }
     }
   }

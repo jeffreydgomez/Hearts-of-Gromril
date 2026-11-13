@@ -1,0 +1,3841 @@
+wet_nag_western_state = {
+  OR = {
+    state = 5
+    state = 6
+    state = 7
+    state = 108
+    state = 138
+    state = 139
+    state = 140
+    state = 141
+    state = 142
+    state = 143
+    state = 144
+    state = 145
+    state = 146
+    state = 147
+    state = 148
+    state = 149
+    state = 150
+    state = 151
+    state = 152
+    state = 153
+    state = 154
+    state = 155
+    state = 156
+    state = 157
+    state = 158
+    state = 159
+    state = 160
+    state = 161
+    state = 310
+    state = 311
+    state = 312
+    state = 411
+    state = 544
+    state = 651
+    state = 652
+    state = 653
+    state = 654
+    state = 655
+    state = 657
+    state = 802
+    state = 803
+    state = 804
+    state = 805
+    state = 806
+    state = 807
+    state = 808
+    state = 809
+    state = 810
+    state = 811
+    state = 812
+    state = 813
+    state = 814
+    state = 815
+    state = 816
+    state = 817
+    state = 818
+    state = 819
+    state = 820
+    state = 821
+    state = 822
+    state = 823
+    state = 824
+    state = 825
+  }
+}
+wet_nag_ulthuan_state = {
+  OR = {
+    state = 8
+    state = 9
+    state = 11
+    state = 44
+    state = 49
+    state = 112
+    state = 136
+    state = 164
+    state = 165
+    state = 166
+    state = 208
+    state = 276
+    state = 324
+    state = 369
+    state = 371
+    state = 398
+    state = 413
+    state = 531
+    state = 540
+    state = 670
+    state = 933
+    state = 942
+    state = 949
+    state = 950
+    state = 951
+    state = 1034
+    state = 1039
+    state = 1044
+    state = 1054
+    state = 1064
+    state = 1206
+  }
+}
+wet_nag_asur_government = {
+  NOT = {
+    has_completed_focus = WET_ULT_A13
+  }
+  exists = yes
+  NOT = {
+    has_government = fascism
+  }
+  NOT = {
+    has_government = communism
+  }
+  is_subject = no
+  NOT = {
+    has_war_with = H12
+  }
+}
+wet_nag_compact_active = {
+  has_country_flag = wet_nag_asur_compact
+  wet_nag_clean_court = yes
+  exists = yes
+  NOT = {
+    has_country_flag = wet_nag_broken_compact
+  }
+  H06 = {
+    wet_nag_asur_government = yes
+    has_country_flag = wet_nag_asur_compact
+  }
+}
+wet_nag_protected_partner = {
+  H12 = {
+    wet_nag_compact_active = yes
+  }
+  OR = {
+    tag = H06
+    is_subject_of = H06
+    is_in_faction_with = H06
+    has_country_flag = wet_nag_charter_signatory
+  }
+}
+wet_nag_legal_enemy = {
+  exists = yes
+  NOT = {
+    tag = WST
+  }
+  NOT = {
+    tag = H12
+  }
+  NOT = {
+    wet_nag_protected_partner = yes
+  }
+  NOT = {
+    is_subject_of = H12
+  }
+  NOT = {
+    is_in_faction_with = H12
+  }
+  NOT = {
+    has_non_aggression_pact_with = H12
+  }
+  NOT = {
+    has_truce_with = H12
+  }
+  NOT = {
+    is_guaranteed_by = H12
+  }
+  H12 = {
+    is_subject = no
+    NOT = {
+      is_subject_of = PREV
+    }
+    NOT = {
+      has_war_with = PREV
+    }
+  }
+}
+wet_nag_western_fleet = {
+  any_owned_state = {
+    is_fully_controlled_by = H12
+    naval_base
+    >
+    0
+  }
+  count_triggers = {
+    amount = 4
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      3
+    }
+  }
+  has_equipment = {
+    convoy
+    >
+    19
+  }
+}
+wet_nag_invasion_fleet = {
+  any_owned_state = {
+    is_fully_controlled_by = H12
+    naval_base
+    >
+    0
+  }
+  count_triggers = {
+    amount = 8
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      7
+    }
+  }
+  has_equipment = {
+    convoy
+    >
+    39
+  }
+}
+wet_nag_shared_chaos_war = {
+  H06 = {
+    exists = yes
+  }
+  any_enemy_country = {
+    has_government = fascism
+    has_war_with = H06
+  }
+}
+wet_nag_route_asur = {
+  H06 = {
+    wet_nag_asur_government = yes
+  }
+  OR = {
+    is_neighbor_of = H06
+    AND = {
+      any_controlled_state = {
+        naval_base
+        >
+        0
+      }
+      H06 = {
+        any_controlled_state = {
+          naval_base
+          >
+          0
+        }
+      }
+      has_equipment = {
+        convoy
+        >
+        0
+      }
+    }
+  }
+}
+wet_nag_rules_allow_admission = {
+  exists = yes
+  is_faction_leader = yes
+  wet_can_join_faction = yes
+  NOT = {
+    has_government = fascism
+  }
+  NOT = {
+    has_government = communism
+  }
+  H12 = {
+    is_subject = no
+    is_in_faction = no
+    wet_can_join_faction = yes
+  }
+  NOT = {
+    has_war_with = H12
+  }
+  NOT = {
+    any_enemy_country = {
+      is_in_faction_with = H12
+    }
+  }
+  H12 = {
+    NOT = {
+      any_enemy_country = {
+        is_in_faction_with = PREV.PREV
+      }
+    }
+  }
+  OR = {
+    NOT = {
+      has_government = democratic
+    }
+    NOT = {
+      OR = {
+        threat
+        <
+        1.0
+      }
+    }
+  }
+}
+wet_nag_island_control70 = {
+  count_triggers = {
+    amount = 22
+    8 = {
+      is_controlled_by = H12
+    }
+    9 = {
+      is_controlled_by = H12
+    }
+    11 = {
+      is_controlled_by = H12
+    }
+    44 = {
+      is_controlled_by = H12
+    }
+    49 = {
+      is_controlled_by = H12
+    }
+    112 = {
+      is_controlled_by = H12
+    }
+    136 = {
+      is_controlled_by = H12
+    }
+    164 = {
+      is_controlled_by = H12
+    }
+    165 = {
+      is_controlled_by = H12
+    }
+    166 = {
+      is_controlled_by = H12
+    }
+    208 = {
+      is_controlled_by = H12
+    }
+    276 = {
+      is_controlled_by = H12
+    }
+    324 = {
+      is_controlled_by = H12
+    }
+    369 = {
+      is_controlled_by = H12
+    }
+    371 = {
+      is_controlled_by = H12
+    }
+    398 = {
+      is_controlled_by = H12
+    }
+    413 = {
+      is_controlled_by = H12
+    }
+    531 = {
+      is_controlled_by = H12
+    }
+    540 = {
+      is_controlled_by = H12
+    }
+    670 = {
+      is_controlled_by = H12
+    }
+    933 = {
+      is_controlled_by = H12
+    }
+    942 = {
+      is_controlled_by = H12
+    }
+    949 = {
+      is_controlled_by = H12
+    }
+    950 = {
+      is_controlled_by = H12
+    }
+    951 = {
+      is_controlled_by = H12
+    }
+    1034 = {
+      is_controlled_by = H12
+    }
+    1039 = {
+      is_controlled_by = H12
+    }
+    1044 = {
+      is_controlled_by = H12
+    }
+    1054 = {
+      is_controlled_by = H12
+    }
+    1064 = {
+      is_controlled_by = H12
+    }
+    1206 = {
+      is_controlled_by = H12
+    }
+  }
+}
+wet_nag_island_rule70 = {
+  count_triggers = {
+    amount = 22
+    8 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    9 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    11 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    44 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    49 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    112 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    136 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    164 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    165 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    166 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    208 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    276 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    324 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    369 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    371 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    398 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    413 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    531 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    540 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    670 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    933 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    942 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    949 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    950 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    951 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1034 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1039 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1044 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1054 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1064 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+    1206 = {
+      owner = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+      controller = {
+        OR = {
+          tag = H12
+          is_subject_of = H12
+        }
+      }
+    }
+  }
+  670 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+}
+wet_nag_all_western_rule = {
+  5 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  6 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  7 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  108 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  138 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  139 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  140 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  141 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  142 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  143 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  144 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  145 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  146 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  147 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  148 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  149 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  150 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  151 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  152 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  153 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  154 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  155 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  156 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  157 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  158 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  159 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  160 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  161 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  310 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  311 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  312 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  411 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  544 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  651 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  652 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  653 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  654 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  655 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  657 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  802 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  803 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  804 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  805 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  806 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  807 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  808 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  809 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  810 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  811 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  812 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  813 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  814 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  815 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  816 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  817 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  818 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  819 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  820 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  821 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  822 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  823 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  824 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  825 = {
+    owner = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+    controller = {
+      OR = {
+        tag = H12
+        is_subject_of = H12
+      }
+    }
+  }
+  has_war = no
+}
+wet_nag_western_hegemony = {
+  controls_state = 812
+  count_triggers = {
+    amount = 2
+    AND = {
+      count_triggers = {
+        amount = 7
+        411 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        651 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        652 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        653 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        654 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        655 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        657 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        803 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        804 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        805 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        812 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        813 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        814 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+      OR = {
+        411 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+    AND = {
+      count_triggers = {
+        amount = 6
+        108 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        802 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        816 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        817 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        818 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        819 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        820 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        821 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        822 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        823 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        824 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        825 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+      OR = {
+        822 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        823 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        824 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        825 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+    AND = {
+      count_triggers = {
+        amount = 13
+        138 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        139 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        140 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        141 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        142 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        143 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        144 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        145 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        146 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        147 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        148 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        149 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        150 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        151 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        152 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        153 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        154 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        155 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        156 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        157 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        158 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        159 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        160 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        161 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        815 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+      OR = {
+        138 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        139 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        140 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        141 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        142 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        143 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        144 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        145 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        146 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        147 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        148 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        149 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        150 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        151 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        152 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        153 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        155 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        156 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        157 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        158 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        159 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        160 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        161 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        815 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+    AND = {
+      count_triggers = {
+        amount = 7
+        5 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        6 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        7 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        310 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        311 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        312 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        544 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        806 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        807 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        808 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        809 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        810 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        811 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+      OR = {
+        5 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        6 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        7 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        310 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        311 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        312 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        544 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        806 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        807 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        808 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        809 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        810 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+        811 = {
+          owner = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+          controller = {
+            OR = {
+              tag = H12
+              is_subject_of = H12
+            }
+          }
+        }
+      }
+    }
+  }
+}
+wet_nag_patronage = {
+  has_country_flag = wet_nag_patronage
+  NOT = {
+    has_country_flag = wet_nag_repudiated
+  }
+}
+wet_nag_no_chaos_faction = {
+  OR = {
+    is_in_faction = no
+    faction_leader = {
+      NOT = {
+        has_government = fascism
+      }
+    }
+  }
+}
+wet_nag_foreign_cult_allowed = {
+  exists = yes
+  NOT = {
+    OR = {
+      has_country_flag = wet_nag_purge
+      has_country_flag = wet_nag_repudiated
+      has_country_flag = wet_nag_asur_compact
+    }
+  }
+}
+wet_nag_morathi_available = {
+  has_character = WET_H13_leader
+  NOT = {
+    OR = {
+      has_country_flag = wet_nag_morathi_dead
+      has_country_flag = wet_nag_morathi_exiled
+      has_country_flag = wet_nag_morathi_custody
+    }
+  }
+}
+wet_nag_morathi_custody = {
+  has_character = WET_H13_leader
+  has_country_flag = wet_nag_morathi_custody
+  NOT = {
+    has_country_flag = wet_nag_morathi_dead
+  }
+}
+wet_nag_morathi_resolved = {
+  NOT = {
+    has_country_flag = wet_nag_morathi_serving
+  }
+  OR = {
+    has_country_flag = wet_nag_morathi_custody
+    has_country_flag = wet_nag_morathi_exiled
+    has_country_flag = wet_nag_morathi_dead
+    has_country_flag = wet_nag_morathi_severed
+  }
+}
+wet_nag_clean_court = {
+  NOT = {
+    has_government = fascism
+  }
+  NOT = {
+    OR = {
+      has_country_flag = wet_nag_patronage
+      has_country_flag = wet_nag_chaos_oath
+      has_country_flag = wet_nag_morathi_serving
+    }
+  }
+  wet_nag_no_chaos_faction = yes
+  wet_nag_morathi_resolved = yes
+}
+wet_nag_subject_offer_legal = {
+  exists = yes
+  is_subject = no
+  is_in_faction = no
+  has_war = no
+  NOT = {
+    tag = H12
+  }
+  NOT = {
+    has_war_with = H12
+  }
+  wet_can_join_faction = yes
+  H12 = {
+    is_subject = no
+    has_war = no
+    wet_can_join_faction = yes
+    OR = {
+      is_in_faction = no
+      faction_leader = {
+        NOT = {
+          wet_faction_is_skaven_host = yes
+        }
+        NOT = {
+          wet_faction_is_greenskin_host = yes
+        }
+        OR = {
+          NOT = {
+            has_government = democratic
+          }
+          NOT = {
+            OR = {
+              threat
+              <
+              1.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

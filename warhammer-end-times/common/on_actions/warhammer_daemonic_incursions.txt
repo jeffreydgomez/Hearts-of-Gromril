@@ -1,0 +1,79 @@
+on_actions = {
+  on_daily_A15 = {
+    effect = {
+      wet_inc_bretonnia_daily = yes
+    }
+  }
+  on_daily_R07 = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+      wet_inc_join_everchosen = yes
+    }
+  }
+  on_daily_H06 = {
+    effect = {
+      wet_inc_ulthuan_daily = yes
+    }
+  }
+  on_daily_R08 = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+      wet_inc_join_everchosen = yes
+    }
+  }
+  on_daily_V07 = {
+    effect = {
+      wet_inc_xahutec_daily = yes
+    }
+  }
+  on_daily_R09 = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+      wet_inc_join_everchosen = yes
+    }
+  }
+  on_daily_I25 = {
+    effect = {
+      wet_inc_cathay_daily = yes
+    }
+  }
+  on_daily_R10 = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+      wet_inc_join_everchosen = yes
+    }
+  }
+  on_daily_Z14 = {
+    effect = {
+      wet_inc_araby_daily = yes
+    }
+  }
+  on_daily_R11 = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+      wet_inc_join_everchosen = yes
+    }
+  }
+  on_join_faction = {
+    effect = {
+      wet_inc_reject_other_factions = yes
+    }
+  }
+  on_offer_join_faction = {
+    effect = {
+      FROM = {
+        wet_inc_reject_other_factions = yes
+      }
+    }
+  }
+  on_leave_faction = {
+    effect = {
+      if = {
+        limit = {
+          wet_is_daemonic_incursion = yes
+        }
+        clr_country_flag = wet_inc_everchosen_admitted
+      }
+    }
+  }
+}

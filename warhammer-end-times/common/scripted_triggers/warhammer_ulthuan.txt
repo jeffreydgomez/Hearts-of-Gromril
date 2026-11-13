@@ -1,0 +1,1303 @@
+wet_ult_home = {
+  OR = {
+    state = 8
+    state = 9
+    state = 11
+    state = 44
+    state = 49
+    state = 112
+    state = 136
+    state = 164
+    state = 165
+    state = 166
+    state = 208
+    state = 276
+    state = 324
+    state = 369
+    state = 371
+    state = 398
+    state = 413
+    state = 531
+    state = 540
+    state = 670
+    state = 933
+    state = 942
+    state = 949
+    state = 950
+    state = 951
+    state = 1034
+    state = 1039
+    state = 1044
+    state = 1054
+    state = 1064
+    state = 1206
+  }
+}
+wet_ult_sovereign = {
+  exists = yes
+  is_subject = no
+  has_government = democratic
+}
+wet_ult_invasion = {
+  has_country_flag = wet_ult_attacked_by_h12
+  has_war_with = H12
+}
+wet_ult_civil_war = {
+  has_country_flag = wet_ult_schism_started
+  any_enemy_country = {
+    has_country_flag = wet_ult_claimant
+  }
+}
+wet_ult_safe_home = {
+  8 = {
+    is_fully_controlled_by = H06
+  }
+  9 = {
+    is_fully_controlled_by = H06
+  }
+  11 = {
+    is_fully_controlled_by = H06
+  }
+  44 = {
+    is_fully_controlled_by = H06
+  }
+  49 = {
+    is_fully_controlled_by = H06
+  }
+  112 = {
+    is_fully_controlled_by = H06
+  }
+  136 = {
+    is_fully_controlled_by = H06
+  }
+  164 = {
+    is_fully_controlled_by = H06
+  }
+  165 = {
+    is_fully_controlled_by = H06
+  }
+  166 = {
+    is_fully_controlled_by = H06
+  }
+  208 = {
+    is_fully_controlled_by = H06
+  }
+  276 = {
+    is_fully_controlled_by = H06
+  }
+  324 = {
+    is_fully_controlled_by = H06
+  }
+  369 = {
+    is_fully_controlled_by = H06
+  }
+  371 = {
+    is_fully_controlled_by = H06
+  }
+  398 = {
+    is_fully_controlled_by = H06
+  }
+  413 = {
+    is_fully_controlled_by = H06
+  }
+  531 = {
+    is_fully_controlled_by = H06
+  }
+  540 = {
+    is_fully_controlled_by = H06
+  }
+  670 = {
+    is_fully_controlled_by = H06
+  }
+  933 = {
+    is_fully_controlled_by = H06
+  }
+  942 = {
+    is_fully_controlled_by = H06
+  }
+  949 = {
+    is_fully_controlled_by = H06
+  }
+  950 = {
+    is_fully_controlled_by = H06
+  }
+  951 = {
+    is_fully_controlled_by = H06
+  }
+  1034 = {
+    is_fully_controlled_by = H06
+  }
+  1039 = {
+    is_fully_controlled_by = H06
+  }
+  1044 = {
+    is_fully_controlled_by = H06
+  }
+  1054 = {
+    is_fully_controlled_by = H06
+  }
+  1064 = {
+    is_fully_controlled_by = H06
+  }
+  1206 = {
+    is_fully_controlled_by = H06
+  }
+}
+wet_ult_grand_member = {
+  is_in_faction = yes
+  is_in_faction_with = A01
+  A01 = {
+    faction_leader = {
+      has_government = democratic
+    }
+  }
+}
+wet_ult_concord_leader = {
+  is_faction_leader = yes
+  has_country_flag = wet_ult_concord
+}
+wet_ult_shared_war = {
+  any_enemy_country = {
+    has_government = fascism
+    any_enemy_country = {
+      NOT = {
+        tag = H06
+      }
+      is_in_faction_with = H06
+    }
+  }
+}
+wet_ult_union = {
+  is_subject_of = H12
+  H12 = {
+    has_country_leader = {
+      character = WET_H12_leader
+      ruling_only = yes
+    }
+  }
+  has_country_flag = wet_ult_malekith_union
+}
+wet_ult_lost_core = {
+  any_core_state = {
+    NOT = {
+      is_fully_controlled_by = H06
+    }
+    controller = {
+      has_war_with = H06
+    }
+  }
+}
+wet_ult_sword_crisis = {
+  OR = {
+    AND = {
+      has_war = yes
+      wet_ult_lost_core = yes
+    }
+    NOT = {
+      OR = {
+        threat
+        <
+        1.0
+      }
+    }
+  }
+}
+wet_ult_captive = {
+  has_global_flag = wet_story_aliathra_captured
+  NOT = {
+    has_global_flag = wet_story_aliathra_dead
+  }
+  has_global_flag = wet_ult_aliathra_captive
+}
+wet_ult_safe_child = {
+  has_global_flag = wet_story_aliathra_captured
+  has_global_flag = wet_story_aliathra_rescued
+  NOT = {
+    has_global_flag = wet_story_aliathra_dead
+  }
+  NOT = {
+    has_global_flag = wet_ult_aliathra_captive
+  }
+}
+wet_ult_legal_h12_enemy = {
+  H12 = {
+    exists = yes
+    is_subject = no
+    NOT = {
+      is_in_faction_with = H06
+    }
+    NOT = {
+      has_non_aggression_pact_with = H06
+    }
+    NOT = {
+      has_truce_with = H06
+    }
+    NOT = {
+      has_war_with = H06
+    }
+    NOT = {
+      is_guaranteed_by = H06
+    }
+  }
+  is_subject = no
+  NOT = {
+    is_guaranteed_by = H12
+  }
+  NOT = {
+    has_country_flag = wet_nag_asur_compact
+  }
+}
+wet_ult_expedition_fleet = {
+  any_owned_state = {
+    is_fully_controlled_by = H06
+    naval_base
+    >
+    0
+  }
+  has_equipment = {
+    convoy
+    >
+    39
+  }
+  count_triggers = {
+    amount = 8
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = carrier
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = battleship
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = battle_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = heavy_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = light_cruiser
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = destroyer
+      size
+      >
+      7
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      0
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      1
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      2
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      3
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      4
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      5
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      6
+    }
+    has_navy_size = {
+      unit = submarine
+      size
+      >
+      7
+    }
+  }
+}
+wet_ult_rescue_route = {
+  any_owned_state = {
+    is_fully_controlled_by = H06
+    naval_base
+    >
+    0
+  }
+  has_equipment = {
+    convoy
+    >
+    19
+  }
+  any_state = {
+    has_state_flag = wet_ult_prison
+    any_neighbor_state = {
+      controller = {
+        OR = {
+          tag = H06
+          is_in_faction_with = H06
+          is_subject_of = H06
+          H06 = {
+            has_military_access_to = PREV
+          }
+        }
+        NOT = {
+          has_war_with = H06
+        }
+      }
+      any_state = {
+        is_coastal = yes
+        naval_base
+        >
+        0
+        controller = {
+          OR = {
+            tag = H06
+            is_in_faction_with = H06
+            is_subject_of = H06
+            H06 = {
+              has_military_access_to = PREV
+            }
+          }
+          NOT = {
+            has_war_with = H06
+          }
+        }
+        can_build_railway = {
+          start_state = THIS
+          target_state = PREV
+          controller_priority = {
+            base = -1
+            modifier = {
+              add = 2
+              OR = {
+                tag = H06
+                is_in_faction_with = H06
+                is_subject_of = H06
+                H06 = {
+                  has_military_access_to = PREV
+                }
+              }
+              NOT = {
+                has_war_with = H06
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+wet_ult_unappeased_dwarf = {
+  exists = yes
+  is_subject = no
+  has_government = democratic
+  wet_name_is_dwarf = yes
+  is_in_faction_with = A01
+  NOT = {
+    has_country_flag = wet_ult_amends_accepted
+  }
+}
+wet_ult_amends_clear = {
+  NOT = {
+    any_country = {
+      wet_ult_unappeased_dwarf = yes
+    }
+  }
+}
+wet_ult_entry_allowed = {
+  OR = {
+    NOT = {
+      tag = H06
+    }
+    is_in_faction = yes
+    AND = {
+      NOT = {
+        OR = {
+          threat
+          <
+          1.0
+        }
+      }
+      OR = {
+        has_country_flag = wet_ult_concord_transaction
+        AND = {
+          has_completed_focus = WET_ULT_D08
+          wet_ult_amends_clear = yes
+          OR = {
+            has_country_flag = wet_ult_empire_transaction
+            wet_rei_coalition_transaction = yes
+          }
+        }
+      }
+    }
+  }
+}
+wet_ult_empire_ready = {
+  wet_ult_sovereign = yes
+  is_in_faction = no
+  has_completed_focus = WET_ULT_D08
+  NOT = {
+    OR = {
+      threat
+      <
+      1.0
+    }
+  }
+  wet_ult_amends_clear = yes
+  A01 = {
+    exists = yes
+    is_in_faction = yes
+    faction_leader = {
+      has_government = democratic
+      NOT = {
+        has_war_with = H06
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = H06
+        }
+      }
+    }
+  }
+}
+wet_ult_concord_can_form = {
+  wet_ult_sovereign = yes
+  is_in_faction = no
+  has_completed_focus = WET_ULT_D09
+  NOT = {
+    OR = {
+      threat
+      <
+      1.0
+    }
+  }
+  has_political_power
+  >
+  99
+  capital_scope = {
+    is_fully_controlled_by = H06
+  }
+  NOT = {
+    has_global_flag = wet_ult_concord_formed
+  }
+}
+wet_ult_cooperation_window = {
+  has_country_flag = wet_ult_cooperation_window
+  H12 = {
+    exists = yes
+    NOT = {
+      has_completed_focus = WET_NAG_S01
+    }
+    NOT = {
+      has_completed_focus = WET_NAG_S02
+    }
+    NOT = {
+      focus_progress = {
+        focus = WET_NAG_S01
+        progress
+        >
+        0
+      }
+    }
+    NOT = {
+      focus_progress = {
+        focus = WET_NAG_S02
+        progress
+        >
+        0
+      }
+    }
+    NOT = {
+      has_war_with = H06
+    }
+    NOT = {
+      has_country_flag = wet_nag_broken_compact
+    }
+  }
+  wet_ult_sovereign = yes
+}
+wet_ult_bridgehead = {
+  wet_ult_invasion = yes
+  OR = {
+    AND = {
+      8 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 8
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      9 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 9
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      11 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 11
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      44 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 44
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      112 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 112
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      164 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 164
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      165 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 165
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      166 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 166
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      208 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 208
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      324 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 324
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      369 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 369
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      398 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 398
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      413 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 413
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      531 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 531
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      540 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 540
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      670 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 670
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      933 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 933
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      942 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 942
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      949 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 949
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      950 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 950
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      951 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 951
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1034 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1034
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1039 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1039
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1044 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1044
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1054 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1054
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1064 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1064
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      1206 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 1206
+          size
+          >
+          0
+        }
+      }
+    }
+  }
+}
+wet_ult_revolt_site = {
+  wet_ult_home = yes
+  is_owned_by = H06
+  is_fully_controlled_by = H06
+  is_capital = no
+  OR = {
+    state = 164
+    state = 166
+    state = 324
+  }
+}
