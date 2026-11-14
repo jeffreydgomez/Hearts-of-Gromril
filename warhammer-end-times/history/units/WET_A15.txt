@@ -1,5 +1,7 @@
 division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 division_template = { name = "Realm Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Knights of the Realm" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Peasant Levy" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
 units = {
 division = { name = "1. Bretonnian Realm Infantry" location = 325 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Bretonnian Realm Infantry" location = 234 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -25,11 +27,26 @@ division = { name = "21. Bretonnian Realm Infantry" location = 297 division_temp
 division = { name = "1. Bretonnian Realm Cavalry" location = 325 division_template = "Realm Cavalry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Bretonnian Realm Cavalry" location = 234 division_template = "Realm Cavalry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Bretonnian Realm Cavalry" location = 305 division_template = "Realm Cavalry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Bretonnian Knights of the Realm" location = 325 division_template = "Knights of the Realm" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "2. Bretonnian Knights of the Realm" location = 234 division_template = "Knights of the Realm" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Bretonnian Peasant Levy" location = 325 division_template = "Peasant Levy" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A15 } requested_factories = 10 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A15 } requested_factories = 8 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = A15 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1440 producer = A15 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1920 producer = A15 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = A15 version_name = "Knights of the Realm Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 80 producer = A15 variant_name = "Knights of the Realm Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = A15 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 80 producer = A15 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = A15 version_name = "Pegasus Knights" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = A15 variant_name = "Pegasus Knights" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = A15 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = A15 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4650 producer = A15 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 258 producer = A15 }
 }

@@ -1,15 +1,40 @@
 division_template = { name = "Chaos Warband" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Marauder Horsemen" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Infernal Guard Batteries" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 0 } } }
+division_template = { name = "Kdaai War Host" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 units = {
 division = { name = "1. Zharr Naggrundian Chaos Warband" location = 871 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Zharr Naggrundian Chaos Warband" location = 877 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Zharr Naggrundian Chaos Warband" location = 869 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "4. Zharr Naggrundian Chaos Warband" location = 871 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "5. Zharr Naggrundian Chaos Warband" location = 877 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "6. Zharr Naggrundian Chaos Warband" location = 869 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "7. Zharr Naggrundian Chaos Warband" location = 871 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "8. Zharr Naggrundian Chaos Warband" location = 877 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "9. Zharr Naggrundian Chaos Warband" location = 869 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "10. Zharr Naggrundian Chaos Warband" location = 871 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "11. Zharr Naggrundian Chaos Warband" location = 877 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "12. Zharr Naggrundian Chaos Warband" location = 869 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "13. Zharr Naggrundian Chaos Warband" location = 871 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Zharr Naggrundian Infernal Guard Batteries" location = 871 division_template = "Infernal Guard Batteries" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Zharr Naggrundian Kdaai War Host" location = 871 division_template = "Kdaai War Host" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = B17 } requested_factories = 9 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = B17 } requested_factories = 6 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = artillery_equipment_1 creator = B17 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 48 producer = B17 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = B17 version_name = "Kdaai War Host Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 40 producer = B17 variant_name = "Kdaai War Host Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = B17 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 40 producer = B17 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = B17 version_name = "Great Taurus Flights" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = B17 variant_name = "Great Taurus Flights" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = B17 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = B17 }
+ }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = B17 }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1950 producer = B17 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2100 producer = B17 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 60 producer = B17 }
 }

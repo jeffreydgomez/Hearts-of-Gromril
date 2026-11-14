@@ -1,11 +1,16 @@
 division_template = { name = "Elven Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Elven Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Silver Helms" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
 units = {
 division = { name = "1. Sun Elven Spearmen" location = 4533 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Sun Silver Helms" location = 4533 division_template = "Silver Helms" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H27 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = H27 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = H27 variant_name = "Silver Helms Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = H27 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1350 producer = H27 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 36 producer = H27 }
 }

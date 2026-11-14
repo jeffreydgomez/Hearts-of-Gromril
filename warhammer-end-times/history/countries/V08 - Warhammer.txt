@@ -69,6 +69,13 @@ set_technology = { tech_support = 1 }
 set_technology = { basic_train = 1 }
 add_ideas = { volunteer_only civilian_economy export_focus }
 load_focus_tree = { tree = generic_focus }
+# BEGIN WET starting roster
+set_technology = { wet_light_cavalry = 1 }
+set_technology = { gw_artillery = 1 }
+if = { limit = { has_dlc = "No Step Back" } set_technology = { gwtank_chassis = 1 basic_heavy_tank_chassis = 1 } create_equipment_variant = { name = "Kroxigor Cohort Equipment I" type = heavy_tank_chassis_1 parent_version = 0 modules = { main_armament_slot = tank_small_cannon turret_type_slot = tank_heavy_two_man_tank_turret suspension_type_slot = tank_bogie_suspension armor_type_slot = tank_riveted_armor engine_type_slot = tank_gasoline_engine } }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } set_technology = { gwtank = 1 basic_heavy_tank = 1 } }
+# END WET starting roster
 set_oob = "WET_V08"
 if = { limit = { has_dlc = "Man the Guns" }
 set_technology = { early_ship_hull_light = 1 early_ship_hull_cruiser = 1 basic_battery = 1 basic_light_battery = 1 basic_torpedo = 1 }

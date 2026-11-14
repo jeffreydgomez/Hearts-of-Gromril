@@ -1,10 +1,12 @@
 division_template = { name = "Hold Warriors" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } } }
-division_template = { name = "Mounted Scouts" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Dwarf Cannon Regiments" priority = 1 regiments = { infantry = { x = 0 y = 0 } artillery_brigade = { x = 1 y = 0 } } }
 units = {
 division = { name = "1. Kaferkammaz Hold Warriors" location = 6539 division_template = "Hold Warriors" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Kaferkammaz Dwarf Cannon Regiments" location = 6539 division_template = "Dwarf Cannon Regiments" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = U16 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 48 producer = U16 }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = U16 }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 675 producer = U16 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 9 producer = U16 }

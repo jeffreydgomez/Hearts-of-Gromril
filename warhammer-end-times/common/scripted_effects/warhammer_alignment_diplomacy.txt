@@ -326,12 +326,12 @@ wet_join_the_waaagh_complete = {
  if = {
   limit = { wet_join_the_waaagh_target = yes }
   log = "WET_ABSORPTION action=join_the_waaagh attacker=[ROOT.GetTag] target=[THIS.GetTag]"
-  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+  if = { limit = { ROOT = { tag = G24 } } wet_grn_diplomatic_absorb_complete = yes } else = { ROOT = { annex_country = { target = PREV transfer_troops = yes } } }
  }
 }
 wet_ai_join_the_waaagh = {
  if = {
-  limit = { is_ai = yes wet_waaagh_leader = yes NOT = { has_political_power < 30 } }
+  limit = { is_ai = yes OR = { AND = { tag = G24 wet_grn_opening_done = yes is_subject = no } AND = { NOT = { tag = G24 } wet_waaagh_leader = yes } } NOT = { has_political_power < 30 } }
   random_neighbor_country = {
    limit = { wet_join_the_waaagh_target = yes }
    ROOT = { add_political_power = -30 }

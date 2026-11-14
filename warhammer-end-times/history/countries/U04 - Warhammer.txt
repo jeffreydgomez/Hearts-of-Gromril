@@ -69,6 +69,12 @@ set_technology = { tech_support = 1 }
 set_technology = { basic_train = 1 }
 add_ideas = { limited_conscription partial_economic_mobilisation limited_exports }
 load_focus_tree = { tree = WET_karaz_focus }
+# BEGIN WET starting roster
+set_technology = { wet_light_cavalry = 1 }
+set_technology = { gw_artillery = 1 }
+if = { limit = { has_dlc = "By Blood Alone" } set_technology = { iw_small_airframe = 1 aa_lmg = 1 engines_1 = 1 } create_equipment_variant = { name = "Gyrocopter Patrols" type = small_plane_airframe_0 modules = { fixed_main_weapon_slot = light_mg_2x engine_type_slot = engine_1_1x } } set_air_oob = "WET_U04_air_bba" }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } set_technology = { early_fighter = 1 } set_air_oob = "WET_U04_air_legacy" }
+# END WET starting roster
 set_oob = "WET_U04"
 
 # Generic cultural cabinet, available to hire for political power.

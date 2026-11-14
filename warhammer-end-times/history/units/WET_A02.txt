@@ -1,5 +1,6 @@
 division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 division_template = { name = "Realm Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Household Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
 units = {
 division = { name = "1. Wissenlander Realm Infantry" location = 35 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Wissenlander Realm Infantry" location = 39 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -8,11 +9,18 @@ division = { name = "4. Wissenlander Realm Infantry" location = 832 division_tem
 division = { name = "5. Wissenlander Realm Infantry" location = 35 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "6. Wissenlander Realm Infantry" location = 39 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Wissenlander Realm Cavalry" location = 35 division_template = "Realm Cavalry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Wissenlander Household Knights" location = 35 division_template = "Household Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A02 } requested_factories = 4 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A02 } requested_factories = 3 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = A02 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 480 producer = A02 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 720 producer = A02 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = A02 version_name = "Household Knights Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = A02 variant_name = "Household Knights Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = A02 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = A02 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2200 producer = A02 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 51 producer = A02 }
 }

@@ -1,5 +1,7 @@
 division_template = { name = "Boyz Mob" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 division_template = { name = "Boar Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Troll Herds" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Goblin Rabble" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
 units = {
 division = { name = "1. Black Crag Boyz Mob" location = 6466 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Black Crag Boyz Mob" location = 740 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -8,12 +10,40 @@ division = { name = "4. Black Crag Boyz Mob" location = 176 division_template = 
 division = { name = "5. Black Crag Boyz Mob" location = 783 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "6. Black Crag Boyz Mob" location = 784 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "7. Black Crag Boyz Mob" location = 6412 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "8. Black Crag Boyz Mob" location = 1512 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "9. Black Crag Boyz Mob" location = 2890 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "10. Black Crag Boyz Mob" location = 725 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "11. Black Crag Boyz Mob" location = 502 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "12. Black Crag Boyz Mob" location = 804 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "13. Black Crag Boyz Mob" location = 6466 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "14. Black Crag Boyz Mob" location = 740 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "15. Black Crag Boyz Mob" location = 562 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "16. Black Crag Boyz Mob" location = 176 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "17. Black Crag Boyz Mob" location = 783 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "18. Black Crag Boyz Mob" location = 784 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "19. Black Crag Boyz Mob" location = 6412 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Black Crag Boar Riders" location = 6466 division_template = "Boar Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "2. Black Crag Boar Riders" location = 740 division_template = "Boar Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "3. Black Crag Boar Riders" location = 562 division_template = "Boar Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Black Crag Troll Herds" location = 6466 division_template = "Troll Herds" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Black Crag Goblin Rabble" location = 6466 division_template = "Goblin Rabble" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = G24 } requested_factories = 6 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = G24 } requested_factories = 4 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 480 producer = G24 }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2350 producer = G24 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1440 producer = G24 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = G24 version_name = "Troll Herds Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 40 producer = G24 variant_name = "Troll Herds Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 40 producer = G24 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = G24 version_name = "Wyvern Riders" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = G24 variant_name = "Wyvern Riders" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = G24 }
+ }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3315 producer = G24 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 78 producer = G24 }
 }

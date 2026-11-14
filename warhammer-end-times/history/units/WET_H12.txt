@@ -1,5 +1,6 @@
 division_template = { name = "Elven Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 division_template = { name = "Elven Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Cold One Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
 units = {
 division = { name = "1. Naggarothi Elven Spearmen" location = 2400 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Naggarothi Elven Spearmen" location = 3895 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -22,11 +23,26 @@ division = { name = "18. Naggarothi Elven Spearmen" location = 2332 division_tem
 division = { name = "1. Naggarothi Elven Riders" location = 2400 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Naggarothi Elven Riders" location = 3895 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Naggarothi Elven Riders" location = 2357 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Naggarothi Cold One Knights" location = 2400 division_template = "Cold One Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "2. Naggarothi Cold One Knights" location = 3895 division_template = "Cold One Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "3. Naggarothi Cold One Knights" location = 2357 division_template = "Cold One Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H12 } requested_factories = 13 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H12 } requested_factories = 11 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = H12 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1440 producer = H12 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 2160 producer = H12 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = H12 version_name = "Cold One Knights Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 120 producer = H12 variant_name = "Cold One Knights Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = H12 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 120 producer = H12 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = H12 version_name = "Harpy Flights" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = H12 variant_name = "Harpy Flights" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = H12 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = H12 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4200 producer = H12 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 576 producer = H12 }
 }

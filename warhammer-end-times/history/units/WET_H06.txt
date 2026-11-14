@@ -1,5 +1,6 @@
 division_template = { name = "Elven Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 division_template = { name = "Elven Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Silver Helms" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
 units = {
 division = { name = "1. Ulthuanian Elven Spearmen" location = 472 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Ulthuanian Elven Spearmen" location = 2199 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -44,9 +45,6 @@ division = { name = "40. Ulthuanian Elven Spearmen" location = 2212 division_tem
 division = { name = "41. Ulthuanian Elven Spearmen" location = 2292 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "42. Ulthuanian Elven Spearmen" location = 2159 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "43. Ulthuanian Elven Spearmen" location = 2220 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
-division = { name = "44. Ulthuanian Elven Spearmen" location = 2161 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
-division = { name = "45. Ulthuanian Elven Spearmen" location = 2184 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
-division = { name = "46. Ulthuanian Elven Spearmen" location = 2248 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Ulthuanian Elven Riders" location = 472 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Ulthuanian Elven Riders" location = 2199 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Ulthuanian Elven Riders" location = 2341 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -54,11 +52,26 @@ division = { name = "4. Ulthuanian Elven Riders" location = 2213 division_templa
 division = { name = "5. Ulthuanian Elven Riders" location = 2240 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "6. Ulthuanian Elven Riders" location = 2236 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "7. Ulthuanian Elven Riders" location = 2298 division_template = "Elven Riders" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Ulthuanian Silver Helms" location = 472 division_template = "Silver Helms" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "2. Ulthuanian Silver Helms" location = 2199 division_template = "Silver Helms" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "3. Ulthuanian Silver Helms" location = 2341 division_template = "Silver Helms" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H06 } requested_factories = 9 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H06 } requested_factories = 7 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 3360 producer = H06 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 4080 producer = H06 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = H06 version_name = "Silver Helms Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 120 producer = H06 variant_name = "Silver Helms Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 120 producer = H06 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = H06 version_name = "Great Eagle Flights" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = H06 variant_name = "Great Eagle Flights" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = H06 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8800 producer = H06 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 492 producer = H06 }
 }

@@ -15,8 +15,8 @@ scripted_diplomatic_actions = {
   ai_desire = { base = 1000 }
  }
  wet_join_the_waaagh = {
-  allowed = { ROOT = { wet_waaagh_leader = yes } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
-  visible = { ROOT = { wet_waaagh_leader = yes } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
+  allowed = { ROOT = { wet_waaagh_leader = yes NOT = { tag = G24 } } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
+  visible = { ROOT = { wet_waaagh_leader = yes NOT = { tag = G24 } } wet_name_is_greenskin = yes NOT = { tag = ROOT } }
   selectable = { wet_join_the_waaagh_target = yes }
   can_be_sent = { wet_join_the_waaagh_target = yes ROOT = { NOT = { has_political_power < 30 } } }
   requires_acceptance = no

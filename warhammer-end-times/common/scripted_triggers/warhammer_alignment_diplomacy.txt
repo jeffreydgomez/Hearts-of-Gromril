@@ -100,5 +100,6 @@ wet_waaagh_leader = {
 wet_join_the_waaagh_target = {
  wet_absorption_target = yes
  wet_name_is_greenskin = yes
- ROOT = { wet_waaagh_leader = yes }
+ has_government = waaagh
+ ROOT = { OR = { AND = { tag = G24 wet_grn_opening_done = yes is_subject = no } AND = { NOT = { tag = G24 } wet_waaagh_leader = yes } } }
 }

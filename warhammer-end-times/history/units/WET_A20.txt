@@ -1,14 +1,34 @@
 division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Realm Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Blood Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Risen Peasants" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
 units = {
 division = { name = "1. Mousillonian Realm Infantry" location = 293 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Mousillonian Realm Infantry" location = 257 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Mousillonian Realm Infantry" location = 265 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "4. Mousillonian Realm Infantry" location = 258 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "5. Mousillonian Realm Infantry" location = 314 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "6. Mousillonian Realm Infantry" location = 293 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "7. Mousillonian Realm Infantry" location = 257 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "8. Mousillonian Realm Infantry" location = 265 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "9. Mousillonian Realm Infantry" location = 258 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "10. Mousillonian Realm Infantry" location = 314 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Mousillonian Blood Knights" location = 293 division_template = "Blood Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Mousillonian Risen Peasants" location = 293 division_template = "Risen Peasants" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A20 } requested_factories = 3 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A20 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = A20 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = A20 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = A20 version_name = "Blood Knights Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = A20 variant_name = "Blood Knights Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = A20 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = A20 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = A20 variant_name = "Mousillon Fell Bats" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = A20 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1800 producer = A20 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 51 producer = A20 }
 }

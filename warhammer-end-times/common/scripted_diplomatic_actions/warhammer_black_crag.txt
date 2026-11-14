@@ -1,128 +1,14 @@
 scripted_diplomatic_actions = {
-  wet_grn_challenge_diplomacy = {
-    allowed = {
-      ROOT = {
-        tag = G24
-        wet_grn_opening_done = yes
-      }
-      exists = yes
-      wet_name_is_greenskin = yes
-      NOT = {
-        tag = ROOT
-      }
-    }
-    visible = {
-      ROOT = {
-        tag = G24
-        wet_grn_opening_done = yes
-      }
-      exists = yes
-      wet_name_is_greenskin = yes
-      NOT = {
-        tag = ROOT
-      }
-    }
-    selectable = {
-      ROOT = {
-        tag = G24
-        custom_trigger_tooltip = {
-          tooltip = wet_grn_diplomacy_opening_tt
-          wet_grn_opening_done = yes
-        }
-      }
-      exists = yes
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_greenskin_tt
-        wet_name_is_greenskin = yes
-      }
-      NOT = {
-        tag = ROOT
-      }
-      ROOT = {
-        has_war = no
-        NOT = {
-          has_wargoal_against = {
-            target = PREV
-            type = wet_grn_challenge
-          }
-        }
-      }
-      is_neighbor_of = ROOT
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_legal_tt
-        wet_grn_goal_legal = yes
-      }
-    }
-    can_be_sent = {
-      ROOT = {
-        tag = G24
-        custom_trigger_tooltip = {
-          tooltip = wet_grn_diplomacy_opening_tt
-          wet_grn_opening_done = yes
-        }
-      }
-      exists = yes
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_greenskin_tt
-        wet_name_is_greenskin = yes
-      }
-      NOT = {
-        tag = ROOT
-      }
-      ROOT = {
-        has_war = no
-        NOT = {
-          has_wargoal_against = {
-            target = PREV
-            type = wet_grn_challenge
-          }
-        }
-      }
-      is_neighbor_of = ROOT
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_legal_tt
-        wet_grn_goal_legal = yes
-      }
-      hidden_trigger = {
-        OR = {
-          ROOT = {
-            is_ai = no
-          }
-          has_country_flag = wet_grn_ai_ready
-        }
-      }
-    }
-    requires_acceptance = no
-    cost = 0
-    show_acceptance_on_action_button = no
-    icon = 1
-    send_description = wet_grn_challenge_diplomacy_send
-    accept_title = wet_grn_challenge_diplomacy_accept
-    accept_description = wet_grn_challenge_diplomacy_accept_desc
-    complete_effect = {
-      custom_effect_tooltip = wet_grn_challenge_diplomacy_effect_tt
-      hidden_effect = {
-        wet_grn_diplomatic_challenge_complete = yes
-      }
-    }
-    ai_desire = {
-      base = 10
-      modifier = {
-        factor = 0
-        NOT = {
-          wet_grn_diplomatic_challenge = yes
-        }
-      }
-    }
-  }
   wet_grn_absorb_diplomacy = {
     allowed = {
       ROOT = {
         tag = G24
         wet_grn_opening_done = yes
+        is_subject = no
       }
       exists = yes
       wet_name_is_greenskin = yes
+      has_government = waaagh
       NOT = {
         tag = ROOT
       }
@@ -131,28 +17,21 @@ scripted_diplomatic_actions = {
       ROOT = {
         tag = G24
         wet_grn_opening_done = yes
+        is_subject = no
       }
       exists = yes
       wet_name_is_greenskin = yes
+      has_government = waaagh
       NOT = {
         tag = ROOT
       }
     }
     selectable = {
       ROOT = {
-        tag = G24
         custom_trigger_tooltip = {
           tooltip = wet_grn_diplomacy_opening_tt
           wet_grn_opening_done = yes
         }
-      }
-      exists = yes
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_greenskin_tt
-        wet_name_is_greenskin = yes
-      }
-      NOT = {
-        tag = ROOT
       }
       custom_trigger_tooltip = {
         tooltip = wet_grn_absorbable_diplomacy_tt
@@ -161,27 +40,27 @@ scripted_diplomatic_actions = {
     }
     can_be_sent = {
       ROOT = {
-        tag = G24
         custom_trigger_tooltip = {
           tooltip = wet_grn_diplomacy_opening_tt
           wet_grn_opening_done = yes
         }
       }
-      exists = yes
-      custom_trigger_tooltip = {
-        tooltip = wet_grn_diplomacy_greenskin_tt
-        wet_name_is_greenskin = yes
-      }
-      NOT = {
-        tag = ROOT
-      }
       custom_trigger_tooltip = {
         tooltip = wet_grn_absorbable_diplomacy_tt
         wet_grn_absorbable = yes
       }
+      ROOT = {
+        NOT = {
+          OR = {
+            has_political_power
+            <
+            30
+          }
+        }
+      }
     }
     requires_acceptance = no
-    cost = 0
+    cost = 30
     show_acceptance_on_action_button = no
     icon = 1
     send_description = wet_grn_absorb_diplomacy_send
@@ -194,7 +73,7 @@ scripted_diplomatic_actions = {
       }
     }
     ai_desire = {
-      base = 100
+      base = 1000
       modifier = {
         factor = 0
         NOT = {

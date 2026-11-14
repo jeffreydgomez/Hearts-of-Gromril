@@ -1,12 +1,26 @@
 division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Realm Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Blood Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Zombie Horde" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
 units = {
 division = { name = "1. Sylvanian Realm Infantry" location = 207 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Sylvanian Realm Infantry" location = 205 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "3. Sylvanian Realm Infantry" location = 207 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "4. Sylvanian Realm Infantry" location = 205 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Sylvanian Blood Knights" location = 207 division_template = "Blood Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Sylvanian Zombie Horde" location = 207 division_template = "Zombie Horde" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A13 } requested_factories = 2 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = A13 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = A13 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = A13 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = A13 variant_name = "Blood Knights Equipment I" }
+ }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = A13 }
+ }
+if = { limit = { has_dlc = "By Blood Alone" } add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = A13 variant_name = "Fell Bats" }
+ }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = A13 }
+ }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = A13 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 21 producer = A13 }
 }
