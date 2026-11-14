@@ -115621,11 +115621,16 @@ wet_nag_award_P02 = {
       }
     }
     set_country_flag = wet_nag_reward_P02
-    add_political_power = 75
     add_stability = -0.03
     add_timed_idea = {
       idea = wet_nag_confiscated_estates
       days = 180
+    }
+    add_tech_bonus = {
+      name = wet_nag_reward_P02
+      bonus = 0.5
+      uses = 1
+      category = construction_tech
     }
     wet_nag_reconcile_benefits = yes
   }
@@ -117509,7 +117514,6 @@ wet_nag_award_W12 = {
       }
     }
     set_country_flag = wet_nag_reward_W12
-    add_political_power = 50
     set_variable = {
       wet_nag_march_sites = 0
     }
@@ -118088,6 +118092,7 @@ wet_nag_award_W12 = {
         wet_nag_march_sites = 1
       }
     }
+    add_stability = 0.05
     wet_nag_reconcile_benefits = yes
   }
 }
@@ -118864,7 +118869,7 @@ wet_nag_award_W22 = {
     }
     set_country_flag = wet_nag_reward_W22
     add_ideas = wet_nag_w22
-    add_political_power = 75
+    army_experience = 35
     wet_nag_reconcile_benefits = yes
   }
 }
@@ -118879,7 +118884,12 @@ wet_nag_award_W23 = {
     }
     set_country_flag = wet_nag_reward_W23
     add_ideas = wet_nag_w23
-    add_political_power = 100
+    add_tech_bonus = {
+      name = wet_nag_reward_W23
+      bonus = 0.5
+      uses = 1
+      category = industry
+    }
     wet_nag_reconcile_benefits = yes
   }
 }
@@ -118892,7 +118902,7 @@ wet_nag_award_S00 = {
       }
     }
     set_country_flag = wet_nag_reward_S00
-    add_political_power = 50
+    navy_experience = 25
     wet_nag_reconcile_benefits = yes
   }
 }
@@ -120527,8 +120537,8 @@ wet_nag_award_I10 = {
       controls_state = 670
     }
     set_country_flag = wet_nag_reward_I10
-    add_political_power = 50
     set_country_flag = wet_nag_lothern_occupied
+    navy_experience = 25
     wet_nag_reconcile_benefits = yes
   }
 }
@@ -120941,9 +120951,14 @@ wet_nag_award_A03 = {
       }
     }
     set_country_flag = wet_nag_reward_A03
-    add_political_power = 25
     H06 = {
       wet_nag_send_asur_terms = yes
+    }
+    add_tech_bonus = {
+      name = wet_nag_reward_A03
+      bonus = 0.5
+      uses = 1
+      category = encryption_tech
     }
     wet_nag_reconcile_benefits = yes
   }
@@ -121370,8 +121385,13 @@ wet_nag_award_N00 = {
       }
     }
     set_country_flag = wet_nag_reward_N00
-    add_political_power = 25
     army_experience = 10
+    add_tech_bonus = {
+      name = wet_nag_reward_N00
+      bonus = 0.5
+      uses = 1
+      category = infantry_weapons
+    }
     wet_nag_reconcile_benefits = yes
   }
 }

@@ -1,40 +1,44 @@
-# EU4 area: southern_wastes_10_area; source provinces: 2176 2181
 state = {
   id = 998
   name = "STATE_998"
   manpower = 2461588
   state_category = town
-  resources = { oil = 2 aluminium = 2 rubber = 3 tungsten = 1 steel = 12 chromium = 6 coal = 1 }
+  resources = {
+    oil = 2
+    aluminium = 2
+    rubber = 3
+    tungsten = 1
+    steel = 12
+    chromium = 6
+    coal = 1
+  }
   history = {
     # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
+    set_variable = { wet_pop_race = 9 }
+    set_variable = { wet_pop_faith = 20 }
+    set_variable = { wet_pop_taint = 2 }
     set_variable = { wet_purge_days = 0 }
     set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U02 }
+    add_to_array = { wet_population_controller = G24 }
     # END WET inhabitants
 
-
-
-
-
-
-
-
-
-
-
-    owner = U02
-    add_core_of = U02
-    victory_points = { 2888 1 }
+    owner = G24
+    victory_points = {
+      2888
+      1
+    }
     buildings = {
+      air_base = 1
       infrastructure = 1
       industrial_complex = 1
       arms_factory = 1
     }
+    add_core_of = G24
   }
-  provinces = { 2888 2893 }
+  provinces = {
+    2888
+    2893
+  }
   local_supplies = 0.0
 }

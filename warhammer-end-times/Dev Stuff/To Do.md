@@ -20,10 +20,7 @@ Unchecked items remain future work.
 - Duel rules? Based on General stats?
 - What about fliers models?
 - Incursions should be triggered from the chaos gods mission tree
-- Some of the ruler images are their 3d models tposing. Make sure they are artistic images.
-- Get the descriptions of all focuses correct. and icons. Remove the extra horizontal spaces between trees.
 - Get countries to product what they should produce
-- A lot of the focuses result in extensive decisions. Remove those, the focus should just do the thing.
 
 Check
 - Use cavalry model for light tanks and fimir model for monstrous tanks.

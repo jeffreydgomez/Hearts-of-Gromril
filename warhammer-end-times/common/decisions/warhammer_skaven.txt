@@ -7166,6 +7166,43 @@ wet_skv_recovery = {
       factor = 5
     }
   }
+  wet_skv_recover_W04 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = U25
+    }
+    visible = {
+      has_country_flag = wet_skv_earned_W04
+      NOT = {
+        has_country_flag = wet_skv_reward_W04
+      }
+    }
+    cost = 0
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_SKV_W03
+      has_war = no
+      AND = {
+        has_country_flag = wet_skv_earned_W04
+        NOT = {
+          has_country_flag = wet_skv_reward_W04
+        }
+        wet_skv_tilea_settled = yes
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_SKV_W04_special_tt
+      }
+      hidden_effect = {
+        wet_skv_award_W04 = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
   wet_skv_recover_W05 = {
     desc = wet_decision_no_description
     icon = generic_political_discourse
@@ -7194,7 +7231,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 25
+        army_experience = 15
         760 = {
           add_building_construction = {
             type = infrastructure
@@ -7240,7 +7277,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 25
+        navy_experience = 15
         747 = {
           add_building_construction = {
             type = dockyard
@@ -7283,7 +7320,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        add_stability = 0.05
       }
       hidden_effect = {
         wet_skv_award_W07 = yes
@@ -7357,7 +7394,12 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_skv_reward_W13
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
       }
       hidden_effect = {
         wet_skv_award_W13 = yes
@@ -7430,7 +7472,12 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_skv_reward_W18
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
         588 = {
           add_building_construction = {
             type = arms_factory
@@ -7476,7 +7523,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         283 = {
           add_building_construction = {
             type = arms_factory
@@ -8493,7 +8540,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 100
+        add_war_support = 0.08
         custom_effect_tooltip = WET_SKV_F13_special_tt
       }
       hidden_effect = {
@@ -8653,7 +8700,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D08_special_tt
       }
       hidden_effect = {
@@ -8693,7 +8740,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D13_special_tt
       }
       hidden_effect = {
@@ -8733,7 +8780,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D18_special_tt
       }
       hidden_effect = {
@@ -9089,7 +9136,7 @@ wet_skv_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 100
+        add_stability = 0.08
       }
       hidden_effect = {
         wet_skv_award_E11 = yes

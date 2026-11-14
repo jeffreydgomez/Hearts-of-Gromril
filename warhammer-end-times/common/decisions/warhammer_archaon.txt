@@ -1733,10 +1733,10 @@ wet_arc_campaigns = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 25
+        navy_experience = 15
       }
       hidden_effect = {
-        add_political_power = 25
+        navy_experience = 15
         clr_country_flag = wet_arc_claim_KN01_pending
         set_country_flag = wet_arc_claim_KN01_done
       }
@@ -2646,10 +2646,13 @@ wet_arc_campaigns = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 25
+        custom_effect_tooltip = WET_ARC_KM01_construction_0_tt
       }
       hidden_effect = {
-        add_political_power = 25
+        add_to_variable = {
+          wet_arc_infrastructure_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
         clr_country_flag = wet_arc_claim_KM01_pending
         set_country_flag = wet_arc_claim_KM01_done
       }

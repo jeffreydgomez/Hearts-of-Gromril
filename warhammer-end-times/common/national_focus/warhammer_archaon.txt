@@ -171,18 +171,18 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      navy_experience = 15
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        navy_experience = 15
       }
       hidden_effect = {
         if = {
           limit = {
             wet_arc_contact_naggaroth = yes
           }
-          add_political_power = 25
+          navy_experience = 15
           set_country_flag = wet_arc_claim_KN01_done
         }
         else = {
@@ -1749,18 +1749,21 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      custom_effect_tooltip = WET_ARC_KM01_construction_0_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        custom_effect_tooltip = WET_ARC_KM01_construction_0_tt
       }
       hidden_effect = {
         if = {
           limit = {
             wet_arc_contact_mourn = yes
           }
-          add_political_power = 25
+          add_to_variable = {
+            wet_arc_infrastructure_credits = 1
+          }
+          wet_arc_spend_construction_credits = yes
           set_country_flag = wet_arc_claim_KM01_done
         }
         else = {
@@ -3642,14 +3645,29 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      add_tech_bonus = {
+        name = wet_arc_reward_T01
+        bonus = 0.5
+        uses = 1
+        category = decryption_tech
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        add_tech_bonus = {
+          name = wet_arc_reward_T01
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
       }
       hidden_effect = {
-        add_political_power = 25
+        add_tech_bonus = {
+          name = wet_arc_reward_T01
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
         wet_arc_count_industry = yes
       }
     }
@@ -3873,17 +3891,17 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
       add_ideas = wet_arc_personal_research
+      air_experience = 15
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
         add_ideas = wet_arc_personal_research
+        air_experience = 15
       }
       hidden_effect = {
-        add_political_power = 25
         add_ideas = wet_arc_personal_research
+        air_experience = 15
         wet_arc_count_industry = yes
       }
     }
@@ -4027,7 +4045,7 @@ focus_tree = {
         uses = 1
         category = electronics
       }
-      add_political_power = 25
+      custom_effect_tooltip = WET_ARC_T08_construction_0_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -4037,7 +4055,7 @@ focus_tree = {
           uses = 1
           category = electronics
         }
-        add_political_power = 25
+        custom_effect_tooltip = WET_ARC_T08_construction_0_tt
       }
       hidden_effect = {
         add_tech_bonus = {
@@ -4046,7 +4064,10 @@ focus_tree = {
           uses = 1
           category = electronics
         }
-        add_political_power = 25
+        add_to_variable = {
+          wet_arc_arms_factory_credits = 1
+        }
+        wet_arc_spend_construction_credits = yes
         wet_arc_count_industry = yes
       }
     }
@@ -7232,14 +7253,14 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      add_war_support = 0.03
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        add_war_support = 0.03
       }
       hidden_effect = {
-        add_political_power = 25
+        add_war_support = 0.03
         wet_arc_count_industry = yes
       }
     }
@@ -7445,20 +7466,20 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
       remove_ideas = wet_arc_household_authority
       add_ideas = wet_arc_household_authority_2
+      add_stability = 0.03
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
         remove_ideas = wet_arc_household_authority
         add_ideas = wet_arc_household_authority_2
+        add_stability = 0.03
       }
       hidden_effect = {
-        add_political_power = 25
         remove_ideas = wet_arc_household_authority
         add_ideas = wet_arc_household_authority_2
+        add_stability = 0.03
         wet_arc_count_industry = yes
       }
     }

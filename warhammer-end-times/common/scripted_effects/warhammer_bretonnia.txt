@@ -18248,7 +18248,12 @@ wet_brt_award_E00 = {
       }
     }
     set_country_flag = wet_brt_reward_E00
-    add_political_power = 50
+    add_tech_bonus = {
+      name = wet_brt_reward_E00
+      bonus = 0.5
+      uses = 1
+      category = construction_tech
+    }
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -18553,7 +18558,7 @@ wet_brt_award_P00 = {
       wet_brt_preparation = yes
     }
     set_country_flag = wet_brt_reward_P00
-    add_political_power = 50
+    add_war_support = 0.05
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -18567,8 +18572,13 @@ wet_brt_award_P01 = {
       wet_brt_preparation = yes
     }
     set_country_flag = wet_brt_reward_P01
-    add_political_power = 25
     set_country_flag = wet_brt_rebel_dossier
+    add_tech_bonus = {
+      name = wet_brt_reward_P01
+      bonus = 0.5
+      uses = 1
+      category = decryption_tech
+    }
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -18972,7 +18982,7 @@ wet_brt_award_D00 = {
       }
     }
     set_country_flag = wet_brt_reward_D00
-    add_political_power = 50
+    air_experience = 25
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -19133,7 +19143,7 @@ wet_brt_award_D08 = {
     }
     set_country_flag = wet_brt_reward_D08
     set_country_flag = wet_brt_incursion_resolved
-    add_political_power = 25
+    army_experience = 15
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -19219,8 +19229,8 @@ wet_brt_award_D13 = {
       }
     }
     set_country_flag = wet_brt_reward_D13
-    add_political_power = 50
     set_country_flag = wet_brt_incursion_aftermath
+    add_stability = 0.05
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -19694,13 +19704,13 @@ wet_brt_award_C17 = {
       has_completed_focus = WET_BRT_C15
     }
     set_country_flag = wet_brt_reward_C17
-    add_political_power = 50
     add_doctrine_cost_reduction = {
       name = wet_brt_doctrine_bonus
       cost_reduction = 0.25
       uses = 1
       category = land_doctrine
     }
+    add_stability = 0.05
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -20232,7 +20242,7 @@ wet_brt_award_O00 = {
       }
     }
     set_country_flag = wet_brt_reward_O00
-    add_political_power = 50
+    navy_experience = 25
     wet_brt_reconcile_benefits = yes
   }
 }
@@ -21070,8 +21080,8 @@ wet_brt_award_O15 = {
       }
     }
     set_country_flag = wet_brt_reward_O15
-    add_political_power = 50
     add_war_support = 0.05
+    army_experience = 25
     wet_brt_reconcile_benefits = yes
   }
 }

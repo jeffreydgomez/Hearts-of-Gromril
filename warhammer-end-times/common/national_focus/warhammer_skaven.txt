@@ -121,12 +121,22 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      add_tech_bonus = {
+        name = wet_skv_reward_C03
+        bonus = 0.5
+        uses = 1
+        category = decryption_tech
+      }
       custom_effect_tooltip = WET_SKV_C03_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        add_tech_bonus = {
+          name = wet_skv_reward_C03
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
         custom_effect_tooltip = WET_SKV_C03_special_tt
       }
       hidden_effect = {
@@ -969,6 +979,14 @@ focus_tree = {
     prerequisite = {
       focus = WET_SKV_W01
     }
+    available = {
+      has_completed_focus = WET_SKV_W03
+      has_war = no
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_W04_requirements
+        wet_skv_tilea_settled = yes
+      }
+    }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
@@ -1014,7 +1032,7 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      army_experience = 15
       760 = {
         add_building_construction = {
           type = infrastructure
@@ -1026,7 +1044,7 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        army_experience = 15
         760 = {
           add_building_construction = {
             type = infrastructure
@@ -1067,7 +1085,7 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      navy_experience = 15
       747 = {
         add_building_construction = {
           type = dockyard
@@ -1079,7 +1097,7 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        navy_experience = 15
         747 = {
           add_building_construction = {
             type = dockyard
@@ -1123,11 +1141,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_stability = 0.05
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_stability = 0.05
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_W07
@@ -1369,11 +1387,21 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_tech_bonus = {
+        name = wet_skv_reward_W13
+        bonus = 0.5
+        uses = 1
+        category = logistics_tech
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_skv_reward_W13
+          bonus = 0.5
+          uses = 1
+          category = logistics_tech
+        }
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_W13
@@ -1538,7 +1566,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_tech_bonus = {
+        name = wet_skv_reward_W18
+        bonus = 0.5
+        uses = 1
+        category = infantry_weapons
+      }
       588 = {
         add_building_construction = {
           type = arms_factory
@@ -1550,7 +1583,12 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_skv_reward_W18
+          bonus = 0.5
+          uses = 1
+          category = infantry_weapons
+        }
         588 = {
           add_building_construction = {
             type = arms_factory
@@ -1622,7 +1660,7 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      army_experience = 25
       283 = {
         add_building_construction = {
           type = arms_factory
@@ -1634,7 +1672,7 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         283 = {
           add_building_construction = {
             type = arms_factory
@@ -2822,11 +2860,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_manpower = 3000
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_manpower = 3000
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_F00
@@ -3377,12 +3415,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 100
+      add_war_support = 0.08
       custom_effect_tooltip = WET_SKV_F13_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 100
+        add_war_support = 0.08
         custom_effect_tooltip = WET_SKV_F13_special_tt
       }
       hidden_effect = {
@@ -3712,12 +3750,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      army_experience = 25
       custom_effect_tooltip = WET_SKV_D08_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D08_special_tt
       }
       hidden_effect = {
@@ -3881,12 +3919,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      army_experience = 25
       custom_effect_tooltip = WET_SKV_D13_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D13_special_tt
       }
       hidden_effect = {
@@ -4050,12 +4088,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      army_experience = 25
       custom_effect_tooltip = WET_SKV_D18_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
         custom_effect_tooltip = WET_SKV_D18_special_tt
       }
       hidden_effect = {
@@ -4080,22 +4118,32 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
       add_tech_bonus = {
         name = wet_skv_research_bonus
         bonus = 0.5
         uses = 1
         category = encryption_tech
       }
+      add_tech_bonus = {
+        name = wet_skv_reward_O00
+        bonus = 0.5
+        uses = 1
+        category = decryption_tech
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
         add_tech_bonus = {
           name = wet_skv_research_bonus
           bonus = 0.5
           uses = 1
           category = encryption_tech
+        }
+        add_tech_bonus = {
+          name = wet_skv_reward_O00
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
         }
       }
       hidden_effect = {
@@ -4559,11 +4607,21 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      add_tech_bonus = {
+        name = wet_skv_reward_I00
+        bonus = 0.5
+        uses = 1
+        category = industry
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        add_tech_bonus = {
+          name = wet_skv_reward_I00
+          bonus = 0.5
+          uses = 1
+          category = industry
+        }
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I00
@@ -4996,11 +5054,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
+      add_war_support = 0.03
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
+        add_war_support = 0.03
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_E00
@@ -5433,11 +5491,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 100
+      add_stability = 0.08
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 100
+        add_stability = 0.08
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_E11

@@ -57,17 +57,17 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
       army_experience = 10
+      add_stability = 0.03
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
         army_experience = 10
+        add_stability = 0.03
       }
       hidden_effect = {
-        add_political_power = 25
         army_experience = 10
+        add_stability = 0.03
         wet_rei_count_industry = yes
       }
     }
@@ -95,16 +95,16 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_stability = 0.03
-      add_political_power = 25
+      army_experience = 10
     }
     completion_reward = {
       effect_tooltip = {
         add_stability = 0.03
-        add_political_power = 25
+        army_experience = 10
       }
       hidden_effect = {
         add_stability = 0.03
-        add_political_power = 25
+        army_experience = 10
         wet_rei_count_industry = yes
       }
     }
@@ -175,6 +175,14 @@ focus_tree = {
         custom_effect_tooltip = WET_REI_R04_special_tt
       }
       hidden_effect = {
+        if = {
+          limit = {
+            NOT = {
+              has_idea = wet_rei_disunity
+            }
+          }
+          add_stability = 0.10
+        }
         wet_rei_relieve_disunity = yes
         add_political_power = 50
         wet_rei_count_industry = yes
@@ -2157,11 +2165,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_war_support = 0.05
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_war_support = 0.05
       }
       hidden_effect = {
         if = {
@@ -2175,7 +2183,7 @@ focus_tree = {
               }
             }
           }
-          add_political_power = 50
+          add_war_support = 0.05
         }
         else = {
           set_country_flag = wet_rei_claim_E00
@@ -2533,7 +2541,7 @@ focus_tree = {
   focus = {
     id = WET_REI_E07
     icon = GFX_goal_generic_trade
-    x = 10
+    x = -2
     y = 5
     cost = 3
     prerequisite = {
@@ -2543,17 +2551,32 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 25
       navy_experience = 10
+      add_tech_bonus = {
+        name = wet_rei_reward_E07
+        bonus = 0.5
+        uses = 1
+        category = naval_equipment
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 25
         navy_experience = 10
+        add_tech_bonus = {
+          name = wet_rei_reward_E07
+          bonus = 0.5
+          uses = 1
+          category = naval_equipment
+        }
       }
       hidden_effect = {
-        add_political_power = 25
         navy_experience = 10
+        add_tech_bonus = {
+          name = wet_rei_reward_E07
+          bonus = 0.5
+          uses = 1
+          category = naval_equipment
+        }
         wet_rei_count_industry = yes
       }
     }
@@ -2567,11 +2590,20 @@ focus_tree = {
   focus = {
     id = WET_REI_E08
     icon = GFX_goal_generic_forceful_treaty
-    x = 8
+    x = -2
     y = 6
     cost = 5
     prerequisite = {
       focus = WET_REI_E07
+    }
+    available = {
+      NOT = {
+        OR = {
+          threat
+          <
+          0.25
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -2586,28 +2618,42 @@ focus_tree = {
       hidden_effect = {
         if = {
           limit = {
-            A12 = {
-              exists = yes
-              NOT = {
-                has_war_with = A01
-              }
+            NOT = {
               OR = {
-                is_subject = no
-                is_subject_of = A01
+                threat
+                <
+                0.25
               }
             }
           }
-          set_autonomy = {
-            target = A12
-            autonomy_state = autonomy_puppet
-            freedom_level = 0
-            end_wars = no
-            end_civil_wars = no
+          if = {
+            limit = {
+              A12 = {
+                exists = yes
+                NOT = {
+                  has_war_with = A01
+                }
+                OR = {
+                  is_subject = no
+                  is_subject_of = A01
+                }
+              }
+            }
+            set_autonomy = {
+              target = A12
+              autonomy_state = autonomy_puppet
+              freedom_level = 0
+              end_wars = no
+              end_civil_wars = no
+            }
+            A12 = {
+              clr_country_flag = wet_rei_elector_compact
+              wet_rei_relieve_disunity = yes
+            }
           }
-          A12 = {
-            clr_country_flag = wet_rei_elector_compact
-            wet_rei_relieve_disunity = yes
-          }
+        }
+        else = {
+          set_country_flag = wet_rei_claim_E08
         }
         wet_rei_count_industry = yes
       }
@@ -2622,7 +2668,7 @@ focus_tree = {
   focus = {
     id = WET_REI_E09
     icon = GFX_goal_generic_trade
-    x = 8
+    x = -2
     y = 7
     cost = 3
     prerequisite = {
@@ -3453,14 +3499,17 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      custom_effect_tooltip = WET_REI_P00_construction_0_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        custom_effect_tooltip = WET_REI_P00_construction_0_tt
       }
       hidden_effect = {
-        add_political_power = 50
+        add_to_variable = {
+          wet_rei_industrial_complex_credits = 1
+        }
+        wet_rei_spend_construction_credits = yes
         wet_rei_count_industry = yes
       }
     }
@@ -4392,14 +4441,14 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      army_experience = 25
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        army_experience = 25
       }
       hidden_effect = {
-        add_political_power = 50
+        army_experience = 25
         wet_rei_count_industry = yes
       }
     }
@@ -4549,14 +4598,29 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = 50
+      add_tech_bonus = {
+        name = wet_rei_reward_E23
+        bonus = 0.5
+        uses = 1
+        category = decryption_tech
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_rei_reward_E23
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
       }
       hidden_effect = {
-        add_political_power = 50
+        add_tech_bonus = {
+          name = wet_rei_reward_E23
+          bonus = 0.5
+          uses = 1
+          category = decryption_tech
+        }
         wet_rei_count_industry = yes
       }
     }

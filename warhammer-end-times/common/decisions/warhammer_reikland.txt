@@ -1096,10 +1096,10 @@ wet_rei_campaigns = {
     }
     complete_effect = {
       effect_tooltip = {
-        add_political_power = 50
+        add_war_support = 0.05
       }
       hidden_effect = {
-        add_political_power = 50
+        add_war_support = 0.05
         clr_country_flag = wet_rei_claim_E00
         set_country_flag = wet_rei_claim_E00_done
       }
@@ -1242,6 +1242,71 @@ wet_rei_campaigns = {
         }
         clr_country_flag = wet_rei_claim_E06
         set_country_flag = wet_rei_claim_E06_done
+      }
+    }
+    days_re_enable = 0
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_rei_claim_E08 = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A01
+    }
+    visible = {
+      has_completed_focus = WET_REI_E08
+      has_country_flag = wet_rei_claim_E08
+      NOT = {
+        has_country_flag = wet_rei_claim_E08_done
+      }
+    }
+    cost = 0
+    available = {
+      NOT = {
+        OR = {
+          threat
+          <
+          0.25
+        }
+      }
+      AND = {
+        has_country_flag = wet_rei_claim_E08
+      }
+    }
+    complete_effect = {
+      effect_tooltip = {
+        custom_effect_tooltip = WET_REI_E08_special_tt
+      }
+      hidden_effect = {
+        if = {
+          limit = {
+            A12 = {
+              exists = yes
+              NOT = {
+                has_war_with = A01
+              }
+              OR = {
+                is_subject = no
+                is_subject_of = A01
+              }
+            }
+          }
+          set_autonomy = {
+            target = A12
+            autonomy_state = autonomy_puppet
+            freedom_level = 0
+            end_wars = no
+            end_civil_wars = no
+          }
+          A12 = {
+            clr_country_flag = wet_rei_elector_compact
+            wet_rei_relieve_disunity = yes
+          }
+        }
+        clr_country_flag = wet_rei_claim_E08
+        set_country_flag = wet_rei_claim_E08_done
       }
     }
     days_re_enable = 0
