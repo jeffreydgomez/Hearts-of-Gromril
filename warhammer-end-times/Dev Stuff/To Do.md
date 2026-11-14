@@ -1,30 +1,82 @@
 # To Do
 
-Unchecked items remain future work.
-- [ ] **Ongoing:** review each nation's starting event as its focus tree, rulers, borders, factions, starting wars or End Times mechanics develop. Keep the introduction accurate to implemented content; revise neighbouring nations' accounts when affected. Add later country-specific illustrations and verify popup readability in a user-requested game test.
-- [ ] Basic mission trees should generally have three main branches: **Internal**, **External**, and **Production**. Fit historical/ahistorical choices and recovery paths within those branches. Archaon's explicitly requested four-god layout is an exception; see the expanded draft below. **Design note only.**
-- [ ] All Order majors should start with a country-appropriate **isolating national spirit that prevents joining alliances**. Design its removal through focuses, decisions or events; this is separate from the current 100% world-tension requirement. **Future work only; do not implement these spirits yet.**
-- [ ] For future Undead air units, investigate a country-specific replacement for native airbase supply demand; the installed game only documents a global air-supply factor. Army/naval supply and natural population growth are now exempt.
-- [ ] Undead do not need food: military fuel consumption is now exempt through Deathless Hosts; retain this exemption when designing future civilian food needs, custom equipment and other food-consumption systems.
-- [ ] Custom advisors with bespoke named characters and effects. Generic cultural advisor and military-staff pools are now implemented.
-- [ ] Halve factory output?
-- [ ] Consider excluding or simplifying systems that do not suit the mod, including **modular ship upgrades and railroads**. 
-- [ ] Review the DLC reference below and decide which mechanics this mod should support. No DLC systems are disabled by these notes.
-- Make a new recruitment level, societal recruitment and apply it to orcs.
-- [ ] Playtest Bretonnia in game when explicitly authorised; balance the future Mousillon build-up and warning window against the unchanged starting armies.
-- [ ] Add the future **Lady of the Lake = Lileath revelation event chain**, with faith, conditional cooperation and rejection responses; account for actual surviving characters and Elven diplomacy.
-- [ ] Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
-- [ ] Design a **Mousillon mission tree**, including build-up, ducal infiltration, Arkhan support, a warned declaration, the shared exact 50/50 duel and recovery/succession on either result.
-- [ ] Design a **Sylvania mission tree**, including Mannfred and shared captive/relic custody. The installed Nagashi route requires seven relics and three living sacrificial victims alongside one of three power sources. Preserve Ulthuan's custody generations and the existing Volkmar/Aliathra handover paths; never create a second captive.
-- [ ] Playtest Nagashi in game when explicitly authorised: native duration reduction, project timing/DLC fallback, scientist/adviser/commander roles, custody and actual battle/peace outcomes. Add the shared final-crisis producer before consuming E11's Mannfred-exclusion hook.
-- Duel rules? Based on General stats?
-- What about fliers models?
-- Incursions should be triggered from the chaos gods mission tree
-- Get countries to product what they should produce
+#### URGENT / QUICK #####
 
-Check
-- Use cavalry model for light tanks and fimir model for monstrous tanks.
-- Unarmed mob unit type - Battalion, should be like infantry but much weaker and only take 20 infantry equipment and 20 training.
+	Better Icons for mission trees
+
+	Make sure countries start with appropriate laws
+
+	Should purging be a new law? That would make more sense.
+
+#### LESS URGENT TO DO ####
+
+	Pictures for events
+
+	Unique Technology Battalions Air Units/ Naval Units only avaiable to certain races? Maybe even unique technology tabs?
+
+	Review the DLC reference below and decide which mechanics this mod should support. No DLC systems are disabled by these notes.
+
+	Duel rules? Based on General stats. With a series of choices that each member can make to take temporary nation wide penalties in exchange for advantage in the duel.
+
+	Make/Get flier 3d models
+
+	Get countries to produce what they should produce, and get resource and food balance right.
+
+#### For Later ####
+
+	Add the future **Lady of the Lake = Lileath revelation event chain**, with faith, conditional cooperation and rejection responses; account for actual surviving characters and Elven diplomacy.
+
+	Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
+
+	Design a **Mousillon mission tree**, including build-up, ducal infiltration, Arkhan support, a warned declaration, the shared exact 50/50 duel and recovery/succession on either result.
+
+	Design a **Sylvania mission tree**, including Mannfred and shared captive/relic custody. The installed Nagashi route requires seven relics and three living sacrificial victims alongside one of three power sources. Preserve Ulthuan's custody generations and the existing Volkmar/Aliathra handover paths; never create a second captive.
+
+	Incursions should be triggered from the chaos gods mission tree
+
+#### DLC and system reference #####
+
+Checked **6 November 2026**, against the installed HOI4 **1.19.4.2** scripts and the publisher's current catalogue. This covers all 24 entries in the current Steam DLC catalogue (11 gameplay packs, 12 cosmetic/music packs, and the subscription), the four integrated expansions, and legacy/free/bonus content below. Editions, bundles and expansion passes package existing content; they do not add a separate gameplay system. Ownership is not inferred from files present in the installation. [Current catalogue](https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/).
+
+The table describes native HOI4 features. A total conversion still has to provide compatible technologies, equipment, focuses and scripts for those features; owning a pack does not automatically make its WWII content work in this mod.
+
+### Gameplay expansions and country packs
+
+| DLC | Main systems/content | Status and relevance |
+| --- | --- | --- |
+| [Together for Victory](https://store.steampowered.com/app/530760/) | Subject autonomy levels, subject recruitment/construction, technology sharing, requesting lend-lease, spearhead orders, expanded combat records; Canada, Australia, New Zealand, South Africa and India focuses. | **Integrated into the base game.** Our Dominion relationships already use autonomy. |
+| [Death or Dishonor](https://store.steampowered.com/app/584140/) | Equipment conversion, production licences and additional subject interactions; Hungary, Romania, Czechoslovakia and Yugoslavia focuses. | **Integrated.** Conversion/licensing may be useful for equipment tiers. |
+| [Waking the Tiger](https://store.steampowered.com/app/702350/) | Purchasable commander traits and abilities, air volunteers and expanded Chinese content; alternate German/Japanese paths. Its release also brought command, decision and acclimatisation changes. | **Integrated.** Several country trees now have newer replacements. |
+| [Man the Guns](https://store.steampowered.com/app/815460/) | Modular ship design/refitting, naval routing restrictions, mines and naval treaties; expanded USA/UK content plus Netherlands/Mexico. | **Integrated.** Ship modules now need a mod-side design decision, not a DLC ban. |
+| [La Résistance](https://www.paradoxinteractive.com/media/press-releases/paradox-interactive/quislings-and-heroes-take-center-stage-in-la-resistance) | Intelligence agencies, operatives, spy networks and operations, collaboration governments, codebreaking, scout planes and armoured cars; France, Spain and Portugal content. | Paid expansion. Basic resistance/compliance exists separately from the paid spy system. |
+| [Battle for the Bosporus](https://store.steampowered.com/app/1348660/) | Greece, Bulgaria and Turkey focus trees, decisions, characters and national political mechanics. | Paid country pack; no general equipment designer or new global resource system. |
+| [No Step Back](https://store.steampowered.com/app/1348661/) | Modular tank designer, officer-corps spirits, railway guns, scorched-earth and floating-harbour options; Soviet, Polish and Baltic content. | Paid expansion. **Ordinary railways and the supply network are base mechanics**, distinct from railway guns. |
+| [By Blood Alone](https://store.steampowered.com/app/1880650/) | Modular aircraft designer; extra peace demands such as ship seizure, resource rights, reparations and demilitarisation; unit medals and embargoes. Italy, Ethiopia and Switzerland content. | Paid expansion. The general peace-conference rework is a separate base-game change. |
+| [Arms Against Tyranny](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-arms-against-tyranny) | Military Industrial Organizations, international equipment market and special-forces specialisations; Finland, Sweden, Norway, Denmark and Iceland content. | Paid expansion. Relevant to equipment production, exports and upgrades. |
+| [Trial of Allegiance](https://store.steampowered.com/app/2695150/) | Large Brazil, Argentina and Chile trees, with supporting Paraguay/Uruguay content, regional decisions, leaders and art. | Paid country pack; predominantly regional content rather than a new general military system. |
+| [Götterdämmerung](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-gotterdammerung) | Expanded special-project research/facilities/scientists and raids, advanced weapons, historical landmarks; Germany, Austria, Hungary, Belgium and Congo content. | Paid expansion. Some basic research/raid infrastructure arrived with its free update. Our custom +5% landmarks have **no DLC gate**. |
+| [Graveyard of Empires](https://store.steampowered.com/app/3152790/) | India, Iran, Iraq and Afghanistan focus trees and national political systems, events and art. | Paid country pack; no new universal equipment designer. |
+| [No Compromise, No Surrender](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-no-compromise-no-surrender) | Japan, Nationalist/Communist China, warlords and Philippines content; additional doctrines, deeper faction rules/goals and naval special-project content. | Paid expansion. Coal/industrial energy and the core doctrine/faction reworks include **free-update** components; not all associated mechanics are paid unlocks. |
+| [Peace for Our Time](https://store.steampowered.com/app/3757310/) | Czechoslovak focus paths, Divided Nation politics and Army Readiness balance of power, regional art/music. | Paid focus pack. Its arms-trade content does not independently unlock the full AAT international market. |
+| [Thunder at Our Gates](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-thunder-at-our-gates) | Military headquarters and ship captains; Australia, Siam and Indonesia content. | Paid theater pack. The division-designer rework and regimental support came in the **free update**. |
+
+The four integrated expansions are explicitly included in the [current base-game description](https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/). Man the Guns integration and ship-designer availability were confirmed in the [publisher's expansion-pass FAQ](https://store.steampowered.com/news/posts/?appids=394360&enddate=1760544670&feed=steam_community_announcements).
+
+
+### Base mechanics to account for when simplifying
+
+- **Ship modules:** now base content through Man the Guns integration. A simpler navy would need changes to equipment, technologies, variants and AI production together.
+- **Railroads and supply hubs:** the installed [building definitions](</Users/jeffgomez/Library/Application Support/Steam/steamapps/common/Hearts of Iron IV/common/buildings/00_buildings.txt>) expose them without a DLC gate. Railway guns are a different, NSB-associated feature. Replacing railroads means preserving a workable supply network.
+- **Electricity/industrial energy:** coal arrived in the free NCNS update. The publisher's October 2026 energy discussion also describes further work, so reassess the exact installed version before designing a replacement. Our current mod retains the installed industrial-power mechanic with **Warpstone as the energy source** and **Horses in the former coal resource slot**. [Publisher energy discussion](https://store.steampowered.com/news/posts/?appids=394360&feed=steam_community_announcements).
+- **Division designer and regimental support:** the 2026 redesign is free content; paid Thunder at Our Gates adds headquarters/captains. [Publisher feature split](https://store.steampowered.com/news/posts/?appids=394360&enddate=1778591240&feed=steam_community_announcements).
+
+Before changing a system, inspect its current `has_dlc`, technology and scripted UI gates, then design the supported DLC combinations. This reference is a planning inventory, not an instruction to switch anything off now.
+
+
+
+
+#### Notes ####
+
 
 
 ## Doctrines and non-equipment military research
@@ -52,9 +104,7 @@ The installed version keeps doctrines in their own grand-doctrine, track and sub
 
 **Inventory sources:** read-only installed `common/technologies/*.txt`, `common/units/equipment/*.txt`, `common/units/equipment/modules/*.txt`, `common/doctrines/**` and `common/special_projects/projects/*.txt`. The named Warhammer replacements are mod-design suggestions, not claims that every army canonically possesses them. Legacy and designer implementations often represent the same family and should not become duplicate production lines.
 
-## Mission tree concepts for the first ten major factions
-
-**Draft concepts only — November 7, 2026.** The playable bookmark is now **January 1, 2519**. These notes do not replace the generic focus tree, add missions, set story flags or change the map. The initial ten follow the existing curated major priority list: **Reikland, Bretonnia, Kislev, the Everchosen, Grey Seer Clan, Karaz-a-Karak, Ulthuan, Naggaroth, Nehekhara and Grand Cathay**. This is a practical first content batch, not a claim that Cathay has more End Times source material than Nagash or Sylvania.
+## Notes
 
 The global flag catalogue is at the top of [End times lore reference](End%20times%20lore%20reference.md#proposed-global-flags-the-shared-story-state). In the tables below, a flag written as `crisis_started` means the proposed exact key **`wet_story_crisis_started`**. All of those flags are designs, not implemented script. **H** means a route following the narrative's motives and broad sequence; **A** means an explicitly ahistorical alternative. Historical choices still permit a successful defence or rescue: do not force a loss merely to reproduce the source.
 
@@ -300,41 +350,3 @@ Use **focuses** for strategic commitments, **decisions** for choices and spendin
 - [ ] Draft the remaining next wave for Sylvania, Athel Loren and Hexoatl/Lizardmen. Nagashi's 126-focus U24 campaign is implemented; its remaining engine checks are listed above.
 - [ ] Design mission cancellation, refunds, AI preferences and visible prerequisite tooltips alongside each branch.
 - [ ] Keep the canonical apocalypse optional and provide coherent endings for successful prevention, sealing and escape.
-
-## DLC and system reference
-
-Checked **6 November 2026**, against the installed HOI4 **1.19.4.2** scripts and the publisher's current catalogue. This covers all 24 entries in the current Steam DLC catalogue (11 gameplay packs, 12 cosmetic/music packs, and the subscription), the four integrated expansions, and legacy/free/bonus content below. Editions, bundles and expansion passes package existing content; they do not add a separate gameplay system. Ownership is not inferred from files present in the installation. [Current catalogue](https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/).
-
-The table describes native HOI4 features. A total conversion still has to provide compatible technologies, equipment, focuses and scripts for those features; owning a pack does not automatically make its WWII content work in this mod.
-
-### Gameplay expansions and country packs
-
-| DLC | Main systems/content | Status and relevance |
-| --- | --- | --- |
-| [Together for Victory](https://store.steampowered.com/app/530760/) | Subject autonomy levels, subject recruitment/construction, technology sharing, requesting lend-lease, spearhead orders, expanded combat records; Canada, Australia, New Zealand, South Africa and India focuses. | **Integrated into the base game.** Our Dominion relationships already use autonomy. |
-| [Death or Dishonor](https://store.steampowered.com/app/584140/) | Equipment conversion, production licences and additional subject interactions; Hungary, Romania, Czechoslovakia and Yugoslavia focuses. | **Integrated.** Conversion/licensing may be useful for equipment tiers. |
-| [Waking the Tiger](https://store.steampowered.com/app/702350/) | Purchasable commander traits and abilities, air volunteers and expanded Chinese content; alternate German/Japanese paths. Its release also brought command, decision and acclimatisation changes. | **Integrated.** Several country trees now have newer replacements. |
-| [Man the Guns](https://store.steampowered.com/app/815460/) | Modular ship design/refitting, naval routing restrictions, mines and naval treaties; expanded USA/UK content plus Netherlands/Mexico. | **Integrated.** Ship modules now need a mod-side design decision, not a DLC ban. |
-| [La Résistance](https://www.paradoxinteractive.com/media/press-releases/paradox-interactive/quislings-and-heroes-take-center-stage-in-la-resistance) | Intelligence agencies, operatives, spy networks and operations, collaboration governments, codebreaking, scout planes and armoured cars; France, Spain and Portugal content. | Paid expansion. Basic resistance/compliance exists separately from the paid spy system. |
-| [Battle for the Bosporus](https://store.steampowered.com/app/1348660/) | Greece, Bulgaria and Turkey focus trees, decisions, characters and national political mechanics. | Paid country pack; no general equipment designer or new global resource system. |
-| [No Step Back](https://store.steampowered.com/app/1348661/) | Modular tank designer, officer-corps spirits, railway guns, scorched-earth and floating-harbour options; Soviet, Polish and Baltic content. | Paid expansion. **Ordinary railways and the supply network are base mechanics**, distinct from railway guns. |
-| [By Blood Alone](https://store.steampowered.com/app/1880650/) | Modular aircraft designer; extra peace demands such as ship seizure, resource rights, reparations and demilitarisation; unit medals and embargoes. Italy, Ethiopia and Switzerland content. | Paid expansion. The general peace-conference rework is a separate base-game change. |
-| [Arms Against Tyranny](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-arms-against-tyranny) | Military Industrial Organizations, international equipment market and special-forces specialisations; Finland, Sweden, Norway, Denmark and Iceland content. | Paid expansion. Relevant to equipment production, exports and upgrades. |
-| [Trial of Allegiance](https://store.steampowered.com/app/2695150/) | Large Brazil, Argentina and Chile trees, with supporting Paraguay/Uruguay content, regional decisions, leaders and art. | Paid country pack; predominantly regional content rather than a new general military system. |
-| [Götterdämmerung](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-gotterdammerung) | Expanded special-project research/facilities/scientists and raids, advanced weapons, historical landmarks; Germany, Austria, Hungary, Belgium and Congo content. | Paid expansion. Some basic research/raid infrastructure arrived with its free update. Our custom +5% landmarks have **no DLC gate**. |
-| [Graveyard of Empires](https://store.steampowered.com/app/3152790/) | India, Iran, Iraq and Afghanistan focus trees and national political systems, events and art. | Paid country pack; no new universal equipment designer. |
-| [No Compromise, No Surrender](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-no-compromise-no-surrender) | Japan, Nationalist/Communist China, warlords and Philippines content; additional doctrines, deeper faction rules/goals and naval special-project content. | Paid expansion. Coal/industrial energy and the core doctrine/faction reworks include **free-update** components; not all associated mechanics are paid unlocks. |
-| [Peace for Our Time](https://store.steampowered.com/app/3757310/) | Czechoslovak focus paths, Divided Nation politics and Army Readiness balance of power, regional art/music. | Paid focus pack. Its arms-trade content does not independently unlock the full AAT international market. |
-| [Thunder at Our Gates](https://www.paradoxinteractive.com/games/hearts-of-iron-iv/add-ons/hearts-of-iron-iv-thunder-at-our-gates) | Military headquarters and ship captains; Australia, Siam and Indonesia content. | Paid theater pack. The division-designer rework and regimental support came in the **free update**. |
-
-The four integrated expansions are explicitly included in the [current base-game description](https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/). Man the Guns integration and ship-designer availability were confirmed in the [publisher's expansion-pass FAQ](https://store.steampowered.com/news/posts/?appids=394360&enddate=1760544670&feed=steam_community_announcements).
-
-
-### Base mechanics to account for when simplifying
-
-- **Ship modules:** now base content through Man the Guns integration. A simpler navy would need changes to equipment, technologies, variants and AI production together.
-- **Railroads and supply hubs:** the installed [building definitions](</Users/jeffgomez/Library/Application Support/Steam/steamapps/common/Hearts of Iron IV/common/buildings/00_buildings.txt>) expose them without a DLC gate. Railway guns are a different, NSB-associated feature. Replacing railroads means preserving a workable supply network.
-- **Electricity/industrial energy:** coal arrived in the free NCNS update. The publisher's October 2026 energy discussion also describes further work, so reassess the exact installed version before designing a replacement. Our current mod retains the installed industrial-power mechanic with **Warpstone as the energy source** and **Horses in the former coal resource slot**. [Publisher energy discussion](https://store.steampowered.com/news/posts/?appids=394360&feed=steam_community_announcements).
-- **Division designer and regimental support:** the 2026 redesign is free content; paid Thunder at Our Gates adds headquarters/captains. [Publisher feature split](https://store.steampowered.com/news/posts/?appids=394360&enddate=1778591240&feed=steam_community_announcements).
-
-Before changing a system, inspect its current `has_dlc`, technology and scripted UI gates, then design the supported DLC combinations. This reference is a planning inventory, not an instruction to switch anything off now.

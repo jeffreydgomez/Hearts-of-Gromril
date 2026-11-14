@@ -1,0 +1,3464 @@
+technologies = {
+  wet_rr_empire_01 = {
+    allow = {
+      wet_rr_empire_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_steam_tanks
+    }
+    path = {
+      leads_to_tech = wet_rr_empire_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_empire_02 = {
+    allow = {
+      wet_rr_empire_access = yes
+      has_tech = wet_rr_empire_01
+    }
+    wet_rr_steam_tanks = {
+      breakthrough = 0.0575
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_empire_03 = {
+    allow = {
+      wet_rr_empire_access = yes
+    }
+    infantry = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_empire_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_empire_04 = {
+    allow = {
+      wet_rr_empire_access = yes
+      has_tech = wet_rr_empire_03
+    }
+    artillery_brigade = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      soft_attack = 0.06
+    }
+    wet_rr_warpstone_teams = {
+      soft_attack = 0.06
+    }
+    wet_rr_doom_divers = {
+      soft_attack = 0.05
+    }
+  }
+  wet_rr_empire_05 = {
+    allow = {
+      wet_rr_empire_access = yes
+    }
+    light_armor = {
+      max_organisation = 0.5
+    }
+    path = {
+      leads_to_tech = wet_rr_empire_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      max_organisation = 0.5
+    }
+    wet_rr_bear_cavalry = {
+      max_organisation = 0.5
+    }
+    wet_rr_bloodcrushers = {
+      max_organisation = 0.5
+    }
+    wet_rr_mournfang_cavalry = {
+      max_organisation = 0.5
+    }
+    wet_rr_blood_knights = {
+      max_organisation = 0.5
+    }
+  }
+  wet_rr_empire_06 = {
+    allow = {
+      wet_rr_empire_access = yes
+      has_tech = wet_rr_empire_05
+    }
+    cavalry = {
+      default_morale = 0.015
+    }
+    light_armor = {
+      default_morale = 0.015
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_empire_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      default_morale = 0.015
+    }
+    wet_rr_bear_cavalry = {
+      default_morale = 0.015
+    }
+    wet_rr_bloodcrushers = {
+      default_morale = 0.015
+    }
+    wet_rr_mournfang_cavalry = {
+      default_morale = 0.015
+    }
+    wet_rr_blood_knights = {
+      default_morale = 0.015
+    }
+    wet_rr_squig_hoppers = {
+      default_morale = 0.015
+    }
+  }
+  wet_rr_bretonnia_01 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_light_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_light_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_grail_knights
+    }
+    path = {
+      leads_to_tech = wet_rr_bretonnia_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_bretonnia_02 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+      has_tech = wet_rr_bretonnia_01
+    }
+    wet_rr_grail_knights = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_bretonnia_03 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+    }
+    light_armor = {
+      breakthrough = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_bretonnia_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      breakthrough = 0.06
+    }
+    wet_rr_bear_cavalry = {
+      breakthrough = 0.05
+    }
+    wet_rr_bloodcrushers = {
+      breakthrough = 0.06
+    }
+    wet_rr_mournfang_cavalry = {
+      breakthrough = 0.06
+    }
+    wet_rr_blood_knights = {
+      breakthrough = 0.06
+    }
+  }
+  wet_rr_bretonnia_04 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+      has_tech = wet_rr_bretonnia_03
+    }
+    cavalry = {
+      default_morale = 0.015
+    }
+    light_armor = {
+      default_morale = 0.015
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      default_morale = 0.015
+    }
+    wet_rr_bear_cavalry = {
+      default_morale = 0.015
+    }
+    wet_rr_bloodcrushers = {
+      default_morale = 0.015
+    }
+    wet_rr_mournfang_cavalry = {
+      default_morale = 0.015
+    }
+    wet_rr_blood_knights = {
+      default_morale = 0.015
+    }
+    wet_rr_squig_hoppers = {
+      default_morale = 0.015
+    }
+  }
+  wet_rr_bretonnia_05 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+    }
+    infantry = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_bretonnia_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_bretonnia_06 = {
+    allow = {
+      wet_rr_bretonnia_access = yes
+      has_tech = wet_rr_bretonnia_05
+    }
+    cavalry = {
+      supply_consumption = -0.003
+    }
+    light_armor = {
+      supply_consumption = -0.011
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_bretonnia_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      supply_consumption = -0.011
+    }
+    wet_rr_bear_cavalry = {
+      supply_consumption = -0.011
+    }
+    wet_rr_bloodcrushers = {
+      supply_consumption = -0.011
+    }
+    wet_rr_mournfang_cavalry = {
+      supply_consumption = -0.011
+    }
+    wet_rr_blood_knights = {
+      supply_consumption = -0.011
+    }
+    wet_rr_squig_hoppers = {
+      supply_consumption = -0.003
+    }
+  }
+  wet_rr_kislev_01 = {
+    allow = {
+      wet_rr_kislev_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_light_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_light_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_bear_cavalry
+    }
+    path = {
+      leads_to_tech = wet_rr_kislev_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_kislev_02 = {
+    allow = {
+      wet_rr_kislev_access = yes
+      has_tech = wet_rr_kislev_01
+    }
+    wet_rr_bear_cavalry = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_kislev_03 = {
+    allow = {
+      wet_rr_kislev_access = yes
+    }
+    winter_attrition_factor = -0.1
+    path = {
+      leads_to_tech = wet_rr_kislev_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_kislev_04 = {
+    allow = {
+      wet_rr_kislev_access = yes
+      has_tech = wet_rr_kislev_03
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_kislev_05 = {
+    allow = {
+      wet_rr_kislev_access = yes
+    }
+    infantry = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_kislev_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_kislev_06 = {
+    allow = {
+      wet_rr_kislev_access = yes
+      has_tech = wet_rr_kislev_05
+    }
+    category_recon = {
+      recon = 0.1
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_kislev_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_cathay_01 = {
+    allow = {
+      wet_rr_cathay_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_terracotta_sentinels
+    }
+    path = {
+      leads_to_tech = wet_rr_cathay_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_cathay_02 = {
+    allow = {
+      wet_rr_cathay_access = yes
+      has_tech = wet_rr_cathay_01
+    }
+    wet_rr_terracotta_sentinels = {
+      default_morale = 0.015
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_cathay_03 = {
+    allow = {
+      wet_rr_cathay_access = yes
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    path = {
+      leads_to_tech = wet_rr_cathay_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_cathay_04 = {
+    allow = {
+      wet_rr_cathay_access = yes
+      has_tech = wet_rr_cathay_03
+    }
+    infantry = {
+      defense = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_cathay_05 = {
+    allow = {
+      wet_rr_cathay_access = yes
+    }
+    artillery_brigade = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_cathay_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      soft_attack = 0.06
+    }
+    wet_rr_warpstone_teams = {
+      soft_attack = 0.06
+    }
+    wet_rr_doom_divers = {
+      soft_attack = 0.05
+    }
+  }
+  wet_rr_cathay_06 = {
+    allow = {
+      wet_rr_cathay_access = yes
+      has_tech = wet_rr_cathay_05
+    }
+    logistics_company = {
+      supply_consumption_factor = -0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_cathay_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_chaos_01 = {
+    allow = {
+      wet_rr_khorne_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_light_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_light_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_bloodcrushers
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_chaos_02 = {
+    allow = {
+      wet_rr_khorne_access = yes
+      has_tech = wet_rr_chaos_01
+    }
+    wet_rr_bloodcrushers = {
+      breakthrough = 0.0575
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_chaos_03 = {
+    allow = {
+      wet_rr_nurgle_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_medium_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_medium_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_beasts_of_nurgle
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_chaos_04 = {
+    allow = {
+      wet_rr_nurgle_access = yes
+      has_tech = wet_rr_chaos_03
+    }
+    wet_rr_beasts_of_nurgle = {
+      default_morale = 0.015
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_chaos_05 = {
+    allow = {
+      wet_rr_tzeentch_access = yes
+      has_tech = tech_support
+      has_tech = gw_artillery
+    }
+    enable_subunits = {
+      wet_rr_flamers
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_chaos_06 = {
+    allow = {
+      wet_rr_tzeentch_access = yes
+      has_tech = wet_rr_chaos_05
+    }
+    wet_rr_flamers = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_chaos_07 = {
+    allow = {
+      wet_rr_slaanesh_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_medium_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_medium_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_fiends
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_08
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 12
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_chaos_08 = {
+    allow = {
+      wet_rr_slaanesh_access = yes
+      has_tech = wet_rr_chaos_07
+    }
+    wet_rr_fiends = {
+      maximum_speed = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_folder
+      position = {
+        x = 12
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_high_elves_01 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_phoenixes
+    }
+    path = {
+      leads_to_tech = wet_rr_high_elves_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_high_elves_02 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+      has_tech = wet_rr_high_elves_01
+    }
+    wet_rr_phoenixes = {
+      default_morale = 0.015
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_high_elves_03 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+    }
+    infantry = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_high_elves_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_high_elves_04 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+      has_tech = wet_rr_high_elves_03
+    }
+    infantry = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.06
+    }
+  }
+  wet_rr_high_elves_05 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_high_elves_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_high_elves_06 = {
+    allow = {
+      wet_rr_high_elves_access = yes
+      has_tech = wet_rr_high_elves_05
+    }
+    light_armor = {
+      breakthrough = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_high_elves_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      breakthrough = 0.06
+    }
+    wet_rr_bear_cavalry = {
+      breakthrough = 0.05
+    }
+    wet_rr_bloodcrushers = {
+      breakthrough = 0.06
+    }
+    wet_rr_mournfang_cavalry = {
+      breakthrough = 0.06
+    }
+    wet_rr_blood_knights = {
+      breakthrough = 0.06
+    }
+  }
+  wet_rr_dark_elves_01 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_war_hydras
+    }
+    path = {
+      leads_to_tech = wet_rr_dark_elves_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_dark_elves_02 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+      has_tech = wet_rr_dark_elves_01
+    }
+    wet_rr_war_hydras = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_dark_elves_03 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+    }
+    infantry = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_dark_elves_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.06
+    }
+  }
+  wet_rr_dark_elves_04 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+      has_tech = wet_rr_dark_elves_03
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_dark_elves_05 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+    }
+    marine = {
+      amphibious = {
+        attack = 0.05
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_dark_elves_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_dark_elves_06 = {
+    allow = {
+      wet_rr_dark_elves_access = yes
+      has_tech = wet_rr_dark_elves_05
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dark_elves_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_wood_elves_01 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_treemen
+    }
+    path = {
+      leads_to_tech = wet_rr_wood_elves_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_wood_elves_02 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+      has_tech = wet_rr_wood_elves_01
+    }
+    wet_rr_treemen = {
+      defense = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_wood_elves_03 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+    }
+    infantry = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_wood_elves_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.06
+    }
+  }
+  wet_rr_wood_elves_04 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+      has_tech = wet_rr_wood_elves_03
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_wood_elves_05 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+    }
+    infantry = {
+      forest = {
+        movement = 0.05
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_wood_elves_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      forest = {
+        movement = 0.05
+      }
+    }
+  }
+  wet_rr_wood_elves_06 = {
+    allow = {
+      wet_rr_wood_elves_access = yes
+      has_tech = wet_rr_wood_elves_05
+    }
+    category_recon = {
+      recon = 0.1
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_wood_elves_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_dwarves_01 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+      has_tech = tech_support
+      has_tech = infantry_weapons
+    }
+    enable_subunits = {
+      wet_rr_irondrakes
+    }
+    path = {
+      leads_to_tech = wet_rr_dwarves_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_dwarves_02 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+      has_tech = wet_rr_dwarves_01
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_dwarves_03 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+    }
+    infantry = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_dwarves_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_dwarves_04 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+      has_tech = wet_rr_dwarves_03
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_dwarves_05 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+    }
+    artillery_brigade = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_dwarves_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      soft_attack = 0.06
+    }
+    wet_rr_warpstone_teams = {
+      soft_attack = 0.06
+    }
+    wet_rr_doom_divers = {
+      soft_attack = 0.05
+    }
+  }
+  wet_rr_dwarves_06 = {
+    allow = {
+      wet_rr_dwarves_access = yes
+      has_tech = wet_rr_dwarves_05
+    }
+    infantry = {
+      mountain = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_dwarves_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      mountain = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+  }
+  wet_rr_chaos_dwarves_01 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_medium_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_medium_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_kdaai_fireborn
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_dwarves_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_chaos_dwarves_02 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+      has_tech = wet_rr_chaos_dwarves_01
+    }
+    wet_rr_kdaai_fireborn = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_chaos_dwarves_03 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+    }
+    infantry = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_dwarves_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.06
+    }
+  }
+  wet_rr_chaos_dwarves_04 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+      has_tech = wet_rr_chaos_dwarves_03
+    }
+    infantry = {
+      defense = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_chaos_dwarves_05 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+    }
+    artillery_brigade = {
+      fort = {
+        attack = 0.05
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_chaos_dwarves_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      fort = {
+        attack = 0.05
+      }
+    }
+    wet_rr_warpstone_teams = {
+      fort = {
+        attack = 0.05
+      }
+    }
+    wet_rr_doom_divers = {
+      fort = {
+        attack = 0.05
+      }
+    }
+  }
+  wet_rr_chaos_dwarves_06 = {
+    allow = {
+      wet_rr_chaos_dwarves_access = yes
+      has_tech = wet_rr_chaos_dwarves_05
+    }
+    artillery_brigade = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_chaos_dwarves_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      ap_attack = 0.05
+    }
+    wet_rr_warpstone_teams = {
+      ap_attack = 0.05
+    }
+    wet_rr_doom_divers = {
+      ap_attack = 0.06
+    }
+  }
+  wet_rr_skaven_01 = {
+    allow = {
+      wet_rr_skaven_access = yes
+      has_tech = tech_support
+      has_tech = gw_artillery
+    }
+    enable_subunits = {
+      wet_rr_warpstone_teams
+    }
+    enable_equipments = {
+      wet_rr_warpstone_weaponry_1
+    }
+    path = {
+      leads_to_tech = wet_rr_skaven_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_skaven_02 = {
+    allow = {
+      wet_rr_skaven_access = yes
+      has_tech = wet_rr_skaven_01
+    }
+    wet_rr_warpstone_teams = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_skaven_03 = {
+    allow = {
+      wet_rr_skaven_access = yes
+      has_tech = wet_rr_skaven_01
+    }
+    on_research_complete = {
+      add_equipment_bonus = {
+        name = wet_rr_skaven_03
+        bonus = {
+          wet_rr_warpstone_weaponry = {
+            reliability = 0.05
+            instant = yes
+          }
+        }
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_skaven_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_skaven_04 = {
+    allow = {
+      wet_rr_skaven_access = yes
+      has_tech = wet_rr_skaven_03
+    }
+    wet_stormfiends = {
+      max_organisation = 1
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_skaven_05 = {
+    allow = {
+      wet_rr_skaven_access = yes
+    }
+    category_recon = {
+      recon = 0.1
+    }
+    path = {
+      leads_to_tech = wet_rr_skaven_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_skaven_06 = {
+    allow = {
+      wet_rr_skaven_access = yes
+      has_tech = wet_rr_skaven_05
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_skaven_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_lizardmen_01 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_solar_bastiladons
+    }
+    path = {
+      leads_to_tech = wet_rr_lizardmen_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_lizardmen_02 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+      has_tech = wet_rr_lizardmen_01
+    }
+    wet_rr_solar_bastiladons = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_lizardmen_03 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    path = {
+      leads_to_tech = wet_rr_lizardmen_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_lizardmen_04 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+      has_tech = wet_rr_lizardmen_03
+    }
+    infantry = {
+      defense = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      defense = 0.05
+    }
+  }
+  wet_rr_lizardmen_05 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+    }
+    category_recon = {
+      recon = 0.1
+    }
+    path = {
+      leads_to_tech = wet_rr_lizardmen_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_lizardmen_06 = {
+    allow = {
+      wet_rr_lizardmen_access = yes
+      has_tech = wet_rr_lizardmen_05
+    }
+    infantry = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    medium_armor = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_lizardmen_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_beasts_of_nurgle = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    wet_rr_fiends = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    wet_rr_irondrakes = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    wet_rr_kdaai_fireborn = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+    wet_rr_ushabti = {
+      jungle = {
+        movement = 0.05
+      }
+    }
+  }
+  wet_rr_ogres_01 = {
+    allow = {
+      wet_rr_ogres_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_light_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_light_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_mournfang_cavalry
+    }
+    path = {
+      leads_to_tech = wet_rr_ogres_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_ogres_02 = {
+    allow = {
+      wet_rr_ogres_access = yes
+      has_tech = wet_rr_ogres_01
+    }
+    wet_rr_mournfang_cavalry = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_ogres_03 = {
+    allow = {
+      wet_rr_ogres_access = yes
+    }
+    medium_armor = {
+      defense = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_ogres_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_beasts_of_nurgle = {
+      defense = 0.06
+    }
+    wet_rr_fiends = {
+      defense = 0.05
+    }
+    wet_rr_kdaai_fireborn = {
+      defense = 0.05
+    }
+    wet_rr_ushabti = {
+      defense = 0.05
+    }
+  }
+  wet_rr_ogres_04 = {
+    allow = {
+      wet_rr_ogres_access = yes
+      has_tech = wet_rr_ogres_03
+    }
+    medium_armor = {
+      breakthrough = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_beasts_of_nurgle = {
+      breakthrough = 0.05
+    }
+    wet_rr_fiends = {
+      breakthrough = 0.06
+    }
+    wet_rr_kdaai_fireborn = {
+      breakthrough = 0.05
+    }
+    wet_rr_ushabti = {
+      breakthrough = 0.05
+    }
+  }
+  wet_rr_ogres_05 = {
+    allow = {
+      wet_rr_ogres_access = yes
+    }
+    artillery_brigade = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_ogres_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_flamers = {
+      soft_attack = 0.06
+    }
+    wet_rr_warpstone_teams = {
+      soft_attack = 0.06
+    }
+    wet_rr_doom_divers = {
+      soft_attack = 0.05
+    }
+  }
+  wet_rr_ogres_06 = {
+    allow = {
+      wet_rr_ogres_access = yes
+      has_tech = wet_rr_ogres_05
+    }
+    medium_armor = {
+      supply_consumption = -0.0125
+    }
+    heavy_armor = {
+      supply_consumption = -0.016
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_ogres_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_steam_tanks = {
+      supply_consumption = -0.016
+    }
+    wet_rr_terracotta_sentinels = {
+      supply_consumption = -0.016
+    }
+    wet_rr_beasts_of_nurgle = {
+      supply_consumption = -0.0125
+    }
+    wet_rr_fiends = {
+      supply_consumption = -0.0125
+    }
+    wet_rr_phoenixes = {
+      supply_consumption = -0.016
+    }
+    wet_rr_war_hydras = {
+      supply_consumption = -0.016
+    }
+    wet_rr_treemen = {
+      supply_consumption = -0.016
+    }
+    wet_rr_kdaai_fireborn = {
+      supply_consumption = -0.0125
+    }
+    wet_rr_solar_bastiladons = {
+      supply_consumption = -0.016
+    }
+    wet_rr_cygors = {
+      supply_consumption = -0.016
+    }
+    wet_rr_ushabti = {
+      supply_consumption = -0.0125
+    }
+  }
+  wet_rr_beastmen_01 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_heavy_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_heavy_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_cygors
+    }
+    path = {
+      leads_to_tech = wet_rr_beastmen_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_beastmen_02 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+      has_tech = wet_rr_beastmen_01
+    }
+    wet_rr_cygors = {
+      soft_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_beastmen_03 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+    }
+    infantry = {
+      forest = {
+        movement = 0.05
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_beastmen_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      forest = {
+        movement = 0.05
+      }
+    }
+  }
+  wet_rr_beastmen_04 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+      has_tech = wet_rr_beastmen_03
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_beastmen_05 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_beastmen_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_beastmen_06 = {
+    allow = {
+      wet_rr_beastmen_access = yes
+      has_tech = wet_rr_beastmen_05
+    }
+    medium_armor = {
+      breakthrough = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_beastmen_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_beasts_of_nurgle = {
+      breakthrough = 0.05
+    }
+    wet_rr_fiends = {
+      breakthrough = 0.06
+    }
+    wet_rr_kdaai_fireborn = {
+      breakthrough = 0.05
+    }
+    wet_rr_ushabti = {
+      breakthrough = 0.05
+    }
+  }
+  wet_rr_nehekhara_01 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_medium_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_medium_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_ushabti
+    }
+    path = {
+      leads_to_tech = wet_rr_nehekhara_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_nehekhara_02 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+      has_tech = wet_rr_nehekhara_01
+    }
+    wet_rr_ushabti = {
+      defense = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_nehekhara_03 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+    }
+    infantry = {
+      default_morale = 0.015
+    }
+    path = {
+      leads_to_tech = wet_rr_nehekhara_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      default_morale = 0.015
+    }
+  }
+  wet_rr_nehekhara_04 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+      has_tech = wet_rr_nehekhara_03
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+  wet_rr_nehekhara_05 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+    }
+    infantry = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    cavalry = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    light_armor = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    path = {
+      leads_to_tech = wet_rr_nehekhara_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_bear_cavalry = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_bloodcrushers = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_irondrakes = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_mournfang_cavalry = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_blood_knights = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+    wet_rr_squig_hoppers = {
+      desert = {
+        attack = 0.05
+        defence = 0.05
+      }
+    }
+  }
+  wet_rr_nehekhara_06 = {
+    allow = {
+      wet_rr_nehekhara_access = yes
+      has_tech = wet_rr_nehekhara_05
+    }
+    light_armor = {
+      breakthrough = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_nehekhara_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_grail_knights = {
+      breakthrough = 0.06
+    }
+    wet_rr_bear_cavalry = {
+      breakthrough = 0.05
+    }
+    wet_rr_bloodcrushers = {
+      breakthrough = 0.06
+    }
+    wet_rr_mournfang_cavalry = {
+      breakthrough = 0.06
+    }
+    wet_rr_blood_knights = {
+      breakthrough = 0.06
+    }
+  }
+  wet_rr_vampires_01 = {
+    allow = {
+      wet_rr_vampires_access = yes
+      has_tech = tech_support
+      OR = {
+        AND = {
+          has_dlc = "No Step Back"
+          has_tech = basic_light_tank_chassis
+        }
+        AND = {
+          NOT = {
+            has_dlc = "No Step Back"
+          }
+          has_tech = basic_light_tank
+        }
+      }
+    }
+    enable_subunits = {
+      wet_rr_blood_knights
+    }
+    path = {
+      leads_to_tech = wet_rr_vampires_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_vampires_02 = {
+    allow = {
+      wet_rr_vampires_access = yes
+      has_tech = wet_rr_vampires_01
+    }
+    wet_rr_blood_knights = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      armor
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_vampires_03 = {
+    allow = {
+      wet_rr_vampires_access = yes
+    }
+    infantry = {
+      default_morale = 0.015
+    }
+    path = {
+      leads_to_tech = wet_rr_vampires_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      default_morale = 0.015
+    }
+  }
+  wet_rr_vampires_04 = {
+    allow = {
+      wet_rr_vampires_access = yes
+      has_tech = wet_rr_vampires_03
+    }
+    infantry = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      ap_attack = 0.05
+    }
+  }
+  wet_rr_vampires_05 = {
+    allow = {
+      wet_rr_vampires_access = yes
+    }
+    land_night_attack = 0.05
+    path = {
+      leads_to_tech = wet_rr_vampires_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_vampires_06 = {
+    allow = {
+      wet_rr_vampires_access = yes
+      has_tech = wet_rr_vampires_05
+    }
+    heavy_armor = {
+      max_organisation = 0.5
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_vampires_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_steam_tanks = {
+      max_organisation = 0.5
+    }
+    wet_rr_terracotta_sentinels = {
+      max_organisation = 0.5
+    }
+    wet_rr_phoenixes = {
+      max_organisation = 0.5
+    }
+    wet_rr_war_hydras = {
+      max_organisation = 0.5
+    }
+    wet_rr_treemen = {
+      max_organisation = 0.5
+    }
+    wet_rr_solar_bastiladons = {
+      max_organisation = 0.5
+    }
+    wet_rr_cygors = {
+      max_organisation = 0.5
+    }
+  }
+  wet_rr_greenskins_01 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+      has_tech = tech_support
+      has_tech = wet_light_cavalry
+      has_tech = infantry_weapons
+    }
+    enable_subunits = {
+      wet_rr_squig_hoppers
+    }
+    path = {
+      leads_to_tech = wet_rr_greenskins_02
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 0
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_greenskins_02 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+      has_tech = wet_rr_greenskins_01
+    }
+    wet_rr_squig_hoppers = {
+      breakthrough = 0.06
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 0
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_greenskins_03 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+      has_tech = tech_support
+      has_tech = gw_artillery
+    }
+    enable_subunits = {
+      wet_rr_doom_divers
+    }
+    path = {
+      leads_to_tech = wet_rr_greenskins_04
+      research_cost_coeff = 1
+    }
+    research_cost = 1.5
+    start_year = 2519
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 4
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 4
+    }
+  }
+  wet_rr_greenskins_04 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+      has_tech = wet_rr_greenskins_03
+    }
+    wet_rr_doom_divers = {
+      ap_attack = 0.05
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 4
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+  }
+  wet_rr_greenskins_05 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+    }
+    infantry = {
+      soft_attack = 0.05
+    }
+    path = {
+      leads_to_tech = wet_rr_greenskins_06
+      research_cost_coeff = 1
+    }
+    research_cost = 1
+    start_year = 2519
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 8
+        y = 0
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      soft_attack = 0.06
+    }
+  }
+  wet_rr_greenskins_06 = {
+    allow = {
+      wet_rr_greenskins_access = yes
+      has_tech = wet_rr_greenskins_05
+    }
+    infantry = {
+      max_organisation = 3
+    }
+    research_cost = 1.25
+    start_year = 2521
+    folder = {
+      name = wet_rr_greenskins_folder
+      position = {
+        x = 8
+        y = 3
+      }
+    }
+    categories = {
+      wet_rr_research
+      infantry_weapons
+    }
+    ai_will_do = {
+      factor = 2
+    }
+    wet_rr_irondrakes = {
+      max_organisation = 3
+    }
+  }
+}

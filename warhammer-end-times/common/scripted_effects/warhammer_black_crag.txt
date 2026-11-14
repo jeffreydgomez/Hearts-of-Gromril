@@ -36774,17 +36774,16 @@ wet_grn_diplomatic_absorb_complete = {
     limit = {
       wet_grn_diplomatic_absorb = yes
     }
-    save_event_target_as = wet_grn_diplomatic_target
     ROOT = {
       if = {
         limit = {
           wet_grn_opening_done = yes
-          event_target:wet_grn_diplomatic_target = {
+          PREV = {
             wet_grn_absorbable = yes
           }
         }
         clear_array = wet_grn_absorbed_states
-        event_target:wet_grn_diplomatic_target = {
+        PREV = {
           every_owned_state = {
             limit = {
               impassable = no
@@ -36800,18 +36799,18 @@ wet_grn_diplomatic_absorb_complete = {
           limit = {
             NOT = {
               is_in_array = {
-                wet_grn_absorbed_polities = event_target:wet_grn_diplomatic_target
+                wet_grn_absorbed_polities = PREV
               }
             }
           }
           add_to_array = {
-            wet_grn_absorbed_polities = event_target:wet_grn_diplomatic_target
+            wet_grn_absorbed_polities = PREV
           }
           add_to_variable = {
             wet_grn_absorptions = 1
           }
         }
-        event_target:wet_grn_diplomatic_target = {
+        PREV = {
           if = {
             limit = {
               has_character = WET_U38_leader
@@ -36826,7 +36825,7 @@ wet_grn_diplomatic_absorb_complete = {
           }
         }
         annex_country = {
-          target = event_target:wet_grn_diplomatic_target
+          target = PREV
           transfer_troops = yes
         }
         for_each_scope_loop = {

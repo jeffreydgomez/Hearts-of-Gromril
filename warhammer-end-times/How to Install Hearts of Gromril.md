@@ -1,30 +1,43 @@
 # How to Install Hearts of Gromril
 
-Follow these steps to install the beta for **Hearts of Iron IV**. You do not need GitHub Desktop, coding tools, EU4, or the original EU4 mod.
+Follow these steps to install the beta for **Hearts of Iron IV**. You do not need GitHub Desktop or coding tools.
 
 The mod currently appears in the HOI4 launcher as **Warhammer: The End Times**. Its installation folder must be named `warhammer-end-times`, even though this guide is titled Hearts of Gromril.
 
 ## Before you begin
 
 - Install Hearts of Iron IV and open its launcher at least once.
-- Use the game version and DLC setup specified in the beta announcement.
+- The current mod descriptor lists **HOI4 1.19.4.2** as its supported version. Check the beta announcement for any updated version or DLC requirements.
 - Close the game and launcher before installing or updating the mod.
 
 ## 1. Download the mod
 
-On this GitHub repository's main page, click the green **Code** button, then **Download ZIP**.
+1. Open the [Hearts of Gromril GitHub repository](https://github.com/jeffreydgomez/Hearts-of-Gromril).
+2. Make sure the selected branch is **main**.
+3. Click the green **Code** button, then **Download ZIP**.
+
+You can also use the [direct ZIP download for the main branch](https://github.com/jeffreydgomez/Hearts-of-Gromril/archive/refs/heads/main.zip). This downloads the latest files on `main`; it does not automatically update an existing installation.
 
 ## 2. Extract the download
 
 On Windows, right-click the ZIP and choose **Extract All**. On Mac, double-click the ZIP.
 
-Find the extracted folder containing `descriptor.mod` and the folders `common`, `gfx`, `history`, and `map`. Rename that folder exactly:
+Open the extracted **Hearts-of-Gromril-main** folder. Inside it, find the **warhammer-end-times** folder. This inner folder is the mod and already has the correct name.
+
+Check that it contains `descriptor.mod`, `warhammer-end-times.mod`, and the folders `common`, `gfx`, `history`, and `map`:
 
 ```text
-warhammer-end-times
+Hearts-of-Gromril-main/
+└── warhammer-end-times/       ← install this folder
+    ├── descriptor.mod
+    ├── warhammer-end-times.mod
+    ├── common/
+    ├── gfx/
+    ├── history/
+    └── map/
 ```
 
-These files and folders must be directly inside `warhammer-end-times`, not inside another nested copy of the folder.
+Keep the inner folder's name exactly `warhammer-end-times`. Its files must stay directly inside it, with no extra folder level between `warhammer-end-times` and `descriptor.mod`.
 
 ## 3. Put the folder in HOI4's mod folder
 
@@ -36,7 +49,7 @@ Paradox Interactive/Hearts of Iron IV/mod
 
 Create the `mod` folder if it does not exist. On Windows, your Documents folder may be inside OneDrive. Use the HOI4 folder containing your saves and settings, not the game installation folder in Steam.
 
-Move the extracted `warhammer-end-times` folder into this `mod` folder.
+Move the inner `warhammer-end-times` folder from the download into this `mod` folder. The outer `Hearts-of-Gromril-main` folder is just the download wrapper and can stay in Downloads.
 
 ## 4. Copy the launcher file
 
@@ -71,7 +84,7 @@ Documents/
                 └── map/
 ```
 
-Keep `descriptor.mod` inside the mod folder. It is separate from the launcher file you just copied and edited.
+Keep `descriptor.mod` inside the mod folder. It is separate from the launcher file you just copied. Neither file needs editing for this installation layout.
 
 ## 6. Enable the mod
 
@@ -80,12 +93,6 @@ Keep `descriptor.mod` inside the mod folder. It is separate from the launcher fi
 3. Add **Warhammer: The End Times** to that playset and enable it. You may need to look under **All installed mods** first.
 4. Keep other mods disabled while testing.
 5. Select this playset on the launcher's main screen, then click **Play**.
-
-## 7. Start a new campaign
-
-Start a new game beginning in **2519**. Do not load a vanilla HOI4 save.
-
-Use a fresh campaign for each beta update unless the update specifically says older saves are compatible.
 
 ## Updating the beta
 
@@ -98,14 +105,14 @@ Replace the old installation completely rather than copying new files over it, s
 ## Troubleshooting
 
 - **The mod does not appear:** close and reopen the launcher. Check the folder layout above and make sure the copied launcher file ends in `.mod`, not `.mod.txt`.
-- **The launcher says the mod is missing:** check that the folder is named exactly `warhammer-end-times` and that the copied launcher file contains `path="mod/warhammer-end-times"`.
+- **The launcher says the mod is missing:** check that the folder is named exactly `warhammer-end-times`, that `descriptor.mod` is directly inside it, and that the copied launcher file contains `path="mod/warhammer-end-times"`. The installed path should be `mod/warhammer-end-times/descriptor.mod`.
 - **The normal HOI4 map appears:** check that the correct playset is selected and that **Warhammer: The End Times** is enabled.
-- **There is a game-version warning:** compare your HOI4 version with the beta announcement's supported version.
+- **There is a game-version warning:** compare your HOI4 version with the downloaded `descriptor.mod` file's `supported_version` value (currently `1.19.4.2`) and the beta announcement.
 - **The game crashes or assets are missing:** try a fresh download with other mods disabled. If the problem continues, report it. The download may need fixing by the mod author.
 
 ## Reporting bugs
 
-Use this repository's **Issues** tab, if available, or the feedback channel named in the beta announcement. Include:
+Report bugs on the [Hearts of Gromril Issues page](https://github.com/jeffreydgomez/Hearts-of-Gromril/issues) or in the feedback channel named in the beta announcement. Include:
 
 - Your country and the in-game date.
 - The beta version or the date you downloaded it.
