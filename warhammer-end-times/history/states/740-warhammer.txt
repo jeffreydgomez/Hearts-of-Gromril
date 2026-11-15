@@ -1,32 +1,67 @@
-# EU4 area: lustria_6_area; source provinces: 2337 2343 2345 2346
+# Consolidated authoring states: 1026 1028
 state = {
+  name = "STATE_1028"
   id = 740
-  name = "STATE_740"
-  manpower = 974010
+  manpower = 1726654
+  provinces = {
+    831
+    1555
+    1556
+    1557
+    1558
+    1559
+    3014
+  }
   state_category = town
-  resources = { oil = 3 steel = 7 coal = 1 }
+  resources = {
+    coal = 3
+    oil = 5
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V17 }
-    # END WET inhabitants
-
-    owner = V17
-    add_core_of = V17
-    victory_points = { 3216 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
+    owner = Z14
+    add_core_of = Z14
+    victory_points = {
+      831
+      1
+    }
+    victory_points = {
+      1559
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      3216 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      831 = {
+        naval_base = 1
+      }
+      1558 = {
+        landmark_wet_university_of_alshir = 1
+      }
+      1559 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3195 3213 3215 3216 }
-  local_supplies = 0.0
 }

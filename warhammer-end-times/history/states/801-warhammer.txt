@@ -1,35 +1,39 @@
-# EU4 area: mousillon_area; source provinces: 283 300 301 317 391
+# Consolidated authoring states: 1100
 state = {
+  name = "STATE_1100"
+  impassable = yes
   id = 801
-  name = "STATE_801"
-  manpower = 1638107
-  state_category = large_town
-  resources = { oil = 5 tungsten = 2 coal = 2 }
+  manpower = 0
+  provinces = {
+    2359
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A20 }
-    # END WET inhabitants
-
-    owner = A20
-    add_core_of = A15
-    add_core_of = A20
-    add_core_of = Y10
-    victory_points = { 293 5 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      air_base = 1
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      293 = { supply_node = 1 naval_base = 1 }
+
     }
   }
-  provinces = { 293 310 311 328 405 }
-  local_supplies = 0.0
 }

@@ -1,32 +1,62 @@
-# EU4 area: kraka_drak; source provinces: 1141 1142 1143 1144
+# Consolidated authoring states: 870
 state = {
+  name = "STATE_870"
   id = 633
-  name = "STATE_633"
-  manpower = 1151103
-  state_category = town
-  resources = { oil = 1 tungsten = 3 }
+  manpower = 575551
+  provinces = {
+    6837
+    6838
+    6839
+    6892
+    6893
+    6894
+    6895
+    6896
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    steel = 8
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B02 }
-    # END WET inhabitants
-
-    owner = B02
-    add_core_of = B02
-    victory_points = { 1434 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z78
+    }
+    owner = Z78
+    add_core_of = Y65
+    add_core_of = Z78
+    victory_points = {
+      6837
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      1434 = { landmark_wet_ungruvalk_canal = 1 supply_node = 1 naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      6837 = {
+        supply_node = 1
+      }
+      6892 = {
+        landmark_wet_mount_jifu = 1
+      }
     }
   }
-  provinces = { 1434 1435 1436 1437 }
-  local_supplies = 0.0
 }

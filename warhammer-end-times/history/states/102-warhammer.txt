@@ -1,28 +1,56 @@
-# EU4 area: bitter_coast_area; source provinces: 4108
+# Consolidated authoring states: 155
 state = {
+  name = "STATE_155"
   id = 102
-  name = "STATE_102"
-  manpower = 221366
+  manpower = 243503
+  provinces = {
+    2761
+    2762
+    2763
+    2764
+    2765
+    2766
+    2767
+    2768
+    2769
+  }
   state_category = rural
-  resources = { steel = 6 }
+  resources = {
+    coal = 1
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 43 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B21 }
-    # END WET inhabitants
-
-    owner = B21
-    add_core_of = B21
-    victory_points = { 5677 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H21
+    }
+    owner = H21
+    add_core_of = H21
+    victory_points = {
+      2766
+      1
+    }
     buildings = {
       infrastructure = 1
+      2766 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5677 }
-  local_supplies = 0.0
 }

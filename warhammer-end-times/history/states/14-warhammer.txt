@@ -1,31 +1,69 @@
-# EU4 area: apuccini_foothills_area; source provinces: 635 637
+# Consolidated authoring states: 17 19
 state = {
+  name = "STATE_17"
   id = 14
-  name = "STATE_14"
-  manpower = 575551
-  state_category = rural
-  resources = { steel = 16 }
+  manpower = 3940313
+  provinces = {
+    1220
+    1222
+    1225
+    1232
+    2020
+    2024
+    2025
+    2387
+    5863
+  }
+  state_category = city
+  resources = {
+    coal = 3
+    oil = 2
+    steel = 10
+    tungsten = 12
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I20 }
-    # END WET inhabitants
-
-    owner = I20
-    add_core_of = I20
-    victory_points = { 681 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
+    owner = Z14
+    add_core_of = Z14
+    victory_points = {
+      2020
+      1
+    }
+    victory_points = {
+      1220
+      1
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      681 = { supply_node = 1 }
+      2020 = {
+        landmark_wet_harbor_of_lashiek = 1
+        naval_base = 1
+      }
+      1220 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 679 681 }
-  local_supplies = 0.0
 }

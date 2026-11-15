@@ -1,31 +1,52 @@
-# EU4 area: kraka_dorden_area; source provinces: 1145 1147 1148 1149
+# Consolidated authoring states: 869
 state = {
+  name = "STATE_869"
   id = 632
-  name = "STATE_632"
-  manpower = 1416742
-  state_category = town
-  resources = { tungsten = 4 steel = 7 }
+  manpower = 575551
+  provinces = {
+    6810
+    6811
+    6812
+    6834
+    6835
+    6836
+  }
+  state_category = rural
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B02 }
-    # END WET inhabitants
-
-    owner = B02
-    add_core_of = B02
-    add_core_of = B03
-    victory_points = { 1440 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z71
+    }
+    owner = Z71
+    add_core_of = Z71
+    victory_points = {
+      6834
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
+      6812 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1438 1440 1441 1442 }
-  local_supplies = 0.0
 }

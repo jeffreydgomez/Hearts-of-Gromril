@@ -1,31 +1,49 @@
-# EU4 area: karak_kaferkammaz_area; source provinces: 4501 4505 4506
+# Consolidated authoring states: 809
 state = {
+  name = "STATE_809"
   id = 582
-  name = "STATE_582"
-  manpower = 885463
-  state_category = town
-  resources = { oil = 1 steel = 20 }
+  manpower = 177092
+  provinces = {
+    2629
+    2630
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U16 }
-    # END WET inhabitants
-
-    owner = U16
-    add_core_of = U16
-    victory_points = { 6539 5 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H19
+    }
+    owner = H19
+    add_core_of = H19
+    victory_points = {
+      2629
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      6539 = { supply_node = 1 }
+      2629 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6534 6538 6539 }
-  local_supplies = 0.0
 }

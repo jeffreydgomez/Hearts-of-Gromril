@@ -1,28 +1,50 @@
-# EU4 area: mad_dog_pass_area; source provinces: 48
+# Consolidated authoring states: 1035
 state = {
+  name = "STATE_1035"
   id = 745
-  name = "STATE_745"
-  manpower = 309912
+  manpower = 177092
+  provinces = {
+    6297
+    6298
+    6299
+    6300
+  }
   state_category = rural
-  resources = { tungsten = 1 }
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A93 }
-    # END WET inhabitants
-
-    owner = A93
-    add_core_of = A93
-    victory_points = { 48 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H25
+    }
+    owner = H25
+    add_core_of = H25
+    victory_points = {
+      6297
+      1
+    }
     buildings = {
       infrastructure = 1
+      6297 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 48 }
-  local_supplies = 0.0
 }

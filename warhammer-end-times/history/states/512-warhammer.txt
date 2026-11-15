@@ -1,31 +1,73 @@
-# EU4 area: ind_24_area; source provinces: 4092 4093 4095
+# Consolidated authoring states: 712 714 721 737
 state = {
+  name = "STATE_714"
   id = 512
-  name = "STATE_512"
-  manpower = 2789210
-  state_category = city
-  resources = { tungsten = 10 }
+  manpower = 1903746
+  provinces = {
+    1303
+    1304
+    3505
+    3506
+    3507
+    3508
+    3509
+    3522
+    5927
+    5928
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 4
+    rubber = 17
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z52 }
-    # END WET inhabitants
-
-    owner = Z52
-    add_core_of = Z52
-    victory_points = { 5650 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V13
+    }
+    owner = V13
+    add_core_of = V13
+    victory_points = {
+      3505
+      1
+    }
+    victory_points = {
+      3508
+      5
+    }
+    victory_points = {
+      3522
+      1
+    }
+    victory_points = {
+      5927
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      5650 = { landmark_wet_pillars_of_dharasala = 1 supply_node = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      3508 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5648 5649 5650 5659 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,41 @@
-# EU4 area: nangau_area; source provinces: 2839 2840 2841 2842
+# Consolidated authoring states: 1126
 state = {
+  name = "STATE_1126"
+  impassable = yes
   id = 827
-  name = "STATE_827"
-  manpower = 3099122
-  state_category = city
-  resources = { oil = 2 tungsten = 5 steel = 32 }
+  manpower = 0
+  provinces = {
+    4581
+    4582
+    4583
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 4712 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      4712 = { landmark_wet_foundries_of_nan_gau = 1 }
+
     }
   }
-  provinces = { 4712 4713 4714 4715 4716 4717 4718 4719 4720 4721 }
-  local_supplies = 0.0
 }

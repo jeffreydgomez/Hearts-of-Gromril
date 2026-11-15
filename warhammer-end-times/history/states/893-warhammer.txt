@@ -1,31 +1,57 @@
-# EU4 area: north_honzamul_area; source provinces: 4841
+# Consolidated authoring states: 1208
 state = {
+  name = "STATE_1208"
   id = 893
-  name = "STATE_893"
-  manpower = 398459
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 3054849
+  provinces = {
+    867
+    870
+    871
+    872
+  }
+  state_category = industrial_megapolis
+  resources = {
+    oil = 5
+    steel = 51
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I41 }
-    # END WET inhabitants
-
-    owner = I41
-    add_core_of = I41
-    victory_points = { 7025 1 }
+    set_variable = {
+      wet_pop_race = 2
+    }
+    set_variable = {
+      wet_pop_faith = 21
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B17
+    }
+    owner = B17
+    add_core_of = B17
+    victory_points = {
+      871
+      5
+    }
     buildings = {
+      air_base = 1
+      arms_factory = 5
+      dockyard = 2
+      industrial_complex = 5
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      7025 = { landmark_wet_smoothscale_foreign_port = 1 naval_base = 1 }
+      871 = {
+        landmark_wet_zharr_naggrund = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7025 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,52 @@
-# EU4 area: norscveg_area; source provinces: 394 395 409 464 469
+# Consolidated authoring states: 1204
 state = {
+  name = "STATE_1204"
   id = 889
-  name = "STATE_889"
-  manpower = 1151103
-  state_category = town
-  resources = { oil = 3 tungsten = 2 coal = 2 }
+  manpower = 487005
+  provinces = {
+    6154
+    6155
+    6156
+    6157
+    6158
+    6159
+    6160
+  }
+  state_category = rural
+  resources = {
+    aluminium = 7
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A33 }
-    # END WET inhabitants
-
-    owner = A33
-    add_core_of = A33
-    victory_points = { 408 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 29
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X27
+    }
+    owner = X27
+    add_core_of = X27
+    victory_points = {
+      6159
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      408 = { supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 408 409 410 411 428 486 487 492 }
-  local_supplies = 0.0
 }

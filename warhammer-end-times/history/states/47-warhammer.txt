@@ -1,28 +1,67 @@
-# EU4 area: atylwyth_area; source provinces: 670 769
+# Consolidated authoring states: 61 74 75
 state = {
+  name = "STATE_75"
   id = 47
-  name = "STATE_47"
-  manpower = 158972
+  manpower = 2479297
+  provinces = {
+    121
+    124
+    129
+    138
+    761
+    762
+    763
+    764
+    765
+    766
+  }
   state_category = town
-  resources = { tungsten = 2 }
+  resources = {
+    coal = 6
+    oil = 11
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 24 }
-    set_variable = { wet_pop_faith = 4 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B01 }
-    # END WET inhabitants
-
-    owner = B01
-    add_core_of = B01
-    victory_points = { 818 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G05
+    }
+    owner = G05
+    add_core_of = G05
+    victory_points = {
+      138
+      1
+    }
+    victory_points = {
+      121
+      1
+    }
+    victory_points = {
+      764
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      764 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 714 818 }
-  local_supplies = 0.0
 }

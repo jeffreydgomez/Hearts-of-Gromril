@@ -1,29 +1,61 @@
-# EU4 area: nippon_7_area; source provinces: 4765 4766
+# Consolidated authoring states: 1193 1197
 state = {
+  name = "STATE_1193"
   id = 883
-  name = "STATE_883"
-  manpower = 487005
-  state_category = rural
-  resources = { oil = 1 tungsten = 1 }
+  manpower = 1151103
+  provinces = {
+    842
+    843
+    844
+    845
+    846
+    847
+    855
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 4
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z70 }
-    # END WET inhabitants
-
-    owner = Z70
-    add_core_of = Z70
-    victory_points = { 6817 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B30
+    }
+    owner = B30
+    add_core_of = B30
+    victory_points = {
+      846
+      5
+    }
+    victory_points = {
+      847
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      6817 = { naval_base = 1 }
+      846 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6817 6818 6819 6820 6821 6822 }
-  local_supplies = 0.0
 }

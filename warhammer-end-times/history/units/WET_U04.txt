@@ -1,6 +1,6 @@
-division_template = { name = "Hold Warriors" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Dwarf Cannon Regiments" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 0 } } }
-division_template = { name = "Ironbreakers" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Hold Warriors" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Dwarf Cannon Regiments" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } artillery_brigade = { x = 2 y = 0 } artillery_brigade = { x = 2 y = 1 } } }
+division_template = { name = "Ironbreakers" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Karaz-a-Karak Hold Warriors" location = 744 division_template = "Hold Warriors" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Karaz-a-Karak Hold Warriors" location = 6505 division_template = "Hold Warriors" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -51,7 +51,7 @@ division = { name = "2. Karaz-a-Karak Ironbreakers" location = 6505 division_tem
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = U04 } requested_factories = 12 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = artillery_equipment_1 creator = U04 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 48 producer = U04 }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 72 producer = U04 }
 if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = U04 version_name = "Gyrocopter Patrols" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = U04 variant_name = "Gyrocopter Patrols" }
  }
@@ -59,6 +59,6 @@ if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production
 add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = U04 }
  }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = U04 }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 6525 producer = U04 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 11025 producer = U04 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 141 producer = U04 }
 }

@@ -1,32 +1,68 @@
-# EU4 area: nippon_6_area; source provinces: 2148 4784 4785 4818
+# Consolidated authoring states: 1191 1196
 state = {
+  name = "STATE_1191"
   id = 881
-  name = "STATE_881"
-  manpower = 1549561
+  manpower = 1726653
+  provinces = {
+    849
+    850
+    852
+    853
+    854
+    864
+    5361
+  }
   state_category = large_town
-  resources = { oil = 5 steel = 10 coal = 2 }
+  resources = {
+    aluminium = 37
+    oil = 2
+    steel = 6
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z72 }
-    # END WET inhabitants
-
-    owner = Z72
-    add_core_of = Z72
-    victory_points = { 2835 5 }
+    set_variable = {
+      wet_pop_race = 2
+    }
+    set_variable = {
+      wet_pop_faith = 21
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B29
+    }
+    owner = B29
+    add_core_of = B29
+    victory_points = {
+      854
+      5
+    }
+    victory_points = {
+      849
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
       dockyard = 1
-      2835 = { supply_node = 1 naval_base = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      854 = {
+        landmark_wet_uzkulak_caravan_stop = 1
+        supply_node = 1
+      }
+      864 = {
+        landmark_wet_uzkulak_canal = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2835 2836 2837 6862 6863 6864 6865 6866 6867 6868 6869 6987 6988 6989 6990 6991 6992 }
-  local_supplies = 0.0
 }

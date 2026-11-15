@@ -1,31 +1,49 @@
-# EU4 area: luccini_area; source provinces: 607 608 611
+# Consolidated authoring states: 921
 state = {
+  name = "STATE_921"
   id = 671
-  name = "STATE_671"
-  manpower = 1461015
-  state_category = town
-  resources = { tungsten = 5 coal = 1 }
+  manpower = 221366
+  provinces = {
+    2112
+    2113
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A57 }
-    # END WET inhabitants
-
-    owner = A57
-    add_core_of = A57
-    victory_points = { 651 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G43
+    }
+    owner = G43
+    add_core_of = G43
+    victory_points = {
+      2112
+      5
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      651 = { landmark_wet_bells_of_luccini = 1 naval_base = 1 }
+      2112 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 650 651 654 }
-  local_supplies = 0.0
 }

@@ -1,5 +1,7 @@
-division_template = { name = "Clanrat Swarm" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Skavenslave Mobs" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
+division_template = { name = "Clanrat Swarm" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Skavenslave Mobs" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 0 y = 3 } wet_unarmed_mob = { x = 0 y = 4 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } wet_unarmed_mob = { x = 1 y = 3 } wet_unarmed_mob = { x = 1 y = 4 } } }
+division_template = { name = "Warlock Jezzails" priority = 1 regiments = { wet_rr_warlock_jezzails = { x = 0 y = 0 } wet_rr_warlock_jezzails = { x = 0 y = 1 } wet_rr_warlock_jezzails = { x = 0 y = 2 } wet_rr_warlock_jezzails = { x = 0 y = 3 } wet_rr_warlock_jezzails = { x = 0 y = 4 } wet_rr_warlock_jezzails = { x = 1 y = 0 } wet_rr_warlock_jezzails = { x = 1 y = 1 } wet_rr_warlock_jezzails = { x = 1 y = 2 } wet_rr_warlock_jezzails = { x = 1 y = 3 } wet_rr_warlock_jezzails = { x = 1 y = 4 } } }
+division_template = { name = "Doomwheels" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } light_armor = { x = 1 y = 0 } light_armor = { x = 1 y = 1 } light_armor = { x = 1 y = 2 } light_armor = { x = 1 y = 3 } light_armor = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Gritus Clanrat Swarm" location = 6620 division_template = "Clanrat Swarm" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Gritus Clanrat Swarm" location = 6600 division_template = "Clanrat Swarm" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -7,9 +9,15 @@ division = { name = "3. Gritus Clanrat Swarm" location = 6620 division_template 
 division = { name = "4. Gritus Clanrat Swarm" location = 6600 division_template = "Clanrat Swarm" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "5. Gritus Clanrat Swarm" location = 6620 division_template = "Clanrat Swarm" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Gritus Skavenslave Mobs" location = 6620 division_template = "Skavenslave Mobs" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Gritus Warlock Jezzails" location = 6620 division_template = "Warlock Jezzails" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_warpstone_weaponry_1 = { owner = U19 amount = 1000 } } }
+division = { name = "1. Gritus Doomwheels" location = 6620 division_template = "Doomwheels" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_doomwheels_1 = { owner = U19 amount = 600 } } }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = U19 } requested_factories = 4 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = U19 } requested_factories = 2 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_rr_warpstone_weaponry_1 creator = U19 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_warpstone_weaponry_1 amount = 250 producer = U19 }
+add_equipment_production = { equipment = { type = wet_rr_doomwheels_1 creator = U19 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_doomwheels_1 amount = 150 producer = U19 }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = U19 }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1950 producer = U19 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 24 producer = U19 }

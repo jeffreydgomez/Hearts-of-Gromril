@@ -1,28 +1,54 @@
-# EU4 area: mountains_of_mourn_16_area; source provinces: 2797 2809
+# Consolidated authoring states: 1076
 state = {
+  name = "STATE_1076"
   id = 780
-  name = "STATE_780"
-  manpower = 442732
-  state_category = rural
-  resources = { oil = 1 tungsten = 1 coal = 1 }
+  manpower = 752644
+  provinces = {
+    700
+    701
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I10 }
-    # END WET inhabitants
-
-    owner = I10
-    add_core_of = I10
-    victory_points = { 4620 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 64
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A70
+    }
+    owner = A70
+    add_core_of = A70
+    victory_points = {
+      700
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      700 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 4620 4636 }
-  local_supplies = 0.0
 }

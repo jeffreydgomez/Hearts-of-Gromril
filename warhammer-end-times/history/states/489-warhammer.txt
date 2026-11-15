@@ -1,31 +1,48 @@
-# EU4 area: howling_river_area; source provinces: 880 881 882
+# Consolidated authoring states: 677
 state = {
+  name = "STATE_677"
   id = 489
-  name = "STATE_489"
-  manpower = 841190
-  state_category = town
-  resources = { tungsten = 3 coal = 1 }
+  manpower = 442732
+  provinces = {
+    2389
+    3217
+  }
+  state_category = rural
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A93 }
-    # END WET inhabitants
-
-    owner = A93
-    add_core_of = A93
-    victory_points = { 976 5 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G41
+    }
+    owner = G41
+    add_core_of = G41
+    victory_points = {
+      3217
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      976 = { supply_node = 1 }
+      3217 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 976 977 978 }
-  local_supplies = 0.0
 }

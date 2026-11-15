@@ -1,28 +1,55 @@
-# EU4 area: gantuk_area; source provinces: 340 4262
+# Consolidated authoring states: 588
 state = {
+  name = "STATE_588"
   id = 417
-  name = "STATE_417"
-  manpower = 1342684
-  state_category = town
-  resources = { oil = 2 aluminium = 1 rubber = 2 steel = 3 chromium = 3 }
+  manpower = 2495212
+  provinces = {
+    744
+    745
+    746
+    747
+  }
+  state_category = city
+  resources = {
+    steel = 17
+    tungsten = 10
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U09 }
-    # END WET inhabitants
-
-    owner = U09
-    add_core_of = U09
-    victory_points = { 351 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U04
+    }
+    owner = U04
+    add_core_of = U04
+    victory_points = {
+      744
+      5
+    }
     buildings = {
+      air_base = 1
+      arms_factory = 3
+      industrial_complex = 3
       infrastructure = 1
+      744 = {
+        landmark_wet_karaz_a_karak = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 351 5997 }
-  local_supplies = 0.0
 }

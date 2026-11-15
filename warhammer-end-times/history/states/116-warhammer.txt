@@ -1,28 +1,65 @@
-# EU4 area: blasted_wastes_2_area; source provinces: 2252 2253
+# Consolidated authoring states: 172
 state = {
+  name = "STATE_172"
   id = 116
-  name = "STATE_116"
-  manpower = 487005
-  state_category = rural
-  resources = { rubber = 17 tungsten = 1 }
+  manpower = 1283922
+  provinces = {
+    5415
+    5416
+    5417
+    5418
+    5422
+    5423
+    5424
+    5425
+    5430
+    5431
+    5971
+    5972
+    5973
+  }
+  state_category = town
+  resources = {
+    aluminium = 15
+    coal = 2
+    oil = 2
+    steel = 16
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G32 }
-    # END WET inhabitants
-
-    owner = G32
-    add_core_of = G32
-    victory_points = { 3042 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I34
+    }
+    owner = I34
+    add_core_of = I34
+    victory_points = {
+      5971
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      5971 = {
+        landmark_wet_temple_of_the_moon_empress = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3040 3041 3042 3043 3044 }
-  local_supplies = 0.0
 }

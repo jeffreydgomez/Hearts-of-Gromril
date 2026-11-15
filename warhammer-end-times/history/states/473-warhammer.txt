@@ -1,28 +1,61 @@
-# EU4 area: hafak_area; source provinces: 4915
+# Consolidated authoring states: 99 659
 state = {
+  name = "STATE_659"
   id = 473
-  name = "STATE_473"
-  manpower = 671344
-  state_category = rural
-  resources = { oil = 1 aluminium = 1 rubber = 1 steel = 1 chromium = 2 }
+  manpower = 841190
+  provinces = {
+    1376
+    1459
+    1508
+  }
+  state_category = town
+  resources = {
+    steel = 14
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U09 }
-    # END WET inhabitants
-
-    owner = U09
-    add_core_of = U09
-    victory_points = { 7220 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 18
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B09
+    }
+    owner = B09
+    add_core_of = B09
+    victory_points = {
+      1508
+      1
+    }
+    victory_points = {
+      1459
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      1508 = {
+        naval_base = 1
+      }
+      1459 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7220 }
-  local_supplies = 0.0
 }

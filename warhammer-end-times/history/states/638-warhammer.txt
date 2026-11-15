@@ -1,29 +1,60 @@
-# EU4 area: kuldevind_islands_area; source provinces: 3193 3194
+# Consolidated authoring states: 876
 state = {
+  name = "STATE_876"
   id = 638
-  name = "STATE_638"
-  manpower = 265639
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 1151103
+  provinces = {
+    3563
+    3564
+    3565
+    3566
+    3567
+    3568
+    3574
+    3575
+    3576
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 18
+    coal = 1
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B79 }
-    # END WET inhabitants
-
-    owner = B79
-    add_core_of = B79
-    victory_points = { 5308 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 18
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z74
+    }
+    owner = Z74
+    add_core_of = Z74
+    victory_points = {
+      3563
+      1
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      5308 = { naval_base = 1 }
+      3563 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5308 5309 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,61 @@
-# EU4 area: bleak_moors_area; source provinces: 183 184 185 189
+# Consolidated authoring states: 183
 state = {
+  name = "STATE_183"
   id = 127
-  name = "STATE_127"
-  manpower = 1416742
+  manpower = 1239649
+  provinces = {
+    4981
+    4982
+    4983
+    4989
+    4990
+    4991
+    4992
+    4993
+    4994
+    4995
+    4996
+    5159
+    5160
+    5161
+    5162
+    5163
+  }
   state_category = town
-  resources = { oil = 3 tungsten = 2 coal = 2 }
+  resources = {
+    coal = 1
+    oil = 4
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 43 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A09 }
-    # END WET inhabitants
-
-    owner = A09
-    add_core_of = A09
-    victory_points = { 191 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      4989
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
     }
   }
-  provinces = { 191 192 193 197 }
-  local_supplies = 0.0
 }

@@ -1,28 +1,50 @@
-# EU4 area: karag_rhyn_area; source provinces: 4417 4418 4419
+# Consolidated authoring states: 790
 state = {
+  name = "STATE_790"
   id = 565
-  name = "STATE_565"
-  manpower = 531278
+  manpower = 177093
+  provinces = {
+    3084
+    3085
+  }
   state_category = rural
-  resources = { tungsten = 1 steel = 10 }
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U37 }
-    # END WET inhabitants
-
-    owner = U37
-    add_core_of = U37
-    victory_points = { 6423 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I01
+    }
+    owner = I01
+    add_core_of = I01
+    victory_points = {
+      3084
+      1
+    }
     buildings = {
+      dockyard = 1
       infrastructure = 1
+      3084 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6423 6424 6425 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,68 @@
-# EU4 area: angerrial_area; source provinces: 1799 1800 1802 1805
+# Consolidated authoring states: 11 1034
 state = {
+  name = "STATE_11"
   id = 8
-  name = "STATE_8"
-  manpower = 378861
-  state_category = town
-  resources = { tungsten = 5 coal = 1 }
+  manpower = 757720
+  provinces = {
+    2246
+    2247
+    2248
+    2249
+    2250
+    2251
+    2253
+    2254
+    2275
+  }
+  state_category = large_town
+  resources = {
+    oil = 1
+    steel = 17
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
     owner = H06
     add_core_of = H06
-    add_core_of = Y72
-    victory_points = { 2151 1 }
+    victory_points = {
+      2248
+      1
+    }
+    victory_points = {
+      2250
+      1
+    }
     buildings = {
-      infrastructure = 1
       industrial_complex = 1
-      2151 = { naval_base = 1 }
+      infrastructure = 1
+      2247 = {
+        naval_base = 1
+      }
+      2249 = {
+        landmark_wet_gp_hall_of_charioteers = 1
+      }
+      2250 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2146 2147 2151 2155 }
-  local_supplies = 0.0
 }

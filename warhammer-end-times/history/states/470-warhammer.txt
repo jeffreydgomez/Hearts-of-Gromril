@@ -1,31 +1,70 @@
-# EU4 area: gwangee_area; source provinces: 2930 2935 4311
+# Consolidated authoring states: 655
 state = {
+  name = "STATE_655"
   id = 470
-  name = "STATE_470"
-  manpower = 1062556
+  manpower = 442732
+  provinces = {
+    2363
+    2364
+    2365
+    2366
+    2439
+    2440
+    2441
+    2442
+    2443
+    2444
+    2445
+    2448
+    2449
+    2450
+    3620
+    3621
+    3622
+    3623
+    3624
+    3625
+  }
   state_category = town
-  resources = { tungsten = 2 steel = 12 }
+  resources = {
+    coal = 1
+    oil = 2
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 6 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X04 }
-    # END WET inhabitants
-
-    owner = X04
-    add_core_of = X04
-    victory_points = { 6134 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    add_core_of = Y76
+    victory_points = {
+      2363
+      1
+    }
     buildings = {
+      dockyard = 2
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      6134 = { landmark_wet_lost_city_of_tzetek = 1 }
+      2363 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5018 5019 5020 5032 5033 5034 5035 5036 6134 }
-  local_supplies = 0.0
 }

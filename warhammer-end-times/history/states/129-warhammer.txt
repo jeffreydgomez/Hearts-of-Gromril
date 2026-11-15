@@ -1,28 +1,60 @@
-# EU4 area: blizzard_peaks_area; source provinces: 4934 4935
+# Consolidated authoring states: 185
 state = {
+  name = "STATE_185"
   id = 129
-  name = "STATE_129"
-  manpower = 337191
-  state_category = rural
-  resources = { oil = 2 }
+  manpower = 2213659
+  provinces = {
+    4874
+    4881
+    4882
+    4907
+    4908
+    4919
+    4920
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 26
+    coal = 3
+    oil = 3
+    steel = 10
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U04 }
-    # END WET inhabitants
-
-    owner = U04
-    add_core_of = U04
-    victory_points = { 7252 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      4881
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      4881 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7252 7253 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,56 @@
-# EU4 area: cathay_44_area; source provinces: 1215 2962 2963
+# Consolidated authoring states: 271 590
 state = {
+  name = "STATE_271"
   id = 196
-  name = "STATE_196"
-  manpower = 442732
+  manpower = 752644
+  provinces = {
+    4125
+    4126
+    7228
+  }
   state_category = rural
-  resources = { oil = 1 chromium = 45 coal = 1 }
+  resources = {
+    coal = 2
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I11
-    add_core_of = I25
-    victory_points = { 5138 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 41
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B85
+    }
+    owner = B85
+    add_core_of = B85
+    victory_points = {
+      4125
+      5
+    }
+    victory_points = {
+      7228
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      1525 = { landmark_wet_the_great_maw = 1 }
+      4125 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 1525 1526 1527 5138 5139 5140 5141 5142 5143 5144 5145 5146 5147 5148 5149 5150 5151 5152 5153 5154 }
-  local_supplies = 0.0
 }

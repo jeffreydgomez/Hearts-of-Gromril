@@ -1,30 +1,49 @@
-# EU4 area: blasted_wastes_3_area; source provinces: 2261
+# Consolidated authoring states: 173
 state = {
+  name = "STATE_173"
   id = 117
-  name = "STATE_117"
-  manpower = 132820
+  manpower = 309912
+  provinces = {
+    5401
+    5402
+    5403
+    5404
+    5405
+  }
   state_category = rural
-  resources = { tungsten = 1 }
+  resources = {
+    coal = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 64 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B31 }
-    # END WET inhabitants
-
-    owner = B31
-    add_core_of = B31
-    victory_points = { 3066 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      5401
+      1
+    }
     buildings = {
       infrastructure = 1
-      dockyard = 1
-      3066 = { naval_base = 1 }
     }
   }
-  provinces = { 3066 }
-  local_supplies = 0.0
 }

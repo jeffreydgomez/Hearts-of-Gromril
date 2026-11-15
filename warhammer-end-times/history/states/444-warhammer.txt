@@ -1,28 +1,67 @@
-# EU4 area: grave_of_cuileux_area; source provinces: 222 234 242
+# Consolidated authoring states: 622 624
 state = {
+  name = "STATE_624"
   id = 444
-  name = "STATE_444"
-  manpower = 929737
+  manpower = 1018283
+  provinces = {
+    1319
+    1320
+    1321
+    1322
+    1323
+    1324
+    1325
+    1326
+    1327
+    1328
+  }
   state_category = town
-  resources = { oil = 1 aluminium = 7 tungsten = 2 coal = 1 }
+  resources = {
+    oil = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    victory_points = { 242 1 }
+    set_variable = {
+      wet_pop_race = 6
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X02
+    }
+    owner = X02
+    add_core_of = X02
+    victory_points = {
+      1326
+      1
+    }
+    victory_points = {
+      1319
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      1326 = {
+        naval_base = 1
+      }
+      1319 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 230 242 250 }
-  local_supplies = 0.0
 }

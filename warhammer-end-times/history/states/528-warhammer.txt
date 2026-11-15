@@ -1,32 +1,74 @@
-# EU4 area: ind_9_area; source provinces: 4090 4144 4145 4147 4149
+# Consolidated authoring states: 692 707 743
 state = {
+  name = "STATE_743"
   id = 528
-  name = "STATE_528"
-  manpower = 1549561
-  state_category = large_town
-  resources = { tungsten = 6 coal = 2 }
+  manpower = 1903746
+  provinces = {
+    1313
+    2390
+    2391
+    2392
+    2483
+    2484
+    2485
+    2521
+    3353
+    5913
+  }
+  state_category = town
+  resources = {
+    aluminium = 14
+    coal = 2
+    oil = 2
+    rubber = 17
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 20 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z61 }
-    # END WET inhabitants
-
-    owner = Z61
-    add_core_of = Z61
-    victory_points = { 5721 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V07
+    }
+    owner = V07
+    add_core_of = V07
+    victory_points = {
+      2483
+      1
+    }
+    victory_points = {
+      2392
+      1
+    }
+    victory_points = {
+      5913
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      5645 = { naval_base = 1 }
+      2483 = {
+        naval_base = 1
+      }
+      5913 = {
+        landmark_wet_pyramid_of_xahutec = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5645 5717 5718 5719 5721 5724 }
-  local_supplies = 0.0
 }

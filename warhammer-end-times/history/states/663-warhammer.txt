@@ -1,30 +1,62 @@
-# EU4 area: laurelorn_forest; source provinces: 743
+# Consolidated authoring states: 911 914
 state = {
+  name = "STATE_911"
   id = 663
-  name = "STATE_663"
-  manpower = 309912
-  state_category = rural
-  resources = { oil = 1 coal = 1 }
+  manpower = 1549561
+  provinces = {
+    2865
+    2866
+    2872
+    2878
+    2879
+    2880
+    2881
+    2882
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 1 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X16 }
-    # END WET inhabitants
-
-    owner = X16
-    add_core_of = B71
-    add_core_of = X16
-    victory_points = { 792 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B27
+    }
+    owner = B27
+    add_core_of = B27
+    victory_points = {
+      2878
+      5
+    }
+    victory_points = {
+      2865
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      792 = { supply_node = 1 }
+      2878 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 792 }
-  local_supplies = 0.0
 }

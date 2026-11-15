@@ -1,29 +1,61 @@
-# EU4 area: jungle_of_the_gods_area; source provinces: 4335 4336
+# Consolidated authoring states: 775
 state = {
+  name = "STATE_775"
   id = 554
-  name = "STATE_554"
-  manpower = 442732
-  state_category = rural
-  resources = { oil = 1 aluminium = 11 }
+  manpower = 1328195
+  provinces = {
+    4626
+    4627
+    4628
+    4629
+    4630
+    4645
+    4646
+    4647
+    4648
+    4649
+    4650
+    4651
+  }
+  state_category = town
+  resources = {
+    steel = 14
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z82 }
-    # END WET inhabitants
-
-    owner = Z82
-    add_core_of = Z82
-    victory_points = { 6202 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I09
+    }
+    owner = I09
+    add_core_of = I09
+    victory_points = {
+      4650
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      6212 = { naval_base = 1 }
+      4650 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6202 6203 6204 6205 6206 6207 6208 6209 6210 6211 6212 6213 }
-  local_supplies = 0.0
 }

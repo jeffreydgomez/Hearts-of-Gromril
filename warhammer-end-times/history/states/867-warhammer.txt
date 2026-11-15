@@ -1,28 +1,56 @@
-# EU4 area: nilfheim_area; source provinces: 396
+# Consolidated authoring states: 962 1169
 state = {
+  name = "STATE_1169"
   id = 867
-  name = "STATE_867"
-  manpower = 177093
+  manpower = 841190
+  provinces = {
+    885
+    971
+    981
+  }
   state_category = rural
-  resources = { steel = 5 }
+  resources = {
+    coal = 2
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A33 }
-    # END WET inhabitants
-
-    owner = A33
-    add_core_of = A33
-    victory_points = { 412 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 43
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A94
+    }
+    owner = A94
+    add_core_of = A94
+    victory_points = {
+      971
+      1
+    }
+    victory_points = {
+      885
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      885 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 412 }
-  local_supplies = 0.0
 }

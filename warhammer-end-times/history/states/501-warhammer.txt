@@ -1,33 +1,55 @@
-# EU4 area: ind_15_area; source provinces: 4125 4126 4127 4148
+# Consolidated authoring states: 691
 state = {
+  name = "STATE_691"
   id = 501
-  name = "STATE_501"
-  manpower = 1151103
-  state_category = large_town
-  resources = { tungsten = 4 coal = 2 }
+  manpower = 796917
+  provinces = {
+    3347
+    3348
+    3349
+    3350
+    3351
+    3352
+    5307
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 20 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z59 }
-    # END WET inhabitants
-
-    owner = Z59
-    add_core_of = Z59
-    victory_points = { 5704 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V07
+    }
+    owner = V07
+    add_core_of = V07
+    victory_points = {
+      3350
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
       dockyard = 1
-      5704 = { supply_node = 1 naval_base = 1 }
-      5722 = { landmark_wet_fortress_of_celestial_spears = 1 }
+      infrastructure = 1
+      3350 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5703 5704 5705 5722 5723 }
-  local_supplies = 0.0
 }

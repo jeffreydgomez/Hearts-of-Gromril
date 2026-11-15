@@ -1,31 +1,56 @@
-# EU4 area: kdatha_area; source provinces: 4924 4929
+# Consolidated authoring states: 816
 state = {
+  name = "STATE_816"
   id = 589
-  name = "STATE_589"
-  manpower = 1948020
-  state_category = large_town
-  resources = { oil = 2 chromium = 231 coal = 2 }
+  manpower = 420595
+  provinces = {
+    2451
+    2452
+    2453
+    2454
+    2455
+    2456
+    2457
+    2458
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 60 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B77 }
-    # END WET inhabitants
-
-    owner = B77
-    add_core_of = B77
-    victory_points = { 7235 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    victory_points = {
+      2456
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      7235 = { landmark_wet_zanbaijin_fallen_city = 1 }
+      2451 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7229 7235 }
-  local_supplies = 0.0
 }

@@ -1,29 +1,47 @@
-# EU4 area: merlot_area; source provinces: 233 241 246
+# Consolidated authoring states: 1046
 state = {
+  name = "STATE_1046"
   id = 754
-  name = "STATE_754"
-  manpower = 664098
-  state_category = town
-  resources = { oil = 2 tungsten = 1 coal = 2 }
+  manpower = 398459
+  provinces = {
+    448
+  }
+  state_category = rural
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    add_core_of = Y09
-    victory_points = { 241 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 39
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A30
+    }
+    owner = A30
+    add_core_of = A30
+    victory_points = {
+      448
+      1
+    }
     buildings = {
       infrastructure = 1
+      448 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 241 249 254 }
-  local_supplies = 0.0
 }

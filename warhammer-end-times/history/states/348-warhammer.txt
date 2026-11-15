@@ -1,32 +1,58 @@
-# EU4 area: eastern_steppes_1_area; source provinces: 2722 2729 2730 4061
+# Consolidated authoring states: 476
 state = {
+  name = "STATE_476"
   id = 348
-  name = "STATE_348"
-  manpower = 1603518
+  manpower = 464869
+  provinces = {
+    7106
+    7107
+    7108
+    7109
+    7113
+    7114
+  }
   state_category = town
-  resources = { rubber = 20 tungsten = 3 }
+  resources = {
+    aluminium = 17
+    rubber = 40
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B99 }
-    # END WET inhabitants
-
-    owner = B99
-    add_core_of = B53
-    add_core_of = B99
-    victory_points = { 4426 1 }
+    set_variable = {
+      wet_pop_race = 24
+    }
+    set_variable = {
+      wet_pop_faith = 4
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z83
+    }
+    owner = Z83
+    add_core_of = Z83
+    victory_points = {
+      7107
+      5
+    }
     buildings = {
-      air_base = 1
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
+      7106 = {
+        landmark_wet_oreons_jungle_glade = 1
+      }
+      7107 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4400 4401 4402 4403 4404 4405 4406 4407 4426 4427 4428 4429 4430 4431 5581 5582 5583 }
-  local_supplies = 0.0
 }

@@ -1,28 +1,58 @@
-# EU4 area: badlands_area_22; source provinces: 121 124 129
+# Consolidated authoring states: 119
 state = {
+  name = "STATE_119"
   id = 74
-  name = "STATE_74"
-  manpower = 841190
-  state_category = town
-  resources = { oil = 4 coal = 1 }
+  manpower = 487005
+  provinces = {
+    3052
+    3053
+    3054
+    3055
+    3056
+    3057
+    3058
+    3059
+    3060
+  }
+  state_category = rural
+  resources = {
+    steel = 6
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G05 }
-    # END WET inhabitants
-
-    owner = G05
-    add_core_of = G05
-    victory_points = { 121 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G25
+    }
+    owner = G25
+    add_core_of = G25
+    victory_points = {
+      3055
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      3055 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 121 124 129 }
-  local_supplies = 0.0
 }

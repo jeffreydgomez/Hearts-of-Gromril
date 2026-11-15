@@ -1,32 +1,66 @@
-# EU4 area: araby_area_18; source provinces: 1014 1015 1016 1017 1019
+# Consolidated authoring states: 35 36
 state = {
+  name = "STATE_35"
   id = 28
-  name = "STATE_28"
-  manpower = 1549561
-  state_category = large_town
-  resources = { oil = 3 tungsten = 2 steel = 7 coal = 1 }
+  manpower = 3630400
+  provinces = {
+    1187
+    1198
+    1199
+    1201
+    1202
+    1203
+    1211
+  }
+  state_category = city
+  resources = {
+    coal = 3
+    oil = 11
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z14 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
     owner = Z14
     add_core_of = Z14
-    victory_points = { 1252 1 }
+    victory_points = {
+      1199
+      5
+    }
+    victory_points = {
+      1203
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
       dockyard = 1
-      1251 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      1199 = {
+        supply_node = 1
+        naval_base = 1
+      }
+      1201 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1250 1251 1252 1253 1255 }
-  local_supplies = 0.0
 }

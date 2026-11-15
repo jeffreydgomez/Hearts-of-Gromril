@@ -1,31 +1,50 @@
-# EU4 area: gnoblar_hills_area; source provinces: 601 2280 2282
+# Consolidated authoring states: 621
 state = {
+  name = "STATE_621"
   id = 442
-  name = "STATE_442"
-  manpower = 664098
-  state_category = town
-  resources = { tungsten = 2 }
+  manpower = 487005
+  provinces = {
+    699
+  }
+  state_category = rural
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I13 }
-    # END WET inhabitants
-
-    owner = I13
-    add_core_of = I13
-    victory_points = { 3107 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 14
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A91
+    }
+    owner = A91
+    add_core_of = A91
+    victory_points = {
+      699
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      3107 = { supply_node = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      699 = {
+        landmark_wet_mortensholm_marketplaces = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 644 3107 3108 3111 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,51 @@
-# EU4 area: fort_oberstyre_area; source provinces: 70 74 75 76
+# Consolidated authoring states: 577
 state = {
+  name = "STATE_577"
   id = 408
-  name = "STATE_408"
-  manpower = 929737
-  state_category = town
-  resources = { oil = 2 tungsten = 2 coal = 2 }
+  manpower = 619824
+  provinces = {
+    5687
+    6550
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A05 }
-    # END WET inhabitants
-
-    owner = A05
-    add_core_of = A05
-    victory_points = { 74 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U15
+    }
+    owner = U15
+    add_core_of = U15
+    victory_points = {
+      6550
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      dockyard = 1
-      74 = { naval_base = 1 }
+      6550 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 70 74 75 76 }
-  local_supplies = 0.0
 }

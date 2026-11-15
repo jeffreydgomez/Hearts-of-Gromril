@@ -1,28 +1,55 @@
-# EU4 area: karak_eight_peaks_1_area; source provinces: 4735
+# Consolidated authoring states: 787 799
 state = {
+  name = "STATE_799"
   id = 572
-  name = "STATE_572"
-  manpower = 177093
+  manpower = 752644
+  provinces = {
+    4570
+    4572
+    6107
+  }
   state_category = rural
-  resources = { oil = 1 }
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U38 }
-    # END WET inhabitants
-
-    owner = U38
-    add_core_of = U38
-    victory_points = { 6738 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I06
+    }
+    owner = I06
+    add_core_of = I06
+    victory_points = {
+      4572
+      1
+    }
+    victory_points = {
+      4570
+      5
+    }
     buildings = {
       infrastructure = 1
+      4570 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6738 }
-  local_supplies = 0.0
 }

@@ -1,28 +1,58 @@
-# EU4 area: kharnos_area; source provinces: 651
+# Consolidated authoring states: 822
 state = {
+  name = "STATE_822"
   id = 594
-  name = "STATE_594"
-  manpower = 309912
+  manpower = 487005
+  provinces = {
+    1615
+    1616
+    1617
+    2491
+    2492
+    2493
+    2494
+    2495
+    2496
+    2497
+    2498
+  }
   state_category = rural
-  resources = { oil = 1 }
+  resources = {
+    aluminium = 13
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 39 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A72 }
-    # END WET inhabitants
-
-    owner = A72
-    add_core_of = A72
-    victory_points = { 695 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G35
+    }
+    owner = G35
+    add_core_of = G35
+    victory_points = {
+      2495
+      5
+    }
     buildings = {
       infrastructure = 1
+      2495 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 695 }
-  local_supplies = 0.0
 }

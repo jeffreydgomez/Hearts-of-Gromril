@@ -1,6 +1,7 @@
-division_template = { name = "Daemonette Hosts" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Seeker Packs" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
-division_template = { name = "Fiends of Slaanesh" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Daemonette Hosts" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Seeker Packs" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Fiends of Slaanesh" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 0 } } }
+division_template = { name = "Keepers of Secrets" priority = 1 regiments = { artillery_brigade = { x = 0 y = 0 } artillery_brigade = { x = 0 y = 1 } artillery_brigade = { x = 0 y = 2 } artillery_brigade = { x = 0 y = 3 } artillery_brigade = { x = 0 y = 4 } artillery_brigade = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
 units = {
 division = { name = "1. Slaaneshi Daemonette Hosts" location = 7330 division_template = "Daemonette Hosts" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Slaaneshi Daemonette Hosts" location = 7333 division_template = "Daemonette Hosts" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -8,16 +9,17 @@ division = { name = "3. Slaaneshi Daemonette Hosts" location = 7336 division_tem
 division = { name = "4. Slaaneshi Daemonette Hosts" location = 7330 division_template = "Daemonette Hosts" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Slaaneshi Seeker Packs" location = 7330 division_template = "Seeker Packs" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Slaaneshi Fiends of Slaanesh" location = 7330 division_template = "Fiends of Slaanesh" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Slaaneshi Keepers of Secrets" location = 7330 division_template = "Keepers of Secrets" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_keepers_of_secrets_1 = { owner = R04 amount = 144 } } }
 }
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = R04 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_rr_keepers_of_secrets_1 creator = R04 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_keepers_of_secrets_1 amount = 36 producer = R04 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = R04 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 480 producer = R04 }
-if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = R04 version_name = "Fiends of Slaanesh Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 40 producer = R04 variant_name = "Fiends of Slaanesh Equipment I" }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1200 producer = R04 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 80 producer = R04 variant_name = "Fiends of Slaanesh Equipment I" }
  }
-if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = R04 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 40 producer = R04 }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 80 producer = R04 }
  }
 if = { limit = { has_dlc = "By Blood Alone" } add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = R04 variant_name = "Slaanesh Furies" }
  }

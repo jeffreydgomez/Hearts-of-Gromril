@@ -1,31 +1,57 @@
-# EU4 area: lustria_10_area; source provinces: 2441 2442 2443 2444
+# Consolidated authoring states: 924
 state = {
+  name = "STATE_924"
   id = 673
-  name = "STATE_673"
-  manpower = 1461015
+  manpower = 752644
+  provinces = {
+    2120
+    2121
+    2122
+    2123
+    5900
+    5901
+    5902
+    5903
+    5904
+    5905
+    5906
+    5907
+  }
   state_category = town
-  resources = { aluminium = 15 tungsten = 4 coal = 1 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V12 }
-    # END WET inhabitants
-
-    owner = V12
-    add_core_of = V12
-    victory_points = { 3453 5 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G43
+    }
+    owner = G43
+    add_core_of = G43
+    victory_points = {
+      5900
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      3453 = { landmark_wet_altar_of_the_horned_rat = 1 supply_node = 1 }
     }
   }
-  provinces = { 3452 3453 3454 3455 }
-  local_supplies = 0.0
 }

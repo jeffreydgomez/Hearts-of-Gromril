@@ -1,32 +1,71 @@
-# EU4 area: nippon_1_area; source provinces: 2509 2510 2513
+# Consolidated authoring states: 192 1181
 state = {
+  name = "STATE_1181"
   id = 876
-  name = "STATE_876"
-  manpower = 1151103
-  state_category = large_town
-  resources = { oil = 3 aluminium = 18 coal = 1 }
+  manpower = 5179961
+  provinces = {
+    4703
+    4704
+    4705
+    4706
+    4707
+    4708
+    4709
+    4710
+    4711
+  }
+  state_category = large_city
+  resources = {
+    coal = 2
+    oil = 4
+    tungsten = 16
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 18 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z74 }
-    # END WET inhabitants
-
-    owner = Z74
-    add_core_of = Z74
-    victory_points = { 3563 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      4703
+      1
+    }
+    victory_points = {
+      4711
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
+      arms_factory = 3
       dockyard = 1
-      3563 = { naval_base = 1 }
+      industrial_complex = 3
+      infrastructure = 1
+      4703 = {
+        naval_base = 1
+      }
+      4708 = {
+        naval_base = 1
+      }
+      4711 = {
+        landmark_wet_emperors_palace = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3563 3564 3565 3566 3567 3568 3574 3575 3576 }
-  local_supplies = 0.0
 }

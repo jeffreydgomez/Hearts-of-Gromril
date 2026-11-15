@@ -1,28 +1,51 @@
-# EU4 area: karagril_area; source provinces: 4423 4424 4435 4530
+# Consolidated authoring states: 793
 state = {
+  name = "STATE_793"
   id = 568
-  name = "STATE_568"
   manpower = 708371
+  provinces = {
+    4537
+    4539
+  }
   state_category = town
-  resources = { oil = 2 steel = 5 }
+  resources = {
+    coal = 1
+    oil = 2
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U38 }
-    # END WET inhabitants
-
-    owner = U38
-    add_core_of = U38
-    victory_points = { 6429 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I02
+    }
+    owner = I02
+    add_core_of = I02
+    add_core_of = Y45
+    victory_points = {
+      4539
+      5
+    }
     buildings = {
       infrastructure = 1
+      4539 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6429 6430 6461 6562 }
-  local_supplies = 0.0
 }

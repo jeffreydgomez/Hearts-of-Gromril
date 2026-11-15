@@ -1,29 +1,55 @@
-# EU4 area: araby_area_7; source provinces: 976 977 978
+# Consolidated authoring states: 49
 state = {
+  name = "STATE_49"
   id = 36
-  name = "STATE_36"
-  manpower = 974010
-  state_category = town
-  resources = { oil = 4 coal = 2 }
+  manpower = 527699
+  provinces = {
+    2184
+    2185
+    2186
+    2187
+    2188
+    2189
+    2190
+    2194
+    2195
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 59
+    coal = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z14 }
-    # END WET inhabitants
-
-    owner = Z14
-    add_core_of = Z14
-    victory_points = { 1203 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      2184
+      1
+    }
     buildings = {
+      industrial_complex = 1
       infrastructure = 1
-      1201 = { naval_base = 1 }
     }
   }
-  provinces = { 1201 1202 1203 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,49 @@
-# EU4 area: javea_area; source provinces: 493 495 496 760
+# Consolidated authoring states: 772
 state = {
+  name = "STATE_772"
   id = 552
-  name = "STATE_552"
-  manpower = 1018283
-  state_category = town
-  resources = { oil = 1 aluminium = 24 tungsten = 1 coal = 1 }
+  manpower = 221366
+  provinces = {
+    4560
+  }
+  state_category = rural
+  resources = {
+    steel = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 518 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X26
+    }
+    owner = X26
+    add_core_of = X26
+    victory_points = {
+      4560
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      521 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      4560 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 518 520 521 809 }
-  local_supplies = 0.0
 }

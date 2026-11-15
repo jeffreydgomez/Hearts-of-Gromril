@@ -1,28 +1,47 @@
-# EU4 area: putrid_stump_area; source provinces: 4497
+# Consolidated authoring states: 299
 state = {
+  name = "STATE_299"
   id = 928
-  name = "STATE_928"
-  manpower = 354186
+  manpower = 398459
+  provinces = {
+    1511
+    1512
+  }
   state_category = rural
-  resources = { oil = 1 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U11 }
-    # END WET inhabitants
-
-    owner = U11
-    add_core_of = U11
-    victory_points = { 6530 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G24
+    }
+    owner = G24
+    add_core_of = G24
+    victory_points = {
+      1512
+      1
+    }
     buildings = {
       infrastructure = 1
     }
   }
-  provinces = { 6530 }
-  local_supplies = 0.0
 }

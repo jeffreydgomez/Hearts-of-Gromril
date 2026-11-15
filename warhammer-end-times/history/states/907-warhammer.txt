@@ -1,32 +1,47 @@
-# EU4 area: pigbarter_area; source provinces: 2144 2145 2155 2204
+# Consolidated authoring states: 1234
 state = {
+  name = "STATE_1234"
   id = 907
-  name = "STATE_907"
-  manpower = 1151103
-  state_category = large_town
-  resources = { oil = 1 tungsten = 4 }
+  manpower = 177093
+  provinces = {
+    314
+  }
+  state_category = rural
+  resources = {
+    aluminium = 5
+    steel = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 43 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B21 }
-    # END WET inhabitants
-
-    owner = B21
-    add_core_of = B21
-    victory_points = { 2827 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A20
+    }
+    owner = A20
+    add_core_of = A15
+    add_core_of = A20
+    add_core_of = Y08
+    victory_points = {
+      314
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      2827 = { supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 2826 2827 2862 2940 }
-  local_supplies = 0.0
 }

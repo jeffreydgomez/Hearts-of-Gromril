@@ -1,33 +1,51 @@
-# EU4 area: reaver_mark_area; source provinces: 1832 1833 1834 1835 1837
+# Consolidated authoring states: 51
 state = {
+  name = "STATE_51"
   id = 933
-  name = "STATE_933"
-  manpower = 635944
-  state_category = large_town
-  resources = { rubber = 30 tungsten = 6 coal = 2 }
+  manpower = 664098
+  provinces = {
+    733
+    801
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2212 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B14
+    }
+    owner = B14
+    add_core_of = B14
+    victory_points = {
+      733
+      1
+    }
     buildings = {
-      air_base = 1
-      dockyard = 3
+      dockyard = 1
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      2204 = { naval_base = 1 }
+      801 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2204 2205 2206 2207 2208 2209 2210 2212 }
-  local_supplies = 0.0
 }

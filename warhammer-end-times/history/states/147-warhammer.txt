@@ -1,29 +1,64 @@
-# EU4 area: broken_lands_16_area; source provinces: 2107 2108
+# Consolidated authoring states: 204
 state = {
+  name = "STATE_204"
   id = 147
-  name = "STATE_147"
-  manpower = 708371
+  manpower = 929737
+  provinces = {
+    5239
+    5240
+    5241
+    5242
+    5243
+    5244
+    5282
+    5283
+    5284
+    5285
+    5286
+    5388
+    5389
+    5390
+    5391
+    5392
+  }
   state_category = town
-  resources = { aluminium = 15 steel = 10 }
+  resources = {
+    coal = 1
+    oil = 2
+    steel = 16
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X29 }
-    # END WET inhabitants
-
-    owner = X29
-    add_core_of = X29
-    victory_points = { 2683 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      5239
+      1
+    }
     buildings = {
       infrastructure = 1
-      2683 = { naval_base = 1 }
+      5388 = {
+        landmark_wet_jade_tower = 1
+      }
     }
   }
-  provinces = { 2683 2684 }
-  local_supplies = 0.0
 }

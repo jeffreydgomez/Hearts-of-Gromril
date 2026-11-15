@@ -1,28 +1,69 @@
-# EU4 area: brightvale_area; source provinces: 1824 1830 1831
+# Consolidated authoring states: 193
 state = {
+  name = "STATE_193"
   id = 136
-  name = "STATE_136"
-  manpower = 270615
+  manpower = 1505288
+  provinces = {
+    5070
+    5071
+    5072
+    5073
+    5074
+    5075
+    5076
+    5077
+    5078
+    5079
+    5080
+    5110
+    5111
+    5112
+    5113
+    5123
+    5124
+    5556
+    5557
+  }
   state_category = town
-  resources = { tungsten = 2 steel = 6 coal = 1 }
+  resources = {
+    coal = 4
+    steel = 7
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2202 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      5070
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      5110 = {
+        landmark_wet_pagoda_of_feng_pei = 1
+      }
     }
   }
-  provinces = { 2193 2202 2203 }
-  local_supplies = 0.0
 }

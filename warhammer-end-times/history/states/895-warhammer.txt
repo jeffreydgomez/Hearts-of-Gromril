@@ -1,33 +1,79 @@
-# EU4 area: north_ostland_area; source provinces: 141 144 149
+# Consolidated authoring states: 1210
 state = {
+  name = "STATE_1210"
   id = 895
-  name = "STATE_895"
-  manpower = 1062556
-  state_category = town
-  resources = { oil = 1 aluminium = 15 tungsten = 1 coal = 1 }
+  manpower = 1903746
+  provinces = {
+    6068
+    6069
+    6070
+    6071
+    6072
+    6073
+    6074
+    6075
+    6076
+    6077
+    6078
+    6079
+    6080
+    6081
+    6089
+    6094
+    6095
+    6096
+    6097
+    6098
+    6099
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 24
+    coal = 1
+    steel = 7
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A07 }
-    # END WET inhabitants
-
-    owner = A07
-    add_core_of = A07
-    add_core_of = A86
-    add_core_of = Y01
-    victory_points = { 141 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z46
+    }
+    owner = Z46
+    add_core_of = Z46
+    victory_points = {
+      6089
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      147 = { naval_base = 1 }
+      6071 = {
+        landmark_wet_bay_of_zlatlan = 1
+      }
+      6076 = {
+        naval_base = 1
+      }
+      6089 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 141 147 152 }
-  local_supplies = 0.0
 }

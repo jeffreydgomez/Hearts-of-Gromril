@@ -1,31 +1,58 @@
-# EU4 area: grenzstadt_area; source provinces: 51 53 56 57 203
+# Consolidated authoring states: 626 1049
 state = {
+  name = "STATE_626"
   id = 446
-  name = "STATE_446"
-  manpower = 1505288
-  state_category = town
-  resources = { oil = 6 tungsten = 1 coal = 3 }
+  manpower = 796917
+  provinces = {
+    7077
+    7093
+    7094
+    7095
+    7096
+    7097
+    7098
+    7103
+    7104
+    7105
+  }
+  state_category = rural
+  resources = {
+    aluminium = 9
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A06 }
-    # END WET inhabitants
-
-    owner = A06
-    add_core_of = A06
-    victory_points = { 56 1 }
+    set_variable = {
+      wet_pop_race = 6
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X02
+    }
+    owner = X02
+    add_core_of = X02
+    victory_points = {
+      7096
+      1
+    }
+    victory_points = {
+      7077
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      57 = { landmark_wet_black_fire_pass = 1 }
     }
   }
-  provinces = { 51 53 56 57 211 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,53 @@
-# EU4 area: iron_rock_outstricts_area; source provinces: 371 372
+# Consolidated authoring states: 752
 state = {
+  name = "STATE_752"
   id = 535
-  name = "STATE_535"
-  manpower = 3580492
-  state_category = large_town
-  resources = { oil = 2 aluminium = 3 rubber = 5 tungsten = 3 steel = 7 chromium = 9 }
+  manpower = 1372468
+  provinces = {
+    227
+    228
+    243
+    270
+  }
+  state_category = town
+  resources = {
+    steel = 19
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U49 }
-    # END WET inhabitants
-
-    owner = U49
-    add_core_of = U49
-    victory_points = { 383 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G17
+    }
+    owner = G17
+    add_core_of = G17
+    victory_points = {
+      228
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      228 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 383 384 }
-  local_supplies = 0.0
 }

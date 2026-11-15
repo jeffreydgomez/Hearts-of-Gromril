@@ -1,28 +1,51 @@
-# EU4 area: arranoc_area; source provinces: 672 777
+# Consolidated authoring states: 69
 state = {
+  name = "STATE_69"
   id = 43
-  name = "STATE_43"
-  manpower = 137776
-  state_category = rural
-  resources = { tungsten = 1 steel = 8 }
+  manpower = 885463
+  provinces = {
+    145
+    146
+    154
+    155
+    167
+    168
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 3
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 24 }
-    set_variable = { wet_pop_faith = 4 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B01 }
-    # END WET inhabitants
-
-    owner = B01
-    add_core_of = B01
-    victory_points = { 716 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G07
+    }
+    owner = G07
+    add_core_of = G07
+    victory_points = {
+      145
+      1
+    }
     buildings = {
       infrastructure = 1
     }
   }
-  provinces = { 716 826 }
-  local_supplies = 0.0
 }

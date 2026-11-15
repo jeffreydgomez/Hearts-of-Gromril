@@ -1,30 +1,58 @@
-# EU4 area: finu_area; source provinces: 1775 1812 1815 1935
+# Consolidated authoring states: 555
 state = {
+  name = "STATE_555"
   id = 398
-  name = "STATE_398"
-  manpower = 541230
-  state_category = large_town
-  resources = { tungsten = 7 coal = 1 }
+  manpower = 2744937
+  provinces = {
+    7002
+    7003
+    7004
+    7005
+    7006
+    7007
+  }
+  state_category = city
+  resources = {
+    aluminium = 42
+    coal = 4
+    oil = 5
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2161 1 }
+    set_variable = {
+      wet_pop_race = 15
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I35
+    }
+    owner = I35
+    add_core_of = I35
+    victory_points = {
+      7004
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      2161 = { naval_base = 1 }
+      7004 = {
+        landmark_wet_theaters_of_the_monkey_court = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2069 2070 2161 2162 2181 2291 }
-  local_supplies = 0.0
 }

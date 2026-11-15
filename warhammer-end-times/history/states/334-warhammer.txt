@@ -1,31 +1,54 @@
-# EU4 area: east_yaxum_area; source provinces: 4856
+# Consolidated authoring states: 458
 state = {
+  name = "STATE_458"
   id = 334
-  name = "STATE_334"
   manpower = 531278
+  provinces = {
+    5887
+    5888
+    5889
+    5890
+    5891
+    5892
+  }
   state_category = rural
-  resources = { tungsten = 2 }
+  resources = {
+    aluminium = 7
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I42 }
-    # END WET inhabitants
-
-    owner = I42
-    add_core_of = I42
-    victory_points = { 7040 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
+    owner = Z14
+    add_core_of = Z14
+    victory_points = {
+      5887
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      7040 = { naval_base = 1 }
+      5889 = {
+        landmark_wet_library_of_medes = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7040 }
-  local_supplies = 0.0
 }

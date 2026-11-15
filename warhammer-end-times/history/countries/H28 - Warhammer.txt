@@ -1,7 +1,7 @@
 # Generated from EU4 at 2502.11.11; religion determines ruling ideology.
 set_research_slots = 2
 set_technology = { wet_light_cavalry = 1 }
-capital = 339
+capital = 246
 set_stability = 0.79
 set_war_support = 0.58
 set_politics = { ruling_party = democratic elections_allowed = no last_election = "2519.1.1" }
@@ -75,6 +75,8 @@ set_technology = { gw_artillery = 1 }
 if = { limit = { has_dlc = "No Step Back" } set_technology = { gwtank_chassis = 1 basic_light_tank_chassis = 1 } create_equipment_variant = { name = "Silver Helms Equipment I" type = light_tank_chassis_1 parent_version = 0 modules = { main_armament_slot = tank_small_cannon turret_type_slot = tank_light_two_man_tank_turret suspension_type_slot = tank_bogie_suspension armor_type_slot = tank_riveted_armor engine_type_slot = tank_gasoline_engine } }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } set_technology = { gwtank = 1 basic_light_tank = 1 } }
+if = { limit = { has_dlc = "By Blood Alone" } set_air_oob = "WET_H28_air_bba" }
+if = { limit = { NOT = { has_dlc = "By Blood Alone" } } set_air_oob = "WET_H28_air_legacy" }
 # END WET starting roster
 set_oob = "WET_H28"
 if = { limit = { has_dlc = "Man the Guns" }

@@ -1,28 +1,67 @@
-# EU4 area: headhunters_jungle_area; source provinces: 4372 4373
+# Consolidated authoring states: 209 660
 state = {
+  name = "STATE_660"
   id = 474
-  name = "STATE_474"
-  manpower = 619824
-  state_category = rural
-  resources = { oil = 3 coal = 1 }
+  manpower = 2700663
+  provinces = {
+    305
+    309
+    318
+    319
+    320
+    326
+    327
+    329
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    oil = 4
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V15 }
-    # END WET inhabitants
-
-    owner = V15
-    add_core_of = V15
-    victory_points = { 6326 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    victory_points = {
+      319
+      1
+    }
+    victory_points = {
+      305
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      319 = {
+        naval_base = 1
+      }
+      305 = {
+        landmark_wet_shipyards_of_languille = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6326 6327 6328 6329 6330 6331 6332 6333 6334 6335 6336 6337 6338 6339 6340 6341 6342 6343 }
-  local_supplies = 0.0
 }

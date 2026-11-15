@@ -1,31 +1,78 @@
-# EU4 area: lustria_17_area; source provinces: 2361 2363 4222
+# Consolidated authoring states: 901 937 1175
 state = {
+  name = "STATE_937"
   id = 682
-  name = "STATE_682"
-  manpower = 1151103
-  state_category = town
-  resources = { oil = 1 tungsten = 3 coal = 1 }
+  manpower = 3807493
+  provinces = {
+    621
+    632
+    633
+    634
+    639
+    640
+    643
+    645
+    646
+    649
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 13
+    coal = 2
+    oil = 2
+    tungsten = 11
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V17 }
-    # END WET inhabitants
-
-    owner = V17
-    add_core_of = V17
-    victory_points = { 5922 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A57
+    }
+    owner = A57
+    add_core_of = A57
+    victory_points = {
+      639
+      1
+    }
+    victory_points = {
+      632
+      1
+    }
+    victory_points = {
+      646
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      5922 = { landmark_wet_great_temple_at_spektazuma = 1 supply_node = 1 }
+      dockyard = 1
+      industrial_complex = 2
+      infrastructure = 1
+      639 = {
+        naval_base = 1
+      }
+      632 = {
+        landmark_wet_cathedra_of_myrmidia = 1
+        landmark_wet_the_reman_forum = 1
+        naval_base = 1
+      }
+      646 = {
+        landmark_wet_palazzo_della_virtu = 1
+      }
     }
   }
-  provinces = { 3293 3294 3295 3296 3300 3301 3302 3303 3304 3305 5922 }
-  local_supplies = 0.0
 }

@@ -1,32 +1,56 @@
-# EU4 area: ceyl_area; source provinces: 1943 1944 1945 1946 1965
+# Consolidated authoring states: 287
 state = {
+  name = "STATE_287"
   id = 208
-  name = "STATE_208"
-  manpower = 798313
+  manpower = 1815200
+  provinces = {
+    710
+    6394
+    6395
+  }
   state_category = large_town
-  resources = { oil = 9 aluminium = 7 tungsten = 1 coal = 3 }
+  resources = {
+    chromium = 201
+    steel = 10
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2341 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 35
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U24
+    }
+    owner = U24
+    add_core_of = U24
+    add_core_of = Y35
+    victory_points = {
+      710
+      5
+    }
     buildings = {
+      air_base = 1
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 3
-      2341 = { landmark_wet_gp_ancient_subterranean_palace = 1 naval_base = 1 }
+      710 = {
+        landmark_wet_cripple_peak_gp = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2300 2301 2302 2303 2304 2305 2306 2341 }
-  local_supplies = 0.0
 }

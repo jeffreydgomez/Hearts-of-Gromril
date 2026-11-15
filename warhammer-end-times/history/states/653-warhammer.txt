@@ -1,33 +1,54 @@
-# EU4 area: land_of_chill_3_area; source provinces: 2026 2586 2587
+# Consolidated authoring states: 897
 state = {
+  name = "STATE_897"
   id = 653
-  name = "STATE_653"
-  manpower = 597688
+  manpower = 664098
+  provinces = {
+    26
+    359
+    379
+    404
+  }
   state_category = town
-  resources = { oil = 1 tungsten = 3 coal = 1 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H12 }
-    # END WET inhabitants
-
-    owner = H12
-    add_core_of = H12
-    victory_points = { 3962 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 64
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A29
+    }
+    owner = A29
+    add_core_of = A29
+    add_core_of = B67
+    victory_points = {
+      359
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 2
-      dockyard = 1
-      3962 = { landmark_wet_har_ganeth = 1 }
-      3964 = { naval_base = 1 }
+      26 = {
+        landmark_wet_ancient_burial_mounds = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2433 2434 2435 3962 3963 3964 3965 }
-  local_supplies = 0.0
 }

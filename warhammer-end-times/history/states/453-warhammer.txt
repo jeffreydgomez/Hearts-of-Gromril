@@ -1,28 +1,60 @@
-# EU4 area: grimhold_area; source provinces: 4488 4918
+# Consolidated authoring states: 423 425 635
 state = {
+  name = "STATE_635"
   id = 453
-  name = "STATE_453"
-  manpower = 354185
-  state_category = rural
-  resources = { steel = 10 }
+  manpower = 1505287
+  provinces = {
+    1432
+    1433
+    1444
+    1448
+    1451
+  }
+  state_category = town
+  resources = {
+    steel = 7
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U21 }
-    # END WET inhabitants
-
-    owner = U21
-    add_core_of = U21
-    victory_points = { 6521 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B04
+    }
+    owner = B04
+    add_core_of = B04
+    victory_points = {
+      1432
+      1
+    }
+    victory_points = {
+      1448
+      1
+    }
+    victory_points = {
+      1444
+      5
+    }
     buildings = {
       infrastructure = 1
+      1444 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6521 7223 }
-  local_supplies = 0.0
 }

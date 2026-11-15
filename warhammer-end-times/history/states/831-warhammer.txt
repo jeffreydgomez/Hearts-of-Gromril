@@ -1,30 +1,40 @@
-# EU4 area: nehekhara_area_1; source provinces: 619 778 819 830
+# Consolidated authoring states: 1130
 state = {
+  name = "STATE_1130"
+  impassable = yes
   id = 831
-  name = "STATE_831"
-  manpower = 1106829
-  state_category = town
-  resources = { oil = 5 coal = 3 }
+  manpower = 0
+  provinces = {
+    4816
+    4817
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z01 }
-    # END WET inhabitants
-
-    owner = Z01
-    add_core_of = Z01
-    victory_points = { 903 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+
     }
   }
-  provinces = { 662 663 827 828 829 886 887 903 904 }
-  local_supplies = 0.0
 }

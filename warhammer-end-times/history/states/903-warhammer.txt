@@ -1,29 +1,53 @@
-# EU4 area: parravon_area; source provinces: 266 267 268
+# Consolidated authoring states: 1230
 state = {
+  name = "STATE_1230"
   id = 903
-  name = "STATE_903"
-  manpower = 796917
+  manpower = 400000
+  provinces = {
+    7380
+    7381
+    7382
+    7383
+    7384
+    7385
+  }
   state_category = town
-  resources = { rubber = 24 tungsten = 1 steel = 5 }
+  resources = {
+    aluminium = 4
+    coal = 3
+    oil = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    victory_points = { 277 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X14
+    }
+    owner = X14
+    add_core_of = X14
+    victory_points = {
+      7380
+      1
+    }
     buildings = {
-      air_base = 1
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
     }
   }
-  provinces = { 276 277 278 }
-  local_supplies = 0.0
 }

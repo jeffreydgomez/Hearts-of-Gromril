@@ -1,29 +1,52 @@
-# EU4 area: heart_of_the_jungle_area; source provinces: 4882
+# Consolidated authoring states: 661
 state = {
+  name = "STATE_661"
   id = 475
-  name = "STATE_475"
-  manpower = 354185
-  state_category = rural
-  resources = { aluminium = 15 }
+  manpower = 885463
+  provinces = {
+    546
+    547
+    548
+    550
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 3
+    steel = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 1 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X12 }
-    # END WET inhabitants
-
-    owner = X12
-    add_core_of = X12
-    add_core_of = Z83
-    victory_points = { 7110 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
+    owner = A41
+    add_core_of = A41
+    victory_points = {
+      546
+      1
+    }
     buildings = {
       infrastructure = 1
+      548 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7110 7111 7112 }
-  local_supplies = 0.0
 }

@@ -1,33 +1,53 @@
-# EU4 area: ind_18_area; source provinces: 4104 4105 4112 4250
+# Consolidated authoring states: 698
 state = {
+  name = "STATE_698"
   id = 503
-  name = "STATE_503"
-  manpower = 2922029
-  state_category = city
-  resources = { tungsten = 11 coal = 1 }
+  manpower = 442732
+  provinces = {
+    3373
+    3374
+    3375
+    3427
+    3428
+    3431
+    3432
+    3433
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z55 }
-    # END WET inhabitants
-
-    owner = Z55
-    add_core_of = Z55
-    victory_points = { 5686 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V10
+    }
+    owner = V10
+    add_core_of = V10
+    victory_points = {
+      3431
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      5671 = { landmark_wet_tower_of_kala_the_sage = 1 }
-      5686 = { supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 5670 5671 5686 5977 }
-  local_supplies = 0.0
 }

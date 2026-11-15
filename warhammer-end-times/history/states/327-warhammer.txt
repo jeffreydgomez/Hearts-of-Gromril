@@ -1,28 +1,49 @@
-# EU4 area: dukhlys_forest_area; source provinces: 327 328 355 356 381
+# Consolidated authoring states: 448
 state = {
+  name = "STATE_448"
   id = 327
-  name = "STATE_327"
-  manpower = 1018283
+  manpower = 664098
+  provinces = {
+    613
+  }
   state_category = town
-  resources = { aluminium = 11 tungsten = 1 steel = 13 coal = 1 }
+  resources = {
+    steel = 18
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 64 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A29 }
-    # END WET inhabitants
-
-    owner = A29
-    add_core_of = A29
-    victory_points = { 338 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A76
+    }
+    owner = A76
+    add_core_of = A76
+    victory_points = {
+      613
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      613 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 338 339 366 367 393 394 }
-  local_supplies = 0.0
 }

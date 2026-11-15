@@ -1,31 +1,65 @@
-# EU4 area: lustria_9_area; source provinces: 1047 2003 2055 4215
+# Consolidated authoring states: 1031 1032
 state = {
+  name = "STATE_1032"
   id = 743
-  name = "STATE_743"
-  manpower = 1106829
-  state_category = town
-  resources = { aluminium = 5 rubber = 17 tungsten = 3 coal = 1 }
+  manpower = 3231942
+  provinces = {
+    1234
+    1413
+    1414
+    1416
+    1583
+    1584
+    1590
+    1591
+    1592
+    1593
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 39
+    coal = 4
+    tungsten = 8
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V07 }
-    # END WET inhabitants
-
-    owner = V07
-    add_core_of = V07
-    victory_points = { 5913 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
+    owner = Z14
+    add_core_of = Z14
+    victory_points = {
+      1234
+      1
+    }
+    victory_points = {
+      1414
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      5913 = { landmark_wet_pyramid_of_xahutec = 1 supply_node = 1 }
+      dockyard = 1
+      industrial_complex = 2
+      infrastructure = 1
+      1234 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1313 2390 2391 2521 5913 }
-  local_supplies = 0.0
 }

@@ -1,29 +1,47 @@
-# EU4 area: fools_point_area; source provinces: 487 555
+# Consolidated authoring states: 565
 state = {
+  name = "STATE_565"
   id = 403
-  name = "STATE_403"
-  manpower = 354185
+  manpower = 531278
+  provinces = {
+    6423
+    6424
+    6425
+  }
   state_category = rural
-  resources = { oil = 1 }
+  resources = {
+    steel = 10
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 512 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U37
+    }
+    owner = U37
+    add_core_of = U37
+    victory_points = {
+      6423
+      1
+    }
     buildings = {
       infrastructure = 1
-      512 = { naval_base = 1 }
     }
   }
-  provinces = { 512 582 }
-  local_supplies = 0.0
 }

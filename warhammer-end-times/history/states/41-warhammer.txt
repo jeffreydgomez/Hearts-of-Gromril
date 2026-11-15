@@ -1,29 +1,46 @@
-# EU4 area: argwylon_area; source provinces: 663 763 774
+# Consolidated authoring states: 67
 state = {
+  name = "STATE_67"
   id = 41
-  name = "STATE_41"
-  manpower = 190766
-  state_category = town
-  resources = { aluminium = 11 tungsten = 2 }
+  manpower = 442732
+  provinces = {
+    584
+    779
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 24 }
-    set_variable = { wet_pop_faith = 4 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B01 }
-    # END WET inhabitants
-
-    owner = B01
-    add_core_of = B01
-    victory_points = { 707 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G22
+    }
+    owner = G22
+    add_core_of = G22
+    victory_points = {
+      779
+      1
+    }
     buildings = {
       infrastructure = 1
-      707 = { landmark_wet_moonspring_glades = 1 }
     }
   }
-  provinces = { 707 812 823 }
-  local_supplies = 0.0
 }

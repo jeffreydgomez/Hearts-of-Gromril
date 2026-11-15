@@ -1,32 +1,61 @@
-# EU4 area: citadel_of_dusk_area; source provinces: 3196 4353 4354 4355 4356
+# Consolidated authoring states: 240 376
 state = {
+  name = "STATE_376"
   id = 280
-  name = "STATE_280"
-  manpower = 774781
-  state_category = large_town
-  resources = { oil = 2 tungsten = 4 coal = 1 }
+  manpower = 309913
+  provinces = {
+    1520
+    1521
+    1522
+    5322
+    5323
+    5324
+  }
+  state_category = town
+  resources = {
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H25 }
-    # END WET inhabitants
-
-    owner = H25
-    add_core_of = H25
-    victory_points = { 6283 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B41
+    }
+    owner = B41
+    add_core_of = B41
+    victory_points = {
+      5322
+      1
+    }
+    victory_points = {
+      1520
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
+      arms_factory = 1
       dockyard = 1
-      6283 = { landmark_wet_citadel_of_dusk = 1 supply_node = 1 naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      1520 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5311 6281 6282 6283 6284 }
-  local_supplies = 0.0
 }

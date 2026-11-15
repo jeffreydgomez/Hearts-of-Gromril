@@ -1,28 +1,66 @@
-# EU4 area: lustria_42_area; source provinces: 2484 2485 2486
+# Consolidated authoring states: 994 995 1019
 state = {
+  name = "STATE_994"
   id = 718
-  name = "STATE_718"
-  manpower = 664098
-  state_category = town
-  resources = { oil = 2 tungsten = 1 coal = 1 }
+  manpower = 3010575
+  provinces = {
+    386
+    594
+    6407
+    6409
+    6410
+    6415
+    6732
+    6734
+  }
+  state_category = large_town
+  resources = {
+    oil = 8
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V15 }
-    # END WET inhabitants
-
-    owner = V15
-    add_core_of = V15
-    victory_points = { 3515 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U22
+    }
+    owner = U22
+    add_core_of = U22
+    victory_points = {
+      6415
+      5
+    }
+    victory_points = {
+      6732
+      1
+    }
+    victory_points = {
+      386
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      6415 = {
+        landmark_wet_offices_of_karak_azul = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3515 3516 3517 }
-  local_supplies = 0.0
 }

@@ -101,9 +101,9 @@ if = { limit = { check_variable = { var = wet_pop_faith value = 69 compare = equ
 }
 
 wet_pop_update_country = {
-if = { limit = { has_idea = wet_race_daemon } set_variable = { wet_country_race = 3 } }
+if = { limit = { OR = { has_idea = wet_race_daemon has_idea = wet_race_undead_daemon } } set_variable = { wet_country_race = 3 } }
 if = { limit = { has_idea = wet_race_human } set_variable = { wet_country_race = 12 } }
-if = { limit = { has_idea = wet_race_chaos_mortals } set_variable = { wet_country_race = 12 } }
+if = { limit = { OR = { has_idea = wet_race_chaos_mortals has_idea = wet_race_undead_chaos_mortals } } set_variable = { wet_country_race = 12 } }
 if = { limit = { OR = { has_idea = wet_race_high_elf has_idea = wet_race_undead_high_elf } } set_variable = { wet_country_race = 11 } }
 if = { limit = { OR = { has_idea = wet_race_dark_elf has_idea = wet_race_undead_dark_elf } } set_variable = { wet_country_race = 4 } }
 if = { limit = { OR = { has_idea = wet_race_wood_elf has_idea = wet_race_undead_wood_elf } } set_variable = { wet_country_race = 24 } }
@@ -113,11 +113,11 @@ if = { limit = { OR = { has_idea = wet_race_chaos_dwarf has_idea = wet_race_unde
 if = { limit = { OR = { has_idea = wet_race_halfling has_idea = wet_race_undead_halfling } } set_variable = { wet_country_race = 10 } }
 if = { limit = { OR = { has_idea = wet_race_orc has_idea = wet_race_undead_orc } } set_variable = { wet_country_race = 9 } }
 if = { limit = { OR = { has_idea = wet_race_goblin has_idea = wet_race_undead_goblin } } set_variable = { wet_country_race = 9 } }
-if = { limit = { has_idea = wet_race_hobgoblin } set_variable = { wet_country_race = 9 } }
+if = { limit = { OR = { has_idea = wet_race_hobgoblin has_idea = wet_race_undead_hobgoblin } } set_variable = { wet_country_race = 9 } }
 if = { limit = { OR = { has_idea = wet_race_gnoblar has_idea = wet_race_undead_gnoblar } } set_variable = { wet_country_race = 9 } }
 if = { limit = { has_idea = wet_race_kobold } set_variable = { wet_country_race = 13 } }
 if = { limit = { OR = { has_idea = wet_race_skaven has_idea = wet_race_undead_skaven } } set_variable = { wet_country_race = 18 } }
-if = { limit = { has_idea = wet_race_lizardmen } set_variable = { wet_country_race = 14 } }
+if = { limit = { OR = { has_idea = wet_race_lizardmen has_idea = wet_race_undead_lizardmen } } set_variable = { wet_country_race = 14 } }
 if = { limit = { OR = { has_idea = wet_race_old_ones has_idea = wet_race_undead_old_ones } } set_variable = { wet_country_race = 17 } }
 if = { limit = { OR = { has_idea = wet_race_ogre has_idea = wet_race_undead_ogre } } set_variable = { wet_country_race = 16 } }
 if = { limit = { has_idea = wet_race_yhetee } set_variable = { wet_country_race = 25 } }

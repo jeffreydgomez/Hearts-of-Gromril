@@ -1,32 +1,67 @@
-# EU4 area: khuresh_14_area; source provinces: 2877 2878 2879 2900
+# Consolidated authoring states: 833
 state = {
+  name = "STATE_833"
   id = 603
-  name = "STATE_603"
-  manpower = 575552
-  state_category = large_town
-  resources = { aluminium = 11 tungsten = 3 coal = 1 }
+  manpower = 1461015
+  provinces = {
+    1083
+    1084
+    1085
+    1086
+    1087
+    1088
+    1089
+    1090
+    1091
+    1092
+    1093
+    1094
+    1095
+    1096
+    1144
+    1145
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 2
+    steel = 12
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H30 }
-    # END WET inhabitants
-
-    owner = H30
-    add_core_of = H30
-    victory_points = { 4828 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      1090
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      4828 = { landmark_wet_shadowfang_citadel = 1 supply_node = 1 naval_base = 1 }
+      1144 = {
+        landmark_wet_mortuary_temple_of_quaph = 1
+      }
     }
   }
-  provinces = { 4828 4829 4830 4831 4832 4833 4834 4835 4836 4914 4915 4916 4917 4918 }
-  local_supplies = 0.0
 }

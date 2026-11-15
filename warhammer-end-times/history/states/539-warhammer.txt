@@ -1,29 +1,50 @@
-# EU4 area: isla_de_sangre_area; source provinces: 3195
+# Consolidated authoring states: 756
 state = {
+  name = "STATE_756"
   id = 539
-  name = "STATE_539"
-  manpower = 132820
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 1461015
+  provinces = {
+    116
+  }
+  state_category = town
+  resources = {
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 5310 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 14
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A82
+    }
+    owner = A82
+    add_core_of = A82
+    victory_points = {
+      116
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      5310 = { naval_base = 1 }
+      116 = {
+        landmark_wet_great_temple_ulric = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5310 }
-  local_supplies = 0.0
 }

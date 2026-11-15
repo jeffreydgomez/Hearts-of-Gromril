@@ -1,28 +1,73 @@
-# EU4 area: ind_4_area; source provinces: 4070
+# Consolidated authoring states: 695 697 731
 state = {
+  name = "STATE_731"
   id = 521
-  name = "STATE_521"
-  manpower = 619824
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 1195376
+  provinces = {
+    3385
+    3386
+    3387
+    3388
+    3389
+    3390
+    3391
+    3392
+    3393
+  }
+  state_category = town
+  resources = {
+    aluminium = 13
+    coal = 1
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z50 }
-    # END WET inhabitants
-
-    owner = Z50
-    add_core_of = Z50
-    victory_points = { 5600 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V18
+    }
+    owner = V18
+    add_core_of = V18
+    victory_points = {
+      3385
+      1
+    }
+    victory_points = {
+      3390
+      1
+    }
+    victory_points = {
+      3389
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      3385 = {
+        naval_base = 1
+      }
+      3389 = {
+        landmark_wet_shrine_of_sotek = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5600 5601 }
-  local_supplies = 0.0
 }

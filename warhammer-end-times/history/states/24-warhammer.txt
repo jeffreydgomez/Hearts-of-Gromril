@@ -1,29 +1,57 @@
-# EU4 area: araby_area_14; source provinces: 1018 1024 1025 4194
+# Consolidated authoring states: 30
 state = {
+  name = "STATE_30"
   id = 24
-  name = "STATE_24"
-  manpower = 1062556
+  manpower = 1151103
+  provinces = {
+    1022
+    1023
+    1024
+    1025
+    1181
+    1182
+    1188
+    1208
+    1209
+    1227
+  }
   state_category = town
-  resources = { oil = 1 aluminium = 15 tungsten = 2 coal = 2 }
+  resources = {
+    oil = 1
+    steel = 13
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z14 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
     owner = Z14
     add_core_of = Z14
-    victory_points = { 1262 1 }
+    victory_points = {
+      1188
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      1262 = { naval_base = 1 }
     }
   }
-  provinces = { 1254 1261 1262 5864 }
-  local_supplies = 0.0
 }

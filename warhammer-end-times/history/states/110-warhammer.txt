@@ -1,31 +1,51 @@
-# EU4 area: black_venom_run_area; source provinces: 865 866 873
+# Consolidated authoring states: 164
 state = {
+  name = "STATE_164"
   id = 110
-  name = "STATE_110"
-  manpower = 796917
+  manpower = 446515
+  provinces = {
+    2223
+    2224
+    2225
+  }
   state_category = town
-  resources = { oil = 1 aluminium = 22 coal = 1 }
+  resources = {
+    coal = 2
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 13 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A66 }
-    # END WET inhabitants
-
-    owner = A66
-    add_core_of = A66
-    victory_points = { 962 5 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      2224
+      1
+    }
     buildings = {
-      infrastructure = 1
       industrial_complex = 1
-      arms_factory = 1
-      962 = { supply_node = 1 }
+      infrastructure = 1
+      2224 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 961 962 969 }
-  local_supplies = 0.0
 }

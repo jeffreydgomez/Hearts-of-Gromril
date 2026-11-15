@@ -1,32 +1,56 @@
-# EU4 area: khuresh_8_area; source provinces: 3199
+# Consolidated authoring states: 848
 state = {
+  name = "STATE_848"
   id = 615
-  name = "STATE_615"
-  manpower = 575551
+  manpower = 1328195
+  provinces = {
+    996
+    997
+    998
+    1018
+    1019
+  }
   state_category = town
-  resources = { aluminium = 24 }
+  resources = {
+    aluminium = 11
+    coal = 3
+    oil = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V20 }
-    # END WET inhabitants
-
-    owner = V20
-    add_core_of = V20
-    victory_points = { 5314 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      998
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
       dockyard = 1
-      5314 = { supply_node = 1 naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      998 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5314 }
-  local_supplies = 0.0
 }

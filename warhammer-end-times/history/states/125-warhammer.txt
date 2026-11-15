@@ -1,31 +1,64 @@
-# EU4 area: blasted_wastes_9_area; source provinces: 2223 2233 2234 2235
+# Consolidated authoring states: 181
 state = {
+  name = "STATE_181"
   id = 125
-  name = "STATE_125"
-  manpower = 1151103
-  state_category = town
-  resources = { oil = 2 tungsten = 3 coal = 1 }
+  manpower = 2302205
+  provinces = {
+    4965
+    4966
+    4967
+    4968
+    4969
+    4970
+    4976
+    4977
+    4978
+    4979
+    4980
+    4987
+    4988
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    oil = 7
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 21 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G33 }
-    # END WET inhabitants
-
-    owner = G33
-    add_core_of = G33
-    victory_points = { 3010 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      4968
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      3010 = { landmark_wet_gates_of_zharr = 1 supply_node = 1 }
+      4968 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2979 2980 3004 3005 3006 3007 3008 3009 3010 }
-  local_supplies = 0.0
 }

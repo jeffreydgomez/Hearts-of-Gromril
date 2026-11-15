@@ -1,28 +1,67 @@
-# EU4 area: badlands_area_28; source provinces: 386
+# Consolidated authoring states: 98 133
 state = {
+  name = "STATE_133"
   id = 84
-  name = "STATE_84"
-  manpower = 398459
-  state_category = rural
-  resources = { oil = 2 coal = 1 }
+  manpower = 2877756
+  provinces = {
+    257
+    260
+    263
+    264
+    265
+    266
+    312
+    313
+  }
+  state_category = large_town
+  resources = {
+    coal = 3
+    oil = 3
+    tungsten = 8
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G13 }
-    # END WET inhabitants
-
-    owner = G13
-    add_core_of = G13
-    victory_points = { 399 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A20
+    }
+    owner = A20
+    add_core_of = A15
+    add_core_of = A20
+    victory_points = {
+      265
+      1
+    }
+    victory_points = {
+      257
+      1
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
+      266 = {
+        landmark_wet_tournament_fields_of_bastonne = 1
+      }
+      257 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 399 }
-  local_supplies = 0.0
 }

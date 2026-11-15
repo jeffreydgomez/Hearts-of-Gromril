@@ -1,29 +1,59 @@
-# EU4 area: cairnmoor_area; source provinces: 1806 1807 1931
+# Consolidated authoring states: 228 591
 state = {
+  name = "STATE_228"
   id = 165
-  name = "STATE_165"
-  manpower = 284146
+  manpower = 1195376
+  provinces = {
+    4117
+    4118
+    4119
+    7230
+    7233
+    7234
+  }
   state_category = town
-  resources = { tungsten = 3 coal = 1 }
+  resources = {
+    coal = 4
+    oil = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2157 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 53
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B91
+    }
+    owner = B91
+    add_core_of = B91
+    victory_points = {
+      4117
+      5
+    }
+    victory_points = {
+      7230
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      2156 = { naval_base = 1 }
+      4117 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2156 2157 2285 }
-  local_supplies = 0.0
 }

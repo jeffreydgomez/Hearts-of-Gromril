@@ -1,28 +1,61 @@
-# EU4 area: ancient_city_area; source provinces: 2119
+# Consolidated authoring states: 9
 state = {
+  name = "STATE_9"
   id = 6
-  name = "STATE_6"
-  manpower = 265639
-  state_category = rural
-  resources = { steel = 7 }
+  manpower = 608883
+  provinces = {
+    2264
+    2265
+    2267
+    2268
+    2269
+    2272
+    2292
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    oil = 1
+    steel = 21
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 6 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X05 }
-    # END WET inhabitants
-
-    owner = X05
-    add_core_of = X05
-    victory_points = { 2702 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    add_core_of = Y71
+    victory_points = {
+      2292
+      1
+    }
     buildings = {
+      industrial_complex = 1
       infrastructure = 1
+      2267 = {
+        landmark_wet_gp_black_citadel_of_anlec = 1
+      }
+      2292 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2702 2703 2704 2705 2706 }
-  local_supplies = 0.0
 }

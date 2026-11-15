@@ -1,28 +1,55 @@
-# EU4 area: hafak_area; source provinces: 4476 4914
+# Consolidated authoring states: 657
 state = {
+  name = "STATE_657"
   id = 472
-  name = "STATE_472"
-  manpower = 708371
-  state_category = town
-  resources = { steel = 19 }
+  manpower = 265639
+  provinces = {
+    2328
+    2329
+    2330
+    2331
+    3617
+    3618
+    3619
+    3945
+    3946
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U07 }
-    # END WET inhabitants
-
-    owner = U07
-    add_core_of = U07
-    victory_points = { 6509 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    add_core_of = Y77
+    victory_points = {
+      3945
+      1
+    }
     buildings = {
       infrastructure = 1
     }
   }
-  provinces = { 6509 7219 }
-  local_supplies = 0.0
 }

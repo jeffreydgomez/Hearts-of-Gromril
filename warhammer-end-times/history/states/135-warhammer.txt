@@ -1,29 +1,59 @@
-# EU4 area: boreni_area; source provinces: 1081
+# Consolidated authoring states: 191
 state = {
+  name = "STATE_191"
   id = 135
-  name = "STATE_135"
-  manpower = 265639
-  state_category = rural
-  resources = { oil = 1 coal = 1 }
+  manpower = 1593834
+  provinces = {
+    3193
+    5004
+    5005
+    5006
+    5155
+    5156
+    5157
+    5158
+  }
+  state_category = large_town
+  resources = {
+    coal = 1
+    oil = 2
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 18 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B10 }
-    # END WET inhabitants
-
-    owner = B10
-    add_core_of = B10
-    victory_points = { 1373 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      3193
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      1373 = { naval_base = 1 }
+      3193 = {
+        landmark_wet_shang_wu_river_district = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1373 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,51 @@
-# EU4 area: laurelorn_forest; source provinces: 610 744 4892 4932
+# Consolidated authoring states: 909
 state = {
+  name = "STATE_909"
   id = 662
-  name = "STATE_662"
-  manpower = 819054
-  state_category = large_town
-  resources = { tungsten = 6 }
+  manpower = 132820
+  provinces = {
+    5970
+  }
+  state_category = town
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 24 }
-    set_variable = { wet_pop_faith = 4 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B71 }
-    # END WET inhabitants
-
-    owner = B71
-    add_core_of = B71
-    victory_points = { 7160 5 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H31
+    }
+    owner = H31
+    add_core_of = H31
+    victory_points = {
+      5970
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      7160 = { landmark_wet_city_of_glass = 1 supply_node = 1 }
+      5970 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 653 793 7160 7250 }
-  local_supplies = 0.0
 }

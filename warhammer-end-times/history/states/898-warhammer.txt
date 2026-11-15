@@ -1,33 +1,70 @@
-# EU4 area: nuln_area; source provinces: 32 33 35 37
+# Consolidated authoring states: 1217 1218 1219
 state = {
+  name = "STATE_1217"
   id = 898
-  name = "STATE_898"
-  manpower = 2080839
-  state_category = large_town
-  resources = { tungsten = 4 steel = 27 coal = 2 }
+  manpower = 1000000
+  provinces = {
+    7321
+    7322
+    7323
+    7324
+    7325
+    7326
+    7327
+    7328
+    7329
+    7339
+  }
+  state_category = realms_of_chaos
+  resources = {
+    aluminium = 6
+    chromium = 6
+    oil = 12
+    rubber = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A02 }
-    # END WET inhabitants
-
-    owner = A02
-    add_core_of = A02
-    add_core_of = Y93
-    victory_points = { 35 5 }
+    set_variable = {
+      wet_pop_race = 3
+    }
+    set_variable = {
+      wet_pop_faith = 41
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = R02
+    }
+    owner = R02
+    add_core_of = R02
+    victory_points = {
+      7321
+      5
+    }
+    victory_points = {
+      7324
+      1
+    }
+    victory_points = {
+      7327
+      1
+    }
     buildings = {
+      air_base = 3
+      arms_factory = 3
+      industrial_complex = 3
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      35 = { supply_node = 1 naval_base = 1 }
+      7321 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 32 33 35 37 }
-  local_supplies = 0.0
 }

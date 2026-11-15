@@ -1,33 +1,63 @@
-# EU4 area: cursed_city_area; source provinces: 339 351 352 362 368
+# Consolidated authoring states: 391
 state = {
+  name = "STATE_391"
   id = 295
-  name = "STATE_295"
-  manpower = 1593834
-  state_category = large_town
-  resources = { oil = 1 tungsten = 2 steel = 19 coal = 2 }
+  manpower = 132820
+  provinces = {
+    3819
+    3820
+    3821
+    3822
+    3823
+    3824
+    3825
+    3826
+    3827
+    3828
+    3829
+    3830
+    3831
+    3832
+    3833
+    3834
+    3835
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 64 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A29 }
-    # END WET inhabitants
-
-    owner = A29
-    add_core_of = A29
-    add_core_of = B68
-    add_core_of = B70
-    victory_points = { 350 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 29
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B88
+    }
+    owner = B88
+    add_core_of = B88
+    victory_points = {
+      3819
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      350 = { landmark_wet_citadel_of_praag_gp = 1 }
+      3828 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 350 362 363 374 380 }
-  local_supplies = 0.0
 }

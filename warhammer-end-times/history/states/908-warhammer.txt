@@ -1,29 +1,48 @@
-# EU4 area: pinot_area; source provinces: 290 291 296
+# Consolidated authoring states: 830
 state = {
+  name = "STATE_830"
   id = 908
-  name = "STATE_908"
-  manpower = 531278
+  manpower = 398459
+  provinces = {
+    660
+  }
   state_category = rural
-  resources = { oil = 1 steel = 5 coal = 1 }
+  resources = {
+    coal = 1
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    victory_points = { 300 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G04
+    }
+    owner = G04
+    add_core_of = G04
+    victory_points = {
+      660
+      1
+    }
     buildings = {
       infrastructure = 1
-      300 = { naval_base = 1 }
+      660 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 300 301 306 }
-  local_supplies = 0.0
 }

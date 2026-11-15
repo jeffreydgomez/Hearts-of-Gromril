@@ -1,28 +1,39 @@
-# EU4 area: mountains_of_mourn_21_area; source provinces: 2777 4303
+# Consolidated authoring states: 1086
 state = {
+  name = "STATE_1086"
+  impassable = yes
   id = 787
-  name = "STATE_787"
-  manpower = 531278
-  state_category = rural
-  resources = { oil = 2 coal = 2 }
+  manpower = 0
+  provinces = {
+    118
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I06 }
-    # END WET inhabitants
-
-    owner = I06
-    add_core_of = I06
-    victory_points = { 4572 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
+
     }
   }
-  provinces = { 4572 6107 }
-  local_supplies = 0.0
 }

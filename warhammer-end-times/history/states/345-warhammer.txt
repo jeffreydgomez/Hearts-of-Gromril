@@ -1,32 +1,61 @@
-# EU4 area: eastern_provinces_1_area; source provinces: 2931 2933 4243
+# Consolidated authoring states: 471 970
 state = {
+  name = "STATE_471"
   id = 345
-  name = "STATE_345"
-  manpower = 2257932
-  state_category = large_town
-  resources = { aluminium = 24 tungsten = 6 }
+  manpower = 619824
+  provinces = {
+    5031
+    5865
+    5935
+    5936
+    5937
+    5938
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+    steel = 5
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 5963 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X14
+    }
+    owner = X14
+    add_core_of = X14
+    victory_points = {
+      5031
+      1
+    }
+    victory_points = {
+      5935
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      5963 = { landmark_wet_port_of_fu_chow = 1 naval_base = 1 }
+      5031 = {
+        naval_base = 1
+      }
+      5935 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5021 5022 5023 5024 5025 5030 5963 5964 }
-  local_supplies = 0.0
 }

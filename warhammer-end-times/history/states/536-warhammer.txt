@@ -1,28 +1,57 @@
-# EU4 area: irrana_kingdoms_area; source provinces: 531 536 542 544
+# Consolidated authoring states: 753
 state = {
+  name = "STATE_753"
   id = 536
-  name = "STATE_536"
-  manpower = 575551
-  state_category = rural
-  resources = { oil = 1 steel = 8 }
+  manpower = 1372468
+  provinces = {
+    513
+    514
+    515
+    517
+    519
+  }
+  state_category = town
+  resources = {
+    aluminium = 9
+    coal = 2
+    oil = 2
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
     owner = A41
     add_core_of = A41
-    victory_points = { 569 1 }
+    victory_points = {
+      513
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      513 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 556 561 567 569 }
-  local_supplies = 0.0
 }

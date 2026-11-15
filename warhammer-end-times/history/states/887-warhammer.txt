@@ -1,32 +1,67 @@
-# EU4 area: nippon_9_area; source provinces: 4774 4775 4776 4778
+# Consolidated authoring states: 41 43 1202
 state = {
+  name = "STATE_1202"
   id = 887
-  name = "STATE_887"
-  manpower = 1195376
+  manpower = 635887
+  provinces = {
+    707
+    715
+    716
+    721
+    812
+    815
+    816
+    823
+    826
+  }
   state_category = town
-  resources = { oil = 1 tungsten = 1 steel = 15 }
+  resources = {
+    aluminium = 24
+    steel = 8
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z75 }
-    # END WET inhabitants
-
-    owner = Z75
-    add_core_of = Y64
-    add_core_of = Z75
-    victory_points = { 6844 5 }
+    set_variable = {
+      wet_pop_race = 24
+    }
+    set_variable = {
+      wet_pop_faith = 4
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B01
+    }
+    owner = B01
+    add_core_of = B01
+    victory_points = {
+      707
+      1
+    }
+    victory_points = {
+      716
+      1
+    }
+    victory_points = {
+      715
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      6844 = { supply_node = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      707 = {
+        landmark_wet_moonspring_glades = 1
+      }
     }
   }
-  provinces = { 6842 6843 6844 6845 6846 6851 6852 }
-  local_supplies = 0.0
 }

@@ -1,36 +1,36 @@
 wet_ult_home = {
   OR = {
+    state = 5
+    state = 6
     state = 8
-    state = 9
-    state = 11
-    state = 44
-    state = 49
-    state = 112
-    state = 136
-    state = 164
-    state = 165
-    state = 166
-    state = 208
-    state = 276
-    state = 324
-    state = 369
-    state = 371
-    state = 398
-    state = 413
-    state = 531
-    state = 540
-    state = 670
-    state = 933
-    state = 942
-    state = 949
-    state = 950
-    state = 951
-    state = 1034
-    state = 1039
-    state = 1044
-    state = 1054
-    state = 1064
-    state = 1206
+    state = 33
+    state = 36
+    state = 200
+    state = 277
+    state = 110
+    state = 111
+    state = 916
+    state = 150
+    state = 200
+    state = 236
+    state = 275
+    state = 277
+    state = 931
+    state = 310
+    state = 380
+    state = 386
+    state = 483
+    state = 679
+    state = 687
+    state = 694
+    state = 695
+    state = 483
+    state = 8
+    state = 748
+    state = 891
+    state = 761
+    state = 771
+    state = 891
   }
 }
 wet_ult_sovereign = {
@@ -49,97 +49,97 @@ wet_ult_civil_war = {
   }
 }
 wet_ult_safe_home = {
+  5 = {
+    is_fully_controlled_by = H06
+  }
+  6 = {
+    is_fully_controlled_by = H06
+  }
   8 = {
     is_fully_controlled_by = H06
   }
-  9 = {
+  33 = {
     is_fully_controlled_by = H06
   }
-  11 = {
+  36 = {
     is_fully_controlled_by = H06
   }
-  44 = {
+  200 = {
     is_fully_controlled_by = H06
   }
-  49 = {
+  277 = {
     is_fully_controlled_by = H06
   }
-  112 = {
+  110 = {
     is_fully_controlled_by = H06
   }
-  136 = {
+  111 = {
     is_fully_controlled_by = H06
   }
-  164 = {
+  916 = {
     is_fully_controlled_by = H06
   }
-  165 = {
+  150 = {
     is_fully_controlled_by = H06
   }
-  166 = {
+  200 = {
     is_fully_controlled_by = H06
   }
-  208 = {
+  236 = {
     is_fully_controlled_by = H06
   }
-  276 = {
+  275 = {
     is_fully_controlled_by = H06
   }
-  324 = {
+  277 = {
     is_fully_controlled_by = H06
   }
-  369 = {
+  931 = {
     is_fully_controlled_by = H06
   }
-  371 = {
+  310 = {
     is_fully_controlled_by = H06
   }
-  398 = {
+  380 = {
     is_fully_controlled_by = H06
   }
-  413 = {
+  386 = {
     is_fully_controlled_by = H06
   }
-  531 = {
+  483 = {
     is_fully_controlled_by = H06
   }
-  540 = {
+  679 = {
     is_fully_controlled_by = H06
   }
-  670 = {
+  687 = {
     is_fully_controlled_by = H06
   }
-  933 = {
+  694 = {
     is_fully_controlled_by = H06
   }
-  942 = {
+  695 = {
     is_fully_controlled_by = H06
   }
-  949 = {
+  483 = {
     is_fully_controlled_by = H06
   }
-  950 = {
+  8 = {
     is_fully_controlled_by = H06
   }
-  951 = {
+  748 = {
     is_fully_controlled_by = H06
   }
-  1034 = {
+  891 = {
     is_fully_controlled_by = H06
   }
-  1039 = {
+  761 = {
     is_fully_controlled_by = H06
   }
-  1044 = {
+  771 = {
     is_fully_controlled_by = H06
   }
-  1054 = {
-    is_fully_controlled_by = H06
-  }
-  1064 = {
-    is_fully_controlled_by = H06
-  }
-  1206 = {
+  891 = {
     is_fully_controlled_by = H06
   }
 }
@@ -803,6 +803,42 @@ wet_ult_bridgehead = {
   wet_ult_invasion = yes
   OR = {
     AND = {
+      5 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 5
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
+      6 = {
+        controller = {
+          OR = {
+            tag = H12
+            is_subject_of = H12
+          }
+        }
+      }
+      H12 = {
+        divisions_in_state = {
+          state = 6
+          size
+          >
+          0
+        }
+      }
+    }
+    AND = {
       8 = {
         controller = {
           OR = {
@@ -821,7 +857,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      9 = {
+      33 = {
         controller = {
           OR = {
             tag = H12
@@ -831,7 +867,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 9
+          state = 33
           size
           >
           0
@@ -839,7 +875,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      11 = {
+      200 = {
         controller = {
           OR = {
             tag = H12
@@ -849,7 +885,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 11
+          state = 200
           size
           >
           0
@@ -857,7 +893,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      44 = {
+      110 = {
         controller = {
           OR = {
             tag = H12
@@ -867,7 +903,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 44
+          state = 110
           size
           >
           0
@@ -875,7 +911,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      112 = {
+      111 = {
         controller = {
           OR = {
             tag = H12
@@ -885,7 +921,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 112
+          state = 111
           size
           >
           0
@@ -893,7 +929,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      164 = {
+      916 = {
         controller = {
           OR = {
             tag = H12
@@ -903,7 +939,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 164
+          state = 916
           size
           >
           0
@@ -911,7 +947,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      165 = {
+      150 = {
         controller = {
           OR = {
             tag = H12
@@ -921,7 +957,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 165
+          state = 150
           size
           >
           0
@@ -929,7 +965,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      166 = {
+      236 = {
         controller = {
           OR = {
             tag = H12
@@ -939,7 +975,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 166
+          state = 236
           size
           >
           0
@@ -947,7 +983,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      208 = {
+      275 = {
         controller = {
           OR = {
             tag = H12
@@ -957,7 +993,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 208
+          state = 275
           size
           >
           0
@@ -965,7 +1001,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      324 = {
+      931 = {
         controller = {
           OR = {
             tag = H12
@@ -975,7 +1011,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 324
+          state = 931
           size
           >
           0
@@ -983,7 +1019,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      369 = {
+      310 = {
         controller = {
           OR = {
             tag = H12
@@ -993,7 +1029,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 369
+          state = 310
           size
           >
           0
@@ -1001,7 +1037,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      398 = {
+      380 = {
         controller = {
           OR = {
             tag = H12
@@ -1011,7 +1047,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 398
+          state = 380
           size
           >
           0
@@ -1019,7 +1055,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      413 = {
+      386 = {
         controller = {
           OR = {
             tag = H12
@@ -1029,7 +1065,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 413
+          state = 386
           size
           >
           0
@@ -1037,7 +1073,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      531 = {
+      483 = {
         controller = {
           OR = {
             tag = H12
@@ -1047,7 +1083,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 531
+          state = 483
           size
           >
           0
@@ -1055,7 +1091,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      540 = {
+      679 = {
         controller = {
           OR = {
             tag = H12
@@ -1065,7 +1101,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 540
+          state = 679
           size
           >
           0
@@ -1073,7 +1109,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      670 = {
+      687 = {
         controller = {
           OR = {
             tag = H12
@@ -1083,7 +1119,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 670
+          state = 687
           size
           >
           0
@@ -1091,7 +1127,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      933 = {
+      694 = {
         controller = {
           OR = {
             tag = H12
@@ -1101,7 +1137,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 933
+          state = 694
           size
           >
           0
@@ -1109,7 +1145,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      942 = {
+      695 = {
         controller = {
           OR = {
             tag = H12
@@ -1119,7 +1155,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 942
+          state = 695
           size
           >
           0
@@ -1127,7 +1163,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      949 = {
+      483 = {
         controller = {
           OR = {
             tag = H12
@@ -1137,7 +1173,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 949
+          state = 483
           size
           >
           0
@@ -1145,7 +1181,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      950 = {
+      8 = {
         controller = {
           OR = {
             tag = H12
@@ -1155,7 +1191,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 950
+          state = 8
           size
           >
           0
@@ -1163,7 +1199,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      951 = {
+      748 = {
         controller = {
           OR = {
             tag = H12
@@ -1173,7 +1209,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 951
+          state = 748
           size
           >
           0
@@ -1181,7 +1217,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      1034 = {
+      891 = {
         controller = {
           OR = {
             tag = H12
@@ -1191,7 +1227,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 1034
+          state = 891
           size
           >
           0
@@ -1199,7 +1235,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      1039 = {
+      761 = {
         controller = {
           OR = {
             tag = H12
@@ -1209,7 +1245,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 1039
+          state = 761
           size
           >
           0
@@ -1217,7 +1253,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      1044 = {
+      771 = {
         controller = {
           OR = {
             tag = H12
@@ -1227,7 +1263,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 1044
+          state = 771
           size
           >
           0
@@ -1235,7 +1271,7 @@ wet_ult_bridgehead = {
       }
     }
     AND = {
-      1054 = {
+      891 = {
         controller = {
           OR = {
             tag = H12
@@ -1245,43 +1281,7 @@ wet_ult_bridgehead = {
       }
       H12 = {
         divisions_in_state = {
-          state = 1054
-          size
-          >
-          0
-        }
-      }
-    }
-    AND = {
-      1064 = {
-        controller = {
-          OR = {
-            tag = H12
-            is_subject_of = H12
-          }
-        }
-      }
-      H12 = {
-        divisions_in_state = {
-          state = 1064
-          size
-          >
-          0
-        }
-      }
-    }
-    AND = {
-      1206 = {
-        controller = {
-          OR = {
-            tag = H12
-            is_subject_of = H12
-          }
-        }
-      }
-      H12 = {
-        divisions_in_state = {
-          state = 1206
+          state = 891
           size
           >
           0
@@ -1296,8 +1296,8 @@ wet_ult_revolt_site = {
   is_fully_controlled_by = H06
   is_capital = no
   OR = {
-    state = 164
-    state = 166
-    state = 324
+    state = 110
+    state = 916
+    state = 236
   }
 }

@@ -1,29 +1,56 @@
-# EU4 area: jungle_of_the_gods_area; source provinces: 916 4334
+# Consolidated authoring states: 773
 state = {
+  name = "STATE_773"
   id = 553
-  name = "STATE_553"
-  manpower = 332049
+  manpower = 841190
+  provinces = {
+    4567
+    4621
+    4622
+    4624
+    4625
+  }
   state_category = town
-  resources = { aluminium = 28 }
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H26 }
-    # END WET inhabitants
-
-    owner = H26
-    add_core_of = H26
-    victory_points = { 6200 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I08
+    }
+    owner = I08
+    add_core_of = I08
+    victory_points = {
+      4621
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      6200 = { naval_base = 1 }
+      4621 = {
+        landmark_wet_sky_titan_ruins = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 1030 1031 1032 1033 1034 1035 6200 6201 }
-  local_supplies = 0.0
 }

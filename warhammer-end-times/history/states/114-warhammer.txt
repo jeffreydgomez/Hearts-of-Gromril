@@ -1,28 +1,64 @@
-# EU4 area: blasted_wastes_10_area; source provinces: 2236
+# Consolidated authoring states: 170 274
 state = {
+  name = "STATE_170"
   id = 114
-  name = "STATE_114"
-  manpower = 221366
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 2080839
+  provinces = {
+    218
+    220
+    221
+    222
+    223
+    224
+    225
+    229
+    732
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 3
+    steel = 9
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 2 }
-    set_variable = { wet_pop_faith = 21 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B26 }
-    # END WET inhabitants
-
-    owner = B26
-    add_core_of = B26
-    victory_points = { 3011 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    victory_points = {
+      220
+      1
+    }
+    victory_points = {
+      732
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      732 = {
+        landmark_wet_old_dwarf_road = 1
+      }
     }
   }
-  provinces = { 3011 }
-  local_supplies = 0.0
 }

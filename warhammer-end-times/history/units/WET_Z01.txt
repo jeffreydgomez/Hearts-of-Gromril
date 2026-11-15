@@ -1,6 +1,8 @@
-division_template = { name = "Desert Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Desert Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
-division_template = { name = "Tomb Constructs" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Desert Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Desert Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Tomb Constructs" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 0 } } }
+division_template = { name = "Ushabti" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 1 y = 3 } heavy_armor = { x = 1 y = 4 } } }
+division_template = { name = "Nehekharan Chariots" priority = 1 regiments = { medium_armor = { x = 0 y = 0 } medium_armor = { x = 0 y = 1 } medium_armor = { x = 0 y = 2 } medium_armor = { x = 0 y = 3 } medium_armor = { x = 0 y = 4 } medium_armor = { x = 1 y = 0 } medium_armor = { x = 1 y = 1 } medium_armor = { x = 1 y = 2 } medium_armor = { x = 1 y = 3 } medium_armor = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Nehekharan Desert Spearmen" location = 958 division_template = "Desert Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Nehekharan Desert Spearmen" location = 1334 division_template = "Desert Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -48,17 +50,23 @@ division = { name = "6. Nehekharan Desert Cavalry" location = 1090 division_temp
 division = { name = "1. Nehekharan Tomb Constructs" location = 958 division_template = "Tomb Constructs" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Nehekharan Tomb Constructs" location = 1334 division_template = "Tomb Constructs" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Nehekharan Tomb Constructs" location = 1046 division_template = "Tomb Constructs" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Nehekharan Ushabti" location = 958 division_template = "Ushabti" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_ushabti_1 = { owner = Z01 amount = 400 } } }
+division = { name = "1. Nehekharan Nehekharan Chariots" location = 958 division_template = "Nehekharan Chariots" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_chariots_1 = { owner = Z01 amount = 500 } } }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Z01 } requested_factories = 16 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Z01 } requested_factories = 14 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_rr_ushabti_1 creator = Z01 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_ushabti_1 amount = 100 producer = Z01 }
+add_equipment_production = { equipment = { type = wet_rr_chariots_1 creator = Z01 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_chariots_1 amount = 125 producer = Z01 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = Z01 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 2880 producer = Z01 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 7200 producer = Z01 }
 if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = Z01 version_name = "Tomb Constructs Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 120 producer = Z01 variant_name = "Tomb Constructs Equipment I" }
+add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 440 producer = Z01 variant_name = "Tomb Constructs Equipment I" }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = Z01 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 120 producer = Z01 }
+add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 440 producer = Z01 }
  }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 7350 producer = Z01 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 11500 producer = Z01 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1032 producer = Z01 }
 }

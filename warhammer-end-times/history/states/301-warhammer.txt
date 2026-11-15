@@ -1,32 +1,53 @@
-# EU4 area: desolation_of_nagash_1_area; source provinces: 1109 1110 1111 1112
+# Consolidated authoring states: 399
 state = {
+  name = "STATE_399"
   id = 301
-  name = "STATE_301"
-  manpower = 1372468
-  state_category = town
-  resources = { oil = 2 tungsten = 3 coal = 2 }
+  manpower = 265639
+  provinces = {
+    6344
+    6345
+    6346
+    6347
+    6348
+    6349
+    6350
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 35 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U24 }
-    # END WET inhabitants
-
-    owner = U24
-    add_core_of = U24
-    victory_points = { 1402 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V03
+    }
+    owner = V03
+    add_core_of = V03
+    victory_points = {
+      6344
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      1402 = { naval_base = 1 }
+      6350 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1401 1402 1403 1404 }
-  local_supplies = 0.0
 }

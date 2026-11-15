@@ -1,28 +1,61 @@
-# EU4 area: north_hochland_area; source provinces: 135 137
+# Consolidated authoring states: 1205
 state = {
+  name = "STATE_1205"
   id = 890
-  name = "STATE_890"
-  manpower = 708371
+  manpower = 885463
+  provinces = {
+    6100
+    6101
+    6102
+    6140
+    6141
+    6142
+    6143
+    6144
+    6145
+    6150
+    6151
+    6152
+    6153
+  }
   state_category = town
-  resources = { tungsten = 2 steel = 7 }
+  resources = {
+    aluminium = 28
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 43 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A03 }
-    # END WET inhabitants
-
-    owner = A03
-    add_core_of = A03
-    victory_points = { 135 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z46
+    }
+    owner = Z46
+    add_core_of = Z46
+    victory_points = {
+      6100
+      1
+    }
     buildings = {
+      dockyard = 1
       infrastructure = 1
+      6100 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 135 137 }
-  local_supplies = 0.0
 }

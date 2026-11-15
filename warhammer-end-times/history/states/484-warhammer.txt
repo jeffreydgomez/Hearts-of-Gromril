@@ -1,30 +1,73 @@
-# EU4 area: helspire_area; source provinces: 400 436 449 450
+# Consolidated authoring states: 169 671 932
 state = {
+  name = "STATE_671"
   id = 484
-  name = "STATE_484"
-  manpower = 885463
+  manpower = 2523571
+  provinces = {
+    647
+    648
+    650
+    651
+    654
+    655
+    656
+    791
+  }
   state_category = town
-  resources = { tungsten = 2 steel = 6 }
+  resources = {
+    coal = 2
+    oil = 3
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A32 }
-    # END WET inhabitants
-
-    owner = A32
-    add_core_of = A32
-    add_core_of = Y23
-    victory_points = { 471 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A57
+    }
+    owner = A57
+    add_core_of = A57
+    victory_points = {
+      655
+      1
+    }
+    victory_points = {
+      651
+      1
+    }
+    victory_points = {
+      647
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      471 = { supply_node = 1 }
+      655 = {
+        naval_base = 1
+      }
+      651 = {
+        landmark_wet_bells_of_luccini = 1
+        naval_base = 1
+      }
+      647 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 417 457 470 471 }
-  local_supplies = 0.0
 }

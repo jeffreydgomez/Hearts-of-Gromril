@@ -1,29 +1,57 @@
-# EU4 area: devourer_islands_area; source provinces: 3200
+# Consolidated authoring states: 409
 state = {
+  name = "STATE_409"
   id = 307
-  name = "STATE_307"
-  manpower = 221366
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 619825
+  provinces = {
+    6234
+    6235
+    6236
+    6237
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 4
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 19 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z63 }
-    # END WET inhabitants
-
-    owner = Z63
-    add_core_of = Z63
-    victory_points = { 5315 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H26
+    }
+    owner = H26
+    add_core_of = H26
+    victory_points = {
+      6237
+      5
+    }
     buildings = {
+      air_base = 1
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
-      5315 = { naval_base = 1 }
+      6237 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5315 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,49 @@
-# EU4 area: inevitable_city_area; source provinces: 2434 2508 2551 2555
+# Consolidated authoring states: 744
 state = {
+  name = "STATE_744"
   id = 529
-  name = "STATE_529"
-  manpower = 1151103
+  manpower = 796917
+  provinces = {
+    294
+    295
+    509
+  }
   state_category = town
-  resources = { tungsten = 3 steel = 12 }
+  resources = {
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 60 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B55 }
-    # END WET inhabitants
-
-    owner = B55
-    add_core_of = B55
-    victory_points = { 3437 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    victory_points = {
+      509
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      3437 = { landmark_wet_the_inevitable_city = 1 supply_node = 1 }
+      509 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3437 3438 3439 3440 3441 3559 3560 3561 3562 3809 3810 3811 3812 3813 3814 3840 3841 3842 }
-  local_supplies = 0.0
 }

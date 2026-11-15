@@ -1,6 +1,6 @@
-division_template = { name = "Elven Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Elven Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
-division_template = { name = "Silver Helms" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Elven Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Elven Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Silver Helms" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Ulthuanian Elven Spearmen" location = 472 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Ulthuanian Elven Spearmen" location = 2199 division_template = "Elven Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -57,14 +57,16 @@ division = { name = "2. Ulthuanian Silver Helms" location = 2199 division_templa
 division = { name = "3. Ulthuanian Silver Helms" location = 2341 division_template = "Silver Helms" start_equipment_factor = 1 start_experience_factor = 0.2 }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H06 } requested_factories = 7 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = H06 } requested_factories = 6 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_rr_phoenixes_1 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_phoenixes_1 amount = 15 producer = H06 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 4080 producer = H06 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 10200 producer = H06 }
 if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = H06 version_name = "Silver Helms Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 120 producer = H06 variant_name = "Silver Helms Equipment I" }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 300 producer = H06 variant_name = "Silver Helms Equipment I" }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 120 producer = H06 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 300 producer = H06 }
  }
 if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = H06 version_name = "Great Eagle Flights" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = H06 variant_name = "Great Eagle Flights" }
@@ -72,6 +74,6 @@ add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 produce
 if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = H06 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = H06 }
  }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8800 producer = H06 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 13300 producer = H06 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 492 producer = H06 }
 }

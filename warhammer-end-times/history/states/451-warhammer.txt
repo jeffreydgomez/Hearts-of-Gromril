@@ -1,28 +1,56 @@
-# EU4 area: greyhag_area; source provinces: 2221
+# Consolidated authoring states: 633
 state = {
+  name = "STATE_633"
   id = 451
-  name = "STATE_451"
-  manpower = 221366
-  state_category = rural
-  resources = { oil = 1 coal = 1 }
+  manpower = 1151103
+  provinces = {
+    1434
+    1435
+    1436
+    1437
+  }
+  state_category = town
+  resources = {
+    oil = 1
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G27 }
-    # END WET inhabitants
-
-    owner = G27
-    add_core_of = G27
-    victory_points = { 2975 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B02
+    }
+    owner = B02
+    add_core_of = B02
+    victory_points = {
+      1434
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      1434 = {
+        landmark_wet_ungruvalk_canal = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2975 2976 }
-  local_supplies = 0.0
 }

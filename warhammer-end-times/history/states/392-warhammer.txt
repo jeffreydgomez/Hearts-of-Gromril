@@ -1,30 +1,76 @@
-# EU4 area: far_wastes_9_area; source provinces: 2560 2562
+# Consolidated authoring states: 543 547 550
 state = {
+  name = "STATE_547"
   id = 392
-  name = "STATE_392"
-  manpower = 442732
-  state_category = rural
-  resources = { oil = 2 }
+  manpower = 3674673
+  provinces = {
+    3159
+    3160
+    3161
+    3162
+    3163
+    3170
+    3172
+    3173
+    3181
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    oil = 5
+    steel = 10
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 41 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A36 }
-    # END WET inhabitants
-
-    owner = A36
-    add_core_of = A36
-    victory_points = { 3875 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V04
+    }
+    owner = V04
+    add_core_of = V04
+    victory_points = {
+      3159
+      1
+    }
+    victory_points = {
+      3170
+      5
+    }
+    victory_points = {
+      3181
+      1
+    }
     buildings = {
-      infrastructure = 1
+      arms_factory = 3
       dockyard = 1
-      3875 = { supply_node = 1 naval_base = 1 }
+      industrial_complex = 3
+      infrastructure = 1
+      3159 = {
+        naval_base = 1
+      }
+      3170 = {
+        landmark_wet_temple_city_of_hexoatl = 1
+        supply_node = 1
+      }
+      3173 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3864 3865 3866 3867 3868 3869 3870 3875 3876 3877 3878 3879 }
-  local_supplies = 0.0
 }

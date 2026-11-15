@@ -1,6 +1,7 @@
-division_template = { name = "Jade Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Jade Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
-division_template = { name = "Jade Lancers" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Jade Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Jade Cavalry" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Jade Lancers" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Terracotta Sentinels" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 1 y = 3 } heavy_armor = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Cathayan Jade Spearmen" location = 4711 division_template = "Jade Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Cathayan Jade Spearmen" location = 4712 division_template = "Jade Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -59,17 +60,20 @@ division = { name = "7. Cathayan Jade Cavalry" location = 4881 division_template
 division = { name = "1. Cathayan Jade Lancers" location = 4711 division_template = "Jade Lancers" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Cathayan Jade Lancers" location = 4712 division_template = "Jade Lancers" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "3. Cathayan Jade Lancers" location = 5057 division_template = "Jade Lancers" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Cathayan Terracotta Sentinels" location = 4711 division_template = "Terracotta Sentinels" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_terracotta_sentinels_1 = { owner = I25 amount = 400 } } }
 }
 instant_effect = {
-add_equipment_production = { equipment = { type = infantry_equipment_1 creator = I25 } requested_factories = 18 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = infantry_equipment_1 creator = I25 } requested_factories = 17 progress = 0.1 efficiency = 0.5 }
+add_equipment_production = { equipment = { type = wet_rr_terracotta_sentinels_1 creator = I25 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_terracotta_sentinels_1 amount = 100 producer = I25 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = I25 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 4080 producer = I25 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 10200 producer = I25 }
 if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = light_tank_chassis_1 creator = I25 version_name = "Jade Lancers Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 120 producer = I25 variant_name = "Jade Lancers Equipment I" }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 300 producer = I25 variant_name = "Jade Lancers Equipment I" }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = light_tank_equipment_1 creator = I25 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 120 producer = I25 }
+add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 300 producer = I25 }
  }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8950 producer = I25 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 14300 producer = I25 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1320 producer = I25 }
 }

@@ -1,29 +1,59 @@
-# EU4 area: fimbul_area; source provinces: 457 460 462 466 468
+# Consolidated authoring states: 554
 state = {
+  name = "STATE_554"
   id = 397
-  name = "STATE_397"
-  manpower = 929737
-  state_category = town
-  resources = { oil = 1 aluminium = 7 tungsten = 1 chromium = 30 coal = 1 }
+  manpower = 442732
+  provinces = {
+    6202
+    6203
+    6204
+    6205
+    6206
+    6207
+    6208
+    6209
+    6210
+    6211
+    6212
+    6213
+  }
+  state_category = rural
+  resources = {
+    aluminium = 11
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A33 }
-    # END WET inhabitants
-
-    owner = A33
-    add_core_of = A33
-    victory_points = { 482 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z82
+    }
+    owner = Z82
+    add_core_of = Z82
+    victory_points = {
+      6202
+      1
+    }
     buildings = {
       infrastructure = 1
-      489 = { landmark_wet_gorge_of_damned = 1 }
+      6212 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 478 482 484 489 491 }
-  local_supplies = 0.0
 }

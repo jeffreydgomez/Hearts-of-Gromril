@@ -1,32 +1,56 @@
-# EU4 area: khypris_area; source provinces: 650
+# Consolidated authoring states: 855
 state = {
+  name = "STATE_855"
   id = 620
-  name = "STATE_620"
-  manpower = 398459
+  manpower = 1062556
+  provinces = {
+    907
+    908
+    921
+    922
+    923
+    924
+    925
+    926
+    955
+  }
   state_category = town
-  resources = { oil = 2 coal = 1 }
+  resources = {
+    oil = 2
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 39 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A72 }
-    # END WET inhabitants
-
-    owner = A72
-    add_core_of = A72
-    victory_points = { 694 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      907
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      694 = { supply_node = 1 naval_base = 1 }
+      907 = {
+        landmark_wet_great_sphinx_of_numasis = 1
+      }
     }
   }
-  provinces = { 694 }
-  local_supplies = 0.0
 }

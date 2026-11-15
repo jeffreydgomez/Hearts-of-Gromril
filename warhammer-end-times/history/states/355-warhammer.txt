@@ -1,28 +1,49 @@
-# EU4 area: eastern_steppes_6_area; source provinces: 2151 2153
+# Consolidated authoring states: 490
 state = {
+  name = "STATE_490"
   id = 355
-  name = "STATE_355"
-  manpower = 442732
+  manpower = 619824
+  provinces = {
+    7021
+  }
   state_category = rural
-  resources = { oil = 1 tungsten = 1 coal = 1 }
+  resources = {
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B52 }
-    # END WET inhabitants
-
-    owner = B52
-    add_core_of = B52
-    victory_points = { 2859 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B66
+    }
+    owner = B66
+    add_core_of = B66
+    victory_points = {
+      7021
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      7021 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2846 2847 2848 2849 2850 2851 2852 2853 2854 2855 2856 2859 2860 }
-  local_supplies = 0.0
 }

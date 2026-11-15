@@ -1,31 +1,49 @@
-# EU4 area: mount_squighorn_area; source provinces: 353 359 360 361
+# Consolidated authoring states: 1062
 state = {
+  name = "STATE_1062"
   id = 769
-  name = "STATE_769"
-  manpower = 5594518
-  state_category = city
-  resources = { oil = 4 aluminium = 5 rubber = 7 tungsten = 2 steel = 26 chromium = 15 coal = 1 }
+  manpower = 1342685
+  provinces = {
+    6473
+  }
+  state_category = town
+  resources = {
+    aluminium = 1
+    chromium = 3
+    oil = 1
+    rubber = 2
+    steel = 3
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U44 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U44
+    }
     owner = U44
     add_core_of = U44
-    victory_points = { 372 5 }
+    victory_points = {
+      6473
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      372 = { supply_node = 1 }
     }
   }
-  provinces = { 364 371 372 373 }
-  local_supplies = 0.0
 }

@@ -1,32 +1,60 @@
-# EU4 area: khuresh_11_area; source provinces: 4026 4111
+# Consolidated authoring states: 827
 state = {
+  name = "STATE_827"
   id = 599
-  name = "STATE_599"
-  manpower = 796917
-  state_category = town
-  resources = { tungsten = 3 }
+  manpower = 3099122
+  provinces = {
+    4712
+    4713
+    4714
+    4715
+    4716
+    4717
+    4718
+    4719
+    4720
+    4721
+  }
+  state_category = city
+  resources = {
+    oil = 2
+    steel = 32
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 19 }
-    set_variable = { wet_pop_faith = 46 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z68 }
-    # END WET inhabitants
-
-    owner = Z68
-    add_core_of = Z68
-    victory_points = { 5406 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      4712
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      5406 = { supply_node = 1 naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      4712 = {
+        landmark_wet_foundries_of_nan_gau = 1
+      }
     }
   }
-  provinces = { 5406 5407 5408 5681 5682 5683 5684 5685 }
-  local_supplies = 0.0
 }

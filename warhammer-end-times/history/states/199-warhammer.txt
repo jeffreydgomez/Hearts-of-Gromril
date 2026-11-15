@@ -1,29 +1,48 @@
-# EU4 area: cathay_47_area; source provinces: 2968 2975 2976
+# Consolidated authoring states: 275
 state = {
+  name = "STATE_275"
   id = 199
-  name = "STATE_199"
-  manpower = 1239649
-  state_category = town
-  resources = { tungsten = 5 }
+  manpower = 265639
+  provinces = {
+    1190
+    1191
+  }
+  state_category = rural
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 5207 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      1190
+      1
+    }
     buildings = {
       infrastructure = 1
-      5208 = { naval_base = 1 }
+      1190 = {
+        landmark_wet_valley_of_kings = 1
+      }
     }
   }
-  provinces = { 5168 5169 5170 5171 5205 5206 5207 5208 5209 }
-  local_supplies = 0.0
 }

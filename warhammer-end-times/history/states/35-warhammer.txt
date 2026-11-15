@@ -1,32 +1,68 @@
-# EU4 area: araby_area_6; source provinces: 967 973 974 985
+# Consolidated authoring states: 48 446
 state = {
+  name = "STATE_48"
   id = 35
-  name = "STATE_35"
-  manpower = 2656390
-  state_category = city
-  resources = { oil = 7 tungsten = 3 coal = 1 }
+  manpower = 4028859
+  provinces = {
+    23
+    27
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    211
+  }
+  state_category = large_town
+  resources = {
+    coal = 6
+    oil = 9
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z14 }
-    # END WET inhabitants
-
-    owner = Z14
-    add_core_of = Z14
-    victory_points = { 1199 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 12
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A06
+    }
+    owner = A06
+    add_core_of = A06
+    victory_points = {
+      52
+      5
+    }
+    victory_points = {
+      56
+      1
+    }
     buildings = {
+      arms_factory = 3
+      industrial_complex = 3
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      1199 = { supply_node = 1 naval_base = 1 }
+      52 = {
+        landmark_wet_averburg = 1
+        supply_node = 1
+      }
+      57 = {
+        landmark_wet_black_fire_pass = 1
+      }
     }
   }
-  provinces = { 1187 1198 1199 1211 }
-  local_supplies = 0.0
 }

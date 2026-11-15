@@ -1,16 +1,22 @@
-division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Household Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Realm Infantry" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Household Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Warlock Jezzails" priority = 1 regiments = { wet_rr_warlock_jezzails = { x = 0 y = 0 } wet_rr_warlock_jezzails = { x = 0 y = 1 } wet_rr_warlock_jezzails = { x = 0 y = 2 } wet_rr_warlock_jezzails = { x = 0 y = 3 } wet_rr_warlock_jezzails = { x = 0 y = 4 } wet_rr_warlock_jezzails = { x = 1 y = 0 } wet_rr_warlock_jezzails = { x = 1 y = 1 } wet_rr_warlock_jezzails = { x = 1 y = 2 } wet_rr_warlock_jezzails = { x = 1 y = 3 } wet_rr_warlock_jezzails = { x = 1 y = 4 } } }
+division_template = { name = "Doomwheels" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } light_armor = { x = 1 y = 0 } light_armor = { x = 1 y = 1 } light_armor = { x = 1 y = 2 } light_armor = { x = 1 y = 3 } light_armor = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Clan Eskemas Realm Infantry" location = 5279 division_template = "Realm Infantry" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Clan Eskemas Household Knights" location = 5279 division_template = "Household Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Clan Eskemas Warlock Jezzails" location = 5279 division_template = "Warlock Jezzails" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_warpstone_weaponry_1 = { owner = Z66 amount = 1000 } } }
+division = { name = "1. Clan Eskemas Doomwheels" location = 5279 division_template = "Doomwheels" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_doomwheels_1 = { owner = Z66 amount = 600 } } }
 }
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Z66 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = Z66 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = Z66 }
-if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = Z66 variant_name = "Household Knights Equipment I" }
+add_equipment_production = { equipment = { type = wet_rr_warpstone_weaponry_1 creator = Z66 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
+add_equipment_to_stockpile = { type = wet_rr_warpstone_weaponry_1 amount = 250 producer = Z66 }
+add_equipment_to_stockpile = { type = wet_rr_doomwheels_1 amount = 150 producer = Z66 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 600 producer = Z66 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 300 producer = Z66 variant_name = "Household Knights Equipment I" }
  }
-if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = Z66 }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 300 producer = Z66 }
  }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1350 producer = Z66 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 75 producer = Z66 }

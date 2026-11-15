@@ -1,34 +1,43 @@
-# EU4 area: nahuontl_area; source provinces: 4286 4287 4288 4289
+# Consolidated authoring states: 1125
 state = {
+  name = "STATE_1125"
+  impassable = yes
   id = 826
-  name = "STATE_826"
-  manpower = 1726654
-  state_category = large_town
-  resources = { oil = 5 tungsten = 2 coal = 1 }
+  manpower = 0
+  provinces = {
+    4545
+    4546
+    4547
+    4548
+    4549
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z47 }
-    # END WET inhabitants
-
-    owner = Z47
-    add_core_of = Y39
-    add_core_of = Z47
-    victory_points = { 6056 5 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      6053 = { naval_base = 1 }
-      6056 = { supply_node = 1 }
+
     }
   }
-  provinces = { 6049 6050 6051 6052 6053 6054 6055 6056 }
-  local_supplies = 0.0
 }

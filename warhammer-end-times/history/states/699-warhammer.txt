@@ -1,33 +1,61 @@
-# EU4 area: lustria_28_area; source provinces: 2464 2466 2467 2468
+# Consolidated authoring states: 130 488 961
 state = {
+  name = "STATE_961"
   id = 699
-  name = "STATE_699"
-  manpower = 2080839
-  state_category = large_town
-  resources = { oil = 1 rubber = 27 tungsten = 5 coal = 1 }
+  manpower = 752644
+  provinces = {
+    973
+    979
+    984
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V03 }
-    # END WET inhabitants
-
-    owner = V03
-    add_core_of = V03
-    victory_points = { 3491 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 35
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A68
+    }
+    owner = A68
+    add_core_of = A68
+    victory_points = {
+      984
+      1
+    }
+    victory_points = {
+      979
+      1
+    }
+    victory_points = {
+      973
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      3491 = { landmark_wet_great_pyramid_of_itza = 1 supply_node = 1 }
-      3492 = { naval_base = 1 }
+      973 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3489 3491 3492 3493 }
-  local_supplies = 0.0
 }

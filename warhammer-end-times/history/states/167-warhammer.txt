@@ -1,32 +1,53 @@
-# EU4 area: cantonia_area; source provinces: 524 526 527 528 529
+# Consolidated authoring states: 230
 state = {
+  name = "STATE_230"
   id = 167
-  name = "STATE_167"
-  manpower = 1461015
-  state_category = town
-  resources = { oil = 1 tungsten = 4 steel = 6 coal = 1 }
+  manpower = 192423
+  provinces = {
+    4306
+    4307
+    4308
+    4309
+    4310
+    4311
+    4312
+    4313
+    4314
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 552 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B99
+    }
+    owner = B99
+    add_core_of = B82
+    add_core_of = B99
+    victory_points = {
+      4306
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      552 = { naval_base = 1 }
     }
   }
-  provinces = { 549 551 552 553 554 }
-  local_supplies = 0.0
 }

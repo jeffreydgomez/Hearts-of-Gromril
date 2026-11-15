@@ -1,29 +1,46 @@
-# EU4 area: dragon_isles_03_area; source provinces: 4266
+# Consolidated authoring states: 440
 state = {
+  name = "STATE_440"
   id = 321
-  name = "STATE_321"
-  manpower = 354185
+  manpower = 265639
+  provinces = {
+    3123
+    3124
+  }
   state_category = rural
-  resources = { tungsten = 1 coal = 1 }
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 16 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I49 }
-    # END WET inhabitants
-
-    owner = I49
-    add_core_of = I49
-    victory_points = { 6001 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X13
+    }
+    owner = X13
+    add_core_of = X13
+    victory_points = {
+      3123
+      1
+    }
     buildings = {
       infrastructure = 1
-      6001 = { naval_base = 1 }
     }
   }
-  provinces = { 6001 }
-  local_supplies = 0.0
 }

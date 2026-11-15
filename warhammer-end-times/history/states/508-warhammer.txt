@@ -1,28 +1,67 @@
-# EU4 area: ind_22_area; source provinces: 4185
+# Consolidated authoring states: 704 736
 state = {
+  name = "STATE_704"
   id = 508
-  name = "STATE_508"
-  manpower = 619824
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 1416742
+  provinces = {
+    3125
+    3466
+    3474
+    3475
+    3476
+    5921
+    5929
+    5930
+  }
+  state_category = town
+  resources = {
+    aluminium = 13
+    coal = 1
+    oil = 3
+    steel = 5
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z52 }
-    # END WET inhabitants
-
-    owner = Z52
-    add_core_of = Z52
-    victory_points = { 5852 1 }
+    set_variable = {
+      wet_pop_race = 6
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X04
+    }
+    owner = X04
+    add_core_of = X04
+    victory_points = {
+      3466
+      5
+    }
+    victory_points = {
+      3474
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
+      3466 = {
+        landmark_wet_amaxonia_headwaters = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5852 5853 }
-  local_supplies = 0.0
 }

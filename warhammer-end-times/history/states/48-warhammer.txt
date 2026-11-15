@@ -1,31 +1,46 @@
-# EU4 area: averheim_area; source provinces: 23 27 52 54 55
+# Consolidated authoring states: 76
 state = {
+  name = "STATE_76"
   id = 48
-  name = "STATE_48"
-  manpower = 2523571
-  state_category = large_town
-  resources = { oil = 3 tungsten = 6 coal = 3 }
+  manpower = 442732
+  provinces = {
+    693
+    768
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A06 }
-    # END WET inhabitants
-
-    owner = A06
-    add_core_of = A06
-    victory_points = { 52 5 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G04
+    }
+    owner = G04
+    add_core_of = G04
+    victory_points = {
+      768
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      52 = { landmark_wet_averburg = 1 supply_node = 1 }
     }
   }
-  provinces = { 23 27 52 54 55 }
-  local_supplies = 0.0
 }

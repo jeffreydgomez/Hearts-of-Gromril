@@ -1,29 +1,49 @@
-# EU4 area: irrana_mountains_area; source provinces: 532 533 538 545 1871
+# Consolidated authoring states: 754
 state = {
+  name = "STATE_754"
   id = 537
-  name = "STATE_537"
   manpower = 664098
+  provinces = {
+    241
+    249
+    254
+  }
   state_category = town
-  resources = { tungsten = 2 steel = 4 }
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    add_core_of = Y14
-    victory_points = { 557 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    add_core_of = Y09
+    victory_points = {
+      241
+      1
+    }
     buildings = {
       infrastructure = 1
     }
   }
-  provinces = { 557 558 563 570 2252 }
-  local_supplies = 0.0
 }

@@ -1,32 +1,54 @@
-# EU4 area: nippon_5_area; source provinces: 4430 4431
+# Consolidated authoring states: 1189
 state = {
+  name = "STATE_1189"
   id = 880
-  name = "STATE_880"
   manpower = 708371
+  provinces = {
+    346
+    347
+    352
+    355
+  }
   state_category = town
-  resources = { oil = 2 steel = 8 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z73 }
-    # END WET inhabitants
-
-    owner = Z73
-    add_core_of = Z73
-    victory_points = { 6439 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 39
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A35
+    }
+    owner = A35
+    add_core_of = A35
+    add_core_of = B70
+    add_core_of = Y19
+    victory_points = {
+      346
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      6439 = { supply_node = 1 naval_base = 1 }
+      346 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6439 6440 6441 6442 6443 }
-  local_supplies = 0.0
 }

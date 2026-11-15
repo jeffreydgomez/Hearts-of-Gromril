@@ -1,32 +1,40 @@
-# EU4 area: new_coast_1_area; source provinces: 4178 4179 4276
+# Consolidated authoring states: 1160
 state = {
+  name = "STATE_1160"
+  impassable = yes
   id = 860
-  name = "STATE_860"
-  manpower = 1239649
-  state_category = town
-  resources = { oil = 4 aluminium = 17 coal = 1 }
+  manpower = 0
+  provinces = {
+    6437
+    6438
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z45 }
-    # END WET inhabitants
-
-    owner = Z45
-    add_core_of = Z45
-    victory_points = { 6019 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      5842 = { naval_base = 1 }
+
     }
   }
-  provinces = { 5839 5840 5841 5842 5843 6019 6020 6021 6022 }
-  local_supplies = 0.0
 }

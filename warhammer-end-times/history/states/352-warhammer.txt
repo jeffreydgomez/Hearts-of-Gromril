@@ -1,29 +1,52 @@
-# EU4 area: eastern_steppes_2_area; source provinces: 4043
+# Consolidated authoring states: 484
 state = {
+  name = "STATE_484"
   id = 352
-  name = "STATE_352"
-  manpower = 132820
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 885463
+  provinces = {
+    417
+    457
+    470
+    471
+  }
+  state_category = town
+  resources = {
+    steel = 6
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 23 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G36 }
-    # END WET inhabitants
-
-    owner = G36
-    add_core_of = G36
-    victory_points = { 5478 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A32
+    }
+    owner = A32
+    add_core_of = A32
+    add_core_of = Y23
+    victory_points = {
+      471
+      5
+    }
     buildings = {
       infrastructure = 1
-      5478 = { landmark_wet_tomb_of_khengai_khan = 1 }
+      471 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5478 5479 5480 5481 }
-  local_supplies = 0.0
 }

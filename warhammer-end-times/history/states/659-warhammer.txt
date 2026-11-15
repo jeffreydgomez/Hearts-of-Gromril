@@ -1,29 +1,45 @@
-# EU4 area: land_of_lakes_area; source provinces: 1166
+# Consolidated authoring states: 905
 state = {
+  name = "STATE_905"
   id = 659
-  name = "STATE_659"
-  manpower = 265639
+  manpower = 337191
+  provinces = {
+    6571
+    6572
+  }
   state_category = rural
-  resources = { steel = 7 }
+  resources = {
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 18 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B09 }
-    # END WET inhabitants
-
-    owner = B09
-    add_core_of = B09
-    victory_points = { 1459 5 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U04
+    }
+    owner = U04
+    add_core_of = U04
+    victory_points = {
+      6571
+      1
+    }
     buildings = {
       infrastructure = 1
-      1459 = { supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 1459 }
-  local_supplies = 0.0
 }

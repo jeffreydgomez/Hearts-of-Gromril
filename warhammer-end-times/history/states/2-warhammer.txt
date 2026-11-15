@@ -1,32 +1,52 @@
-# EU4 area: altdorf_area; source provinces: 2
+# Consolidated authoring states: 2
 state = {
-  id = 2
   name = "STATE_2"
+  id = 2
   manpower = 1195376
+  provinces = {
+    2
+  }
   state_category = large_town
-  resources = { tungsten = 4 }
+  resources = {
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A80 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 12
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A80
+    }
     owner = A80
     add_core_of = A80
-    victory_points = { 2 5 }
+    victory_points = {
+      2
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
       dockyard = 1
-      2 = { landmark_wet_holy_temple_of_sigmar = 1 supply_node = 1 naval_base = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      2 = {
+        landmark_wet_holy_temple_of_sigmar = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2 }
-  local_supplies = 0.0
 }

@@ -1,33 +1,50 @@
-# EU4 area: elyr_area; source provinces: 1836 1838 1839 1840 1841
+# Consolidated authoring states: 517
 state = {
+  name = "STATE_517"
   id = 369
-  name = "STATE_369"
-  manpower = 784783
-  state_category = large_town
-  resources = { tungsten = 9 steel = 6 coal = 2 }
+  manpower = 796917
+  provinces = {
+    3151
+    3152
+    3153
+  }
+  state_category = town
+  resources = {
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2213 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X13
+    }
+    owner = X13
+    add_core_of = X13
+    victory_points = {
+      3151
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 3
-      arms_factory = 1
       dockyard = 1
-      2213 = { landmark_wet_gp_royal_ellyrian_stables = 1 }
-      2215 = { naval_base = 1 }
+      infrastructure = 1
+      3151 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2211 2213 2214 2215 2216 }
-  local_supplies = 0.0
 }

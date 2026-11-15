@@ -1,32 +1,50 @@
-# EU4 area: marreinburg_area; source provinces: 79 81 83 84
+# Consolidated authoring states: 1042
 state = {
+  name = "STATE_1042"
   id = 751
-  name = "STATE_751"
-  manpower = 2523571
-  state_category = large_town
-  resources = { oil = 1 tungsten = 8 }
+  manpower = 1328195
+  provinces = {
+    166
+  }
+  state_category = town
+  resources = {
+    aluminium = 55
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 43 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A12 }
-    # END WET inhabitants
-
-    owner = A12
-    add_core_of = A12
-    victory_points = { 79 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 13
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A83
+    }
+    owner = A83
+    add_core_of = A83
+    victory_points = {
+      166
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      dockyard = 1
-      79 = { landmark_wet_suiddock_gp = 1 supply_node = 1 naval_base = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      166 = {
+        landmark_wet_great_temple_of_taal_rhya = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 79 81 83 84 }
-  local_supplies = 0.0
 }

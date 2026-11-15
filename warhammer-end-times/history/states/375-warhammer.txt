@@ -1,28 +1,62 @@
-# EU4 area: far_wastes_10_area; source provinces: 3226
+# Consolidated authoring states: 505 524
 state = {
+  name = "STATE_524"
   id = 375
-  name = "STATE_375"
-  manpower = 265639
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 2213659
+  provinces = {
+    5607
+    5608
+    5609
+    5610
+    5632
+    5633
+    5672
+    5858
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 15
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B96 }
-    # END WET inhabitants
-
-    owner = B96
-    add_core_of = B96
-    victory_points = { 5330 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z57
+    }
+    owner = Z57
+    add_core_of = Z57
+    victory_points = {
+      5672
+      1
+    }
+    victory_points = {
+      5607
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      5607 = {
+        landmark_wet_garden_of_the_eternal_peace = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5330 5331 5332 5333 }
-  local_supplies = 0.0
 }

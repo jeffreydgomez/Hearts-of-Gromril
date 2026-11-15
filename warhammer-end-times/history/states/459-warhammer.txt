@@ -1,28 +1,66 @@
-# EU4 area: gulf_of_medes_1_area; source provinces: 1749
+# Consolidated authoring states: 643 644
 state = {
+  name = "STATE_643"
   id = 459
-  name = "STATE_459"
-  manpower = 221366
-  state_category = rural
-  resources = { oil = 1 coal = 1 }
+  manpower = 1815200
+  provinces = {
+    652
+    1365
+    1481
+    1482
+    1483
+    1491
+    1551
+    1552
+    1553
+    1554
+  }
+  state_category = town
+  resources = {
+    aluminium = 28
+    coal = 1
+    oil = 1
+    steel = 5
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z33 }
-    # END WET inhabitants
-
-    owner = Z33
-    add_core_of = Z33
-    victory_points = { 2026 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      652
+      1
+    }
+    victory_points = {
+      1365
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      652 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2026 2027 2028 2029 2030 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,55 @@
-# EU4 area: howling_citadel_area; source provinces: 2667 2673 2686 3231
+# Consolidated authoring states: 673
 state = {
+  name = "STATE_673"
   id = 486
-  name = "STATE_486"
-  manpower = 796917
+  manpower = 1461015
+  provinces = {
+    3452
+    3453
+    3454
+    3455
+  }
   state_category = town
-  resources = { oil = 2 tungsten = 1 coal = 2 }
+  resources = {
+    aluminium = 15
+    coal = 1
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B59 }
-    # END WET inhabitants
-
-    owner = B59
-    add_core_of = B59
-    victory_points = { 4269 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V12
+    }
+    owner = V12
+    add_core_of = V12
+    victory_points = {
+      3453
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      3453 = {
+        landmark_wet_altar_of_the_horned_rat = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4194 4215 4269 5342 }
-  local_supplies = 0.0
 }

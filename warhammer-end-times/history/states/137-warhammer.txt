@@ -1,32 +1,61 @@
-# EU4 area: brionne_area; source provinces: 225 226 227 229 230
+# Consolidated authoring states: 194
 state = {
+  name = "STATE_194"
   id = 137
-  name = "STATE_137"
-  manpower = 2036566
+  manpower = 2612117
+  provinces = {
+    5057
+    5058
+    5059
+    5060
+    5067
+    5068
+    5069
+    5116
+    5117
+    5989
+  }
   state_category = large_town
-  resources = { oil = 3 tungsten = 5 coal = 2 }
+  resources = {
+    coal = 1
+    oil = 3
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    victory_points = { 234 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I25
+    }
+    owner = I25
+    add_core_of = I25
+    victory_points = {
+      5057
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
       dockyard = 1
-      234 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      5057 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 233 234 235 237 238 }
-  local_supplies = 0.0
 }

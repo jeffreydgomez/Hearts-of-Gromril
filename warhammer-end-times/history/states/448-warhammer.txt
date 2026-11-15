@@ -1,31 +1,51 @@
-# EU4 area: grey_lady_pass_area; source provinces: 577
+# Consolidated authoring states: 628
 state = {
+  name = "STATE_628"
   id = 448
-  name = "STATE_448"
-  manpower = 664098
-  state_category = town
-  resources = { steel = 18 }
+  manpower = 531278
+  provinces = {
+    7070
+    7071
+    7072
+    7073
+    7074
+    7075
+    7076
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A76 }
-    # END WET inhabitants
-
-    owner = A76
-    add_core_of = A76
-    victory_points = { 613 5 }
+    set_variable = {
+      wet_pop_race = 6
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X02
+    }
+    owner = X02
+    add_core_of = X02
+    victory_points = {
+      7070
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      613 = { supply_node = 1 }
     }
   }
-  provinces = { 613 }
-  local_supplies = 0.0
 }

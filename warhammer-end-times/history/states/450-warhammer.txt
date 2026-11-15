@@ -1,31 +1,51 @@
-# EU4 area: greyhag_area; source provinces: 2099 2737
+# Consolidated authoring states: 632
 state = {
+  name = "STATE_632"
   id = 450
-  name = "STATE_450"
-  manpower = 841190
+  manpower = 1416742
+  provinces = {
+    1438
+    1440
+    1441
+    1442
+  }
   state_category = town
-  resources = { tungsten = 3 }
+  resources = {
+    steel = 7
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G26 }
-    # END WET inhabitants
-
-    owner = G26
-    add_core_of = G26
-    victory_points = { 4518 5 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B02
+    }
+    owner = B02
+    add_core_of = B02
+    add_core_of = B03
+    victory_points = {
+      1440
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      4518 = { supply_node = 1 }
     }
   }
-  provinces = { 2666 2667 4518 }
-  local_supplies = 0.0
 }

@@ -1,30 +1,68 @@
-# EU4 area: blackswale_area; source provinces: 1881 1938 1939
+# Consolidated authoring states: 167 829
 state = {
+  name = "STATE_167"
   id = 112
-  name = "STATE_112"
-  manpower = 432984
+  manpower = 2390752
+  provinces = {
+    549
+    551
+    552
+    553
+    554
+    555
+    560
+    566
+  }
   state_category = town
-  resources = { aluminium = 20 tungsten = 3 coal = 2 }
+  resources = {
+    aluminium = 9
+    coal = 1
+    oil = 2
+    steel = 6
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2295 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
+    owner = A41
+    add_core_of = A41
+    victory_points = {
+      552
+      1
+    }
+    victory_points = {
+      555
+      1
+    }
     buildings = {
-      infrastructure = 1
+      arms_factory = 1
+      dockyard = 1
       industrial_complex = 1
-      2295 = { naval_base = 1 }
+      infrastructure = 1
+      552 = {
+        naval_base = 1
+      }
+      555 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2270 2271 2295 2296 }
-  local_supplies = 0.0
 }

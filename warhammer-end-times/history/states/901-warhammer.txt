@@ -1,29 +1,54 @@
-# EU4 area: olesi_area; source provinces: 597 598
+# Consolidated authoring states: 1228
 state = {
+  name = "STATE_1228"
   id = 901
-  name = "STATE_901"
-  manpower = 575551
-  state_category = rural
-  resources = { aluminium = 13 tungsten = 1 coal = 1 }
+  manpower = 1000000
+  provinces = {
+    7365
+    7366
+    7367
+    7368
+    7369
+    7370
+    7371
+  }
+  state_category = town
+  resources = {
+    chromium = 3
+    oil = 2
+    steel = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A57 }
-    # END WET inhabitants
-
-    owner = A57
-    add_core_of = A57
-    victory_points = { 639 1 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U29
+    }
+    owner = U29
+    add_core_of = U29
+    victory_points = {
+      7365
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      639 = { naval_base = 1 }
     }
   }
-  provinces = { 639 640 }
-  local_supplies = 0.0
 }

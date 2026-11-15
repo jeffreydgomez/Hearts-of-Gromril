@@ -1,32 +1,52 @@
-# EU4 area: gaen_vale_area; source provinces: 1816 1821 1822 1827 1828
+# Consolidated authoring states: 582
 state = {
+  name = "STATE_582"
   id = 413
-  name = "STATE_413"
-  manpower = 906560
-  state_category = city
-  resources = { tungsten = 11 coal = 3 }
+  manpower = 885463
+  provinces = {
+    6534
+    6538
+    6539
+  }
+  state_category = town
+  resources = {
+    oil = 1
+    steel = 20
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2199 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U16
+    }
+    owner = U16
+    add_core_of = U16
+    victory_points = {
+      6539
+      5
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 2
-      2199 = { landmark_wet_gp_court_of_the_everqueen = 1 naval_base = 1 }
+      6539 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2182 2191 2192 2198 2199 2200 }
-  local_supplies = 0.0
 }

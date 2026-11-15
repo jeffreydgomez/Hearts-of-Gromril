@@ -1,29 +1,69 @@
-# EU4 area: gnoblar_country_4_area; source provinces: 2285
+# Consolidated authoring states: 618
 state = {
+  name = "STATE_618"
   id = 439
-  name = "STATE_439"
-  manpower = 132820
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 2302205
+  provinces = {
+    5118
+    5119
+    5120
+    5121
+    5122
+    5125
+    5126
+    5127
+    5164
+    5165
+    5166
+    5167
+    5216
+    5217
+    5218
+    5219
+    6975
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    rubber = 54
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I14 }
-    # END WET inhabitants
-
-    owner = I14
-    add_core_of = I14
-    victory_points = { 3119 5 }
+    set_variable = {
+      wet_pop_race = 19
+    }
+    set_variable = {
+      wet_pop_faith = 46
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z69
+    }
+    owner = Z69
+    add_core_of = Y60
+    add_core_of = Z69
+    victory_points = {
+      6975
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      3119 = { supply_node = 1 }
+      6975 = {
+        landmark_wet_ziggurat_of_the_serpent_kings = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3119 3120 }
-  local_supplies = 0.0
 }

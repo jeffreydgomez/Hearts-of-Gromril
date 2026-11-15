@@ -1,28 +1,68 @@
-# EU4 area: khuresh_3_area; source provinces: 2860 2862
+# Consolidated authoring states: 837 838
 state = {
+  name = "STATE_837"
   id = 607
-  name = "STATE_607"
-  manpower = 575551
-  state_category = rural
-  resources = { oil = 1 aluminium = 13 }
+  manpower = 2833483
+  provinces = {
+    960
+    965
+    967
+    972
+    980
+    982
+    1045
+    1050
+  }
+  state_category = town
+  resources = {
+    aluminium = 20
+    chromium = 37
+    coal = 1
+    oil = 2
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G44 }
-    # END WET inhabitants
-
-    owner = G44
-    add_core_of = G44
-    victory_points = { 4777 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      1045
+      1
+    }
+    victory_points = {
+      960
+      1
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
+      960 = {
+        naval_base = 1
+      }
+      967 = {
+        landmark_wet_black_pyramid_of_nagash = 1
+      }
     }
   }
-  provinces = { 4777 4778 4779 4783 4784 }
-  local_supplies = 0.0
 }

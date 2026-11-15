@@ -1,30 +1,70 @@
-# EU4 area: gisoreux_area; source provinces: 277 280 281 319
+# Consolidated authoring states: 606 609 610
 state = {
+  name = "STATE_606"
   id = 430
-  name = "STATE_430"
-  manpower = 1549561
-  state_category = large_town
-  resources = { tungsten = 5 steel = 5 coal = 2 }
+  manpower = 1505287
+  provinces = {
+    4818
+    4819
+    4820
+    4821
+    4822
+    4823
+    4844
+    4870
+    4939
+  }
+  state_category = rural
+  resources = {
+    aluminium = 24
+    coal = 1
+    oil = 2
+    steel = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    victory_points = { 290 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G45
+    }
+    owner = G45
+    add_core_of = G45
+    victory_points = {
+      4818
+      1
+    }
+    victory_points = {
+      4939
+      1
+    }
+    victory_points = {
+      4844
+      1
+    }
     buildings = {
+      dockyard = 1
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      4939 = {
+        naval_base = 1
+      }
+      4844 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 287 290 291 330 }
-  local_supplies = 0.0
 }

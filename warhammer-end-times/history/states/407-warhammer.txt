@@ -1,32 +1,53 @@
-# EU4 area: forest_of_shadows_area; source provinces: 130
+# Consolidated authoring states: 571
 state = {
+  name = "STATE_571"
   id = 407
-  name = "STATE_407"
-  manpower = 177093
+  manpower = 2390752
+  provinces = {
+    6516
+    6517
+    6518
+    7222
+  }
   state_category = town
-  resources = { tungsten = 1 }
+  resources = {
+    steel = 32
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 14 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A86 }
-    # END WET inhabitants
-
-    owner = A86
-    add_core_of = A86
-    victory_points = { 130 5 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U32
+    }
+    owner = U32
+    add_core_of = U32
+    add_core_of = Y24
+    victory_points = {
+      6516
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      130 = { supply_node = 1 naval_base = 1 }
+      6516 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 130 }
-  local_supplies = 0.0
 }

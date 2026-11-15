@@ -1,31 +1,52 @@
-# EU4 area: cathay_40_area; source provinces: 2945 2946 2951 2956 4054
+# Consolidated authoring states: 267
 state = {
+  name = "STATE_267"
   id = 193
-  name = "STATE_193"
-  manpower = 1505288
-  state_category = town
-  resources = { tungsten = 5 steel = 7 coal = 4 }
+  manpower = 221366
+  provinces = {
+    4167
+    4168
+    4169
+    4170
+  }
+  state_category = rural
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 5070 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B90
+    }
+    owner = B90
+    add_core_of = B90
+    victory_points = {
+      4167
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      5110 = { landmark_wet_pagoda_of_feng_pei = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      4167 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5070 5071 5072 5073 5074 5075 5076 5077 5078 5079 5080 5110 5111 5112 5113 5123 5124 5556 5557 }
-  local_supplies = 0.0
 }

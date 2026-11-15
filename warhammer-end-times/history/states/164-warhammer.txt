@@ -1,30 +1,48 @@
-# EU4 area: caelandriol_area; source provinces: 1846 1847 1848
+# Consolidated authoring states: 227
 state = {
+  name = "STATE_227"
   id = 164
-  name = "STATE_164"
-  manpower = 446515
-  state_category = town
-  resources = { tungsten = 5 coal = 2 }
+  manpower = 309912
+  provinces = {
+    4146
+    4147
+    4148
+    4149
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2224 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 29
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B78
+    }
+    owner = B78
+    add_core_of = B78
+    victory_points = {
+      4146
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      2224 = { naval_base = 1 }
     }
   }
-  provinces = { 2223 2224 2225 }
-  local_supplies = 0.0
 }

@@ -1,29 +1,57 @@
-# EU4 area: lost_valley_area; source provinces: 4369
+# Consolidated authoring states: 918
 state = {
+  name = "STATE_918"
   id = 668
-  name = "STATE_668"
   manpower = 619824
+  provinces = {
+    2078
+    2079
+    2080
+    2081
+    2082
+    2083
+    2096
+    2097
+    2098
+    2099
+    2100
+    2101
+    2102
+  }
   state_category = rural
-  resources = { tungsten = 2 }
+  resources = {
+    coal = 1
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B06 }
-    # END WET inhabitants
-
-    owner = B06
-    add_core_of = B06
-    victory_points = { 6317 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      2096
+      1
+    }
     buildings = {
       infrastructure = 1
-      6317 = { landmark_wet_citadel_of_lead = 1 supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 6317 }
-  local_supplies = 0.0
 }

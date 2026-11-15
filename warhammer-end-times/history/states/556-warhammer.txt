@@ -1,30 +1,59 @@
-# EU4 area: karag_dronar_area; source provinces: 4466 4467
+# Consolidated authoring states: 778 780
 state = {
+  name = "STATE_778"
   id = 556
-  name = "STATE_556"
-  manpower = 4028054
-  state_category = large_town
-  resources = { oil = 3 aluminium = 3 rubber = 5 tungsten = 1 steel = 22 chromium = 11 }
+  manpower = 1018283
+  provinces = {
+    4620
+    4636
+    4637
+    4638
+    4639
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U09 }
-    # END WET inhabitants
-
-    owner = U09
-    add_core_of = U09
-    victory_points = { 6499 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I10
+    }
+    owner = I10
+    add_core_of = I10
+    victory_points = {
+      4639
+      5
+    }
+    victory_points = {
+      4620
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
+      industrial_complex = 1
+      infrastructure = 1
+      4639 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6499 6500 }
-  local_supplies = 0.0
 }

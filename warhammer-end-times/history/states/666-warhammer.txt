@@ -1,32 +1,45 @@
-# EU4 area: longship_graveyard_area; source provinces: 431 432 437 438 439
+# Consolidated authoring states: 916
 state = {
+  name = "STATE_916"
   id = 666
-  name = "STATE_666"
-  manpower = 1682381
-  state_category = large_town
-  resources = { aluminium = 42 tungsten = 2 }
+  manpower = 177093
+  provinces = {
+    2869
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 39 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A30 }
-    # END WET inhabitants
-
-    owner = A30
-    add_core_of = A30
-    victory_points = { 452 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z42
+    }
+    owner = Z42
+    add_core_of = Z42
+    victory_points = {
+      2869
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      452 = { landmark_wet_church_mermedus = 1 supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 452 453 458 459 460 }
-  local_supplies = 0.0
 }

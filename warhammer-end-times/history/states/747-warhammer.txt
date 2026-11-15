@@ -1,32 +1,51 @@
-# EU4 area: magritta_area; source provinces: 497 498 553
+# Consolidated authoring states: 1038
 state = {
+  name = "STATE_1038"
   id = 747
-  name = "STATE_747"
-  manpower = 1239649
+  manpower = 442732
+  provinces = {
+    426
+  }
   state_category = town
-  resources = { tungsten = 5 }
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 580 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A87
+    }
+    owner = A87
+    add_core_of = A87
+    victory_points = {
+      426
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      523 = { landmark_wet_sagrada_hermandad_of_myrmidia = 1 }
-      580 = { landmark_wet_alcazar_of_magritta = 1 supply_node = 1 naval_base = 1 }
+      dockyard = 1
+      industrial_complex = 1
+      infrastructure = 1
+      426 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 522 523 580 }
-  local_supplies = 0.0
 }

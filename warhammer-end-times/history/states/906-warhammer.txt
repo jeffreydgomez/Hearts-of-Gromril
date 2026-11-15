@@ -1,32 +1,53 @@
-# EU4 area: pfeildorf_marches_area; source provinces: 36 38 41 47
+# Consolidated authoring states: 1233
 state = {
+  name = "STATE_1233"
   id = 906
-  name = "STATE_906"
-  manpower = 1726654
-  state_category = large_town
-  resources = { tungsten = 6 }
+  manpower = 400000
+  provinces = {
+    7398
+    7399
+    7400
+    7401
+    7402
+    7403
+  }
+  state_category = town
+  resources = {
+    aluminium = 4
+    coal = 3
+    oil = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 12 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A02 }
-    # END WET inhabitants
-
-    owner = A02
-    add_core_of = A02
-    victory_points = { 36 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X14
+    }
+    owner = X14
+    add_core_of = X14
+    victory_points = {
+      7398
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      36 = { landmark_wet_pfeildorf_wine_market = 1 naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
     }
   }
-  provinces = { 36 38 41 47 }
-  local_supplies = 0.0
 }

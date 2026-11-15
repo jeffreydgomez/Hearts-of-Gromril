@@ -1,30 +1,56 @@
-# EU4 area: isle_of_blight_area; source provinces: 1878 1933 1934 1950 1978
+# Consolidated authoring states: 757
 state = {
+  name = "STATE_757"
   id = 540
-  name = "STATE_540"
-  manpower = 392391
-  state_category = town
-  resources = { oil = 5 }
+  manpower = 1328195
+  provinces = {
+    103
+    105
+    107
+  }
+  state_category = large_town
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2266 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 14
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A04
+    }
+    owner = A04
+    add_core_of = A04
+    add_core_of = Y05
+    victory_points = {
+      107
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      2266 = { naval_base = 1 }
+      107 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2266 2287 2288 2289 2290 2311 2312 2354 }
-  local_supplies = 0.0
 }

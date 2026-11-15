@@ -1,29 +1,51 @@
-# EU4 area: lumbria_area; source provinces: 2028 2058 2073
+# Consolidated authoring states: 922
 state = {
+  name = "STATE_922"
   id = 672
-  name = "STATE_672"
-  manpower = 487005
+  manpower = 398459
+  provinces = {
+    1241
+    1242
+    1243
+    1244
+    1245
+    2110
+    2111
+  }
   state_category = rural
-  resources = { oil = 2 }
+  resources = {
+    coal = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z76 }
-    # END WET inhabitants
-
-    owner = Z76
-    add_core_of = Z76
-    victory_points = { 2597 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z01
+    }
+    owner = Z01
+    add_core_of = Z01
+    victory_points = {
+      1241
+      1
+    }
     buildings = {
       infrastructure = 1
-      2597 = { naval_base = 1 }
     }
   }
-  provinces = { 2438 2526 2597 }
-  local_supplies = 0.0
 }

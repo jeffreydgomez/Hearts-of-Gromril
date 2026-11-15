@@ -1,29 +1,56 @@
-# EU4 area: kingdom_of_the_beasts_1_area; source provinces: 1055 1056
+# Consolidated authoring states: 858
 state = {
+  name = "STATE_858"
   id = 623
-  name = "STATE_623"
-  manpower = 442732
-  state_category = rural
-  resources = { oil = 2 }
+  manpower = 1372468
+  provinces = {
+    1378
+    1379
+    1380
+    1381
+  }
+  state_category = large_town
+  resources = {
+    coal = 1
+    oil = 4
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z01 }
-    # END WET inhabitants
-
-    owner = Z01
-    add_core_of = Z01
-    victory_points = { 1329 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 39
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B07
+    }
+    owner = B07
+    add_core_of = B07
+    victory_points = {
+      1381
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      1329 = { naval_base = 1 }
+      1381 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1329 1330 1331 1332 }
-  local_supplies = 0.0
 }

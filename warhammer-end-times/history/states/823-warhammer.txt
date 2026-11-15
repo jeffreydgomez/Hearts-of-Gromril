@@ -1,29 +1,39 @@
-# EU4 area: naggaroth_7_area; source provinces: 2049 2070
+# Consolidated authoring states: 1122
 state = {
+  name = "STATE_1122"
+  impassable = yes
   id = 823
-  name = "STATE_823"
-  manpower = 221366
-  state_category = rural
-  resources = { oil = 1 aluminium = 11 coal = 1 }
+  manpower = 0
+  provinces = {
+    7249
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H23 }
-    # END WET inhabitants
-
-    owner = H23
-    add_core_of = H23
-    victory_points = { 2499 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      2583 = { naval_base = 1 }
+
     }
   }
-  provinces = { 2499 2500 2501 2502 2583 2584 2585 }
-  local_supplies = 0.0
 }

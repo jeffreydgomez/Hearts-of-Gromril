@@ -1,30 +1,55 @@
-# EU4 area: black_crag_area; source provinces: 364
+# Consolidated authoring states: 160
 state = {
+  name = "STATE_160"
   id = 107
-  name = "STATE_107"
-  manpower = 2014028
+  manpower = 398458
+  provinces = {
+    3988
+    3989
+    3990
+    3991
+    3992
+    3993
+    3994
+    3995
+    3996
+  }
   state_category = town
-  resources = { oil = 3 aluminium = 2 rubber = 3 tungsten = 1 steel = 4 chromium = 5 }
+  resources = {
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U49 }
-    # END WET inhabitants
-
-    owner = U49
-    add_core_of = U49
-    victory_points = { 376 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H21
+    }
+    owner = H21
+    add_core_of = H21
+    victory_points = {
+      3988
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      3988 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 376 }
-  local_supplies = 0.0
 }

@@ -1,33 +1,55 @@
-# EU4 area: mangrove_coast_2_area; source provinces: 4348 4349 4350 4875
+# Consolidated authoring states: 1039
 state = {
+  name = "STATE_1039"
   id = 748
-  name = "STATE_748"
-  manpower = 1239649
-  state_category = large_town
-  resources = { oil = 4 aluminium = 11 coal = 1 }
+  manpower = 284145
+  provinces = {
+    2284
+    2315
+    2316
+    2317
+    2318
+    2348
+    2352
+  }
+  state_category = town
+  resources = {
+    oil = 1
+    steel = 6
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 6 }
-    set_variable = { wet_pop_faith = 35 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X07 }
-    # END WET inhabitants
-
-    owner = X07
-    add_core_of = X07
-    add_core_of = Y95
-    victory_points = { 6253 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      2315
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      6265 = { naval_base = 1 }
+      2315 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6253 6254 6255 6256 6257 6258 6259 6260 6261 6262 6263 6264 6265 6266 6267 6268 6269 6270 6271 7087 7088 7089 7090 7091 7092 }
-  local_supplies = 0.0
 }

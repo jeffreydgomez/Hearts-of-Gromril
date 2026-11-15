@@ -1,30 +1,71 @@
-# EU4 area: land_of_chill_6_area; source provinces: 2074 2568 2569 2571 2574
+# Consolidated authoring states: 50 900
 state = {
+  name = "STATE_900"
   id = 656
-  name = "STATE_656"
-  manpower = 974010
+  manpower = 2435025
+  provinces = {
+    292
+    529
+    530
+    531
+    532
+    533
+    534
+    542
+    543
+    808
+  }
   state_category = town
-  resources = { tungsten = 4 }
+  resources = {
+    aluminium = 9
+    coal = 2
+    oil = 5
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B33 }
-    # END WET inhabitants
-
-    owner = B33
-    add_core_of = B33
-    victory_points = { 3901 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
+    owner = A41
+    add_core_of = A41
+    victory_points = {
+      292
+      1
+    }
+    victory_points = {
+      533
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
+      292 = {
+        naval_base = 1
+      }
+      808 = {
+        landmark_wet_el_torre_del_sol = 1
+      }
+      532 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2598 2599 3897 3898 3899 3900 3901 3902 3904 3905 3906 3907 3908 3918 3919 3920 }
-  local_supplies = 0.0
 }

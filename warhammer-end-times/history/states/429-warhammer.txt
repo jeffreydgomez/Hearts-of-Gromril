@@ -1,28 +1,69 @@
-# EU4 area: giantshome_7_area; source provinces: 1128 1134 1135
+# Consolidated authoring states: 604
 state = {
+  name = "STATE_604"
   id = 429
-  name = "STATE_429"
-  manpower = 1416742
-  state_category = town
-  resources = { oil = 1 tungsten = 1 steel = 7 }
+  manpower = 1593834
+  provinces = {
+    4795
+    4796
+    4809
+    4810
+    5062
+    5063
+    5064
+    5065
+    5066
+    5081
+    5082
+    5083
+    5084
+    5085
+    5086
+    5087
+    5088
+  }
+  state_category = large_town
+  resources = {
+    oil = 1
+    steel = 11
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U20 }
-    # END WET inhabitants
-
-    owner = U20
-    add_core_of = U20
-    victory_points = { 1427 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G44
+    }
+    owner = G44
+    add_core_of = G44
+    victory_points = {
+      4795
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
+      4795 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1421 1427 1428 }
-  local_supplies = 0.0
 }

@@ -1,46 +1,55 @@
-# EU4 area: great_bastion_area; source provinces: 2825 2826 2827
+# Consolidated authoring states: 625
 state = {
+  name = "STATE_625"
   id = 445
-  name = "STATE_445"
-  manpower = 841190
-  state_category = town
-  resources = { oil = 4 coal = 3 }
+  manpower = 398459
+  provinces = {
+    6272
+    6273
+    6274
+    6275
+    6276
+    6277
+    6278
+    6279
+  }
+  state_category = rural
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 4670 1 }
+    set_variable = {
+      wet_pop_race = 6
+    }
+    set_variable = {
+      wet_pop_faith = 35
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X07
+    }
+    owner = X07
+    add_core_of = X07
+    victory_points = {
+      6272
+      5
+    }
     buildings = {
       infrastructure = 1
-      4669 = { bunker = 5 }
-      4670 = { bunker = 5 landmark_wet_great_bastion = 1 }
-      4671 = { bunker = 5 }
-      7343 = { bunker = 5 }
-      7344 = { bunker = 5 }
-      7345 = { bunker = 5 }
-      7346 = { bunker = 5 }
-      7347 = { bunker = 5 }
-      7348 = { bunker = 5 }
-      7349 = { bunker = 5 }
-      7350 = { bunker = 5 }
-      7351 = { bunker = 5 }
-      7352 = { bunker = 5 }
-      7353 = { bunker = 5 }
-      7354 = { bunker = 5 }
-      7355 = { bunker = 5 }
-      7356 = { bunker = 5 }
-      7357 = { bunker = 5 naval_base = 1 }
+      6272 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 4669 4670 4671 7343 7344 7345 7346 7347 7348 7349 7350 7351 7352 7353 7354 7355 7356 7357 }
-  local_supplies = 0.0
 }

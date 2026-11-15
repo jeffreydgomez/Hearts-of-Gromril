@@ -1,31 +1,63 @@
-# EU4 area: kraka_ornsmotek_area; source provinces: 1131 1132
+# Consolidated authoring states: 871
 state = {
+  name = "STATE_871"
   id = 634
-  name = "STATE_634"
-  manpower = 974010
+  manpower = 708371
+  provinces = {
+    2965
+    2966
+    2967
+    2968
+    2969
+    6882
+    6883
+    6884
+    6885
+    6886
+    6887
+    6888
+  }
   state_category = town
-  resources = { tungsten = 1 steel = 21 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B05 }
-    # END WET inhabitants
-
-    owner = B05
-    add_core_of = B05
-    victory_points = { 1425 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 68
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z76
+    }
+    owner = Z76
+    add_core_of = Z76
+    victory_points = {
+      6882
+      5
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      1425 = { supply_node = 1 }
+      6882 = {
+        supply_node = 1
+      }
+      6885 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1424 1425 }
-  local_supplies = 0.0
 }

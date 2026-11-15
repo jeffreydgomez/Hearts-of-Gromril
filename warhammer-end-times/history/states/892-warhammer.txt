@@ -1,31 +1,47 @@
-# EU4 area: north_honzamul_area; source provinces: 4850
+# Consolidated authoring states: 1207
 state = {
+  name = "STATE_1207"
   id = 892
-  name = "STATE_892"
-  manpower = 487005
+  manpower = 132819
+  provinces = {
+    5306
+  }
   state_category = rural
-  resources = { tungsten = 2 }
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I41 }
-    # END WET inhabitants
-
-    owner = I41
-    add_core_of = I41
-    victory_points = { 7034 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V02
+    }
+    owner = V02
+    add_core_of = V02
+    victory_points = {
+      5306
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      7034 = { naval_base = 1 }
+      5306 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7034 }
-  local_supplies = 0.0
 }

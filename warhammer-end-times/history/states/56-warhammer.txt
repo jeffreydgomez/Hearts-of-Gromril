@@ -1,31 +1,59 @@
-# EU4 area: badlands_area_12; source provinces: 686 705
+# Consolidated authoring states: 92
 state = {
+  name = "STATE_92"
   id = 56
-  name = "STATE_56"
-  manpower = 1461015
-  state_category = town
-  resources = { tungsten = 5 }
+  manpower = 1859473
+  provinces = {
+    181
+    182
+    183
+    184
+    198
+    251
+  }
+  state_category = large_town
+  resources = {
+    chromium = 134
+    coal = 1
+    oil = 3
+    rubber = 20
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G23 }
-    # END WET inhabitants
-
-    owner = G23
-    add_core_of = G23
-    victory_points = { 730 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B16
+    }
+    owner = B16
+    add_core_of = B16
+    add_core_of = Y27
+    victory_points = {
+      184
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      730 = { landmark_wet_mount_bloodhorn = 1 supply_node = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      184 = {
+        landmark_wet_palace_of_mourkain = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 730 749 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,60 @@
-# EU4 area: dragon_isles_01_area; source provinces: 4261
+# Consolidated authoring states: 430 454
 state = {
+  name = "STATE_430"
   id = 316
-  name = "STATE_316"
-  manpower = 575551
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 2523571
+  provinces = {
+    282
+    284
+    287
+    288
+    289
+    290
+    291
+    330
+  }
+  state_category = large_town
+  resources = {
+    coal = 3
+    oil = 2
+    steel = 18
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 16 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I49 }
-    # END WET inhabitants
-
-    owner = I49
-    add_core_of = I49
-    victory_points = { 5996 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    victory_points = {
+      290
+      1
+    }
+    victory_points = {
+      284
+      1
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      5996 = { landmark_wet_temple_of_the_great_dragon = 1 supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 5996 }
-  local_supplies = 0.0
 }

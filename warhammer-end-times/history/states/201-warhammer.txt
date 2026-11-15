@@ -1,31 +1,54 @@
-# EU4 area: cathay_4_area; source provinces: 2848 2850 2851
+# Consolidated authoring states: 277
 state = {
+  name = "STATE_277"
   id = 201
-  name = "STATE_201"
-  manpower = 1505288
-  state_category = town
-  resources = { oil = 1 aluminium = 39 tungsten = 1 coal = 1 }
+  manpower = 309912
+  provinces = {
+    6060
+    6061
+    6062
+    6063
+    6064
+    6065
+    6066
+    6067
+  }
+  state_category = rural
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I33 }
-    # END WET inhabitants
-
-    owner = I33
-    add_core_of = I33
-    victory_points = { 4742 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z46
+    }
+    owner = Z46
+    add_core_of = Z46
+    victory_points = {
+      6060
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      4742 = { landmark_wet_mei_wan_port_city = 1 supply_node = 1 naval_base = 1 }
+      6067 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 4738 4739 4740 4742 4743 4744 4745 4746 4747 4748 }
-  local_supplies = 0.0
 }

@@ -1,5 +1,5 @@
-division_template = { name = "Jade Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Jade Lancers" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } } }
+division_template = { name = "Jade Spearmen" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Jade Lancers" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Odari Jade Spearmen" location = 6882 division_template = "Jade Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Odari Jade Spearmen" location = 3032 division_template = "Jade Spearmen" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -8,10 +8,10 @@ division = { name = "1. Odari Jade Lancers" location = 6882 division_template = 
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Z76 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = Z76 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = Z76 }
-if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = Z76 variant_name = "Jade Lancers Equipment I" }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 600 producer = Z76 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 100 producer = Z76 variant_name = "Jade Lancers Equipment I" }
  }
-if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = Z76 }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 100 producer = Z76 }
  }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = Z76 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 66 producer = Z76 }

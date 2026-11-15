@@ -1,31 +1,64 @@
-# EU4 area: araby_area_5; source provinces: 966 971 980 4168
+# Consolidated authoring states: 45 908
 state = {
+  name = "STATE_45"
   id = 34
-  name = "STATE_34"
-  manpower = 2700664
-  state_category = city
-  resources = { tungsten = 2 steel = 56 coal = 1 }
+  manpower = 2080839
+  provinces = {
+    273
+    300
+    301
+    306
+    307
+    308
+    322
+    334
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 31
+    coal = 3
+    oil = 2
+    steel = 5
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 57 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z14 }
-    # END WET inhabitants
-
-    owner = Z14
-    add_core_of = Z14
-    victory_points = { 5805 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A15
+    }
+    owner = A15
+    add_core_of = A15
+    victory_points = {
+      273
+      1
+    }
+    victory_points = {
+      300
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      5805 = { landmark_wet_martek_pilgrimage = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      300 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1185 1186 1192 1193 1205 5805 }
-  local_supplies = 0.0
 }

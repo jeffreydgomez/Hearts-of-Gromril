@@ -1,28 +1,75 @@
-# EU4 area: badlands_area_11; source provinces: 479
+# Consolidated authoring states: 65 66 90
 state = {
+  name = "STATE_90"
   id = 55
-  name = "STATE_55"
-  manpower = 265639
-  state_category = rural
-  resources = { oil = 1 coal = 1 }
+  manpower = 2523571
+  provinces = {
+    91
+    102
+    106
+    108
+    772
+    773
+    774
+    775
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 20
+    coal = 4
+    oil = 4
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G24 }
-    # END WET inhabitants
-
-    owner = G24
-    add_core_of = G24
-    victory_points = { 502 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G06
+    }
+    owner = G06
+    add_core_of = G06
+    victory_points = {
+      772
+      1
+    }
+    victory_points = {
+      774
+      1
+    }
+    victory_points = {
+      102
+      5
+    }
     buildings = {
+      arms_factory = 3
+      dockyard = 1
+      industrial_complex = 3
       infrastructure = 1
+      106 = {
+        naval_base = 1
+      }
+      773 = {
+        landmark_wet_idol_of_gork = 1
+      }
+      102 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 502 }
-  local_supplies = 0.0
 }

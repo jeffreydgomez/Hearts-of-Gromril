@@ -1,28 +1,55 @@
-# EU4 area: lustria_37_area; source provinces: 2465 2473
+# Consolidated authoring states: 976
 state = {
+  name = "STATE_976"
   id = 710
-  name = "STATE_710"
-  manpower = 442732
-  state_category = rural
-  resources = { oil = 2 coal = 1 }
+  manpower = 974010
+  provinces = {
+    1286
+    1287
+    1288
+    1289
+    1290
+    5959
+    5961
+  }
+  state_category = town
+  resources = {
+    oil = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V03 }
-    # END WET inhabitants
-
-    owner = V03
-    add_core_of = V03
-    victory_points = { 3490 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V17
+    }
+    owner = V17
+    add_core_of = V17
+    victory_points = {
+      5961
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      5961 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3490 3499 3500 3501 }
-  local_supplies = 0.0
 }

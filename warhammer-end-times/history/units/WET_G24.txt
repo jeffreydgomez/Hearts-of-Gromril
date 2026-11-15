@@ -1,7 +1,7 @@
-division_template = { name = "Boyz Mob" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Boar Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 1 y = 0 } } }
-division_template = { name = "Troll Herds" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Goblin Rabble" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } } }
+division_template = { name = "Boyz Mob" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Boar Riders" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Troll Herds" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 0 } } }
+division_template = { name = "Goblin Rabble" priority = 1 regiments = { wet_unarmed_mob = { x = 0 y = 0 } wet_unarmed_mob = { x = 0 y = 1 } wet_unarmed_mob = { x = 0 y = 2 } wet_unarmed_mob = { x = 0 y = 3 } wet_unarmed_mob = { x = 0 y = 4 } wet_unarmed_mob = { x = 1 y = 0 } wet_unarmed_mob = { x = 1 y = 1 } wet_unarmed_mob = { x = 1 y = 2 } wet_unarmed_mob = { x = 1 y = 3 } wet_unarmed_mob = { x = 1 y = 4 } } }
 units = {
 division = { name = "1. Black Crag Boyz Mob" location = 6466 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Black Crag Boyz Mob" location = 740 division_template = "Boyz Mob" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -31,12 +31,12 @@ division = { name = "1. Black Crag Goblin Rabble" location = 6466 division_templ
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = G24 } requested_factories = 8 progress = 0.1 efficiency = 0.5 }
 add_equipment_production = { equipment = { type = wet_cavalry_equipment_1 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1440 producer = G24 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 3600 producer = G24 }
 if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = G24 version_name = "Troll Herds Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 40 producer = G24 variant_name = "Troll Herds Equipment I" }
+add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 80 producer = G24 variant_name = "Troll Herds Equipment I" }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 40 producer = G24 }
+add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 80 producer = G24 }
  }
 if = { limit = { has_dlc = "By Blood Alone" } add_equipment_production = { equipment = { type = small_plane_airframe_0 creator = G24 version_name = "Wyvern Riders" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 producer = G24 variant_name = "Wyvern Riders" }
@@ -44,6 +44,6 @@ add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 10 produce
 if = { limit = { NOT = { has_dlc = "By Blood Alone" } } add_equipment_production = { equipment = { type = fighter_equipment_0 creator = G24 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
 add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 10 producer = G24 }
  }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3315 producer = G24 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5850 producer = G24 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 96 producer = G24 }
 }

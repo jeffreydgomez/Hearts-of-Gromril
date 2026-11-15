@@ -1,32 +1,55 @@
-# EU4 area: central_yaxum_area; source provinces: 4862 4867
+# Consolidated authoring states: 286
 state = {
+  name = "STATE_286"
   id = 207
-  name = "STATE_207"
-  manpower = 575551
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 4251834
+  provinces = {
+    6501
+    6502
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 4
+    chromium = 11
+    oil = 4
+    rubber = 5
+    steel = 22
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I42 }
-    # END WET inhabitants
-
-    owner = I42
-    add_core_of = I42
-    victory_points = { 7066 5 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U09
+    }
+    owner = U09
+    add_core_of = U09
+    victory_points = {
+      6502
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      7046 = { landmark_wet_resonate_gem_mines = 1 }
-      7066 = { supply_node = 1 }
+      6502 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 7046 7066 }
-  local_supplies = 0.0
 }

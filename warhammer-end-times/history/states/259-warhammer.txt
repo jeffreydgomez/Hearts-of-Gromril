@@ -1,28 +1,50 @@
-# EU4 area: chaos_wastes_4_area; source provinces: 2640
+# Consolidated authoring states: 352
 state = {
+  name = "STATE_352"
   id = 259
-  name = "STATE_259"
-  manpower = 221366
+  manpower = 132820
+  provinces = {
+    5478
+    5479
+    5480
+    5481
+  }
   state_category = rural
-  resources = { tungsten = 1 }
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B46 }
-    # END WET inhabitants
-
-    owner = B46
-    add_core_of = B46
-    victory_points = { 4102 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 23
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G36
+    }
+    owner = G36
+    add_core_of = G36
+    victory_points = {
+      5478
+      1
+    }
     buildings = {
       infrastructure = 1
+      5478 = {
+        landmark_wet_tomb_of_khengai_khan = 1
+      }
     }
   }
-  provinces = { 4102 4103 4104 }
-  local_supplies = 0.0
 }

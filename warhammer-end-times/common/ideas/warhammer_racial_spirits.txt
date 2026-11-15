@@ -10,6 +10,8 @@ ideas = {
     army_attack_factor = 0.100
     army_org_factor = 0.050
     research_speed_factor = -0.100
+    supply_consumption_factor = -0.900
+    naval_supply_consumption_factor = -0.900
    }
   }
   wet_race_human = {
@@ -31,6 +33,7 @@ ideas = {
     army_attack_factor = 0.100
     army_org_factor = 0.050
     research_speed_factor = -0.100
+    supply_consumption_factor = -0.500
    }
   }
   wet_race_high_elf = {
@@ -130,6 +133,7 @@ ideas = {
     monthly_population = 0.500
     research_speed_factor = -0.150
     army_org_factor = -0.100
+    supply_consumption_factor = -0.500
     justify_war_goal_time = -0.900000
    }
   }
@@ -144,6 +148,7 @@ ideas = {
     army_attack_factor = -0.150
     army_org_factor = -0.100
     justify_war_goal_time = -0.900000
+    supply_consumption_factor = -0.500
    }
   }
   wet_race_hobgoblin = {
@@ -156,6 +161,7 @@ ideas = {
     recon_factor = 0.150
     army_org_factor = -0.100
     justify_war_goal_time = -0.900000
+    supply_consumption_factor = -0.500
    }
   }
   wet_race_gnoblar = {
@@ -169,6 +175,7 @@ ideas = {
     army_attack_factor = -0.250
     army_org_factor = -0.150
     justify_war_goal_time = -0.900000
+    supply_consumption_factor = -0.500
    }
   }
   wet_race_kobold = {
@@ -190,11 +197,11 @@ ideas = {
    modifier = {
     research_speed_factor = 0.200
     monthly_population = 1.000
-    army_attack_factor = -0.150
-    army_defence_factor = -0.150
+    army_attack_factor = 0.150
     army_org_factor = -0.200
     breakthrough_factor = 0.250
     justify_war_goal_time = -0.900000
+    supply_consumption_factor = -0.500
    }
   }
   wet_race_lizardmen = {
@@ -207,6 +214,7 @@ ideas = {
     army_defence_factor = 0.100
     research_speed_factor = -0.100
     army_speed_factor = -0.050
+    supply_consumption_factor = -0.250
    }
   }
   wet_race_old_ones = {
@@ -252,7 +260,7 @@ ideas = {
    modifier = {
     army_attack_factor = 0.100
     army_speed_factor = 0.100
-    supply_consumption_factor = -0.150
+    supply_consumption_factor = -0.500
     research_speed_factor = -0.200
    }
   }
@@ -331,6 +339,28 @@ ideas = {
    removal_cost = -1
    picture = wet_nation_unclassified
    modifier = {
+   }
+  }
+  wet_race_undead_daemon = {
+   allowed = { always = yes }
+   allowed_civil_war = { always = yes }
+   removal_cost = -1
+   picture = wet_nation_daemon
+   modifier = {
+    army_attack_factor = 0.100
+    army_org_factor = 0.050
+    research_speed_factor = -0.100
+   }
+  }
+  wet_race_undead_chaos_mortals = {
+   allowed = { always = yes }
+   allowed_civil_war = { always = yes }
+   removal_cost = -1
+   picture = wet_nation_chaos_mortals
+   modifier = {
+    army_attack_factor = 0.100
+    army_org_factor = 0.050
+    research_speed_factor = -0.100
    }
   }
   wet_race_undead_high_elf = {
@@ -434,6 +464,18 @@ ideas = {
     justify_war_goal_time = -0.900000
    }
   }
+  wet_race_undead_hobgoblin = {
+   allowed = { always = yes }
+   allowed_civil_war = { always = yes }
+   removal_cost = -1
+   picture = wet_nation_hobgoblin
+   modifier = {
+    army_speed_factor = 0.100
+    recon_factor = 0.150
+    army_org_factor = -0.100
+    justify_war_goal_time = -0.900000
+   }
+  }
   wet_race_undead_gnoblar = {
    allowed = { always = yes }
    allowed_civil_war = { always = yes }
@@ -453,11 +495,22 @@ ideas = {
    picture = wet_nation_skaven
    modifier = {
     research_speed_factor = 0.200
-    army_attack_factor = -0.150
-    army_defence_factor = -0.150
+    army_attack_factor = 0.150
     army_org_factor = -0.200
     breakthrough_factor = 0.250
     justify_war_goal_time = -0.900000
+   }
+  }
+  wet_race_undead_lizardmen = {
+   allowed = { always = yes }
+   allowed_civil_war = { always = yes }
+   removal_cost = -1
+   picture = wet_nation_lizardmen
+   modifier = {
+    army_org_factor = 0.150
+    army_defence_factor = 0.100
+    research_speed_factor = -0.100
+    army_speed_factor = -0.050
    }
   }
   wet_race_undead_old_ones = {
@@ -544,9 +597,8 @@ ideas = {
     navy_fuel_consumption_factor = -1.000
     air_fuel_consumption_factor = -1.000
     army_morale_factor = 0.150
-    supply_consumption_factor = -1.000
-    naval_supply_consumption_factor = -1.000
-    monthly_population = -1.000
+    supply_consumption_factor = -0.900
+    naval_supply_consumption_factor = -0.900
     army_speed_factor = -0.100
    }
   }

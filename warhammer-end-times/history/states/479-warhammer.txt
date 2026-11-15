@@ -1,30 +1,75 @@
-# EU4 area: hell_pit_1_area; source provinces: 1163 1167 1169 1177
+# Consolidated authoring states: 492 666 1084
 state = {
+  name = "STATE_666"
   id = 479
-  name = "STATE_479"
-  manpower = 7384766
-  state_category = city
-  resources = { oil = 6 aluminium = 6 rubber = 26 tungsten = 4 steel = 15 chromium = 19 coal = 3 }
+  manpower = 3143396
+  provinces = {
+    447
+    449
+    451
+    452
+    453
+    454
+    458
+    459
+    460
+    481
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 42
+    oil = 3
+    steel = 5
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U03 }
-    # END WET inhabitants
-
-    owner = U03
-    add_core_of = U03
-    victory_points = { 1456 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 39
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A30
+    }
+    owner = A30
+    add_core_of = A30
+    victory_points = {
+      447
+      1
+    }
+    victory_points = {
+      452
+      5
+    }
+    victory_points = {
+      481
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 3
       arms_factory = 3
+      dockyard = 1
+      industrial_complex = 3
+      infrastructure = 1
+      447 = {
+        naval_base = 1
+      }
+      452 = {
+        landmark_wet_church_mermedus = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1456 1460 1462 1470 }
-  local_supplies = 0.0
 }

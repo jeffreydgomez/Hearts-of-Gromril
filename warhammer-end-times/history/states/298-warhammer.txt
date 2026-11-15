@@ -1,29 +1,62 @@
-# EU4 area: dawns_light_area; source provinces: 4325
+# Consolidated authoring states: 394
 state = {
+  name = "STATE_394"
   id = 298
-  name = "STATE_298"
-  manpower = 221366
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 309912
+  provinces = {
+    3849
+    3850
+    3851
+    3852
+    3853
+    3854
+    3855
+    3856
+    3857
+    3858
+    3859
+    3860
+  }
+  state_category = town
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X27 }
-    # END WET inhabitants
-
-    owner = X27
-    add_core_of = X27
-    victory_points = { 6168 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 29
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B88
+    }
+    owner = B88
+    add_core_of = B88
+    victory_points = {
+      3849
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
-      6168 = { naval_base = 1 }
+      3849 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6168 6169 6170 6171 6172 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,49 @@
-# EU4 area: karak_grom_area; source provinces: 4510 4511
+# Consolidated authoring states: 805
 state = {
+  name = "STATE_805"
   id = 578
-  name = "STATE_578"
-  manpower = 531278
+  manpower = 243502
+  provinces = {
+    2327
+    2355
+    2356
+  }
   state_category = rural
-  resources = { tungsten = 2 steel = 4 }
+  resources = {
+    oil = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U13 }
-    # END WET inhabitants
-
-    owner = U13
-    add_core_of = U13
-    victory_points = { 6544 5 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    victory_points = {
+      2327
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      6544 = { supply_node = 1 }
+      2327 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6543 6544 }
-  local_supplies = 0.0
 }

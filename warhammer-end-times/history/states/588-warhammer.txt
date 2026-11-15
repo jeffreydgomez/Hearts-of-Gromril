@@ -1,32 +1,55 @@
-# EU4 area: karaz_a_karak_area; source provinces: 700 701 702 703
+# Consolidated authoring states: 815
 state = {
+  name = "STATE_815"
   id = 588
-  name = "STATE_588"
-  manpower = 2495212
-  state_category = city
-  resources = { tungsten = 10 steel = 17 }
+  manpower = 487005
+  provinces = {
+    2394
+    2395
+    2396
+    2397
+    3546
+    3547
+    3548
+    3549
+    3550
+    3615
+    3616
+  }
+  state_category = rural
+  resources = {
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U04 }
-    # END WET inhabitants
-
-    owner = U04
-    add_core_of = U04
-    victory_points = { 744 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B32
+    }
+    owner = B32
+    add_core_of = B32
+    victory_points = {
+      2394
+      1
+    }
     buildings = {
-      air_base = 1
       infrastructure = 1
-      industrial_complex = 3
-      arms_factory = 3
-      744 = { landmark_wet_karaz_a_karak = 1 supply_node = 1 }
     }
   }
-  provinces = { 744 745 746 747 }
-  local_supplies = 0.0
 }

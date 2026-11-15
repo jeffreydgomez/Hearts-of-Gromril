@@ -1,31 +1,54 @@
-# EU4 area: mountains_of_mourn_15_area; source provinces: 2810 2811
+# Consolidated authoring states: 1074
 state = {
+  name = "STATE_1074"
   id = 778
-  name = "STATE_778"
-  manpower = 575551
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 1283922
+  provinces = {
+    2358
+    2376
+    4399
+  }
+  state_category = town
+  resources = {
+    steel = 13
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I10 }
-    # END WET inhabitants
-
-    owner = I10
-    add_core_of = I10
-    victory_points = { 4639 5 }
+    set_variable = {
+      wet_pop_race = 2
+    }
+    set_variable = {
+      wet_pop_faith = 21
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B20
+    }
+    owner = B20
+    add_core_of = B20
+    add_core_of = Y43
+    victory_points = {
+      4399
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      4639 = { supply_node = 1 }
+      4399 = {
+        landmark_wet_tower_of_gorgoth = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4637 4638 4639 }
-  local_supplies = 0.0
 }

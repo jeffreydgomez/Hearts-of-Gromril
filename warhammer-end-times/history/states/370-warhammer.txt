@@ -1,34 +1,52 @@
-# EU4 area: erengard_area; source provinces: 332 333 347 363 366
+# Consolidated authoring states: 518
 state = {
+  name = "STATE_518"
   id = 370
-  name = "STATE_370"
-  manpower = 1682381
-  state_category = large_town
-  resources = { oil = 2 tungsten = 5 coal = 1 }
+  manpower = 929737
+  provinces = {
+    3146
+    3147
+    3148
+    3149
+    3150
+    3154
+    3155
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 2
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 64 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A29 }
-    # END WET inhabitants
-
-    owner = A29
-    add_core_of = A29
-    add_core_of = B67
-    add_core_of = B69
-    victory_points = { 343 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 58
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z50
+    }
+    owner = Z50
+    add_core_of = Z50
+    victory_points = {
+      3154
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      343 = { landmark_wet_erengrad_port_gp = 1 naval_base = 1 }
     }
   }
-  provinces = { 343 344 358 375 378 }
-  local_supplies = 0.0
 }

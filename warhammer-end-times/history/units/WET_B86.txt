@@ -1,16 +1,28 @@
-division_template = { name = "Chaos Warband" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } } }
-division_template = { name = "Chaos Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } cavalry = { x = 1 y = 0 } } }
+division_template = { name = "Chaos Warband" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Chaos Knights" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Bloodthirsters" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Beasts of Nurgle" priority = 1 regiments = { light_armor = { x = 0 y = 0 } light_armor = { x = 0 y = 1 } light_armor = { x = 0 y = 2 } light_armor = { x = 0 y = 3 } light_armor = { x = 0 y = 4 } light_armor = { x = 1 y = 0 } light_armor = { x = 1 y = 1 } light_armor = { x = 1 y = 2 } light_armor = { x = 1 y = 3 } light_armor = { x = 1 y = 4 } } }
+division_template = { name = "Pink Horrors" priority = 1 regiments = { cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 } cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 } } }
+division_template = { name = "Keepers of Secrets" priority = 1 regiments = { artillery_brigade = { x = 0 y = 0 } artillery_brigade = { x = 0 y = 1 } artillery_brigade = { x = 0 y = 2 } artillery_brigade = { x = 0 y = 3 } artillery_brigade = { x = 0 y = 4 } artillery_brigade = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
 units = {
 division = { name = "1. Fell Chaos Warband" location = 4417 division_template = "Chaos Warband" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "1. Fell Chaos Knights" location = 4417 division_template = "Chaos Knights" start_equipment_factor = 1 start_experience_factor = 0.2 }
+division = { name = "1. Fell Bloodthirsters" location = 4417 division_template = "Bloodthirsters" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_bloodthirsters_1 = { owner = B86 amount = 1000 } } }
+division = { name = "1. Fell Beasts of Nurgle" location = 4417 division_template = "Beasts of Nurgle" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_beasts_of_nurgle_1 = { owner = B86 amount = 600 } } }
+division = { name = "1. Fell Pink Horrors" location = 4417 division_template = "Pink Horrors" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_pink_horrors_1 = { owner = B86 amount = 1200 } } }
+division = { name = "1. Fell Keepers of Secrets" location = 4417 division_template = "Keepers of Secrets" start_equipment_factor = 1 start_experience_factor = 0.2 force_equipment_variants = { wet_rr_keepers_of_secrets_1 = { owner = B86 amount = 144 } } }
 }
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = B86 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = B86 }
-if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 40 producer = B86 variant_name = "Chaos Knights Equipment I" }
+add_equipment_to_stockpile = { type = wet_rr_bloodthirsters_1 amount = 250 producer = B86 }
+add_equipment_to_stockpile = { type = wet_rr_beasts_of_nurgle_1 amount = 150 producer = B86 }
+add_equipment_to_stockpile = { type = wet_rr_pink_horrors_1 amount = 300 producer = B86 }
+add_equipment_to_stockpile = { type = wet_rr_keepers_of_secrets_1 amount = 36 producer = B86 }
+add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 1800 producer = B86 }
+if = { limit = { has_dlc = "No Step Back" } add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 300 producer = B86 variant_name = "Chaos Knights Equipment I" }
  }
-if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 40 producer = B86 }
+if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 300 producer = B86 }
  }
-add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 675 producer = B86 }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 975 producer = B86 }
 add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 24 producer = B86 }
 }

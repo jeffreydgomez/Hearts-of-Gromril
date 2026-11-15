@@ -1,29 +1,48 @@
-# EU4 area: averlorn_reach_area; source provinces: 1818 1819 1820 1825
+# Consolidated authoring states: 78
 state = {
+  name = "STATE_78"
   id = 49
-  name = "STATE_49"
-  manpower = 527699
-  state_category = large_town
-  resources = { aluminium = 59 tungsten = 1 coal = 1 }
+  manpower = 531278
+  provinces = {
+    175
+    261
+    262
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2184 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G09
+    }
+    owner = G09
+    add_core_of = G09
+    victory_points = {
+      175
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
     }
   }
-  provinces = { 2184 2185 2186 2187 2188 2189 2190 2194 2195 }
-  local_supplies = 0.0
 }

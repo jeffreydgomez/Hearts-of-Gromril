@@ -1,30 +1,56 @@
-# EU4 area: bastonne_area; source provinces: 256 257 303
+# Consolidated authoring states: 151
 state = {
+  name = "STATE_151"
   id = 98
-  name = "STATE_98"
-  manpower = 752644
+  manpower = 1151103
+  provinces = {
+    2691
+    2692
+    2693
+    2694
+    2701
+  }
   state_category = town
-  resources = { oil = 2 tungsten = 1 coal = 1 }
+  resources = {
+    oil = 3
+    steel = 10
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A20 }
-    # END WET inhabitants
-
-    owner = A20
-    add_core_of = A15
-    add_core_of = A20
-    victory_points = { 265 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X29
+    }
+    owner = X29
+    add_core_of = X29
+    victory_points = {
+      2691
+      5
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
       infrastructure = 1
-      266 = { landmark_wet_tournament_fields_of_bastonne = 1 }
+      2691 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 265 266 313 }
-  local_supplies = 0.0
 }

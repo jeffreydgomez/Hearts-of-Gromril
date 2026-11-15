@@ -1,29 +1,63 @@
-# EU4 area: elithis_6_area; source provinces: 2896
+# Consolidated authoring states: 512 513
 state = {
+  name = "STATE_512"
   id = 367
-  name = "STATE_367"
-  manpower = 88546
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 3807493
+  provinces = {
+    5648
+    5649
+    5650
+    5659
+    5844
+    5845
+    5982
+    5983
+  }
+  state_category = city
+  resources = {
+    coal = 2
+    oil = 4
+    tungsten = 10
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H29 }
-    # END WET inhabitants
-
-    owner = H29
-    add_core_of = H29
-    victory_points = { 4896 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 58
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z52
+    }
+    owner = Z52
+    add_core_of = Z52
+    victory_points = {
+      5650
+      5
+    }
+    victory_points = {
+      5982
+      1
+    }
     buildings = {
+      arms_factory = 3
+      industrial_complex = 3
       infrastructure = 1
-      4901 = { naval_base = 1 }
+      5650 = {
+        landmark_wet_pillars_of_dharasala = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4896 4897 4898 4899 4900 4901 }
-  local_supplies = 0.0
 }

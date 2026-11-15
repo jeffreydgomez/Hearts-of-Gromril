@@ -1,28 +1,64 @@
-# EU4 area: lustria_25_area; source provinces: 2415
+# Consolidated authoring states: 955
 state = {
+  name = "STATE_955"
   id = 697
-  name = "STATE_697"
-  manpower = 309912
-  state_category = rural
-  resources = { aluminium = 13 }
+  manpower = 6500000
+  provinces = {
+    592
+    3194
+    3214
+  }
+  state_category = industrial_megapolis
+  resources = {
+    aluminium = 1
+    chromium = 40
+    coal = 1
+    oil = 2
+    rubber = 1
+    steel = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 42 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = V18 }
-    # END WET inhabitants
-
-    owner = V18
-    add_core_of = V18
-    victory_points = { 3390 1 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U25
+    }
+    owner = U25
+    add_core_of = U25
+    victory_points = {
+      592
+      5
+    }
     buildings = {
+      arms_factory = 5
+      dockyard = 1
+      industrial_complex = 5
       infrastructure = 1
+      592 = {
+        landmark_wet_council_of_thirteen = 1
+        landmark_wet_under_alchemy_laboratories = 1
+        landmark_wet_nest_of_corruption = 1
+        landmark_wet_war_warpmoon_project = 1
+        supply_node = 1
+      }
+      3194 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3390 3391 3392 3393 }
-  local_supplies = 0.0
 }

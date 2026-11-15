@@ -1,28 +1,57 @@
-# EU4 area: giantshome_5_area; source provinces: 1152 1154
+# Consolidated authoring states: 601
 state = {
+  name = "STATE_601"
   id = 426
-  name = "STATE_426"
-  manpower = 708370
-  state_category = rural
-  resources = { oil = 1 tungsten = 1 }
+  manpower = 708371
+  provinces = {
+    3579
+    3580
+    3581
+    3582
+    3583
+    3584
+    4800
+    4801
+    4802
+    4803
+  }
+  state_category = town
+  resources = {
+    aluminium = 15
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U20 }
-    # END WET inhabitants
-
-    owner = U20
-    add_core_of = U20
-    victory_points = { 1445 1 }
+    set_variable = {
+      wet_pop_race = 19
+    }
+    set_variable = {
+      wet_pop_faith = 46
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z67
+    }
+    owner = Z67
+    add_core_of = Z67
+    victory_points = {
+      3579
+      1
+    }
     buildings = {
       infrastructure = 1
+      3579 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1445 1447 }
-  local_supplies = 0.0
 }

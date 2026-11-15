@@ -1,28 +1,51 @@
-# EU4 area: cathay_11_area; source provinces: 4025
+# Consolidated authoring states: 237
 state = {
+  name = "STATE_237"
   id = 173
-  name = "STATE_173"
-  manpower = 309912
+  manpower = 320704
+  provinces = {
+    4301
+    4302
+    4303
+    4304
+    4305
+  }
   state_category = rural
-  resources = { tungsten = 1 coal = 1 }
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 68 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I25 }
-    # END WET inhabitants
-
-    owner = I25
-    add_core_of = I25
-    victory_points = { 5401 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B99
+    }
+    owner = B99
+    add_core_of = B82
+    add_core_of = B99
+    victory_points = {
+      4301
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
     }
   }
-  provinces = { 5401 5402 5403 5404 5405 }
-  local_supplies = 0.0
 }

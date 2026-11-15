@@ -1,29 +1,59 @@
-# EU4 area: charnal_valley_area; source provinces: 970
+# Consolidated authoring states: 369
 state = {
+  name = "STATE_369"
   id = 275
-  name = "STATE_275"
-  manpower = 265639
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 784783
+  provinces = {
+    2211
+    2213
+    2214
+    2215
+    2216
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    steel = 6
+    tungsten = 9
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z01 }
-    # END WET inhabitants
-
-    owner = Z01
-    add_core_of = Z01
-    victory_points = { 1190 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      2213
+      1
+    }
     buildings = {
+      arms_factory = 1
+      dockyard = 1
+      industrial_complex = 3
       infrastructure = 1
-      1190 = { landmark_wet_valley_of_kings = 1 }
+      2213 = {
+        landmark_wet_gp_royal_ellyrian_stables = 1
+      }
+      2215 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1190 1191 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,53 @@
-# EU4 area: misty_mountain_area; source provinces: 385 4814 4815
+# Consolidated authoring states: 1054
 state = {
+  name = "STATE_1054"
   id = 761
-  name = "STATE_761"
-  manpower = 929737
-  state_category = town
-  resources = { oil = 3 steel = 5 }
+  manpower = 581821
+  provinces = {
+    2158
+    2159
+    2160
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 18
+    coal = 1
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G48 }
-    # END WET inhabitants
-
-    owner = G48
-    add_core_of = G48
-    victory_points = { 6984 5 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      2159
+      1
+    }
     buildings = {
-      infrastructure = 1
       industrial_complex = 1
-      arms_factory = 1
-      6984 = { supply_node = 1 }
+      infrastructure = 1
+      2159 = {
+        landmark_wet_gp_white_tower_of_hoeth = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 398 6983 6984 }
-  local_supplies = 0.0
 }

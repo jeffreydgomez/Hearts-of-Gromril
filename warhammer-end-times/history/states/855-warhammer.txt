@@ -1,29 +1,67 @@
-# EU4 area: nehekhara_area_7; source provinces: 833 837 838 839 859
+# Consolidated authoring states: 1155
 state = {
+  name = "STATE_1155"
+  impassable = yes
   id = 855
-  name = "STATE_855"
-  manpower = 1062556
-  state_category = town
-  resources = { oil = 2 tungsten = 2 }
+  manpower = 0
+  provinces = {
+    1264
+    5770
+    5771
+    5772
+    5773
+    5774
+    5775
+    5776
+    5777
+    5778
+    5779
+    5780
+    5781
+    5782
+    5783
+    5784
+    5785
+    5786
+    5787
+    5788
+    5789
+    5790
+    5791
+    5792
+    5793
+    5794
+    5795
+    5796
+    5797
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z01 }
-    # END WET inhabitants
-
-    owner = Z01
-    add_core_of = Z01
-    victory_points = { 907 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      907 = { landmark_wet_great_sphinx_of_numasis = 1 }
+
     }
   }
-  provinces = { 907 908 921 922 923 924 925 926 955 }
-  local_supplies = 0.0
 }

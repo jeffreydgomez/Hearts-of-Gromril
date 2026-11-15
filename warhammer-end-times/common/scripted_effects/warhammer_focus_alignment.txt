@@ -22,6 +22,19 @@ wet_focus_choose_chaos = {
   if = {
     limit = {
       has_idea = wet_race_human
+      has_idea = wet_deathless_hosts
+    }
+    swap_ideas = {
+      remove_idea = wet_race_human
+      add_idea = wet_race_undead_chaos_mortals
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_human
+      NOT = {
+        has_idea = wet_deathless_hosts
+      }
     }
     swap_ideas = {
       remove_idea = wet_race_human
@@ -57,6 +70,24 @@ wet_focus_choose_undead = {
   set_politics = {
     ruling_party = communism
     elections_allowed = no
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_daemon
+    }
+    swap_ideas = {
+      remove_idea = wet_race_daemon
+      add_idea = wet_race_undead_daemon
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_undead_chaos_mortals
+    }
   }
   if = {
     limit = {
@@ -141,6 +172,15 @@ wet_focus_choose_undead = {
   }
   if = {
     limit = {
+      has_idea = wet_race_hobgoblin
+    }
+    swap_ideas = {
+      remove_idea = wet_race_hobgoblin
+      add_idea = wet_race_undead_hobgoblin
+    }
+  }
+  if = {
+    limit = {
       has_idea = wet_race_gnoblar
     }
     swap_ideas = {
@@ -155,6 +195,15 @@ wet_focus_choose_undead = {
     swap_ideas = {
       remove_idea = wet_race_skaven
       add_idea = wet_race_undead_skaven
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_lizardmen
+    }
+    swap_ideas = {
+      remove_idea = wet_race_lizardmen
+      add_idea = wet_race_undead_lizardmen
     }
   }
   if = {
@@ -260,6 +309,15 @@ wet_focus_choose_order = {
       add_idea = wet_race_human
     }
   }
+  if = {
+    limit = {
+      has_idea = wet_race_undead_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_undead_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
   wet_apply_political_permissions = yes
   wet_enforce_cultural_member = yes
   if = {
@@ -296,6 +354,15 @@ wet_focus_choose_unaligned = {
     }
     swap_ideas = {
       remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_undead_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_undead_chaos_mortals
       add_idea = wet_race_human
     }
   }
@@ -338,6 +405,15 @@ wet_focus_choose_waaagh = {
       add_idea = wet_race_human
     }
   }
+  if = {
+    limit = {
+      has_idea = wet_race_undead_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_undead_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
   wet_apply_political_permissions = yes
   wet_enforce_cultural_member = yes
   if = {
@@ -374,6 +450,15 @@ wet_focus_choose_horned_rat = {
     }
     swap_ideas = {
       remove_idea = wet_race_chaos_mortals
+      add_idea = wet_race_human
+    }
+  }
+  if = {
+    limit = {
+      has_idea = wet_race_undead_chaos_mortals
+    }
+    swap_ideas = {
+      remove_idea = wet_race_undead_chaos_mortals
       add_idea = wet_race_human
     }
   }

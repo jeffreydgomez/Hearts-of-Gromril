@@ -1,33 +1,52 @@
-# EU4 area: aquitaine_warhammer_area; source provinces: 228 231 232 239 240
+# Consolidated authoring states: 20
 state = {
+  name = "STATE_20"
   id = 16
-  name = "STATE_16"
-  manpower = 1682381
-  state_category = large_town
-  resources = { aluminium = 15 tungsten = 5 coal = 2 }
+  manpower = 1018283
+  provinces = {
+    1207
+    1221
+    1226
+  }
+  state_category = town
+  resources = {
+    steel = 14
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 31 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A15 }
-    # END WET inhabitants
-
-    owner = A15
-    add_core_of = A15
-    add_core_of = Y12
-    victory_points = { 239 1 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B19
+    }
+    owner = B19
+    add_core_of = B19
+    victory_points = {
+      1221
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      236 = { naval_base = 1 }
-      239 = { landmark_wet_bretonnian_vineyards = 1 }
+      1221 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 236 239 240 247 248 }
-  local_supplies = 0.0
 }

@@ -1,29 +1,49 @@
-# EU4 area: chaos_wastes_23_area; source provinces: 3229 3230 3234
+# Consolidated authoring states: 319
 state = {
+  name = "STATE_319"
   id = 235
-  name = "STATE_235"
-  manpower = 442732
+  manpower = 265639
+  provinces = {
+    7023
+  }
   state_category = rural
-  resources = { tungsten = 2 }
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 29 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B59 }
-    # END WET inhabitants
-
-    owner = B59
-    add_core_of = B59
-    victory_points = { 5345 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 16
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I49
+    }
+    owner = I49
+    add_core_of = I49
+    victory_points = {
+      7023
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      5345 = { landmark_wet_the_brazen_altar = 1 supply_node = 1 }
+      7023 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5339 5340 5341 5345 }
-  local_supplies = 0.0
 }

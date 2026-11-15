@@ -1,31 +1,54 @@
-# EU4 area: obregon_area; source provinces: 507 508 509 517 518
+# Consolidated authoring states: 1227
 state = {
+  name = "STATE_1227"
   id = 900
-  name = "STATE_900"
-  manpower = 1283922
+  manpower = 1000000
+  provinces = {
+    7358
+    7359
+    7360
+    7361
+    7362
+    7363
+    7364
+  }
   state_category = town
-  resources = { oil = 2 tungsten = 3 coal = 1 }
+  resources = {
+    chromium = 3
+    oil = 2
+    steel = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 533 1 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U29
+    }
+    owner = U29
+    add_core_of = U29
+    victory_points = {
+      7358
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      532 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
     }
   }
-  provinces = { 532 533 534 542 543 }
-  local_supplies = 0.0
 }

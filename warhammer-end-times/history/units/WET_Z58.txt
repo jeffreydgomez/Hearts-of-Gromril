@@ -1,5 +1,5 @@
-division_template = { name = "Temple Guard" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
-division_template = { name = "Temple War Beasts" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+division_template = { name = "Temple Guard" priority = 1 regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } } }
+division_template = { name = "Temple War Beasts" priority = 1 regiments = { heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 0 y = 3 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 0 } } }
 units = {
 division = { name = "1. Lakshanan Temple Guard" location = 5660 division_template = "Temple Guard" start_equipment_factor = 1 start_experience_factor = 0.2 }
 division = { name = "2. Lakshanan Temple Guard" location = 5846 division_template = "Temple Guard" start_equipment_factor = 1 start_experience_factor = 0.2 }
@@ -10,10 +10,10 @@ division = { name = "1. Lakshanan Temple War Beasts" location = 5660 division_te
 instant_effect = {
 add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Z58 } requested_factories = 2 progress = 0.1 efficiency = 0.5 }
 if = { limit = { has_dlc = "No Step Back" } add_equipment_production = { equipment = { type = heavy_tank_chassis_1 creator = Z58 version_name = "Temple War Beasts Equipment I" } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 40 producer = Z58 variant_name = "Temple War Beasts Equipment I" }
+add_equipment_to_stockpile = { type = heavy_tank_chassis_1 amount = 80 producer = Z58 variant_name = "Temple War Beasts Equipment I" }
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } add_equipment_production = { equipment = { type = heavy_tank_equipment_1 creator = Z58 } requested_factories = 1 progress = 0.1 efficiency = 0.5 }
-add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 40 producer = Z58 }
+add_equipment_to_stockpile = { type = heavy_tank_equipment_1 amount = 80 producer = Z58 }
  }
 add_equipment_to_stockpile = { type = wet_cavalry_equipment_1 amount = 240 producer = Z58 }
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1800 producer = Z58 }

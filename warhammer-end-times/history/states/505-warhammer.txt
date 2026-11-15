@@ -1,28 +1,48 @@
-# EU4 area: ind_19_area; source provinces: 4106
+# Consolidated authoring states: 700
 state = {
+  name = "STATE_700"
   id = 505
-  name = "STATE_505"
-  manpower = 442732
+  manpower = 221366
+  provinces = {
+    3406
+    3407
+  }
   state_category = rural
-  resources = { tungsten = 2 }
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z57 }
-    # END WET inhabitants
-
-    owner = Z57
-    add_core_of = Z57
-    victory_points = { 5672 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V01
+    }
+    owner = V01
+    add_core_of = V01
+    victory_points = {
+      3406
+      1
+    }
     buildings = {
       infrastructure = 1
+      3406 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5672 }
-  local_supplies = 0.0
 }

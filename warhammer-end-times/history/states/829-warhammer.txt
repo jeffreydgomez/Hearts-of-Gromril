@@ -1,29 +1,45 @@
-# EU4 area: navarre_area; source provinces: 530 535 541
+# Consolidated authoring states: 1128
 state = {
+  name = "STATE_1128"
+  impassable = yes
   id = 829
-  name = "STATE_829"
-  manpower = 929737
-  state_category = town
-  resources = { oil = 1 aluminium = 9 tungsten = 2 }
+  manpower = 0
+  provinces = {
+    4837
+    4838
+    4839
+    4840
+    4841
+    4842
+    4843
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 555 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      555 = { naval_base = 1 }
+
     }
   }
-  provinces = { 555 560 566 }
-  local_supplies = 0.0
 }

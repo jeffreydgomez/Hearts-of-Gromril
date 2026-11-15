@@ -1,32 +1,53 @@
-# EU4 area: forest_of_gloom_area; source provinces: 861 863 868 870
+# Consolidated authoring states: 560 568
 state = {
+  name = "STATE_568"
   id = 405
-  name = "STATE_405"
-  manpower = 1328195
+  manpower = 885464
+  provinces = {
+    6429
+    6430
+    6461
+    6562
+    6741
+  }
   state_category = town
-  resources = { aluminium = 28 rubber = 17 tungsten = 2 }
+  resources = {
+    oil = 3
+    steel = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G18 }
-    # END WET inhabitants
-
-    owner = G18
-    add_core_of = G18
-    victory_points = { 964 5 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U38
+    }
+    owner = U38
+    add_core_of = U38
+    victory_points = {
+      6741
+      1
+    }
+    victory_points = {
+      6429
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      957 = { landmark_wet_forest_of_gloom = 1 }
-      964 = { supply_node = 1 }
     }
   }
-  provinces = { 957 959 964 966 }
-  local_supplies = 0.0
 }

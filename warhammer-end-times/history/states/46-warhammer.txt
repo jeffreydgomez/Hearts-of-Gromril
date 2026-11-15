@@ -1,28 +1,58 @@
-# EU4 area: astiano_area; source provinces: 583 584
+# Consolidated authoring states: 72
 state = {
+  name = "STATE_72"
   id = 46
-  name = "STATE_46"
-  manpower = 487005
-  state_category = rural
-  resources = { oil = 2 coal = 2 }
+  manpower = 1106829
+  provinces = {
+    169
+    170
+    274
+    275
+    280
+    323
+    324
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 3
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A57 }
-    # END WET inhabitants
-
-    owner = A57
-    add_core_of = A57
-    victory_points = { 619 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G07
+    }
+    owner = G07
+    add_core_of = G07
+    victory_points = {
+      280
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      280 = {
+        landmark_wet_orc_proving_pits = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 619 620 }
-  local_supplies = 0.0
 }

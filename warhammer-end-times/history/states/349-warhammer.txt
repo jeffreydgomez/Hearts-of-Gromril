@@ -1,29 +1,75 @@
-# EU4 area: eastern_steppes_1_area; source provinces: 2724
+# Consolidated authoring states: 479 480 481
 state = {
+  name = "STATE_480"
   id = 349
-  name = "STATE_349"
-  manpower = 320704
-  state_category = rural
-  resources = { tungsten = 1 }
+  manpower = 14769532
+  provinces = {
+    1456
+    1460
+    1462
+    1464
+    1465
+    1467
+    1468
+    1469
+    1470
+    6612
+  }
+  state_category = large_city
+  resources = {
+    aluminium = 12
+    chromium = 69
+    coal = 7
+    oil = 15
+    rubber = 35
+    steel = 30
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B99 }
-    # END WET inhabitants
-
-    owner = B99
-    add_core_of = B57
-    add_core_of = B99
-    victory_points = { 4409 1 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U03
+    }
+    owner = U03
+    add_core_of = U03
+    victory_points = {
+      1456
+      1
+    }
+    victory_points = {
+      1467
+      5
+    }
+    victory_points = {
+      1465
+      1
+    }
     buildings = {
+      arms_factory = 5
+      industrial_complex = 5
       infrastructure = 1
+      1467 = {
+        supply_node = 1
+      }
+      1464 = {
+        landmark_wet_hellpit = 1
+      }
     }
   }
-  provinces = { 4409 4410 4411 4412 4413 4414 4415 4416 }
-  local_supplies = 0.0
 }

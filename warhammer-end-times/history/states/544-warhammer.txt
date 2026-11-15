@@ -1,30 +1,46 @@
-# EU4 area: isthmus_of_lustria_2_area; source provinces: 2349 2350 2351
+# Consolidated authoring states: 762
 state = {
+  name = "STATE_762"
   id = 544
-  name = "STATE_544"
-  manpower = 442732
-  state_category = town
-  resources = { tungsten = 2 steel = 8 coal = 1 }
+  manpower = 148374
+  provinces = {
+    718
+    821
+  }
+  state_category = rural
+  resources = {
+    aluminium = 15
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H20 }
-    # END WET inhabitants
-
-    owner = H20
-    add_core_of = H20
-    add_core_of = Y80
-    victory_points = { 3221 1 }
+    set_variable = {
+      wet_pop_race = 24
+    }
+    set_variable = {
+      wet_pop_faith = 4
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B01
+    }
+    owner = B01
+    add_core_of = B01
+    victory_points = {
+      718
+      1
+    }
     buildings = {
       infrastructure = 1
-      3221 = { naval_base = 1 }
     }
   }
-  provinces = { 3221 3222 3223 }
-  local_supplies = 0.0
 }

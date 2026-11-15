@@ -1,28 +1,73 @@
-# EU4 area: nilfheim_area; source provinces: 402 404
+# Consolidated authoring states: 573 575 576 1166
 state = {
+  name = "STATE_1166"
   id = 866
-  name = "STATE_866"
-  manpower = 531278
-  state_category = rural
-  resources = { tungsten = 1 steel = 10 }
+  manpower = 5312780
+  provinces = {
+    6739
+    6740
+    6742
+    6743
+    6745
+    6746
+    6747
+    6748
+    6749
+    6750
+  }
+  state_category = town
+  resources = {
+    oil = 3
+    steel = 10
+    tungsten = 7
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A32 }
-    # END WET inhabitants
-
-    owner = A32
-    add_core_of = A32
-    victory_points = { 423 1 }
+    set_variable = {
+      wet_pop_race = 18
+    }
+    set_variable = {
+      wet_pop_faith = 24
+    }
+    set_variable = {
+      wet_pop_taint = 5
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U39
+    }
+    owner = U39
+    add_core_of = U39
+    victory_points = {
+      6739
+      1
+    }
+    victory_points = {
+      6747
+      1
+    }
+    victory_points = {
+      6746
+      1
+    }
+    victory_points = {
+      6742
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      6742 = {
+        landmark_wet_karak_eight_peaks_gp = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 421 423 }
-  local_supplies = 0.0
 }

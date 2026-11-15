@@ -1,28 +1,63 @@
-# EU4 area: hel_feen_area; source provinces: 192 197
+# Consolidated authoring states: 642 665
 state = {
+  name = "STATE_665"
   id = 478
-  name = "STATE_478"
-  manpower = 398459
-  state_category = rural
-  resources = { oil = 2 coal = 1 }
+  manpower = 1195376
+  provinces = {
+    219
+    231
+    682
+    689
+    692
+  }
+  state_category = large_town
+  resources = {
+    oil = 4
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A13 }
-    # END WET inhabitants
-
-    owner = A13
-    add_core_of = A13
-    victory_points = { 205 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G03
+    }
+    owner = G03
+    add_core_of = G03
+    victory_points = {
+      682
+      1
+    }
+    victory_points = {
+      231
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
+      682 = {
+        naval_base = 1
+      }
+      231 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 200 205 }
-  local_supplies = 0.0
 }

@@ -1,31 +1,50 @@
-# EU4 area: anroc_area; source provinces: 1867 1868 1869
+# Consolidated authoring states: 14
 state = {
+  name = "STATE_14"
   id = 11
-  name = "STATE_11"
-  manpower = 487106
-  state_category = large_town
-  resources = { tungsten = 4 steel = 17 }
+  manpower = 575551
+  provinces = {
+    679
+    681
+  }
+  state_category = rural
+  resources = {
+    steel = 16
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2248 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I20
+    }
+    owner = I20
+    add_core_of = I20
+    victory_points = {
+      681
+      5
+    }
     buildings = {
-      infrastructure = 1
+      arms_factory = 1
       industrial_complex = 1
-      2247 = { naval_base = 1 }
-      2249 = { landmark_wet_gp_hall_of_charioteers = 1 }
+      infrastructure = 1
+      681 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 2246 2247 2248 2249 }
-  local_supplies = 0.0
 }

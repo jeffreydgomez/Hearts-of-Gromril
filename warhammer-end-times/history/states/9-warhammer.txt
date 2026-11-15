@@ -1,32 +1,59 @@
-# EU4 area: anlec_area; source provinces: 1877 1879 1880 1882 1936
+# Consolidated authoring states: 12
 state = {
+  name = "STATE_12"
   id = 9
-  name = "STATE_9"
-  manpower = 608883
+  manpower = 1726654
+  provinces = {
+    1405
+    1406
+    1407
+    1408
+    1409
+    1410
+  }
   state_category = large_town
-  resources = { oil = 1 tungsten = 4 steel = 21 coal = 2 }
+  resources = {
+    coal = 1
+    oil = 1
+    steel = 32
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    add_core_of = Y71
-    victory_points = { 2292 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 31
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z24
+    }
+    owner = Z24
+    add_core_of = Z24
+    victory_points = {
+      1407
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      2267 = { landmark_wet_gp_black_citadel_of_anlec = 1 }
-      2292 = { naval_base = 1 }
+      1407 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2264 2265 2267 2268 2269 2272 2292 }
-  local_supplies = 0.0
 }

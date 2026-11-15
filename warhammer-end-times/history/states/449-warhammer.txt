@@ -1,31 +1,64 @@
-# EU4 area: grey_stone_fortress_area; source provinces: 749 751
+# Consolidated authoring states: 631 984
 state = {
+  name = "STATE_631"
   id = 449
-  name = "STATE_449"
-  manpower = 332049
+  manpower = 2390752
+  provinces = {
+    336
+    337
+    340
+    341
+    370
+    387
+    388
+    391
+    392
+  }
   state_category = town
-  resources = { tungsten = 2 }
+  resources = {
+    coal = 2
+    oil = 5
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B65 }
-    # END WET inhabitants
-
-    owner = B65
-    add_core_of = B65
-    victory_points = { 800 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 64
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A29
+    }
+    owner = A29
+    add_core_of = A29
+    victory_points = {
+      336
+      5
+    }
+    victory_points = {
+      337
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      800 = { supply_node = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      336 = {
+        landmark_wet_bokha_palace_gp = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 798 800 }
-  local_supplies = 0.0
 }

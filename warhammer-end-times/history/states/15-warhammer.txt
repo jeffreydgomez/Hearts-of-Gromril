@@ -1,28 +1,53 @@
-# EU4 area: apuccini_foothills_area; source provinces: 745
+# Consolidated authoring states: 18
 state = {
+  name = "STATE_18"
   id = 15
-  name = "STATE_15"
-  manpower = 132820
-  state_category = rural
-  resources = { steel = 4 }
+  manpower = 841190
+  provinces = {
+    1020
+    1021
+    1159
+    1160
+    1161
+    1162
+  }
+  state_category = town
+  resources = {
+    oil = 3
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U13 }
-    # END WET inhabitants
-
-    owner = U13
-    add_core_of = U13
-    victory_points = { 794 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 57
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z14
+    }
+    owner = Z14
+    add_core_of = Z14
+    victory_points = {
+      1161
+      1
+    }
     buildings = {
       infrastructure = 1
+      1161 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 794 }
-  local_supplies = 0.0
 }

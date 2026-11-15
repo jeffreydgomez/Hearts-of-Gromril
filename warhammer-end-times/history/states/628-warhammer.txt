@@ -1,28 +1,50 @@
-# EU4 area: kingdom_of_the_beasts_4_area; source provinces: 4869 4871
+# Consolidated authoring states: 864
 state = {
+  name = "STATE_864"
   id = 628
-  name = "STATE_628"
-  manpower = 531278
+  manpower = 221366
+  provinces = {
+    6146
+    6147
+    6148
+    6149
+  }
   state_category = rural
-  resources = { oil = 2 coal = 1 }
+  resources = {
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 6 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X02 }
-    # END WET inhabitants
-
-    owner = X02
-    add_core_of = X02
-    victory_points = { 7070 1 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z46
+    }
+    owner = Z46
+    add_core_of = Z46
+    victory_points = {
+      6146
+      1
+    }
     buildings = {
       infrastructure = 1
+      6146 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 7070 7071 7072 7073 7074 7075 7076 }
-  local_supplies = 0.0
 }

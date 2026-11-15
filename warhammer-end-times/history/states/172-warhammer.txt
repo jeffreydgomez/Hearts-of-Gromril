@@ -1,31 +1,64 @@
-# EU4 area: cathay_10_area; source provinces: 4029 4031 4033 4247
+# Consolidated authoring states: 236
 state = {
+  name = "STATE_236"
   id = 172
-  name = "STATE_172"
-  manpower = 1283922
-  state_category = town
-  resources = { oil = 2 aluminium = 15 steel = 16 coal = 2 }
+  manpower = 897969
+  provinces = {
+    4315
+    4316
+    4317
+    4318
+    4382
+    4383
+    4384
+    4385
+    4386
+    4387
+    4388
+    4389
+    4390
+    4391
+    4392
+    4393
+    4394
+  }
+  state_category = rural
+  resources = {
+    coal = 2
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I34 }
-    # END WET inhabitants
-
-    owner = I34
-    add_core_of = I34
-    victory_points = { 5971 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B99
+    }
+    owner = B99
+    add_core_of = B61
+    add_core_of = B99
+    victory_points = {
+      4382
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      5971 = { landmark_wet_temple_of_the_moon_empress = 1 supply_node = 1 }
     }
   }
-  provinces = { 5415 5416 5417 5418 5422 5423 5424 5425 5430 5431 5971 5972 5973 }
-  local_supplies = 0.0
 }

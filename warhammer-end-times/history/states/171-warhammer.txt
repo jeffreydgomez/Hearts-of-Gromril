@@ -1,32 +1,69 @@
-# EU4 area: carroburg_area; source provinces: 4 92 94 99
+# Consolidated authoring states: 235 486 1224
 state = {
+  name = "STATE_235"
   id = 171
-  name = "STATE_171"
-  manpower = 1283922
+  manpower = 1461015
+  provinces = {
+    4194
+    4215
+    4269
+    5339
+    5340
+    5341
+    5342
+    5345
+    5346
+    5347
+  }
   state_category = town
-  resources = { rubber = 10 tungsten = 4 coal = 1 }
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 14 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A04 }
-    # END WET inhabitants
-
-    owner = A04
-    add_core_of = A04
-    victory_points = { 4 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 29
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B59
+    }
+    owner = B59
+    add_core_of = B59
+    victory_points = {
+      5345
+      5
+    }
+    victory_points = {
+      4269
+      1
+    }
+    victory_points = {
+      5346
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      4 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      5345 = {
+        landmark_wet_the_brazen_altar = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4 92 94 99 }
-  local_supplies = 0.0
 }

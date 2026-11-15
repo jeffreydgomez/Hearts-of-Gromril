@@ -1,32 +1,46 @@
-# EU4 area: lissa_area; source provinces: 211 223 645 648
+# Consolidated authoring states: 913
 state = {
+  name = "STATE_913"
   id = 665
-  name = "STATE_665"
-  manpower = 974010
-  state_category = large_town
-  resources = { oil = 3 tungsten = 1 }
+  manpower = 221366
+  provinces = {
+    2874
+    2875
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G03 }
-    # END WET inhabitants
-
-    owner = G03
-    add_core_of = G03
-    victory_points = { 231 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 37
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z42
+    }
+    owner = Z42
+    add_core_of = Z42
+    victory_points = {
+      2874
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      231 = { supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 219 231 689 692 }
-  local_supplies = 0.0
 }

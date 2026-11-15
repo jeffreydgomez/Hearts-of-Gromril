@@ -1,28 +1,57 @@
-# EU4 area: modryn_area; source provinces: 674 772
+# Consolidated authoring states: 1055
 state = {
+  name = "STATE_1055"
   id = 762
-  name = "STATE_762"
-  manpower = 148374
+  manpower = 265639
+  provinces = {
+    5584
+    5585
+    5586
+    5587
+    6382
+    6383
+    6384
+    6385
+    6386
+    6387
+    6388
+  }
   state_category = rural
-  resources = { aluminium = 15 tungsten = 1 }
+  resources = {
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 24 }
-    set_variable = { wet_pop_faith = 4 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B01 }
-    # END WET inhabitants
-
-    owner = B01
-    add_core_of = B01
-    victory_points = { 718 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H30
+    }
+    owner = H30
+    add_core_of = H30
+    victory_points = {
+      5584
+      1
+    }
     buildings = {
       infrastructure = 1
+      5584 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 718 821 }
-  local_supplies = 0.0
 }

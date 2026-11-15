@@ -1,31 +1,57 @@
-# EU4 area: karak_zorn_area; source provinces: 4237 4279 4398 4598
+# Consolidated authoring states: 814
 state = {
+  name = "STATE_814"
   id = 587
-  name = "STATE_587"
-  manpower = 1682381
+  manpower = 951873
+  provinces = {
+    2357
+    2409
+    3015
+    3016
+    3017
+    3376
+    3377
+    3378
+  }
   state_category = large_town
-  resources = { tungsten = 5 steel = 7 }
+  resources = {
+    steel = 11
+    tungsten = 6
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U36 }
-    # END WET inhabitants
-
-    owner = U36
-    add_core_of = U36
-    victory_points = { 6664 5 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    victory_points = {
+      2357
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      6664 = { supply_node = 1 }
+      industrial_complex = 3
+      infrastructure = 1
+      2357 = {
+        landmark_wet_convent_of_sorcery = 1
+      }
     }
   }
-  provinces = { 5950 6029 6404 6664 }
-  local_supplies = 0.0
 }

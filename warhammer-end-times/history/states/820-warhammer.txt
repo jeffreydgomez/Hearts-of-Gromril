@@ -1,35 +1,42 @@
-# EU4 area: naggaroth_5_area; source provinces: 2046 2588 2589 2590 2591 2592
+# Consolidated authoring states: 1119
 state = {
+  name = "STATE_1119"
+  impassable = yes
   id = 820
-  name = "STATE_820"
-  manpower = 951873
-  state_category = large_town
-  resources = { oil = 4 aluminium = 5 rubber = 70 coal = 2 }
+  manpower = 0
+  provinces = {
+    504
+    505
+    506
+    7283
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H12 }
-    # END WET inhabitants
-
-    owner = H12
-    add_core_of = H12
-    add_core_of = Y74
-    victory_points = { 3972 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      air_base = 1
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 3
-      3970 = { naval_base = 1 }
-      3972 = { landmark_wet_lairs_of_clar_karond = 1 }
+
     }
   }
-  provinces = { 2489 2490 3966 3967 3968 3969 3970 3971 3972 3973 3974 }
-  local_supplies = 0.0
 }

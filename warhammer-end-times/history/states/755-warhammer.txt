@@ -1,30 +1,55 @@
-# EU4 area: middenheim_area; source provinces: 113 125 133
+# Consolidated authoring states: 1047
 state = {
+  name = "STATE_1047"
   id = 755
-  name = "STATE_755"
-  manpower = 1195376
+  manpower = 974010
+  provinces = {
+    429
+    430
+    431
+  }
   state_category = town
-  resources = { oil = 1 tungsten = 2 steel = 11 }
+  resources = {
+    aluminium = 26
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 14 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A04 }
-    # END WET inhabitants
-
-    owner = A04
-    add_core_of = A04
-    victory_points = { 133 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 39
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A31
+    }
+    owner = A31
+    add_core_of = A31
+    victory_points = {
+      429
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
+      infrastructure = 1
+      429 = {
+        landmark_wet_skjold_fjords = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 113 125 133 }
-  local_supplies = 0.0
 }

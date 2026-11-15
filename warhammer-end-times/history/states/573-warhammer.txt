@@ -1,28 +1,68 @@
-# EU4 area: karak_eight_peaks_1_area; source provinces: 4736 4737 4740
+# Consolidated authoring states: 774 800
 state = {
+  name = "STATE_800"
   id = 573
-  name = "STATE_573"
-  manpower = 1062556
-  state_category = rural
-  resources = { oil = 1 tungsten = 1 }
+  manpower = 1815200
+  provinces = {
+    4557
+    4558
+    4559
+    4561
+    4562
+    4563
+    4564
+    4565
+    4566
+    4601
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 1
+    steel = 7
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U39 }
-    # END WET inhabitants
-
-    owner = U39
-    add_core_of = U39
-    victory_points = { 6739 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I19
+    }
+    owner = I19
+    add_core_of = I19
+    victory_points = {
+      4566
+      1
+    }
+    victory_points = {
+      4564
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      4557 = {
+        landmark_wet_arena_of_the_mawbite_tribes = 1
+      }
+      4564 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6739 6740 6743 }
-  local_supplies = 0.0
 }

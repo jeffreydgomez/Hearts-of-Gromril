@@ -4,11 +4,19 @@
 
 	Better Icons for mission trees
 
-	Make sure countries start with appropriate laws
-
 	Should purging be a new law? That would make more sense.
 
-	Get more specific about new technologies
+	A fourth tier of racial tech for everybody.
+
+	The undead nation national spirit is really supposed to prevent population growth, not automatically drain it. I need to fix that.
+
+	I feel like there's a broad supply issue in the mod. Can you play with a living nation and see if you have the same problem?
+
+	Redo racial bonuses
+
+	Light horses cavalry aren't showing up as equipment
+
+	Nehekhara should have chariots
 
 #### LESS URGENT TO DO ####
 

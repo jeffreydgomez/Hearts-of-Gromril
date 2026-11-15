@@ -1,31 +1,74 @@
-# EU4 area: hell_pit_3_area; source provinces: 1171 1172 4573
+# Consolidated authoring states: 658 668 910
 state = {
+  name = "STATE_668"
   id = 481
-  name = "STATE_481"
-  manpower = 4028054
-  state_category = large_town
-  resources = { oil = 5 aluminium = 3 rubber = 5 tungsten = 1 steel = 8 chromium = 41 coal = 2 }
+  manpower = 2435024
+  provinces = {
+    1385
+    1386
+    1387
+    1389
+    1390
+    1471
+    6317
+  }
+  state_category = town
+  resources = {
+    coal = 3
+    oil = 4
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U03 }
-    # END WET inhabitants
-
-    owner = U03
-    add_core_of = U03
-    victory_points = { 1465 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B06
+    }
+    owner = B06
+    add_core_of = B06
+    victory_points = {
+      1471
+      1
+    }
+    victory_points = {
+      6317
+      5
+    }
+    victory_points = {
+      1385
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      1464 = { landmark_wet_hellpit = 1 }
+      dockyard = 1
+      industrial_complex = 1
+      infrastructure = 1
+      1471 = {
+        naval_base = 1
+      }
+      6317 = {
+        landmark_wet_citadel_of_lead = 1
+        supply_node = 1
+        naval_base = 1
+      }
+      1385 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 1464 1465 6612 }
-  local_supplies = 0.0
 }

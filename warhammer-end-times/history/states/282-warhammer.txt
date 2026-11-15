@@ -1,30 +1,64 @@
-# EU4 area: clan_rictus_tunnels; source provinces: 4446 4448 4449 4450
+# Consolidated authoring states: 241 378
 state = {
+  name = "STATE_378"
   id = 282
-  name = "STATE_282"
-  manpower = 4251834
-  state_category = large_town
-  resources = { oil = 2 aluminium = 4 rubber = 5 tungsten = 2 steel = 26 chromium = 11 }
+  manpower = 664098
+  provinces = {
+    4417
+    4418
+    4424
+    4425
+    5318
+    5319
+    5320
+    5321
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 2
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U01 }
-    # END WET inhabitants
-
-    owner = U01
-    add_core_of = U01
-    victory_points = { 6472 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B86
+    }
+    owner = B86
+    add_core_of = B86
+    victory_points = {
+      4424
+      1
+    }
+    victory_points = {
+      4417
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
+      dockyard = 1
+      industrial_complex = 1
+      infrastructure = 1
+      4417 = {
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6472 6474 6475 6476 }
-  local_supplies = 0.0
 }

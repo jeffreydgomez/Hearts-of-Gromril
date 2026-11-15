@@ -1,32 +1,63 @@
-# EU4 area: black_crag_area; source provinces: 4440 4442 4443
+# Consolidated authoring states: 159
 state = {
+  name = "STATE_159"
   id = 106
-  name = "STATE_106"
-  manpower = 1549561
+  manpower = 1328195
+  provinces = {
+    2707
+    2708
+    2709
+    2710
+    2714
+    2715
+    2716
+    2717
+    2720
+    2721
+  }
   state_category = large_town
-  resources = { oil = 1 tungsten = 4 steel = 6 }
+  resources = {
+    oil = 3
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 9 }
-    set_variable = { wet_pop_faith = 20 }
-    set_variable = { wet_pop_taint = 2 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = G24 }
-    # END WET inhabitants
-
-    owner = G24
-    add_core_of = G24
-    victory_points = { 6466 5 }
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U51
+    }
+    owner = U51
+    add_core_of = U51
+    victory_points = {
+      2720
+      5
+    }
     buildings = {
-      air_base = 1
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      6466 = { landmark_wet_black_crag = 1 supply_node = 1 }
+      dockyard = 1
+      industrial_complex = 2
+      infrastructure = 1
+      2714 = {
+        naval_base = 1
+      }
+      2720 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 6466 6468 6469 }
-  local_supplies = 0.0
 }

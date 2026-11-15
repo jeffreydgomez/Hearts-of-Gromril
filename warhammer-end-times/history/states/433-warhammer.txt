@@ -1,28 +1,57 @@
-# EU4 area: gnoblar_country_1_area; source provinces: 2273
+# Consolidated authoring states: 612
 state = {
+  name = "STATE_612"
   id = 433
-  name = "STATE_433"
-  manpower = 265639
-  state_category = rural
-  resources = { aluminium = 11 }
+  manpower = 708371
+  provinces = {
+    5007
+    5008
+    5009
+    5010
+    5044
+    5045
+    5046
+    5047
+    5048
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I15 }
-    # END WET inhabitants
-
-    owner = I15
-    add_core_of = I15
-    victory_points = { 3092 1 }
+    set_variable = {
+      wet_pop_race = 19
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z63
+    }
+    owner = Z63
+    add_core_of = Z63
+    victory_points = {
+      5007
+      1
+    }
     buildings = {
+      dockyard = 1
       infrastructure = 1
+      5007 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 3092 }
-  local_supplies = 0.0
 }

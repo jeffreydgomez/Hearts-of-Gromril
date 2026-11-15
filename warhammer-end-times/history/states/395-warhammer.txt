@@ -1,28 +1,64 @@
-# EU4 area: feroz_area; source provinces: 534 539 540
+# Consolidated authoring states: 536 552
 state = {
+  name = "STATE_552"
   id = 395
-  name = "STATE_395"
-  manpower = 664098
+  manpower = 1593834
+  provinces = {
+    518
+    520
+    521
+    556
+    561
+    567
+    569
+    809
+  }
   state_category = town
-  resources = { tungsten = 2 coal = 1 }
+  resources = {
+    aluminium = 24
+    coal = 1
+    oil = 2
+    steel = 8
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
     owner = A41
     add_core_of = A41
-    victory_points = { 559 1 }
+    victory_points = {
+      569
+      1
+    }
+    victory_points = {
+      518
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
+      521 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 559 564 565 }
-  local_supplies = 0.0
 }

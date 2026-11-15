@@ -1,29 +1,65 @@
-# EU4 area: east_honzamul_area; source provinces: 4851
+# Consolidated authoring states: 450 1006
 state = {
+  name = "STATE_450"
   id = 329
-  name = "STATE_329"
-  manpower = 398459
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 1372468
+  provinces = {
+    2666
+    2667
+    2906
+    2907
+    2910
+    2911
+    2912
+    4518
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I41 }
-    # END WET inhabitants
-
-    owner = I41
-    add_core_of = I41
-    victory_points = { 7035 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G26
+    }
+    owner = G26
+    add_core_of = G26
+    victory_points = {
+      4518
+      5
+    }
+    victory_points = {
+      2910
+      1
+    }
     buildings = {
+      arms_factory = 1
+      industrial_complex = 1
       infrastructure = 1
-      7035 = { naval_base = 1 }
+      4518 = {
+        supply_node = 1
+      }
+      2910 = {
+        landmark_wet_road_of_skulls = 1
+      }
     }
   }
-  provinces = { 7035 }
-  local_supplies = 0.0
 }

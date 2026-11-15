@@ -1,32 +1,69 @@
-# EU4 area: avila_area; source provinces: 282 504 505 506 759
+# Consolidated authoring states: 54 55 80 82
 state = {
+  name = "STATE_82"
   id = 50
-  name = "STATE_50"
-  manpower = 1151103
+  manpower = 3010576
+  provinces = {
+    176
+    252
+    474
+    502
+    503
+    516
+    562
+    572
+    782
+    784
+  }
   state_category = town
-  resources = { oil = 3 aluminium = 9 tungsten = 1 coal = 1 }
+  resources = {
+    coal = 5
+    oil = 9
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 292 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G24
+    }
+    owner = G24
+    add_core_of = G24
+    victory_points = {
+      176
+      1
+    }
+    victory_points = {
+      502
+      1
+    }
+    victory_points = {
+      784
+      1
+    }
+    victory_points = {
+      562
+      1
+    }
     buildings = {
+      arms_factory = 3
+      industrial_complex = 3
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      292 = { naval_base = 1 }
-      808 = { landmark_wet_el_torre_del_sol = 1 }
     }
   }
-  provinces = { 292 529 530 531 808 }
-  local_supplies = 0.0
 }

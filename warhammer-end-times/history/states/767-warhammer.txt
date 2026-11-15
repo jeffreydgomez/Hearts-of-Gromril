@@ -1,30 +1,45 @@
-# EU4 area: mount_grimfang_area; source provinces: 4455 4456 4457 4458 4461
+# Consolidated authoring states: 1060
 state = {
+  name = "STATE_1060"
   id = 767
-  name = "STATE_767"
-  manpower = 1213887
-  state_category = large_town
-  resources = { oil = 2 tungsten = 2 steel = 10 }
+  manpower = 370910
+  provinces = {
+    748
+    1510
+  }
+  state_category = rural
+  resources = {
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U04 }
-    # END WET inhabitants
-
+    set_variable = {
+      wet_pop_race = 5
+    }
+    set_variable = {
+      wet_pop_faith = 1
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = U04
+    }
     owner = U04
     add_core_of = U04
-    victory_points = { 6484 1 }
+    victory_points = {
+      1510
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
     }
   }
-  provinces = { 6481 6482 6483 6484 6494 }
-  local_supplies = 0.0
 }

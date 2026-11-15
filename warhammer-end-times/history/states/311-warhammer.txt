@@ -1,32 +1,54 @@
-# EU4 area: doom_glades_4_area; source provinces: 2090 2093 2095 2100 2102
+# Consolidated authoring states: 414
 state = {
+  name = "STATE_414"
   id = 311
-  name = "STATE_311"
-  manpower = 752644
-  state_category = large_town
-  resources = { aluminium = 39 tungsten = 1 steel = 7 coal = 2 }
+  manpower = 619824
+  provinces = {
+    5305
+  }
+  state_category = galleons_graveyard
+  resources = {
+    aluminium = 26
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H22 }
-    # END WET inhabitants
-
-    owner = H22
-    add_core_of = H22
-    victory_points = { 2642 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V19
+    }
+    owner = V19
+    add_core_of = V19
+    victory_points = {
+      5305
+      5
+    }
     buildings = {
+      arms_factory = 5
+      dockyard = 5
+      industrial_complex = 5
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      2642 = { naval_base = 1 }
+      5305 = {
+        landmark_wet_the_maelstrom = 1
+        landmark_wet_galleons_graveyard_gp = 1
+        landmark_wet_noctilus_training_grounds = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2642 2643 2648 2649 2653 2654 2668 2669 2670 2672 2673 2674 2675 }
-  local_supplies = 0.0
 }

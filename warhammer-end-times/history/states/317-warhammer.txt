@@ -1,31 +1,60 @@
-# EU4 area: dragon_isles_01_area; source provinces: 4158
+# Consolidated authoring states: 435
 state = {
+  name = "STATE_435"
   id = 317
-  name = "STATE_317"
-  manpower = 442732
-  state_category = rural
-  resources = { tungsten = 2 }
+  manpower = 796917
+  provinces = {
+    3128
+    3129
+    3130
+    3131
+    3132
+    3133
+    3141
+    3142
+    3143
+    3144
+    3145
+  }
+  state_category = town
+  resources = {
+    coal = 2
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 14 }
-    set_variable = { wet_pop_faith = 16 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I49 }
-    # END WET inhabitants
-
-    owner = I49
-    add_core_of = I49
-    victory_points = { 5755 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X13
+    }
+    owner = X13
+    add_core_of = X13
+    victory_points = {
+      3130
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      5755 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      3130 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5755 }
-  local_supplies = 0.0
 }

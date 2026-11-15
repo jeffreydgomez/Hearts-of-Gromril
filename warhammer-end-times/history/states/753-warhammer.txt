@@ -1,32 +1,59 @@
-# EU4 area: mendora_area; source provinces: 488 489 490 492 494
+# Consolidated authoring states: 1045 1168
 state = {
+  name = "STATE_1045"
   id = 753
-  name = "STATE_753"
-  manpower = 1372468
-  state_category = town
-  resources = { oil = 2 aluminium = 9 tungsten = 3 coal = 2 }
+  manpower = 752644
+  provinces = {
+    444
+    450
+    475
+    479
+    480
+  }
+  state_category = rural
+  resources = {
+    aluminium = 24
+    coal = 1
+    rubber = 13
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 34 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A41 }
-    # END WET inhabitants
-
-    owner = A41
-    add_core_of = A41
-    victory_points = { 513 1 }
+    set_variable = {
+      wet_pop_race = 1
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = X11
+    }
+    owner = X11
+    add_core_of = X11
+    victory_points = {
+      475
+      5
+    }
+    victory_points = {
+      450
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
       arms_factory = 1
-      dockyard = 1
-      513 = { naval_base = 1 }
+      industrial_complex = 1
+      infrastructure = 1
+      475 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 513 514 515 517 519 }
-  local_supplies = 0.0
 }

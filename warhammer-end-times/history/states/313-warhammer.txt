@@ -1,31 +1,52 @@
-# EU4 area: doom_mountain_area; source provinces: 4809 4810 4816 4817 4819
+# Consolidated authoring states: 420
 state = {
+  name = "STATE_420"
   id = 313
-  name = "STATE_313"
-  manpower = 3896040
-  state_category = large_town
-  resources = { oil = 2 tungsten = 4 steel = 8 }
+  manpower = 1106829
+  provinces = {
+    4133
+    5368
+    5369
+    5370
+    5371
+    5372
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U42 }
-    # END WET inhabitants
-
-    owner = U42
-    add_core_of = U42
-    victory_points = { 6978 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 9
+    }
+    set_variable = {
+      wet_pop_taint = 3
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = B46
+    }
+    owner = B46
+    add_core_of = B46
+    victory_points = {
+      5369
+      1
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      6978 = { supply_node = 1 }
+      industrial_complex = 2
+      infrastructure = 1
     }
   }
-  provinces = { 6978 6979 6985 6986 6993 }
-  local_supplies = 0.0
 }

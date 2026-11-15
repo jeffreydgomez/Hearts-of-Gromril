@@ -1,29 +1,57 @@
-# EU4 area: naggaroth_19_area; source provinces: 2087 2088 2089
+# Consolidated authoring states: 1109
 state = {
+  name = "STATE_1109"
+  impassable = yes
   id = 810
-  name = "STATE_810"
-  manpower = 442731
-  state_category = town
-  resources = { oil = 1 tungsten = 2 coal = 1 }
+  manpower = 0
+  provinces = {
+    6713
+    6714
+    6715
+    6716
+    6717
+    6718
+    6719
+    6720
+    6721
+    6722
+    6723
+    6724
+    6725
+    6726
+    6727
+    6728
+    6729
+    6730
+    6731
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H22 }
-    # END WET inhabitants
-
-    owner = H22
-    add_core_of = H22
-    victory_points = { 2639 5 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      2639 = { landmark_wet_ashward_slave_pits = 1 supply_node = 1 naval_base = 1 }
+
     }
   }
-  provinces = { 2635 2636 2637 2638 2639 2640 2641 }
-  local_supplies = 0.0
 }

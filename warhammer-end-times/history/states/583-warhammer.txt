@@ -1,31 +1,57 @@
-# EU4 area: karak_norn_area; source provinces: 593 4426 4486 4487 4919
+# Consolidated authoring states: 810
 state = {
+  name = "STATE_810"
   id = 583
-  name = "STATE_583"
-  manpower = 1505288
+  manpower = 442731
+  provinces = {
+    2635
+    2636
+    2637
+    2638
+    2639
+    2640
+    2641
+  }
   state_category = town
-  resources = { aluminium = 7 tungsten = 3 steel = 11 }
+  resources = {
+    coal = 1
+    oil = 1
+    tungsten = 2
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U21 }
-    # END WET inhabitants
-
-    owner = U21
-    add_core_of = U21
-    victory_points = { 6519 5 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H22
+    }
+    owner = H22
+    add_core_of = H22
+    victory_points = {
+      2639
+      5
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      6519 = { supply_node = 1 }
+      2639 = {
+        landmark_wet_ashward_slave_pits = 1
+        supply_node = 1
+        naval_base = 1
+      }
     }
   }
-  provinces = { 635 6432 6519 6520 7224 }
-  local_supplies = 0.0
 }

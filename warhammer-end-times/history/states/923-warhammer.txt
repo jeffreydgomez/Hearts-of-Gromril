@@ -1,28 +1,57 @@
-# EU4 area: plain_of_tuskers_4_area; source provinces: 1784
+# Consolidated authoring states: 403 404
 state = {
+  name = "STATE_404"
   id = 923
-  name = "STATE_923"
-  manpower = 177093
+  manpower = 885463
+  provinces = {
+    512
+    582
+    583
+    585
+  }
   state_category = rural
-  resources = { oil = 1 }
+  resources = {
+    oil = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 3 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z48 }
-    # END WET inhabitants
-
-    owner = Z48
-    add_core_of = Z48
-    victory_points = { 2093 1 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 34
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = A41
+    }
+    owner = A41
+    add_core_of = A41
+    victory_points = {
+      512
+      1
+    }
+    victory_points = {
+      583
+      1
+    }
     buildings = {
       infrastructure = 1
+      512 = {
+        naval_base = 1
+      }
+      583 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 2093 2094 2095 }
-  local_supplies = 0.0
 }

@@ -1,29 +1,65 @@
-# EU4 area: eisgard_area; source provinces: 1164
+# Consolidated authoring states: 495 501
 state = {
+  name = "STATE_501"
   id = 361
-  name = "STATE_361"
-  manpower = 354185
-  state_category = rural
-  resources = { rubber = 27 coal = 1 }
+  manpower = 1461015
+  provinces = {
+    5703
+    5704
+    5705
+    5715
+    5722
+    5723
+  }
+  state_category = large_town
+  resources = {
+    coal = 2
+    steel = 8
+    tungsten = 4
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A34 }
-    # END WET inhabitants
-
-    owner = A34
-    add_core_of = A34
-    victory_points = { 1457 1 }
+    set_variable = {
+      wet_pop_race = 20
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z59
+    }
+    owner = Z59
+    add_core_of = Z59
+    victory_points = {
+      5715
+      1
+    }
+    victory_points = {
+      5704
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      1457 = { naval_base = 1 }
+      5704 = {
+        supply_node = 1
+        naval_base = 1
+      }
+      5722 = {
+        landmark_wet_fortress_of_celestial_spears = 1
+      }
     }
   }
-  provinces = { 1457 }
-  local_supplies = 0.0
 }

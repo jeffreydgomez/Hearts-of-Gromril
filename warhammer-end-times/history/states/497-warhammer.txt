@@ -1,32 +1,47 @@
-# EU4 area: ind_12_area; source provinces: 4115 4116 4117 4120
+# Consolidated authoring states: 687
 state = {
+  name = "STATE_687"
   id = 497
-  name = "STATE_497"
-  manpower = 2302205
-  state_category = large_town
-  resources = { tungsten = 9 coal = 1 }
+  manpower = 265639
+  provinces = {
+    3339
+  }
+  state_category = rural
+  resources = {
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 58 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z60 }
-    # END WET inhabitants
-
-    owner = Z60
-    add_core_of = Z60
-    victory_points = { 5692 5 }
+    set_variable = {
+      wet_pop_race = 12
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V02
+    }
+    owner = V02
+    add_core_of = V02
+    victory_points = {
+      3339
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      5692 = { landmark_wet_temple_of_vaati_the_binder = 1 supply_node = 1 naval_base = 1 }
+      3339 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 5689 5690 5691 5692 5697 5698 }
-  local_supplies = 0.0
 }

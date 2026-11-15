@@ -1,31 +1,74 @@
-# EU4 area: mountains_of_mourn_11_area; source provinces: 2772 2798 2799 2801
+# Consolidated authoring states: 1066
 state = {
+  name = "STATE_1066"
   id = 773
-  name = "STATE_773"
-  manpower = 841190
-  state_category = town
-  resources = { oil = 2 tungsten = 1 coal = 2 }
+  manpower = 1859473
+  provinces = {
+    5798
+    5799
+    5800
+    5801
+    5802
+    5806
+    5870
+    5871
+    5872
+    6009
+    6010
+    6011
+    6012
+    6013
+    6014
+    6015
+    6016
+    6017
+    6018
+  }
+  state_category = large_town
+  resources = {
+    aluminium = 13
+    coal = 2
+    oil = 3
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 56 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = I08 }
-    # END WET inhabitants
-
-    owner = I08
-    add_core_of = I08
-    victory_points = { 4621 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z45
+    }
+    owner = Z45
+    add_core_of = Z45
+    victory_points = {
+      5806
+      5
+    }
     buildings = {
+      arms_factory = 2
+      dockyard = 1
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      4621 = { landmark_wet_sky_titan_ruins = 1 supply_node = 1 }
+      5798 = {
+        naval_base = 1
+      }
+      5806 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 4567 4621 4622 4624 4625 }
-  local_supplies = 0.0
 }

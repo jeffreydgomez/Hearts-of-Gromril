@@ -1,32 +1,60 @@
-# EU4 area: neuland_area; source provinces: 1086 1087 1088 1089
+# Consolidated authoring states: 1158
 state = {
+  name = "STATE_1158"
+  impassable = yes
   id = 858
-  name = "STATE_858"
-  manpower = 1372468
-  state_category = large_town
-  resources = { oil = 4 tungsten = 1 coal = 1 }
+  manpower = 0
+  provinces = {
+    2728
+    2729
+    2730
+    2731
+    2732
+    2733
+    2734
+    2735
+    2736
+    2737
+    2738
+    2739
+    2740
+    2741
+    5651
+    5652
+    5653
+    5654
+    5655
+    5656
+    5657
+    5658
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 39 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B07 }
-    # END WET inhabitants
-
-    owner = B07
-    add_core_of = B07
-    victory_points = { 1381 5 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      1381 = { supply_node = 1 naval_base = 1 }
+
     }
   }
-  provinces = { 1378 1379 1380 1381 }
-  local_supplies = 0.0
 }

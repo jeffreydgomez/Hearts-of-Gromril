@@ -1,33 +1,52 @@
-# EU4 area: nehekhara_area_16; source provinces: 864 869 871 876 884
+# Consolidated authoring states: 1137
 state = {
+  name = "STATE_1137"
+  impassable = yes
   id = 838
-  name = "STATE_838"
-  manpower = 1372468
-  state_category = town
-  resources = { oil = 1 aluminium = 20 tungsten = 2 chromium = 37 }
+  manpower = 0
+  provinces = {
+    477
+    2671
+    5756
+    5803
+    5804
+    6603
+    6604
+    6605
+    6606
+    6607
+    6608
+    6609
+    6610
+    6891
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 37 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z01 }
-    # END WET inhabitants
-
-    owner = Z01
-    add_core_of = Z01
-    victory_points = { 960 1 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      dockyard = 1
-      960 = { naval_base = 1 }
-      967 = { landmark_wet_black_pyramid_of_nagash = 1 }
+
     }
   }
-  provinces = { 960 965 967 972 980 }
-  local_supplies = 0.0
 }

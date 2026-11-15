@@ -1,31 +1,64 @@
-# EU4 area: ind_5_area; source provinces: 4074 4075 4076 4087 4190
+# Consolidated authoring states: 728 734
 state = {
+  name = "STATE_734"
   id = 524
-  name = "STATE_524"
-  manpower = 1770927
+  manpower = 1815200
+  provinces = {
+    3434
+    3435
+    3436
+    3446
+    3447
+    3448
+    3449
+    3450
+    3545
+  }
   state_category = large_town
-  resources = { aluminium = 15 tungsten = 5 }
+  resources = {
+    coal = 1
+    oil = 1
+    rubber = 13
+    tungsten = 5
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 16 }
-    set_variable = { wet_pop_faith = 66 }
-    set_variable = { wet_pop_taint = 4 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = Z57 }
-    # END WET inhabitants
-
-    owner = Z57
-    add_core_of = Z57
-    victory_points = { 5607 5 }
+    set_variable = {
+      wet_pop_race = 14
+    }
+    set_variable = {
+      wet_pop_faith = 42
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = V10
+    }
+    owner = V10
+    add_core_of = V10
+    victory_points = {
+      3446
+      1
+    }
+    victory_points = {
+      3545
+      5
+    }
     buildings = {
-      infrastructure = 1
-      industrial_complex = 2
       arms_factory = 2
-      5607 = { landmark_wet_garden_of_the_eternal_peace = 1 supply_node = 1 }
+      industrial_complex = 2
+      infrastructure = 1
+      3545 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 5607 5608 5609 5610 5632 5633 5858 }
-  local_supplies = 0.0
 }

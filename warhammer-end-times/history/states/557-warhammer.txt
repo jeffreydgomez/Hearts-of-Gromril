@@ -1,28 +1,61 @@
-# EU4 area: karag_dum_area; source provinces: 1170
+# Consolidated authoring states: 777 779
 state = {
+  name = "STATE_779"
   id = 557
-  name = "STATE_557"
-  manpower = 221366
-  state_category = rural
-  resources = { steel = 6 }
+  manpower = 1726654
+  provinces = {
+    4640
+    4641
+    4642
+    4644
+    6007
+  }
+  state_category = town
+  resources = {
+    coal = 1
+    oil = 2
+    steel = 8
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 2 }
-    set_variable = { wet_pop_faith = 21 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B29 }
-    # END WET inhabitants
-
-    owner = B29
-    add_core_of = B29
-    victory_points = { 1463 1 }
+    set_variable = {
+      wet_pop_race = 16
+    }
+    set_variable = {
+      wet_pop_faith = 56
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = I11
+    }
+    owner = I11
+    add_core_of = I11
+    victory_points = {
+      4640
+      1
+    }
+    victory_points = {
+      6007
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
+      6007 = {
+        landmark_wet_ivory_pass = 1
+        supply_node = 1
+      }
     }
   }
-  provinces = { 1463 }
-  local_supplies = 0.0
 }

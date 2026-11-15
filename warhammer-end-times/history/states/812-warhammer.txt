@@ -1,33 +1,39 @@
-# EU4 area: naggaroth_1_area; source provinces: 2008 2009 2010 2012 2013
+# Consolidated authoring states: 1111
 state = {
+  name = "STATE_1111"
+  impassable = yes
   id = 812
-  name = "STATE_812"
-  manpower = 1040419
-  state_category = large_town
-  resources = { tungsten = 8 }
+  manpower = 0
+  provinces = {
+    5752
+  }
+  state_category = wasteland
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 4 }
-    set_variable = { wet_pop_faith = 15 }
-    set_variable = { wet_pop_taint = 0 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H12 }
-    # END WET inhabitants
-
-    owner = H12
-    add_core_of = H12
-    victory_points = { 2400 5 }
+    set_variable = {
+      wet_pop_race = 23
+    }
+    set_variable = {
+      wet_pop_faith = 38
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = WST
+    }
+    set_state_flag = wet_inhabitants_uninhabited
+    owner = WST
+    add_core_of = WST
     buildings = {
-      air_base = 1
-      infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      2400 = { landmark_wet_black_tower_of_malekith = 1 supply_node = 1 naval_base = 1 }
+
     }
   }
-  provinces = { 2399 2400 2401 2407 2408 }
-  local_supplies = 0.0
 }

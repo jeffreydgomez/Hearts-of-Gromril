@@ -1,33 +1,46 @@
-# EU4 area: dragonwake_area; source provinces: 1858 1859 1860 1925 1954
+# Consolidated authoring states: 443
 state = {
+  name = "STATE_443"
   id = 324
-  name = "STATE_324"
-  manpower = 744191
-  state_category = large_town
-  resources = { oil = 2 rubber = 27 tungsten = 2 steel = 29 coal = 2 }
+  manpower = 177093
+  provinces = {
+    1523
+    1524
+  }
+  state_category = rural
+  resources = {
+    coal = 1
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 11 }
-    set_variable = { wet_pop_faith = 6 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = H06 }
-    # END WET inhabitants
-
-    owner = H06
-    add_core_of = H06
-    victory_points = { 2236 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G42
+    }
+    owner = G42
+    add_core_of = G42
+    victory_points = {
+      1523
+      1
+    }
     buildings = {
-      air_base = 1
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 1
-      dockyard = 2
-      2236 = { landmark_wet_gp_hall_of_dragons = 1 naval_base = 1 }
     }
   }
-  provinces = { 2236 2237 2238 2280 2319 }
-  local_supplies = 0.0
 }

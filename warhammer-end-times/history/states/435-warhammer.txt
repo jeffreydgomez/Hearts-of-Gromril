@@ -1,31 +1,65 @@
-# EU4 area: gnoblar_country_2_area; source provinces: 2290 2291 2295
+# Consolidated authoring states: 614
 state = {
+  name = "STATE_614"
   id = 435
-  name = "STATE_435"
-  manpower = 796917
+  manpower = 1328195
+  provinces = {
+    5002
+    5003
+    5016
+    5017
+    5026
+    5027
+    5028
+    5029
+    5051
+    5052
+    5053
+    5054
+    5055
+    5056
+  }
   state_category = town
-  resources = { oil = 3 coal = 2 }
+  resources = {
+    coal = 2
+    oil = 2
+    tungsten = 3
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 1 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = X13 }
-    # END WET inhabitants
-
-    owner = X13
-    add_core_of = X13
-    victory_points = { 3130 5 }
+    set_variable = {
+      wet_pop_race = 19
+    }
+    set_variable = {
+      wet_pop_faith = 66
+    }
+    set_variable = {
+      wet_pop_taint = 4
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = Z63
+    }
+    owner = Z63
+    add_core_of = Y62
+    add_core_of = Z63
+    victory_points = {
+      5016
+      5
+    }
     buildings = {
+      arms_factory = 2
+      industrial_complex = 2
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
-      3130 = { supply_node = 1 }
+      5016 = {
+        supply_node = 1
+      }
     }
   }
-  provinces = { 3128 3129 3130 3131 3132 3133 3141 3142 3143 3144 3145 }
-  local_supplies = 0.0
 }

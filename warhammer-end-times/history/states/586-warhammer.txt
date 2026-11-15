@@ -1,28 +1,58 @@
-# EU4 area: karak_zorn_area; source provinces: 4422
+# Consolidated authoring states: 813
 state = {
+  name = "STATE_813"
   id = 586
-  name = "STATE_586"
-  manpower = 1342684
+  manpower = 442731
+  provinces = {
+    2410
+    2411
+    2412
+    2413
+    2414
+    2415
+    2416
+    2422
+    2423
+  }
   state_category = town
-  resources = { oil = 1 aluminium = 1 rubber = 2 steel = 10 chromium = 3 }
+  resources = {
+    coal = 1
+    oil = 2
+    steel = 6
+    tungsten = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 18 }
-    set_variable = { wet_pop_faith = 24 }
-    set_variable = { wet_pop_taint = 5 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U29 }
-    # END WET inhabitants
-
-    owner = U29
-    add_core_of = U29
-    victory_points = { 6428 1 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H12
+    }
+    owner = H12
+    add_core_of = H12
+    victory_points = {
+      2422
+      1
+    }
     buildings = {
       infrastructure = 1
+      2422 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 6428 }
-  local_supplies = 0.0
 }

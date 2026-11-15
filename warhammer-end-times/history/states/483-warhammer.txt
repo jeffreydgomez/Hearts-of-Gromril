@@ -1,29 +1,71 @@
-# EU4 area: hellands_area; source provinces: 476
+# Consolidated authoring states: 670 951
 state = {
+  name = "STATE_670"
   id = 483
-  name = "STATE_483"
-  manpower = 177093
-  state_category = rural
-  resources = { oil = 1 }
+  manpower = 1474850
+  provinces = {
+    472
+    1517
+    1519
+    2227
+    2231
+    2232
+    2233
+    2234
+    2235
+  }
+  state_category = large_city
+  resources = {
+    coal = 3
+    steel = 13
+    tungsten = 16
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 12 }
-    set_variable = { wet_pop_faith = 9 }
-    set_variable = { wet_pop_taint = 3 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = A78 }
-    # END WET inhabitants
-
-    owner = A78
-    add_core_of = A78
-    victory_points = { 499 1 }
+    set_variable = {
+      wet_pop_race = 11
+    }
+    set_variable = {
+      wet_pop_faith = 6
+    }
+    set_variable = {
+      wet_pop_taint = 1
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H06
+    }
+    owner = H06
+    add_core_of = H06
+    victory_points = {
+      472
+      5
+    }
+    victory_points = {
+      2233
+      1
+    }
     buildings = {
+      air_base = 1
+      arms_factory = 2
+      dockyard = 4
+      industrial_complex = 4
       infrastructure = 1
-      499 = { naval_base = 1 }
+      472 = {
+        landmark_wet_gp_court_of_the_phoenix_king = 1
+        landmark_wet_gp_gates_of_lothern = 1
+        supply_node = 1
+        naval_base = 1
+      }
+      2235 = {
+        naval_base = 1
+      }
     }
   }
-  provinces = { 499 }
-  local_supplies = 0.0
 }

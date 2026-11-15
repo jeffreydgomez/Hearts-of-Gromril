@@ -1,30 +1,57 @@
-# EU4 area: gnashrak_lair_area; source provinces: 4553 4554 4555
+# Consolidated authoring states: 605 607
 state = {
+  name = "STATE_607"
   id = 431
-  name = "STATE_431"
-  manpower = 741820
-  state_category = town
-  resources = { oil = 3 steel = 5 }
+  manpower = 885463
+  provinces = {
+    4777
+    4778
+    4779
+    4783
+    4784
+    4811
+    4812
+    4813
+    4814
+  }
+  state_category = rural
+  resources = {
+    aluminium = 26
+    oil = 1
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = U04 }
-    # END WET inhabitants
-
-    owner = U04
-    add_core_of = U04
-    victory_points = { 6587 1 }
+    set_variable = {
+      wet_pop_race = 9
+    }
+    set_variable = {
+      wet_pop_faith = 20
+    }
+    set_variable = {
+      wet_pop_taint = 2
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = G44
+    }
+    owner = G44
+    add_core_of = G44
+    victory_points = {
+      4811
+      1
+    }
+    victory_points = {
+      4777
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 1
-      arms_factory = 1
     }
   }
-  provinces = { 6585 6586 6587 }
-  local_supplies = 0.0
 }

@@ -1,32 +1,45 @@
-# EU4 area: barak_varr_area; source provinces: 753 754
+# Consolidated authoring states: 149
 state = {
+  name = "STATE_149"
   id = 96
-  name = "STATE_96"
-  manpower = 1593834
-  state_category = large_town
-  resources = { oil = 1 aluminium = 55 }
+  manpower = 177093
+  provinces = {
+    2681
+    2682
+  }
+  state_category = rural
+  resources = {
+    steel = 10
+  }
+  local_supplies = 0
   history = {
-    # BEGIN WET inhabitants
     set_state_flag = wet_inhabitants_initialized
-    set_variable = { wet_pop_race = 5 }
-    set_variable = { wet_pop_faith = 1 }
-    set_variable = { wet_pop_taint = 1 }
-    set_variable = { wet_purge_days = 0 }
-    set_variable = { wet_population_loss_remainder = 0 }
-    add_to_array = { wet_population_controller = B14 }
-    # END WET inhabitants
-
-    owner = B14
-    add_core_of = B14
-    victory_points = { 803 5 }
+    set_variable = {
+      wet_pop_race = 4
+    }
+    set_variable = {
+      wet_pop_faith = 15
+    }
+    set_variable = {
+      wet_pop_taint = 0
+    }
+    set_variable = {
+      wet_purge_days = 0
+    }
+    set_variable = {
+      wet_population_loss_remainder = 0
+    }
+    add_to_array = {
+      wet_population_controller = H22
+    }
+    owner = H22
+    add_core_of = H22
+    victory_points = {
+      2681
+      1
+    }
     buildings = {
       infrastructure = 1
-      industrial_complex = 2
-      arms_factory = 2
-      dockyard = 1
-      803 = { landmark_wet_barak_varr = 1 supply_node = 1 naval_base = 1 }
     }
   }
-  provinces = { 802 803 }
-  local_supplies = 0.0
 }
