@@ -7166,43 +7166,6 @@ wet_skv_recovery = {
       factor = 5
     }
   }
-  wet_skv_recover_W04 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = U25
-    }
-    visible = {
-      has_country_flag = wet_skv_earned_W04
-      NOT = {
-        has_country_flag = wet_skv_reward_W04
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      has_completed_focus = WET_SKV_W03
-      has_war = no
-      AND = {
-        has_country_flag = wet_skv_earned_W04
-        NOT = {
-          has_country_flag = wet_skv_reward_W04
-        }
-        wet_skv_tilea_settled = yes
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_W04_special_tt
-      }
-      hidden_effect = {
-        wet_skv_award_W04 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
   wet_skv_recover_W05 = {
     desc = wet_decision_no_description
     icon = generic_political_discourse

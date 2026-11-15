@@ -8,6 +8,8 @@
 
 	Should purging be a new law? That would make more sense.
 
+	Get more specific about new technologies
+
 #### LESS URGENT TO DO ####
 
 	Pictures for events

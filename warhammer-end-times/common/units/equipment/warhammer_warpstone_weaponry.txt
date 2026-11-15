@@ -1,51 +1,188 @@
 equipments = {
   wet_rr_warpstone_weaponry = {
     is_archetype = yes
-    is_buildable = no
-    active = no
-    picture = archetype_wet_rr_warpstone_weaponry
-    type = {
-      artillery
-      infantry
-    }
-    group_by = archetype
+    type = infantry
     interface_category = interface_category_land
-    year = 2519
-    reliability = 0.75
     maximum_speed = 4
-    defense = 11
-    breakthrough = 10
+    defense = 20
+    breakthrough = 2
     hardness = 0
     armor_value = 0
-    soft_attack = 26
-    hard_attack = 2
-    ap_attack = 5
+    hard_attack = 0.5
     air_attack = 0
-    build_cost_ic = 3.5
-    lend_lease_cost = 4
-    fuel_consumption = 0.12
-    resources = {
-      aluminium = 2
-      steel = 1
-      chromium = 1
-    }
+    lend_lease_cost = 1
+    fuel_consumption = 0.08
+    year = 2519
+    active = no
+    is_buildable = no
+    picture = archetype_wet_rr_warpstone_weaponry
+    group_by = archetype
     can_be_produced = {
-      has_idea = wet_race_skaven
       NOT = {
         has_idea = wet_deathless_hosts
       }
+      OR = {
+        has_idea = wet_race_skaven
+      }
+    }
+    reliability = 0.6
+    soft_attack = 7.2
+    ap_attack = 4.8
+    build_cost_ic = 0.625
+    resources = {
+      steel = 1
+      aluminium = 1
+      chromium = 1
     }
   }
   wet_rr_warpstone_weaponry_1 = {
     archetype = wet_rr_warpstone_weaponry
     active = no
-    priority = 50
-    visual_level = 0
     year = 2519
+    priority = 2500
+    visual_level = 0
+    air_attack = 0
+    ap_attack = 4.8
+    armor_value = 0
+    breakthrough = 3
+    build_cost_ic = 0.625
+    defense = 22
+    fuel_consumption = 0.08
+    hard_attack = 1
+    hardness = 0
+    lend_lease_cost = 1
+    maximum_speed = 4
+    reliability = 0.6
+    soft_attack = 7.2
+    resources = {
+      oil = 0
+      aluminium = 1
+      steel = 1
+      rubber = 0
+      tungsten = 0
+      chromium = 1
+      coal = 0
+    }
     can_be_produced = {
-      has_idea = wet_race_skaven
       NOT = {
         has_idea = wet_deathless_hosts
+      }
+      OR = {
+        has_idea = wet_race_skaven
+      }
+    }
+  }
+  wet_rr_warpstone_weaponry_2 = {
+    archetype = wet_rr_warpstone_weaponry
+    active = no
+    year = 2521
+    priority = 2501
+    visual_level = 1
+    parent = wet_rr_warpstone_weaponry_1
+    air_attack = 0
+    ap_attack = 5.4
+    armor_value = 0
+    breakthrough = 3.5
+    build_cost_ic = 0.675
+    defense = 25
+    fuel_consumption = 0.08
+    hard_attack = 1.25
+    hardness = 0
+    lend_lease_cost = 1
+    maximum_speed = 4
+    reliability = 0.6
+    soft_attack = 9
+    resources = {
+      oil = 0
+      aluminium = 1
+      steel = 1
+      rubber = 0
+      tungsten = 0
+      chromium = 1
+      coal = 0
+    }
+    can_be_produced = {
+      NOT = {
+        has_idea = wet_deathless_hosts
+      }
+      OR = {
+        has_idea = wet_race_skaven
+      }
+    }
+  }
+  wet_rr_warpstone_weaponry_3 = {
+    archetype = wet_rr_warpstone_weaponry
+    active = no
+    year = 2524
+    priority = 2502
+    visual_level = 2
+    parent = wet_rr_warpstone_weaponry_2
+    air_attack = 0
+    ap_attack = 6
+    armor_value = 0
+    breakthrough = 4
+    build_cost_ic = 0.725
+    defense = 28
+    fuel_consumption = 0.08
+    hard_attack = 1.5
+    hardness = 0
+    lend_lease_cost = 1
+    maximum_speed = 4
+    reliability = 0.6
+    soft_attack = 10.8
+    resources = {
+      oil = 0
+      aluminium = 1
+      steel = 1
+      rubber = 0
+      tungsten = 0
+      chromium = 1
+      coal = 0
+    }
+    can_be_produced = {
+      NOT = {
+        has_idea = wet_deathless_hosts
+      }
+      OR = {
+        has_idea = wet_race_skaven
+      }
+    }
+  }
+  wet_rr_warpstone_weaponry_4 = {
+    archetype = wet_rr_warpstone_weaponry
+    active = no
+    year = 2527
+    priority = 2503
+    visual_level = 2
+    parent = wet_rr_warpstone_weaponry_3
+    air_attack = 0
+    ap_attack = 12
+    armor_value = 0
+    breakthrough = 5
+    build_cost_ic = 0.8625
+    defense = 34
+    fuel_consumption = 0.08
+    hard_attack = 2
+    hardness = 0
+    lend_lease_cost = 1
+    maximum_speed = 4
+    reliability = 0.6
+    soft_attack = 14.4
+    resources = {
+      oil = 0
+      aluminium = 1
+      steel = 1
+      rubber = 0
+      tungsten = 0
+      chromium = 1
+      coal = 0
+    }
+    can_be_produced = {
+      NOT = {
+        has_idea = wet_deathless_hosts
+      }
+      OR = {
+        has_idea = wet_race_skaven
       }
     }
   }

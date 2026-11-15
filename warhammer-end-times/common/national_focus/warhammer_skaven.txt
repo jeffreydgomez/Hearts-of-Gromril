@@ -980,11 +980,9 @@ focus_tree = {
       focus = WET_SKV_W01
     }
     available = {
-      has_completed_focus = WET_SKV_W03
-      has_war = no
-      custom_trigger_tooltip = {
-        tooltip = WET_SKV_W04_requirements
-        wet_skv_tilea_settled = yes
+      OR = {
+        is_ai = no
+        has_war = no
       }
     }
     cancel_if_invalid = no
@@ -1007,6 +1005,10 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 80
+      modifier = {
+        factor = 0
+        has_war = yes
+      }
       modifier = {
         factor = 0.05
         has_war = yes

@@ -364,6 +364,36 @@ Original prompts, cached PNGs and recorded hashes are retained in the local deve
 | Undead | undead.png | Prompt / provenance |
 | Wood Elf | wood_elf.png | Prompt / provenance |
 | Yhetee | yhetee.png | Prompt / provenance |
+| Asrai Bow | asrai_bow.png | Prompt / provenance |
+| Bear Cavalry | bear_cavalry.png | Prompt / provenance |
+| Beasts Of Nurgle | beasts_of_nurgle.png | Prompt / provenance |
+| Blood Knight Orders | blood_knight_orders.png | Prompt / provenance |
+| Bloodthirsters | bloodthirsters.png | Prompt / provenance |
+| Brayhorn | brayhorn.png | Prompt / provenance |
+| Cathayan Harmony | cathayan_harmony.png | Prompt / provenance |
+| Chaos Dwarf Musters | chaos_dwarf_musters.png | Prompt / provenance |
+| Cold Blooded Cohorts | cold_blooded_cohorts.png | Prompt / provenance |
+| Doomwheels | doomwheels.png | Prompt / provenance |
+| Greenskin Command | greenskin_command.png | Prompt / provenance |
+| Grove Wards | grove_wards.png | Prompt / provenance |
+| Herd Cleavers | herd_cleavers.png | Prompt / provenance |
+| Ice Wards | ice_wards.png | Prompt / provenance |
+| Keepers Of Secrets | keepers_of_secrets.png | Prompt / provenance |
+| Mortuary Rites | mortuary_rites.png | Prompt / provenance |
+| Night Warfare | night_warfare.png | Prompt / provenance |
+| Ogre Club | ogre_club.png | Prompt / provenance |
+| Ogre Gutplate | ogre_gutplate.png | Prompt / provenance |
+| Phoenixes | phoenixes.png | Prompt / provenance |
+| Pink Horrors | pink_horrors.png | Prompt / provenance |
+| Repeater Crossbow | repeater_crossbow.png | Prompt / provenance |
+| Rune Armor | rune_armor.png | Prompt / provenance |
+| Rune Weapons | rune_weapons.png | Prompt / provenance |
+| Steam Tanks | steam_tanks.png | Prompt / provenance |
+| Terracotta Sentinels | terracotta_sentinels.png | Prompt / provenance |
+| Treemen | treemen.png | Prompt / provenance |
+| Undead Beasts | undead_beasts.png | Prompt / provenance |
+| Ushabti | ushabti.png | Prompt / provenance |
+| Warpstone Weaponry | warpstone_weaponry.png | Prompt / provenance |
 | Amphibious Beast | amphibious_beast.png | Prompt / provenance |
 | Anti Flyer | anti_flyer.png | Prompt / provenance |
 | Arcana | arcana.png | Prompt / provenance |
@@ -438,6 +468,8 @@ Original prompts, cached PNGs and recorded hashes are retained in the local deve
 - **Games Workshop / Black Library and the cited authors:** the named-character loading quotations. The complete publication, page and transcription-source bibliography is in loading credits and quote manifest. William King and C. L. Werner are among the explicitly credited novel authors.
 - **Lexicanum contributors:** the cited loading-quote transcription/reference pages, including the individual publication citations retained in the loading bibliography.
 - **Warhammer Wiki contributors:** End Times chronology and supporting lore. End Times lore reference retains its specific sources, adaptation notes and document-specific reuse terms.
+- **Racial research icons:** eleven equipment illustrations and nineteen specialist bonus icons were generated with **OpenAI image generation (image_gen)**. Other bonus branches reuse the credited fantasy equipment illustrations. Research tabs retain generated racial emblems and the credited source-mod Nehekharan/Vampiric faith emblems inside the native two-state frame by **Paradox Interactive / Paradox Development Studio**. Generated sources and exact prompts and complete sprite assignments are retained in the development archive.
+- **Generic companies and organizations:** the universal fantasy workshops use existing HOI4 generic company and military-industrial organization emblems by **Paradox Interactive / Paradox Development Studio**, referenced directly as placeholder symbols without copying or editing their artwork.
 - **National focus icons:** the compact focus-tree presentation uses existing Hearts of Iron IV artwork by **Paradox Interactive / Paradox Development Studio**, referenced directly without new or modified bitmaps. Individual icon assignments and selection reasons covers all ten national trees; their implementation registers preserve the native texture paths and hashes.
 - **Ulthuan succession:** existing portraits are reused for the new roles. Tyrion temporarily uses Tony Sart’s Imrik painting; Aliathra uses the existing Alarielle painting; the council uses the existing Finubar painting. Malekith’s shared crown office uses his existing portrait without duplicating his commander. Assignments, original creator/source links and hashes records these stand-ins. Native focus icons remain Paradox Interactive assets.
 - **Skavenblight:** Ikit Claw and Zingetail reuse the existing Skryre portrait; Thanquol and the engineering delegate reuse the Council portrait; the fleshcrafter uses Moulder, and the emergency southern councils use their existing national portraits. These are documented stand-ins; no new artwork was imported. Assignments and original source links records the reused assets. Focus and Special Project icons remain native Paradox Interactive assets. Stormfiend equipment reuses existing AI-generated Small Monsters art as a temporary stand-in; sprite bindings records the assignments.

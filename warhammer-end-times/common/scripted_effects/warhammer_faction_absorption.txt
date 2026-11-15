@@ -1,0 +1,19 @@
+wet_faction_absorption_complete = {
+ if = {
+  limit = { wet_faction_absorption_target = yes }
+  log = "WET_FACTION_ABSORPTION leader=[ROOT.GetTag] member=[THIS.GetTag]"
+  # No event target: diplomacy has no enclosing local event context.
+  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+ }
+}
+wet_ai_faction_absorption = {
+ # Cheap per-country gates before the neighbor scan. One recipient per daily
+ # tick bounds annexation work and discovers newly adjacent members next day.
+ if = {
+  limit = { is_ai = yes is_faction_leader = yes NOT = { threat < 1 } }
+  random_neighbor_country = {
+   limit = { wet_faction_absorption_target = yes }
+   wet_faction_absorption_complete = yes
+  }
+ }
+}
