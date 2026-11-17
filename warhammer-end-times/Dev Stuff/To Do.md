@@ -18,6 +18,16 @@
 
 	Nehekhara should have chariots
 
+	Integrate/use parts of HOI4 performance improvement mods.
+
+	Black crag is declaring war on tons of people - why?
+
+	Something with compliance and resistance? Non-core manpower?
+
+	Once the empire is under reikland, and world tension is at 100% or at war with the everchosen, then fully annex the empire or give them big bonuses?
+
+	Valkia the bloody should be right next to naggaroth and imposing, and attack Naggaroth.
+
 #### LESS URGENT TO DO ####
 
 	Pictures for events

@@ -723,6 +723,14 @@ focus_tree = {
         tooltip = wet_nag_patronage_focus_requirement_tt
         wet_nag_patronage = yes
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -741,6 +749,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -1314,6 +1328,17 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      472 = {
+        is_fully_controlled_by = ROOT
+      }
+      470 = {
+        is_fully_controlled_by = ROOT
+      }
+      587 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       add_fuel = 5000
       472 = {
@@ -1337,7 +1362,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -1363,7 +1387,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W01
@@ -1486,7 +1509,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -1504,7 +1526,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W03
@@ -4023,6 +4044,14 @@ focus_tree = {
           has_offensive_war_with = H06
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -4056,6 +4085,12 @@ focus_tree = {
           wet_ult_cooperation_window = yes
           has_country_flag = wet_ult_strong_dossier
         }
+      }
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
       }
     }
     search_filters = {
@@ -5905,6 +5940,14 @@ focus_tree = {
       has_political_power
       >
       24
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5925,6 +5968,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5956,9 +6005,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -5981,6 +6046,14 @@ focus_tree = {
         H06 = {
           wet_nag_asur_government = yes
           has_country_flag = wet_nag_talks_accepted
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -6013,6 +6086,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6039,6 +6118,14 @@ focus_tree = {
           has_country_flag = wet_nag_security_terms_accepted
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -6057,6 +6144,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6155,6 +6248,14 @@ focus_tree = {
       has_political_power
       >
       49
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -6175,6 +6276,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6369,6 +6476,14 @@ focus_tree = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -6387,6 +6502,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6466,6 +6587,14 @@ focus_tree = {
           has_country_flag = wet_nag_constitution_council_accepted
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -6486,6 +6615,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6521,6 +6656,14 @@ focus_tree = {
           has_country_flag = wet_nag_constitution_malekith_accepted
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -6543,6 +6686,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -6645,6 +6794,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      585 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       585 = {
         add_building_construction = {
@@ -6653,7 +6807,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -6664,7 +6817,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N01
@@ -6690,6 +6842,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      924 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       924 = {
         add_building_construction = {
@@ -6698,7 +6855,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -6709,7 +6865,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N02
@@ -6776,6 +6931,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      576 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       576 = {
         add_building_construction = {
@@ -6784,7 +6944,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -6795,7 +6954,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N04
@@ -7279,6 +7437,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      585 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       add_ideas = wet_nag_n17
       add_fuel = 10000
@@ -7289,7 +7452,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -7302,7 +7464,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N17

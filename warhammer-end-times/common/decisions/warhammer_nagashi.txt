@@ -3649,7 +3649,7 @@ wet_ngs_diplomacy = {
             set_country_flag = wet_ngs_renunciation_ready
           }
           else = {
-            
+
           }
         }
       }
@@ -4143,6 +4143,14 @@ wet_ngs_diplomacy = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -4235,6 +4243,12 @@ wet_ngs_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_ngs_joint_rats = {
@@ -4271,6 +4285,14 @@ wet_ngs_diplomacy = {
             wet_ngs_pact_live = yes
             has_country_flag = wet_ngs_pact_rats
           }
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -4359,6 +4381,12 @@ wet_ngs_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
 }
@@ -7371,50 +7399,6 @@ wet_ngs_recovery = {
             wet_ngs_six_agents = yes
           }
           wet_ngs_award_M20 = yes
-        }
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_ngs_recover_M21 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = U24
-    }
-    visible = {
-      has_country_flag = wet_ngs_earned_M21
-      NOT = {
-        has_country_flag = wet_ngs_reward_M21
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      has_completed_focus = WET_NGS_M19
-      AND = {
-        has_country_flag = wet_ngs_earned_M21
-        NOT = {
-          has_country_flag = wet_ngs_reward_M21
-        }
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_M21_special_tt
-      }
-      hidden_effect = {
-        if = {
-          limit = {
-            has_country_flag = wet_ngs_earned_M21
-            NOT = {
-              has_country_flag = wet_ngs_reward_M21
-            }
-            has_completed_focus = WET_NGS_M19
-          }
-          wet_ngs_award_M21 = yes
         }
       }
     }

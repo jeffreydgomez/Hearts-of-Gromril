@@ -1,5 +1,9 @@
 # Warhammer: The End Times — Project Instructions
 
+For focus trees already implemented in the game, work directly on the maintained
+source and native mod files. Do not inspect, open, edit or synchronize tldraw
+unless the user explicitly asks for board work. Draft new trees in tldraw only.
+
 The user moved development materials out of the public mod on November 13, 2026.
 On Jeff's workspace, read and follow:
 

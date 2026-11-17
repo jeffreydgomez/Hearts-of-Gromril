@@ -5,6 +5,8 @@ scripted_diplomatic_actions = {
   selectable = {
    custom_trigger_tooltip = { tooltip = wet_faction_absorption_tension_tt NOT = { threat < 1 } }
    custom_trigger_tooltip = { tooltip = wet_faction_absorption_wars_tt wet_faction_absorption_same_wars = yes NOT = { has_war_with = ROOT } }
+   custom_trigger_tooltip = { tooltip = wet_faction_absorption_continent_tt wet_faction_absorption_same_continent = yes }
+   custom_trigger_tooltip = { tooltip = wet_faction_absorption_cooldown_tt ROOT = { wet_faction_absorption_ready = yes } }
   }
   can_be_sent = { wet_faction_absorption_target = yes }
   requires_acceptance = no
@@ -18,7 +20,7 @@ scripted_diplomatic_actions = {
    custom_effect_tooltip = wet_faction_absorption_effect_tt
    hidden_effect = { wet_faction_absorption_complete = yes }
   }
-  # A guaranteed daily neighbor pass owns AI timing. This avoids a second
+  # The daily cooldown-aware neighbor pass owns AI timing. This avoids a second
   # global diplomatic target search and duplicate AI submissions.
   ai_desire = { base = 0 }
  }

@@ -16,9 +16,18 @@ wet_faction_absorption_same_wars = {
   NOT = { any_enemy_country = { NOT = { has_war_with = PREV.PREV } } }
  }
 }
+wet_faction_absorption_same_continent = {
+ # Native COUNTRY comparison uses each country's current capital state.
+ is_on_same_continent_as = ROOT
+}
+wet_faction_absorption_ready = {
+ check_variable = { wet_faction_absorption_cooldown < 1 }
+}
 wet_faction_absorption_target = {
  wet_faction_absorption_member = yes
  NOT = { threat < 1 }
  NOT = { has_war_with = ROOT }
  wet_faction_absorption_same_wars = yes
+ wet_faction_absorption_same_continent = yes
+ ROOT = { wet_faction_absorption_ready = yes }
 }

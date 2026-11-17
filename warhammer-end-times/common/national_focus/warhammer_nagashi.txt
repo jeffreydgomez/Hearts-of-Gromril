@@ -66,6 +66,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      208 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       208 = {
         add_building_construction = {
@@ -74,7 +79,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -85,7 +89,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H01
@@ -111,6 +114,14 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      208 = {
+        is_fully_controlled_by = ROOT
+      }
+      220 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       208 = {
         add_building_construction = {
@@ -126,7 +137,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -144,7 +154,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H02
@@ -236,6 +245,11 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      220 = {
+        is_fully_controlled_by = ROOT
+      }
+    }
     complete_tooltip = {
       add_equipment_to_stockpile = {
         type = motorized_equipment
@@ -248,7 +262,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -263,7 +276,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H05
@@ -614,8 +626,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_A13 = yes
         NOT = {
-          exists = A13
+          A13 = {
+            exists = yes
+          }
         }
         A13 = {
           NOT = {
@@ -715,8 +730,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_B16 = yes
         NOT = {
-          exists = B16
+          B16 = {
+            exists = yes
+          }
         }
         B16 = {
           NOT = {
@@ -806,8 +824,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_A20 = yes
         NOT = {
-          exists = A20
+          A20 = {
+            exists = yes
+          }
         }
         A20 = {
           NOT = {
@@ -897,8 +918,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_A68 = yes
         NOT = {
-          exists = A68
+          A68 = {
+            exists = yes
+          }
         }
         A68 = {
           NOT = {
@@ -988,8 +1012,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_B27 = yes
         NOT = {
-          exists = B27
+          B27 = {
+            exists = yes
+          }
         }
         B27 = {
           NOT = {
@@ -1079,8 +1106,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_V01 = yes
         NOT = {
-          exists = V01
+          V01 = {
+            exists = yes
+          }
         }
         V01 = {
           NOT = {
@@ -1170,8 +1200,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_U18 = yes
         NOT = {
-          exists = U18
+          U18 = {
+            exists = yes
+          }
         }
         U18 = {
           NOT = {
@@ -1261,8 +1294,11 @@ focus_tree = {
     }
     bypass = {
       OR = {
+        wet_ngs_agent_A74 = yes
         NOT = {
-          exists = A74
+          A74 = {
+            exists = yes
+          }
         }
         A74 = {
           NOT = {
@@ -1442,37 +1478,6 @@ focus_tree = {
       hidden_effect = {
         set_country_flag = wet_ngs_earned_M20
         wet_ngs_award_M20 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 15
-    }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
-  }
-  focus = {
-    id = WET_NGS_M21
-    icon = GFX_focus_generic_government_in_exile
-    x = 16
-    y = 4
-    cost = 3
-    prerequisite = {
-      focus = WET_NGS_M19
-    }
-    cancel_if_invalid = no
-    continue_if_invalid = yes
-    available_if_capitulated = no
-    complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_M21_special_tt
-    }
-    completion_reward = {
-      effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_M21_special_tt
-      }
-      hidden_effect = {
-        set_country_flag = wet_ngs_earned_M21
-        wet_ngs_award_M21 = yes
       }
     }
     ai_will_do = {
@@ -4084,7 +4089,6 @@ focus_tree = {
           instant_build = yes
         }
       }
-      custom_effect_tooltip = wet_focus_deferred_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -4103,7 +4107,6 @@ focus_tree = {
             instant_build = yes
           }
         }
-        custom_effect_tooltip = wet_focus_deferred_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_N02
@@ -5349,6 +5352,14 @@ focus_tree = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5367,6 +5378,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5396,6 +5413,14 @@ focus_tree = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5414,6 +5439,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5446,6 +5477,14 @@ focus_tree = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5464,6 +5503,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5524,6 +5569,14 @@ focus_tree = {
           has_country_flag = wet_ngs_pact_living
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5542,6 +5595,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5573,9 +5632,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -5598,6 +5673,14 @@ focus_tree = {
           has_country_flag = wet_ngs_policy_chaos
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5618,6 +5701,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5638,6 +5727,14 @@ focus_tree = {
         any_country = {
           wet_ngs_pact_live = yes
           has_country_flag = wet_ngs_pact_rats
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -5668,6 +5765,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5699,9 +5802,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -5717,6 +5836,14 @@ focus_tree = {
       custom_trigger_tooltip = {
         tooltip = wet_ngs_restored_focus_requirement_tt
         wet_ngs_restored = yes
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
       }
     }
     cancel_if_invalid = no
@@ -5738,6 +5865,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5760,6 +5893,14 @@ focus_tree = {
           has_country_flag = wet_ngs_pact_chaos
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5778,6 +5919,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -5809,9 +5956,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -5835,6 +5998,14 @@ focus_tree = {
           has_country_flag = wet_ngs_pact_chaos
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -5853,6 +6024,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 15
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL

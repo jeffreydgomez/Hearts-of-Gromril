@@ -355,6 +355,11 @@ focus_tree = {
         wet_arc_progress_naggaroth = yes
         wet_arc_holds_naggarond = yes
       }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+        is_coastal = yes
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -1050,6 +1055,11 @@ focus_tree = {
         tooltip = WET_ARC_REQUIRE_KU18
         wet_arc_ulthuan_all = yes
       }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+        is_coastal = yes
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -1155,6 +1165,10 @@ focus_tree = {
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_KO04
         wet_arc_kislev_fallen = yes
+      }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
       }
     }
     cancel_if_invalid = no
@@ -1362,6 +1376,10 @@ focus_tree = {
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_KO26
         wet_arc_progress_old_world = yes
+      }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
       }
     }
     cancel_if_invalid = no
@@ -1608,6 +1626,10 @@ focus_tree = {
         wet_arc_progress_darklands = yes
         wet_arc_holds_zharr = yes
       }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -1744,6 +1766,10 @@ focus_tree = {
         tooltip = WET_ARC_REQUIRE_KM01
         wet_arc_contact_mourn = yes
       }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -1814,6 +1840,12 @@ focus_tree = {
               wet_arc_owns_mourn = yes
               NOT = {
                 tag = I01
+              }
+              I01 = {
+                OR = {
+                  is_ai = no
+                  is_neighbor_of = PREV
+                }
               }
             }
             I01 = {
@@ -1962,6 +1994,10 @@ focus_tree = {
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_KM16
         wet_arc_progress_mourn = yes
+      }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
       }
     }
     cancel_if_invalid = no
@@ -2277,6 +2313,10 @@ focus_tree = {
         tooltip = WET_ARC_REQUIRE_KC18
         wet_arc_progress_cathay = yes
         wet_arc_holds_weijin = yes
+      }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
       }
     }
     cancel_if_invalid = no
@@ -3073,6 +3113,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_equipment_to_stockpile = {
         type = support_equipment
@@ -3286,6 +3332,13 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+        is_coastal = yes
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_K15_construction_0_tt
       custom_effect_tooltip = WET_ARC_K15_construction_1_tt
@@ -3326,6 +3379,13 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+        is_coastal = yes
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -4038,6 +4098,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -4920,6 +4986,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       air_experience = 25
       add_tech_bonus = {
@@ -5214,6 +5286,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -5266,6 +5344,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_T34_construction_0_tt
       custom_effect_tooltip = WET_ARC_T34_construction_1_tt
@@ -5995,6 +6079,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_N08_construction_0_tt
     }
@@ -6029,6 +6119,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -6081,6 +6177,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -6133,6 +6235,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -6185,6 +6293,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -6240,6 +6354,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_N10_construction_0_tt
     }
@@ -6274,6 +6394,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_tech_bonus = {
         name = wet_arc_research_bonus
@@ -6406,6 +6532,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_N16_construction_0_tt
     }
@@ -6440,6 +6572,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       custom_effect_tooltip = WET_ARC_N17_construction_0_tt
     }
@@ -6529,6 +6667,12 @@ focus_tree = {
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
+    available = {
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
+    }
     complete_tooltip = {
       add_timed_idea = {
         idea = wet_arc_fields_behind_front
@@ -8566,6 +8710,10 @@ focus_tree = {
           exists = yes
         }
       }
+      any_owned_state = {
+        is_fully_controlled_by = ROOT
+        impassable = no
+      }
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -8708,9 +8856,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -8776,9 +8940,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -8865,9 +9045,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -8933,9 +9129,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9001,9 +9213,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9063,9 +9291,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9134,6 +9378,22 @@ focus_tree = {
         factor = 0.05
         has_war = yes
       }
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9200,9 +9460,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9268,9 +9544,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9290,6 +9582,14 @@ focus_tree = {
         tooltip = WET_ARC_REQUIRE_S35
         always = yes
         has_country_flag = wet_arc_waaagh_dispute
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
       }
     }
     cancel_if_invalid = no
@@ -9333,6 +9633,12 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
@@ -9449,9 +9755,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
   focus = {
@@ -9681,9 +10003,25 @@ focus_tree = {
     }
     ai_will_do = {
       factor = 10
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+    }
+    available = {
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
   }
 }

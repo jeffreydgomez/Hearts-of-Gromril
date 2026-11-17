@@ -207,23 +207,11 @@ wet_ngs_send_covenant = {
         <
         1
       }
-      OR = {
-        NOT = {
-          has_country_flag = wet_ngs_offer_covenant_attempted
-        }
-        U24 = {
-          has_political_power
-          >
-          -1
-        }
+      NOT = {
+        has_country_flag = wet_ngs_offer_covenant_accepted
       }
-    }
-    if = {
-      limit = {
+      NOT = {
         has_country_flag = wet_ngs_offer_covenant_attempted
-      }
-      U24 = {
-        add_political_power = -0
       }
     }
     set_country_flag = wet_ngs_offer_covenant_attempted
@@ -247,69 +235,6 @@ wet_ngs_send_covenant = {
     }
     country_event = {
       id = wet_nagashi.100
-    }
-  }
-}
-wet_ngs_send_reconciliation = {
-  if = {
-    limit = {
-      wet_ngs_court_eligible = yes
-      wet_ngs_named_agent_present = yes
-      has_country_flag = wet_ngs_withdrawn
-      NOT = {
-        has_country_flag = wet_ngs_pledged
-      }
-      U24 = {
-        has_completed_focus = WET_NGS_M21
-      }
-      NOT = {
-        has_country_flag = wet_ngs_offer_reconciliation
-      }
-      check_variable = {
-        wet_ngs_offer_reconciliation_cooldown
-        <
-        1
-      }
-      OR = {
-        NOT = {
-          has_country_flag = wet_ngs_offer_reconciliation_attempted
-        }
-        U24 = {
-          has_political_power
-          >
-          -1
-        }
-      }
-    }
-    if = {
-      limit = {
-        has_country_flag = wet_ngs_offer_reconciliation_attempted
-      }
-      U24 = {
-        add_political_power = -0
-      }
-    }
-    set_country_flag = wet_ngs_offer_reconciliation_attempted
-    set_country_flag = wet_ngs_offer_reconciliation
-    set_variable = {
-      wet_ngs_offer_reconciliation_days = 30
-    }
-    U24 = {
-      if = {
-        limit = {
-          NOT = {
-            is_in_array = {
-              wet_ngs_active_recipients = PREV
-            }
-          }
-        }
-        add_to_array = {
-          wet_ngs_active_recipients = PREV
-        }
-      }
-    }
-    country_event = {
-      id = wet_nagashi.101
     }
   }
 }
@@ -1331,7 +1256,7 @@ wet_ngs_take_volkmar = {
             ideology = wet_order_cult_of_sigmar
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -1478,7 +1403,7 @@ wet_ngs_take_morgiana = {
             ideology = wet_order_lady_of_the_lake
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -1734,7 +1659,7 @@ wet_ngs_take_emil = {
             ideology = wet_order_cult_of_ulric_religion
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -1870,7 +1795,7 @@ wet_ngs_take_alarielle = {
             ideology = wet_order_cadai
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -1891,7 +1816,7 @@ wet_ngs_take_alarielle = {
             ideology = wet_unaligned_asrai_cadai
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -1912,7 +1837,7 @@ wet_ngs_take_alarielle = {
             ideology = wet_unaligned_cadai
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -2056,7 +1981,7 @@ wet_ngs_take_mazdamundi = {
             ideology = wet_order_old_ones
             expire = "2902.1.31.1"
             traits = {
-              
+
             }
           }
         }
@@ -2559,7 +2484,7 @@ wet_ngs_resurrect = {
           ideology = wet_undead_nagash_worship
           expire = "2902.1.31.1"
           traits = {
-            
+
           }
         }
       }
@@ -2706,6 +2631,12 @@ wet_ngs_issue_goal_H03 = {
         >
         0
       }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
+      }
     }
     U24 = {
       create_wargoal = {
@@ -2774,6 +2705,12 @@ wet_ngs_issue_goal_H06 = {
         wet_ngs_goal_states^num
         >
         0
+      }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
       }
     }
     U24 = {
@@ -2858,6 +2795,12 @@ wet_ngs_issue_goal_H08 = {
         wet_ngs_goal_states^num
         >
         0
+      }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
       }
     }
     U24 = {
@@ -3438,6 +3381,12 @@ wet_ngs_issue_goal_N00 = {
         >
         0
       }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
+      }
     }
     U24 = {
       create_wargoal = {
@@ -3506,6 +3455,12 @@ wet_ngs_issue_goal_N01 = {
         wet_ngs_goal_states^num
         >
         0
+      }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
       }
     }
     U24 = {
@@ -3660,6 +3615,12 @@ wet_ngs_issue_goal_N07 = {
         >
         0
       }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
+      }
     }
     U24 = {
       create_wargoal = {
@@ -3728,6 +3689,12 @@ wet_ngs_issue_goal_N08 = {
         wet_ngs_goal_states^num
         >
         0
+      }
+      U24 = {
+        OR = {
+          is_ai = no
+          is_neighbor_of = PREV
+        }
       }
     }
     U24 = {
@@ -24331,58 +24298,14 @@ wet_ngs_tick_recipient = {
   }
   if = {
     limit = {
-      check_variable = {
-        wet_ngs_offer_reconciliation_cooldown
-        >
-        0
-      }
-    }
-    subtract_from_variable = {
-      wet_ngs_offer_reconciliation_cooldown = 1
-    }
-  }
-  if = {
-    limit = {
       has_country_flag = wet_ngs_offer_reconciliation
     }
-    subtract_from_variable = {
-      wet_ngs_offer_reconciliation_days = 1
+    clr_country_flag = wet_ngs_offer_reconciliation
+    set_variable = {
+      wet_ngs_offer_reconciliation_days = 0
     }
-    if = {
-      limit = {
-        OR = {
-          check_variable = {
-            wet_ngs_offer_reconciliation_days
-            <
-            1
-          }
-          NOT = {
-            AND = {
-              wet_ngs_court_eligible = yes
-              wet_ngs_named_agent_present = yes
-              has_country_flag = wet_ngs_withdrawn
-              NOT = {
-                has_country_flag = wet_ngs_pledged
-              }
-              U24 = {
-                has_completed_focus = WET_NGS_M21
-              }
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_reconciliation
-        }
-        clr_country_flag = wet_ngs_offer_reconciliation
-        set_variable = {
-          wet_ngs_offer_reconciliation_days = 0
-        }
-        set_variable = {
-          wet_ngs_offer_reconciliation_cooldown = 180
-        }
-      }
+    set_variable = {
+      wet_ngs_offer_reconciliation_cooldown = 0
     }
   }
   if = {
@@ -26117,12 +26040,6 @@ wet_ngs_daily = {
                 >
                 0
               }
-              has_country_flag = wet_ngs_offer_reconciliation
-              check_variable = {
-                wet_ngs_offer_reconciliation_cooldown
-                >
-                0
-              }
               has_country_flag = wet_ngs_offer_research_exchange
               check_variable = {
                 wet_ngs_offer_research_exchange_cooldown
@@ -26822,39 +26739,15 @@ wet_ngs_monthly = {
     A13 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_A13 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_A13 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_A13 = yes
+              }
             }
           }
         }
@@ -26872,39 +26765,15 @@ wet_ngs_monthly = {
     B16 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_B16 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_B16 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_B16 = yes
+              }
             }
           }
         }
@@ -26922,39 +26791,15 @@ wet_ngs_monthly = {
     A20 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_A20 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_A20 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_A20 = yes
+              }
             }
           }
         }
@@ -26972,39 +26817,15 @@ wet_ngs_monthly = {
     A68 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_A68 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_A68 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_A68 = yes
+              }
             }
           }
         }
@@ -27022,39 +26843,15 @@ wet_ngs_monthly = {
     B27 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_B27 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_B27 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_B27 = yes
+              }
             }
           }
         }
@@ -27072,39 +26869,15 @@ wet_ngs_monthly = {
     V01 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_V01 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_V01 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_V01 = yes
+              }
             }
           }
         }
@@ -27122,39 +26895,15 @@ wet_ngs_monthly = {
     U18 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_U18 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_U18 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_U18 = yes
+              }
             }
           }
         }
@@ -27172,39 +26921,15 @@ wet_ngs_monthly = {
     A74 = {
       if = {
         limit = {
-          check_variable = {
-            wet_ngs_raise_months
-            >
-            0
-          }
-        }
-        subtract_from_variable = {
-          wet_ngs_raise_months = 1
-        }
-        if = {
-          limit = {
-            U24 = {
-              wet_ngs_agent_A74 = yes
-            }
-          }
-          for_each_scope_loop = {
-            array = wet_ngs_raise_states
-            if = {
-              limit = {
-                is_owned_by = PREV
-                is_fully_controlled_by = PREV
-                impassable = no
-              }
-              add_manpower = var:wet_ngs_raise_amount
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
           NOT = {
-            U24 = {
-              wet_ngs_agent_A74 = yes
+            AND = {
+              has_country_flag = wet_ngs_pledged
+              NOT = {
+                has_country_flag = wet_ngs_withdrawn
+              }
+              U24 = {
+                wet_ngs_agent_A74 = yes
+              }
             }
           }
         }
@@ -28559,7 +28284,7 @@ wet_focus_actions_nagashi = {
             set_country_flag = wet_ngs_restoration_without_dlc_done
           }
           else = {
-            
+
           }
         }
       }
@@ -29486,100 +29211,6 @@ wet_ngs_award_M20 = {
             }
             event_target:wet_focus_recipient = {
               wet_ngs_send_research_exchange = yes
-            }
-          }
-        }
-      }
-    }
-    wet_ngs_reconcile_benefits = yes
-  }
-}
-wet_ngs_award_M21 = {
-  if = {
-    limit = {
-      tag = U24
-      has_country_flag = wet_ngs_earned_M21
-      NOT = {
-        has_country_flag = wet_ngs_reward_M21
-      }
-      has_completed_focus = WET_NGS_M19
-    }
-    set_country_flag = wet_ngs_reward_M21
-    set_country_flag = wet_ngs_reconciliation
-    every_other_country = {
-      limit = {
-        wet_ngs_court_country = yes
-        has_country_flag = wet_ngs_withdrawn
-      }
-      save_event_target_as = wet_focus_recipient
-      U24 = {
-        if = {
-          limit = {
-            has_completed_focus = WET_NGS_M21
-            event_target:wet_focus_recipient = {
-              wet_ngs_court_eligible = yes
-              wet_ngs_named_agent_present = yes
-              has_country_flag = wet_ngs_withdrawn
-              NOT = {
-                has_country_flag = wet_ngs_pledged
-              }
-              U24 = {
-                has_completed_focus = WET_NGS_M21
-              }
-              NOT = {
-                has_country_flag = wet_ngs_offer_reconciliation
-              }
-              check_variable = {
-                wet_ngs_offer_reconciliation_cooldown
-                <
-                1
-              }
-              OR = {
-                NOT = {
-                  has_country_flag = wet_ngs_offer_reconciliation_attempted
-                }
-                U24 = {
-                  has_political_power
-                  >
-                  -1
-                }
-              }
-            }
-          }
-          if = {
-            limit = {
-              event_target:wet_focus_recipient = {
-                wet_ngs_court_eligible = yes
-                wet_ngs_named_agent_present = yes
-                has_country_flag = wet_ngs_withdrawn
-                NOT = {
-                  has_country_flag = wet_ngs_pledged
-                }
-                U24 = {
-                  has_completed_focus = WET_NGS_M21
-                }
-                NOT = {
-                  has_country_flag = wet_ngs_offer_reconciliation
-                }
-                check_variable = {
-                  wet_ngs_offer_reconciliation_cooldown
-                  <
-                  1
-                }
-                OR = {
-                  NOT = {
-                    has_country_flag = wet_ngs_offer_reconciliation_attempted
-                  }
-                  U24 = {
-                    has_political_power
-                    >
-                    -1
-                  }
-                }
-              }
-            }
-            event_target:wet_focus_recipient = {
-              wet_ngs_send_reconciliation = yes
             }
           }
         }
@@ -30644,7 +30275,7 @@ wet_ngs_award_R02 = {
     add_corps_commander_role = {
       character = WET_Z02_leader
       traits = {
-        
+
       }
       skill = 4
       attack_skill = 3

@@ -421,7 +421,7 @@ wet_nag_court = {
   }
 }
 wet_nag_campaigns = {
-  
+
 }
 wet_nag_diplomacy = {
   wet_nag_constitution_council = {
@@ -486,6 +486,14 @@ wet_nag_diplomacy = {
               24
             }
           }
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -562,6 +570,12 @@ wet_nag_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_nag_constitution_malekith = {
@@ -632,6 +646,14 @@ wet_nag_diplomacy = {
               24
             }
           }
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -714,6 +736,12 @@ wet_nag_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_nag_renounce_compact = {

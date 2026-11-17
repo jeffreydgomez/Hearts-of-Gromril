@@ -48,11 +48,6 @@ country_event = {
       U24 = {
         exists = yes
       }
-      U24 = {
-        has_political_power
-        >
-        24
-      }
     }
     effect_tooltip = {
       if = {
@@ -68,15 +63,6 @@ country_event = {
         }
       }
       add_ideas = wet_ngs_covenant
-      if = {
-        limit = {
-          has_non_aggression_pact_with = U24
-          has_country_flag = wet_ngs_pledged
-        }
-        U24 = {
-          add_political_power = -25
-        }
-      }
     }
     hidden_effect = {
       if = {
@@ -92,11 +78,6 @@ country_event = {
           }
           U24 = {
             exists = yes
-          }
-          U24 = {
-            has_political_power
-            >
-            24
           }
         }
         clr_country_flag = wet_ngs_offer_covenant
@@ -121,34 +102,6 @@ country_event = {
           }
         }
         add_ideas = wet_ngs_covenant
-        if = {
-          limit = {
-            NOT = {
-              has_country_flag = wet_ngs_raise_budget_set
-            }
-          }
-          set_country_flag = wet_ngs_raise_budget_set
-          set_variable = {
-            wet_ngs_raise_months = 24
-          }
-          clear_array = wet_ngs_raise_states
-          every_owned_state = {
-            limit = {
-              impassable = no
-            }
-            set_variable = {
-              wet_ngs_raise_amount = state_population_k
-            }
-            multiply_variable = {
-              wet_ngs_raise_amount = 10
-            }
-            PREV = {
-              add_to_array = {
-                wet_ngs_raise_states = PREV
-              }
-            }
-          }
-        }
         U24 = {
           wet_ngs_count_agents = yes
         }
@@ -157,9 +110,7 @@ country_event = {
             has_non_aggression_pact_with = U24
             has_country_flag = wet_ngs_pledged
           }
-          U24 = {
-            add_political_power = -25
-          }
+          set_country_flag = wet_ngs_offer_covenant_accepted
         }
         set_variable = {
           wet_ngs_offer_covenant_cooldown = 180
@@ -192,169 +143,15 @@ country_event = {
   option = {
     name = wet_nagashi.101.0
     ai_chance = {
-      factor = 15
+      factor = 1
     }
     hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_reconciliation
-        }
-        clr_country_flag = wet_ngs_offer_reconciliation
-        set_variable = {
-          wet_ngs_offer_reconciliation_days = 0
-        }
-        set_variable = {
-          wet_ngs_offer_reconciliation_cooldown = 180
-        }
+      clr_country_flag = wet_ngs_offer_reconciliation
+      set_variable = {
+        wet_ngs_offer_reconciliation_days = 0
       }
-    }
-  }
-  option = {
-    name = wet_nagashi.101.1
-    ai_chance = {
-      factor = 85
-      modifier = {
-        add = 10
-        is_in_faction_with = U24
-      }
-    }
-    trigger = {
-      has_country_flag = wet_ngs_offer_reconciliation
-      wet_ngs_court_eligible = yes
-      wet_ngs_named_agent_present = yes
-      has_country_flag = wet_ngs_withdrawn
-      NOT = {
-        has_country_flag = wet_ngs_pledged
-      }
-      U24 = {
-        has_completed_focus = WET_NGS_M21
-      }
-      U24 = {
-        has_political_power
-        >
-        49
-      }
-    }
-    effect_tooltip = {
-      if = {
-        limit = {
-          NOT = {
-            has_non_aggression_pact_with = U24
-          }
-        }
-        diplomatic_relation = {
-          country = U24
-          relation = non_aggression_pact
-          active = yes
-        }
-      }
-      add_ideas = wet_ngs_covenant
-      if = {
-        limit = {
-          always = yes
-        }
-        U24 = {
-          add_political_power = -50
-        }
-      }
-    }
-    hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_reconciliation
-          wet_ngs_court_eligible = yes
-          wet_ngs_named_agent_present = yes
-          has_country_flag = wet_ngs_withdrawn
-          NOT = {
-            has_country_flag = wet_ngs_pledged
-          }
-          U24 = {
-            has_completed_focus = WET_NGS_M21
-          }
-          U24 = {
-            has_political_power
-            >
-            49
-          }
-        }
-        clr_country_flag = wet_ngs_offer_reconciliation
-        set_variable = {
-          wet_ngs_offer_reconciliation_days = 0
-        }
-        set_country_flag = wet_ngs_pledged
-        clr_country_flag = wet_ngs_withdrawn
-        set_variable = {
-          wet_ngs_grievance = 0
-        }
-        if = {
-          limit = {
-            NOT = {
-              has_non_aggression_pact_with = U24
-            }
-          }
-          diplomatic_relation = {
-            country = U24
-            relation = non_aggression_pact
-            active = yes
-          }
-        }
-        add_ideas = wet_ngs_covenant
-        if = {
-          limit = {
-            NOT = {
-              has_country_flag = wet_ngs_raise_budget_set
-            }
-          }
-          set_country_flag = wet_ngs_raise_budget_set
-          set_variable = {
-            wet_ngs_raise_months = 24
-          }
-          clear_array = wet_ngs_raise_states
-          every_owned_state = {
-            limit = {
-              impassable = no
-            }
-            set_variable = {
-              wet_ngs_raise_amount = state_population_k
-            }
-            multiply_variable = {
-              wet_ngs_raise_amount = 10
-            }
-            PREV = {
-              add_to_array = {
-                wet_ngs_raise_states = PREV
-              }
-            }
-          }
-        }
-        U24 = {
-          wet_ngs_count_agents = yes
-        }
-        if = {
-          limit = {
-            always = yes
-          }
-          U24 = {
-            add_political_power = -50
-          }
-        }
-        set_variable = {
-          wet_ngs_offer_reconciliation_cooldown = 180
-        }
-      }
-      else = {
-        if = {
-          limit = {
-            has_country_flag = wet_ngs_offer_reconciliation
-          }
-          clr_country_flag = wet_ngs_offer_reconciliation
-          set_variable = {
-            wet_ngs_offer_reconciliation_days = 0
-          }
-          set_variable = {
-            wet_ngs_offer_reconciliation_cooldown = 180
-          }
-        }
+      set_variable = {
+        wet_ngs_offer_reconciliation_cooldown = 0
       }
     }
   }
@@ -802,7 +599,7 @@ country_event = {
                 ideology = wet_order_cult_of_sigmar
                 expire = "2902.1.31.1"
                 traits = {
-                  
+
                 }
               }
             }
@@ -882,7 +679,7 @@ country_event = {
                   ideology = wet_order_cult_of_sigmar
                   expire = "2902.1.31.1"
                   traits = {
-                    
+
                   }
                 }
               }

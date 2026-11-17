@@ -43,6 +43,14 @@ wet_rei_campaigns = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -86,6 +94,12 @@ wet_rei_campaigns = {
     days_re_enable = 0
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_rei_waaagh_objective = {
@@ -112,6 +126,14 @@ wet_rei_campaigns = {
           }
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     complete_effect = {
       custom_effect_tooltip = wet_rei_waaagh_objective_outcome_tt
@@ -135,6 +157,12 @@ wet_rei_campaigns = {
     days_re_enable = 180
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_rei_waaagh_claim = {
@@ -771,7 +799,7 @@ wet_rei_campaigns = {
             set_country_flag = wet_rei_relic_security_done
           }
           else = {
-            
+
           }
         }
         clr_country_flag = wet_rei_claim_I13

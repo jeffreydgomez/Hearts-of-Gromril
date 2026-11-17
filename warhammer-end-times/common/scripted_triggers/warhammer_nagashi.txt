@@ -95,82 +95,90 @@ wet_ngs_court_eligible = {
 }
 wet_ngs_agent_A13 = {
   A13 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_A13_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_A13_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_B16 = {
   B16 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_B16_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_B16_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_A20 = {
   A20 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_A20_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_A20_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_A68 = {
   A68 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_A68_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_A68_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_B27 = {
   B27 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_B27_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_B27_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_V01 = {
   V01 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_V01_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_V01_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_U18 = {
   U18 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_U18_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_U18_leader
+    wet_ngs_court_supports_restoration = yes
   }
 }
 wet_ngs_agent_A74 = {
   A74 = {
-    wet_ngs_court_eligible = yes
-    has_country_flag = wet_ngs_pledged
-    has_character = WET_A74_leader
+    exists = yes
+    has_idea = wet_deathless_hosts
     NOT = {
-      has_country_flag = wet_ngs_withdrawn
+      has_war_with = U24
     }
+    has_character = WET_A74_leader
+    wet_ngs_court_supports_restoration = yes
   }
   NOT = {
     A15 = {
@@ -1276,7 +1284,7 @@ wet_ngs_target_N08 = {
 }
 wet_ngs_nurgle = {
   OR = {
-    
+
   }
 }
 wet_ngs_pact_live = {
@@ -1336,5 +1344,18 @@ wet_ngs_ai_goal_slot_free = {
         has_wargoal_against = PREV
       }
     }
+  }
+}
+wet_ngs_court_supports_restoration = {
+  OR = {
+    AND = {
+      is_subject = no
+      has_country_flag = wet_ngs_pledged
+      NOT = {
+        has_country_flag = wet_ngs_withdrawn
+      }
+    }
+    is_in_faction_with = U24
+    has_government = communism
   }
 }

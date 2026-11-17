@@ -1,5 +1,5 @@
 wet_skv_campaigns = {
-  
+
 }
 wet_skv_council = {
   wet_skv_mediate = {
@@ -45,7 +45,7 @@ wet_skv_council = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -185,7 +185,7 @@ wet_skv_council = {
   }
 }
 wet_skv_conquest = {
-  
+
 }
 wet_skv_diplomacy = {
   wet_skv_internal_eshin = {
@@ -550,6 +550,14 @@ wet_skv_diplomacy = {
           has_country_flag = wet_skv_war_application
         }
       }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -628,6 +636,12 @@ wet_skv_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_skv_war_chaos = {
@@ -668,6 +682,14 @@ wet_skv_diplomacy = {
         can_declare_war_on = FROM
         NOT = {
           has_country_flag = wet_skv_war_application
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -748,6 +770,12 @@ wet_skv_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_skv_war_empire = {
@@ -788,6 +816,14 @@ wet_skv_diplomacy = {
         can_declare_war_on = FROM
         NOT = {
           has_country_flag = wet_skv_war_application
+        }
+      }
+      OR = {
+        is_ai = no
+        NOT = {
+          threat
+          <
+          1.0
         }
       }
     }
@@ -868,6 +904,12 @@ wet_skv_diplomacy = {
     }
     ai_will_do = {
       factor = 5
+      modifier = {
+        factor = 0
+        threat
+        <
+        1.0
+      }
     }
   }
   wet_skv_renounce = {
@@ -936,7 +978,7 @@ wet_skv_diplomacy = {
             set_country_flag = wet_skv_renounce_done
           }
           else = {
-            
+
           }
         }
       }
@@ -1821,7 +1863,7 @@ wet_skv_operations = {
     }
     visible = {
       OR = {
-        has_completed_focus = WET_SKV_W01
+        has_completed_focus = WET_SKV_W00
         has_completed_focus = WET_SKV_O01
       }
     }
@@ -1829,7 +1871,7 @@ wet_skv_operations = {
     days_re_enable = 0
     target_root_trigger = {
       OR = {
-        has_completed_focus = WET_SKV_W01
+        has_completed_focus = WET_SKV_W00
         has_completed_focus = WET_SKV_O01
       }
     }
@@ -3086,7 +3128,7 @@ wet_skv_projects = {
           }
         }
         else = {
-          
+
         }
       }
       hidden_effect = {
@@ -3104,7 +3146,7 @@ wet_skv_projects = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -6656,7 +6698,7 @@ wet_skv_projects = {
             clr_country_flag = wet_skv_world_project_disabled
           }
           else = {
-            
+
           }
         }
       }
@@ -9472,7 +9514,7 @@ wet_skv_counterplay = {
     days_remove = 90
     complete_effect = {
       hidden_effect = {
-        
+
       }
     }
     remove_effect = {
@@ -9489,7 +9531,7 @@ wet_skv_counterplay = {
           }
         }
         else = {
-          
+
         }
       }
       hidden_effect = {
@@ -9506,7 +9548,7 @@ wet_skv_counterplay = {
           }
         }
         else = {
-          
+
         }
       }
     }
@@ -9519,7 +9561,7 @@ wet_skv_counterplay = {
     }
     cancel_effect = {
       hidden_effect = {
-        
+
       }
     }
   }

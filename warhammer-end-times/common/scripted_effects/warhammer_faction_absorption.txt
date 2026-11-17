@@ -3,17 +3,29 @@ wet_faction_absorption_complete = {
   limit = { wet_faction_absorption_target = yes }
   log = "WET_FACTION_ABSORPTION leader=[ROOT.GetTag] member=[THIS.GetTag]"
   # No event target: diplomacy has no enclosing local event context.
-  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+  ROOT = {
+   annex_country = { target = PREV transfer_troops = yes }
+   set_variable = { wet_faction_absorption_cooldown = 30 }
+  }
  }
 }
 wet_ai_faction_absorption = {
- # Cheap per-country gates before the neighbor scan. One recipient per daily
- # tick bounds annexation work and discovers newly adjacent members next day.
+ # The same leader-wide cooldown gates manual and automatic absorption.
+ # Check it before scanning neighbors, and again in the completion effect.
  if = {
-  limit = { is_ai = yes is_faction_leader = yes NOT = { threat < 1 } }
+  limit = { is_ai = yes is_faction_leader = yes NOT = { threat < 1 } wet_faction_absorption_ready = yes }
   random_neighbor_country = {
    limit = { wet_faction_absorption_target = yes }
    wet_faction_absorption_complete = yes
   }
  }
+}
+wet_faction_absorption_daily = {
+ # Numeric daily counters match the existing reliable war-runtime timers.
+ # Human leaders and former leaders must also serve the cooldown.
+ if = {
+  limit = { check_variable = { wet_faction_absorption_cooldown > 0 } }
+  subtract_from_variable = { wet_faction_absorption_cooldown = 1 }
+ }
+ wet_ai_faction_absorption = yes
 }
