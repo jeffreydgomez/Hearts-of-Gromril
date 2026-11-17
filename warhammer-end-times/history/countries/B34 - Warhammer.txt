@@ -1,7 +1,6 @@
 # Generated from EU4 at 2502.11.11; religion determines ruling ideology.
 set_research_slots = 2
 set_technology = { wet_light_cavalry = 1 }
-capital = 287
 set_stability = 0.43
 set_war_support = 0.91
 set_politics = { ruling_party = fascism elections_allowed = no last_election = "2519.1.1" }
@@ -76,13 +75,13 @@ if = { limit = { has_dlc = "No Step Back" } set_technology = { gwtank_chassis = 
  }
 if = { limit = { NOT = { has_dlc = "No Step Back" } } set_technology = { gwtank = 1 basic_light_tank = 1 } }
 # END WET starting roster
-set_oob = "WET_B34"
+
 if = { limit = { has_dlc = "Man the Guns" }
 set_technology = { early_ship_hull_light = 1 early_ship_hull_cruiser = 1 basic_battery = 1 basic_light_battery = 1 basic_torpedo = 1 }
 create_equipment_variant = { name = "Reaver Class" type = ship_hull_light_1 parent_version = 0 modules = { fixed_ship_battery_slot = ship_light_battery_1 fixed_ship_fire_control_system_slot = ship_fire_control_system_0 fixed_ship_engine_slot = light_ship_engine_1 fixed_ship_torpedo_slot = ship_torpedo_1 } }
 create_equipment_variant = { name = "Dreadship Class" type = ship_hull_cruiser_1 parent_version = 0 modules = { fixed_ship_battery_slot = ship_light_battery_1 fixed_ship_fire_control_system_slot = ship_fire_control_system_0 fixed_ship_engine_slot = cruiser_ship_engine_1 } }
-set_naval_oob = "WET_B34_naval_mtg"
-else = { set_technology = { early_destroyer = 1 early_light_cruiser = 1 } set_naval_oob = "WET_B34_naval_legacy" } }
+
+else = { set_technology = { early_destroyer = 1 early_light_cruiser = 1 }  } }
 add_equipment_to_stockpile = { type = convoy_1 amount = 10 producer = B34 }
 
 # Generic cultural cabinet, available to hire for political power.
@@ -117,8 +116,6 @@ set_variable = { wet_country_race = 12 }
 set_variable = { wet_country_faith = 9 }
 set_variable = { wet_country_alignment = 3 }
 set_variable = { wet_country_taint = 3 }
-set_variable = { wet_country_policy = 1 }
-add_ideas = wet_population_policy_convert
 # END WET inhabitants
 
 # BEGIN WET racial starting research
@@ -129,3 +126,6 @@ set_technology = {
   wet_rr_chaos_keepers_of_secrets_1 = 1
 }
 # END WET racial starting research
+
+# Starting logistics: Draft Wagons I.
+set_technology = { tech_trucks = 1 }

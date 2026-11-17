@@ -1884,9 +1884,7 @@ focus_tree = {
       focus = WET_ARC_KM06
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -1901,9 +1899,7 @@ focus_tree = {
       hidden_effect = {
         if = {
           limit = {
-            has_political_power
-            >
-            99
+            always = yes
           }
           if = {
             limit = {
@@ -2547,9 +2543,7 @@ focus_tree = {
       focus = WET_ARC_K01
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -2564,9 +2558,7 @@ focus_tree = {
       hidden_effect = {
         if = {
           limit = {
-            has_political_power
-            >
-            99
+            always = yes
           }
           if = {
             limit = {
@@ -2884,9 +2876,7 @@ focus_tree = {
     }
     available = {
       has_war = yes
-      has_political_power
-      >
-      24
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_K10
         always = yes
@@ -2919,9 +2909,7 @@ focus_tree = {
           limit = {
             always = yes
             has_war = yes
-            has_political_power
-            >
-            24
+            always = yes
           }
           add_doctrine_cost_reduction = {
             name = wet_arc_doctrine_bonus
@@ -2933,11 +2921,9 @@ focus_tree = {
             limit = {
               has_completed_focus = WET_ARC_K10
               has_war = yes
-              has_political_power
-              >
-              24
+              always = yes
             }
-            add_political_power = -25
+
             add_timed_idea = {
               idea = wet_arc_campaign_planning
               days = 180
@@ -3027,9 +3013,7 @@ focus_tree = {
     }
     available = {
       has_war = yes
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_K12
         always = yes
@@ -3062,9 +3046,7 @@ focus_tree = {
           limit = {
             always = yes
             has_war = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           add_tech_bonus = {
             name = wet_arc_research_bonus
@@ -3076,11 +3058,9 @@ focus_tree = {
             limit = {
               has_completed_focus = WET_ARC_K12
               has_war = yes
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             add_timed_idea = {
               idea = wet_arc_siege_preparation
               days = 180
@@ -3176,9 +3156,7 @@ focus_tree = {
       NOT = {
         has_idea = wet_arc_theatre_staff
       }
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_K21
         always = yes
@@ -3204,9 +3182,7 @@ focus_tree = {
             NOT = {
               has_idea = wet_arc_theatre_staff
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           add_war_support = 0.05
           if = {
@@ -3216,11 +3192,9 @@ focus_tree = {
               NOT = {
                 has_idea = wet_arc_theatre_staff
               }
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             add_timed_idea = {
               idea = wet_arc_theatre_staff
               days = 180
@@ -3813,9 +3787,7 @@ focus_tree = {
       focus = WET_ARC_T01
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
@@ -3830,9 +3802,7 @@ focus_tree = {
       hidden_effect = {
         if = {
           limit = {
-            has_political_power
-            >
-            99
+            always = yes
           }
           if = {
             limit = {
@@ -4067,11 +4037,9 @@ focus_tree = {
               has_country_flag = wet_arc_defy_prophecy_done
             }
             has_country_flag = wet_arc_court_grievance
-            has_political_power
-            >
-            49
+            always = yes
           }
-          add_political_power = -50
+
           add_stability = 0.05
           clr_country_flag = wet_arc_court_grievance
           set_country_flag = wet_arc_defy_prophecy_done
@@ -4203,9 +4171,7 @@ focus_tree = {
       focus = WET_ARC_T09
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_T10
         wet_arc_ten_factories = yes
@@ -4215,23 +4181,21 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = -100
+
       add_research_slot = 1
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = -100
+
         add_research_slot = 1
       }
       hidden_effect = {
         if = {
           limit = {
             wet_arc_ten_factories = yes
-            has_political_power
-            >
-            99
+            always = yes
           }
-          add_political_power = -100
+
           add_research_slot = 1
           set_country_flag = wet_arc_claim_T10_done
         }
@@ -4258,9 +4222,7 @@ focus_tree = {
       focus = WET_ARC_T10
     }
     available = {
-      has_political_power
-      >
-      149
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_T13
         wet_arc_twentyfive_factories = yes
@@ -4270,23 +4232,21 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = -150
+
       add_research_slot = 1
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = -150
+
         add_research_slot = 1
       }
       hidden_effect = {
         if = {
           limit = {
             wet_arc_twentyfive_factories = yes
-            has_political_power
-            >
-            149
+            always = yes
           }
-          add_political_power = -150
+
           add_research_slot = 1
           set_country_flag = wet_arc_claim_T13_done
         }
@@ -4403,11 +4363,9 @@ focus_tree = {
                 event_target:wet_focus_recipient = {
                   is_in_faction_with = B99
                 }
-                has_political_power
-                >
-                49
+                always = yes
               }
-              add_political_power = -50
+
               event_target:wet_focus_recipient = {
                 country_event = {
                   id = wet_archaon.301
@@ -4825,9 +4783,7 @@ focus_tree = {
       focus = WET_ARC_T19
     }
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_T22
         always = yes
@@ -4849,19 +4805,15 @@ focus_tree = {
           limit = {
             always = yes
             has_country_flag = wet_arc_network_ready
-            has_political_power
-            >
-            74
+            always = yes
           }
           if = {
             limit = {
               has_completed_focus = WET_ARC_T22
               has_country_flag = wet_arc_network_ready
-              has_political_power
-              >
-              74
+              always = yes
             }
-            add_political_power = -75
+
             set_country_flag = wet_arc_steal_lore_active
             clr_country_flag = wet_arc_steal_lore_active
             random_list = {
@@ -6979,9 +6931,7 @@ focus_tree = {
       focus = WET_ARC_N24
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_N34
         always = yes
@@ -7010,9 +6960,7 @@ focus_tree = {
               has_country_flag = wet_arc_reforge_equipment_done
             }
             always = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           army_experience = 25
           if = {
@@ -7022,11 +6970,9 @@ focus_tree = {
                 has_country_flag = wet_arc_reforge_equipment_done
               }
               always = yes
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             set_country_flag = wet_arc_reforge_equipment_active
             clr_country_flag = wet_arc_reforge_equipment_active
             add_equipment_to_stockpile = {
@@ -7092,9 +7038,7 @@ focus_tree = {
       focus = WET_ARC_N00
     }
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_N28
         always = yes
@@ -7126,9 +7070,7 @@ focus_tree = {
             NOT = {
               has_country_flag = wet_arc_plague_hosts_ready
             }
-            has_political_power
-            >
-            74
+            always = yes
           }
           if = {
             limit = {
@@ -7139,11 +7081,9 @@ focus_tree = {
               NOT = {
                 has_country_flag = wet_arc_plague_hosts_ready
               }
-              has_political_power
-              >
-              74
+              always = yes
             }
-            add_political_power = -75
+
             set_country_flag = wet_arc_plague_hosts_ready
             set_country_flag = wet_arc_prepare_plague_hosts_done
           }
@@ -7490,15 +7430,13 @@ focus_tree = {
       focus = WET_ARC_S01
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = -100
+
       add_stability = -0.03
       add_timed_idea = {
         idea = wet_arc_northern_contract
@@ -7513,7 +7451,7 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = -100
+
         add_stability = -0.03
         add_timed_idea = {
           idea = wet_arc_northern_contract
@@ -7529,11 +7467,9 @@ focus_tree = {
       hidden_effect = {
         if = {
           limit = {
-            has_political_power
-            >
-            99
+            always = yes
           }
-          add_political_power = -100
+
           add_stability = -0.03
           add_timed_idea = {
             idea = wet_arc_northern_contract
@@ -7644,9 +7580,7 @@ focus_tree = {
       focus = WET_ARC_S05
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_S06
         always = yes
@@ -7668,19 +7602,15 @@ focus_tree = {
           limit = {
             always = yes
             has_country_flag = wet_arc_court_grievance
-            has_political_power
-            >
-            49
+            always = yes
           }
           if = {
             limit = {
               has_completed_focus = WET_ARC_S06
               has_country_flag = wet_arc_court_grievance
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             clr_country_flag = wet_arc_court_grievance
             add_stability = 0.03
           }
@@ -7803,9 +7733,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S09
-                has_political_power
-                >
-                24
+                always = yes
                 event_target:wet_focus_recipient = {
                   wet_arc_offer_target = yes
                   has_government = fascism
@@ -7858,11 +7786,9 @@ focus_tree = {
           limit = {
             has_completed_focus = WET_ARC_S10
             has_country_flag = wet_arc_court_grievance
-            has_political_power
-            >
-            74
+            always = yes
           }
-          add_political_power = -75
+
           clr_country_flag = wet_arc_court_grievance
           every_subject_country = {
             add_to_variable = {
@@ -7952,9 +7878,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S13
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject_of = B99
@@ -8131,9 +8055,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S16
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   wet_arc_offer_target = yes
                   has_government = fascism
@@ -8191,9 +8113,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S17
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   wet_arc_offer_target = yes
                   has_government = fascism
@@ -8256,9 +8176,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S18
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject_of = B99
@@ -8400,9 +8318,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S22
-                has_political_power
-                >
-                99
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject_of = B99
@@ -8504,9 +8420,7 @@ focus_tree = {
       focus = WET_ARC_S21
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_S23
         always = yes
@@ -8532,9 +8446,7 @@ focus_tree = {
             any_subject_country = {
               exists = yes
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           if = {
             limit = {
@@ -8542,11 +8454,9 @@ focus_tree = {
               any_subject_country = {
                 exists = yes
               }
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             add_timed_idea = {
               idea = wet_arc_inspectors
               days = 365
@@ -8605,9 +8515,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S24
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_in_faction_with = B99
@@ -8700,9 +8608,7 @@ focus_tree = {
     }
     available = {
       has_war = no
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_S25
         always = yes
@@ -8747,9 +8653,7 @@ focus_tree = {
             any_subject_country = {
               exists = yes
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           add_to_variable = {
             wet_arc_supply_node_credits = 1
@@ -8768,11 +8672,9 @@ focus_tree = {
               any_subject_country = {
                 exists = yes
               }
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             add_stability = 0.03
             every_subject_country = {
               add_to_variable = {
@@ -8830,9 +8732,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S26
-                has_political_power
-                >
-                -1
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject = no
@@ -8913,9 +8813,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S27
-                has_political_power
-                >
-                99
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject = no
@@ -9006,9 +8904,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S28
-                has_political_power
-                >
-                99
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject = no
@@ -9102,9 +8998,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S29
-                has_political_power
-                >
-                74
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject = no
@@ -9186,9 +9080,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S30
-                has_political_power
-                >
-                74
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   is_subject = no
@@ -9267,9 +9159,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S31
-                has_political_power
-                >
-                -1
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   wet_waaagh_leader = yes
@@ -9346,9 +9236,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S32
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   wet_waaagh_leader = yes
@@ -9430,9 +9318,7 @@ focus_tree = {
             if = {
               limit = {
                 has_completed_focus = WET_ARC_S33
-                has_political_power
-                >
-                99
+                always = yes
                 has_equipment = {
                   infantry_equipment
                   >
@@ -9518,9 +9404,7 @@ focus_tree = {
                 NOT = {
                   has_country_flag = wet_arc_waaagh_extension_done
                 }
-                has_political_power
-                >
-                74
+                always = yes
                 event_target:wet_focus_recipient = {
                   exists = yes
                   wet_waaagh_leader = yes
@@ -9575,9 +9459,7 @@ focus_tree = {
       focus = WET_ARC_S34
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_ARC_REQUIRE_S35
         always = yes
@@ -9607,19 +9489,15 @@ focus_tree = {
           limit = {
             always = yes
             has_country_flag = wet_arc_waaagh_dispute
-            has_political_power
-            >
-            49
+            always = yes
           }
           if = {
             limit = {
               has_completed_focus = WET_ARC_S35
               has_country_flag = wet_arc_waaagh_dispute
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             clr_country_flag = wet_arc_waaagh_dispute
             add_stability = 0.03
           }
@@ -9731,9 +9609,7 @@ focus_tree = {
                 NOT = {
                   has_country_flag = wet_arc_grand_bargain_done
                 }
-                has_political_power
-                >
-                49
+                always = yes
                 event_target:wet_focus_recipient = {
                   OR = {
                     wet_arc_skaven_partner = yes

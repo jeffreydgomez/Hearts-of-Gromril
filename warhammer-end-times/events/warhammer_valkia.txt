@@ -1,0 +1,54 @@
+add_namespace = wet_valkia
+
+country_event = {
+  id = wet_valkia.1
+  title = wet_valkia.1.t
+  desc = wet_valkia.1.d
+  picture = GFX_report_event_generic_army
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = { wet_valkia_invasion_eligible = yes NOT = { has_country_flag = wet_valkia_preparing } }
+  immediate = {
+    set_country_flag = wet_valkia_preparing
+    create_wargoal = { type = wet_valkia_invasion target = H12 expire = 365 }
+    H12 = { country_event = { id = wet_valkia.3 } }
+  }
+  option = { name = wet_valkia.1.a custom_effect_tooltip = wet_valkia.preparation_tt }
+}
+
+country_event = {
+  id = wet_valkia.2
+  title = wet_valkia.2.t
+  desc = wet_valkia.2.d
+  picture = GFX_report_event_generic_army
+  is_triggered_only = yes
+  fire_only_once = yes
+  trigger = { wet_valkia_invasion_eligible = yes has_war = no can_declare_war_on = H12 }
+  immediate = {
+    # Immediate execution prevents an unanswered popup from delaying the war.
+    create_wargoal = { type = wet_valkia_invasion target = H12 expire = 365 }
+    declare_war_on = { target = H12 type = wet_valkia_invasion }
+    H12 = { country_event = { id = wet_valkia.4 } }
+  }
+  option = { name = wet_valkia.2.a }
+}
+
+country_event = {
+  id = wet_valkia.3
+  title = wet_valkia.3.t
+  desc = wet_valkia.3.d
+  picture = GFX_report_event_generic_army
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = { name = wet_valkia.3.a }
+}
+
+country_event = {
+  id = wet_valkia.4
+  title = wet_valkia.4.t
+  desc = wet_valkia.4.d
+  picture = GFX_report_event_generic_army
+  is_triggered_only = yes
+  fire_only_once = yes
+  option = { name = wet_valkia.4.a }
+}

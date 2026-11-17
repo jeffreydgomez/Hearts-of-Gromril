@@ -1101,9 +1101,7 @@ focus_tree = {
       focus = WET_REI_I12
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_REI_I13_requirement
         always = yes
@@ -1137,9 +1135,7 @@ focus_tree = {
             NOT = {
               has_country_flag = wet_rei_relics_secured
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           add_ideas = wet_rei_relic_guards
           if = {
@@ -1151,11 +1147,9 @@ focus_tree = {
               NOT = {
                 has_country_flag = wet_rei_relics_secured
               }
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             set_country_flag = wet_rei_relic_security_active
             clr_country_flag = wet_rei_relic_security_active
             if = {
@@ -1265,16 +1259,14 @@ focus_tree = {
                 A13 = {
                   exists = yes
                 }
-                has_political_power
-                >
-                49
+                always = yes
               }
               clr_country_flag = wet_rei_investigate_focus_pending
               set_country_flag = wet_rei_investigate_focus_running
               set_variable = {
                 wet_rei_investigate_focus_days = 60
               }
-              add_political_power = -50
+
               set_country_flag = wet_rei_investigate_active
             }
           }
@@ -1389,9 +1381,7 @@ focus_tree = {
         >
         999
       }
-      has_political_power
-      >
-      149
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_REI_I17_requirement
         always = yes
@@ -1436,9 +1426,7 @@ focus_tree = {
             NOT = {
               has_global_flag = wet_story_auric_bastion_raised
             }
-            has_political_power
-            >
-            149
+            always = yes
           }
           set_country_flag = wet_rei_arcane_commitment
           set_global_flag = wet_story_empire_arcane_defence
@@ -1458,11 +1446,9 @@ focus_tree = {
               NOT = {
                 has_global_flag = wet_story_auric_bastion_raised
               }
-              has_political_power
-              >
-              149
+              always = yes
             }
-            add_political_power = -150
+
             add_equipment_to_stockpile = {
               type = support_equipment
               amount = -1000
@@ -1568,16 +1554,14 @@ focus_tree = {
                 NOT = {
                   has_country_flag = wet_rei_conventional_complete
                 }
-                has_political_power
-                >
-                99
+                always = yes
               }
               clr_country_flag = wet_rei_conventional_focus_pending
               set_country_flag = wet_rei_conventional_focus_running
               set_variable = {
                 wet_rei_conventional_focus_days = 120
               }
-              add_political_power = -100
+
               set_country_flag = wet_rei_conventional_active
             }
           }
@@ -1611,16 +1595,14 @@ focus_tree = {
                 NOT = {
                   has_country_flag = wet_rei_conventional_complete
                 }
-                has_political_power
-                >
-                49
+                always = yes
               }
               clr_country_flag = wet_rei_conventional_dwarf_focus_pending
               set_country_flag = wet_rei_conventional_dwarf_focus_running
               set_variable = {
                 wet_rei_conventional_dwarf_focus_days = 90
               }
-              add_political_power = -50
+
               set_country_flag = wet_rei_conventional_dwarf_active
             }
           }
@@ -1692,9 +1674,7 @@ focus_tree = {
       focus = WET_REI_I21
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_REI_I22_requirement
         always = yes
@@ -1722,9 +1702,7 @@ focus_tree = {
               has_country_flag = wet_rei_lawful_maintenance_done
             }
             wet_rei_bastion_sites = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           add_political_power = 0
           if = {
@@ -1734,11 +1712,9 @@ focus_tree = {
                 has_country_flag = wet_rei_lawful_maintenance_done
               }
               wet_rei_bastion_sites = yes
-              has_political_power
-              >
-              49
+              always = yes
             }
-            add_political_power = -50
+
             set_country_flag = wet_rei_lawful_maintenance_active
             clr_country_flag = wet_rei_lawful_maintenance_active
             if = {
@@ -1947,16 +1923,14 @@ focus_tree = {
                   start_state = A01.capital
                   target_state = 547
                 }
-                has_political_power
-                >
-                49
+                always = yes
               }
               clr_country_flag = wet_rei_corridor_focus_pending
               set_country_flag = wet_rei_corridor_focus_running
               set_variable = {
                 wet_rei_corridor_focus_days = 90
               }
-              add_political_power = -50
+
               set_country_flag = wet_rei_corridor_active
             }
           }
@@ -3390,9 +3364,7 @@ focus_tree = {
       focus = WET_REI_E15
     }
     available = {
-      has_political_power
-      >
-      149
+      always = yes
       is_in_faction = no
       custom_trigger_tooltip = {
         tooltip = WET_REI_E19_requirement
@@ -3419,13 +3391,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = -150
+
       add_stability = -0.10
       custom_effect_tooltip = WET_REI_E19_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = -150
+
         add_stability = -0.10
         custom_effect_tooltip = WET_REI_E19_special_tt
       }
@@ -3433,9 +3405,7 @@ focus_tree = {
         if = {
           limit = {
             has_country_flag = wet_rei_nagash_accepted
-            has_political_power
-            >
-            149
+            always = yes
             is_in_faction = no
             U24 = {
               wet_rei_peaceful_partner = yes
@@ -3446,7 +3416,7 @@ focus_tree = {
               has_government = communism
             }
           }
-          add_political_power = -150
+
           add_stability = -0.10
           wet_focus_choose_undead = yes
           U24 = {
@@ -3566,9 +3536,7 @@ focus_tree = {
       focus = WET_REI_E16
     }
     available = {
-      has_political_power
-      >
-      149
+      always = yes
       is_in_faction = no
       custom_trigger_tooltip = {
         tooltip = WET_REI_E21_requirement
@@ -3596,7 +3564,7 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      add_political_power = -150
+
       add_stability = -0.10
       custom_effect_tooltip = WET_REI_E21_special_tt
       unlock_decision_tooltip = wet_rei_waaagh_objective
@@ -3604,7 +3572,7 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-        add_political_power = -150
+
         add_stability = -0.10
         custom_effect_tooltip = WET_REI_E21_special_tt
         unlock_decision_tooltip = wet_rei_waaagh_objective
@@ -3614,9 +3582,7 @@ focus_tree = {
         if = {
           limit = {
             has_country_flag = wet_rei_waaagh_accepted
-            has_political_power
-            >
-            149
+            always = yes
             is_in_faction = no
             G24 = {
               wet_rei_peaceful_partner = yes
@@ -3628,7 +3594,7 @@ focus_tree = {
               wet_faction_is_greenskin_host = yes
             }
           }
-          add_political_power = -150
+
           add_stability = -0.10
           set_country_flag = wet_rei_waaagh_compact
           wet_focus_choose_waaagh = yes

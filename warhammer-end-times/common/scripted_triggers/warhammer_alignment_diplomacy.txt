@@ -19,6 +19,7 @@ wet_ai_ready_for_border_war = {
 }
 # Target-country scope; ROOT remains the AI attacker in the monthly hook/event.
 wet_ai_border_target = {
+ NOT = { AND = { tag = H12 ROOT = { tag = B78 has_country_leader = { character = WET_B78_leader ruling_only = yes } OR = { date < 2521.1.1 has_war = yes AND = { has_country_flag = wet_valkia_preparing NOT = { has_country_flag = wet_valkia_invasion_resolved } } } } } }
  OR = { NOT = { ROOT = { tag = U25 } } NOT = { tag = A41 } U25 = { wet_skv_tilea_settled = yes } }
  OR = { NOT = { ROOT = { tag = H12 } } NOT = { wet_nag_protected_partner = yes } }
  OR = { NOT = { ROOT = { tag = A13 } } wet_rei_elector = yes }

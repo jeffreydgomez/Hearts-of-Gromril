@@ -11,11 +11,9 @@ wet_skv_place_I01 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -49,11 +47,9 @@ wet_skv_place_I01 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -87,11 +83,9 @@ wet_skv_place_I01 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -125,11 +119,9 @@ wet_skv_place_I01 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -149,6 +141,55 @@ wet_skv_place_I01 = {
     }
     set_variable = {
       wet_skv_claim_I01 = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I01
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I01
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I01 = 0
+          }
+        }
+      }
     }
   }
 }
@@ -171,11 +212,9 @@ wet_skv_place_I04 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -209,11 +248,9 @@ wet_skv_place_I04 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -247,11 +284,9 @@ wet_skv_place_I04 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -285,11 +320,9 @@ wet_skv_place_I04 = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -311,6 +344,55 @@ wet_skv_place_I04 = {
       wet_skv_claim_I04 = 0
     }
   }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I04
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          arms_factory
+          >
+          4
+        }
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I04
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I04 = 0
+          }
+        }
+      }
+    }
+  }
 }
 wet_skv_grant_I04 = {
   set_variable = {
@@ -330,12 +412,11 @@ wet_skv_place_I05 = {
         is_owned_by = U25
         is_fully_controlled_by = U25
         impassable = no
+        is_coastal = yes
         NOT = {
-          OR = {
-            dockyard
-            >
-            4
-          }
+          dockyard
+          >
+          4
         }
         free_building_slots = {
           building = dockyard
@@ -355,6 +436,167 @@ wet_skv_place_I05 = {
     }
     set_variable = {
       wet_skv_claim_I05 = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I05
+        >
+        0
+      }
+      698 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        is_coastal = yes
+        NOT = {
+          dockyard
+          >
+          4
+        }
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    698 = {
+      add_building_construction = {
+        type = dockyard
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I05 = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I05
+        >
+        0
+      }
+      308 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        is_coastal = yes
+        NOT = {
+          dockyard
+          >
+          4
+        }
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    308 = {
+      add_building_construction = {
+        type = dockyard
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I05 = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I05
+        >
+        0
+      }
+      381 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        is_coastal = yes
+        NOT = {
+          dockyard
+          >
+          4
+        }
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    381 = {
+      add_building_construction = {
+        type = dockyard
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I05 = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I05
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        is_coastal = yes
+        NOT = {
+          dockyard
+          >
+          4
+        }
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I05
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I05 = 0
+          }
+        }
+      }
     }
   }
 }
@@ -377,11 +619,9 @@ wet_skv_place_I07a = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            fuel_silo
-            >
-            5
-          }
+          fuel_silo
+          >
+          5
         }
         free_building_slots = {
           building = fuel_silo
@@ -401,6 +641,163 @@ wet_skv_place_I07a = {
     }
     set_variable = {
       wet_skv_claim_I07a = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07a
+        >
+        0
+      }
+      698 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    698 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07a = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07a
+        >
+        0
+      }
+      308 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    308 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07a = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07a
+        >
+        0
+      }
+      381 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    381 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07a = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07a
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I07a
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = fuel_silo
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I07a = 0
+          }
+        }
+      }
     }
   }
 }
@@ -423,11 +820,9 @@ wet_skv_place_I07b = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            fuel_silo
-            >
-            5
-          }
+          fuel_silo
+          >
+          5
         }
         free_building_slots = {
           building = fuel_silo
@@ -447,6 +842,163 @@ wet_skv_place_I07b = {
     }
     set_variable = {
       wet_skv_claim_I07b = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07b
+        >
+        0
+      }
+      698 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    698 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07b = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07b
+        >
+        0
+      }
+      308 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    308 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07b = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07b
+        >
+        0
+      }
+      697 = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    697 = {
+      add_building_construction = {
+        type = fuel_silo
+        level = 1
+        instant_build = yes
+      }
+    }
+    set_variable = {
+      wet_skv_claim_I07b = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I07b
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          fuel_silo
+          >
+          5
+        }
+        free_building_slots = {
+          building = fuel_silo
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I07b
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = fuel_silo
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I07b = 0
+          }
+        }
+      }
     }
   }
 }
@@ -469,11 +1021,9 @@ wet_skv_place_I08a = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -507,11 +1057,9 @@ wet_skv_place_I08a = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -545,11 +1093,9 @@ wet_skv_place_I08a = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -583,11 +1129,9 @@ wet_skv_place_I08a = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            industrial_complex
-            >
-            4
-          }
+          industrial_complex
+          >
+          4
         }
         free_building_slots = {
           building = industrial_complex
@@ -607,6 +1151,55 @@ wet_skv_place_I08a = {
     }
     set_variable = {
       wet_skv_claim_I08a = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I08a
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I08a
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I08a = 0
+          }
+        }
+      }
     }
   }
 }
@@ -629,11 +1222,9 @@ wet_skv_place_I08b = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -667,11 +1258,9 @@ wet_skv_place_I08b = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -705,11 +1294,9 @@ wet_skv_place_I08b = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -743,11 +1330,9 @@ wet_skv_place_I08b = {
         is_fully_controlled_by = U25
         impassable = no
         NOT = {
-          OR = {
-            arms_factory
-            >
-            4
-          }
+          arms_factory
+          >
+          4
         }
         free_building_slots = {
           building = arms_factory
@@ -767,6 +1352,55 @@ wet_skv_place_I08b = {
     }
     set_variable = {
       wet_skv_claim_I08b = 0
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_skv_claim_I08b
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = U25
+        is_fully_controlled_by = U25
+        impassable = no
+        NOT = {
+          arms_factory
+          >
+          4
+        }
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      if = {
+        limit = {
+          U25 = {
+            check_variable = {
+              wet_skv_claim_I08b
+              >
+              0
+            }
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+        U25 = {
+          set_variable = {
+            wet_skv_claim_I08b = 0
+          }
+        }
+      }
     }
   }
 }
@@ -2936,7 +3570,7 @@ wet_skv_terrors_A41 = {
           ideology = wet_order_myrmidia
           expire = "2902.1.31.1"
           traits = {
-            
+
           }
         }
       }
@@ -2949,7 +3583,7 @@ wet_skv_terrors_A41 = {
           ideology = wet_order_myrmidia
           expire = "2902.1.31.1"
           traits = {
-            
+
           }
         }
       }
@@ -3056,7 +3690,7 @@ wet_skv_terrors_A57 = {
           ideology = wet_order_myrmidia
           expire = "2902.1.31.1"
           traits = {
-            
+
           }
         }
       }
@@ -3069,7 +3703,7 @@ wet_skv_terrors_A57 = {
           ideology = wet_order_myrmidia
           expire = "2902.1.31.1"
           traits = {
-            
+
           }
         }
       }
@@ -10292,9 +10926,7 @@ wet_skv_send_service_eshin = {
           has_country_flag = wet_skv_offer_service_eshin_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10303,7 +10935,7 @@ wet_skv_send_service_eshin = {
         has_country_flag = wet_skv_offer_service_eshin_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_service_eshin_attempted
@@ -10370,9 +11002,7 @@ wet_skv_send_service_moulder = {
           has_country_flag = wet_skv_offer_service_moulder_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10381,7 +11011,7 @@ wet_skv_send_service_moulder = {
         has_country_flag = wet_skv_offer_service_moulder_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_service_moulder_attempted
@@ -10448,9 +11078,7 @@ wet_skv_send_service_pestilens = {
           has_country_flag = wet_skv_offer_service_pestilens_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10459,7 +11087,7 @@ wet_skv_send_service_pestilens = {
         has_country_flag = wet_skv_offer_service_pestilens_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_service_pestilens_attempted
@@ -10507,7 +11135,7 @@ wet_skv_admit_candidate = {
         is_in_faction_with = U25
       }
       U25 = {
-        add_political_power = -50
+
         if = {
           limit = {
             has_country_flag = wet_skv_first_invite_discount
@@ -10518,9 +11146,7 @@ wet_skv_admit_candidate = {
           add_political_power = 25
           set_country_flag = wet_skv_first_invite_paid
         }
-        add_to_variable = {
-          wet_skv_authority = 5
-        }
+        add_political_power = 5
       }
       clr_country_flag = wet_skv_membership_consent
     }
@@ -10546,9 +11172,7 @@ wet_skv_send_invite = {
           has_country_flag = wet_skv_offer_invite_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10557,7 +11181,7 @@ wet_skv_send_invite = {
         has_country_flag = wet_skv_offer_invite_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_invite_attempted
@@ -10621,9 +11245,7 @@ wet_skv_send_subsidy = {
           has_country_flag = wet_skv_offer_subsidy_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10632,7 +11254,7 @@ wet_skv_send_subsidy = {
         has_country_flag = wet_skv_offer_subsidy_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_subsidy_attempted
@@ -10684,9 +11306,7 @@ wet_skv_send_depot = {
           has_country_flag = wet_skv_offer_depot_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10695,7 +11315,7 @@ wet_skv_send_depot = {
         has_country_flag = wet_skv_offer_depot_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_depot_attempted
@@ -10743,9 +11363,7 @@ wet_skv_send_mediation = {
           has_country_flag = wet_skv_offer_mediation_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10754,7 +11372,7 @@ wet_skv_send_mediation = {
         has_country_flag = wet_skv_offer_mediation_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_mediation_attempted
@@ -10811,9 +11429,7 @@ wet_skv_send_pact_nagash = {
           has_country_flag = wet_skv_offer_pact_nagash_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10822,7 +11438,7 @@ wet_skv_send_pact_nagash = {
         has_country_flag = wet_skv_offer_pact_nagash_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_pact_nagash_attempted
@@ -10867,9 +11483,7 @@ wet_skv_send_access_nagash = {
           has_country_flag = wet_skv_offer_access_nagash_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10878,7 +11492,7 @@ wet_skv_send_access_nagash = {
         has_country_flag = wet_skv_offer_access_nagash_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_access_nagash_attempted
@@ -10935,9 +11549,7 @@ wet_skv_send_exchange_nagash = {
           has_country_flag = wet_skv_offer_exchange_nagash_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -10946,7 +11558,7 @@ wet_skv_send_exchange_nagash = {
         has_country_flag = wet_skv_offer_exchange_nagash_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_exchange_nagash_attempted
@@ -11074,9 +11686,7 @@ wet_skv_send_pact_chaos = {
           has_country_flag = wet_skv_offer_pact_chaos_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11085,7 +11695,7 @@ wet_skv_send_pact_chaos = {
         has_country_flag = wet_skv_offer_pact_chaos_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_pact_chaos_attempted
@@ -11130,9 +11740,7 @@ wet_skv_send_access_chaos = {
           has_country_flag = wet_skv_offer_access_chaos_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11141,7 +11749,7 @@ wet_skv_send_access_chaos = {
         has_country_flag = wet_skv_offer_access_chaos_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_access_chaos_attempted
@@ -11198,9 +11806,7 @@ wet_skv_send_exchange_chaos = {
           has_country_flag = wet_skv_offer_exchange_chaos_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11209,7 +11815,7 @@ wet_skv_send_exchange_chaos = {
         has_country_flag = wet_skv_offer_exchange_chaos_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_exchange_chaos_attempted
@@ -11337,9 +11943,7 @@ wet_skv_send_pact_empire = {
           has_country_flag = wet_skv_offer_pact_empire_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11348,7 +11952,7 @@ wet_skv_send_pact_empire = {
         has_country_flag = wet_skv_offer_pact_empire_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_pact_empire_attempted
@@ -11393,9 +11997,7 @@ wet_skv_send_access_empire = {
           has_country_flag = wet_skv_offer_access_empire_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11404,7 +12006,7 @@ wet_skv_send_access_empire = {
         has_country_flag = wet_skv_offer_access_empire_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_access_empire_attempted
@@ -11461,9 +12063,7 @@ wet_skv_send_exchange_empire = {
           has_country_flag = wet_skv_offer_exchange_empire_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11472,7 +12072,7 @@ wet_skv_send_exchange_empire = {
         has_country_flag = wet_skv_offer_exchange_empire_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_exchange_empire_attempted
@@ -11607,9 +12207,7 @@ wet_skv_send_queek = {
           has_country_flag = wet_skv_offer_queek_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -11618,7 +12216,7 @@ wet_skv_send_queek = {
         has_country_flag = wet_skv_offer_queek_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_queek_attempted
@@ -12369,17 +12967,12 @@ wet_skv_resolve_cell = {
         wet_skv_op_cell_cooldown = 180
       }
       U25 = {
-        
+
       }
       random_list = {
         wet_skv_chance = {
-          for_each_scope_loop = {
-            array = wet_skv_op_cell_site
-            add_dynamic_modifier = {
-              modifier = wet_skv_cell
-              scope = U25
-              days = 30
-            }
+          U25 = {
+            add_war_support = 0.1
           }
           U25 = {
             if = {
@@ -12437,7 +13030,7 @@ wet_skv_abort_cell = {
       wet_skv_op_cell_cooldown = 180
     }
     U25 = {
-      
+
     }
     U25 = {
       add_equipment_to_stockpile = {
@@ -14520,9 +15113,7 @@ wet_skv_send_tribute = {
           has_country_flag = wet_skv_offer_tribute_attempted
         }
         U25 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -14531,7 +15122,7 @@ wet_skv_send_tribute = {
         has_country_flag = wet_skv_offer_tribute_attempted
       }
       U25 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_skv_offer_tribute_attempted
@@ -16114,47 +16705,7 @@ wet_skv_daily = {
       }
     }
     clamp_variable = {
-      var = wet_skv_authority
-      min = 0
-      max = wet_skv_authority_cap
-    }
-    clamp_variable = {
       var = wet_skv_rivalry
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_seers
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_skryre
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_moulder
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_pestilens
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_eshin
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_mors
-      min = 0
-      max = 100
-    }
-    clamp_variable = {
-      var = wet_skv_favour_rictus
       min = 0
       max = 100
     }
@@ -16480,16 +17031,14 @@ wet_focus_actions_skaven = {
           capital_scope = {
             is_fully_controlled_by = U25
           }
-          has_political_power
-          >
-          149
+          always = yes
         }
         clr_country_flag = wet_skv_shelters_focus_pending
         set_country_flag = wet_skv_shelters_focus_running
         set_variable = {
           wet_skv_shelters_focus_days = 180
         }
-        add_political_power = -150
+
         set_country_flag = wet_skv_shelters_active
         add_equipment_to_stockpile = {
           type = infantry_equipment
@@ -16549,7 +17098,7 @@ wet_focus_actions_skaven = {
             add_stability = 0.05
           }
           else = {
-            
+
           }
         }
       }
@@ -16572,16 +17121,14 @@ wet_focus_actions_skaven = {
           num_of_civilian_factories
           >
           1
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_skv_relief_focus_pending
         set_country_flag = wet_skv_relief_focus_running
         set_variable = {
           wet_skv_relief_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_skv_relief_active
         add_timed_idea = {
           idea = wet_skv_relief_workers
@@ -16654,7 +17201,7 @@ wet_focus_actions_skaven = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -16781,7 +17328,7 @@ wet_focus_actions_skaven = {
             set_country_flag = wet_skv_thorgrim_dossier_done
           }
           else = {
-            
+
           }
         }
       }
@@ -16890,7 +17437,7 @@ wet_focus_actions_skaven = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -16915,16 +17462,14 @@ wet_focus_actions_skaven = {
             wet_skv_hostile = yes
             wet_skv_covert_access = yes
           }
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_skv_pyramid_dossier_focus_pending
         set_country_flag = wet_skv_pyramid_dossier_focus_running
         set_variable = {
           wet_skv_pyramid_dossier_focus_days = 45
         }
-        add_political_power = -50
+
         set_country_flag = wet_skv_pyramid_dossier_active
       }
     }
@@ -17054,16 +17599,14 @@ wet_skv_award_C01 = {
             num_of_civilian_factories
             >
             1
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_skv_relief_focus_pending
           set_country_flag = wet_skv_relief_focus_running
           set_variable = {
             wet_skv_relief_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_skv_relief_active
           add_timed_idea = {
             idea = wet_skv_relief_workers
@@ -17084,9 +17627,7 @@ wet_skv_award_C02 = {
       }
     }
     set_country_flag = wet_skv_reward_C02
-    add_to_variable = {
-      wet_skv_authority = 10
-    }
+    add_political_power = 25
     wet_skv_reconcile_benefits = yes
   }
 }
@@ -17100,9 +17641,7 @@ wet_skv_award_C03 = {
     }
     set_country_flag = wet_skv_reward_C03
     set_country_flag = wet_skv_evidence
-    add_to_variable = {
-      wet_skv_authority = 5
-    }
+    add_stability = 0.02
     add_tech_bonus = {
       name = wet_skv_reward_C03
       bonus = 0.5
@@ -17154,13 +17693,7 @@ wet_skv_award_C06 = {
     set_country_flag = wet_skv_reward_C06
     add_ideas = wet_skv_chair_seers
     set_country_flag = wet_skv_chair_seers
-    set_country_flag = wet_skv_favoured_seers
-    add_to_variable = {
-      wet_skv_favour_seers = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -17188,13 +17721,7 @@ wet_skv_award_C07 = {
     set_country_flag = wet_skv_reward_C07
     add_ideas = wet_skv_chair_skryre
     set_country_flag = wet_skv_chair_skryre
-    set_country_flag = wet_skv_favoured_skryre
-    add_to_variable = {
-      wet_skv_favour_skryre = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -17222,13 +17749,7 @@ wet_skv_award_C08 = {
     set_country_flag = wet_skv_reward_C08
     add_ideas = wet_skv_chair_mors
     set_country_flag = wet_skv_chair_mors
-    set_country_flag = wet_skv_favoured_mors
-    add_to_variable = {
-      wet_skv_favour_mors = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -17253,9 +17774,7 @@ wet_skv_award_C09 = {
       }
     }
     set_country_flag = wet_skv_reward_C09
-    add_to_variable = {
-      wet_skv_authority = 10
-    }
+    add_stability = 0.03
     wet_skv_reconcile_benefits = yes
   }
 }
@@ -17312,6 +17831,12 @@ wet_skv_award_C13 = {
         has_country_flag = wet_skv_reward_C13
       }
       has_completed_focus = WET_SKV_C09
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C07
+          has_country_flag = wet_skv_chair_skryre
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C13
     add_stability = 0.25
@@ -17319,9 +17844,6 @@ wet_skv_award_C13 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_skryre
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_skryre = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -17337,6 +17859,12 @@ wet_skv_award_C14 = {
       NOT = {
         has_country_flag = wet_skv_reward_C14
       }
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C22
+          has_country_flag = wet_skv_chair_moulder
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C14
     add_stability = 0.25
@@ -17344,9 +17872,6 @@ wet_skv_award_C14 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_moulder
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_moulder = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -17464,11 +17989,6 @@ wet_skv_award_C20 = {
         has_country_flag = wet_skv_reward_C20
       }
       check_variable = {
-        wet_skv_authority
-        >
-        59
-      }
-      check_variable = {
         wet_skv_rivalry
         <
         61
@@ -17496,9 +18016,7 @@ wet_skv_award_C21 = {
       }
     }
     set_country_flag = wet_skv_reward_C21
-    add_to_variable = {
-      wet_skv_authority_cap = 20
-    }
+    add_stability = 0.05
     wet_skv_reconcile_benefits = yes
   }
 }
@@ -18071,9 +18589,7 @@ wet_skv_award_T03 = {
       NOT = {
         has_country_flag = wet_skv_service_skryre
       }
-      has_political_power
-      >
-      74
+      always = yes
     }
     set_country_flag = wet_skv_reward_T03
     wet_skv_request_moulder = yes
@@ -18086,11 +18602,9 @@ wet_skv_award_T03 = {
         NOT = {
           has_country_flag = wet_skv_service_skryre
         }
-        has_political_power
-        >
-        74
+        always = yes
       }
-      add_political_power = -75
+
       set_country_flag = wet_skv_service_skryre
       set_country_flag = wet_skv_skryre_contract_done
     }
@@ -18140,9 +18654,7 @@ wet_skv_award_T05 = {
       NOT = {
         has_country_flag = wet_skv_funded_doom
       }
-      has_political_power
-      >
-      99
+      always = yes
     }
     set_country_flag = wet_skv_reward_T05
     set_country_flag = wet_skv_reveal_doom
@@ -18166,11 +18678,9 @@ wet_skv_award_T05 = {
         NOT = {
           has_country_flag = wet_skv_funded_doom
         }
-        has_political_power
-        >
-        99
+        always = yes
       }
-      add_political_power = -100
+
       add_equipment_to_stockpile = {
         type = support_equipment
         amount = -500
@@ -18198,9 +18708,7 @@ wet_skv_award_T06 = {
       NOT = {
         has_country_flag = wet_skv_safety
       }
-      has_political_power
-      >
-      99
+      always = yes
     }
     set_country_flag = wet_skv_reward_T06
     add_political_power = 25
@@ -18210,11 +18718,9 @@ wet_skv_award_T06 = {
         NOT = {
           has_country_flag = wet_skv_safety
         }
-        has_political_power
-        >
-        99
+        always = yes
       }
-      add_political_power = -100
+
       set_country_flag = wet_skv_safety
     }
     wet_skv_reconcile_benefits = yes
@@ -18258,9 +18764,7 @@ wet_skv_award_T08 = {
         0
         is_fully_controlled_by = U25
       }
-      has_political_power
-      >
-      49
+      always = yes
     }
     set_country_flag = wet_skv_reward_T08
     set_country_flag = wet_skv_test_open
@@ -18277,11 +18781,9 @@ wet_skv_award_T08 = {
           0
           is_fully_controlled_by = U25
         }
-        has_political_power
-        >
-        49
+        always = yes
       }
-      add_political_power = -50
+
       set_country_flag = wet_skv_doom_test_active
       if = {
         limit = {
@@ -18301,7 +18803,7 @@ wet_skv_award_T08 = {
           set_country_flag = wet_skv_doom_test_done
         }
         else = {
-          
+
         }
       }
     }
@@ -18383,9 +18885,7 @@ wet_skv_award_T12 = {
       }
       wet_skv_moulder_service = yes
       has_country_flag = wet_skv_service_skryre
-      has_political_power
-      >
-      99
+      always = yes
     }
     set_country_flag = wet_skv_reward_T12
     set_country_flag = wet_skv_reveal_storm
@@ -18411,11 +18911,9 @@ wet_skv_award_T12 = {
         }
         wet_skv_moulder_service = yes
         has_country_flag = wet_skv_service_skryre
-        has_political_power
-        >
-        99
+        always = yes
       }
-      add_political_power = -100
+
       add_equipment_to_stockpile = {
         type = support_equipment
         amount = -400
@@ -18559,9 +19057,7 @@ wet_skv_award_T18 = {
     }
     set_country_flag = wet_skv_reward_T18
     set_country_flag = wet_skv_director_Zingetail
-    add_to_variable = {
-      wet_skv_favour_skryre = 10
-    }
+    add_political_power = 10
     add_to_variable = {
       wet_skv_rivalry = 15
     }
@@ -18636,9 +19132,7 @@ wet_skv_award_T22 = {
       NOT = {
         has_country_flag = wet_skv_funded_moon
       }
-      has_political_power
-      >
-      199
+      always = yes
     }
     set_country_flag = wet_skv_reward_T22
     set_country_flag = wet_skv_reveal_moon
@@ -18663,11 +19157,9 @@ wet_skv_award_T22 = {
         NOT = {
           has_country_flag = wet_skv_funded_moon
         }
-        has_political_power
-        >
-        199
+        always = yes
       }
-      add_political_power = -200
+
       add_equipment_to_stockpile = {
         type = support_equipment
         amount = -1000
@@ -18966,9 +19458,7 @@ wet_skv_award_F07 = {
                   has_country_flag = wet_skv_offer_subsidy_attempted
                 }
                 U25 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -19027,9 +19517,7 @@ wet_skv_award_F08 = {
                   has_country_flag = wet_skv_offer_depot_attempted
                 }
                 U25 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -19084,9 +19572,7 @@ wet_skv_award_F09 = {
                   has_country_flag = wet_skv_offer_mediation_attempted
                 }
                 U25 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -19285,9 +19771,7 @@ wet_skv_award_F13 = {
       }
     }
     set_country_flag = wet_skv_reward_F13
-    add_to_variable = {
-      wet_skv_authority = 10
-    }
+    add_war_support = 0.03
     add_war_support = 0.08
     wet_skv_reconcile_benefits = yes
   }
@@ -19409,9 +19893,7 @@ wet_skv_award_D04 = {
               has_country_flag = wet_skv_offer_access_nagash_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19452,9 +19934,7 @@ wet_skv_award_D04 = {
               has_country_flag = wet_skv_offer_exchange_nagash_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19563,9 +20043,7 @@ wet_skv_award_D09 = {
               has_country_flag = wet_skv_offer_access_chaos_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19606,9 +20084,7 @@ wet_skv_award_D09 = {
               has_country_flag = wet_skv_offer_exchange_chaos_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19717,9 +20193,7 @@ wet_skv_award_D14 = {
               has_country_flag = wet_skv_offer_access_empire_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19760,9 +20234,7 @@ wet_skv_award_D14 = {
               has_country_flag = wet_skv_offer_exchange_empire_attempted
             }
             U25 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -19873,6 +20345,7 @@ wet_skv_award_O01 = {
     }
     set_country_flag = wet_skv_reward_O01
     set_country_flag = wet_skv_permission_O01
+    add_war_support = 0.1
     wet_skv_reconcile_benefits = yes
   }
 }
@@ -20021,16 +20494,14 @@ wet_skv_award_O08 = {
               wet_skv_hostile = yes
               wet_skv_covert_access = yes
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_skv_pyramid_dossier_focus_pending
           set_country_flag = wet_skv_pyramid_dossier_focus_running
           set_variable = {
             wet_skv_pyramid_dossier_focus_days = 45
           }
-          add_political_power = -50
+
           set_country_flag = wet_skv_pyramid_dossier_active
         }
       }
@@ -20062,9 +20533,7 @@ wet_skv_award_O10 = {
       NOT = {
         has_country_flag = wet_skv_concealment
       }
-      has_political_power
-      >
-      74
+      always = yes
     }
     set_country_flag = wet_skv_reward_O10
     set_country_flag = wet_skv_permission_O10
@@ -20074,11 +20543,9 @@ wet_skv_award_O10 = {
         NOT = {
           has_country_flag = wet_skv_concealment
         }
-        has_political_power
-        >
-        74
+        always = yes
       }
-      add_political_power = -75
+
       set_country_flag = {
         flag = wet_skv_concealment
         days = 180
@@ -20116,9 +20583,7 @@ wet_skv_award_O12 = {
       }
     }
     set_country_flag = wet_skv_reward_O12
-    add_to_variable = {
-      wet_skv_authority = 10
-    }
+    army_experience = 10
     wet_skv_reconcile_benefits = yes
   }
 }
@@ -20429,16 +20894,14 @@ wet_skv_award_E06 = {
             capital_scope = {
               is_fully_controlled_by = U25
             }
-            has_political_power
-            >
-            149
+            always = yes
           }
           clr_country_flag = wet_skv_shelters_focus_pending
           set_country_flag = wet_skv_shelters_focus_running
           set_variable = {
             wet_skv_shelters_focus_days = 180
           }
-          add_political_power = -150
+
           set_country_flag = wet_skv_shelters_active
           add_equipment_to_stockpile = {
             type = infantry_equipment
@@ -20461,9 +20924,7 @@ wet_skv_award_E07 = {
       any_owned_state = {
         is_fully_controlled_by = U25
       }
-      has_political_power
-      >
-      49
+      always = yes
     }
     set_country_flag = wet_skv_reward_E07
     add_to_variable = {
@@ -20475,11 +20936,9 @@ wet_skv_award_E07 = {
         any_owned_state = {
           is_fully_controlled_by = U25
         }
-        has_political_power
-        >
-        49
+        always = yes
       }
-      add_political_power = -50
+
       add_timed_idea = {
         idea = wet_skv_city_repairs
         days = 90
@@ -20541,9 +21000,7 @@ wet_skv_award_E08 = {
                   has_country_flag = wet_skv_offer_tribute_attempted
                 }
                 U25 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -20641,13 +21098,7 @@ wet_skv_award_C22 = {
     set_country_flag = wet_skv_reward_C22
     add_ideas = wet_skv_chair_moulder
     set_country_flag = wet_skv_chair_moulder
-    set_country_flag = wet_skv_favoured_moulder
-    add_to_variable = {
-      wet_skv_favour_moulder = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -20674,13 +21125,7 @@ wet_skv_award_C23 = {
     set_country_flag = wet_skv_reward_C23
     add_ideas = wet_skv_chair_pestilens
     set_country_flag = wet_skv_chair_pestilens
-    set_country_flag = wet_skv_favoured_pestilens
-    add_to_variable = {
-      wet_skv_favour_pestilens = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -20707,13 +21152,7 @@ wet_skv_award_C24 = {
     set_country_flag = wet_skv_reward_C24
     add_ideas = wet_skv_chair_eshin
     set_country_flag = wet_skv_chair_eshin
-    set_country_flag = wet_skv_favoured_eshin
-    add_to_variable = {
-      wet_skv_favour_eshin = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -20741,13 +21180,7 @@ wet_skv_award_C25 = {
     set_country_flag = wet_skv_reward_C25
     add_ideas = wet_skv_chair_rictus
     set_country_flag = wet_skv_chair_rictus
-    set_country_flag = wet_skv_favoured_rictus
-    add_to_variable = {
-      wet_skv_favour_rictus = 20
-    }
-    add_to_variable = {
-      wet_skv_authority = 15
-    }
+    add_stability = 0.03
     if = {
       limit = {
         has_country_leader = {
@@ -20770,6 +21203,12 @@ wet_skv_award_C26 = {
       NOT = {
         has_country_flag = wet_skv_reward_C26
       }
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C23
+          has_country_flag = wet_skv_chair_pestilens
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C26
     add_stability = 0.25
@@ -20777,9 +21216,6 @@ wet_skv_award_C26 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_pestilens
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_pestilens = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -20795,6 +21231,12 @@ wet_skv_award_C27 = {
       NOT = {
         has_country_flag = wet_skv_reward_C27
       }
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C24
+          has_country_flag = wet_skv_chair_eshin
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C27
     add_stability = 0.25
@@ -20802,9 +21244,6 @@ wet_skv_award_C27 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_eshin
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_eshin = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -20821,6 +21260,12 @@ wet_skv_award_C28 = {
         has_country_flag = wet_skv_reward_C28
       }
       has_completed_focus = WET_SKV_C09
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C08
+          has_country_flag = wet_skv_chair_mors
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C28
     add_stability = 0.25
@@ -20828,9 +21273,6 @@ wet_skv_award_C28 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_mors
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_mors = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -20847,6 +21289,12 @@ wet_skv_award_C29 = {
         has_country_flag = wet_skv_reward_C29
       }
       has_completed_focus = WET_SKV_C09
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C25
+          has_country_flag = wet_skv_chair_rictus
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C29
     add_stability = 0.25
@@ -20854,9 +21302,6 @@ wet_skv_award_C29 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_rictus
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_rictus = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15
@@ -20873,6 +21318,12 @@ wet_skv_award_C30 = {
         has_country_flag = wet_skv_reward_C30
       }
       has_completed_focus = WET_SKV_C09
+      NOT = {
+        OR = {
+          has_completed_focus = WET_SKV_C06
+          has_country_flag = wet_skv_chair_seers
+        }
+      }
     }
     set_country_flag = wet_skv_reward_C30
     add_stability = 0.25
@@ -20880,9 +21331,6 @@ wet_skv_award_C30 = {
     add_timed_idea = {
       idea = wet_skv_scapegoat_seers
       days = 365
-    }
-    subtract_from_variable = {
-      wet_skv_favour_seers = 30
     }
     add_to_variable = {
       wet_skv_rivalry = 15

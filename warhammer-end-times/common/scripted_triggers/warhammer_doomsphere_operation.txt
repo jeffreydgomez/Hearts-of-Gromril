@@ -1,0 +1,28 @@
+wet_skv_doomsphere_operator = {
+ OR = { has_idea = wet_race_skaven has_idea = wet_race_undead_skaven }
+}
+
+# COUNTRY scope: actor ROOT, enemy FROM. Do not require uncommitted support
+# equipment here: the native operation has already collected that equipment.
+wet_skv_doomsphere_ready = {
+ wet_skv_doomsphere_operator = yes
+ exists = yes
+ has_intelligence_agency = yes
+ has_war_with = FROM
+ NOT = { is_in_faction_with = FROM }
+ NOT = { num_of_nukes < 1 }
+ FROM = {
+  exists = yes
+  has_capitulated = no
+  capital_scope = { is_owned_by = FROM is_fully_controlled_by = FROM impassable = no }
+ }
+}
+
+# STATE scope: both selection and final execution check the actual selected
+# state. A moved capital never redirects the weapon to another state's city.
+wet_skv_doomsphere_capital = {
+ is_capital = yes
+ is_owned_by = FROM
+ is_fully_controlled_by = FROM
+ impassable = no
+}

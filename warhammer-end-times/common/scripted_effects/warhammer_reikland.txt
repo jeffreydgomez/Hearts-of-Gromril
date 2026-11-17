@@ -399159,7 +399159,7 @@ wet_rei_found_coalition = {
           is_in_faction_with = A01
         }
         A01 = {
-          add_political_power = -50
+
         }
         set_country_flag = wet_rei_ally_compact
         clr_country_flag = wet_rei_founder_pledge
@@ -399185,9 +399185,7 @@ wet_rei_send_leader_U04 = {
         has_completed_focus = WET_REI_E14
       }
       A01 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
       U04 = {
         wet_rei_coalition_target = yes
@@ -399249,9 +399247,7 @@ wet_rei_send_invite_U04 = {
         }
       }
       A01 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
       OR = {
         NOT = {
@@ -399306,9 +399302,7 @@ wet_rei_send_leader_A29 = {
         has_completed_focus = WET_REI_E14
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       A29 = {
         wet_rei_coalition_target = yes
@@ -399370,9 +399364,7 @@ wet_rei_send_invite_A29 = {
         }
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       NOT = {
         has_country_flag = wet_rei_offer_invite_A29
@@ -399421,9 +399413,7 @@ wet_rei_send_leader_A15 = {
         has_completed_focus = WET_REI_E14
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       A15 = {
         wet_rei_coalition_target = yes
@@ -399485,9 +399475,7 @@ wet_rei_send_invite_A15 = {
         }
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       NOT = {
         has_country_flag = wet_rei_offer_invite_A15
@@ -399536,9 +399524,7 @@ wet_rei_send_leader_H06 = {
         has_completed_focus = WET_REI_E14
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       H06 = {
         wet_rei_coalition_target = yes
@@ -399600,9 +399586,7 @@ wet_rei_send_invite_H06 = {
         }
       }
       A01 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
       NOT = {
         has_country_flag = wet_rei_offer_invite_H06
@@ -399651,9 +399635,7 @@ wet_rei_send_leader_I25 = {
         has_completed_focus = WET_REI_E14
       }
       A01 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
       I25 = {
         wet_rei_coalition_target = yes
@@ -399715,9 +399697,7 @@ wet_rei_send_invite_I25 = {
         }
       }
       A01 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
       NOT = {
         has_country_flag = wet_rei_offer_invite_I25
@@ -402418,7 +402398,7 @@ wet_focus_actions_reikland = {
         wet_rei_investigate_focus_days = 0
       }
       clr_country_flag = wet_rei_investigate_active
-      add_political_power = 50
+
     }
     else = {
       subtract_from_variable = {
@@ -402449,7 +402429,7 @@ wet_focus_actions_reikland = {
           }
         }
         else = {
-          add_political_power = 50
+
         }
       }
     }
@@ -402471,16 +402451,14 @@ wet_focus_actions_reikland = {
           A13 = {
             exists = yes
           }
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_rei_investigate_focus_pending
         set_country_flag = wet_rei_investigate_focus_running
         set_variable = {
           wet_rei_investigate_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_rei_investigate_active
       }
     }
@@ -402530,7 +402508,7 @@ wet_focus_actions_reikland = {
           set_country_flag = wet_rei_defend_altdorf_done
         }
         else = {
-          
+
         }
       }
     }
@@ -402585,7 +402563,7 @@ wet_focus_actions_reikland = {
         wet_rei_corridor_focus_days = 0
       }
       clr_country_flag = wet_rei_corridor_active
-      add_political_power = 50
+
     }
     else = {
       subtract_from_variable = {
@@ -402621,7 +402599,7 @@ wet_focus_actions_reikland = {
           set_country_flag = wet_rei_corridor_done
         }
         else = {
-          add_political_power = 50
+
         }
       }
     }
@@ -402648,16 +402626,14 @@ wet_focus_actions_reikland = {
             start_state = A01.capital
             target_state = 547
           }
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_rei_corridor_focus_pending
         set_country_flag = wet_rei_corridor_focus_running
         set_variable = {
           wet_rei_corridor_focus_days = 90
         }
-        add_political_power = -50
+
         set_country_flag = wet_rei_corridor_active
       }
     }
@@ -402679,7 +402655,7 @@ wet_focus_actions_reikland = {
         wet_rei_conventional_focus_days = 0
       }
       clr_country_flag = wet_rei_conventional_active
-      add_political_power = 50
+
     }
     else = {
       subtract_from_variable = {
@@ -402719,7 +402695,7 @@ wet_focus_actions_reikland = {
           set_country_flag = wet_rei_conventional_done
         }
         else = {
-          add_political_power = 50
+
         }
       }
     }
@@ -402746,16 +402722,14 @@ wet_focus_actions_reikland = {
           NOT = {
             has_country_flag = wet_rei_conventional_complete
           }
-          has_political_power
-          >
-          99
+          always = yes
         }
         clr_country_flag = wet_rei_conventional_focus_pending
         set_country_flag = wet_rei_conventional_focus_running
         set_variable = {
           wet_rei_conventional_focus_days = 120
         }
-        add_political_power = -100
+
         set_country_flag = wet_rei_conventional_active
       }
     }
@@ -402777,7 +402751,7 @@ wet_focus_actions_reikland = {
         wet_rei_conventional_dwarf_focus_days = 0
       }
       clr_country_flag = wet_rei_conventional_dwarf_active
-      add_political_power = 25
+
     }
     else = {
       subtract_from_variable = {
@@ -402817,7 +402791,7 @@ wet_focus_actions_reikland = {
           set_country_flag = wet_rei_conventional_dwarf_done
         }
         else = {
-          add_political_power = 25
+
         }
       }
     }
@@ -402844,16 +402818,14 @@ wet_focus_actions_reikland = {
           NOT = {
             has_country_flag = wet_rei_conventional_complete
           }
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_rei_conventional_dwarf_focus_pending
         set_country_flag = wet_rei_conventional_dwarf_focus_running
         set_variable = {
           wet_rei_conventional_dwarf_focus_days = 90
         }
-        add_political_power = -50
+
         set_country_flag = wet_rei_conventional_dwarf_active
       }
     }

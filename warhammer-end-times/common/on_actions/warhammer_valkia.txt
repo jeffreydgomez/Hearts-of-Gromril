@@ -1,0 +1,37 @@
+on_actions = {
+  # A single monthly country callback, with one-shot guards; no daily scan.
+  on_monthly_B78 = { effect = {
+    if = {
+      limit = {
+        date > 2520.6.30
+        date < 2520.8.1
+        NOT = { has_country_flag = wet_valkia_preparing }
+        NOT = { has_country_flag = wet_valkia_invasion_resolved }
+        wet_valkia_invasion_eligible = yes
+      }
+      country_event = { id = wet_valkia.1 }
+    }
+    if = {
+      limit = { date > 2520.12.31 NOT = { has_country_flag = wet_valkia_invasion_resolved } }
+      if = {
+        limit = { OR = { NOT = { has_country_flag = wet_valkia_preparing } NOT = { wet_valkia_invasion_eligible = yes } AND = { date > 2521.1.31 NOT = { has_country_flag = wet_valkia_waiting_for_peace } } } }
+        set_country_flag = wet_valkia_invasion_resolved
+        remove_wargoal = { type = wet_valkia_invasion target = H12 }
+      }
+      else_if = {
+        limit = { has_war = yes }
+        set_country_flag = wet_valkia_waiting_for_peace
+      }
+      else_if = {
+        # January is the earliest date. Other wars postpone this one.
+        limit = { has_war = no }
+        set_country_flag = wet_valkia_invasion_resolved
+        if = {
+          limit = { can_declare_war_on = H12 }
+          country_event = { id = wet_valkia.2 }
+        }
+        else = { remove_wargoal = { type = wet_valkia_invasion target = H12 } }
+      }
+    }
+  } }
+}

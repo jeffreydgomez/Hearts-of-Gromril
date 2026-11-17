@@ -90,11 +90,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_C02_special_tt
+      add_political_power = 25
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_C02_special_tt
+        add_political_power = 25
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_C02
@@ -121,23 +121,23 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
+      add_stability = 0.02
       add_tech_bonus = {
         name = wet_skv_reward_C03
         bonus = 0.5
         uses = 1
         category = decryption_tech
       }
-      custom_effect_tooltip = WET_SKV_C03_special_tt
     }
     completion_reward = {
       effect_tooltip = {
+        add_stability = 0.02
         add_tech_bonus = {
           name = wet_skv_reward_C03
           bonus = 0.5
           uses = 1
           category = decryption_tech
         }
-        custom_effect_tooltip = WET_SKV_C03_special_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_C03
@@ -243,11 +243,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_seers
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C06_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_seers
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C06_special_tt
       }
       hidden_effect = {
@@ -284,11 +286,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_skryre
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C07_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_skryre
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C07_special_tt
       }
       hidden_effect = {
@@ -325,11 +329,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_mors
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C08_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_mors
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C08_special_tt
       }
       hidden_effect = {
@@ -363,11 +369,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_C09_special_tt
+      add_stability = 0.03
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_C09_special_tt
+        add_stability = 0.03
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_C09
@@ -522,6 +528,17 @@ focus_tree = {
     search_filters = {
       FOCUS_FILTER_POLITICAL
     }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C13_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C07
+            has_country_flag = wet_skv_chair_skryre
+          }
+        }
+      }
+    }
   }
   focus = {
     id = WET_SKV_C14
@@ -570,6 +587,17 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C14_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C22
+            has_country_flag = wet_skv_chair_moulder
+          }
+        }
+      }
     }
   }
   focus = {
@@ -756,11 +784,6 @@ focus_tree = {
       custom_trigger_tooltip = {
         tooltip = WET_SKV_C20_requirements
         check_variable = {
-          wet_skv_authority
-          >
-          59
-        }
-        check_variable = {
           wet_skv_rivalry
           <
           61
@@ -777,12 +800,12 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_stability = 0.05
-      show_ideas_tooltip = wet_focus_preview_wet_skv_c20
+      show_ideas_tooltip = wet_focus_preview_wet_preview_c20
     }
     completion_reward = {
       effect_tooltip = {
         add_stability = 0.05
-        show_ideas_tooltip = wet_focus_preview_wet_skv_c20
+        show_ideas_tooltip = wet_focus_preview_wet_preview_c20
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_C20
@@ -809,11 +832,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_C21_special_tt
+      add_stability = 0.05
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_C21_special_tt
+        add_stability = 0.05
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_C21
@@ -1978,9 +2001,7 @@ focus_tree = {
       focus = WET_SKV_T01
     }
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T03_requirements
         always = yes
@@ -2070,9 +2091,7 @@ focus_tree = {
         >
         499
       }
-      has_political_power
-      >
-      99
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T05_requirements
         always = yes
@@ -2122,9 +2141,7 @@ focus_tree = {
       focus = WET_SKV_T05
     }
     available = {
-      has_political_power
-      >
-      99
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T06_requirements
         always = yes
@@ -2215,9 +2232,7 @@ focus_tree = {
       focus = WET_SKV_T07
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T08_requirements
         is_special_project_completed = sp:sp_wet_skv_doom
@@ -2379,9 +2394,7 @@ focus_tree = {
         >
         399
       }
-      has_political_power
-      >
-      99
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T12_requirements
         always = yes
@@ -2621,10 +2634,12 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
+      add_political_power = 10
       custom_effect_tooltip = WET_SKV_T18_special_tt
     }
     completion_reward = {
       effect_tooltip = {
+        add_political_power = 10
         custom_effect_tooltip = WET_SKV_T18_special_tt
       }
       hidden_effect = {
@@ -2785,9 +2800,7 @@ focus_tree = {
         tooltip = wet_skv_director_alive_focus_requirement_tt
         wet_skv_director_alive = yes
       }
-      has_political_power
-      >
-      199
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_T22_requirements
         always = yes
@@ -3519,13 +3532,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
+      add_war_support = 0.03
       add_war_support = 0.08
-      custom_effect_tooltip = WET_SKV_F13_special_tt
     }
     completion_reward = {
       effect_tooltip = {
+        add_war_support = 0.03
         add_war_support = 0.08
-        custom_effect_tooltip = WET_SKV_F13_special_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_F13
@@ -4567,11 +4580,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_O01_special_tt
+      add_war_support = 0.1
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_O01_special_tt
+        add_war_support = 0.1
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_O01
@@ -4882,9 +4895,7 @@ focus_tree = {
       focus = WET_SKV_O09
     }
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_O10_requirements
         always = yes
@@ -4975,11 +4986,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_O12_special_tt
+      army_experience = 10
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_O12_special_tt
+        army_experience = 10
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_O12
@@ -5044,28 +5055,33 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      697 = {
-        is_fully_controlled_by = ROOT
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_I01_build_site_requirement_tt
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
       }
     }
     complete_tooltip = {
-      697 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = WET_SKV_I01_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
-        697 = {
-          add_building_construction = {
-            type = industrial_complex
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = WET_SKV_I01_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I01
@@ -5176,28 +5192,33 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      381 = {
-        is_fully_controlled_by = ROOT
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_I04_build_site_requirement_tt
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
       }
     }
     complete_tooltip = {
-      381 = {
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = WET_SKV_I04_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
-        381 = {
-          add_building_construction = {
-            type = arms_factory
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = WET_SKV_I04_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I04
@@ -5224,8 +5245,26 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      697 = {
-        is_fully_controlled_by = ROOT
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_I05_build_site_requirement_tt
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          is_coastal = yes
+          NOT = {
+            dockyard
+            >
+            4
+          }
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
       }
     }
     complete_tooltip = {
@@ -5235,13 +5274,7 @@ focus_tree = {
         uses = 1
         category = naval_equipment
       }
-      697 = {
-        add_building_construction = {
-          type = dockyard
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = WET_SKV_I05_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
@@ -5251,13 +5284,7 @@ focus_tree = {
           uses = 1
           category = naval_equipment
         }
-        697 = {
-          add_building_construction = {
-            type = dockyard
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = WET_SKV_I05_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I05
@@ -5327,47 +5354,35 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      697 = {
-        is_fully_controlled_by = ROOT
-      }
-      381 = {
-        is_fully_controlled_by = ROOT
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_I07_build_site_requirement_tt
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          NOT = {
+            fuel_silo
+            >
+            5
+          }
+          free_building_slots = {
+            building = fuel_silo
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
       }
     }
     complete_tooltip = {
-      697 = {
-        add_building_construction = {
-          type = fuel_silo
-          level = 1
-          instant_build = yes
-        }
-      }
-      381 = {
-        add_building_construction = {
-          type = fuel_silo
-          level = 1
-          instant_build = yes
-        }
-      }
       show_ideas_tooltip = wet_focus_preview_wet_skv_i07
+      custom_effect_tooltip = WET_SKV_I07_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
-        697 = {
-          add_building_construction = {
-            type = fuel_silo
-            level = 1
-            instant_build = yes
-          }
-        }
-        381 = {
-          add_building_construction = {
-            type = fuel_silo
-            level = 1
-            instant_build = yes
-          }
-        }
         show_ideas_tooltip = wet_focus_preview_wet_skv_i07
+        custom_effect_tooltip = WET_SKV_I07_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I07
@@ -5394,11 +5409,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_SKV_I08_special_tt
+      custom_effect_tooltip = WET_SKV_I08_construction_tt
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_SKV_I08_special_tt
+        custom_effect_tooltip = WET_SKV_I08_construction_tt
       }
       hidden_effect = {
         set_country_flag = wet_skv_earned_I08
@@ -5410,6 +5425,45 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_INDUSTRY
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_I08_build_site_requirement_tt
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        any_owned_state = {
+          is_owned_by = U25
+          is_fully_controlled_by = U25
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+      }
     }
   }
   focus = {
@@ -5716,9 +5770,7 @@ focus_tree = {
       focus = WET_SKV_E02
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_SKV_E07_requirements
         always = yes
@@ -5942,11 +5994,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_moulder
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C22_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_moulder
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C22_special_tt
       }
       hidden_effect = {
@@ -5983,11 +6037,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_pestilens
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C23_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_pestilens
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C23_special_tt
       }
       hidden_effect = {
@@ -6024,11 +6080,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_eshin
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C24_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_eshin
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C24_special_tt
       }
       hidden_effect = {
@@ -6065,11 +6123,13 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_skv_chair_rictus
+      add_stability = 0.03
       custom_effect_tooltip = WET_SKV_C25_special_tt
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_skv_chair_rictus
+        add_stability = 0.03
         custom_effect_tooltip = WET_SKV_C25_special_tt
       }
       hidden_effect = {
@@ -6132,6 +6192,17 @@ focus_tree = {
     search_filters = {
       FOCUS_FILTER_POLITICAL
     }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C26_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C23
+            has_country_flag = wet_skv_chair_pestilens
+          }
+        }
+      }
+    }
   }
   focus = {
     id = WET_SKV_C27
@@ -6180,6 +6251,17 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C27_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C24
+            has_country_flag = wet_skv_chair_eshin
+          }
+        }
+      }
     }
   }
   focus = {
@@ -6230,6 +6312,17 @@ focus_tree = {
     search_filters = {
       FOCUS_FILTER_POLITICAL
     }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C28_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C08
+            has_country_flag = wet_skv_chair_mors
+          }
+        }
+      }
+    }
   }
   focus = {
     id = WET_SKV_C29
@@ -6279,6 +6372,17 @@ focus_tree = {
     search_filters = {
       FOCUS_FILTER_POLITICAL
     }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C29_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C25
+            has_country_flag = wet_skv_chair_rictus
+          }
+        }
+      }
+    }
   }
   focus = {
     id = WET_SKV_C30
@@ -6327,6 +6431,17 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+    }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C30_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C06
+            has_country_flag = wet_skv_chair_seers
+          }
+        }
+      }
     }
   }
   focus = {

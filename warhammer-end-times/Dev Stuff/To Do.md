@@ -4,29 +4,47 @@
 
 	Better Icons for mission trees
 
-	Should purging be a new law? That would make more sense.
-
-	A fourth tier of racial tech for everybody.
-
-	The undead nation national spirit is really supposed to prevent population growth, not automatically drain it. I need to fix that.
-
-	I feel like there's a broad supply issue in the mod. Can you play with a living nation and see if you have the same problem?
-
 	Redo racial bonuses
-
-	Light horses cavalry aren't showing up as equipment
 
 	Nehekhara should have chariots
 
 	Integrate/use parts of HOI4 performance improvement mods.
 
-	Black crag is declaring war on tons of people - why?
-
-	Something with compliance and resistance? Non-core manpower?
-
 	Once the empire is under reikland, and world tension is at 100% or at war with the everchosen, then fully annex the empire or give them big bonuses?
 
+	Encourage AI to build different divisions & not retire divisions?
+
+	For the Custom Equipment, compare to baseline equipment.
+
+	Ruler traits for all rulers
+
+	Can we add a ledger? That includes resources produced?
+
+	Fix Nation selection page
+
+### Confirm ####
+
 	Valkia the bloody should be right next to naggaroth and imposing, and attack Naggaroth.
+
+	Got rid of purging
+
+	A fourth tier of racial tech for everybody, start every
+
+	Rebalance resources - particularly metal, horses, and food.
+
+	Removed Lump Sum PP costs from focuses.
+
+	Put infrastructure in places to start the game - 4 in cities, 3 one away from cities, 2 two away from cities.
+
+	Maybe everybody should have cores on everything of thier own race?
+
+	Nagash should have cores on nehekhara
+		Undead and chaos get full manpower from non-cores & resistance targets. Unique occupation law?
+		Resistance Targets?
+
+	Skaven and ogres should have increased food use
+
+	Add a skaven operation to detonate a doomsphere.
 
 #### LESS URGENT TO DO ####
 
@@ -53,6 +71,12 @@
 	Design a **Sylvania mission tree**, including Mannfred and shared captive/relic custody. The installed Nagashi route requires seven relics and three living sacrificial victims alongside one of three power sources. Preserve Ulthuan's custody generations and the existing Volkmar/Aliathra handover paths; never create a second captive.
 
 	Incursions should be triggered from the chaos gods mission tree
+
+#### Tier 2 Focus trees ####
+
+	Sylvania, Nehekhara, Hexoatl, Grand Cathay
+
+	Araby, Mousoilon, Chaos Gods
 
 #### DLC and system reference #####
 

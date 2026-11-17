@@ -1,18 +1,1 @@
-wet_population_is_target = {
-has_state_flag = wet_inhabitants_initialized
-        has_state_flag = wet_population_conquered
-        NOT = { has_state_flag = wet_inhabitants_uninhabited }
-        check_variable = { wet_occupier_policy > 1 }
-        OR = {
-          check_variable = { wet_pop_taint = 3 }
-          check_variable = { wet_pop_taint = 4 }
-          AND = {
-            check_variable = { wet_occupier_policy > 3 }
-            NOT = { check_variable = { wet_pop_race = wet_occupier_race } }
-          }
-          AND = {
-            check_variable = { wet_occupier_policy = 3 }
-            OR = { check_variable = { var = wet_pop_race value = 1 compare = equals } check_variable = { var = wet_pop_race value = 6 compare = equals } check_variable = { var = wet_pop_race value = 9 compare = equals } check_variable = { var = wet_pop_race value = 18 compare = equals } }
-          }
-        }
-}
+# No population-targeting rules.

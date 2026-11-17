@@ -1,0 +1,11 @@
+wet_valkia_muster = {
+  allowed = { tag = B78 is_ai = yes }
+  enable = {
+    has_country_flag = wet_valkia_preparing
+    NOT = { has_country_flag = wet_valkia_invasion_resolved }
+    wet_valkia_invasion_eligible = yes
+  }
+  abort_when_not_enabled = yes
+  ai_strategy = { type = prepare_for_war id = H12 value = 200 }
+  ai_strategy = { type = declare_war id = H12 value = -1000 }
+}

@@ -301,172 +301,6 @@ wet_ngs_courts = {
       factor = 5
     }
   }
-  wet_ngs_expedition_access = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = U24
-    }
-    visible = {
-      has_completed_focus = WET_NGS_M01
-    }
-    cost = 0
-    days_re_enable = 0
-    target_root_trigger = {
-      has_completed_focus = WET_NGS_M01
-    }
-    target_trigger = {
-      FROM = {
-        exists = yes
-        NOT = {
-          tag = U24
-        }
-        NOT = {
-          tag = WST
-        }
-      }
-    }
-    available = {
-      AND = {
-        FROM = {
-          exists = yes
-          NOT = {
-            tag = U24
-          }
-          NOT = {
-            tag = WST
-          }
-          NOT = {
-            has_war_with = U24
-          }
-          U24 = {
-            NOT = {
-              has_military_access_to = PREV
-            }
-          }
-          NOT = {
-            has_country_flag = wet_ngs_offer_expedition_access
-          }
-          check_variable = {
-            wet_ngs_offer_expedition_access_cooldown
-            <
-            1
-          }
-          OR = {
-            NOT = {
-              has_country_flag = wet_ngs_offer_expedition_access_attempted
-            }
-            U24 = {
-              has_political_power
-              >
-              -1
-            }
-          }
-        }
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        FROM = {
-          if = {
-            limit = {
-              exists = yes
-              NOT = {
-                tag = U24
-              }
-              NOT = {
-                tag = WST
-              }
-              NOT = {
-                has_war_with = U24
-              }
-              U24 = {
-                NOT = {
-                  has_military_access_to = PREV
-                }
-              }
-              NOT = {
-                has_country_flag = wet_ngs_offer_expedition_access
-              }
-              check_variable = {
-                wet_ngs_offer_expedition_access_cooldown
-                <
-                1
-              }
-              OR = {
-                NOT = {
-                  has_country_flag = wet_ngs_offer_expedition_access_attempted
-                }
-                U24 = {
-                  has_political_power
-                  >
-                  -1
-                }
-              }
-            }
-            if = {
-              limit = {
-                has_country_flag = wet_ngs_offer_expedition_access_attempted
-              }
-              U24 = {
-                add_political_power = -0
-              }
-            }
-            country_event = {
-              id = wet_nagashi.104
-            }
-          }
-        }
-      }
-      hidden_effect = {
-        if = {
-          limit = {
-            FROM = {
-              exists = yes
-              NOT = {
-                tag = U24
-              }
-              NOT = {
-                tag = WST
-              }
-              NOT = {
-                has_war_with = U24
-              }
-              U24 = {
-                NOT = {
-                  has_military_access_to = PREV
-                }
-              }
-              NOT = {
-                has_country_flag = wet_ngs_offer_expedition_access
-              }
-              check_variable = {
-                wet_ngs_offer_expedition_access_cooldown
-                <
-                1
-              }
-              OR = {
-                NOT = {
-                  has_country_flag = wet_ngs_offer_expedition_access_attempted
-                }
-                U24 = {
-                  has_political_power
-                  >
-                  -1
-                }
-              }
-            }
-          }
-          FROM = {
-            wet_ngs_send_expedition_access = yes
-          }
-        }
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
   wet_ngs_court_investigation = {
     desc = wet_decision_no_description
     icon = generic_political_discourse
@@ -3418,7 +3252,6 @@ wet_ngs_diplomacy = {
         NOT = {
           has_war_with = U24
         }
-        wet_ngs_covert_access = yes
         U24 = {
           has_equipment = {
             infantry_equipment
@@ -3441,7 +3274,6 @@ wet_ngs_diplomacy = {
           NOT = {
             has_war_with = U24
           }
-          wet_ngs_covert_access = yes
           U24 = {
             has_equipment = {
               infantry_equipment
@@ -3488,7 +3320,6 @@ wet_ngs_diplomacy = {
               NOT = {
                 has_war_with = U24
               }
-              wet_ngs_covert_access = yes
               U24 = {
                 has_equipment = {
                   infantry_equipment
@@ -3546,7 +3377,6 @@ wet_ngs_diplomacy = {
               NOT = {
                 has_war_with = U24
               }
-              wet_ngs_covert_access = yes
               U24 = {
                 has_equipment = {
                   infantry_equipment
@@ -9050,9 +8880,7 @@ wet_ngs_recovery = {
         >
         199
       }
-      has_political_power
-      >
-      74
+      always = yes
       AND = {
         has_country_flag = wet_ngs_earned_N09
         NOT = {
@@ -9105,9 +8933,7 @@ wet_ngs_recovery = {
             NOT = {
               has_global_flag = wet_skv_pyramid_exists
             }
-            has_political_power
-            >
-            74
+            always = yes
           }
           wet_ngs_award_N09 = yes
         }
@@ -9387,7 +9213,6 @@ wet_ngs_recovery = {
         }
         any_country = {
           wet_ngs_everchosen_enemy = yes
-          wet_ngs_covert_access = yes
         }
         always = yes
         NOT = {
@@ -9414,7 +9239,6 @@ wet_ngs_recovery = {
             }
             any_country = {
               wet_ngs_everchosen_enemy = yes
-              wet_ngs_covert_access = yes
             }
             always = yes
             NOT = {
@@ -9806,9 +9630,7 @@ wet_ngs_recovery = {
         >
         249
       }
-      has_political_power
-      >
-      99
+      always = yes
       AND = {
         has_country_flag = wet_ngs_earned_E10
         NOT = {
@@ -9848,9 +9670,7 @@ wet_ngs_recovery = {
               249
             }
             has_global_flag = wet_story_final_crisis
-            has_political_power
-            >
-            99
+            always = yes
           }
           wet_ngs_award_E10 = yes
         }
@@ -9878,9 +9698,7 @@ wet_ngs_recovery = {
       A13 = {
         has_character = WET_A13_leader
       }
-      has_political_power
-      >
-      49
+      always = yes
       AND = {
         has_country_flag = wet_ngs_earned_E11
         NOT = {
@@ -9910,9 +9728,7 @@ wet_ngs_recovery = {
             A13 = {
               has_character = WET_A13_leader
             }
-            has_political_power
-            >
-            49
+            always = yes
           }
           wet_ngs_award_E11 = yes
         }

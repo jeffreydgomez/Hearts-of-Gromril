@@ -1732,6 +1732,16 @@ focus_tree = {
     search_filters = {
       FOCUS_FILTER_POLITICAL
     }
+    available = {
+      custom_trigger_tooltip = {
+        tooltip = WET_KARAZ_C00_requirement
+        NOT = {
+          threat
+          <
+          0.50
+        }
+      }
+    }
   }
   focus = {
     id = WET_KARAZ_C01
@@ -3371,9 +3381,7 @@ focus_tree = {
       focus = WET_KARAZ_S04
     }
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       custom_trigger_tooltip = {
         tooltip = WET_KARAZ_S11_requirement
         always = yes

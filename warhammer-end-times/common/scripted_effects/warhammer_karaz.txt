@@ -570,9 +570,7 @@ wet_karaz_request_alliance = {
         NOT = {
           has_country_flag = wet_karaz_alliance_attempted
         }
-        has_political_power
-        >
-        24
+        always = yes
       }
     }
     if = {
@@ -715,7 +713,7 @@ wet_karaz_request_alliance = {
         limit = {
           has_country_flag = wet_karaz_alliance_attempted
         }
-        add_political_power = -25
+
       }
       set_country_flag = wet_karaz_alliance_attempted
     }
@@ -789,9 +787,7 @@ wet_karaz_send_subject_aid = {
         }
       }
       U04 = {
-        has_political_power
-        >
-        24
+        always = yes
       }
       NOT = {
         has_country_flag = wet_karaz_offer_subject_aid
@@ -934,9 +930,7 @@ wet_karaz_send_vassal = {
     limit = {
       wet_karaz_vassal_eligible = yes
       U04 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
       NOT = {
         has_country_flag = wet_karaz_offer_vassal
@@ -452690,7 +452684,7 @@ wet_karaz_finish_project = {
       }
     }
     else = {
-      add_political_power = 25
+
       add_equipment_to_stockpile = {
         type = support_equipment
         amount = 50
@@ -452712,7 +452706,7 @@ wet_karaz_cancel_project = {
       has_country_flag = wet_karaz_project_active
     }
     clr_country_flag = wet_karaz_project_active
-    add_political_power = 25
+
     add_equipment_to_stockpile = {
       type = support_equipment
       amount = 50
@@ -452735,9 +452729,7 @@ wet_karaz_send_fort_works = {
       wet_karaz_peaceful_ally = yes
       U04 = {
         wet_karaz_project_valid = yes
-        has_political_power
-        >
-        49
+        always = yes
         has_equipment = {
           support_equipment
           >
@@ -591656,9 +591648,7 @@ wet_karaz_award_O04 = {
         if = {
           limit = {
             has_completed_focus = WET_KARAZ_O04
-            has_political_power
-            >
-            49
+            always = yes
             has_equipment = {
               support_equipment
               >
@@ -591705,9 +591695,7 @@ wet_karaz_award_O04 = {
                 <
                 1
               }
-              has_political_power
-              >
-              49
+              always = yes
               has_equipment = {
                 support_equipment
                 >
@@ -592132,9 +592120,7 @@ wet_karaz_award_S11 = {
       NOT = {
         has_country_flag = wet_karaz_last_reserve_done
       }
-      has_political_power
-      >
-      49
+      always = yes
       always = yes
       NOT = {
         has_country_flag = wet_karaz_reserve_spent
@@ -592160,9 +592146,7 @@ wet_karaz_award_S11 = {
         NOT = {
           has_country_flag = wet_karaz_last_reserve_done
         }
-        has_political_power
-        >
-        49
+        always = yes
         has_country_flag = wet_karaz_reserve_armed
         NOT = {
           has_country_flag = wet_karaz_reserve_spent
@@ -592185,9 +592169,7 @@ wet_karaz_award_S11 = {
           }
           wet_karaz_sealed_active = yes
           has_defensive_war = yes
-          has_political_power
-          >
-          49
+          always = yes
           NOT = {
             OR = {
               has_stability
@@ -592198,7 +592180,7 @@ wet_karaz_award_S11 = {
         }
         clr_country_flag = wet_karaz_reserve_armed
         set_country_flag = wet_karaz_reserve_spent
-        add_political_power = -50
+
         add_stability = -0.05
         add_timed_idea = {
           idea = wet_karaz_last_reserve
@@ -592759,9 +592741,7 @@ wet_karaz_award_P08 = {
                 }
               }
               U04 = {
-                has_political_power
-                >
-                24
+                always = yes
               }
               NOT = {
                 has_country_flag = wet_karaz_offer_subject_aid
@@ -592795,9 +592775,7 @@ wet_karaz_award_P08 = {
                   }
                 }
                 U04 = {
-                  has_political_power
-                  >
-                  24
+                  always = yes
                 }
                 NOT = {
                   has_country_flag = wet_karaz_offer_subject_aid

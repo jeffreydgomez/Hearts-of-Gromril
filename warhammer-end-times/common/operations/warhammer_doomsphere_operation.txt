@@ -1,0 +1,62 @@
+# Native intelligence operation; ROOT = attacker, FROM = enemy,
+# FROM.FROM = the capital state selected for this operation.
+wet_skv_operation_doomsphere = {
+ icon = GFX_wet_doomsphere_operation
+ map_icon = GFX_wet_doomsphere_operation_map
+ name = wet_skv_operation_doomsphere
+ desc = wet_skv_operation_doomsphere_desc
+ priority = 20
+ days = 120
+ operatives = 3
+ network_strength = 75
+ danger_level = 5
+ risk_chance = 0.40
+ risk_modifiers = { operation_risk }
+ experience = 3
+ cost_multiplier = 0
+ time_multiplier = 0
+ return_on_complete = no
+ equipment = { support_equipment = 1000 }
+ allowed = { has_dlc = "La Resistance" wet_skv_doomsphere_operator = yes }
+ visible = { has_war_with = FROM }
+ available = { wet_skv_doomsphere_ready = yes }
+ requirements = { wet_skv_doomsphere_ready = yes }
+ selection_target = { targets = { FROM } }
+ selection_target_state = { wet_skv_doomsphere_capital = yes }
+ ai_will_do = {
+  factor = 20
+  modifier = { factor = 0 NOT = { wet_skv_doomsphere_ready = yes } }
+ }
+ outcome_potential = { custom_effect_tooltip = wet_skv_doomsphere_outcome_tt }
+ outcome_execute = {
+  if = {
+   limit = {
+    ROOT = { wet_skv_doomsphere_ready = yes }
+    FROM.FROM = { wet_skv_doomsphere_capital = yes }
+   }
+   ROOT = {
+    # Consume once on any resolved attempt, before rolling success. In
+    # particular, two simultaneous completions cannot spend the last bomb twice.
+    set_temp_variable = { wet_skv_doomsphere_target_state = FROM.FROM }
+    add_nuclear_bombs = -1
+    random_list = {
+     70 = {
+      launch_nuke = {
+       state = var:wet_skv_doomsphere_target_state
+       controller = FROM
+       use_nuke = no
+       nuke_type = nuclear_bomb
+      }
+      country_event = { id = wet_skv_doomsphere.1 }
+      FROM = { country_event = { id = wet_skv_doomsphere.4 } }
+     }
+     30 = { country_event = { id = wet_skv_doomsphere.2 } }
+    }
+   }
+  }
+  else = { ROOT = { country_event = { id = wet_skv_doomsphere.3 } } }
+ }
+ phases = { wet_skv_doomsphere_infiltrate = { base = 100 } }
+ phases = { wet_skv_doomsphere_emplace = { base = 100 } }
+ phases = { wet_skv_doomsphere_detonate = { base = 100 } }
+}

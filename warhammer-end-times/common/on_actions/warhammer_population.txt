@@ -10,13 +10,6 @@ on_actions = {
       } }
       # ROOT = new controller; FROM = previous controller; FROM.FROM = state.
       on_state_control_changed = { effect = { if = { limit = { has_global_flag = wet_population_started } wet_pop_update_country = yes FROM.FROM = { wet_pop_register = yes } } } }
-      on_daily_WST = { effect = { if = { limit = { has_global_flag = wet_population_started }
-        clear_array = global.wet_population_remove
-        for_each_scope_loop = { array = global.wet_population_active wet_pop_daily_state = yes }
-        # Never remove entries while iterating the active array.
-        for_each_scope_loop = { array = global.wet_population_remove remove_from_array = { global.wet_population_active = THIS } }
-        clear_array = global.wet_population_remove
-      } } }
       # Monthly reconciliation is one pass over controlled states in total;
       # it catches unusual scripted transfers and religious leader changes.
       on_monthly = { effect = { if = { limit = { has_global_flag = wet_population_started }

@@ -317,50 +317,6 @@ wet_ngs_seven_relics = {
     wet_ngs_holds_A14 = yes
   }
 }
-wet_ngs_covert_access = {
-  OR = {
-    U24 = {
-      OR = {
-        is_neighbor_of = PREV
-        has_military_access_to = PREV
-      }
-    }
-    AND = {
-      U24 = {
-        any_owned_state = {
-          naval_base
-          >
-          0
-          is_fully_controlled_by = U24
-        }
-        has_equipment = {
-          convoy
-          >
-          19
-        }
-      }
-      any_owned_state = {
-        naval_base
-        >
-        0
-        is_fully_controlled_by = PREV
-      }
-    }
-    any_owned_state = {
-      any_neighbor_state = {
-        controller = {
-          OR = {
-            tag = U24
-            has_country_flag = wet_ngs_pledged
-            U24 = {
-              has_military_access_to = PREV
-            }
-          }
-        }
-      }
-    }
-  }
-}
 wet_ngs_holds_volkmar = {
   has_global_flag = wet_ngs_volkmar_captive
   NOT = {
@@ -378,7 +334,6 @@ wet_ngs_can_seize_volkmar = {
     exists = yes
     has_character = WET_A80_leader
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ngs_volkmar_captive
@@ -412,7 +367,6 @@ wet_ngs_can_seize_morgiana = {
     exists = yes
     has_character = WET_NGS_Morgiana
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ngs_morgiana_captive
@@ -443,7 +397,6 @@ wet_ngs_can_seize_aliathra = {
     exists = yes
     has_character = WET_ULT_Aliathra
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ult_aliathra_captive
@@ -472,7 +425,6 @@ wet_ngs_can_seize_emil = {
     exists = yes
     has_character = WET_A82_leader
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ngs_emil_captive
@@ -501,7 +453,6 @@ wet_ngs_can_seize_alarielle = {
     exists = yes
     has_character = WET_H08_leader
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ngs_alarielle_captive
@@ -530,7 +481,6 @@ wet_ngs_can_seize_mazdamundi = {
     exists = yes
     has_character = WET_V04_leader
     wet_ngs_hostile = yes
-    wet_ngs_covert_access = yes
   }
   NOT = {
     has_global_flag = wet_ngs_mazdamundi_captive

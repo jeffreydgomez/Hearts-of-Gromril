@@ -227,103 +227,27 @@ if = { limit = { check_variable = { var = wet_country_faith value = 9 compare = 
 if = { limit = { check_variable = { var = wet_country_faith value = 46 compare = equals } } set_variable = { wet_country_taint = 3 } }
 if = { limit = { check_variable = { var = wet_country_faith value = 35 compare = equals } } set_variable = { wet_country_taint = 4 } }
 if = { limit = { has_idea = wet_deathless_hosts } set_variable = { wet_country_taint = 4 } }
-set_variable = { wet_country_policy = 2 }
-if = { limit = { check_variable = { var = wet_country_race value = 4 compare = equals } } set_variable = { wet_country_policy = 3 } }
-if = { limit = { check_variable = { var = wet_country_race value = 5 compare = equals } } set_variable = { wet_country_policy = 3 } }
-if = { limit = { check_variable = { var = wet_country_race value = 11 compare = equals } } set_variable = { wet_country_policy = 3 } }
-if = { limit = { check_variable = { var = wet_country_race value = 12 compare = equals } } set_variable = { wet_country_policy = 3 } }
-if = { limit = { check_variable = { var = wet_country_race value = 24 compare = equals } } set_variable = { wet_country_policy = 3 } }
-if = { limit = { check_variable = { var = wet_country_race value = 1 compare = equals } } set_variable = { wet_country_policy = 6 } }
-if = { limit = { check_variable = { var = wet_country_race value = 6 compare = equals } } set_variable = { wet_country_policy = 7 } }
-if = { limit = { check_variable = { var = wet_country_race value = 9 compare = equals } } set_variable = { wet_country_policy = 5 } }
-if = { limit = { check_variable = { var = wet_country_race value = 18 compare = equals } } set_variable = { wet_country_policy = 4 } }
-if = { limit = { check_variable = { var = wet_country_race value = 2 compare = equals } } set_variable = { wet_country_policy = 0 } }
-if = { limit = { check_variable = { var = wet_country_race value = 16 compare = equals } } set_variable = { wet_country_policy = 0 } }
-if = { limit = { check_variable = { var = wet_country_race value = 22 compare = equals } } set_variable = { wet_country_policy = 0 } }
-if = { limit = { check_variable = { var = wet_country_race value = 23 compare = equals } } set_variable = { wet_country_policy = 0 } }
-if = { limit = { OR = { has_government = fascism has_government = communism has_idea = wet_deathless_hosts } } set_variable = { wet_country_policy = 1 } }
-if = { limit = { check_variable = { var = wet_country_policy value = 0 compare = equals } NOT = { has_idea = wet_population_policy_preserve } } remove_ideas = { wet_population_policy_convert wet_population_policy_faith wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_preserve }
-if = { limit = { check_variable = { var = wet_country_policy value = 1 compare = equals } NOT = { has_idea = wet_population_policy_convert } } remove_ideas = { wet_population_policy_preserve wet_population_policy_faith wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_convert }
-if = { limit = { check_variable = { var = wet_country_policy value = 2 compare = equals } NOT = { has_idea = wet_population_policy_faith } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_faith }
-if = { limit = { check_variable = { var = wet_country_policy value = 3 compare = equals } NOT = { has_idea = wet_population_policy_civilized } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_faith wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_civilized }
-if = { limit = { check_variable = { var = wet_country_policy value = 4 compare = equals } NOT = { has_idea = wet_population_policy_skaven } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_faith wet_population_policy_civilized wet_population_policy_greenskin wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_skaven }
-if = { limit = { check_variable = { var = wet_country_policy value = 5 compare = equals } NOT = { has_idea = wet_population_policy_greenskin } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_faith wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_beastmen wet_population_policy_fimir } add_ideas = wet_population_policy_greenskin }
-if = { limit = { check_variable = { var = wet_country_policy value = 6 compare = equals } NOT = { has_idea = wet_population_policy_beastmen } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_faith wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_fimir } add_ideas = wet_population_policy_beastmen }
-if = { limit = { check_variable = { var = wet_country_policy value = 7 compare = equals } NOT = { has_idea = wet_population_policy_fimir } } remove_ideas = { wet_population_policy_preserve wet_population_policy_convert wet_population_policy_faith wet_population_policy_civilized wet_population_policy_skaven wet_population_policy_greenskin wet_population_policy_beastmen } add_ideas = wet_population_policy_fimir }
-}
-
-wet_pop_read_controller = {
-controller = { if = { limit = { NOT = { has_variable = wet_country_policy } } wet_pop_update_country = yes } PREV = { set_variable = { wet_occupier_race = PREV.wet_country_race } set_variable = { wet_occupier_faith = PREV.wet_country_faith } set_variable = { wet_occupier_taint = PREV.wet_country_taint } set_variable = { wet_occupier_policy = PREV.wet_country_policy } } }
-}
-
-wet_pop_end_purge = {
-clr_state_flag = wet_population_purging
-set_variable = { wet_purge_days = 0 }
-remove_province_modifier = { static_modifiers = { wet_population_purge_active } province = { all_provinces = yes } }
-}
-
-wet_pop_evaluate = {
-if = { limit = { has_state_flag = wet_inhabitants_initialized NOT = { has_state_flag = wet_inhabitants_uninhabited } }
-      wet_pop_read_controller = yes
-      if = { limit = { NOT = { is_in_array = { array = wet_population_controller value = CONTROLLER } } }
-        wet_pop_end_purge = yes
-        set_state_flag = wet_population_conquered
-        clear_array = wet_population_controller
-        add_to_array = { wet_population_controller = CONTROLLER }
-      }
-      if = { limit = { check_variable = { wet_occupier_policy = 1 } }
-        if = { limit = { OR = { NOT = { check_variable = { wet_pop_faith = wet_occupier_faith } } NOT = { check_variable = { wet_pop_taint = wet_occupier_taint } } } }
-          set_variable = { wet_pop_faith = wet_occupier_faith }
-          set_variable = { wet_pop_taint = wet_occupier_taint }
-          wet_pop_show_faith = yes
-        }
-      }
-      if = { limit = { wet_population_is_target = yes }
-        if = { limit = { NOT = { has_state_flag = wet_population_purging } }
-          set_state_flag = wet_population_purging
-          set_variable = { wet_purge_days = 0 }
-          add_province_modifier = { static_modifiers = { wet_population_purge_active } province = { all_provinces = yes } }
-        }
-      }
-      else_if = { limit = { has_state_flag = wet_population_purging } wet_pop_end_purge = yes }
-    }
 }
 
 wet_pop_register = {
-wet_pop_evaluate = yes
-      if = { limit = { has_state_flag = wet_population_purging NOT = { is_in_array = { array = global.wet_population_active value = THIS } } }
-        add_to_array = { global.wet_population_active = THIS }
-      }
-}
-
-wet_pop_daily_state = {
-wet_pop_evaluate = yes
-      if = { limit = { has_state_flag = wet_population_purging }
-        # state_population_k * 20 = 2% of population in people. This avoids
-        # converting the full population into an overflowing fixed-point value.
-        set_temp_variable = { wet_loss = state_population_k }
-        multiply_temp_variable = { wet_loss = 20 }
-        add_to_temp_variable = { wet_loss = wet_population_loss_remainder }
-        set_variable = { wet_population_loss_remainder = wet_loss }
-        round_temp_variable = wet_loss
-        clamp_temp_variable = { var = wet_loss min = 0 }
-        subtract_from_variable = { wet_population_loss_remainder = wet_loss }
-        multiply_temp_variable = { wet_loss = -1 }
-        add_manpower = var:wet_loss
-        add_to_variable = { wet_purge_days = 1 }
-        if = { limit = { check_variable = { wet_purge_days > 364 } }
-          set_variable = { wet_pop_race = wet_occupier_race }
-          set_variable = { wet_pop_faith = wet_occupier_faith }
-          set_variable = { wet_pop_taint = wet_occupier_taint }
-          wet_pop_show_race = yes
-          wet_pop_show_faith = yes
-          wet_pop_end_purge = yes
-          clr_state_flag = wet_population_conquered
+if = {
+      limit = {
+        has_state_flag = wet_inhabitants_initialized
+        NOT = { has_state_flag = wet_inhabitants_uninhabited }
+        controller = { OR = { has_government = fascism has_government = communism has_idea = wet_deathless_hosts } }
+        OR = {
+          NOT = { check_variable = { wet_pop_faith = CONTROLLER.wet_country_faith } }
+          NOT = { check_variable = { wet_pop_taint = CONTROLLER.wet_country_taint } }
         }
       }
-      if = { limit = { NOT = { has_state_flag = wet_population_purging } }
-        add_to_array = { global.wet_population_remove = THIS }
+      controller = {
+        PREV = {
+          set_variable = { wet_pop_faith = PREV.wet_country_faith }
+          set_variable = { wet_pop_taint = PREV.wet_country_taint }
+        }
       }
+      wet_pop_show_faith = yes
+    }
 }
 
 wet_pop_refresh_realm = {

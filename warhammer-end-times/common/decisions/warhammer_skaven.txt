@@ -111,7 +111,7 @@ wet_skv_council = {
           type = support_equipment
           amount = -100
         }
-        custom_effect_tooltip = wet_decision_add_to_variable_wet_skv_authority_10_0
+        add_political_power = 10
         if = {
           limit = {
             NOT = {
@@ -133,9 +133,7 @@ wet_skv_council = {
         subtract_from_variable = {
           wet_skv_unpaid_spoils = 1
         }
-        add_to_variable = {
-          wet_skv_authority = 10
-        }
+        add_political_power = 10
         if = {
           limit = {
             NOT = {
@@ -940,7 +938,6 @@ wet_skv_diplomacy = {
     complete_effect = {
       effect_tooltip = {
         add_stability = -0.1
-        custom_effect_tooltip = wet_decision_subtract_from_variable_wet_skv_authority_minus20_0
         for_each_scope_loop = {
           array = wet_skv_pact_partner
           country_event = {
@@ -951,9 +948,6 @@ wet_skv_diplomacy = {
       hidden_effect = {
         set_country_flag = wet_skv_renounce_active
         add_stability = -0.1
-        subtract_from_variable = {
-          wet_skv_authority = 20
-        }
         for_each_scope_loop = {
           array = wet_skv_pact_partner
           country_event = {
@@ -1848,158 +1842,6 @@ wet_skv_operations = {
             has_completed_focus = WET_SKV_O12
           }
           add_political_power = 12
-        }
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_skv_launch_cell = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = U25
-    }
-    visible = {
-      OR = {
-        has_completed_focus = WET_SKV_W00
-        has_completed_focus = WET_SKV_O01
-      }
-    }
-    cost = 50
-    days_re_enable = 0
-    target_root_trigger = {
-      OR = {
-        has_completed_focus = WET_SKV_W00
-        has_completed_focus = WET_SKV_O01
-      }
-    }
-    target_trigger = {
-      FROM = {
-        has_war_with = U25
-      }
-    }
-    available = {
-      has_equipment = {
-        support_equipment
-        >
-        199
-      }
-      AND = {
-        wet_skv_operational = yes
-        FROM = {
-          wet_skv_op_cell_target = yes
-          NOT = {
-            has_country_flag = wet_skv_op_cell
-          }
-          check_variable = {
-            wet_skv_op_cell_cooldown
-            <
-            1
-          }
-        }
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        FROM = {
-          if = {
-            limit = {
-              U25 = {
-                has_country_flag = wet_skv_concealment
-              }
-            }
-            country_event = {
-              id = wet_skaven.147
-              days = 15
-            }
-          }
-          else = {
-            country_event = {
-              id = wet_skaven.147
-            }
-          }
-        }
-        add_equipment_to_stockpile = {
-          type = support_equipment
-          amount = -200
-        }
-        if = {
-          limit = {
-            has_country_flag = wet_skv_chair_eshin
-          }
-          add_political_power = 25
-        }
-        if = {
-          limit = {
-            has_completed_focus = WET_SKV_O12
-          }
-          add_political_power = 5
-        }
-      }
-      hidden_effect = {
-        FROM = {
-          set_country_flag = wet_skv_op_cell
-          set_variable = {
-            wet_skv_op_cell_days = 45
-          }
-          clr_country_flag = wet_skv_op_cell_defended
-          clr_country_flag = wet_skv_op_cell_search
-          clear_array = wet_skv_op_cell_site
-          capital_scope = {
-            PREV = {
-              add_to_array = {
-                wet_skv_op_cell_site = PREV
-              }
-            }
-          }
-          U25 = {
-            if = {
-              limit = {
-                NOT = {
-                  is_in_array = {
-                    wet_skv_operation_targets = PREV
-                  }
-                }
-              }
-              add_to_array = {
-                wet_skv_operation_targets = PREV
-              }
-            }
-          }
-          if = {
-            limit = {
-              U25 = {
-                has_country_flag = wet_skv_concealment
-              }
-            }
-            country_event = {
-              id = wet_skaven.147
-              days = 15
-            }
-          }
-          else = {
-            country_event = {
-              id = wet_skaven.147
-            }
-          }
-        }
-        add_equipment_to_stockpile = {
-          type = support_equipment
-          amount = -200
-        }
-        if = {
-          limit = {
-            has_country_flag = wet_skv_chair_eshin
-          }
-          add_political_power = 25
-        }
-        if = {
-          limit = {
-            has_completed_focus = WET_SKV_O12
-          }
-          add_political_power = 5
         }
       }
     }
@@ -7105,6 +6947,15 @@ wet_skv_recovery = {
           has_country_flag = wet_skv_reward_C13
         }
       }
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C13_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C07
+            has_country_flag = wet_skv_chair_skryre
+          }
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -7177,11 +7028,6 @@ wet_skv_recovery = {
         has_country_flag = wet_skv_earned_C20
         NOT = {
           has_country_flag = wet_skv_reward_C20
-        }
-        check_variable = {
-          wet_skv_authority
-          >
-          59
         }
         check_variable = {
           wet_skv_rivalry
@@ -7621,9 +7467,7 @@ wet_skv_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T03
         NOT = {
@@ -7670,9 +7514,7 @@ wet_skv_recovery = {
         >
         499
       }
-      has_political_power
-      >
-      99
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T05
         NOT = {
@@ -7720,9 +7562,7 @@ wet_skv_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      has_political_power
-      >
-      99
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T06
         NOT = {
@@ -7762,9 +7602,7 @@ wet_skv_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T08
         NOT = {
@@ -7850,9 +7688,7 @@ wet_skv_recovery = {
         >
         399
       }
-      has_political_power
-      >
-      99
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T12
         NOT = {
@@ -8129,9 +7965,7 @@ wet_skv_recovery = {
         tooltip = wet_skv_director_alive_focus_requirement_tt
         wet_skv_director_alive = yes
       }
-      has_political_power
-      >
-      199
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_T22
         NOT = {
@@ -8857,9 +8691,7 @@ wet_skv_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      has_political_power
-      >
-      74
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_O10
         NOT = {
@@ -9026,9 +8858,7 @@ wet_skv_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      has_political_power
-      >
-      49
+      always = yes
       AND = {
         has_country_flag = wet_skv_earned_E07
         NOT = {
@@ -9209,6 +9039,15 @@ wet_skv_recovery = {
           has_country_flag = wet_skv_reward_C28
         }
       }
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C28_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C08
+            has_country_flag = wet_skv_chair_mors
+          }
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -9249,6 +9088,15 @@ wet_skv_recovery = {
           has_country_flag = wet_skv_reward_C29
         }
       }
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C29_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C25
+            has_country_flag = wet_skv_chair_rictus
+          }
+        }
+      }
     }
     complete_effect = {
       effect_tooltip = {
@@ -9287,6 +9135,15 @@ wet_skv_recovery = {
         has_country_flag = wet_skv_earned_C30
         NOT = {
           has_country_flag = wet_skv_reward_C30
+        }
+      }
+      custom_trigger_tooltip = {
+        tooltip = WET_SKV_C30_requirements
+        NOT = {
+          OR = {
+            has_completed_focus = WET_SKV_C06
+            has_country_flag = wet_skv_chair_seers
+          }
         }
       }
     }

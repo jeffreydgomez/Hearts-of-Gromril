@@ -201,9 +201,7 @@ country_event = {
         wet_ngs_six_agents = yes
       }
       U24 = {
-        has_political_power
-        >
-        24
+        always = yes
       }
     }
     effect_tooltip = {
@@ -226,7 +224,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -25
+
         }
       }
     }
@@ -241,9 +239,7 @@ country_event = {
             wet_ngs_six_agents = yes
           }
           U24 = {
-            has_political_power
-            >
-            24
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_research_exchange
@@ -269,7 +265,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -25
+
           }
           set_country_flag = wet_ngs_offer_research_exchange_accepted
         }
@@ -330,124 +326,7 @@ country_event = {
   option = {
     name = wet_nagashi.104.0
     ai_chance = {
-      factor = 15
-    }
-    hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_expedition_access
-        }
-        clr_country_flag = wet_ngs_offer_expedition_access
-        set_variable = {
-          wet_ngs_offer_expedition_access_days = 0
-        }
-        set_variable = {
-          wet_ngs_offer_expedition_access_cooldown = 180
-        }
-      }
-    }
-  }
-  option = {
-    name = wet_nagashi.104.1
-    ai_chance = {
-      factor = 85
-      modifier = {
-        add = 10
-        is_in_faction_with = U24
-      }
-    }
-    trigger = {
-      has_country_flag = wet_ngs_offer_expedition_access
-      exists = yes
-      NOT = {
-        tag = U24
-      }
-      NOT = {
-        tag = WST
-      }
-      NOT = {
-        has_war_with = U24
-      }
-      U24 = {
-        NOT = {
-          has_military_access_to = PREV
-        }
-      }
-      U24 = {
-        has_political_power
-        >
-        24
-      }
-    }
-    effect_tooltip = {
-      give_military_access = U24
-      add_political_power = 25
-      if = {
-        limit = {
-          always = yes
-        }
-        U24 = {
-          add_political_power = -25
-        }
-      }
-    }
-    hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_expedition_access
-          exists = yes
-          NOT = {
-            tag = U24
-          }
-          NOT = {
-            tag = WST
-          }
-          NOT = {
-            has_war_with = U24
-          }
-          U24 = {
-            NOT = {
-              has_military_access_to = PREV
-            }
-          }
-          U24 = {
-            has_political_power
-            >
-            24
-          }
-        }
-        clr_country_flag = wet_ngs_offer_expedition_access
-        set_variable = {
-          wet_ngs_offer_expedition_access_days = 0
-        }
-        give_military_access = U24
-        add_political_power = 25
-        if = {
-          limit = {
-            always = yes
-          }
-          U24 = {
-            add_political_power = -25
-          }
-        }
-        set_variable = {
-          wet_ngs_offer_expedition_access_cooldown = 180
-        }
-      }
-      else = {
-        if = {
-          limit = {
-            has_country_flag = wet_ngs_offer_expedition_access
-          }
-          clr_country_flag = wet_ngs_offer_expedition_access
-          set_variable = {
-            wet_ngs_offer_expedition_access_days = 0
-          }
-          set_variable = {
-            wet_ngs_offer_expedition_access_cooldown = 180
-          }
-        }
-      }
+      factor = 1
     }
   }
 }
@@ -470,15 +349,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_volkmar
         days = 120
@@ -575,9 +452,7 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
     }
     effect_tooltip = {
@@ -621,7 +496,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -50
+
         }
       }
     }
@@ -652,9 +527,7 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            49
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_volkmar_handover
@@ -718,7 +591,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -50
+
           }
         }
         set_variable = {
@@ -840,15 +713,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_morgiana
         days = 120
@@ -982,15 +853,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_aliathra
         days = 120
@@ -1085,9 +954,7 @@ country_event = {
         wet_ngs_aliathra_handover_token = H06.wet_ult_custody_generation
       }
       U24 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
     }
     effect_tooltip = {
@@ -1098,7 +965,7 @@ country_event = {
           }
         }
         U24 = {
-          add_political_power = -50
+
         }
       }
     }
@@ -1127,9 +994,7 @@ country_event = {
             wet_ngs_aliathra_handover_token = H06.wet_ult_custody_generation
           }
           U24 = {
-            has_political_power
-            >
-            49
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_aliathra_handover
@@ -1152,7 +1017,7 @@ country_event = {
             }
           }
           U24 = {
-            add_political_power = -50
+
           }
         }
         set_variable = {
@@ -1195,15 +1060,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_emil
         days = 120
@@ -1337,15 +1200,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_alarielle
         days = 120
@@ -1479,15 +1340,13 @@ country_event = {
       factor = 85
     }
     trigger = {
-      has_political_power
-      >
-      49
+      always = yes
     }
     effect_tooltip = {
-      add_political_power = -50
+
     }
     hidden_effect = {
-      add_political_power = -50
+
       set_country_flag = {
         flag = wet_ngs_guard_mazdamundi
         days = 120
@@ -1735,9 +1594,7 @@ country_event = {
       has_country_flag = wet_ngs_offer_soul_tithe
       wet_ngs_court_eligible = yes
       has_country_flag = wet_ngs_pledged
-      has_political_power
-      >
-      39
+      always = yes
       NOT = {
         has_country_flag = wet_ngs_soul_donor
       }
@@ -1747,19 +1604,17 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        24
+        always = yes
       }
     }
     effect_tooltip = {
-      add_political_power = -40
+
       if = {
         limit = {
           always = yes
         }
         U24 = {
-          add_political_power = -25
+
         }
       }
     }
@@ -1770,9 +1625,7 @@ country_event = {
           has_country_flag = wet_ngs_offer_soul_tithe
           wet_ngs_court_eligible = yes
           has_country_flag = wet_ngs_pledged
-          has_political_power
-          >
-          39
+          always = yes
           NOT = {
             has_country_flag = wet_ngs_soul_donor
           }
@@ -1782,23 +1635,21 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            24
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_soul_tithe
         set_variable = {
           wet_ngs_offer_soul_tithe_days = 0
         }
-        add_political_power = -40
+
         set_country_flag = wet_ngs_soul_donor
         if = {
           limit = {
             always = yes
           }
           U24 = {
-            add_political_power = -25
+
           }
         }
         set_variable = {
@@ -1987,9 +1838,7 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -2003,7 +1852,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -2022,9 +1871,7 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_compact_living
@@ -2049,7 +1896,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {
@@ -2122,9 +1969,7 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -2138,7 +1983,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -2157,9 +2002,7 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_compact_rats
@@ -2198,7 +2041,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {
@@ -2271,9 +2114,7 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -2287,7 +2128,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -2306,9 +2147,7 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_compact_chaos
@@ -2333,7 +2172,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {
@@ -2518,9 +2357,7 @@ country_event = {
         has_war_with = U24
       }
       U24 = {
-        has_political_power
-        >
-        49
+        always = yes
       }
     }
     effect_tooltip = {
@@ -2535,7 +2372,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -50
+
         }
       }
     }
@@ -2554,9 +2391,7 @@ country_event = {
             has_war_with = U24
           }
           U24 = {
-            has_political_power
-            >
-            49
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_passage_northern
@@ -2574,7 +2409,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -50
+
           }
         }
         set_variable = {
@@ -2859,7 +2694,6 @@ country_event = {
       has_country_flag = wet_ngs_offer_exchange_living
       wet_ngs_pact_live = yes
       has_country_flag = wet_ngs_pact_living
-      wet_ngs_covert_access = yes
       has_equipment = {
         support_equipment
         >
@@ -2893,7 +2727,6 @@ country_event = {
           has_country_flag = wet_ngs_offer_exchange_living
           wet_ngs_pact_live = yes
           has_country_flag = wet_ngs_pact_living
-          wet_ngs_covert_access = yes
           has_equipment = {
             support_equipment
             >
@@ -2989,7 +2822,6 @@ country_event = {
       has_country_flag = wet_ngs_offer_exchange_chaos
       wet_ngs_pact_live = yes
       has_country_flag = wet_ngs_pact_chaos
-      wet_ngs_covert_access = yes
       has_equipment = {
         support_equipment
         >
@@ -3023,7 +2855,6 @@ country_event = {
           has_country_flag = wet_ngs_offer_exchange_chaos
           wet_ngs_pact_live = yes
           has_country_flag = wet_ngs_pact_chaos
-          wet_ngs_covert_access = yes
           has_equipment = {
             support_equipment
             >
@@ -3373,7 +3204,6 @@ country_event = {
       NOT = {
         has_war_with = U24
       }
-      wet_ngs_covert_access = yes
       U24 = {
         has_equipment = {
           infantry_equipment
@@ -3418,7 +3248,6 @@ country_event = {
           NOT = {
             has_war_with = U24
           }
-          wet_ngs_covert_access = yes
           U24 = {
             has_equipment = {
               infantry_equipment
@@ -3644,9 +3473,7 @@ country_event = {
         has_government = communism
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -3727,7 +3554,7 @@ country_event = {
           has_government = communism
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -3744,9 +3571,7 @@ country_event = {
             has_government = communism
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_nagash_government
@@ -3838,7 +3663,7 @@ country_event = {
             has_government = communism
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {
@@ -4397,9 +4222,7 @@ country_event = {
         0.5
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -4408,7 +4231,7 @@ country_event = {
           is_subject_of = U24
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -4427,9 +4250,7 @@ country_event = {
             0.5
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_submission
@@ -4444,7 +4265,7 @@ country_event = {
             is_subject_of = U24
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {
@@ -4511,7 +4332,6 @@ country_event = {
       NOT = {
         has_war_with = U24
       }
-      wet_ngs_covert_access = yes
       has_global_flag = wet_story_auric_bastion_raised
       has_global_flag = wet_story_auric_bastion_broken
       wet_rei_bastion_sites = yes
@@ -4523,9 +4343,7 @@ country_event = {
         }
       }
       U24 = {
-        has_political_power
-        >
-        74
+        always = yes
       }
     }
     effect_tooltip = {
@@ -4542,7 +4360,7 @@ country_event = {
           always = yes
         }
         U24 = {
-          add_political_power = -75
+
         }
       }
     }
@@ -4555,7 +4373,6 @@ country_event = {
           NOT = {
             has_war_with = U24
           }
-          wet_ngs_covert_access = yes
           has_global_flag = wet_story_auric_bastion_raised
           has_global_flag = wet_story_auric_bastion_broken
           wet_rei_bastion_sites = yes
@@ -4567,9 +4384,7 @@ country_event = {
             }
           }
           U24 = {
-            has_political_power
-            >
-            74
+            always = yes
           }
         }
         clr_country_flag = wet_ngs_offer_bastion_aid
@@ -4589,7 +4404,7 @@ country_event = {
             always = yes
           }
           U24 = {
-            add_political_power = -75
+
           }
         }
         set_variable = {

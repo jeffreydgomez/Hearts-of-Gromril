@@ -263,9 +263,7 @@ wet_ngs_send_research_exchange = {
           has_country_flag = wet_ngs_offer_research_exchange_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -274,7 +272,7 @@ wet_ngs_send_research_exchange = {
         has_country_flag = wet_ngs_offer_research_exchange_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_research_exchange_attempted
@@ -1029,75 +1027,6 @@ wet_ngs_count_relics = {
     }
   }
 }
-wet_ngs_send_expedition_access = {
-  if = {
-    limit = {
-      exists = yes
-      NOT = {
-        tag = U24
-      }
-      NOT = {
-        tag = WST
-      }
-      NOT = {
-        has_war_with = U24
-      }
-      U24 = {
-        NOT = {
-          has_military_access_to = PREV
-        }
-      }
-      NOT = {
-        has_country_flag = wet_ngs_offer_expedition_access
-      }
-      check_variable = {
-        wet_ngs_offer_expedition_access_cooldown
-        <
-        1
-      }
-      OR = {
-        NOT = {
-          has_country_flag = wet_ngs_offer_expedition_access_attempted
-        }
-        U24 = {
-          has_political_power
-          >
-          -1
-        }
-      }
-    }
-    if = {
-      limit = {
-        has_country_flag = wet_ngs_offer_expedition_access_attempted
-      }
-      U24 = {
-        add_political_power = -0
-      }
-    }
-    set_country_flag = wet_ngs_offer_expedition_access_attempted
-    set_country_flag = wet_ngs_offer_expedition_access
-    set_variable = {
-      wet_ngs_offer_expedition_access_days = 30
-    }
-    U24 = {
-      if = {
-        limit = {
-          NOT = {
-            is_in_array = {
-              wet_ngs_active_recipients = PREV
-            }
-          }
-        }
-        add_to_array = {
-          wet_ngs_active_recipients = PREV
-        }
-      }
-    }
-    country_event = {
-      id = wet_nagashi.104
-    }
-  }
-}
 wet_ngs_bonus_volkmar = {
   if = {
     limit = {
@@ -1150,9 +1079,7 @@ wet_ngs_send_volkmar_handover = {
           has_country_flag = wet_ngs_offer_volkmar_handover_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -1161,7 +1088,7 @@ wet_ngs_send_volkmar_handover = {
         has_country_flag = wet_ngs_offer_volkmar_handover_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_volkmar_handover_attempted
@@ -1514,9 +1441,7 @@ wet_ngs_send_aliathra_handover = {
           has_country_flag = wet_ngs_offer_aliathra_handover_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -1525,7 +1450,7 @@ wet_ngs_send_aliathra_handover = {
         has_country_flag = wet_ngs_offer_aliathra_handover_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_aliathra_handover_attempted
@@ -2314,9 +2239,7 @@ wet_ngs_send_dolmen = {
           has_country_flag = wet_ngs_offer_dolmen_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -2325,7 +2248,7 @@ wet_ngs_send_dolmen = {
         has_country_flag = wet_ngs_offer_dolmen_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_dolmen_attempted
@@ -2357,9 +2280,7 @@ wet_ngs_send_soul_tithe = {
     limit = {
       wet_ngs_court_eligible = yes
       has_country_flag = wet_ngs_pledged
-      has_political_power
-      >
-      39
+      always = yes
       NOT = {
         has_country_flag = wet_ngs_soul_donor
       }
@@ -2381,9 +2302,7 @@ wet_ngs_send_soul_tithe = {
           has_country_flag = wet_ngs_offer_soul_tithe_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -2392,7 +2311,7 @@ wet_ngs_send_soul_tithe = {
         has_country_flag = wet_ngs_offer_soul_tithe_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_soul_tithe_attempted
@@ -3968,9 +3887,7 @@ wet_ngs_send_compact_living = {
           has_country_flag = wet_ngs_offer_compact_living_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -3979,7 +3896,7 @@ wet_ngs_send_compact_living = {
         has_country_flag = wet_ngs_offer_compact_living_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_compact_living_attempted
@@ -4032,9 +3949,7 @@ wet_ngs_send_compact_rats = {
           has_country_flag = wet_ngs_offer_compact_rats_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4043,7 +3958,7 @@ wet_ngs_send_compact_rats = {
         has_country_flag = wet_ngs_offer_compact_rats_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_compact_rats_attempted
@@ -4096,9 +4011,7 @@ wet_ngs_send_compact_chaos = {
           has_country_flag = wet_ngs_offer_compact_chaos_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4107,7 +4020,7 @@ wet_ngs_send_compact_chaos = {
         has_country_flag = wet_ngs_offer_compact_chaos_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_compact_chaos_attempted
@@ -4162,9 +4075,7 @@ wet_ngs_send_passage_living = {
           has_country_flag = wet_ngs_offer_passage_living_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4173,7 +4084,7 @@ wet_ngs_send_passage_living = {
         has_country_flag = wet_ngs_offer_passage_living_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_passage_living_attempted
@@ -4226,9 +4137,7 @@ wet_ngs_send_passage_northern = {
           has_country_flag = wet_ngs_offer_passage_northern_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4237,7 +4146,7 @@ wet_ngs_send_passage_northern = {
         has_country_flag = wet_ngs_offer_passage_northern_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_passage_northern_attempted
@@ -4350,9 +4259,7 @@ wet_ngs_send_harkon_passage = {
           has_country_flag = wet_ngs_offer_harkon_passage_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4361,7 +4268,7 @@ wet_ngs_send_harkon_passage = {
         has_country_flag = wet_ngs_offer_harkon_passage_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_harkon_passage_attempted
@@ -4393,7 +4300,6 @@ wet_ngs_send_exchange_living = {
     limit = {
       wet_ngs_pact_live = yes
       has_country_flag = wet_ngs_pact_living
-      wet_ngs_covert_access = yes
       has_equipment = {
         support_equipment
         >
@@ -4419,9 +4325,7 @@ wet_ngs_send_exchange_living = {
           has_country_flag = wet_ngs_offer_exchange_living_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4430,7 +4334,7 @@ wet_ngs_send_exchange_living = {
         has_country_flag = wet_ngs_offer_exchange_living_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_exchange_living_attempted
@@ -4462,7 +4366,6 @@ wet_ngs_send_exchange_chaos = {
     limit = {
       wet_ngs_pact_live = yes
       has_country_flag = wet_ngs_pact_chaos
-      wet_ngs_covert_access = yes
       has_equipment = {
         support_equipment
         >
@@ -4488,9 +4391,7 @@ wet_ngs_send_exchange_chaos = {
           has_country_flag = wet_ngs_offer_exchange_chaos_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4499,7 +4400,7 @@ wet_ngs_send_exchange_chaos = {
         has_country_flag = wet_ngs_offer_exchange_chaos_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_exchange_chaos_attempted
@@ -4557,9 +4458,7 @@ wet_ngs_send_workshop_lore = {
           has_country_flag = wet_ngs_offer_workshop_lore_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4568,7 +4467,7 @@ wet_ngs_send_workshop_lore = {
         has_country_flag = wet_ngs_offer_workshop_lore_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_workshop_lore_attempted
@@ -4678,7 +4577,6 @@ wet_ngs_send_independent_aid = {
       NOT = {
         has_war_with = U24
       }
-      wet_ngs_covert_access = yes
       U24 = {
         has_equipment = {
           infantry_equipment
@@ -4770,9 +4668,7 @@ wet_ngs_send_invite_court = {
           has_country_flag = wet_ngs_offer_invite_court_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4781,7 +4677,7 @@ wet_ngs_send_invite_court = {
         has_country_flag = wet_ngs_offer_invite_court_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_invite_court_attempted
@@ -4832,9 +4728,7 @@ wet_ngs_send_nagash_government = {
           has_country_flag = wet_ngs_offer_nagash_government_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -4843,7 +4737,7 @@ wet_ngs_send_nagash_government = {
         has_country_flag = wet_ngs_offer_nagash_government_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_nagash_government_attempted
@@ -5101,9 +4995,7 @@ wet_ngs_send_submission = {
           has_country_flag = wet_ngs_offer_submission_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -5112,7 +5004,7 @@ wet_ngs_send_submission = {
         has_country_flag = wet_ngs_offer_submission_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_submission_attempted
@@ -5147,7 +5039,6 @@ wet_ngs_send_bastion_aid = {
       NOT = {
         has_war_with = U24
       }
-      wet_ngs_covert_access = yes
       has_global_flag = wet_story_auric_bastion_raised
       has_global_flag = wet_story_auric_bastion_broken
       wet_rei_bastion_sites = yes
@@ -5171,9 +5062,7 @@ wet_ngs_send_bastion_aid = {
           has_country_flag = wet_ngs_offer_bastion_aid_attempted
         }
         U24 = {
-          has_political_power
-          >
-          -1
+          always = yes
         }
       }
     }
@@ -5182,7 +5071,7 @@ wet_ngs_send_bastion_aid = {
         has_country_flag = wet_ngs_offer_bastion_aid_attempted
       }
       U24 = {
-        add_political_power = -0
+
       }
     }
     set_country_flag = wet_ngs_offer_bastion_aid_attempted
@@ -24364,68 +24253,6 @@ wet_ngs_tick_recipient = {
   if = {
     limit = {
       check_variable = {
-        wet_ngs_offer_expedition_access_cooldown
-        >
-        0
-      }
-    }
-    subtract_from_variable = {
-      wet_ngs_offer_expedition_access_cooldown = 1
-    }
-  }
-  if = {
-    limit = {
-      has_country_flag = wet_ngs_offer_expedition_access
-    }
-    subtract_from_variable = {
-      wet_ngs_offer_expedition_access_days = 1
-    }
-    if = {
-      limit = {
-        OR = {
-          check_variable = {
-            wet_ngs_offer_expedition_access_days
-            <
-            1
-          }
-          NOT = {
-            AND = {
-              exists = yes
-              NOT = {
-                tag = U24
-              }
-              NOT = {
-                tag = WST
-              }
-              NOT = {
-                has_war_with = U24
-              }
-              U24 = {
-                NOT = {
-                  has_military_access_to = PREV
-                }
-              }
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_expedition_access
-        }
-        clr_country_flag = wet_ngs_offer_expedition_access
-        set_variable = {
-          wet_ngs_offer_expedition_access_days = 0
-        }
-        set_variable = {
-          wet_ngs_offer_expedition_access_cooldown = 180
-        }
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
         wet_ngs_offer_volkmar_handover_cooldown
         >
         0
@@ -25102,7 +24929,6 @@ wet_ngs_tick_recipient = {
             AND = {
               wet_ngs_pact_live = yes
               has_country_flag = wet_ngs_pact_living
-              wet_ngs_covert_access = yes
               has_equipment = {
                 support_equipment
                 >
@@ -25164,7 +24990,6 @@ wet_ngs_tick_recipient = {
             AND = {
               wet_ngs_pact_live = yes
               has_country_flag = wet_ngs_pact_chaos
-              wet_ngs_covert_access = yes
               has_equipment = {
                 support_equipment
                 >
@@ -25356,7 +25181,6 @@ wet_ngs_tick_recipient = {
               NOT = {
                 has_war_with = U24
               }
-              wet_ngs_covert_access = yes
               U24 = {
                 has_equipment = {
                   infantry_equipment
@@ -25773,7 +25597,6 @@ wet_ngs_tick_recipient = {
               NOT = {
                 has_war_with = U24
               }
-              wet_ngs_covert_access = yes
               has_global_flag = wet_story_auric_bastion_raised
               has_global_flag = wet_story_auric_bastion_broken
               wet_rei_bastion_sites = yes
@@ -26043,12 +25866,6 @@ wet_ngs_daily = {
               has_country_flag = wet_ngs_offer_research_exchange
               check_variable = {
                 wet_ngs_offer_research_exchange_cooldown
-                >
-                0
-              }
-              has_country_flag = wet_ngs_offer_expedition_access
-              check_variable = {
-                wet_ngs_offer_expedition_access_cooldown
                 >
                 0
               }
@@ -27226,16 +27043,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_volkmar = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_volkmar_focus_pending
         set_country_flag = wet_ngs_abduct_volkmar_focus_running
         set_variable = {
           wet_ngs_abduct_volkmar_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_volkmar_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -27364,16 +27179,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_morgiana = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_morgiana_focus_pending
         set_country_flag = wet_ngs_abduct_morgiana_focus_running
         set_variable = {
           wet_ngs_abduct_morgiana_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_morgiana_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -27492,16 +27305,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_aliathra = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_aliathra_focus_pending
         set_country_flag = wet_ngs_abduct_aliathra_focus_running
         set_variable = {
           wet_ngs_abduct_aliathra_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_aliathra_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -27620,16 +27431,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_emil = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_emil_focus_pending
         set_country_flag = wet_ngs_abduct_emil_focus_running
         set_variable = {
           wet_ngs_abduct_emil_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_emil_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -27748,16 +27557,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_alarielle = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_alarielle_focus_pending
         set_country_flag = wet_ngs_abduct_alarielle_focus_running
         set_variable = {
           wet_ngs_abduct_alarielle_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_alarielle_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -27876,16 +27683,14 @@ wet_focus_actions_nagashi = {
             99
           }
           wet_ngs_can_seize_mazdamundi = yes
-          has_political_power
-          >
-          49
+          always = yes
         }
         clr_country_flag = wet_ngs_abduct_mazdamundi_focus_pending
         set_country_flag = wet_ngs_abduct_mazdamundi_focus_running
         set_variable = {
           wet_ngs_abduct_mazdamundi_focus_days = 60
         }
-        add_political_power = -50
+
         set_country_flag = wet_ngs_abduct_mazdamundi_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -28035,16 +27840,14 @@ wet_focus_actions_nagashi = {
               }
             }
           }
-          has_political_power
-          >
-          74
+          always = yes
         }
         clr_country_flag = wet_ngs_dolmen_expedition_focus_pending
         set_country_flag = wet_ngs_dolmen_expedition_focus_running
         set_variable = {
           wet_ngs_dolmen_expedition_focus_days = 60
         }
-        add_political_power = -75
+
         set_country_flag = wet_ngs_dolmen_expedition_active
         add_equipment_to_stockpile = {
           type = support_equipment
@@ -28187,16 +27990,14 @@ wet_focus_actions_nagashi = {
           NOT = {
             has_global_flag = wet_skv_pyramid_build_pending
           }
-          has_political_power
-          >
-          249
+          always = yes
         }
         clr_country_flag = wet_ngs_raise_pyramid_focus_pending
         set_country_flag = wet_ngs_raise_pyramid_focus_running
         set_variable = {
           wet_ngs_raise_pyramid_focus_days = 360
         }
-        add_political_power = -250
+
         set_country_flag = wet_ngs_raise_pyramid_active
         set_global_flag = wet_skv_pyramid_build_pending
         set_country_flag = wet_skv_pyramid_building
@@ -29170,9 +28971,7 @@ wet_ngs_award_M20 = {
                   has_country_flag = wet_ngs_offer_research_exchange_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -29202,9 +29001,7 @@ wet_ngs_award_M20 = {
                     has_country_flag = wet_ngs_offer_research_exchange_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -29531,9 +29328,7 @@ wet_ngs_award_P03 = {
             event_target:wet_focus_recipient = {
               wet_ngs_court_eligible = yes
               has_country_flag = wet_ngs_pledged
-              has_political_power
-              >
-              39
+              always = yes
               NOT = {
                 has_country_flag = wet_ngs_soul_donor
               }
@@ -29555,9 +29350,7 @@ wet_ngs_award_P03 = {
                   has_country_flag = wet_ngs_offer_soul_tithe_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -29567,9 +29360,7 @@ wet_ngs_award_P03 = {
               event_target:wet_focus_recipient = {
                 wet_ngs_court_eligible = yes
                 has_country_flag = wet_ngs_pledged
-                has_political_power
-                >
-                39
+                always = yes
                 NOT = {
                   has_country_flag = wet_ngs_soul_donor
                 }
@@ -29591,9 +29382,7 @@ wet_ngs_award_P03 = {
                     has_country_flag = wet_ngs_offer_soul_tithe_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -29645,9 +29434,7 @@ wet_ngs_award_P04 = {
                 has_country_flag = wet_ngs_offer_dolmen_attempted
               }
               U24 = {
-                has_political_power
-                >
-                -1
+                always = yes
               }
             }
           }
@@ -29678,9 +29465,7 @@ wet_ngs_award_P04 = {
                   has_country_flag = wet_ngs_offer_dolmen_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -29736,16 +29521,14 @@ wet_ngs_award_P04 = {
                 }
               }
             }
-            has_political_power
-            >
-            74
+            always = yes
           }
           clr_country_flag = wet_ngs_dolmen_expedition_focus_pending
           set_country_flag = wet_ngs_dolmen_expedition_focus_running
           set_variable = {
             wet_ngs_dolmen_expedition_focus_days = 60
           }
-          add_political_power = -75
+
           set_country_flag = wet_ngs_dolmen_expedition_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -29914,11 +29697,9 @@ wet_ngs_award_P10 = {
         NOT = {
           has_country_flag = wet_ngs_project_funded
         }
-        has_political_power
-        >
-        99
+        always = yes
       }
-      add_political_power = -100
+
       if = {
         limit = {
           208 = {
@@ -30360,9 +30141,7 @@ wet_ngs_award_R03 = {
                   has_country_flag = wet_ngs_offer_invite_court_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -30397,9 +30176,7 @@ wet_ngs_award_R03 = {
                     has_country_flag = wet_ngs_offer_invite_court_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -30464,9 +30241,7 @@ wet_ngs_award_R04 = {
                   has_country_flag = wet_ngs_offer_nagash_government_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -30495,9 +30270,7 @@ wet_ngs_award_R04 = {
                     has_country_flag = wet_ngs_offer_nagash_government_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -30814,9 +30587,7 @@ wet_ngs_award_N03 = {
                   has_country_flag = wet_ngs_offer_submission_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -30847,9 +30618,7 @@ wet_ngs_award_N03 = {
                     has_country_flag = wet_ngs_offer_submission_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -30918,9 +30687,7 @@ wet_ngs_award_N04 = {
                   has_country_flag = wet_ngs_offer_harkon_passage_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -30947,9 +30714,7 @@ wet_ngs_award_N04 = {
                     has_country_flag = wet_ngs_offer_harkon_passage_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -31096,9 +30861,7 @@ wet_ngs_award_N09 = {
       NOT = {
         has_global_flag = wet_skv_pyramid_exists
       }
-      has_political_power
-      >
-      74
+      always = yes
     }
     set_country_flag = wet_ngs_reward_N09
     set_country_flag = wet_ngs_underworld_open
@@ -31124,11 +30887,9 @@ wet_ngs_award_N09 = {
         NOT = {
           has_global_flag = wet_skv_pyramid_exists
         }
-        has_political_power
-        >
-        74
+        always = yes
       }
-      add_political_power = -75
+
       set_country_flag = wet_ngs_underworld_active
       add_equipment_to_stockpile = {
         type = support_equipment
@@ -31158,7 +30919,7 @@ wet_ngs_award_N09 = {
           set_country_flag = wet_ngs_underworld_done
         }
         else = {
-          add_political_power = 35
+
           add_equipment_to_stockpile = {
             type = support_equipment
             amount = 100
@@ -31272,16 +31033,14 @@ wet_ngs_award_N13 = {
             NOT = {
               has_global_flag = wet_skv_pyramid_build_pending
             }
-            has_political_power
-            >
-            249
+            always = yes
           }
           clr_country_flag = wet_ngs_raise_pyramid_focus_pending
           set_country_flag = wet_ngs_raise_pyramid_focus_running
           set_variable = {
             wet_ngs_raise_pyramid_focus_days = 360
           }
-          add_political_power = -250
+
           set_country_flag = wet_ngs_raise_pyramid_active
           set_global_flag = wet_skv_pyramid_build_pending
           set_country_flag = wet_skv_pyramid_building
@@ -31479,9 +31238,7 @@ wet_ngs_award_E02 = {
                   has_country_flag = wet_ngs_offer_passage_northern_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -31512,9 +31269,7 @@ wet_ngs_award_E02 = {
                     has_country_flag = wet_ngs_offer_passage_northern_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -31539,7 +31294,6 @@ wet_ngs_award_E03 = {
       }
       any_country = {
         wet_ngs_everchosen_enemy = yes
-        wet_ngs_covert_access = yes
       }
       always = yes
       NOT = {
@@ -31739,7 +31493,6 @@ wet_ngs_award_E08 = {
         NOT = {
           has_war_with = U24
         }
-        wet_ngs_covert_access = yes
         has_global_flag = wet_story_auric_bastion_raised
         has_global_flag = wet_story_auric_bastion_broken
         wet_rei_bastion_sites = yes
@@ -31762,7 +31515,6 @@ wet_ngs_award_E08 = {
               NOT = {
                 has_war_with = U24
               }
-              wet_ngs_covert_access = yes
               has_global_flag = wet_story_auric_bastion_raised
               has_global_flag = wet_story_auric_bastion_broken
               wet_rei_bastion_sites = yes
@@ -31786,9 +31538,7 @@ wet_ngs_award_E08 = {
                   has_country_flag = wet_ngs_offer_bastion_aid_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -31801,7 +31551,6 @@ wet_ngs_award_E08 = {
                 NOT = {
                   has_war_with = U24
                 }
-                wet_ngs_covert_access = yes
                 has_global_flag = wet_story_auric_bastion_raised
                 has_global_flag = wet_story_auric_bastion_broken
                 wet_rei_bastion_sites = yes
@@ -31825,9 +31574,7 @@ wet_ngs_award_E08 = {
                     has_country_flag = wet_ngs_offer_bastion_aid_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -31884,9 +31631,7 @@ wet_ngs_award_E10 = {
         249
       }
       has_global_flag = wet_story_final_crisis
-      has_political_power
-      >
-      99
+      always = yes
     }
     set_country_flag = wet_ngs_reward_E10
     add_tech_bonus = {
@@ -31908,11 +31653,9 @@ wet_ngs_award_E10 = {
           249
         }
         has_global_flag = wet_story_final_crisis
-        has_political_power
-        >
-        99
+        always = yes
       }
-      add_political_power = -100
+
       set_country_flag = wet_ngs_containment_active
       add_equipment_to_stockpile = {
         type = support_equipment
@@ -31962,9 +31705,7 @@ wet_ngs_award_E11 = {
       A13 = {
         has_character = WET_A13_leader
       }
-      has_political_power
-      >
-      49
+      always = yes
     }
     set_country_flag = wet_ngs_reward_E11
     set_country_flag = wet_ngs_security_open
@@ -31977,11 +31718,9 @@ wet_ngs_award_E11 = {
         A13 = {
           has_character = WET_A13_leader
         }
-        has_political_power
-        >
-        49
+        always = yes
       }
-      add_political_power = -50
+
       set_country_flag = wet_ngs_exclude_mannfred_active
       if = {
         limit = {
@@ -31998,7 +31737,7 @@ wet_ngs_award_E11 = {
           set_country_flag = wet_ngs_exclude_mannfred_done
         }
         else = {
-          add_political_power = 25
+
         }
       }
     }
@@ -32148,9 +31887,7 @@ wet_ngs_award_D02 = {
                   has_country_flag = wet_ngs_offer_compact_living_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32181,9 +31918,7 @@ wet_ngs_award_D02 = {
                     has_country_flag = wet_ngs_offer_compact_living_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32266,9 +32001,7 @@ wet_ngs_award_D03 = {
                   has_country_flag = wet_ngs_offer_compact_rats_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32299,9 +32032,7 @@ wet_ngs_award_D03 = {
                     has_country_flag = wet_ngs_offer_compact_rats_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32387,9 +32118,7 @@ wet_ngs_award_D04 = {
                   has_country_flag = wet_ngs_offer_compact_chaos_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32420,9 +32149,7 @@ wet_ngs_award_D04 = {
                     has_country_flag = wet_ngs_offer_compact_chaos_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32514,9 +32241,7 @@ wet_ngs_award_D06 = {
                   has_country_flag = wet_ngs_offer_passage_living_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32549,9 +32274,7 @@ wet_ngs_award_D06 = {
                     has_country_flag = wet_ngs_offer_passage_living_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32581,7 +32304,6 @@ wet_ngs_award_D07 = {
       limit = {
         wet_ngs_pact_live = yes
         has_country_flag = wet_ngs_pact_living
-        wet_ngs_covert_access = yes
         has_equipment = {
           support_equipment
           >
@@ -32603,7 +32325,6 @@ wet_ngs_award_D07 = {
             event_target:wet_focus_recipient = {
               wet_ngs_pact_live = yes
               has_country_flag = wet_ngs_pact_living
-              wet_ngs_covert_access = yes
               has_equipment = {
                 support_equipment
                 >
@@ -32629,9 +32350,7 @@ wet_ngs_award_D07 = {
                   has_country_flag = wet_ngs_offer_exchange_living_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32641,7 +32360,6 @@ wet_ngs_award_D07 = {
               event_target:wet_focus_recipient = {
                 wet_ngs_pact_live = yes
                 has_country_flag = wet_ngs_pact_living
-                wet_ngs_covert_access = yes
                 has_equipment = {
                   support_equipment
                   >
@@ -32667,9 +32385,7 @@ wet_ngs_award_D07 = {
                     has_country_flag = wet_ngs_offer_exchange_living_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32785,9 +32501,7 @@ wet_ngs_award_D10 = {
                   has_country_flag = wet_ngs_offer_workshop_lore_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32823,9 +32537,7 @@ wet_ngs_award_D10 = {
                     has_country_flag = wet_ngs_offer_workshop_lore_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -32888,7 +32600,6 @@ wet_ngs_award_D13 = {
       limit = {
         wet_ngs_pact_live = yes
         has_country_flag = wet_ngs_pact_chaos
-        wet_ngs_covert_access = yes
         has_equipment = {
           support_equipment
           >
@@ -32910,7 +32621,6 @@ wet_ngs_award_D13 = {
             event_target:wet_focus_recipient = {
               wet_ngs_pact_live = yes
               has_country_flag = wet_ngs_pact_chaos
-              wet_ngs_covert_access = yes
               has_equipment = {
                 support_equipment
                 >
@@ -32936,9 +32646,7 @@ wet_ngs_award_D13 = {
                   has_country_flag = wet_ngs_offer_exchange_chaos_attempted
                 }
                 U24 = {
-                  has_political_power
-                  >
-                  -1
+                  always = yes
                 }
               }
             }
@@ -32948,7 +32656,6 @@ wet_ngs_award_D13 = {
               event_target:wet_focus_recipient = {
                 wet_ngs_pact_live = yes
                 has_country_flag = wet_ngs_pact_chaos
-                wet_ngs_covert_access = yes
                 has_equipment = {
                   support_equipment
                   >
@@ -32974,9 +32681,7 @@ wet_ngs_award_D13 = {
                     has_country_flag = wet_ngs_offer_exchange_chaos_attempted
                   }
                   U24 = {
-                    has_political_power
-                    >
-                    -1
+                    always = yes
                   }
                 }
               }
@@ -33134,9 +32839,7 @@ wet_ngs_award_V01 = {
               has_country_flag = wet_ngs_offer_volkmar_handover_attempted
             }
             U24 = {
-              has_political_power
-              >
-              -1
+              always = yes
             }
           }
         }
@@ -33179,9 +32882,7 @@ wet_ngs_award_V01 = {
                 has_country_flag = wet_ngs_offer_volkmar_handover_attempted
               }
               U24 = {
-                has_political_power
-                >
-                -1
+                always = yes
               }
             }
           }
@@ -33215,16 +32916,14 @@ wet_ngs_award_V01 = {
               99
             }
             wet_ngs_can_seize_volkmar = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_volkmar_focus_pending
           set_country_flag = wet_ngs_abduct_volkmar_focus_running
           set_variable = {
             wet_ngs_abduct_volkmar_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_volkmar_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -33287,16 +32986,14 @@ wet_ngs_award_V02 = {
               99
             }
             wet_ngs_can_seize_morgiana = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_morgiana_focus_pending
           set_country_flag = wet_ngs_abduct_morgiana_focus_running
           set_variable = {
             wet_ngs_abduct_morgiana_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_morgiana_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -33428,16 +33125,14 @@ wet_ngs_award_V03 = {
               99
             }
             wet_ngs_can_seize_aliathra = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_aliathra_focus_pending
           set_country_flag = wet_ngs_abduct_aliathra_focus_running
           set_variable = {
             wet_ngs_abduct_aliathra_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_aliathra_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -33500,16 +33195,14 @@ wet_ngs_award_V04 = {
               99
             }
             wet_ngs_can_seize_emil = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_emil_focus_pending
           set_country_flag = wet_ngs_abduct_emil_focus_running
           set_variable = {
             wet_ngs_abduct_emil_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_emil_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -33572,16 +33265,14 @@ wet_ngs_award_V05 = {
               99
             }
             wet_ngs_can_seize_alarielle = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_alarielle_focus_pending
           set_country_flag = wet_ngs_abduct_alarielle_focus_running
           set_variable = {
             wet_ngs_abduct_alarielle_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_alarielle_active
           add_equipment_to_stockpile = {
             type = support_equipment
@@ -33644,16 +33335,14 @@ wet_ngs_award_V06 = {
               99
             }
             wet_ngs_can_seize_mazdamundi = yes
-            has_political_power
-            >
-            49
+            always = yes
           }
           clr_country_flag = wet_ngs_abduct_mazdamundi_focus_pending
           set_country_flag = wet_ngs_abduct_mazdamundi_focus_running
           set_variable = {
             wet_ngs_abduct_mazdamundi_focus_days = 60
           }
-          add_political_power = -50
+
           set_country_flag = wet_ngs_abduct_mazdamundi_active
           add_equipment_to_stockpile = {
             type = support_equipment
