@@ -10,10 +10,16 @@ set_popularities = { democratic = 0 neutrality = 71 fascism = 29 communism = 0 w
 # BEGIN WET Morathi court
 recruit_character = WET_H13_leader
 remove_country_leader_role = { character = WET_H13_leader ideology = wet_unaligned_cytharai }
+# WET ruler command: inactive at start
+hidden_effect = { WET_H13_leader = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
 set_country_flag = wet_nag_morathi_available
 # END WET Morathi court
 recruit_character = WET_H12_leader
 promote_character = WET_H12_leader
+# WET ruler command: promotion
+hidden_effect = { WET_H12_leader = { wet_ruler_enable_field_marshal = yes } }
+
 
 # BEGIN WET starting racial spirits
 add_ideas = { wet_race_dark_elf }

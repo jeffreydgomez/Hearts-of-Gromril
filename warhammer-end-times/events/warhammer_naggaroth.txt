@@ -66,6 +66,9 @@ country_event = {
           wet_nag_offer_surrender_days = 0
         }
         set_country_flag = wet_nag_morathi_custody
+# WET ruler command: custody wet_nag_morathi_custody
+hidden_effect = { every_country = { limit = { has_character = WET_H13_leader } WET_H13_leader = { wet_ruler_suspend_command = yes } } }
+
         wet_nag_revoke_office = yes
         if = {
           limit = {

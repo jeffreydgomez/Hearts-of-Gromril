@@ -1,0 +1,41 @@
+wet_nagash_majority_adopt = {
+ if = { limit = { OR = { has_country_leader_ideology = wet_unaligned_nagash_worship has_country_leader_ideology = wet_undead_nagash_worship } } set_country_leader_ideology = wet_undead_nagash_worship }
+ else_if = { limit = { OR = { has_country_leader_ideology = wet_unaligned_vampiric has_country_leader_ideology = wet_undead_vampiric has_country_leader_ideology = wet_waaagh_vampiric has_country_leader_ideology = wet_horned_rat_vampiric } } set_country_leader_ideology = wet_undead_vampiric }
+ else = { set_country_leader_ideology = wet_undead_generic }
+ set_politics = { ruling_party = communism elections_allowed = no }
+ wet_apply_political_permissions = yes
+}
+wet_nagash_majority_daily = {
+ if = {
+  limit = { check_variable = { wet_nagash_majority_days > 0 } }
+  subtract_from_variable = { wet_nagash_majority_days = 1 }
+ }
+ if = {
+  limit = { has_government = communism }
+  clr_country_flag = wet_nagash_majority_pending
+ }
+ else_if = {
+  limit = {
+   wet_nagash_majority_eligible = yes
+   NOT = { has_country_flag = wet_nagash_majority_pending }
+   check_variable = { wet_nagash_majority_days < 1 }
+  }
+  set_country_flag = wet_nagash_majority_pending
+  set_variable = { wet_nagash_majority_days = 365 }
+  country_event = { id = wet_nagash_majority.1 }
+ }
+}
+wet_nagash_majority_accept = {
+ if = {
+  limit = { has_country_flag = wet_nagash_majority_pending wet_nagash_majority_eligible = yes }
+  wet_nagash_majority_adopt = yes
+ }
+ clr_country_flag = wet_nagash_majority_pending
+}
+wet_nagash_majority_refuse = {
+ if = {
+  limit = { has_country_flag = wet_nagash_majority_pending NOT = { has_government = communism } }
+  add_stability = -0.05
+ }
+ clr_country_flag = wet_nagash_majority_pending
+}

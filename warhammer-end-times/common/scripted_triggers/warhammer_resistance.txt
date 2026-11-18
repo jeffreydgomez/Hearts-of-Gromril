@@ -1,0 +1,9 @@
+# The mod replaces common/scripted_triggers, including vanilla's resistance hook.
+# Called by the engine on ownership/control changes and for active resistance.
+# ROOT/THIS = state; FROM = occupier; FROM.FROM = occupied original country.
+# Respect home/shared racial cores; foreign non-core conquest still resists.
+should_initiate_resistance = {
+  impassable = no
+  check_variable = { core_countries^num > 0 }
+  NOT = { is_core_of = FROM }
+}

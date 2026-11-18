@@ -420,9 +420,6 @@ wet_nag_court = {
     }
   }
 }
-wet_nag_campaigns = {
-
-}
 wet_nag_diplomacy = {
   wet_nag_constitution_council = {
     desc = wet_decision_no_description
@@ -788,276 +785,6 @@ wet_nag_diplomacy = {
     }
   }
 }
-wet_nag_construction = {
-  wet_nag_claim_construction = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = H12
-    }
-    visible = {
-      OR = {
-        check_variable = {
-          wet_nag_claim_W01_0
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W01_1
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W01_2
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W03_factory
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W03_road
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W07
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W11
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W17_factory
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W17_port
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W18
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W21_a
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_W21_b
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_I08
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_I15_civ
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_I15_mil
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N01
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N02
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N04
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N10
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N19
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_I02
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_L02
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_A09
-          >
-          0
-        }
-        check_variable = {
-          wet_nag_claim_N17
-          >
-          0
-        }
-      }
-    }
-    cost = 0
-    days_re_enable = 7
-    available = {
-      AND = {
-        OR = {
-          check_variable = {
-            wet_nag_claim_W01_0
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W01_1
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W01_2
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W03_factory
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W03_road
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W07
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W11
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W17_factory
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W17_port
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W18
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W21_a
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_W21_b
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_I08
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_I15_civ
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_I15_mil
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N01
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N02
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N04
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N10
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N19
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_I02
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_L02
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_A09
-            >
-            0
-          }
-          check_variable = {
-            wet_nag_claim_N17
-            >
-            0
-          }
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_nag_claim_construction_outcome_tt
-      hidden_effect = {
-        wet_nag_spend_claims = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-}
 wet_nag_recovery = {
   wet_nag_recover_P05 = {
     desc = wet_decision_no_description
@@ -1085,7 +812,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         add_ideas = wet_nag_p05
       }
       hidden_effect = {
@@ -1129,7 +855,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         add_political_power = 25
         custom_effect_tooltip = WET_NAG_P06_special_tt
       }
@@ -1167,7 +892,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         add_stability = -0.10
         add_ideas = wet_nag_final_sentence
         custom_effect_tooltip = WET_NAG_P07_special_tt
@@ -1702,7 +1426,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         add_stability = -0.10
         custom_effect_tooltip = WET_NAG_R00_special_tt
       }
@@ -1739,7 +1462,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         custom_effect_tooltip = WET_NAG_R01_special_tt
       }
       hidden_effect = {
@@ -1780,7 +1502,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         add_equipment_to_stockpile = {
           type = support_equipment
           amount = -100
@@ -1950,10 +1671,6 @@ wet_nag_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      309 = {
-        is_owned_by = H12
-        is_fully_controlled_by = H12
-      }
       has_war = no
       AND = {
         has_country_flag = wet_nag_earned_W03
@@ -5737,7 +5454,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         custom_effect_tooltip = WET_NAG_A01_special_tt
       }
       hidden_effect = {
@@ -5945,7 +5661,6 @@ wet_nag_recovery = {
     }
     complete_effect = {
       effect_tooltip = {
-
         custom_effect_tooltip = WET_NAG_A07_special_tt
       }
       hidden_effect = {

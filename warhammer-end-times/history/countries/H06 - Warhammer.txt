@@ -12,12 +12,21 @@ recruit_character = WET_ULT_Tyrion
 recruit_character = WET_ULT_Aliathra
 recruit_character = WET_H08_leader
 remove_country_leader_role = { character = WET_H08_leader ideology = wet_unaligned_cadai }
+# WET ruler command: inactive at start
+hidden_effect = { WET_H08_leader = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
 recruit_character = WET_H05_leader
 remove_country_leader_role = { character = WET_H05_leader ideology = wet_order_cadai }
+# WET ruler command: inactive at start
+hidden_effect = { WET_H05_leader = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
 set_variable = { wet_ult_custody_generation = 0 }
 # END WET Ulthuan
 recruit_character = WET_H06_leader
 promote_character = WET_H06_leader
+# WET ruler command: promotion
+hidden_effect = { WET_H06_leader = { wet_ruler_enable_field_marshal = yes } }
+
 
 # BEGIN WET starting racial spirits
 add_ideas = { wet_race_high_elf }

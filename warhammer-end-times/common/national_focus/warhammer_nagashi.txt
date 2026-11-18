@@ -51,6 +51,7 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_RESEARCH
       FOCUS_FILTER_INDUSTRY
     }
   }
@@ -67,28 +68,14 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      208 = {
-        is_fully_controlled_by = ROOT
-      }
+
     }
     complete_tooltip = {
-      208 = {
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H01
     }
     completion_reward = {
       effect_tooltip = {
-        208 = {
-          add_building_construction = {
-            type = arms_factory
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H01
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H01
@@ -115,45 +102,14 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      208 = {
-        is_fully_controlled_by = ROOT
-      }
-      220 = {
-        is_fully_controlled_by = ROOT
-      }
+
     }
     complete_tooltip = {
-      208 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-      }
-      220 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H02
     }
     completion_reward = {
       effect_tooltip = {
-        208 = {
-          add_building_construction = {
-            type = infrastructure
-            level = 1
-            instant_build = yes
-          }
-        }
-        220 = {
-          add_building_construction = {
-            type = infrastructure
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H02
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H02
@@ -192,7 +148,8 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -246,22 +203,14 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     available = {
-      220 = {
-        is_fully_controlled_by = ROOT
-      }
+
     }
     complete_tooltip = {
       add_equipment_to_stockpile = {
         type = motorized_equipment
         amount = 100
       }
-      220 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H05
     }
     completion_reward = {
       effect_tooltip = {
@@ -269,13 +218,7 @@ focus_tree = {
           type = motorized_equipment
           amount = 100
         }
-        220 = {
-          add_building_construction = {
-            type = industrial_complex
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H05
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H05
@@ -287,6 +230,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
@@ -316,7 +260,8 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -372,7 +317,9 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_RESEARCH
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
@@ -400,7 +347,8 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -427,7 +375,8 @@ focus_tree = {
         type = convoy
         amount = 20
       }
-      custom_effect_tooltip = WET_NGS_H09_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_H09_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H09
     }
     completion_reward = {
       effect_tooltip = {
@@ -435,7 +384,8 @@ focus_tree = {
           type = convoy
           amount = 20
         }
-        custom_effect_tooltip = WET_NGS_H09_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_H09_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H09
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H09
@@ -447,6 +397,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_NAVY
     }
   }
   focus = {
@@ -460,30 +411,19 @@ focus_tree = {
       focus = WET_NGS_H08
     }
     available = {
-      OR = {
-        109 = {
-          is_owned_by = U24
-          is_fully_controlled_by = U24
-        }
-        221 = {
-          is_owned_by = U24
-          is_fully_controlled_by = U24
-        }
-        401 = {
-          is_owned_by = U24
-          is_fully_controlled_by = U24
-        }
-      }
+
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_H10_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_H10_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H10
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_H10_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_H10_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H10
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H10
@@ -495,6 +435,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
@@ -519,7 +460,8 @@ focus_tree = {
         uses = 1
         category = infantry_weapons
       }
-      custom_effect_tooltip = WET_NGS_H11_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_H11_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_H11
     }
     completion_reward = {
       effect_tooltip = {
@@ -529,7 +471,8 @@ focus_tree = {
           uses = 1
           category = infantry_weapons
         }
-        custom_effect_tooltip = WET_NGS_H11_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_H11_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_H11
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_H11
@@ -540,13 +483,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_RESEARCH
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M00
     icon = GFX_goal_generic_construction2
-    x = 17
+    x = 23
     y = 0
     cost = 2
     cancel_if_invalid = no
@@ -568,13 +513,13 @@ focus_tree = {
       factor = 80
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_STABILITY
     }
   }
   focus = {
     id = WET_NGS_M01
     icon = GFX_goal_generic_propaganda
-    x = 17
+    x = 23
     y = 1
     cost = 2
     prerequisite = {
@@ -607,7 +552,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M02
     icon = GFX_goal_generic_improve_relations
-    x = 9
+    x = 15
     y = 2
     cost = 3
     prerequisite = {
@@ -662,7 +607,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M10
     icon = GFX_goal_generic_army_doctrines
-    x = 9
+    x = 15
     y = 3
     cost = 3
     prerequisite = {
@@ -705,13 +650,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M03
     icon = GFX_focus_generic_concessions
-    x = 11
+    x = 17
     y = 2
     cost = 3
     prerequisite = {
@@ -766,7 +712,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M11
     icon = GFX_goal_generic_cavalry
-    x = 11
+    x = 17
     y = 3
     cost = 3
     prerequisite = {
@@ -799,13 +745,13 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M04
     icon = GFX_goal_generic_major_alliance
-    x = 13
+    x = 19
     y = 2
     cost = 3
     prerequisite = {
@@ -860,7 +806,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M12
     icon = GFX_focus_generic_horse_studs
-    x = 13
+    x = 19
     y = 3
     cost = 3
     prerequisite = {
@@ -893,13 +839,13 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M05
     icon = GFX_goal_generic_positive_trade_relations
-    x = 15
+    x = 21
     y = 2
     cost = 3
     prerequisite = {
@@ -954,7 +900,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M13
     icon = GFX_goal_generic_secret_weapon
-    x = 17
+    x = 21
     y = 3
     cost = 3
     prerequisite = {
@@ -987,13 +933,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M06
     icon = GFX_goal_generic_forceful_treaty
-    x = 19
+    x = 25
     y = 2
     cost = 3
     prerequisite = {
@@ -1048,7 +995,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M14
     icon = GFX_goal_generic_small_arms
-    x = 19
+    x = 25
     y = 3
     cost = 3
     prerequisite = {
@@ -1081,13 +1028,13 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M07
     icon = GFX_focus_generic_diplomatic_treaty
-    x = 21
+    x = 27
     y = 2
     cost = 3
     prerequisite = {
@@ -1142,7 +1089,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M15
     icon = GFX_goal_generic_build_navy
-    x = 21
+    x = 27
     y = 3
     cost = 3
     prerequisite = {
@@ -1175,13 +1122,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_NAVY
     }
   }
   focus = {
     id = WET_NGS_M08
     icon = GFX_focus_generic_commission
-    x = 23
+    x = 29
     y = 2
     cost = 3
     prerequisite = {
@@ -1236,7 +1185,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M16
     icon = GFX_goal_generic_political_pressure
-    x = 23
+    x = 29
     y = 3
     cost = 3
     prerequisite = {
@@ -1270,12 +1219,13 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M09
     icon = GFX_goal_generic_military_deal
-    x = 25
+    x = 31
     y = 2
     cost = 3
     prerequisite = {
@@ -1330,7 +1280,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M17
     icon = GFX_goal_generic_allies_build_infantry
-    x = 25
+    x = 31
     y = 3
     cost = 3
     prerequisite = {
@@ -1363,13 +1313,13 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_M18
     icon = GFX_focus_generic_monarchy_1
-    x = 17
+    x = 23
     y = 2
     cost = 1
     prerequisite = {
@@ -1410,13 +1360,13 @@ focus_tree = {
       factor = 80
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_M19
     icon = GFX_focus_generic_conference
-    x = 15
+    x = 13
     y = 3
     cost = 3
     prerequisite = {
@@ -1449,7 +1399,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_M20
     icon = GFX_focus_generic_public_meetings
-    x = 14
+    x = 13
     y = 4
     cost = 4
     prerequisite = {
@@ -1483,13 +1433,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_A00
     icon = GFX_focus_generic_education
-    x = 40
-    y = 3
+    x = 23
+    y = 4
     cost = 2
     prerequisite = {
       focus = WET_NGS_M18
@@ -1529,14 +1480,15 @@ focus_tree = {
       factor = 80
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_A01
     icon = GFX_focus_generic_university_1
-    x = 27
-    y = 4
+    x = 10
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -1645,8 +1597,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_A02
     icon = GFX_focus_generic_military_academy
-    x = 29
-    y = 4
+    x = 12
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -1749,14 +1701,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_POLITICAL
     }
   }
   focus = {
     id = WET_NGS_A03
     icon = GFX_focus_generic_industrial_experts
-    x = 31
-    y = 4
+    x = 14
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -1859,14 +1811,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A04
     icon = GFX_focus_generic_combined_arms
-    x = 33
-    y = 4
+    x = 16
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -1969,14 +1921,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A05
     icon = GFX_focus_generic_advanced_military_studies
-    x = 35
-    y = 4
+    x = 18
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2079,14 +2031,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_A06
     icon = GFX_focus_generic_printing_press
-    x = 37
-    y = 4
+    x = 20
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2189,14 +2141,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A07
     icon = GFX_focus_generic_diverse_army
-    x = 39
-    y = 4
+    x = 22
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2299,14 +2251,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A08
     icon = GFX_focus_generic_university_3
-    x = 41
-    y = 4
+    x = 24
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2409,14 +2361,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A09
     icon = GFX_goal_generic_intelligence_exchange
-    x = 43
-    y = 4
+    x = 26
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2519,14 +2471,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A10
     icon = GFX_focus_generic_university_2
-    x = 45
-    y = 4
+    x = 28
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2629,14 +2581,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_POLITICAL
     }
   }
   focus = {
     id = WET_NGS_A11
     icon = GFX_focus_generic_whispers
-    x = 47
-    y = 4
+    x = 30
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2745,8 +2697,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_A12
     icon = GFX_goal_generic_position_armies
-    x = 49
-    y = 4
+    x = 32
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2849,14 +2801,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A13
     icon = GFX_focus_generic_mineral_prospecting
-    x = 51
-    y = 4
+    x = 34
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -2959,14 +2911,15 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_MANPOWER
     }
   }
   focus = {
     id = WET_NGS_A14
     icon = GFX_focus_generic_national_security
-    x = 53
-    y = 4
+    x = 36
+    y = 5
     cost = 6
     prerequisite = {
       focus = WET_NGS_A00
@@ -3069,14 +3022,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_A15
     icon = GFX_goal_generic_special_forces
-    x = 40
-    y = 5
+    x = 23
+    y = 6
     cost = 1
     prerequisite = {
       focus = WET_NGS_A01
@@ -3119,14 +3072,14 @@ focus_tree = {
       factor = 80
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_WAR_SUPPORT
     }
   }
   focus = {
     id = WET_NGS_P00
     icon = GFX_focus_generic_phoenix
-    x = 60
-    y = 7
+    x = 23
+    y = 8
     cost = 1
     prerequisite = {
       focus = WET_NGS_V01
@@ -3168,8 +3121,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_P01
     icon = GFX_focus_generic_secret_service_agency
-    x = 58
-    y = 8
+    x = 21
+    y = 9
     cost = 3
     prerequisite = {
       focus = WET_NGS_P00
@@ -3198,13 +3151,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_P02
     icon = GFX_focus_generic_conspiracy
-    x = 60
-    y = 8
+    x = 23
+    y = 9
     cost = 3
     prerequisite = {
       focus = WET_NGS_P00
@@ -3238,8 +3192,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_P03
     icon = GFX_goal_generic_alliance
-    x = 62
-    y = 8
+    x = 25
+    y = 9
     cost = 3
     prerequisite = {
       focus = WET_NGS_P00
@@ -3267,14 +3221,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_P04
     icon = GFX_focus_generic_mountain_troops
-    x = 58
-    y = 9
+    x = 21
+    y = 10
     cost = 3
     prerequisite = {
       focus = WET_NGS_P01
@@ -3299,13 +3254,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_P05
     icon = GFX_focus_generic_infiltration
-    x = 60
-    y = 9
+    x = 23
+    y = 10
     cost = 3
     prerequisite = {
       focus = WET_NGS_P02
@@ -3347,13 +3303,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_P06
     icon = GFX_focus_generic_limited_social_mobilization
-    x = 62
-    y = 9
+    x = 25
+    y = 10
     cost = 3
     prerequisite = {
       focus = WET_NGS_P03
@@ -3383,14 +3340,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_P07
     icon = GFX_focus_generic_swooping_falcon
-    x = 58
-    y = 10
+    x = 21
+    y = 11
     cost = 3
     prerequisite = {
       focus = WET_NGS_P04
@@ -3425,13 +3383,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_P08
     icon = GFX_focus_generic_monarchist_sentiment
-    x = 60
-    y = 10
+    x = 23
+    y = 11
     cost = 3
     prerequisite = {
       focus = WET_NGS_P05
@@ -3467,8 +3426,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_P09
     icon = GFX_focus_generic_self_management
-    x = 62
-    y = 10
+    x = 25
+    y = 11
     cost = 3
     prerequisite = {
       focus = WET_NGS_P06
@@ -3499,13 +3458,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_P10
     icon = GFX_focus_generic_currency_reforms
-    x = 60
-    y = 11
+    x = 23
+    y = 12
     cost = 3
     prerequisite = {
       focus = WET_NGS_P07
@@ -3548,8 +3508,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_P11
     icon = GFX_focus_generic_escort_efficiency
-    x = 60
-    y = 12
+    x = 23
+    y = 13
     cost = 1
     prerequisite = {
       focus = WET_NGS_P10
@@ -3584,14 +3544,14 @@ focus_tree = {
       factor = 80
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_R00
     icon = GFX_focus_generic_full_social_mobilization
-    x = 70
-    y = 13
+    x = 23
+    y = 14
     cost = 2
     prerequisite = {
       focus = WET_NGS_P11
@@ -3622,13 +3582,16 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_MANPOWER
     }
   }
   focus = {
     id = WET_NGS_R01
     icon = GFX_focus_generic_smugglers
-    x = 71
-    y = 14
+    x = 24
+    y = 15
     cost = 1
     prerequisite = {
       focus = WET_NGS_R00
@@ -3653,13 +3616,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ANNEXATION
     }
   }
   focus = {
     id = WET_NGS_R02
     icon = GFX_focus_generic_urban_training
-    x = 67
-    y = 14
+    x = 18
+    y = 15
     cost = 3
     prerequisite = {
       focus = WET_NGS_R00
@@ -3691,13 +3655,15 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_R03
     icon = GFX_focus_generic_court
-    x = 69
-    y = 14
+    x = 20
+    y = 15
     cost = 3
     prerequisite = {
       focus = WET_NGS_R00
@@ -3727,8 +3693,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_R04
     icon = GFX_goal_generic_neutrality_focus
-    x = 73
-    y = 14
+    x = 28
+    y = 15
     cost = 3
     prerequisite = {
       focus = WET_NGS_R00
@@ -3755,13 +3721,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_STABILITY
     }
   }
   focus = {
     id = WET_NGS_R05
     icon = GFX_focus_generic_military_mission
-    x = 67
-    y = 15
+    x = 18
+    y = 16
     cost = 4
     prerequisite = {
       focus = WET_NGS_R02
@@ -3771,12 +3738,14 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_ngs_endless_legions
-      custom_effect_tooltip = WET_NGS_R05_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_R05_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_R05
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_ngs_endless_legions
-        custom_effect_tooltip = WET_NGS_R05_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_R05_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_R05
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_R05
@@ -3787,14 +3756,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_R06
     icon = GFX_focus_generic_monarchy_2
-    x = 69
-    y = 15
+    x = 20
+    y = 16
     cost = 3
     prerequisite = {
       focus = WET_NGS_R03
@@ -3860,14 +3830,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_R07
     icon = GFX_focus_generic_improve_the_administration
-    x = 71
-    y = 15
+    x = 28
+    y = 16
     cost = 4
     prerequisite = {
       focus = WET_NGS_R04
@@ -3901,8 +3871,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_R08
     icon = GFX_focus_generic_public_works
-    x = 67
-    y = 16
+    x = 18
+    y = 17
     cost = 4
     prerequisite = {
       focus = WET_NGS_R05
@@ -3911,11 +3881,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_R08_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_R08_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_R08
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_R08_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_R08_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_R08
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_R08
@@ -3926,14 +3898,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_R09
     icon = GFX_focus_generic_university_1
-    x = 73
-    y = 15
+    x = 24
+    y = 16
     cost = 2
     prerequisite = {
       focus = WET_NGS_R01
@@ -3954,7 +3926,7 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     ai_will_do = {
       factor = 15
@@ -3967,8 +3939,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_N00
     icon = GFX_focus_generic_advisors
-    x = 77
-    y = 16
+    x = 20
+    y = 18
     cost = 3
     prerequisite = {
       focus = WET_NGS_R09
@@ -3990,6 +3962,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 80
@@ -4002,8 +3975,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_N01
     icon = GFX_focus_generic_annex_country
-    x = 75
-    y = 17
+    x = 18
+    y = 19
     cost = 3
     prerequisite = {
       focus = WET_NGS_N00
@@ -4040,6 +4013,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -4052,59 +4026,26 @@ focus_tree = {
   focus = {
     id = WET_NGS_N02
     icon = GFX_goal_generic_occupy_states_ongoing_war
-    x = 75
-    y = 18
+    x = 18
+    y = 20
     cost = 2
     prerequisite = {
       focus = WET_NGS_N01
     }
     available = {
-      459 = {
-        is_owned_by = U24
-        is_fully_controlled_by = U24
-      }
-      462 = {
-        is_owned_by = U24
-        is_fully_controlled_by = U24
-      }
+
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
       army_experience = 40
-      459 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-      }
-      462 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-      }
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_N02
     }
     completion_reward = {
       effect_tooltip = {
         army_experience = 40
-        459 = {
-          add_building_construction = {
-            type = infrastructure
-            level = 1
-            instant_build = yes
-          }
-        }
-        462 = {
-          add_building_construction = {
-            type = infrastructure
-            level = 1
-            instant_build = yes
-          }
-        }
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_N02
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_N02
@@ -4115,14 +4056,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_INDUSTRY
       FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_N03
     icon = GFX_goal_generic_military_sphere
-    x = 75
-    y = 19
+    x = 18
+    y = 21
     cost = 4
     prerequisite = {
       focus = WET_NGS_N02
@@ -4146,14 +4088,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_POLITICAL
     }
   }
   focus = {
     id = WET_NGS_N04
     icon = GFX_focus_generic_navy_research_bonus
-    x = 77
-    y = 17
+    x = 20
+    y = 19
     cost = 4
     prerequisite = {
       focus = WET_NGS_N00
@@ -4197,14 +4139,16 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
   }
   focus = {
     id = WET_NGS_N05
     icon = GFX_goal_generic_navy_submarine
-    x = 77
-    y = 18
+    x = 20
+    y = 20
     cost = 3
     prerequisite = {
       focus = WET_NGS_N04
@@ -4226,6 +4170,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -4238,27 +4183,24 @@ focus_tree = {
   focus = {
     id = WET_NGS_N06
     icon = GFX_focus_generic_merchant_fleet
-    x = 77
-    y = 19
+    x = 20
+    y = 21
     cost = 3
     prerequisite = {
       focus = WET_NGS_N05
     }
     available = {
-      612 = {
-        is_owned_by = U24
-        is_fully_controlled_by = U24
-      }
+
     }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_N06_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_N06
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_N06_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_N06
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_N06
@@ -4269,14 +4211,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_NAVY
     }
   }
   focus = {
     id = WET_NGS_N07
     icon = GFX_focus_generic_reinforcing_the_supply_network
-    x = 79
-    y = 17
+    x = 22
+    y = 19
     cost = 3
     prerequisite = {
       focus = WET_NGS_N00
@@ -4309,7 +4252,9 @@ focus_tree = {
       }
     }
     search_filters = {
+      FOCUS_FILTER_RESEARCH
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -4322,8 +4267,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_N08
     icon = GFX_focus_generic_monetary_union
-    x = 80
-    y = 18
+    x = 23
+    y = 20
     cost = 4
     prerequisite = {
       focus = WET_NGS_N07
@@ -4347,6 +4292,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -4359,8 +4305,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_N09
     icon = GFX_goal_generic_demand_territory
-    x = 79
-    y = 19
+    x = 22
+    y = 21
     cost = 2
     prerequisite = {
       focus = WET_NGS_N08
@@ -4413,14 +4359,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_N10
     icon = GFX_goal_generic_secret_weapon
-    x = 79
-    y = 20
+    x = 22
+    y = 22
     cost = 2
     prerequisite = {
       focus = WET_NGS_N09
@@ -4456,8 +4402,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_N11
     icon = GFX_goal_generic_dangerous_deal
-    x = 81
-    y = 19
+    x = 24
+    y = 21
     cost = 1
     prerequisite = {
       focus = WET_NGS_N08
@@ -4490,14 +4436,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_N12
     icon = GFX_focus_generic_treaty
-    x = 81
-    y = 20
+    x = 24
+    y = 22
     cost = 2
     prerequisite = {
       focus = WET_NGS_N11
@@ -4529,14 +4476,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_STABILITY
     }
   }
   focus = {
     id = WET_NGS_N13
     icon = GFX_goal_generic_construct_civ_factory
-    x = 77
-    y = 20
+    x = 20
+    y = 22
     cost = 4
     prerequisite = {
       focus = WET_NGS_N09
@@ -4560,14 +4507,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_N14
     icon = GFX_focus_generic_world_peace
-    x = 82
-    y = 21
+    x = 25
+    y = 23
     cost = 4
     prerequisite = {
       focus = WET_NGS_N12
@@ -4576,11 +4524,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_N14_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_N14_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_N14
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_N14_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_N14_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_N14
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_N14
@@ -4591,14 +4541,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_N15
     icon = GFX_focus_generic_education
-    x = 80
-    y = 21
+    x = 23
+    y = 23
     cost = 3
     prerequisite = {
       focus = WET_NGS_N12
@@ -4627,14 +4577,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_E00
     icon = GFX_goal_generic_major_war
-    x = 86
-    y = 16
+    x = 31
+    y = 18
     cost = 3
     prerequisite = {
       focus = WET_NGS_R09
@@ -4672,14 +4623,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_E01
     icon = GFX_focus_generic_turning_a_blind_eye
-    x = 86
-    y = 17
+    x = 31
+    y = 19
     cost = 2
     prerequisite = {
       focus = WET_NGS_E00
@@ -4715,8 +4667,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_E02
     icon = GFX_focus_generic_stockpile_fuel
-    x = 84
-    y = 18
+    x = 29
+    y = 20
     cost = 3
     prerequisite = {
       focus = WET_NGS_E01
@@ -4740,14 +4692,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_POLITICAL
     }
   }
   focus = {
     id = WET_NGS_E03
     icon = GFX_focus_generic_mountain_fortification
-    x = 84
-    y = 19
+    x = 29
+    y = 21
     cost = 4
     prerequisite = {
       focus = WET_NGS_E02
@@ -4795,8 +4747,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_E04
     icon = GFX_focus_generic_provoke_border_clashes
-    x = 88
-    y = 18
+    x = 33
+    y = 20
     cost = 3
     prerequisite = {
       focus = WET_NGS_E01
@@ -4828,6 +4780,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_ANNEXATION
     }
     ai_will_do = {
       factor = 15
@@ -4840,8 +4793,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_E05
     icon = GFX_goal_generic_axis_build_infantry
-    x = 86
-    y = 19
+    x = 31
+    y = 21
     cost = 4
     prerequisite = {
       focus = WET_NGS_E04
@@ -4874,13 +4827,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_MANPOWER
     }
   }
   focus = {
     id = WET_NGS_E06
     icon = GFX_focus_generic_desert_training
-    x = 88
-    y = 19
+    x = 33
+    y = 21
     cost = 4
     prerequisite = {
       focus = WET_NGS_E04
@@ -4914,14 +4868,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_RESEARCH
       FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_E07
     icon = GFX_focus_generic_home_defense
-    x = 85
-    y = 20
+    x = 30
+    y = 22
     cost = 3
     prerequisite = {
       focus = WET_NGS_E03
@@ -5012,8 +4967,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_E08
     icon = GFX_focus_generic_hill_training
-    x = 90
-    y = 19
+    x = 35
+    y = 21
     cost = 3
     prerequisite = {
       focus = WET_NGS_E04
@@ -5037,14 +4992,16 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
+      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
       FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_E09
     icon = GFX_focus_generic_jungle_training
-    x = 86
-    y = 21
+    x = 31
+    y = 23
     cost = 2
     prerequisite = {
       focus = WET_NGS_E07
@@ -5082,13 +5039,14 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_ARMY
+      FOCUS_FILTER_WAR_SUPPORT
     }
   }
   focus = {
     id = WET_NGS_E10
     icon = GFX_focus_generic_secret_service_agency
-    x = 90
-    y = 20
+    x = 35
+    y = 22
     cost = 4
     prerequisite = {
       focus = WET_NGS_E08
@@ -5140,14 +5098,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_E11
     icon = GFX_focus_generic_secret_agent_operative
-    x = 84
-    y = 21
+    x = 29
+    y = 23
     cost = 3
     prerequisite = {
       focus = WET_NGS_E07
@@ -5184,14 +5142,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_POLITICAL
     }
   }
   focus = {
     id = WET_NGS_E12
     icon = GFX_focus_generic_improve_the_administration_2
-    x = 86
-    y = 22
+    x = 31
+    y = 24
     cost = 3
     prerequisite = {
       focus = WET_NGS_E09
@@ -5217,14 +5175,15 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_STABILITY
     }
   }
   focus = {
     id = WET_NGS_E13
     icon = GFX_focus_generic_winter_warfare
-    x = 86
-    y = 23
+    x = 31
+    y = 25
     cost = 4
     prerequisite = {
       focus = WET_NGS_E12
@@ -5233,11 +5192,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_E13_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_E13_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_E13
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_E13_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_E13_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_E13
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_E13
@@ -5248,13 +5209,13 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_D00
     icon = GFX_focus_generic_happy_cheer
-    x = 95
+    x = 43
     y = 2
     cost = 2
     prerequisite = {
@@ -5285,7 +5246,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D01
     icon = GFX_focus_generic_royal_wedding
-    x = 95
+    x = 43
     y = 3
     cost = 2
     prerequisite = {
@@ -5322,7 +5283,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D02
     icon = GFX_goal_generic_improve_relations
-    x = 92
+    x = 40
     y = 4
     cost = 3
     prerequisite = {
@@ -5383,7 +5344,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D03
     icon = GFX_goal_generic_positive_trade_relations
-    x = 94
+    x = 42
     y = 4
     cost = 3
     prerequisite = {
@@ -5444,7 +5405,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D04
     icon = GFX_goal_generic_dangerous_deal
-    x = 96
+    x = 44
     y = 4
     cost = 3
     prerequisite = {
@@ -5508,7 +5469,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D05
     icon = GFX_focus_generic_treaty
-    x = 98
+    x = 46
     y = 4
     cost = 3
     prerequisite = {
@@ -5524,12 +5485,10 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       add_ideas = wet_ngs_d05
-      unlock_decision_tooltip = wet_ngs_independent_nap
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_ngs_d05
-        unlock_decision_tooltip = wet_ngs_independent_nap
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_D05
@@ -5541,12 +5500,13 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_D06
     icon = GFX_goal_generic_military_deal
-    x = 92
+    x = 40
     y = 5
     cost = 3
     prerequisite = {
@@ -5600,7 +5560,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D07
     icon = GFX_focus_generic_industry_investment
-    x = 92
+    x = 40
     y = 6
     cost = 4
     prerequisite = {
@@ -5632,6 +5592,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     available = {
       OR = {
@@ -5647,7 +5608,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D08
     icon = GFX_goal_generic_major_alliance
-    x = 92
+    x = 40
     y = 7
     cost = 3
     prerequisite = {
@@ -5706,7 +5667,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D09
     icon = GFX_goal_generic_special_forces
-    x = 94
+    x = 42
     y = 5
     cost = 3
     prerequisite = {
@@ -5765,12 +5726,13 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
     }
   }
   focus = {
     id = WET_NGS_D10
     icon = GFX_focus_generic_whispers
-    x = 94
+    x = 42
     y = 6
     cost = 4
     prerequisite = {
@@ -5802,6 +5764,8 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
     available = {
       OR = {
@@ -5817,7 +5781,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D11
     icon = GFX_focus_generic_soldier_salute
-    x = 94
+    x = 42
     y = 7
     cost = 3
     prerequisite = {
@@ -5865,12 +5829,13 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_D12
     icon = GFX_focus_generic_sympathetic_judges
-    x = 96
+    x = 44
     y = 5
     cost = 3
     prerequisite = {
@@ -5918,13 +5883,13 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_D13
     icon = GFX_focus_generic_stockpile_currency
-    x = 96
+    x = 44
     y = 6
     cost = 4
     prerequisite = {
@@ -5956,6 +5921,7 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     available = {
       OR = {
@@ -5971,7 +5937,7 @@ focus_tree = {
   focus = {
     id = WET_NGS_D14
     icon = GFX_focus_generic_world_peace
-    x = 96
+    x = 44
     y = 7
     cost = 3
     prerequisite = {
@@ -6024,12 +5990,13 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_D15
     icon = GFX_focus_generic_field_hostpital
-    x = 98
+    x = 46
     y = 5
     cost = 4
     prerequisite = {
@@ -6066,13 +6033,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_D16
     icon = GFX_focus_generic_reorient_production
-    x = 98
+    x = 46
     y = 6
     cost = 4
     prerequisite = {
@@ -6082,11 +6050,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_NGS_D16_special_tt
+      custom_effect_tooltip = wet_auto_other_WET_NGS_D16_special_tt
+      custom_effect_tooltip = wet_auto_construction_WET_NGS_D16
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_NGS_D16_special_tt
+        custom_effect_tooltip = wet_auto_other_WET_NGS_D16_special_tt
+        custom_effect_tooltip = wet_auto_construction_WET_NGS_D16
       }
       hidden_effect = {
         set_country_flag = wet_ngs_earned_D16
@@ -6097,13 +6067,14 @@ focus_tree = {
       factor = 15
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
   }
   focus = {
     id = WET_NGS_D17
     icon = GFX_focus_generic_expand_gold_mining
-    x = 98
+    x = 46
     y = 7
     cost = 3
     prerequisite = {
@@ -6144,8 +6115,8 @@ focus_tree = {
   focus = {
     id = WET_NGS_V01
     icon = GFX_goal_generic_intelligence_exchange
-    x = 55
-    y = 6
+    x = 18
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6188,14 +6159,15 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_V02
     icon = GFX_focus_generic_secret_agent_operative
-    x = 57
-    y = 6
+    x = 20
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6238,14 +6210,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_V03
     icon = GFX_focus_generic_smugglers
-    x = 59
-    y = 6
+    x = 22
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6288,14 +6260,15 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_V04
     icon = GFX_focus_generic_printing_press
-    x = 61
-    y = 6
+    x = 24
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6354,14 +6327,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_V05
     icon = GFX_focus_generic_infiltration
-    x = 63
-    y = 6
+    x = 26
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6420,14 +6393,14 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
   focus = {
     id = WET_NGS_V06
     icon = GFX_goal_generic_political_pressure
-    x = 65
-    y = 6
+    x = 28
+    y = 7
     cost = 3
     prerequisite = {
       focus = WET_NGS_A15
@@ -6486,7 +6459,7 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
   }
 }

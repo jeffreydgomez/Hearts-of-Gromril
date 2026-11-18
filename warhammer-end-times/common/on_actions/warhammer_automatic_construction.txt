@@ -1,0 +1,36 @@
+on_actions = {
+  on_monthly = {
+    effect = {
+      every_country = {
+        limit = {
+          OR = {
+            check_variable = {
+              wet_generic_arms_factory_credits
+              >
+              0
+            }
+            check_variable = {
+              wet_generic_dockyard_credits
+              >
+              0
+            }
+            check_variable = {
+              wet_generic_industrial_complex_credits
+              >
+              0
+            }
+            check_variable = {
+              wet_generic_infrastructure_credits
+              >
+              0
+            }
+          }
+        }
+        wet_generic_place_arms_factory = yes
+        wet_generic_place_dockyard = yes
+        wet_generic_place_industrial_complex = yes
+        wet_generic_place_infrastructure = yes
+      }
+    }
+  }
+}

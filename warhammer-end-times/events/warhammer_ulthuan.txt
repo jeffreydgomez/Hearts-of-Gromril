@@ -2267,6 +2267,9 @@ country_event = {
             clr_country_flag = wet_ult_interim_council
             recruit_character = WET_ULT_SharedCrown
             promote_character = WET_ULT_SharedCrown
+# WET ruler command: promotion
+hidden_effect = { WET_ULT_SharedCrown = { wet_ruler_enable_field_marshal = yes } }
+
           }
         }
         if = {
@@ -2315,6 +2318,9 @@ country_event = {
       character = WET_H06_leader
       ideology = wet_order_cadai
     }
+# WET ruler command: Finubar disappears
+hidden_effect = { WET_H06_leader = { wet_ruler_suspend_command = yes } }
+
     if = {
       limit = {
         NOT = {
@@ -2324,6 +2330,9 @@ country_event = {
       recruit_character = WET_ULT_Council
     }
     promote_character = WET_ULT_Council
+# WET ruler command: promotion
+hidden_effect = { WET_ULT_Council = { wet_ruler_enable_field_marshal = yes } }
+
   }
   option = {
     name = wet_ulthuan.1.0
@@ -2361,9 +2370,12 @@ country_event = {
           expire = "2902.1.31.1"
           traits = {
             
-          }
+           wet_ruler_ult_tyrion }
         }
       }
+# WET ruler command: appointment
+hidden_effect = { WET_ULT_Tyrion = { wet_ruler_enable_field_marshal = yes } }
+
     }
     hidden_effect = {
       wet_ult_choose_tyrion = yes
@@ -2386,9 +2398,12 @@ country_event = {
           expire = "2902.1.31.1"
           traits = {
             
-          }
+           wet_ruler_h08_leader }
         }
       }
+# WET ruler command: appointment
+hidden_effect = { WET_H08_leader = { wet_ruler_enable_field_marshal = yes } }
+
     }
     hidden_effect = {
       wet_ult_choose_queen = yes
@@ -2497,6 +2512,9 @@ country_event = {
         recruit_character = WET_ULT_Council
       }
       promote_character = WET_ULT_Council
+# WET ruler command: promotion
+hidden_effect = { WET_ULT_Council = { wet_ruler_enable_field_marshal = yes } }
+
       set_country_flag = wet_ult_government_malekith
       set_country_flag = wet_ult_interim_council
       H12 = {
@@ -2548,9 +2566,12 @@ country_event = {
           expire = "2902.1.31.1"
           traits = {
             
-          }
+           wet_ruler_ult_tyrion }
         }
       }
+# WET ruler command: appointment
+hidden_effect = { WET_ULT_Tyrion = { wet_ruler_enable_field_marshal = yes } }
+
     }
     hidden_effect = {
       wet_ult_choose_tyrion = yes
@@ -2573,9 +2594,12 @@ country_event = {
           expire = "2902.1.31.1"
           traits = {
             
-          }
+           wet_ruler_h08_leader }
         }
       }
+# WET ruler command: appointment
+hidden_effect = { WET_H08_leader = { wet_ruler_enable_field_marshal = yes } }
+
     }
     hidden_effect = {
       wet_ult_choose_queen = yes

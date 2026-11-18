@@ -1,3 +1,164 @@
+wet_brt_ducal_loyalty = {
+  wet_brt_reign_in_artois = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A15
+    }
+    visible = {
+      NOT = {
+        has_country_flag = wet_brt_crisis_started
+      }
+      NOT = {
+        has_country_flag = wet_brt_artois_loyal
+      }
+    }
+    cost = 25
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_BRT_P05
+      custom_trigger_tooltip = {
+        tooltip = wet_brt_preparation_focus_requirement_tt
+        wet_brt_preparation = yes
+      }
+      AND = {
+        hidden_trigger = {
+          has_country_flag = wet_brt_artois_negotiations
+          NOT = {
+            has_country_flag = wet_brt_artois_loyal
+          }
+        }
+      }
+    }
+    complete_effect = {
+      custom_effect_tooltip = wet_brt_reign_in_artois_outcome_tt
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_BRT_P05
+            wet_brt_preparation = yes
+            hidden_trigger = {
+              has_country_flag = wet_brt_artois_negotiations
+              NOT = {
+                has_country_flag = wet_brt_artois_loyal
+              }
+            }
+          }
+          set_country_flag = wet_brt_artois_loyal
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_brt_reign_in_lyonesse = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A15
+    }
+    visible = {
+      NOT = {
+        has_country_flag = wet_brt_crisis_started
+      }
+      NOT = {
+        has_country_flag = wet_brt_lyonesse_loyal
+      }
+    }
+    cost = 25
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_BRT_P06
+      custom_trigger_tooltip = {
+        tooltip = wet_brt_preparation_focus_requirement_tt
+        wet_brt_preparation = yes
+      }
+      AND = {
+        hidden_trigger = {
+          has_country_flag = wet_brt_lyonesse_negotiations
+          NOT = {
+            has_country_flag = wet_brt_lyonesse_loyal
+          }
+        }
+      }
+    }
+    complete_effect = {
+      custom_effect_tooltip = wet_brt_reign_in_lyonesse_outcome_tt
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_BRT_P06
+            wet_brt_preparation = yes
+            hidden_trigger = {
+              has_country_flag = wet_brt_lyonesse_negotiations
+              NOT = {
+                has_country_flag = wet_brt_lyonesse_loyal
+              }
+            }
+          }
+          set_country_flag = wet_brt_lyonesse_loyal
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_brt_reign_in_carcassonne = {
+    desc = wet_decision_no_description
+    icon = generic_political_discourse
+    allowed = {
+      tag = A15
+    }
+    visible = {
+      NOT = {
+        has_country_flag = wet_brt_crisis_started
+      }
+      NOT = {
+        has_country_flag = wet_brt_carcassonne_loyal
+      }
+    }
+    cost = 25
+    days_re_enable = 0
+    available = {
+      has_completed_focus = WET_BRT_P07
+      custom_trigger_tooltip = {
+        tooltip = wet_brt_preparation_focus_requirement_tt
+        wet_brt_preparation = yes
+      }
+      AND = {
+        hidden_trigger = {
+          has_country_flag = wet_brt_carcassonne_negotiations
+          NOT = {
+            has_country_flag = wet_brt_carcassonne_loyal
+          }
+        }
+      }
+    }
+    complete_effect = {
+      custom_effect_tooltip = wet_brt_reign_in_carcassonne_outcome_tt
+      hidden_effect = {
+        if = {
+          limit = {
+            has_completed_focus = WET_BRT_P07
+            wet_brt_preparation = yes
+            hidden_trigger = {
+              has_country_flag = wet_brt_carcassonne_negotiations
+              NOT = {
+                has_country_flag = wet_brt_carcassonne_loyal
+              }
+            }
+          }
+          set_country_flag = wet_brt_carcassonne_loyal
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}
 wet_brt_campaigns = {
   wet_brt_cancelled_duel_rally = {
     desc = wet_decision_no_description
@@ -85,7 +246,7 @@ wet_brt_campaigns = {
             set_country_flag = wet_brt_dismantle_krell_done
           }
           else = {
-            
+
           }
         }
       }
@@ -159,7 +320,7 @@ wet_brt_campaigns = {
           }
         }
         else = {
-          
+
         }
       }
       hidden_effect = {
@@ -187,7 +348,7 @@ wet_brt_campaigns = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -279,7 +440,7 @@ wet_brt_campaigns = {
             }
           }
           else = {
-            
+
           }
         }
       }
@@ -503,626 +664,6 @@ wet_brt_diplomacy = {
         A20 = {
           wet_brt_send_settlement = yes
         }
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-}
-wet_brt_construction = {
-  wet_brt_relocate_E01 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E01
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E01
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E01_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E01_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E01_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E01_relocate
-        wet_brt_place_E01 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E05 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E05
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E05
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E05_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E05_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E05_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E05_relocate
-        wet_brt_place_E05 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E13 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E13
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E13
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E13_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E13_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E13_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E13_relocate
-        wet_brt_place_E13 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E03 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E03
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E03
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E03_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E03_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E03_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E03_relocate
-        wet_brt_place_E03 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E07 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E07
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E07
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E07_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E07_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E07_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E07_relocate
-        wet_brt_place_E07 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E11 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E11
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E11
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E11_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E11_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E11_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E11_relocate
-        wet_brt_place_E11 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E04 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E04
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E04
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E04_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E04_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E04_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E04_relocate
-        wet_brt_place_E04 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_E08 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_E08
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_E08
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E08_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_E08_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_E08_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_E08_relocate
-        wet_brt_place_E08 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_P10 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_P10
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_P10
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_P10_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_P10_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_P10_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_P10_relocate
-        wet_brt_place_P10 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_relocate_C15 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      check_variable = {
-        wet_brt_claim_C15
-        >
-        0
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      AND = {
-        check_variable = {
-          wet_brt_claim_C15
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_C15_age
-          >
-          179
-        }
-        NOT = {
-          has_country_flag = wet_brt_claim_C15_relocate
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_relocate_C15_outcome_tt
-      hidden_effect = {
-        set_country_flag = wet_brt_claim_C15_relocate
-        wet_brt_place_C15 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_brt_construction = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A15
-    }
-    visible = {
-      OR = {
-        check_variable = {
-          wet_brt_claim_E01
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E05
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E13
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E03
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E07
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E11
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E15
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E18
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E04
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E08
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_P10
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_P20
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_C15
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E02a
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E02b
-          >
-          0
-        }
-        check_variable = {
-          wet_brt_claim_E06
-          >
-          0
-        }
-      }
-    }
-    cost = 0
-    days_re_enable = 7
-    available = {
-      AND = {
-        OR = {
-          check_variable = {
-            wet_brt_claim_E01
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E05
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E13
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E03
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E07
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E11
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E15
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E18
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E04
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E08
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_P10
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_P20
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_C15
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E02a
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E02b
-            >
-            0
-          }
-          check_variable = {
-            wet_brt_claim_E06
-            >
-            0
-          }
-        }
-      }
-    }
-    complete_effect = {
-      custom_effect_tooltip = wet_brt_construction_outcome_tt
-      hidden_effect = {
-        wet_brt_spend_claims = yes
       }
     }
     ai_will_do = {
@@ -1552,6 +1093,17 @@ wet_brt_recovery = {
         has_country_flag = wet_brt_earned_P04
         NOT = {
           has_country_flag = wet_brt_reward_P04
+        }
+        wet_brt_legal_a20 = yes
+        check_variable = {
+          wet_brt_ultimatum_cooldown
+          <
+          1
+        }
+        A20 = {
+          NOT = {
+            has_country_flag = wet_brt_ultimatum_pending
+          }
         }
       }
     }
@@ -3136,18 +2688,27 @@ wet_brt_recovery = {
     days_re_enable = 0
     available = {
       has_completed_focus = WET_BRT_C11
-      574 = {
-        is_owned_by = A15
-        is_fully_controlled_by = A15
-      }
-      907 = {
-        is_owned_by = A15
-        is_fully_controlled_by = A15
-      }
       AND = {
         has_country_flag = wet_brt_earned_C15
         NOT = {
           has_country_flag = wet_brt_reward_C15
+        }
+      }
+      any_owned_state = {
+        is_owned_by = A15
+        is_fully_controlled_by = A15
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
         }
       }
     }

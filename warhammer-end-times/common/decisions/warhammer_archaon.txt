@@ -1680,17 +1680,14 @@ wet_arc_campaigns = {
         add_ideas = wet_arc_everchosen
         set_global_flag = wet_story_archaon_coronated
         set_country_flag = wet_arc_active
-        add_corps_commander_role = {
-          character = WET_B99_leader
-          traits = {
+        WET_B99_leader = { if = { limit = { NOT = { is_army_leader = yes } NOT = { has_character_flag = wet_ruler_command_suspended } } add_field_marshal_role = { traits = {
             brilliant_strategist
           }
           skill = 5
           attack_skill = 5
           defense_skill = 4
           planning_skill = 5
-          logistics_skill = 4
-        }
+          logistics_skill = 4 } } wet_ruler_enable_field_marshal = yes add_unit_leader_trait = brilliant_strategist }
         set_portraits = {
           character = WET_B99_leader
           army = {
@@ -3308,46 +3305,6 @@ wet_arc_campaigns = {
         add_research_slot = 1
         clr_country_flag = wet_arc_claim_T10_pending
         set_country_flag = wet_arc_claim_T10_done
-      }
-    }
-    days_re_enable = 0
-    ai_will_do = {
-      factor = 5
-    }
-  }
-  wet_arc_claim_T13 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      original_tag = B99
-    }
-    visible = {
-      has_completed_focus = WET_ARC_T13
-      has_country_flag = wet_arc_claim_T13_pending
-      NOT = {
-        has_country_flag = wet_arc_claim_T13_done
-      }
-    }
-    cost = 0
-    available = {
-      has_political_power
-      >
-      149
-      AND = {
-        wet_arc_twentyfive_factories = yes
-        has_country_flag = wet_arc_claim_T13_pending
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        add_political_power = -150
-        add_research_slot = 1
-      }
-      hidden_effect = {
-        add_political_power = -150
-        add_research_slot = 1
-        clr_country_flag = wet_arc_claim_T13_pending
-        set_country_flag = wet_arc_claim_T13_done
       }
     }
     days_re_enable = 0

@@ -60,17 +60,14 @@ focus_tree = {
           add_ideas = wet_arc_everchosen
           set_global_flag = wet_story_archaon_coronated
           set_country_flag = wet_arc_active
-          add_corps_commander_role = {
-            character = WET_B99_leader
-            traits = {
+          WET_B99_leader = { if = { limit = { NOT = { is_army_leader = yes } NOT = { has_character_flag = wet_ruler_command_suspended } } add_field_marshal_role = { traits = {
               brilliant_strategist
             }
             skill = 5
             attack_skill = 5
             defense_skill = 4
             planning_skill = 5
-            logistics_skill = 4
-          }
+            logistics_skill = 4 } } wet_ruler_enable_field_marshal = yes add_unit_leader_trait = brilliant_strategist }
           set_portraits = {
             character = WET_B99_leader
             army = {
@@ -93,9 +90,7 @@ focus_tree = {
     ai_will_do = {
       factor = 100
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K00
@@ -148,9 +143,7 @@ focus_tree = {
     ai_will_do = {
       factor = 30
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_KN01
@@ -191,9 +184,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_NAVY }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -232,9 +223,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -285,9 +274,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_KN08
@@ -328,9 +315,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -399,9 +384,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_KU01
@@ -442,9 +425,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -526,9 +507,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -971,9 +950,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_KU13
@@ -1037,9 +1014,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH }
   }
   focus = {
     id = WET_ARC_KU18
@@ -1098,9 +1073,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_KO01
@@ -1141,9 +1114,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1205,9 +1176,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_KO06
@@ -1326,9 +1295,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_KO25
@@ -1359,9 +1326,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_KO26
@@ -1419,9 +1384,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_KD01
@@ -1462,9 +1425,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1546,9 +1507,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1599,9 +1558,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1681,9 +1638,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_KD10
@@ -1748,9 +1703,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_KM01
@@ -1801,9 +1754,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_KM04
@@ -1860,9 +1811,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1925,9 +1874,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -1966,9 +1913,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -2036,9 +1981,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_KC01
@@ -2079,9 +2022,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -2193,9 +2134,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_KC10
@@ -2239,9 +2178,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -2283,9 +2220,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -2365,9 +2300,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_K01
@@ -2464,9 +2397,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_K04
@@ -2529,9 +2460,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_K05
@@ -2606,9 +2535,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_K02
@@ -2861,9 +2788,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K10
@@ -2923,7 +2848,6 @@ focus_tree = {
               has_war = yes
               always = yes
             }
-
             add_timed_idea = {
               idea = wet_arc_campaign_planning
               days = 180
@@ -2940,9 +2864,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K11
@@ -2998,9 +2920,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K12
@@ -3060,7 +2980,6 @@ focus_tree = {
               has_war = yes
               always = yes
             }
-
             add_timed_idea = {
               idea = wet_arc_siege_preparation
               days = 180
@@ -3077,9 +2996,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K13
@@ -3132,9 +3049,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_K21
@@ -3194,7 +3109,6 @@ focus_tree = {
               }
               always = yes
             }
-
             add_timed_idea = {
               idea = wet_arc_theatre_staff
               days = 180
@@ -3211,9 +3125,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_K22
@@ -3283,9 +3195,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -3337,9 +3247,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_K16
@@ -3396,9 +3304,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_K18
@@ -3469,9 +3375,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -3509,9 +3413,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_K17
@@ -3573,9 +3475,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_K20
@@ -3604,9 +3504,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_T00
@@ -3659,9 +3557,7 @@ focus_tree = {
     ai_will_do = {
       factor = 30
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_T01
@@ -3773,9 +3669,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_T04
@@ -3850,9 +3744,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_T05
@@ -3901,9 +3793,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_T02
@@ -3938,9 +3828,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T06
@@ -3985,9 +3873,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_T07
@@ -4039,7 +3925,6 @@ focus_tree = {
             has_country_flag = wet_arc_court_grievance
             always = yes
           }
-
           add_stability = 0.05
           clr_country_flag = wet_arc_court_grievance
           set_country_flag = wet_arc_defy_prophecy_done
@@ -4050,9 +3935,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_T08
@@ -4108,9 +3991,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_T09
@@ -4181,12 +4062,10 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-
       add_research_slot = 1
     }
     completion_reward = {
       effect_tooltip = {
-
         add_research_slot = 1
       }
       hidden_effect = {
@@ -4195,7 +4074,6 @@ focus_tree = {
             wet_arc_ten_factories = yes
             always = yes
           }
-
           add_research_slot = 1
           set_country_flag = wet_arc_claim_T10_done
         }
@@ -4232,27 +4110,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-
-      add_research_slot = 1
+      custom_effect_tooltip = WET_ARC_T13_programme_tt
     }
     completion_reward = {
       effect_tooltip = {
-
-        add_research_slot = 1
+        custom_effect_tooltip = WET_ARC_T13_programme_tt
       }
       hidden_effect = {
-        if = {
-          limit = {
-            wet_arc_twentyfive_factories = yes
-            always = yes
-          }
-
-          add_research_slot = 1
-          set_country_flag = wet_arc_claim_T13_done
-        }
-        else = {
-          set_country_flag = wet_arc_claim_T13_pending
-        }
         wet_arc_count_industry = yes
       }
     }
@@ -4323,9 +4187,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_T14
@@ -4365,7 +4227,6 @@ focus_tree = {
                 }
                 always = yes
               }
-
               event_target:wet_focus_recipient = {
                 country_event = {
                   id = wet_archaon.301
@@ -4380,9 +4241,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
   }
   focus = {
     id = WET_ARC_T12
@@ -4516,15 +4375,18 @@ focus_tree = {
     complete_tooltip = {
       remove_ideas = wet_arc_research_programme
       add_ideas = wet_arc_research_programme_2
+      add_research_slot = 1
     }
     completion_reward = {
       effect_tooltip = {
         remove_ideas = wet_arc_research_programme
         add_ideas = wet_arc_research_programme_2
+        add_research_slot = 1
       }
       hidden_effect = {
         remove_ideas = wet_arc_research_programme
         add_ideas = wet_arc_research_programme_2
+        add_research_slot = 1
         wet_arc_count_industry = yes
       }
     }
@@ -4573,9 +4435,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_T18
@@ -4612,9 +4472,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_T20
@@ -4643,9 +4501,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_T21
@@ -4674,9 +4530,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_T23
@@ -4705,9 +4559,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_T19
@@ -4769,9 +4621,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
   }
   focus = {
     id = WET_ARC_T22
@@ -4813,7 +4663,6 @@ focus_tree = {
               has_country_flag = wet_arc_network_ready
               always = yes
             }
-
             set_country_flag = wet_arc_steal_lore_active
             clr_country_flag = wet_arc_steal_lore_active
             random_list = {
@@ -4841,9 +4690,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_T24
@@ -4890,9 +4737,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
   }
   focus = {
     id = WET_ARC_T25
@@ -4922,9 +4767,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_T26
@@ -4983,9 +4826,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T27
@@ -5041,9 +4882,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T30
@@ -5090,9 +4929,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T28
@@ -5139,9 +4976,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T31
@@ -5173,9 +5008,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T33
@@ -5222,9 +5055,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T29
@@ -5280,9 +5111,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T34
@@ -5326,9 +5155,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T32
@@ -5384,9 +5211,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_T35
@@ -5459,9 +5284,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR }
   }
   focus = {
     id = WET_ARC_N00
@@ -5514,9 +5337,7 @@ focus_tree = {
     ai_will_do = {
       factor = 30
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_N01
@@ -5548,9 +5369,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N03
@@ -5613,9 +5432,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_N04
@@ -5678,9 +5495,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_N25
@@ -5725,9 +5540,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N26
@@ -5779,9 +5592,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_N02
@@ -5816,9 +5627,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N05
@@ -5860,9 +5669,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N06
@@ -5912,9 +5719,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N27
@@ -5971,9 +5776,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N07
@@ -6015,9 +5818,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N08
@@ -6113,9 +5914,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_N13
@@ -6171,9 +5970,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_N14
@@ -6229,9 +6026,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_N15
@@ -6290,9 +6085,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_N10
@@ -6388,9 +6181,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_N12
@@ -6468,9 +6259,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N16
@@ -6548,9 +6337,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N19
@@ -6704,9 +6491,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N21
@@ -6768,9 +6553,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N22
@@ -6817,9 +6600,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N23
@@ -6866,9 +6647,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N24
@@ -6917,9 +6696,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N34
@@ -6972,7 +6749,6 @@ focus_tree = {
               always = yes
               always = yes
             }
-
             set_country_flag = wet_arc_reforge_equipment_active
             clr_country_flag = wet_arc_reforge_equipment_active
             add_equipment_to_stockpile = {
@@ -6993,9 +6769,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N35
@@ -7024,9 +6798,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N28
@@ -7083,7 +6855,6 @@ focus_tree = {
               }
               always = yes
             }
-
             set_country_flag = wet_arc_plague_hosts_ready
             set_country_flag = wet_arc_prepare_plague_hosts_done
           }
@@ -7098,9 +6869,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N29
@@ -7133,9 +6902,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY }
   }
   focus = {
     id = WET_ARC_N30
@@ -7182,9 +6949,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_N31
@@ -7213,9 +6978,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_N32
@@ -7262,9 +7025,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-    }
+    search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_S00
@@ -7351,9 +7112,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_WAR_SUPPORT }
   }
   focus = {
     id = WET_ARC_S03
@@ -7416,9 +7175,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S04
@@ -7436,7 +7193,6 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-
       add_stability = -0.03
       add_timed_idea = {
         idea = wet_arc_northern_contract
@@ -7451,7 +7207,6 @@ focus_tree = {
     }
     completion_reward = {
       effect_tooltip = {
-
         add_stability = -0.03
         add_timed_idea = {
           idea = wet_arc_northern_contract
@@ -7469,7 +7224,6 @@ focus_tree = {
           limit = {
             always = yes
           }
-
           add_stability = -0.03
           add_timed_idea = {
             idea = wet_arc_northern_contract
@@ -7492,9 +7246,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S02
@@ -7529,9 +7281,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S05
@@ -7566,9 +7316,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S06
@@ -7610,7 +7358,6 @@ focus_tree = {
               has_country_flag = wet_arc_court_grievance
               always = yes
             }
-
             clr_country_flag = wet_arc_court_grievance
             add_stability = 0.03
           }
@@ -7625,9 +7372,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S07
@@ -7667,9 +7412,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S08
@@ -7788,7 +7531,6 @@ focus_tree = {
             has_country_flag = wet_arc_court_grievance
             always = yes
           }
-
           clr_country_flag = wet_arc_court_grievance
           every_subject_country = {
             add_to_variable = {
@@ -7803,9 +7545,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
   }
   focus = {
     id = WET_ARC_S11
@@ -7940,9 +7680,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
   }
   focus = {
     id = WET_ARC_S14
@@ -7974,9 +7712,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
   }
   focus = {
     id = WET_ARC_S15
@@ -8018,9 +7754,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S16
@@ -8134,9 +7868,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
   }
   focus = {
     id = WET_ARC_S18
@@ -8204,9 +7936,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S20
@@ -8245,9 +7975,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
   }
   focus = {
     id = WET_ARC_S22
@@ -8364,9 +8092,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
   }
   focus = {
     id = WET_ARC_S21
@@ -8456,7 +8182,6 @@ focus_tree = {
               }
               always = yes
             }
-
             add_timed_idea = {
               idea = wet_arc_inspectors
               days = 365
@@ -8541,9 +8266,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S19
@@ -8590,9 +8313,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S25
@@ -8674,7 +8395,6 @@ focus_tree = {
               }
               always = yes
             }
-
             add_stability = 0.03
             every_subject_country = {
               add_to_variable = {
@@ -8693,9 +8413,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_S26
@@ -8948,9 +8666,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
     available = {
       OR = {
         is_ai = no
@@ -9030,9 +8746,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
     available = {
       OR = {
         is_ai = no
@@ -9257,9 +8971,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 10
       modifier = {
@@ -9353,9 +9065,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
     available = {
       OR = {
         is_ai = no
@@ -9435,9 +9145,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
     available = {
       OR = {
         is_ai = no
@@ -9497,7 +9205,6 @@ focus_tree = {
               has_country_flag = wet_arc_waaagh_dispute
               always = yes
             }
-
             clr_country_flag = wet_arc_waaagh_dispute
             add_stability = 0.03
           }
@@ -9518,9 +9225,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_STABILITY }
   }
   focus = {
     id = WET_ARC_S36
@@ -9638,9 +9343,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
     available = {
       OR = {
         is_ai = no
@@ -9680,9 +9383,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_POLITICAL
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY }
   }
   focus = {
     id = WET_ARC_KN20
@@ -9726,9 +9427,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_KN21
@@ -9769,9 +9468,7 @@ focus_tree = {
     ai_will_do = {
       factor = 10
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL }
   }
   focus = {
     id = WET_ARC_KC00
@@ -9827,9 +9524,7 @@ focus_tree = {
         wet_arc_count_industry = yes
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_ANNEXATION }
     ai_will_do = {
       factor = 30
       modifier = {
@@ -9886,9 +9581,7 @@ focus_tree = {
         1.0
       }
     }
-    search_filters = {
-      FOCUS_FILTER_ARMY
-    }
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
     available = {
       OR = {
         is_ai = no

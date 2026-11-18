@@ -267,7 +267,7 @@ country_event = {
   option = {
     name = wet_bretonnia.105.0
     ai_chance = {
-      factor = 75
+      factor = 100
     }
     effect_tooltip = {
       if = {
@@ -278,7 +278,6 @@ country_event = {
           limit = {
             A15 = {
               wet_brt_legal_a20 = yes
-              always = yes
             }
           }
           A15 = {
@@ -287,64 +286,43 @@ country_event = {
               target = A20
               expire = 180
             }
-            if = {
-              limit = {
-                has_wargoal_against = A20
+            country_event = {
+              id = wet_bretonnia.901
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_brt_ultimatum_pending
+            }
+            A15 = {
+              if = {
+                limit = {
+                  exists = yes
+                }
+                country_event = {
+                  id = wet_bretonnia.902
+                }
               }
-
             }
           }
         }
       }
     }
     hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_brt_ultimatum_pending
-        }
-        clr_country_flag = wet_brt_ultimatum_pending
-        set_variable = {
-          wet_brt_ultimatum_days = 0
-        }
-        A15 = {
-          set_variable = {
-            wet_brt_ultimatum_cooldown = 180
-          }
-        }
-        if = {
-          limit = {
-            A15 = {
-              wet_brt_legal_a20 = yes
-              always = yes
-            }
-          }
-          A15 = {
-            create_wargoal = {
-              type = annex_everything
-              target = A20
-              expire = 180
-            }
-            if = {
-              limit = {
-                has_wargoal_against = A20
-              }
-
-            }
-          }
-        }
-      }
+      wet_brt_refuse_ultimatum = yes
     }
   }
   option = {
     name = wet_bretonnia.105.1
     ai_chance = {
-      factor = 25
+      factor = 0
     }
     trigger = {
       has_country_flag = wet_brt_ultimatum_pending
       A15 = {
         wet_brt_legal_a20 = yes
-        always = yes
       }
       is_in_faction = no
       A15 = {
@@ -352,65 +330,78 @@ country_event = {
       }
     }
     effect_tooltip = {
-      A15 = {
-        set_autonomy = {
-          target = A20
-          autonomy_state = autonomy_puppet
-          freedom_level = 0
-          end_wars = no
-          end_civil_wars = no
+      if = {
+        limit = {
+          has_country_flag = wet_brt_ultimatum_pending
         }
         if = {
           limit = {
-            A20 = {
-              is_subject_of = A15
+            A15 = {
+              wet_brt_legal_a20 = yes
+            }
+            is_in_faction = no
+            A15 = {
+              is_in_faction = no
             }
           }
-
+          A15 = {
+            set_autonomy = {
+              target = A20
+              autonomy_state = autonomy_puppet
+              freedom_level = 0
+              end_wars = no
+              end_civil_wars = no
+            }
+          }
+          if = {
+            limit = {
+              is_subject_of = A15
+            }
+            A15 = {
+              country_event = {
+                id = wet_bretonnia.900
+              }
+            }
+          }
+          else = {
+            if = {
+              limit = {
+                has_country_flag = wet_brt_ultimatum_pending
+              }
+              A15 = {
+                if = {
+                  limit = {
+                    exists = yes
+                  }
+                  country_event = {
+                    id = wet_bretonnia.902
+                  }
+                }
+              }
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_brt_ultimatum_pending
+            }
+            A15 = {
+              if = {
+                limit = {
+                  exists = yes
+                }
+                country_event = {
+                  id = wet_bretonnia.902
+                }
+              }
+            }
+          }
         }
       }
     }
     hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_brt_ultimatum_pending
-          A15 = {
-            wet_brt_legal_a20 = yes
-            always = yes
-          }
-          is_in_faction = no
-          A15 = {
-            is_in_faction = no
-          }
-        }
-        clr_country_flag = wet_brt_ultimatum_pending
-        set_variable = {
-          wet_brt_ultimatum_days = 0
-        }
-        A15 = {
-          set_variable = {
-            wet_brt_ultimatum_cooldown = 180
-          }
-        }
-        A15 = {
-          set_autonomy = {
-            target = A20
-            autonomy_state = autonomy_puppet
-            freedom_level = 0
-            end_wars = no
-            end_civil_wars = no
-          }
-          if = {
-            limit = {
-              A20 = {
-                is_subject_of = A15
-              }
-            }
-
-            set_country_flag = wet_brt_submission
-          }
-        }
-      }
+      wet_brt_accept_ultimatum = yes
     }
   }
 }
@@ -1720,6 +1711,48 @@ country_event = {
           }
         }
       }
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.900
+  title = wet_bretonnia.900.t
+  desc = wet_bretonnia.900.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.900.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.901
+  title = wet_bretonnia.901.t
+  desc = wet_bretonnia.901.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.901.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_bretonnia.902
+  title = wet_bretonnia.902.t
+  desc = wet_bretonnia.902.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_bretonnia.902.0
+    ai_chance = {
+      factor = 1
     }
   }
 }

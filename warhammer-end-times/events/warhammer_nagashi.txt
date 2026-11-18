@@ -355,7 +355,6 @@ country_event = {
 
     }
     hidden_effect = {
-
       set_country_flag = {
         flag = wet_ngs_guard_volkmar
         days = 120
@@ -474,10 +473,13 @@ country_event = {
                 ideology = wet_order_cult_of_sigmar
                 expire = "2902.1.31.1"
                 traits = {
-
+                  wet_ruler_a80_commander_marshal
                 }
               }
             }
+# WET ruler command: appointment
+hidden_effect = { WET_A80_commander_marshal = { wet_ruler_enable_field_marshal = yes } }
+
           }
           remove_country_leader_role = {
             character = WET_A80_leader
@@ -552,10 +554,13 @@ country_event = {
                   ideology = wet_order_cult_of_sigmar
                   expire = "2902.1.31.1"
                   traits = {
-
+                    wet_ruler_a80_commander_marshal
                   }
                 }
               }
+# WET ruler command: appointment
+hidden_effect = { WET_A80_commander_marshal = { wet_ruler_enable_field_marshal = yes } }
+
             }
             remove_country_leader_role = {
               character = WET_A80_leader
@@ -569,6 +574,9 @@ country_event = {
             }
           }
           set_global_flag = wet_ngs_volkmar_captive
+# WET ruler command: captivity set_global_flag
+hidden_effect = { every_country = { limit = { has_character = WET_A80_leader } WET_A80_leader = { wet_ruler_suspend_command = yes } } }
+
           set_country_flag = wet_ngs_volkmar_custodian
           capital_scope = {
             set_state_flag = wet_ngs_volkmar_prison
@@ -578,6 +586,9 @@ country_event = {
           }
           A80 = {
             set_country_flag = wet_rei_volkmar_captive
+# WET ruler command: custody wet_rei_volkmar_captive
+hidden_effect = { every_country = { limit = { has_character = WET_A80_leader } WET_A80_leader = { wet_ruler_suspend_command = yes } } }
+
           }
           A13 = {
             clr_country_flag = wet_rei_volkmar_custodian
@@ -713,16 +724,34 @@ country_event = {
       factor = 85
     }
     trigger = {
-      always = yes
+      NOT = {
+        OR = {
+          has_political_power
+          <
+          50
+        }
+      }
     }
     effect_tooltip = {
-
+      add_political_power = -50
     }
+    custom_effect_tooltip = wet_nagashi.110.1_outcome
     hidden_effect = {
-
-      set_country_flag = {
-        flag = wet_ngs_guard_morgiana
-        days = 120
+      if = {
+        limit = {
+          NOT = {
+            OR = {
+              has_political_power
+              <
+              50
+            }
+          }
+        }
+        add_political_power = -50
+        set_country_flag = {
+          flag = wet_ngs_guard_morgiana
+          days = 120
+        }
       }
     }
   }
@@ -859,7 +888,6 @@ country_event = {
 
     }
     hidden_effect = {
-
       set_country_flag = {
         flag = wet_ngs_guard_aliathra
         days = 120
@@ -1066,7 +1094,6 @@ country_event = {
 
     }
     hidden_effect = {
-
       set_country_flag = {
         flag = wet_ngs_guard_emil
         days = 120
@@ -1206,7 +1233,6 @@ country_event = {
 
     }
     hidden_effect = {
-
       set_country_flag = {
         flag = wet_ngs_guard_alarielle
         days = 120
@@ -1346,7 +1372,6 @@ country_event = {
 
     }
     hidden_effect = {
-
       set_country_flag = {
         flag = wet_ngs_guard_mazdamundi
         days = 120
@@ -1608,7 +1633,6 @@ country_event = {
       }
     }
     effect_tooltip = {
-
       if = {
         limit = {
           always = yes
@@ -1642,7 +1666,6 @@ country_event = {
         set_variable = {
           wet_ngs_offer_soul_tithe_days = 0
         }
-
         set_country_flag = wet_ngs_soul_donor
         if = {
           limit = {
@@ -3032,124 +3055,6 @@ country_event = {
           }
           set_variable = {
             wet_ngs_offer_workshop_lore_cooldown = 180
-          }
-        }
-      }
-    }
-  }
-}
-country_event = {
-  id = wet_nagashi.146
-  title = wet_nagashi.146.t
-  desc = wet_nagashi.146.d
-  picture = GFX_report_event_generic_sign_treaty2
-  is_triggered_only = yes
-  timeout_days = 30
-  option = {
-    name = wet_nagashi.146.0
-    ai_chance = {
-      factor = 15
-    }
-    hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_independent_nap
-        }
-        clr_country_flag = wet_ngs_offer_independent_nap
-        set_variable = {
-          wet_ngs_offer_independent_nap_days = 0
-        }
-        set_variable = {
-          wet_ngs_offer_independent_nap_cooldown = 180
-        }
-      }
-    }
-  }
-  option = {
-    name = wet_nagashi.146.1
-    ai_chance = {
-      factor = 85
-      modifier = {
-        add = 10
-        is_in_faction_with = U24
-      }
-    }
-    trigger = {
-      has_country_flag = wet_ngs_offer_independent_nap
-      exists = yes
-      NOT = {
-        tag = U24
-      }
-      NOT = {
-        tag = WST
-      }
-      NOT = {
-        has_war_with = U24
-      }
-      NOT = {
-        has_non_aggression_pact_with = U24
-      }
-      U24 = {
-        has_country_flag = wet_ngs_policy_independent
-      }
-    }
-    effect_tooltip = {
-      diplomatic_relation = {
-        country = U24
-        relation = non_aggression_pact
-        active = yes
-      }
-    }
-    hidden_effect = {
-      if = {
-        limit = {
-          has_country_flag = wet_ngs_offer_independent_nap
-          exists = yes
-          NOT = {
-            tag = U24
-          }
-          NOT = {
-            tag = WST
-          }
-          NOT = {
-            has_war_with = U24
-          }
-          NOT = {
-            has_non_aggression_pact_with = U24
-          }
-          U24 = {
-            has_country_flag = wet_ngs_policy_independent
-          }
-        }
-        clr_country_flag = wet_ngs_offer_independent_nap
-        set_variable = {
-          wet_ngs_offer_independent_nap_days = 0
-        }
-        diplomatic_relation = {
-          country = U24
-          relation = non_aggression_pact
-          active = yes
-        }
-        if = {
-          limit = {
-            always = yes
-          }
-        }
-        set_variable = {
-          wet_ngs_offer_independent_nap_cooldown = 180
-        }
-      }
-      else = {
-        if = {
-          limit = {
-            has_country_flag = wet_ngs_offer_independent_nap
-          }
-          clr_country_flag = wet_ngs_offer_independent_nap
-          set_variable = {
-            wet_ngs_offer_independent_nap_days = 0
-          }
-          set_variable = {
-            wet_ngs_offer_independent_nap_cooldown = 180
           }
         }
       }

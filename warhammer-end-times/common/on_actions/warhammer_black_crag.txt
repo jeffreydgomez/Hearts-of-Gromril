@@ -19,4 +19,88 @@ on_actions = {
       }
     }
   }
+  on_weekly_G24 = {
+    effect = {
+      G24 = {
+        if = {
+          limit = {
+            OR = {
+              check_variable = {
+                wet_grn_claim_U05_arms_factory
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W04_dockyard
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W06_industrial_complex
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W14_industrial_complex
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W16_dockyard
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W19_infrastructure
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_N07_arms_factory
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_S00_infrastructure
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_B01_arms_factory
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_B07_industrial_complex
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_B11_arms_factory
+                >
+                0
+              }
+              check_variable = {
+                wet_grn_claim_W03_naval_base
+                >
+                0
+              }
+            }
+          }
+          wet_grn_spend_U05_arms_factory = yes
+          wet_grn_spend_W04_dockyard = yes
+          wet_grn_spend_W06_industrial_complex = yes
+          wet_grn_spend_W14_industrial_complex = yes
+          wet_grn_spend_W16_dockyard = yes
+          wet_grn_spend_W19_infrastructure = yes
+          wet_grn_spend_N07_arms_factory = yes
+          wet_grn_spend_S00_infrastructure = yes
+          wet_grn_spend_B01_arms_factory = yes
+          wet_grn_spend_B07_industrial_complex = yes
+          wet_grn_spend_B11_arms_factory = yes
+          wet_grn_spend_W03_naval_base = yes
+        }
+      }
+    }
+  }
 }

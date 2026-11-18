@@ -1,0 +1,24 @@
+add_namespace = wet_nagash_majority
+country_event = {
+ id = wet_nagash_majority.1
+ title = wet_nagash_majority.1.t
+ desc = wet_nagash_majority.1.d
+ picture = GFX_report_event_generic_sign_treaty2
+ is_triggered_only = yes
+ trigger = { wet_nagash_majority_eligible = yes has_country_flag = wet_nagash_majority_pending }
+ option = {
+  name = wet_nagash_majority.1.a
+  ai_chance = { factor = 20 }
+  effect_tooltip = {
+   if = { limit = { has_country_flag = wet_nagash_majority_pending NOT = { has_government = communism } } add_stability = -0.05 }
+  }
+  hidden_effect = { wet_nagash_majority_refuse = yes }
+ }
+ option = {
+  name = wet_nagash_majority.1.b
+  trigger = { wet_nagash_majority_eligible = yes has_country_flag = wet_nagash_majority_pending }
+  ai_chance = { factor = 80 }
+  custom_effect_tooltip = wet_nagash_majority_adopt_tt
+  hidden_effect = { wet_nagash_majority_accept = yes }
+ }
+}

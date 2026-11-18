@@ -89,9 +89,18 @@ add_equipment_to_stockpile = { type = convoy_1 amount = 10 producer = U24 }
 # BEGIN WET Nagashi
 set_country_flag = wet_ngs_enabled
 remove_country_leader_role = { character = WET_U24_leader ideology = wet_undead_nagash_worship }
+# WET ruler command: inactive at start
+hidden_effect = { WET_U24_leader = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
 recruit_character = WET_Z02_leader
 remove_country_leader_role = { character = WET_Z02_leader ideology = wet_unaligned_nagash_worship }
-add_country_leader_role = { character = WET_Z02_leader promote_leader = yes country_leader = { ideology = wet_undead_nagash_worship expire = "2902.1.31.1" traits = { } } }
+# WET ruler command: inactive at start
+hidden_effect = { WET_Z02_leader = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
+add_country_leader_role = { character = WET_Z02_leader promote_leader = yes country_leader = { ideology = wet_undead_nagash_worship expire = "2902.1.31.1" traits = {  wet_ruler_z02_leader } } }
+# WET ruler command: appointment
+hidden_effect = { WET_Z02_leader = { wet_ruler_enable_field_marshal = yes } }
+
 add_dynamic_modifier = { modifier = wet_ngs_programmes }
 # END WET Nagashi
 

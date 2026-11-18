@@ -16,6 +16,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -43,6 +44,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -77,6 +79,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -102,6 +105,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -129,6 +133,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -160,6 +165,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -195,6 +201,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -222,6 +229,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -253,6 +261,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -285,6 +294,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -313,6 +324,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     complete_tooltip = {
@@ -416,6 +429,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -446,6 +460,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -474,6 +489,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     complete_tooltip = {
@@ -583,6 +600,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -613,6 +631,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -647,6 +666,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -670,6 +691,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     available = {
@@ -678,133 +700,18 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      navy_experience = 25
-      add_extra_state_shared_building_slots = 3
-      add_building_construction = {
-        type = dockyard
-        level = 3
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_naval_effort
     }
     completion_reward = {
-      navy_experience = 25
-      if = {
-        limit = {
-          NOT = {
-            any_owned_state = {
-              dockyard
-              >
-              0
-              free_building_slots = {
-                building = dockyard
-                size
-                >
-                2
-                include_locked = yes
-              }
-            }
-          }
-          any_owned_state = {
-            is_coastal = yes
-          }
-        }
-        random_owned_controlled_state = {
-          limit = {
-            is_coastal = yes
-            free_building_slots = {
-              building = dockyard
-              size
-              >
-              2
-              include_locked = yes
-            }
-          }
-          add_extra_state_shared_building_slots = 3
-          add_building_construction = {
-            type = dockyard
-            level = 3
-            instant_build = yes
-          }
-        }
-        set_country_flag = naval_effort_built
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_naval_effort
       }
-      if = {
-        limit = {
-          NOT = {
-            has_country_flag = naval_effort_built
-          }
-          any_owned_state = {
-            dockyard
-            >
-            0
-            free_building_slots = {
-              building = dockyard
-              size
-              >
-              2
-              include_locked = yes
-            }
-          }
+      hidden_effect = {
+        navy_experience = 25
+        add_to_variable = {
+          wet_generic_dockyard_credits = 3
         }
-        random_owned_controlled_state = {
-          limit = {
-            dockyard
-            >
-            0
-            free_building_slots = {
-              building = dockyard
-              size
-              >
-              2
-              include_locked = yes
-            }
-          }
-          add_extra_state_shared_building_slots = 3
-          add_building_construction = {
-            type = dockyard
-            level = 3
-            instant_build = yes
-          }
-        }
-        set_country_flag = naval_effort_built
-      }
-      if = {
-        limit = {
-          NOT = {
-            has_country_flag = naval_effort_built
-          }
-          NOT = {
-            any_owned_state = {
-              free_building_slots = {
-                building = dockyard
-                size
-                >
-                2
-                include_locked = yes
-              }
-            }
-          }
-        }
-        random_state = {
-          limit = {
-            controller = {
-              tag = ROOT
-            }
-            free_building_slots = {
-              building = dockyard
-              size
-              >
-              2
-              include_locked = yes
-            }
-          }
-          add_extra_state_shared_building_slots = 3
-          add_building_construction = {
-            type = dockyard
-            level = 3
-            instant_build = yes
-          }
-        }
+        wet_generic_place_dockyard = yes
       }
     }
     ai_will_do = {
@@ -826,6 +733,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -867,6 +775,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -906,6 +815,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -934,6 +844,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -961,6 +872,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -988,6 +900,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_NAVY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -1013,8 +926,8 @@ focus_tree = {
     y = 0
     cost = 10
     search_filters = {
-      FOCUS_FILTER_INDUSTRY
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -1061,48 +974,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 1
-      add_building_construction = {
-        type = industrial_complex
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_construction_effort
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = industrial_complex
-                    size
-                    >
-                    0
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_construction_effort
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_industrial_complex_credits = 1
         }
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
+        wet_generic_place_industrial_complex = yes
       }
     }
     ai_will_do = {
@@ -1141,48 +1023,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 1
-      add_building_construction = {
-        type = arms_factory
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_production_effort
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = arms_factory
-            size
-            >
-            0
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = arms_factory
-                    size
-                    >
-                    0
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_production_effort
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_arms_factory_credits = 1
         }
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
+        wet_generic_place_arms_factory = yes
       }
     }
     ai_will_do = {
@@ -1221,48 +1072,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 1
-      add_building_construction = {
-        type = industrial_complex
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_construction_effort_2
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = industrial_complex
-                    size
-                    >
-                    0
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_construction_effort_2
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_industrial_complex_credits = 1
         }
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
+        wet_generic_place_industrial_complex = yes
       }
     }
     ai_will_do = {
@@ -1301,48 +1121,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 1
-      add_building_construction = {
-        type = arms_factory
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_production_effort_2
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = arms_factory
-            size
-            >
-            0
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = arms_factory
-                    size
-                    >
-                    0
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_production_effort_2
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_arms_factory_credits = 1
         }
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
+        wet_generic_place_arms_factory = yes
       }
     }
     ai_will_do = {
@@ -1380,81 +1169,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_building_construction = {
-        type = infrastructure
-        level = 1
-        instant_build = yes
-      }
-      add_building_construction = {
-        type = infrastructure
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_infrastructure_effort
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = infrastructure
-            size
-            >
-            0
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = infrastructure
-                    size
-                    >
-                    0
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
-        }
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_infrastructure_effort
       }
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = infrastructure
-            size
-            >
-            1
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = infrastructure
-                    size
-                    >
-                    1
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_infrastructure_credits = 3
         }
-        add_building_construction = {
-          type = infrastructure
-          level = 2
-          instant_build = yes
-        }
+        wet_generic_place_infrastructure = yes
       }
     }
     ai_will_do = {
@@ -1493,48 +1218,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 1
-      add_building_construction = {
-        type = arms_factory
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_production_effort_3
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = arms_factory
-            size
-            >
-            0
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = arms_factory
-                    size
-                    >
-                    0
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_production_effort_3
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_arms_factory_credits = 1
         }
-        add_extra_state_shared_building_slots = 1
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
+        wet_generic_place_arms_factory = yes
       }
     }
     ai_will_do = {
@@ -1572,81 +1266,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_building_construction = {
-        type = infrastructure
-        level = 1
-        instant_build = yes
-      }
-      add_building_construction = {
-        type = infrastructure
-        level = 1
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_infrastructure_effort_2
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = infrastructure
-            size
-            >
-            0
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = infrastructure
-                    size
-                    >
-                    0
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
-        }
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_infrastructure_effort_2
       }
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = infrastructure
-            size
-            >
-            1
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = infrastructure
-                    size
-                    >
-                    1
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_infrastructure_credits = 3
         }
-        add_building_construction = {
-          type = infrastructure
-          level = 2
-          instant_build = yes
-        }
+        wet_generic_place_infrastructure = yes
       }
     }
     ai_will_do = {
@@ -1685,48 +1315,17 @@ focus_tree = {
       }
     }
     complete_tooltip = {
-      add_extra_state_shared_building_slots = 2
-      add_building_construction = {
-        type = industrial_complex
-        level = 2
-        instant_build = yes
-      }
+      custom_effect_tooltip = wet_auto_construction_construction_effort_3
     }
     completion_reward = {
-      random_owned_controlled_state = {
-        limit = {
-          impassable = no
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            1
-            include_locked = yes
-          }
-          OR = {
-            is_in_home_area = yes
-            NOT = {
-              owner = {
-                any_owned_state = {
-                  free_building_slots = {
-                    building = industrial_complex
-                    size
-                    >
-                    1
-                    include_locked = yes
-                  }
-                  is_in_home_area = yes
-                }
-              }
-            }
-          }
+      effect_tooltip = {
+        custom_effect_tooltip = wet_auto_construction_construction_effort_3
+      }
+      hidden_effect = {
+        add_to_variable = {
+          wet_generic_industrial_complex_credits = 2
         }
-        add_extra_state_shared_building_slots = 2
-        add_building_construction = {
-          type = industrial_complex
-          level = 2
-          instant_build = yes
-        }
+        wet_generic_place_industrial_complex = yes
       }
     }
     ai_will_do = {
@@ -1898,6 +1497,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_STABILITY
     }
     available_if_capitulated = yes
     available = {
@@ -1936,6 +1536,9 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_NAVY
+      FOCUS_FILTER_STABILITY
     }
     available_if_capitulated = yes
     available = {
@@ -2016,6 +1619,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_MANPOWER
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2174,7 +1779,9 @@ focus_tree = {
     relative_position_id = militarism
     cost = 10
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_STABILITY
+      FOCUS_FILTER_MANPOWER
     }
     available_if_capitulated = yes
     ai_will_do = {
@@ -2196,8 +1803,10 @@ focus_tree = {
     relative_position_id = neutrality_focus
     cost = 10
     search_filters = {
-      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_NAVY
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2216,6 +1825,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2241,7 +1851,7 @@ focus_tree = {
     relative_position_id = military_youth
     cost = 10
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2263,6 +1873,9 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_STABILITY
+      FOCUS_FILTER_MANPOWER
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2285,6 +1898,7 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2320,6 +1934,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_STABILITY
+      FOCUS_FILTER_WAR_SUPPORT
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2355,6 +1971,8 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_STABILITY
     }
     available_if_capitulated = yes
     ai_will_do = {
@@ -2379,6 +1997,9 @@ focus_tree = {
     cost = 10
     search_filters = {
       FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_AIR
+      FOCUS_FILTER_WAR_SUPPORT
     }
     available_if_capitulated = yes
     completion_reward = {
@@ -2425,8 +2046,10 @@ focus_tree = {
     relative_position_id = ideological_fanaticism
     cost = 10
     search_filters = {
-      FOCUS_FILTER_POLITICAL
       FOCUS_FILTER_RESEARCH
+      FOCUS_FILTER_INDUSTRY
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_AIR
     }
     available_if_capitulated = yes
     completion_reward = {

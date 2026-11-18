@@ -238,62 +238,7 @@ wet_kis_spend_claims = {
       }
     }
   }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_D02_infra
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_D02_infra
-          >
-          0
-        }
-        276 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      276 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_D02_infra = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        276 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          infrastructure
-          >
-          4
-        }
-      }
-      set_variable = {
-        wet_kis_claim_D02_infra = 0
-      }
-    }
-  }
+  wet_kis_place_D02_infra = yes
   if = {
     limit = {
       check_variable = {
@@ -420,118 +365,8 @@ wet_kis_spend_claims = {
       }
     }
   }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_D07_a
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_D07_a
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_D07_a = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          infrastructure
-          >
-          4
-        }
-      }
-      set_variable = {
-        wet_kis_claim_D07_a = 0
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_D07_b
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_D07_b
-          >
-          0
-        }
-        251 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      251 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_D07_b = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        251 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          infrastructure
-          >
-          4
-        }
-      }
-      set_variable = {
-        wet_kis_claim_D07_b = 0
-      }
-    }
-  }
+  wet_kis_place_D07_a = yes
+  wet_kis_place_D07_b = yes
   if = {
     limit = {
       check_variable = {
@@ -595,160 +430,9 @@ wet_kis_spend_claims = {
       }
     }
   }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_D10_infra
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_D10_infra
-          >
-          0
-        }
-        83 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      83 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_D10_infra = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        83 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          infrastructure
-          >
-          4
-        }
-      }
-      set_variable = {
-        wet_kis_claim_D10_infra = 0
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_P01
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_P01
-          >
-          0
-        }
-        276 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      276 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_P01 = 1
-          }
-        }
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_P02
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_P02
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              arms_factory
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = arms_factory
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = arms_factory
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_P02 = 1
-          }
-        }
-      }
-    }
-  }
+  wet_kis_place_D10_infra = yes
+  wet_kis_place_P01 = yes
+  wet_kis_place_P02 = yes
   if = {
     limit = {
       check_variable = {
@@ -1118,681 +802,8 @@ wet_kis_spend_claims = {
       }
     }
   }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_H02
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        83 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      83 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        215 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      215 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        917 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      917 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        251 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      251 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        276 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      276 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        653 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      653 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_H02
-          >
-          0
-        }
-        879 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              industrial_complex
-              >
-              4
-            }
-          }
-          free_building_slots = {
-            building = industrial_complex
-            size
-            >
-            0
-            include_locked = no
-          }
-        }
-      }
-      879 = {
-        add_building_construction = {
-          type = industrial_complex
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_H02 = 1
-          }
-        }
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
-        wet_kis_claim_X07
-        >
-        0
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        83 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      83 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        215 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      215 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        917 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      917 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        251 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      251 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        276 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      276 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        653 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      653 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        449 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      449 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-    if = {
-      limit = {
-        check_variable = {
-          wet_kis_claim_X07
-          >
-          0
-        }
-        879 = {
-          is_owned_by = A29
-          is_fully_controlled_by = A29
-          impassable = no
-          NOT = {
-            OR = {
-              infrastructure
-              >
-              4
-            }
-          }
-        }
-      }
-      879 = {
-        add_building_construction = {
-          type = infrastructure
-          level = 1
-          instant_build = yes
-        }
-        A29 = {
-          subtract_from_variable = {
-            wet_kis_claim_X07 = 1
-          }
-        }
-      }
-    }
-  }
+  wet_kis_place_H02 = yes
+  wet_kis_place_X07 = yes
 }
 wet_kis_send_access = {
   if = {
@@ -5635,7 +4646,6 @@ wet_kis_award_S02 = {
         }
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_long_defence_spent
       set_variable = {
@@ -5790,7 +4800,6 @@ wet_kis_award_M12 = {
         }
         always = yes
       }
-
       add_equipment_to_stockpile = {
         type = support_equipment
         amount = -100
@@ -5855,7 +4864,6 @@ wet_kis_award_M14 = {
         }
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_great_winter_spent
       set_variable = {
@@ -5959,7 +4967,6 @@ wet_kis_award_M24 = {
         4999
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_great_charge_spent
       set_variable = {
@@ -6074,7 +5081,6 @@ wet_kis_award_M34 = {
         }
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_last_stand_spent
       set_variable = {
@@ -6216,7 +5222,6 @@ wet_kis_award_D06 = {
         }
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_city_stand_spent
       set_variable = {
@@ -6386,7 +5391,6 @@ wet_kis_award_P05 = {
         }
         always = yes
       }
-
       add_stability = -0.05
       add_timed_idea = {
         idea = wet_kis_night_shifts
@@ -6805,7 +5809,6 @@ wet_kis_award_H04 = {
         wet_kis_counterstroke_ready = yes
         always = yes
       }
-
       set_country_flag = wet_kis_counterstroke_active
       if = {
         limit = {
@@ -7041,7 +6044,6 @@ wet_kis_award_H04 = {
                   has_country_flag = wet_kis_goal_created
                 }
               }
-
             }
           }
           else = {
@@ -7389,7 +6391,6 @@ wet_kis_award_D11 = {
         wet_kis_fighting_everchosen = yes
         always = yes
       }
-
       917 = {
         add_dynamic_modifier = {
           modifier = wet_kis_forest_screen
@@ -7603,7 +6604,6 @@ wet_kis_award_E05 = {
         wet_kis_liberation_approach = yes
         always = yes
       }
-
       set_country_flag = wet_kis_major_active
       set_country_flag = wet_kis_exile_spearhead_spent
       set_variable = {
@@ -7753,7 +6753,6 @@ wet_kis_award_E11 = {
         wet_kis_liberation_approach = yes
         always = yes
       }
-
       set_country_flag = wet_kis_return_supply_active
       if = {
         limit = {
@@ -8026,7 +7025,6 @@ wet_kis_award_E15 = {
         }
         always = yes
       }
-
       set_country_flag = wet_kis_open_gates_active
       clear_array = wet_kis_liberation_contact
       random_state = {
@@ -8064,6 +7062,2054 @@ wet_kis_award_E15 = {
 
         }
       }
+    }
+  }
+}
+wet_kis_place_D02_infra_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D02_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D02_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D02_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D02_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D02_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D02_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D02_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D02_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D02_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D02_infra = 1
+      }
+    }
+  }
+}
+wet_kis_place_D02_infra = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D02_infra
+        >
+        0
+      }
+      276 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    276 = {
+      wet_kis_place_D02_infra_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D02_infra
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+      wet_kis_place_D02_infra_at_site = yes
+    }
+  }
+}
+wet_kis_place_D07_a_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_a
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_a = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_a
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_a = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_a
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_a = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_a
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_a = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_a
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_a = 1
+      }
+    }
+  }
+}
+wet_kis_place_D07_a = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D07_a
+        >
+        0
+      }
+      449 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    449 = {
+      wet_kis_place_D07_a_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D07_a
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+      wet_kis_place_D07_a_at_site = yes
+    }
+  }
+}
+wet_kis_place_D07_b_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_b
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_b = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_b
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_b = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_b
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_b = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_b
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_b = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D07_b
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D07_b = 1
+      }
+    }
+  }
+}
+wet_kis_place_D07_b = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D07_b
+        >
+        0
+      }
+      251 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    251 = {
+      wet_kis_place_D07_b_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D07_b
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+      wet_kis_place_D07_b_at_site = yes
+    }
+  }
+}
+wet_kis_place_D10_infra_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D10_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D10_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D10_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D10_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D10_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D10_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D10_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D10_infra = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_D10_infra
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_D10_infra = 1
+      }
+    }
+  }
+}
+wet_kis_place_D10_infra = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D10_infra
+        >
+        0
+      }
+      83 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    83 = {
+      wet_kis_place_D10_infra_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_D10_infra
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+      wet_kis_place_D10_infra_at_site = yes
+    }
+  }
+}
+wet_kis_place_P01_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P01 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P01 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P01 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P01 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P01
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P01 = 1
+      }
+    }
+  }
+}
+wet_kis_place_P01 = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+      276 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    276 = {
+      wet_kis_place_P01_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_P01
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      wet_kis_place_P01_at_site = yes
+    }
+  }
+}
+wet_kis_place_P02_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        arms_factory
+        >
+        4
+      }
+      free_building_slots = {
+        building = arms_factory
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = arms_factory
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        arms_factory
+        >
+        4
+      }
+      free_building_slots = {
+        building = arms_factory
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = arms_factory
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        arms_factory
+        >
+        4
+      }
+      free_building_slots = {
+        building = arms_factory
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = arms_factory
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        arms_factory
+        >
+        4
+      }
+      free_building_slots = {
+        building = arms_factory
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = arms_factory
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_P02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        arms_factory
+        >
+        4
+      }
+      free_building_slots = {
+        building = arms_factory
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = arms_factory
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_P02 = 1
+      }
+    }
+  }
+}
+wet_kis_place_P02 = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+      449 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          arms_factory
+          >
+          4
+        }
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    449 = {
+      wet_kis_place_P02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_P02
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          arms_factory
+          >
+          4
+        }
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      wet_kis_place_P02_at_site = yes
+    }
+  }
+}
+wet_kis_place_H02_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_H02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_H02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_H02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_H02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_H02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_H02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_H02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_H02 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_H02
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        industrial_complex
+        >
+        4
+      }
+      free_building_slots = {
+        building = industrial_complex
+        size
+        >
+        0
+        include_locked = no
+      }
+    }
+    add_building_construction = {
+      type = industrial_complex
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_H02 = 1
+      }
+    }
+  }
+}
+wet_kis_place_H02 = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      83 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    83 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      215 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    215 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      917 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    917 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      251 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    251 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      276 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    276 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      449 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    449 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      653 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    653 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+      879 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+    }
+    879 = {
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_H02
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          industrial_complex
+          >
+          4
+        }
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      wet_kis_place_H02_at_site = yes
+    }
+  }
+}
+wet_kis_place_X07_at_site = {
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_X07
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_X07 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_X07
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_X07 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_X07
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_X07 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_X07
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_X07 = 1
+      }
+    }
+  }
+  if = {
+    limit = {
+      A29 = {
+        check_variable = {
+          wet_kis_claim_X07
+          >
+          0
+        }
+      }
+      is_owned_by = A29
+      is_fully_controlled_by = A29
+      impassable = no
+      NOT = {
+        infrastructure
+        >
+        4
+      }
+    }
+    add_building_construction = {
+      type = infrastructure
+      level = 1
+      instant_build = yes
+    }
+    A29 = {
+      subtract_from_variable = {
+        wet_kis_claim_X07 = 1
+      }
+    }
+  }
+}
+wet_kis_place_X07 = {
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      83 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    83 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      215 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    215 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      917 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    917 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      251 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    251 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      276 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    276 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      449 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    449 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      653 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    653 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+      879 = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+    }
+    879 = {
+      wet_kis_place_X07_at_site = yes
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_kis_claim_X07
+        >
+        0
+      }
+    }
+    every_owned_state = {
+      limit = {
+        is_owned_by = A29
+        is_fully_controlled_by = A29
+        impassable = no
+        NOT = {
+          infrastructure
+          >
+          4
+        }
+      }
+      wet_kis_place_X07_at_site = yes
     }
   }
 }

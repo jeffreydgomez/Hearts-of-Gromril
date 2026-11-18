@@ -1,0 +1,44 @@
+# Country and character scopes are intentionally separate.
+wet_ruler_current_command = {
+  if = { limit = { NOT = { tag = WST } } if = { limit = { has_government = democratic } party_leader = { limit = { has_ideology = democratic } wet_ruler_enable_field_marshal = yes } } if = { limit = { has_government = fascism } party_leader = { limit = { has_ideology = fascism } wet_ruler_enable_field_marshal = yes } } if = { limit = { has_government = communism } party_leader = { limit = { has_ideology = communism } wet_ruler_enable_field_marshal = yes } } if = { limit = { has_government = neutrality } party_leader = { limit = { has_ideology = neutrality } wet_ruler_enable_field_marshal = yes } } if = { limit = { has_government = waaagh } party_leader = { limit = { has_ideology = waaagh } wet_ruler_enable_field_marshal = yes } } if = { limit = { has_government = horned_rat } party_leader = { limit = { has_ideology = horned_rat } wet_ruler_enable_field_marshal = yes } } }
+}
+wet_ruler_enable_field_marshal = {
+  if = {
+    limit = { NOT = { has_character_flag = wet_ruler_command_suspended } }
+    if = { limit = { is_army_leader = yes }
+      if = { limit = { is_field_marshal = no } promote_leader = yes }
+    }
+    else = {
+      if = { limit = { is_navy_leader = yes } remove_unit_leader_role = yes }
+      if = { limit = { is_character = WET_A15_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 4 planning_skill = 3 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_B35_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B77_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B78_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B81_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B84_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B85_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B90_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+      else_if = { limit = { is_character = WET_B99_leader } add_field_marshal_role = { traits = { brilliant_strategist } skill = 5 attack_skill = 5 defense_skill = 4 planning_skill = 5 logistics_skill = 4 } }
+      else_if = { limit = { is_character = WET_BRT_GreenKnight } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 4 planning_skill = 3 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_Z02_leader } add_field_marshal_role = { traits = { } skill = 4 attack_skill = 3 defense_skill = 4 planning_skill = 4 logistics_skill = 5 } }
+      else_if = { limit = { is_character = WET_inc_R07_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_inc_R08_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_inc_R09_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_inc_R10_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 traits = { } } }
+      else_if = { limit = { is_character = WET_inc_R11_leader } add_field_marshal_role = { skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 4 logistics_skill = 3 traits = { } } }
+      else = { add_field_marshal_role = { traits = { } skill = 3 attack_skill = 3 defense_skill = 3 planning_skill = 3 logistics_skill = 3 } }
+    }
+  }
+}
+wet_ruler_suspend_command = {
+  if = { limit = { is_army_leader = yes }
+    set_character_flag = wet_ruler_command_suspended
+    remove_unit_leader_role = yes
+  }
+}
+wet_ruler_restore_command = {
+  if = { limit = { has_character_flag = wet_ruler_command_suspended }
+    clr_character_flag = wet_ruler_command_suspended
+    wet_ruler_enable_field_marshal = yes
+  }
+}

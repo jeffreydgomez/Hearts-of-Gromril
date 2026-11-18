@@ -2,13 +2,9 @@
 
 #### URGENT / QUICK #####
 
-	Better Icons for mission trees
-
 	Redo racial bonuses
 
 	Nehekhara should have chariots
-
-	Integrate/use parts of HOI4 performance improvement mods.
 
 	Once the empire is under reikland, and world tension is at 100% or at war with the everchosen, then fully annex the empire or give them big bonuses?
 
@@ -16,39 +12,31 @@
 
 	For the Custom Equipment, compare to baseline equipment.
 
-	Ruler traits for all rulers
-
 	Can we add a ledger? That includes resources produced?
 
 	Fix Nation selection page
 
+	Make sure the tech bonuses are for that whole tech type, not just for a specific tech
+
+	For unique equipment, put in quote the equipment that it replaces.
+
+	Some focuses track and frequently reference external values that aren't obvious to the player, such as council authority (we got rid of that) and somethign for Nagash. Get rid of those concepts.
+
+	Better intro loading images & background image
+
 ### Confirm ####
-
-	Valkia the bloody should be right next to naggaroth and imposing, and attack Naggaroth.
-
-	Got rid of purging
-
-	A fourth tier of racial tech for everybody, start every
 
 	Rebalance resources - particularly metal, horses, and food.
 
-	Removed Lump Sum PP costs from focuses.
-
-	Put infrastructure in places to start the game - 4 in cities, 3 one away from cities, 2 two away from cities.
-
-	Maybe everybody should have cores on everything of thier own race?
-
-	Nagash should have cores on nehekhara
-		Undead and chaos get full manpower from non-cores & resistance targets. Unique occupation law?
-		Resistance Targets?
-
-	Skaven and ogres should have increased food use
-
 	Add a skaven operation to detonate a doomsphere.
+
+	Ruler traits for all rulers
 
 #### LESS URGENT TO DO ####
 
 	Pictures for events
+
+	Integrate/use parts of HOI4 performance improvement mods.
 
 	Unique Technology Battalions Air Units/ Naval Units only avaiable to certain races? Maybe even unique technology tabs?
 
@@ -60,23 +48,23 @@
 
 	Get countries to produce what they should produce, and get resource and food balance right.
 
-#### For Later ####
-
 	Add the future **Lady of the Lake = Lileath revelation event chain**, with faith, conditional cooperation and rejection responses; account for actual surviving characters and Elven diplomacy.
+
+	Incursions should be triggered from the chaos gods mission tree
+
+#### Tier 2 Focus trees ####
+
+	Better Icons for mission trees
+
+	Sylvania, Nehekhara, Hexoatl, Grand Cathay
+
+	Araby, Mousoilon, Chaos Gods
 
 	Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
 
 	Design a **Mousillon mission tree**, including build-up, ducal infiltration, Arkhan support, a warned declaration, the shared exact 50/50 duel and recovery/succession on either result.
 
 	Design a **Sylvania mission tree**, including Mannfred and shared captive/relic custody. The installed Nagashi route requires seven relics and three living sacrificial victims alongside one of three power sources. Preserve Ulthuan's custody generations and the existing Volkmar/Aliathra handover paths; never create a second captive.
-
-	Incursions should be triggered from the chaos gods mission tree
-
-#### Tier 2 Focus trees ####
-
-	Sylvania, Nehekhara, Hexoatl, Grand Cathay
-
-	Araby, Mousoilon, Chaos Gods
 
 #### DLC and system reference #####
 

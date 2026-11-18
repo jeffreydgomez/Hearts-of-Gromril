@@ -9,8 +9,14 @@ set_rule = { can_join_factions = yes can_join_opposite_factions = yes can_create
 set_popularities = { democratic = 0 neutrality = 0 fascism = 16 communism = 0 waaagh = 84 horned_rat = 0 }
 recruit_character = WET_GRN_JointOffice
 remove_country_leader_role = { character = WET_GRN_JointOffice ideology = wet_waaagh_gork_n_mork_religion }
+# WET ruler command: inactive at start
+hidden_effect = { WET_GRN_JointOffice = { if = { limit = { is_army_leader = yes } remove_unit_leader_role = yes } } }
+
 recruit_character = WET_G24_leader
 promote_character = WET_G24_leader
+# WET ruler command: promotion
+hidden_effect = { WET_G24_leader = { wet_ruler_enable_field_marshal = yes } }
+
 
 # BEGIN WET starting racial spirits
 add_ideas = { wet_race_orc }
