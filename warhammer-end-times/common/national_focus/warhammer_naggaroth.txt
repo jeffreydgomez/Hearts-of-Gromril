@@ -640,12 +640,58 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       custom_effect_tooltip = wet_auto_other_WET_NAG_L02_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_L02
+      random_owned_controlled_state = {
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         custom_effect_tooltip = wet_auto_other_WET_NAG_L02_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_L02
+        random_owned_controlled_state = {
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_L02
@@ -1489,11 +1535,95 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_W03
+      random_owned_controlled_state = {
+        prioritize = { 309 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
+      random_owned_controlled_state = {
+        prioritize = { 309 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            infrastructure
+            >
+            4
+          }
+        }
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_W03
+        random_owned_controlled_state = {
+          prioritize = { 309 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
+        random_owned_controlled_state = {
+          prioritize = { 309 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              infrastructure
+              >
+              4
+            }
+          }
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W03
@@ -1802,12 +1932,60 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       custom_effect_tooltip = WET_NAG_W07_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_W07
+      random_owned_controlled_state = {
+        prioritize = { 597 596 594 595 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         custom_effect_tooltip = WET_NAG_W07_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_W07
+        random_owned_controlled_state = {
+          prioritize = { 597 596 594 595 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              industrial_complex
+              >
+              4
+            }
+            free_building_slots = {
+              building = industrial_complex
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W07
@@ -3487,12 +3665,62 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       custom_effect_tooltip = wet_auto_other_WET_NAG_W17_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_W17
+      random_owned_controlled_state = {
+        prioritize = { 229 230 579 580 389 583 582 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            dockyard
+            >
+            4
+          }
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = no
+          }
+          is_coastal = yes
+        }
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         custom_effect_tooltip = wet_auto_other_WET_NAG_W17_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_W17
+        random_owned_controlled_state = {
+          prioritize = { 229 230 579 580 389 583 582 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              dockyard
+              >
+              4
+            }
+            free_building_slots = {
+              building = dockyard
+              size
+              >
+              0
+              include_locked = no
+            }
+            is_coastal = yes
+          }
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W17
@@ -3712,13 +3940,61 @@ focus_tree = {
     complete_tooltip = {
       add_ideas = wet_nag_w18
       custom_effect_tooltip = wet_auto_other_WET_NAG_W18_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_W18
+      random_owned_controlled_state = {
+        prioritize = { 228 229 230 579 4 580 581 389 583 911 582 584 912 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_nag_w18
         custom_effect_tooltip = wet_auto_other_WET_NAG_W18_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_W18
+        random_owned_controlled_state = {
+          prioritize = { 228 229 230 579 4 580 581 389 583 911 582 584 912 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              industrial_complex
+              >
+              4
+            }
+            free_building_slots = {
+              building = industrial_complex
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W18
@@ -3825,11 +4101,93 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_W21
+      random_owned_controlled_state = {
+        prioritize = { 228 585 576 587 592 924 87 229 100 97 104 106 88 230 468 579 89 98 309 95 597 4 93 580 99 581 575 67 94 389 470 583 586 596 589 590 107 466 90 105 577 108 91 103 591 593 472 102 469 578 588 594 595 911 92 96 467 582 584 912 101 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            infrastructure
+            >
+            4
+          }
+          NOT = {
+            has_state_flag = wet_nag_western_road_paid
+          }
+        }
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
+      random_owned_controlled_state = {
+        prioritize = { 228 585 576 587 592 924 87 229 100 97 104 106 88 230 468 579 89 98 309 95 597 4 93 580 99 581 575 67 94 389 470 583 586 596 589 590 107 466 90 105 577 108 91 103 591 593 472 102 469 578 588 594 595 911 92 96 467 582 584 912 101 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            infrastructure
+            >
+            4
+          }
+          NOT = {
+            has_state_flag = wet_nag_western_road_paid
+          }
+        }
+        add_building_construction = {
+          type = infrastructure
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_W21
+        random_owned_controlled_state = {
+          prioritize = { 228 585 576 587 592 924 87 229 100 97 104 106 88 230 468 579 89 98 309 95 597 4 93 580 99 581 575 67 94 389 470 583 586 596 589 590 107 466 90 105 577 108 91 103 591 593 472 102 469 578 588 594 595 911 92 96 467 582 584 912 101 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              infrastructure
+              >
+              4
+            }
+            NOT = {
+              has_state_flag = wet_nag_western_road_paid
+            }
+          }
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+        random_owned_controlled_state = {
+          prioritize = { 228 585 576 587 592 924 87 229 100 97 104 106 88 230 468 579 89 98 309 95 597 4 93 580 99 581 575 67 94 389 470 583 586 596 589 590 107 466 90 105 577 108 91 103 591 593 472 102 469 578 588 594 595 911 92 96 467 582 584 912 101 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              infrastructure
+              >
+              4
+            }
+            NOT = {
+              has_state_flag = wet_nag_western_road_paid
+            }
+          }
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_W21
@@ -4153,13 +4511,61 @@ focus_tree = {
     complete_tooltip = {
       add_ideas = wet_nag_i02
       custom_effect_tooltip = wet_auto_other_WET_NAG_I02_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_I02
+      random_owned_controlled_state = {
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            dockyard
+            >
+            4
+          }
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = no
+          }
+          is_coastal = yes
+        }
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_nag_i02
         custom_effect_tooltip = wet_auto_other_WET_NAG_I02_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_I02
+        random_owned_controlled_state = {
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              dockyard
+              >
+              4
+            }
+            free_building_slots = {
+              building = dockyard
+              size
+              >
+              0
+              include_locked = no
+            }
+            is_coastal = yes
+          }
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_I02
@@ -5801,11 +6207,109 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_I15
+      random_owned_controlled_state = {
+        prioritize = { 310 150 275 771 483 236 200 679 6 761 33 931 36 8 891 110 277 695 916 386 5 111 380 687 748 694 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
+      random_owned_controlled_state = {
+        prioritize = { 310 150 275 771 483 236 200 679 6 761 33 931 36 8 891 110 277 695 916 386 5 111 380 687 748 694 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_I15
+        random_owned_controlled_state = {
+          prioritize = { 310 150 275 771 483 236 200 679 6 761 33 931 36 8 891 110 277 695 916 386 5 111 380 687 748 694 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              industrial_complex
+              >
+              4
+            }
+            free_building_slots = {
+              building = industrial_complex
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
+        random_owned_controlled_state = {
+          prioritize = { 310 150 275 771 483 236 200 679 6 761 33 931 36 8 891 110 277 695 916 386 5 111 380 687 748 694 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_I15
@@ -6348,12 +6852,58 @@ focus_tree = {
     available_if_capitulated = no
     complete_tooltip = {
       custom_effect_tooltip = WET_NAG_A09_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_A09
+      random_owned_controlled_state = {
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         custom_effect_tooltip = WET_NAG_A09_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_A09
+        random_owned_controlled_state = {
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_A09
@@ -6806,11 +7356,59 @@ focus_tree = {
 
     }
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_N01
+      random_owned_controlled_state = {
+        prioritize = { 585 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            industrial_complex
+            >
+            4
+          }
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = industrial_complex
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_N01
+        random_owned_controlled_state = {
+          prioritize = { 585 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              industrial_complex
+              >
+              4
+            }
+            free_building_slots = {
+              building = industrial_complex
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N01
@@ -6840,11 +7438,59 @@ focus_tree = {
 
     }
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_N02
+      random_owned_controlled_state = {
+        prioritize = { 924 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_N02
+        random_owned_controlled_state = {
+          prioritize = { 924 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N02
@@ -6915,11 +7561,61 @@ focus_tree = {
 
     }
     complete_tooltip = {
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_N04
+      random_owned_controlled_state = {
+        prioritize = { 576 }
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            dockyard
+            >
+            4
+          }
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = no
+          }
+          is_coastal = yes
+        }
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_N04
+        random_owned_controlled_state = {
+          prioritize = { 576 }
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              dockyard
+              >
+              4
+            }
+            free_building_slots = {
+              building = dockyard
+              size
+              >
+              0
+              include_locked = no
+            }
+            is_coastal = yes
+          }
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N04
@@ -7136,13 +7832,61 @@ focus_tree = {
     complete_tooltip = {
       add_ideas = wet_nag_n10
       custom_effect_tooltip = wet_auto_other_WET_NAG_N10_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_N10
+      random_owned_controlled_state = {
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            dockyard
+            >
+            4
+          }
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = no
+          }
+          is_coastal = yes
+        }
+        add_building_construction = {
+          type = dockyard
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_nag_n10
         custom_effect_tooltip = wet_auto_other_WET_NAG_N10_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_N10
+        random_owned_controlled_state = {
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              dockyard
+              >
+              4
+            }
+            free_building_slots = {
+              building = dockyard
+              size
+              >
+              0
+              include_locked = no
+            }
+            is_coastal = yes
+          }
+          add_building_construction = {
+            type = dockyard
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N10
@@ -7510,13 +8254,59 @@ focus_tree = {
     complete_tooltip = {
       add_ideas = wet_nag_n19
       custom_effect_tooltip = wet_auto_other_WET_NAG_N19_special_tt
-      custom_effect_tooltip = wet_auto_construction_WET_NAG_N19
+      random_owned_controlled_state = {
+        limit = {
+          is_owned_by = H12
+          is_fully_controlled_by = H12
+          impassable = no
+          NOT = {
+            arms_factory
+            >
+            4
+          }
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = no
+          }
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 1
+          instant_build = yes
+        }
+      }
     }
     completion_reward = {
       effect_tooltip = {
         add_ideas = wet_nag_n19
         custom_effect_tooltip = wet_auto_other_WET_NAG_N19_special_tt
-        custom_effect_tooltip = wet_auto_construction_WET_NAG_N19
+        random_owned_controlled_state = {
+          limit = {
+            is_owned_by = H12
+            is_fully_controlled_by = H12
+            impassable = no
+            NOT = {
+              arms_factory
+              >
+              4
+            }
+            free_building_slots = {
+              building = arms_factory
+              size
+              >
+              0
+              include_locked = no
+            }
+          }
+          add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+          }
+        }
       }
       hidden_effect = {
         set_country_flag = wet_nag_earned_N19

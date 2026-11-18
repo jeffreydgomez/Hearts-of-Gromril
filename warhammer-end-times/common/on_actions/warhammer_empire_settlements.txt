@@ -1,0 +1,135 @@
+on_actions = {
+  on_join_faction = {
+    effect = {
+      A01 = {
+        if = {
+          limit = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+            OR = {
+              ROOT = {
+                tag = A01
+              }
+              FROM = {
+                tag = A01
+              }
+              ROOT = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+              FROM = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+            }
+          }
+          country_event = {
+            id = wet_empire_settlement.100
+            days = 1
+          }
+        }
+      }
+    }
+  }
+  on_offer_join_faction = {
+    effect = {
+      A01 = {
+        if = {
+          limit = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+            OR = {
+              ROOT = {
+                tag = A01
+              }
+              FROM = {
+                tag = A01
+              }
+              ROOT = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+              FROM = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+            }
+          }
+          country_event = {
+            id = wet_empire_settlement.100
+            days = 1
+          }
+        }
+      }
+    }
+  }
+  on_leave_faction = {
+    effect = {
+      A01 = {
+        if = {
+          limit = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+            OR = {
+              ROOT = {
+                tag = A01
+              }
+              FROM = {
+                tag = A01
+              }
+              ROOT = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+              FROM = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+            }
+          }
+          country_event = {
+            id = wet_empire_settlement.100
+            days = 1
+          }
+        }
+      }
+    }
+  }
+  on_annex = {
+    effect = {
+      A01 = {
+        if = {
+          limit = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+            OR = {
+              ROOT = {
+                tag = A01
+              }
+              FROM = {
+                tag = A01
+              }
+              ROOT = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+              FROM = {
+                has_country_flag = wet_rei_imperial_partner
+              }
+            }
+          }
+          country_event = {
+            id = wet_empire_settlement.100
+            days = 1
+          }
+        }
+      }
+    }
+  }
+  on_weekly_A01 = {
+    effect = {
+      A01 = {
+        if = {
+          limit = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          wet_rei_refresh_partners = yes
+        }
+      }
+    }
+  }
+}

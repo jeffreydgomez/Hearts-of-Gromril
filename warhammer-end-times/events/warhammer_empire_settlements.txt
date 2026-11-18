@@ -1,0 +1,2984 @@
+add_namespace = wet_empire_settlement
+country_event = {
+  id = wet_empire_settlement.1
+  title = wet_empire_settlement.1.t
+  desc = wet_empire_settlement.1.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A02 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A02 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A02 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A02 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A02 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A02
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A02 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A02 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A02 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A02 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A02 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A02 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A02 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A02 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A02 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.2
+  title = wet_empire_settlement.2.t
+  desc = wet_empire_settlement.2.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A03 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A03 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A03 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A03 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A03 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A03
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A03 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A03 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A03 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A03 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A03 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A03 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A03 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A03 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A03 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.3
+  title = wet_empire_settlement.3.t
+  desc = wet_empire_settlement.3.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A04 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A04 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A04 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A04 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A04 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A04
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A04 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A04 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A04 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A04 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A04 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A04 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A04 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A04 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A04 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.4
+  title = wet_empire_settlement.4.t
+  desc = wet_empire_settlement.4.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A05 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A05 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A05 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A05 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A05 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A05
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A05 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A05 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A05 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A05 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A05 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A05 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A05 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A05 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A05 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.5
+  title = wet_empire_settlement.5.t
+  desc = wet_empire_settlement.5.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A06 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A06 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A06 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A06 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A06 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A06
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A06 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A06 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A06 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A06 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A06 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A06 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A06 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A06 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A06 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.6
+  title = wet_empire_settlement.6.t
+  desc = wet_empire_settlement.6.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A07 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A07 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A07 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A07 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A07 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A07
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A07 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A07 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A07 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A07 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A07 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A07 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A07 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A07 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A07 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.7
+  title = wet_empire_settlement.7.t
+  desc = wet_empire_settlement.7.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A08 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A08 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A08 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A08 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A08 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A08
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A08 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A08 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A08 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A08 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A08 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A08 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A08 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A08 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A08 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.8
+  title = wet_empire_settlement.8.t
+  desc = wet_empire_settlement.8.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A09 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A09 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A09 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A09 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A09 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A09
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A09 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A09 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A09 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A09 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A09 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A09 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A09 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A09 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A09 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.9
+  title = wet_empire_settlement.9.t
+  desc = wet_empire_settlement.9.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A10 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A10 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A10 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A10 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A10 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A10
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A10 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A10 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A10 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A10 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A10 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A10 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A10 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A10 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A10 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.10
+  title = wet_empire_settlement.10.t
+  desc = wet_empire_settlement.10.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A12 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A12 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A12 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A12 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A12 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A12
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A12 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A12 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A12 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A12 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A12 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A12 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A12 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A12 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A12 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.11
+  title = wet_empire_settlement.11.t
+  desc = wet_empire_settlement.11.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A13 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A13 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A13 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A13 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A13 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A13
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A13 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A13 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A13 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A13 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A13 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A13 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A13 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A13 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A13 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.12
+  title = wet_empire_settlement.12.t
+  desc = wet_empire_settlement.12.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A14 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A14 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A14 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A14 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A14 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A14
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A14 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A14 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A14 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A14 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A14 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A14 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A14 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A14 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A14 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.13
+  title = wet_empire_settlement.13.t
+  desc = wet_empire_settlement.13.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A63 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A63 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A63 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A63 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A63 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A63
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A63 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A63 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A63 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A63 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A63 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A63 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A63 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A63 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A63 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.14
+  title = wet_empire_settlement.14.t
+  desc = wet_empire_settlement.14.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A80 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A80 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A80 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A80 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A80 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A80
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A80 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A80 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A80 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A80 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A80 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A80 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A80 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A80 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A80 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.15
+  title = wet_empire_settlement.15.t
+  desc = wet_empire_settlement.15.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A81 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A81 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A81 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A81 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A81 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A81
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A81 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A81 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A81 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A81 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A81 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A81 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A81 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A81 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A81 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.16
+  title = wet_empire_settlement.16.t
+  desc = wet_empire_settlement.16.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A82 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A82 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A82 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A82 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A82 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A82
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A82 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A82 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A82 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A82 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A82 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A82 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A82 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A82 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A82 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.17
+  title = wet_empire_settlement.17.t
+  desc = wet_empire_settlement.17.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A83 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A83 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A83 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A83 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A83 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A83
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A83 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A83 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A83 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A83 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A83 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A83 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A83 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A83 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A83 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.18
+  title = wet_empire_settlement.18.t
+  desc = wet_empire_settlement.18.d
+  picture = GFX_report_event_generic_parliament
+  is_triggered_only = yes
+  option = {
+    name = wet_rei_settlement_absorb
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A86 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A86 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_absorb_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A86 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A86 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A86 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          every_owned_state = {
+            add_core_of = A01
+          }
+          transfer_units_fraction = {
+            target = A01
+            size = 1
+            stockpile_ratio = 1
+            army_ratio = 1
+            navy_ratio = 1
+            air_ratio = 1
+          }
+        }
+        annex_country = {
+          target = A86
+          transfer_troops = yes
+        }
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_partner
+    trigger = {
+      A01 = {
+        exists = yes
+        has_completed_focus = WET_REI_I10
+      }
+      A86 = {
+        exists = yes
+        is_ai = yes
+        is_in_faction_with = A01
+        NOT = {
+          has_country_flag = wet_rei_settlement_resolved
+        }
+      }
+      A86 = {
+        has_country_flag = wet_rei_settlement_pending
+      }
+    }
+    ai_chance = {
+      factor = 50
+    }
+    custom_effect_tooltip = wet_rei_settlement_partner_tt
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A01 = {
+            exists = yes
+            has_completed_focus = WET_REI_I10
+          }
+          A86 = {
+            exists = yes
+            is_ai = yes
+            is_in_faction_with = A01
+            NOT = {
+              has_country_flag = wet_rei_settlement_resolved
+            }
+          }
+          A86 = {
+            has_country_flag = wet_rei_settlement_pending
+          }
+        }
+        A86 = {
+          clr_country_flag = wet_rei_settlement_pending
+          set_country_flag = wet_rei_settlement_resolved
+          set_country_flag = wet_rei_imperial_partner
+          add_stability = 0.10
+          add_war_support = 0.10
+          add_dynamic_modifier = {
+            modifier = wet_rei_imperial_partnership
+          }
+        }
+        add_stability = 0.03
+        wet_rei_refresh_partners = yes
+      }
+    }
+  }
+  option = {
+    name = wet_rei_settlement_cancel
+    trigger = {
+      NOT = {
+        A01 = {
+          exists = yes
+          has_completed_focus = WET_REI_I10
+        }
+        A86 = {
+          exists = yes
+          is_ai = yes
+          is_in_faction_with = A01
+          NOT = {
+            has_country_flag = wet_rei_settlement_resolved
+          }
+        }
+        A86 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+    }
+    if = {
+      limit = {
+        tag = A01
+        A86 = {
+          has_country_flag = wet_rei_settlement_pending
+        }
+      }
+      A86 = {
+        clr_country_flag = wet_rei_settlement_pending
+      }
+      add_political_power = 25
+    }
+  }
+}
+country_event = {
+  id = wet_empire_settlement.100
+  hidden = yes
+  is_triggered_only = yes
+  immediate = {
+    if = {
+      limit = {
+        tag = A01
+      }
+      wet_rei_refresh_partners = yes
+    }
+  }
+}

@@ -1,0 +1,245 @@
+wet_rei_refresh_partners = {
+  set_variable = {
+    wet_rei_partner_pp = 0
+  }
+  if = {
+    limit = {
+      A02 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A03 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A04 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A05 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A06 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A07 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A08 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A09 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A10 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A12 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A13 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A14 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A63 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A80 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A81 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A82 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A83 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      A86 = {
+        exists = yes
+        has_country_flag = wet_rei_imperial_partner
+        is_in_faction_with = A01
+      }
+    }
+    add_to_variable = {
+      wet_rei_partner_pp = 0.05
+    }
+  }
+  if = {
+    limit = {
+      check_variable = {
+        wet_rei_partner_pp
+        >
+        0
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          has_dynamic_modifier = {
+            modifier = wet_rei_partner_authority
+          }
+        }
+      }
+      add_dynamic_modifier = {
+        modifier = wet_rei_partner_authority
+      }
+    }
+  }
+  else = {
+    remove_dynamic_modifier = wet_rei_partner_authority
+  }
+}
