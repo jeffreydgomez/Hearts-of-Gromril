@@ -2941,126 +2941,164 @@ wet_ult_recovery = {
     }
   }
   wet_ult_recover_R10 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = H06
-    }
-    visible = {
-      has_country_flag = wet_ult_earned_R10
-      NOT = {
-        has_country_flag = wet_ult_reward_R10
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      custom_trigger_tooltip = {
-        tooltip = wet_ult_captive_focus_requirement_tt
-        wet_ult_captive = yes
-      }
-      custom_trigger_tooltip = {
-        tooltip = wet_ult_captive_focus_requirement_tt
-        wet_ult_captive = yes
-      }
-      AND = {
-        has_country_flag = wet_ult_earned_R10
-        NOT = {
-          has_country_flag = wet_ult_reward_R10
-        }
-        has_country_flag = wet_ult_expedition_failed
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        custom_effect_tooltip = WET_ULT_R10_special_tt
-      }
-      hidden_effect = {
-        wet_ult_award_R10 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
+  desc = wet_decision_no_description
+  icon = generic_political_discourse
+  allowed = {
+    tag = H06
+  }
+  visible = {
+    has_country_flag = wet_ult_earned_R10
+    NOT = {
+      has_country_flag = wet_ult_reward_R10
     }
   }
+  cost = 0
+  days_re_enable = 0
+  available = {
+    has_country_flag = wet_ult_earned_R10
+    NOT = {
+      has_country_flag = wet_ult_reward_R10
+    }
+    wet_ult_captive = yes
+    has_country_flag = wet_ult_prison_located
+    has_character = WET_H05_leader
+    wet_ult_rescue_route = yes
+    NOT = {
+      has_country_flag = wet_ult_expedition_active
+    }
+    check_variable = {
+      wet_ult_expedition_cooldown
+      <
+      1
+    }
+    check_variable = {
+      wet_ult_expedition_attempts
+      <
+      2
+    }
+    has_country_flag = wet_ult_expedition_failed
+    has_equipment = {
+      infantry_equipment
+      >
+      499
+    }
+    has_equipment = {
+      support_equipment
+      >
+      99
+    }
+  }
+  complete_effect = {
+    effect_tooltip = {
+      custom_effect_tooltip = WET_ULT_R10_special_tt
+    }
+    hidden_effect = {
+      wet_ult_award_R10 = yes
+    }
+  }
+  ai_will_do = {
+    factor = 5
+  }
+}
   wet_ult_recover_R11 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = H06
+  desc = wet_decision_no_description
+  icon = generic_political_discourse
+  allowed = {
+    tag = H06
+  }
+  visible = {
+    has_country_flag = wet_ult_earned_R11
+    NOT = {
+      has_country_flag = wet_ult_reward_R11
     }
-    visible = {
-      has_country_flag = wet_ult_earned_R11
-      NOT = {
-        has_country_flag = wet_ult_reward_R11
-      }
-    }
-    cost = 0
-    days_re_enable = 0
-    available = {
-      custom_trigger_tooltip = {
-        tooltip = wet_ult_captive_focus_requirement_tt
-        wet_ult_captive = yes
-      }
-      custom_trigger_tooltip = {
-        tooltip = wet_ult_captive_focus_requirement_tt
-        wet_ult_captive = yes
-      }
-      custom_trigger_tooltip = {
-        tooltip = wet_ult_captive_focus_requirement_tt
-        wet_ult_captive = yes
-      }
-      always = yes
+  }
+  cost = 0
+  days_re_enable = 0
+  available = {
+    OR = {
       AND = {
-        has_country_flag = wet_ult_earned_R11
-        NOT = {
-          has_country_flag = wet_ult_reward_R11
+        custom_trigger_tooltip = {
+          tooltip = wet_ult_captive_focus_requirement_tt
+          wet_ult_captive = yes
+        }
+        custom_trigger_tooltip = {
+          tooltip = wet_ult_captive_focus_requirement_tt
+          wet_ult_captive = yes
+        }
+        custom_trigger_tooltip = {
+          tooltip = wet_ult_captive_focus_requirement_tt
+          wet_ult_captive = yes
         }
         always = yes
-        any_state = {
-          has_state_flag = wet_ult_prison
-          owner = {
-            exists = yes
-            has_country_flag = wet_ult_custodian
-            is_subject = no
-            NOT = {
-              has_war_with = H06
-            }
-            NOT = {
-              is_in_faction_with = H06
-            }
-            NOT = {
-              has_non_aggression_pact_with = H06
-            }
-            NOT = {
-              has_truce_with = H06
-            }
-            NOT = {
-              is_guaranteed_by = H06
-            }
-            H06 = {
-              wet_ult_captive = yes
+        AND = {
+          has_country_flag = wet_ult_earned_R11
+          NOT = {
+            has_country_flag = wet_ult_reward_R11
+          }
+          always = yes
+          any_state = {
+            has_state_flag = wet_ult_prison
+            owner = {
+              exists = yes
+              has_country_flag = wet_ult_custodian
               is_subject = no
               NOT = {
-                is_guaranteed_by = PREV
+                has_war_with = H06
+              }
+              NOT = {
+                is_in_faction_with = H06
+              }
+              NOT = {
+                has_non_aggression_pact_with = H06
+              }
+              NOT = {
+                has_truce_with = H06
+              }
+              NOT = {
+                is_guaranteed_by = H06
+              }
+              H06 = {
+                wet_ult_captive = yes
+                is_subject = no
+                NOT = {
+                  is_guaranteed_by = PREV
+                }
               }
             }
           }
         }
       }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        custom_effect_tooltip = WET_ULT_R11_special_tt
+      AND = {
+        has_country_flag = wet_ult_earned_R11
+        NOT = {
+          has_country_flag = wet_ult_reward_R11
+        }
+        wet_ult_captive = yes
+        any_state = {
+          has_state_flag = wet_ult_prison
+          controller = {
+            OR = {
+              tag = H06
+              is_in_faction_with = H06
+              is_subject_of = H06
+            }
+          }
+        }
       }
-      hidden_effect = {
-        wet_ult_award_R11 = yes
-      }
-    }
-    ai_will_do = {
-      factor = 5
     }
   }
+  complete_effect = {
+    effect_tooltip = {
+      custom_effect_tooltip = WET_ULT_R11_special_tt
+    }
+    hidden_effect = {
+      wet_ult_award_R11 = yes
+    }
+  }
+  ai_will_do = {
+    factor = 5
+  }
+}
   wet_ult_recover_R12 = {
     desc = wet_decision_no_description
     icon = generic_political_discourse

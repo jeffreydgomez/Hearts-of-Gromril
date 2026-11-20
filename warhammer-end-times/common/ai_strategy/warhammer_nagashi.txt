@@ -1,0 +1,38 @@
+wet_ngs_follow_nagash = {
+  allowed = {
+    is_ai = yes
+  }
+  enable = {
+    has_government = communism
+    NOT = {
+      tag = U24
+    }
+    is_subject = no
+    is_in_faction = no
+    NOT = {
+      has_war_with = U24
+    }
+    wet_can_join_faction = yes
+    NOT = {
+      any_enemy_country = {
+        is_in_faction_with = U24
+      }
+    }
+    U24 = {
+      exists = yes
+      is_faction_leader = yes
+      wet_can_join_faction = yes
+      has_country_leader = {
+        character = WET_U24_leader
+        ruling_only = yes
+      }
+      wet_ngs_restored = yes
+    }
+  }
+  abort_when_not_enabled = yes
+  ai_strategy = {
+    type = alliance
+    id = U24
+    value = 300
+  }
+}

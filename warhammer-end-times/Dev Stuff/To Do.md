@@ -24,6 +24,24 @@
 
 	Better intro loading images & background image
 
+	Make call to chaos and spread the waaagh automatic and every 30 or 45 days?
+
+	Various decisions based on race/religion
+
+	Make sure the everchosen's spirit is a cool icon, and that autonomy change is working correctly
+
+	Give the terrain map more texture
+
+	Nagash - Can artifacts be lost? Can ARkhan or Nagash be in the wrong place? If not, remove all that wording.
+
+	Get rid of the cores on Nagash's starting land
+
+	Nagash doesn't need an event both for sending the mission to take the captive, and the result of the capture.
+
+	Nagash - too much text in the capture effect
+
+	Is it possible to lose captives? It shouldn't be normally. And we should definitely get an event? And then, I guess, a decision to take them back?
+
 ### Confirm ####
 
 	Rebalance resources - particularly metal, horses, and food.

@@ -2,3 +2,4 @@ NDefines.NGame.START_DATE = "2519.1.1.12"
 NDefines.NGame.END_DATE = "2902.1.31.1"
 NDefines.NGame.HANDS_OFF_START_TAG = "A01"
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2519.1.1.12"
+NDefines.NResistance.COMPLIANCE_GROWTH_BASE = 0.25

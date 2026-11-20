@@ -1,0 +1,19 @@
+# Every ideology favors direct conquest in peace conferences.
+# These modifiers affect AI desire only; peace costs and available actions are unchanged.
+peace_ai_desires = {
+    wet_prefer_conquest = {
+        peace_action_type = take_states
+        enable = {
+            ROOT = { tag = ROOT.FROM } # The negotiator takes the territory for itself.
+        }
+        ai_desire = 100 # Double the desire to annex territory.
+    }
+
+    wet_deprioritize_indirect_settlements = {
+        peace_action_type = { puppet liberate force_government }
+        enable = {
+            always = yes
+        }
+        ai_desire = -50 # Keep alternatives available at half their usual desire.
+    }
+}

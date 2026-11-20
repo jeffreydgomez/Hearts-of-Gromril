@@ -1,0 +1,13 @@
+wet_chaos_realm_cap_slots = { every_state = { limit = { has_state_category = realms_of_chaos } 
+        set_variable = { wet_chaos_slot_factor_total = modifier@local_building_slots_factor }
+        subtract_from_variable = { wet_chaos_slot_factor_total = wet_chaos_slot_factor_offset }
+        owner = { PREV = { add_to_variable = { wet_chaos_slot_factor_total = PREV.modifier@global_building_slots_factor } } }
+        clamp_variable = { var = wet_chaos_slot_factor_total min = 0 }
+        set_variable = { wet_chaos_slot_factor_offset = wet_chaos_slot_factor_total }
+        multiply_variable = { wet_chaos_slot_factor_offset = -1 }
+        set_variable = { wet_chaos_slot_flat_total = modifier@local_building_slots }
+        subtract_from_variable = { wet_chaos_slot_flat_total = wet_chaos_slot_flat_offset }
+        owner = { PREV = { add_to_variable = { wet_chaos_slot_flat_total = PREV.modifier@global_building_slots } } }
+        clamp_variable = { var = wet_chaos_slot_flat_total min = 0 }
+        set_variable = { wet_chaos_slot_flat_offset = wet_chaos_slot_flat_total }
+        multiply_variable = { wet_chaos_slot_flat_offset = -1 } } }
