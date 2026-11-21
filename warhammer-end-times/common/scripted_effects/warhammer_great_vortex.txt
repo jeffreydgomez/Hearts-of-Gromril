@@ -1,0 +1,642 @@
+# All destructive changes are immediate, independent of event acknowledgement.
+    wet_vortex_destroy_effect = {
+      if = {
+        limit = { wet_vortex_can_destroy = yes }
+        set_global_flag = wet_story_vortex_unbound
+        save_global_event_target_as = wet_vortex_destroyer
+        380 = { remove_building = { type = landmark_wet_gp_great_vortex level = 1 province = 2343 } }
+        set_temp_variable = { wet_vortex_factory_remainder = 0 }
+        every_state = {
+          limit = { wet_vortex_ulthuan_state = yes NOT = { has_state_flag = wet_vortex_flooded } }
+          wet_vortex_destroy_state_factories = yes
+          set_state_flag = wet_vortex_flooded
+          # Thousands avoid the fixed-point overflow of large populations.
+          set_temp_variable = { wet_vortex_loss_k = state_population_k }
+          multiply_temp_variable = { wet_vortex_loss_k = 0.25 }
+          while = {
+            limit = { check_variable = { wet_vortex_loss_k > 1000 } }
+            add_manpower = -1000000
+            subtract_from_temp_variable = { wet_vortex_loss_k = 1000 }
+          }
+          multiply_temp_variable = { wet_vortex_loss_k = -1000 }
+          add_manpower = var:wet_vortex_loss_k
+          if = {
+            limit = { NOT = { has_state_category = great_vortex } }
+            add_dynamic_modifier = { modifier = wet_vortex_flooded }
+          }
+        }
+        B99 = { add_ideas = wet_vortex_chaos_unleashed }
+        every_country = {
+          country_event = { id = wet_vortex.1 }
+        }
+      }
+    }
+    wet_vortex_destroy_state_factories = {
+if = {
+          limit = { check_variable = { industrial_complex_level > 0 } }
+          set_temp_variable = { wet_vortex_factory_share = industrial_complex_level }
+          multiply_temp_variable = { wet_vortex_factory_share = 0.25 }
+          add_to_temp_variable = { wet_vortex_factory_remainder = wet_vortex_factory_share }
+          set_temp_variable = { wet_vortex_factory_remove = wet_vortex_factory_remainder }
+          round_temp_variable = wet_vortex_factory_remove
+          subtract_from_temp_variable = { wet_vortex_factory_remainder = wet_vortex_factory_remove }
+          if = {
+            limit = { check_variable = { wet_vortex_factory_remove > 0 } }
+            remove_building = { type = industrial_complex level = var:wet_vortex_factory_remove }
+          }
+        }
+if = {
+          limit = { check_variable = { arms_factory_level > 0 } }
+          set_temp_variable = { wet_vortex_factory_share = arms_factory_level }
+          multiply_temp_variable = { wet_vortex_factory_share = 0.25 }
+          add_to_temp_variable = { wet_vortex_factory_remainder = wet_vortex_factory_share }
+          set_temp_variable = { wet_vortex_factory_remove = wet_vortex_factory_remainder }
+          round_temp_variable = wet_vortex_factory_remove
+          subtract_from_temp_variable = { wet_vortex_factory_remainder = wet_vortex_factory_remove }
+          if = {
+            limit = { check_variable = { wet_vortex_factory_remove > 0 } }
+            remove_building = { type = arms_factory level = var:wet_vortex_factory_remove }
+          }
+        }
+}
+
+    wet_vortex_cap_slots = {
+      380 = {
+        set_variable = { wet_vortex_slot_factor_total = modifier@local_building_slots_factor }
+        subtract_from_variable = { wet_vortex_slot_factor_total = wet_vortex_slot_factor_offset }
+        set_variable = { wet_vortex_slot_flat_total = modifier@local_building_slots }
+        subtract_from_variable = { wet_vortex_slot_flat_total = wet_vortex_slot_flat_offset }
+        owner = { PREV = {
+          add_to_variable = { wet_vortex_slot_factor_total = PREV.modifier@global_building_slots_factor }
+          add_to_variable = { wet_vortex_slot_flat_total = PREV.modifier@global_building_slots }
+        } }
+        clamp_variable = { var = wet_vortex_slot_factor_total min = 0 }
+        clamp_variable = { var = wet_vortex_slot_flat_total min = 0 }
+        set_variable = { wet_vortex_slot_factor_offset = wet_vortex_slot_factor_total }
+        multiply_variable = { wet_vortex_slot_factor_offset = -1 }
+        set_variable = { wet_vortex_slot_flat_offset = wet_vortex_slot_flat_total }
+        multiply_variable = { wet_vortex_slot_flat_offset = -1 }
+      }
+    }
+wet_vortex_bind_aqshy_0 = {
+              if = { limit = { has_country_flag = wet_vortex_aqshy_pending wet_vortex_can_claim_aqshy = yes has_character = WET_U06_leader
+
+    WET_U06_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_aqshy_claimed
+                clr_country_flag = wet_vortex_aqshy_pending
+                save_global_event_target_as = wet_incarnate_aqshy_country
+                WET_U06_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_aqshy
+                  add_unit_leader_trait = wet_incarnate_aqshy
+                  save_global_event_target_as = wet_incarnate_aqshy_character
+                }
+                every_country = { country_event = { id = wet_vortex.30 } }
+              }
+              else = { wet_vortex_refund_aqshy = yes }
+            }
+wet_vortex_bind_aqshy_1 = {
+              if = { limit = { has_country_flag = wet_vortex_aqshy_pending wet_vortex_can_claim_aqshy = yes has_character = WET_VTX_Caradryan
+
+    WET_VTX_Caradryan = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_aqshy_claimed
+                clr_country_flag = wet_vortex_aqshy_pending
+                save_global_event_target_as = wet_incarnate_aqshy_country
+                WET_VTX_Caradryan = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_aqshy
+                  add_unit_leader_trait = wet_incarnate_aqshy
+                  save_global_event_target_as = wet_incarnate_aqshy_character
+                }
+                every_country = { country_event = { id = wet_vortex.30 } }
+              }
+              else = { wet_vortex_refund_aqshy = yes }
+            }
+wet_vortex_bind_aqshy_2 = {
+              if = { limit = { has_country_flag = wet_vortex_aqshy_pending wet_vortex_can_claim_aqshy = yes has_character = WET_H07_leader
+
+    WET_H07_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_aqshy_claimed
+                clr_country_flag = wet_vortex_aqshy_pending
+                save_global_event_target_as = wet_incarnate_aqshy_country
+                WET_H07_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_aqshy
+                  add_unit_leader_trait = wet_incarnate_aqshy
+                  save_global_event_target_as = wet_incarnate_aqshy_character
+                }
+                every_country = { country_event = { id = wet_vortex.30 } }
+              }
+              else = { wet_vortex_refund_aqshy = yes }
+            }
+wet_vortex_refund_aqshy = {
+          if = { limit = { has_country_flag = wet_vortex_aqshy_pending }
+            clr_country_flag = wet_vortex_aqshy_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_azyr_0 = {
+              if = { limit = { has_country_flag = wet_vortex_azyr_pending wet_vortex_can_claim_azyr = yes has_character = WET_A01_leader
+
+    WET_A01_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_azyr_claimed
+                clr_country_flag = wet_vortex_azyr_pending
+                save_global_event_target_as = wet_incarnate_azyr_country
+                WET_A01_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_azyr
+                  add_unit_leader_trait = wet_incarnate_azyr
+                  save_global_event_target_as = wet_incarnate_azyr_character
+                }
+                every_country = { country_event = { id = wet_vortex.31 } }
+              }
+              else = { wet_vortex_refund_azyr = yes }
+            }
+wet_vortex_bind_azyr_1 = {
+              if = { limit = { has_country_flag = wet_vortex_azyr_pending wet_vortex_can_claim_azyr = yes has_character = WET_V04_leader
+
+    WET_V04_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_azyr_claimed
+                clr_country_flag = wet_vortex_azyr_pending
+                save_global_event_target_as = wet_incarnate_azyr_country
+                WET_V04_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_azyr
+                  add_unit_leader_trait = wet_incarnate_azyr
+                  save_global_event_target_as = wet_incarnate_azyr_character
+                }
+                every_country = { country_event = { id = wet_vortex.31 } }
+              }
+              else = { wet_vortex_refund_azyr = yes }
+            }
+wet_vortex_bind_azyr_2 = {
+              if = { limit = { has_country_flag = wet_vortex_azyr_pending wet_vortex_can_claim_azyr = yes has_character = WET_VTX_Tettoeko
+
+    WET_VTX_Tettoeko = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_azyr_claimed
+                clr_country_flag = wet_vortex_azyr_pending
+                save_global_event_target_as = wet_incarnate_azyr_country
+                WET_VTX_Tettoeko = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_azyr
+                  add_unit_leader_trait = wet_incarnate_azyr
+                  save_global_event_target_as = wet_incarnate_azyr_character
+                }
+                every_country = { country_event = { id = wet_vortex.31 } }
+              }
+              else = { wet_vortex_refund_azyr = yes }
+            }
+wet_vortex_refund_azyr = {
+          if = { limit = { has_country_flag = wet_vortex_azyr_pending }
+            clr_country_flag = wet_vortex_azyr_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_chamon_0 = {
+              if = { limit = { has_country_flag = wet_vortex_chamon_pending wet_vortex_can_claim_chamon = yes has_character = WET_VTX_Gelt
+
+    WET_VTX_Gelt = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_chamon_claimed
+                clr_country_flag = wet_vortex_chamon_pending
+                save_global_event_target_as = wet_incarnate_chamon_country
+                WET_VTX_Gelt = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_chamon
+                  add_unit_leader_trait = wet_incarnate_chamon
+                  save_global_event_target_as = wet_incarnate_chamon_character
+                }
+                every_country = { country_event = { id = wet_vortex.32 } }
+              }
+              else = { wet_vortex_refund_chamon = yes }
+            }
+wet_vortex_bind_chamon_1 = {
+              if = { limit = { has_country_flag = wet_vortex_chamon_pending wet_vortex_can_claim_chamon = yes has_character = WET_U04_leader
+
+    WET_U04_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_chamon_claimed
+                clr_country_flag = wet_vortex_chamon_pending
+                save_global_event_target_as = wet_incarnate_chamon_country
+                WET_U04_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_chamon
+                  add_unit_leader_trait = wet_incarnate_chamon
+                  save_global_event_target_as = wet_incarnate_chamon_character
+                }
+                every_country = { country_event = { id = wet_vortex.32 } }
+              }
+              else = { wet_vortex_refund_chamon = yes }
+            }
+wet_vortex_bind_chamon_2 = {
+              if = { limit = { has_country_flag = wet_vortex_chamon_pending wet_vortex_can_claim_chamon = yes has_character = WET_I22_leader
+
+    WET_I22_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_chamon_claimed
+                clr_country_flag = wet_vortex_chamon_pending
+                save_global_event_target_as = wet_incarnate_chamon_country
+                WET_I22_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_chamon
+                  add_unit_leader_trait = wet_incarnate_chamon
+                  save_global_event_target_as = wet_incarnate_chamon_character
+                }
+                every_country = { country_event = { id = wet_vortex.32 } }
+              }
+              else = { wet_vortex_refund_chamon = yes }
+            }
+wet_vortex_refund_chamon = {
+          if = { limit = { has_country_flag = wet_vortex_chamon_pending }
+            clr_country_flag = wet_vortex_chamon_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_ghur_0 = {
+              if = { limit = { has_country_flag = wet_vortex_ghur_pending wet_vortex_can_claim_ghur = yes has_character = WET_G24_leader
+
+    WET_G24_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghur_claimed
+                clr_country_flag = wet_vortex_ghur_pending
+                save_global_event_target_as = wet_incarnate_ghur_country
+                WET_G24_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghur
+                  add_unit_leader_trait = wet_incarnate_ghur
+                  save_global_event_target_as = wet_incarnate_ghur_character
+                }
+                every_country = { country_event = { id = wet_vortex.33 } }
+              }
+              else = { wet_vortex_refund_ghur = yes }
+            }
+wet_vortex_bind_ghur_1 = {
+              if = { limit = { has_country_flag = wet_vortex_ghur_pending wet_vortex_can_claim_ghur = yes has_character = WET_VTX_Orion
+
+    WET_VTX_Orion = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghur_claimed
+                clr_country_flag = wet_vortex_ghur_pending
+                save_global_event_target_as = wet_incarnate_ghur_country
+                WET_VTX_Orion = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghur
+                  add_unit_leader_trait = wet_incarnate_ghur
+                  save_global_event_target_as = wet_incarnate_ghur_character
+                }
+                every_country = { country_event = { id = wet_vortex.33 } }
+              }
+              else = { wet_vortex_refund_ghur = yes }
+            }
+wet_vortex_bind_ghur_2 = {
+              if = { limit = { has_country_flag = wet_vortex_ghur_pending wet_vortex_can_claim_ghur = yes has_character = WET_X16_leader
+
+    WET_X16_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghur_claimed
+                clr_country_flag = wet_vortex_ghur_pending
+                save_global_event_target_as = wet_incarnate_ghur_country
+                WET_X16_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghur
+                  add_unit_leader_trait = wet_incarnate_ghur
+                  save_global_event_target_as = wet_incarnate_ghur_character
+                }
+                every_country = { country_event = { id = wet_vortex.33 } }
+              }
+              else = { wet_vortex_refund_ghur = yes }
+            }
+wet_vortex_refund_ghur = {
+          if = { limit = { has_country_flag = wet_vortex_ghur_pending }
+            clr_country_flag = wet_vortex_ghur_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_ghyran_0 = {
+              if = { limit = { has_country_flag = wet_vortex_ghyran_pending wet_vortex_can_claim_ghyran = yes has_character = WET_H08_leader
+
+    WET_H08_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghyran_claimed
+                clr_country_flag = wet_vortex_ghyran_pending
+                save_global_event_target_as = wet_incarnate_ghyran_country
+                WET_H08_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghyran
+                  add_unit_leader_trait = wet_incarnate_ghyran
+                  save_global_event_target_as = wet_incarnate_ghyran_character
+                }
+                every_country = { country_event = { id = wet_vortex.34 } }
+              }
+              else = { wet_vortex_refund_ghyran = yes }
+            }
+wet_vortex_bind_ghyran_1 = {
+              if = { limit = { has_country_flag = wet_vortex_ghyran_pending wet_vortex_can_claim_ghyran = yes has_character = WET_B01_leader
+
+    WET_B01_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghyran_claimed
+                clr_country_flag = wet_vortex_ghyran_pending
+                save_global_event_target_as = wet_incarnate_ghyran_country
+                WET_B01_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghyran
+                  add_unit_leader_trait = wet_incarnate_ghyran
+                  save_global_event_target_as = wet_incarnate_ghyran_character
+                }
+                every_country = { country_event = { id = wet_vortex.34 } }
+              }
+              else = { wet_vortex_refund_ghyran = yes }
+            }
+wet_vortex_bind_ghyran_2 = {
+              if = { limit = { has_country_flag = wet_vortex_ghyran_pending wet_vortex_can_claim_ghyran = yes has_character = WET_VTX_Durthu
+
+    WET_VTX_Durthu = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ghyran_claimed
+                clr_country_flag = wet_vortex_ghyran_pending
+                save_global_event_target_as = wet_incarnate_ghyran_country
+                WET_VTX_Durthu = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ghyran
+                  add_unit_leader_trait = wet_incarnate_ghyran
+                  save_global_event_target_as = wet_incarnate_ghyran_character
+                }
+                every_country = { country_event = { id = wet_vortex.34 } }
+              }
+              else = { wet_vortex_refund_ghyran = yes }
+            }
+wet_vortex_refund_ghyran = {
+          if = { limit = { has_country_flag = wet_vortex_ghyran_pending }
+            clr_country_flag = wet_vortex_ghyran_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_hysh_0 = {
+              if = { limit = { has_country_flag = wet_vortex_hysh_pending wet_vortex_can_claim_hysh = yes has_character = WET_ULT_Tyrion
+
+    WET_ULT_Tyrion = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_hysh_claimed
+                clr_country_flag = wet_vortex_hysh_pending
+                save_global_event_target_as = wet_incarnate_hysh_country
+                WET_ULT_Tyrion = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_hysh
+                  add_unit_leader_trait = wet_incarnate_hysh
+                  save_global_event_target_as = wet_incarnate_hysh_character
+                }
+                every_country = { country_event = { id = wet_vortex.35 } }
+              }
+              else = { wet_vortex_refund_hysh = yes }
+            }
+wet_vortex_bind_hysh_1 = {
+              if = { limit = { has_country_flag = wet_vortex_hysh_pending wet_vortex_can_claim_hysh = yes has_character = WET_VTX_Teclis
+
+    WET_VTX_Teclis = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_hysh_claimed
+                clr_country_flag = wet_vortex_hysh_pending
+                save_global_event_target_as = wet_incarnate_hysh_country
+                WET_VTX_Teclis = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_hysh
+                  add_unit_leader_trait = wet_incarnate_hysh
+                  save_global_event_target_as = wet_incarnate_hysh_character
+                }
+                every_country = { country_event = { id = wet_vortex.35 } }
+              }
+              else = { wet_vortex_refund_hysh = yes }
+            }
+wet_vortex_bind_hysh_2 = {
+              if = { limit = { has_country_flag = wet_vortex_hysh_pending wet_vortex_can_claim_hysh = yes has_character = WET_A80_leader
+
+    WET_A80_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_hysh_claimed
+                clr_country_flag = wet_vortex_hysh_pending
+                save_global_event_target_as = wet_incarnate_hysh_country
+                WET_A80_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_hysh
+                  add_unit_leader_trait = wet_incarnate_hysh
+                  save_global_event_target_as = wet_incarnate_hysh_character
+                }
+                every_country = { country_event = { id = wet_vortex.35 } }
+              }
+              else = { wet_vortex_refund_hysh = yes }
+            }
+wet_vortex_refund_hysh = {
+          if = { limit = { has_country_flag = wet_vortex_hysh_pending }
+            clr_country_flag = wet_vortex_hysh_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_shyish_0 = {
+              if = { limit = { has_country_flag = wet_vortex_shyish_pending wet_vortex_can_claim_shyish = yes has_character = WET_U24_leader
+    has_global_flag = wet_story_nagash_resurrected
+    WET_U24_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_shyish_claimed
+                clr_country_flag = wet_vortex_shyish_pending
+                save_global_event_target_as = wet_incarnate_shyish_country
+                WET_U24_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_shyish
+                  add_unit_leader_trait = wet_incarnate_shyish
+                  save_global_event_target_as = wet_incarnate_shyish_character
+                }
+                every_country = { country_event = { id = wet_vortex.36 } }
+              }
+              else = { wet_vortex_refund_shyish = yes }
+            }
+wet_vortex_bind_shyish_1 = {
+              if = { limit = { has_country_flag = wet_vortex_shyish_pending wet_vortex_can_claim_shyish = yes has_character = WET_Z02_leader
+
+    WET_Z02_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_shyish_claimed
+                clr_country_flag = wet_vortex_shyish_pending
+                save_global_event_target_as = wet_incarnate_shyish_country
+                WET_Z02_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_shyish
+                  add_unit_leader_trait = wet_incarnate_shyish
+                  save_global_event_target_as = wet_incarnate_shyish_character
+                }
+                every_country = { country_event = { id = wet_vortex.36 } }
+              }
+              else = { wet_vortex_refund_shyish = yes }
+            }
+wet_vortex_bind_shyish_2 = {
+              if = { limit = { has_country_flag = wet_vortex_shyish_pending wet_vortex_can_claim_shyish = yes has_character = WET_A13_leader
+
+    WET_A13_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_shyish_claimed
+                clr_country_flag = wet_vortex_shyish_pending
+                save_global_event_target_as = wet_incarnate_shyish_country
+                WET_A13_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_shyish
+                  add_unit_leader_trait = wet_incarnate_shyish
+                  save_global_event_target_as = wet_incarnate_shyish_character
+                }
+                every_country = { country_event = { id = wet_vortex.36 } }
+              }
+              else = { wet_vortex_refund_shyish = yes }
+            }
+wet_vortex_refund_shyish = {
+          if = { limit = { has_country_flag = wet_vortex_shyish_pending }
+            clr_country_flag = wet_vortex_shyish_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_bind_ulgu_0 = {
+              if = { limit = { has_country_flag = wet_vortex_ulgu_pending wet_vortex_can_claim_ulgu = yes has_character = WET_H12_leader
+
+    WET_H12_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ulgu_claimed
+                clr_country_flag = wet_vortex_ulgu_pending
+                save_global_event_target_as = wet_incarnate_ulgu_country
+                WET_H12_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ulgu
+                  add_unit_leader_trait = wet_incarnate_ulgu
+                  save_global_event_target_as = wet_incarnate_ulgu_character
+                }
+                every_country = { country_event = { id = wet_vortex.37 } }
+              }
+              else = { wet_vortex_refund_ulgu = yes }
+            }
+wet_vortex_bind_ulgu_1 = {
+              if = { limit = { has_country_flag = wet_vortex_ulgu_pending wet_vortex_can_claim_ulgu = yes has_character = WET_H13_leader
+
+    WET_H13_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ulgu_claimed
+                clr_country_flag = wet_vortex_ulgu_pending
+                save_global_event_target_as = wet_incarnate_ulgu_country
+                WET_H13_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ulgu
+                  add_unit_leader_trait = wet_incarnate_ulgu
+                  save_global_event_target_as = wet_incarnate_ulgu_character
+                }
+                every_country = { country_event = { id = wet_vortex.37 } }
+              }
+              else = { wet_vortex_refund_ulgu = yes }
+            }
+wet_vortex_bind_ulgu_2 = {
+              if = { limit = { has_country_flag = wet_vortex_ulgu_pending wet_vortex_can_claim_ulgu = yes has_character = WET_B84_leader
+
+    WET_B84_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } }
+                set_global_flag = wet_vortex_ulgu_claimed
+                clr_country_flag = wet_vortex_ulgu_pending
+                save_global_event_target_as = wet_incarnate_ulgu_country
+                WET_B84_leader = {
+                  set_character_flag = wet_vortex_incarnate
+                  set_character_flag = wet_incarnate_ulgu
+                  add_unit_leader_trait = wet_incarnate_ulgu
+                  save_global_event_target_as = wet_incarnate_ulgu_character
+                }
+                every_country = { country_event = { id = wet_vortex.37 } }
+              }
+              else = { wet_vortex_refund_ulgu = yes }
+            }
+wet_vortex_refund_ulgu = {
+          if = { limit = { has_country_flag = wet_vortex_ulgu_pending }
+            clr_country_flag = wet_vortex_ulgu_pending
+            add_political_power = 1000
+          }
+        }
+wet_vortex_restore_incarnate_traits = { every_army_leader = { limit = { has_character_flag = wet_vortex_incarnate }
+if = { limit = { has_character_flag = wet_incarnate_aqshy NOT = { has_trait = wet_incarnate_aqshy } } add_unit_leader_trait = wet_incarnate_aqshy }
+if = { limit = { has_character_flag = wet_incarnate_azyr NOT = { has_trait = wet_incarnate_azyr } } add_unit_leader_trait = wet_incarnate_azyr }
+if = { limit = { has_character_flag = wet_incarnate_chamon NOT = { has_trait = wet_incarnate_chamon } } add_unit_leader_trait = wet_incarnate_chamon }
+if = { limit = { has_character_flag = wet_incarnate_ghur NOT = { has_trait = wet_incarnate_ghur } } add_unit_leader_trait = wet_incarnate_ghur }
+if = { limit = { has_character_flag = wet_incarnate_ghyran NOT = { has_trait = wet_incarnate_ghyran } } add_unit_leader_trait = wet_incarnate_ghyran }
+if = { limit = { has_character_flag = wet_incarnate_hysh NOT = { has_trait = wet_incarnate_hysh } } add_unit_leader_trait = wet_incarnate_hysh }
+if = { limit = { has_character_flag = wet_incarnate_shyish NOT = { has_trait = wet_incarnate_shyish } } add_unit_leader_trait = wet_incarnate_shyish }
+if = { limit = { has_character_flag = wet_incarnate_ulgu NOT = { has_trait = wet_incarnate_ulgu } } add_unit_leader_trait = wet_incarnate_ulgu }
+} }

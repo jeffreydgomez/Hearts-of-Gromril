@@ -1,0 +1,99 @@
+scripted_gui = {
+wet_world_ledger_gui = {
+context_type = player_context
+window_name = "wet_ledger_window"
+dirty = wet_ledger_version
+visible = { is_ai = no has_country_flag = wet_ledger_open }
+ai_enabled = { always = no }
+effects = {
+wet_ledger_close_click = {
+clr_country_flag = wet_ledger_open
+add_to_variable = { wet_ledger_version = 1 }
+
+}
+wet_ledger_refresh_click = {
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_previous_click = {
+subtract_from_variable = { wet_ledger_offset = 16 }
+clamp_variable = { var = wet_ledger_offset min = 0 }
+wet_ledger_build_page = yes
+}
+wet_ledger_next_click = {
+add_to_variable = { wet_ledger_offset = 16 }
+wet_ledger_build_page = yes
+}
+wet_ledger_sort_industry_click = {
+set_variable = { wet_ledger_sort = 1 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_army_click = {
+set_variable = { wet_ledger_sort = 2 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_navy_click = {
+set_variable = { wet_ledger_sort = 3 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_air_click = {
+set_variable = { wet_ledger_sort = 4 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_manpower_click = {
+set_variable = { wet_ledger_sort = 5 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_losses_click = {
+set_variable = { wet_ledger_sort = 6 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+wet_ledger_sort_land_click = {
+set_variable = { wet_ledger_sort = 7 }
+set_variable = { wet_ledger_offset = 0 }
+country_event = { id = wet_ledger.1 }
+
+}
+
+}
+triggers = {
+wet_ledger_previous_click_enabled = {
+check_variable = { wet_ledger_offset > 0 }
+}
+wet_ledger_next_click_enabled = {
+check_variable = { wet_ledger_last < wet_ledger_countries^num }
+}
+
+}
+dynamic_lists = {
+wet_ledger_grid = {
+array = wet_ledger_rows
+value = wet_ledger_row
+index = wet_ledger_visible_index
+change_scope = no
+entry_container = "wet_ledger_entry"
+}
+
+}
+properties = {
+wet_ledger_flag = {
+image = "[?wet_ledger_countries^wet_ledger_row.GetFlag]"
+}
+
+}
+
+}
+
+}

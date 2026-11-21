@@ -1,0 +1,16 @@
+on_actions = {
+on_startup = {
+effect = {
+WST = { wet_id_initialize_map = yes wet_id_refresh_calendar = yes }
+}
+
+}
+on_daily = {
+effect = {
+WST = { wet_id_refresh_calendar = yes }
+every_country = { limit = { OR = { has_country_flag = wet_id_busy has_country_flag = wet_id_offer_pending } } country_event = { id = wet_identity.1 } }
+}
+
+}
+
+}

@@ -1,341 +1,683 @@
 wet_archaon_bind_subjects = {
- every_subject_country = {
-  # One mutually exclusive branch per subject: no same-use cascade to annexation.
-  if = {
-   limit = { has_autonomy_state = autonomy_integrated_puppet }
-   ROOT = { annex_country = { target = PREV transfer_troops = yes } }
-  }
-  else_if = {
-   limit = { has_autonomy_state = autonomy_puppet }
-   ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet freedom_level = 0 end_wars = no end_civil_wars = no } }
-  }
-  else_if = {
-   limit = { has_autonomy_state = autonomy_colony }
-   ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet freedom_level = 0 end_wars = no end_civil_wars = no } }
-  }
-  else_if = {
-   limit = { has_autonomy_state = autonomy_dominion }
-   ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_colony freedom_level = 0 end_wars = no end_civil_wars = no } }
-  }
-  else = {
-   # Nonstandard mod/civil-war subject types enter the ordinary puppet ladder.
-   ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet freedom_level = 0 end_wars = no end_civil_wars = no } }
-  }
- }
-}
-
-wet_measure_defending_bloc = {
- clear_array = wet_ai_defender_leaders
- clear_array = wet_ai_defending_countries
- for_each_scope_loop = {
-  array = wet_ai_war_targets
-  add_to_array = { ROOT.wet_ai_defender_leaders = THIS }
-  if = { limit = { is_subject = yes } overlord = { add_to_array = { ROOT.wet_ai_defender_leaders = THIS } } }
- }
- set_variable = { wet_ai_defending_manpower = 0 }
- for_each_scope_loop = {
-  array = wet_ai_defender_leaders
-  every_country = {
-   limit = {
-    exists = yes
-    NOT = { tag = ROOT }
-    OR = {
-     tag = PREV
-     is_subject_of = PREV
-     is_in_faction_with = PREV
-     PREV = { is_guaranteed_by = PREV }
-    }
-    NOT = { is_in_array = { ROOT.wet_ai_defending_countries = THIS } }
-   }
-   add_to_array = { ROOT.wet_ai_defending_countries = THIS }
-   add_to_variable = { var = ROOT.wet_ai_defending_manpower value = deployed_army_manpower_k }
-  }
- }
- set_variable = { wet_ai_available_manpower = deployed_army_manpower_k }
- divide_variable = { wet_ai_available_manpower = 1.5 }
- clear_array = wet_ai_defender_leaders
- clear_array = wet_ai_defending_countries
-}
-
-wet_ai_schedule_border_war_search = {
- if = {
-  limit = {
-   wet_ai_ready_for_border_war = yes
-   NOT = { has_country_flag = wet_ai_search_scheduled }
-   NOT = { has_country_flag = wet_ai_war_pending }
-   NOT = { has_country_flag = wet_ai_war_cooldown }
-  }
-  randomize_variable = { var = wet_ai_search_days distribution = uniform min = 1 max = 28 }
-  round_variable = wet_ai_search_days
-  set_country_flag = wet_ai_search_scheduled
- }
-}
-
-wet_ai_seek_border_war = {
- # Keep the effect safe even when called outside the monthly hook.
- if = {
-  limit = {
-   wet_ai_ready_for_border_war = yes
-   NOT = { has_country_flag = wet_ai_war_pending }
-   NOT = { has_country_flag = wet_ai_war_cooldown }
-  }
-  clear_array = wet_ai_war_targets
-  random_neighbor_country = {
-   limit = { wet_ai_border_target = yes }
-   ROOT = {
-    # PREV is the actual selected country, not an event-target string.
-    add_to_array = { wet_ai_war_targets = PREV }
-    wet_measure_defending_bloc = yes
+  every_subject_country = {
     if = {
-     limit = { check_variable = { wet_ai_available_manpower > wet_ai_defending_manpower } }
-     set_country_flag = wet_ai_war_pending
-     set_country_flag = wet_ai_campaign_active
-     set_country_flag = wet_ai_war_preparing
-     set_country_flag = wet_ai_war_cooldown
-     randomize_variable = { var = wet_ai_prepare_days distribution = uniform min = 30 max = 60 }
-     round_variable = wet_ai_prepare_days
-     set_variable = { wet_ai_pending_days = wet_ai_prepare_days }
-     add_to_variable = { wet_ai_pending_days = 15 }
-     set_variable = { wet_ai_goal_settle_days = 0 }
-     if = { limit = { has_government = communism } set_variable = { wet_ai_cooldown_days = 180 } }
-     else = { set_variable = { wet_ai_cooldown_days = 90 } }
-     log = "WET_WAR_PREPARE attacker=[ROOT.GetTag] target=[PREV.GetTag] prepare_ticks=[?wet_ai_prepare_days]"
+      limit = {
+        has_autonomy_state = autonomy_integrated_puppet
+      }
+      ROOT = {
+        annex_country = {
+          target = PREV
+          transfer_troops = yes
+        }
+      }
     }
-    else = { clear_array = wet_ai_war_targets }
-    clear_variable = wet_ai_available_manpower
-    clear_variable = wet_ai_defending_manpower
-   }
+    else_if = {
+      limit = {
+        has_autonomy_state = autonomy_puppet
+      }
+      ROOT = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_integrated_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_autonomy_state = autonomy_colony
+      }
+      ROOT = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_autonomy_state = autonomy_dominion
+      }
+      ROOT = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_colony
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+    }
+    else = {
+      ROOT = {
+        set_autonomy = {
+          target = PREV
+          autonomy_state = autonomy_puppet
+          freedom_level = 0
+          end_wars = no
+          end_civil_wars = no
+        }
+      }
+    }
   }
- }
 }
-
-wet_ai_finish_border_war_preparations = {
- if = {
-  limit = {
-   wet_ai_ready_for_border_war = yes
-   has_country_flag = wet_ai_war_pending
-   NOT = { has_country_flag = wet_ai_war_preparing }
-   NOT = { has_country_flag = wet_ai_wargoal_settling }
-   check_variable = { wet_ai_war_targets^num > 0 }
+wet_measure_defending_bloc = {
+  clear_array = wet_ai_defender_leaders
+  clear_array = wet_ai_defending_countries
+  for_each_scope_loop = {
+    array = wet_ai_war_targets
+    add_to_array = {
+      ROOT.wet_ai_defender_leaders = THIS
+    }
+    if = {
+      limit = {
+        is_subject = yes
+      }
+      overlord = {
+        add_to_array = {
+          ROOT.wet_ai_defender_leaders = THIS
+        }
+      }
+    }
+  }
+  set_variable = {
+    wet_ai_defending_manpower = 0
   }
   for_each_scope_loop = {
-   array = wet_ai_war_targets
-   if = {
-    limit = { wet_ai_border_target = yes ROOT = { wet_ai_ready_for_border_war = yes } }
-    ROOT = {
-     wet_measure_defending_bloc = yes
-     if = {
-      limit = { check_variable = { wet_ai_available_manpower > wet_ai_defending_manpower } }
-      if = {
-       limit = { NOT = { has_country_flag = wet_ai_wargoal_ready } }
-       create_wargoal = { type = wet_border_conquest target = PREV expire = 0 }
-       set_country_flag = wet_ai_wargoal_ready
-       set_country_flag = wet_ai_wargoal_settling
-       randomize_variable = { var = wet_ai_goal_settle_days distribution = uniform min = 1 max = 7 }
-       round_variable = wet_ai_goal_settle_days
-       log = "WET_WARGOAL_CREATED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
+    array = wet_ai_defender_leaders
+    every_country = {
+      limit = {
+        exists = yes
+        NOT = {
+          tag = ROOT
+        }
+        OR = {
+          tag = PREV
+          is_subject_of = PREV
+          is_in_faction_with = PREV
+          PREV = {
+            is_guaranteed_by = PREV
+          }
+        }
+        NOT = {
+          is_in_array = {
+            ROOT.wet_ai_defending_countries = THIS
+          }
+        }
       }
-      else_if = {
-       limit = { wet_ai_ready_for_border_war = yes has_war = no can_declare_war_on = PREV }
-       declare_war_on = { target = PREV type = wet_border_conquest }
-       log = "WET_WAR_DECLARED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
-       wet_ai_clear_border_campaign = yes
+      add_to_array = {
+        ROOT.wet_ai_defending_countries = THIS
       }
-      else_if = {
-       limit = { NOT = { has_country_flag = wet_ai_declaration_blocked_logged } }
-       log = "WET_WAR_BLOCKED engine_declaration_rules attacker=[ROOT.GetTag] target=[PREV.GetTag]"
-       set_country_flag = wet_ai_declaration_blocked_logged
+      add_to_variable = {
+        var = ROOT.wet_ai_defending_manpower
+        value = deployed_army_manpower_k
       }
-     }
-     else = {
-      log = "WET_WAR_CANCEL defending_bloc_too_strong attacker=[ROOT.GetTag] target=[PREV.GetTag]"
-      wet_ai_clear_border_campaign = yes
-     }
     }
-   }
-   else = {
-    log = "WET_WAR_CANCEL target_ineligible attacker=[ROOT.GetTag] target=[THIS.GetTag]"
-    ROOT = { wet_ai_clear_border_campaign = yes }
-   }
   }
- }
- else = {
-  log = "WET_WAR_CANCEL attacker_or_saved_target_ineligible attacker=[ROOT.GetTag]"
-  wet_ai_clear_border_campaign = yes
- }
- clear_variable = wet_ai_available_manpower
- clear_variable = wet_ai_defending_manpower
+  set_variable = {
+    wet_ai_available_manpower = deployed_army_manpower_k
+  }
+  divide_variable = {
+    wet_ai_available_manpower = 1.5
+  }
+  clear_array = wet_ai_defender_leaders
+  clear_array = wet_ai_defending_countries
 }
-
-wet_ai_clear_border_campaign = {
- # Only remove this system's own goal; preserve focus/player goals.
- if = {
-  limit = { has_country_flag = wet_ai_wargoal_ready }
-  for_each_scope_loop = { array = wet_ai_war_targets ROOT = { remove_wargoal = { type = wet_border_conquest target = PREV } } }
- }
- clr_country_flag = wet_ai_war_pending
- clr_country_flag = wet_ai_campaign_active
- clr_country_flag = wet_ai_war_preparing
- clr_country_flag = wet_ai_wargoal_ready
- clr_country_flag = wet_ai_wargoal_settling
- clr_country_flag = wet_ai_declaration_blocked_logged
- clear_array = wet_ai_war_targets
- clear_variable = wet_ai_prepare_days
- clear_variable = wet_ai_pending_days
- clear_variable = wet_ai_goal_settle_days
-}
-
-wet_initialize_war_runtime_v2 = {
- if = {
-  limit = { NOT = { has_country_flag = wet_war_runtime_v2 } }
-  wet_ai_clear_border_campaign = yes
-  clr_country_flag = wet_ai_search_scheduled
-  clear_variable = wet_ai_search_days
-  clr_country_flag = wet_ai_war_cooldown
-  clear_variable = wet_ai_cooldown_days
-  set_country_flag = wet_war_runtime_v2
- }
-}
-
-wet_ai_daily_war_tick = {
- wet_initialize_war_runtime_v2 = yes
- # Abandon the planned attack as soon as any war starts, including during
- # preparation or goal registration. Never keep a goal for a second war.
- if = {
-  limit = { has_country_flag = wet_ai_war_pending OR = { has_war = yes AND = { is_in_faction = yes is_faction_leader = no } } }
-  log = "WET_WAR_CANCEL attacker_at_war_or_nonleader_member attacker=[ROOT.GetTag]"
-  wet_ai_clear_border_campaign = yes
- }
- if = {
-  limit = { has_country_flag = wet_ai_war_cooldown }
-  add_to_variable = { wet_ai_cooldown_days = -1 }
-  if = { limit = { check_variable = { wet_ai_cooldown_days < 1 } } clr_country_flag = wet_ai_war_cooldown clear_variable = wet_ai_cooldown_days }
- }
- if = {
-  limit = { has_country_flag = wet_ai_war_pending }
-  add_to_variable = { wet_ai_pending_days = -1 }
+wet_ai_schedule_border_war_search = {
   if = {
-   limit = { check_variable = { wet_ai_pending_days < 1 } }
-   log = "WET_WAR_EXPIRED attacker=[ROOT.GetTag]"
-   wet_ai_clear_border_campaign = yes
+    limit = {
+      wet_ai_ready_for_border_war = yes
+      NOT = {
+        has_country_flag = wet_ai_search_scheduled
+      }
+      NOT = {
+        has_country_flag = wet_ai_war_pending
+      }
+      NOT = {
+        has_country_flag = wet_ai_war_cooldown
+      }
+    }
+    randomize_variable = {
+      var = wet_ai_search_days
+      distribution = uniform
+      min = 1
+      max = 28
+    }
+    round_variable = wet_ai_search_days
+    set_country_flag = wet_ai_search_scheduled
+  }
+}
+wet_ai_seek_border_war = {
+  if = {
+    limit = {
+      wet_ai_ready_for_border_war = yes
+      NOT = {
+        has_country_flag = wet_ai_war_pending
+      }
+      NOT = {
+        has_country_flag = wet_ai_war_cooldown
+      }
+    }
+    clear_array = wet_ai_war_targets
+    random_neighbor_country = {
+      limit = {
+        wet_ai_border_target = yes
+      }
+      ROOT = {
+        add_to_array = {
+          wet_ai_war_targets = PREV
+        }
+        wet_measure_defending_bloc = yes
+        if = {
+          limit = {
+            check_variable = {
+              wet_ai_available_manpower
+              >
+              wet_ai_defending_manpower
+            }
+          }
+          set_country_flag = wet_ai_war_pending
+          set_country_flag = wet_ai_campaign_active
+          set_country_flag = wet_ai_war_preparing
+          set_country_flag = wet_ai_war_cooldown
+          randomize_variable = {
+            var = wet_ai_prepare_days
+            distribution = uniform
+            min = 30
+            max = 60
+          }
+          round_variable = wet_ai_prepare_days
+          set_variable = {
+            wet_ai_pending_days = wet_ai_prepare_days
+          }
+          add_to_variable = {
+            wet_ai_pending_days = 15
+          }
+          set_variable = {
+            wet_ai_goal_settle_days = 0
+          }
+          if = {
+            limit = {
+              has_government = communism
+            }
+            set_variable = {
+              wet_ai_cooldown_days = 180
+            }
+          }
+          else = {
+            set_variable = {
+              wet_ai_cooldown_days = 90
+            }
+          }
+          log = "WET_WAR_PREPARE attacker=[ROOT.GetTag] target=[PREV.GetTag] prepare_ticks=[?wet_ai_prepare_days]"
+        }
+        else = {
+          clear_array = wet_ai_war_targets
+        }
+        clear_variable = wet_ai_available_manpower
+        clear_variable = wet_ai_defending_manpower
+      }
+    }
+  }
+}
+wet_ai_finish_border_war_preparations = {
+  if = {
+    limit = {
+      wet_ai_ready_for_border_war = yes
+      has_country_flag = wet_ai_war_pending
+      NOT = {
+        has_country_flag = wet_ai_war_preparing
+      }
+      NOT = {
+        has_country_flag = wet_ai_wargoal_settling
+      }
+      check_variable = {
+        wet_ai_war_targets^num
+        >
+        0
+      }
+    }
+    for_each_scope_loop = {
+      array = wet_ai_war_targets
+      if = {
+        limit = {
+          wet_ai_border_target = yes
+          ROOT = {
+            wet_ai_ready_for_border_war = yes
+          }
+        }
+        ROOT = {
+          wet_measure_defending_bloc = yes
+          if = {
+            limit = {
+              check_variable = {
+                wet_ai_available_manpower
+                >
+                wet_ai_defending_manpower
+              }
+            }
+            if = {
+              limit = {
+                NOT = {
+                  has_country_flag = wet_ai_wargoal_ready
+                }
+              }
+              create_wargoal = {
+                type = wet_border_conquest
+                target = PREV
+                expire = 0
+              }
+              set_country_flag = wet_ai_wargoal_ready
+              set_country_flag = wet_ai_wargoal_settling
+              randomize_variable = {
+                var = wet_ai_goal_settle_days
+                distribution = uniform
+                min = 1
+                max = 7
+              }
+              round_variable = wet_ai_goal_settle_days
+              log = "WET_WARGOAL_CREATED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
+            }
+            else_if = {
+              limit = {
+                wet_ai_ready_for_border_war = yes
+                has_war = no
+                can_declare_war_on = PREV
+              }
+              declare_war_on = {
+                target = PREV
+                type = wet_border_conquest
+              }
+              log = "WET_WAR_DECLARED attacker=[ROOT.GetTag] target=[PREV.GetTag]"
+              wet_ai_clear_border_campaign = yes
+            }
+            else_if = {
+              limit = {
+                NOT = {
+                  has_country_flag = wet_ai_declaration_blocked_logged
+                }
+              }
+              log = "WET_WAR_BLOCKED engine_declaration_rules attacker=[ROOT.GetTag] target=[PREV.GetTag]"
+              set_country_flag = wet_ai_declaration_blocked_logged
+            }
+          }
+          else = {
+            log = "WET_WAR_CANCEL defending_bloc_too_strong attacker=[ROOT.GetTag] target=[PREV.GetTag]"
+            wet_ai_clear_border_campaign = yes
+          }
+        }
+      }
+      else = {
+        log = "WET_WAR_CANCEL target_ineligible attacker=[ROOT.GetTag] target=[THIS.GetTag]"
+        ROOT = {
+          wet_ai_clear_border_campaign = yes
+        }
+      }
+    }
   }
   else = {
-   if = {
-    limit = { has_country_flag = wet_ai_war_preparing }
-    add_to_variable = { wet_ai_prepare_days = -1 }
-    if = { limit = { check_variable = { wet_ai_prepare_days < 1 } } clr_country_flag = wet_ai_war_preparing }
-   }
-   if = {
-    limit = { has_country_flag = wet_ai_wargoal_settling }
-    add_to_variable = { wet_ai_goal_settle_days = -1 }
-    if = { limit = { check_variable = { wet_ai_goal_settle_days < 1 } } clr_country_flag = wet_ai_wargoal_settling }
-   }
-   if = {
-    limit = { NOT = { has_country_flag = wet_ai_war_preparing } NOT = { has_country_flag = wet_ai_wargoal_settling } }
-    wet_ai_finish_border_war_preparations = yes
-   }
+    log = "WET_WAR_CANCEL attacker_or_saved_target_ineligible attacker=[ROOT.GetTag]"
+    wet_ai_clear_border_campaign = yes
   }
- }
- # A successful monthly roll schedules a search on a different day for each AI.
- # This runs after existing preparations so a new campaign gets its full delay.
- if = {
-  limit = { has_country_flag = wet_ai_search_scheduled }
+  clear_variable = wet_ai_available_manpower
+  clear_variable = wet_ai_defending_manpower
+}
+wet_ai_clear_border_campaign = {
   if = {
-   limit = { wet_ai_ready_for_border_war = yes NOT = { has_country_flag = wet_ai_war_pending } NOT = { has_country_flag = wet_ai_war_cooldown } }
-   add_to_variable = { wet_ai_search_days = -1 }
-   if = {
-    limit = { check_variable = { wet_ai_search_days < 1 } }
+    limit = {
+      has_country_flag = wet_ai_wargoal_ready
+    }
+    for_each_scope_loop = {
+      array = wet_ai_war_targets
+      ROOT = {
+        remove_wargoal = {
+          type = wet_border_conquest
+          target = PREV
+        }
+      }
+    }
+  }
+  clr_country_flag = wet_ai_war_pending
+  clr_country_flag = wet_ai_campaign_active
+  clr_country_flag = wet_ai_war_preparing
+  clr_country_flag = wet_ai_wargoal_ready
+  clr_country_flag = wet_ai_wargoal_settling
+  clr_country_flag = wet_ai_declaration_blocked_logged
+  clear_array = wet_ai_war_targets
+  clear_variable = wet_ai_prepare_days
+  clear_variable = wet_ai_pending_days
+  clear_variable = wet_ai_goal_settle_days
+}
+wet_initialize_war_runtime_v2 = {
+  if = {
+    limit = {
+      NOT = {
+        has_country_flag = wet_war_runtime_v2
+      }
+    }
+    wet_ai_clear_border_campaign = yes
     clr_country_flag = wet_ai_search_scheduled
     clear_variable = wet_ai_search_days
-    wet_ai_seek_border_war = yes
-   }
+    clr_country_flag = wet_ai_war_cooldown
+    clear_variable = wet_ai_cooldown_days
+    set_country_flag = wet_war_runtime_v2
   }
-  else = { clr_country_flag = wet_ai_search_scheduled clear_variable = wet_ai_search_days }
- }
-
 }
-# This effect runs in the partner country; ROOT is the initiator.
-wet_ai_order_alliance = {
- if = {
-  limit = {
-   wet_can_join_faction = yes
-   ROOT = { wet_can_join_faction = yes }
-   is_in_faction = no
-   ROOT = { is_in_faction = yes faction_leader = { is_ai = yes has_government = democratic } }
-  }
-  ROOT = {
-   faction_leader = {
-    for_each_scope_loop = {
-     array = ROOT.wet_order_partner_targets
-     PREV = { add_to_faction = PREV }
-    }
-   }
-  }
- }
- else_if = {
-  limit = { wet_can_join_faction = yes is_in_faction = yes faction_leader = { is_ai = yes has_government = democratic } ROOT = { is_in_faction = no wet_can_join_faction = yes } }
-  faction_leader = { add_to_faction = ROOT }
- }
- else_if = {
-  limit = { wet_can_join_faction = yes is_in_faction = no ROOT = { is_in_faction = no wet_can_join_faction = yes } }
+wet_ai_daily_war_tick = {
+  wet_initialize_war_runtime_v2 = yes
   if = {
-   limit = { ROOT = { wet_can_create_faction = yes } }
-   ROOT = { create_faction_from_template = wet_faction_alliance add_to_faction = PREV }
+    limit = {
+      has_country_flag = wet_ai_war_pending
+      OR = {
+        has_war = yes
+        AND = {
+          is_in_faction = yes
+          is_faction_leader = no
+        }
+      }
+    }
+    log = "WET_WAR_CANCEL attacker_at_war_or_nonleader_member attacker=[ROOT.GetTag]"
+    wet_ai_clear_border_campaign = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_ai_war_cooldown
+    }
+    add_to_variable = {
+      wet_ai_cooldown_days = -1
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_ai_cooldown_days
+          <
+          1
+        }
+      }
+      clr_country_flag = wet_ai_war_cooldown
+      clear_variable = wet_ai_cooldown_days
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_ai_war_pending
+    }
+    add_to_variable = {
+      wet_ai_pending_days = -1
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_ai_pending_days
+          <
+          1
+        }
+      }
+      log = "WET_WAR_EXPIRED attacker=[ROOT.GetTag]"
+      wet_ai_clear_border_campaign = yes
+    }
+    else = {
+      if = {
+        limit = {
+          has_country_flag = wet_ai_war_preparing
+        }
+        add_to_variable = {
+          wet_ai_prepare_days = -1
+        }
+        if = {
+          limit = {
+            check_variable = {
+              wet_ai_prepare_days
+              <
+              1
+            }
+          }
+          clr_country_flag = wet_ai_war_preparing
+        }
+      }
+      if = {
+        limit = {
+          has_country_flag = wet_ai_wargoal_settling
+        }
+        add_to_variable = {
+          wet_ai_goal_settle_days = -1
+        }
+        if = {
+          limit = {
+            check_variable = {
+              wet_ai_goal_settle_days
+              <
+              1
+            }
+          }
+          clr_country_flag = wet_ai_wargoal_settling
+        }
+      }
+      if = {
+        limit = {
+          NOT = {
+            has_country_flag = wet_ai_war_preparing
+          }
+          NOT = {
+            has_country_flag = wet_ai_wargoal_settling
+          }
+        }
+        wet_ai_finish_border_war_preparations = yes
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_ai_search_scheduled
+    }
+    if = {
+      limit = {
+        wet_ai_ready_for_border_war = yes
+        NOT = {
+          has_country_flag = wet_ai_war_pending
+        }
+        NOT = {
+          has_country_flag = wet_ai_war_cooldown
+        }
+      }
+      add_to_variable = {
+        wet_ai_search_days = -1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_ai_search_days
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_ai_search_scheduled
+        clear_variable = wet_ai_search_days
+        wet_ai_seek_border_war = yes
+      }
+    }
+    else = {
+      clr_country_flag = wet_ai_search_scheduled
+      clear_variable = wet_ai_search_days
+    }
+  }
+}
+wet_ai_order_alliance = {
+  if = {
+    limit = {
+      wet_can_join_faction = yes
+      ROOT = {
+        wet_can_join_faction = yes
+      }
+      is_in_faction = no
+      ROOT = {
+        is_in_faction = yes
+        faction_leader = {
+          is_ai = yes
+          has_government = democratic
+        }
+      }
+    }
+    ROOT = {
+      faction_leader = {
+        for_each_scope_loop = {
+          array = ROOT.wet_order_partner_targets
+          PREV = {
+            add_to_faction = PREV
+          }
+        }
+      }
+    }
   }
   else_if = {
-   limit = { wet_can_create_faction = yes }
-   create_faction_from_template = wet_faction_alliance
-   add_to_faction = ROOT
+    limit = {
+      wet_can_join_faction = yes
+      is_in_faction = yes
+      faction_leader = {
+        is_ai = yes
+        has_government = democratic
+      }
+      ROOT = {
+        is_in_faction = no
+        wet_can_join_faction = yes
+      }
+    }
+    faction_leader = {
+      add_to_faction = ROOT
+    }
   }
- }
 }
-
 wet_ai_order_contact = {
- ROOT = { clear_array = wet_order_partner_targets add_to_array = { wet_order_partner_targets = PREV } }
- if = {
-  limit = { wet_order_alliance_partner = yes }
-  random = { chance = 50 wet_ai_order_alliance = yes }
- }
- ROOT = { clear_array = wet_order_partner_targets }
+  ROOT = {
+    clear_array = wet_order_partner_targets
+    add_to_array = {
+      wet_order_partner_targets = PREV
+    }
+  }
+  if = {
+    limit = {
+      wet_order_alliance_partner = yes
+    }
+    random = {
+      chance = 50
+      wet_ai_order_alliance = yes
+    }
+  }
+  ROOT = {
+    clear_array = wet_order_partner_targets
+  }
 }
-
 wet_ai_order_diplomacy = {
- if = {
-  limit = { any_other_country = { wet_order_alliance_partner = yes } }
-  random_other_country = { limit = { wet_order_alliance_partner = yes } wet_ai_order_contact = yes }
- }
+  if = {
+    limit = {
+      any_other_country = {
+        wet_order_alliance_partner = yes
+      }
+    }
+    random_other_country = {
+      limit = {
+        wet_order_alliance_partner = yes
+      }
+      wet_ai_order_contact = yes
+    }
+  }
 }
 wet_call_to_chaos_complete = {
- if = {
-  limit = { wet_call_to_chaos_target = yes }
-  log = "WET_ABSORPTION action=call_to_chaos attacker=[ROOT.GetTag] target=[THIS.GetTag]"
-  ROOT = { annex_country = { target = PREV transfer_troops = yes } }
- }
+  if = {
+    limit = {
+      wet_call_to_chaos_target = yes
+    }
+    log = "WET_ABSORPTION action=call_to_chaos attacker=[ROOT.GetTag] target=[THIS.GetTag]"
+    ROOT = {
+      annex_country = {
+        target = PREV
+        transfer_troops = yes
+      }
+    }
+  }
 }
 wet_ai_call_to_chaos = {
- if = {
-  limit = { is_ai = yes wet_archaon_rules = yes NOT = { has_political_power < 30 } }
-  random_neighbor_country = {
-   limit = { wet_call_to_chaos_target = yes }
-   ROOT = { add_political_power = -30 }
-   wet_call_to_chaos_complete = yes
+  if = {
+    limit = {
+      is_ai = yes
+      wet_archaon_rules = yes
+      NOT = {
+        has_political_power
+        <
+        30
+      }
+    }
+    random_neighbor_country = {
+      limit = {
+        wet_call_to_chaos_target = yes
+      }
+      ROOT = {
+        add_political_power = -30
+      }
+      wet_call_to_chaos_complete = yes
+    }
   }
- }
 }
 wet_join_the_waaagh_complete = {
- if = {
-  limit = { wet_join_the_waaagh_target = yes }
-  log = "WET_ABSORPTION action=join_the_waaagh attacker=[ROOT.GetTag] target=[THIS.GetTag]"
-  if = { limit = { ROOT = { tag = G24 } } wet_grn_diplomatic_absorb_complete = yes } else = { ROOT = { annex_country = { target = PREV transfer_troops = yes } } }
- }
+  if = {
+    limit = {
+      wet_join_the_waaagh_target = yes
+    }
+    log = "WET_ABSORPTION action=join_the_waaagh attacker=[ROOT.GetTag] target=[THIS.GetTag]"
+    if = {
+      limit = {
+        ROOT = {
+          tag = G24
+        }
+      }
+      wet_grn_diplomatic_absorb_complete = yes
+    }
+    else = {
+      ROOT = {
+        annex_country = {
+          target = PREV
+          transfer_troops = yes
+        }
+      }
+    }
+  }
 }
 wet_ai_join_the_waaagh = {
- if = {
-  limit = { is_ai = yes OR = { AND = { tag = G24 wet_grn_opening_done = yes is_subject = no } AND = { NOT = { tag = G24 } wet_waaagh_leader = yes } } NOT = { has_political_power < 30 } }
-  random_neighbor_country = {
-   limit = { wet_join_the_waaagh_target = yes }
-   ROOT = { add_political_power = -30 }
-   wet_join_the_waaagh_complete = yes
+  if = {
+    limit = {
+      is_ai = yes
+      OR = {
+        AND = {
+          tag = G24
+          wet_grn_opening_done = yes
+          is_subject = no
+        }
+        AND = {
+          NOT = {
+            tag = G24
+          }
+          wet_waaagh_leader = yes
+        }
+      }
+      NOT = {
+        has_political_power
+        <
+        30
+      }
+    }
+    random_neighbor_country = {
+      limit = {
+        wet_join_the_waaagh_target = yes
+      }
+      ROOT = {
+        add_political_power = -30
+      }
+      wet_join_the_waaagh_complete = yes
+    }
   }
- }
 }

@@ -1,0 +1,156 @@
+scripted_diplomatic_actions = {
+  wet_hex_protection_diplomacy = {
+    allowed = {
+      ROOT = {
+        tag = V04
+      }
+      OR = {
+        tag = V03
+        tag = V06
+        tag = V07
+        tag = V08
+        tag = V09
+        tag = V10
+        tag = V11
+        tag = V12
+        tag = V13
+        tag = V14
+        tag = V15
+        tag = V16
+        tag = V18
+      }
+    }
+    visible = {
+      ROOT = {
+        has_country_flag = wet_hex_reward_L03
+      }
+    }
+    selectable = {
+      ROOT = {
+        tag = V04
+        has_country_flag = wet_hex_reward_L03
+        is_subject = no
+      }
+      wet_hex_sendable_protection = yes
+    }
+    can_be_sent = {
+      ROOT = {
+        tag = V04
+        has_country_flag = wet_hex_reward_L03
+        is_subject = no
+      }
+      wet_hex_sendable_protection = yes
+      ROOT = {
+        has_political_power
+        >
+        49
+      }
+    }
+    requires_acceptance = no
+    cost = 50
+    show_acceptance_on_action_button = no
+    icon = 1
+    send_description = wet_hex_protection_diplomacy_send
+    accept_title = wet_hex_protection_diplomacy_accept
+    accept_description = wet_hex_protection_diplomacy_accept_desc
+    complete_effect = {
+      custom_effect_tooltip = wet_hex_protection_diplomacy_effect_tt
+      hidden_effect = {
+        wet_hex_send_protection = yes
+      }
+    }
+    ai_desire = {
+      base = 50
+      modifier = {
+        factor = 0
+        NOT = {
+          OR = {
+            ROOT = {
+              tag = V04
+              has_country_flag = wet_hex_reward_L03
+              is_subject = no
+            }
+            wet_hex_sendable_protection = yes
+          }
+        }
+      }
+    }
+  }
+  wet_hex_integration_diplomacy = {
+    allowed = {
+      ROOT = {
+        tag = V04
+      }
+      OR = {
+        tag = V03
+        tag = V06
+        tag = V07
+        tag = V08
+        tag = V09
+        tag = V10
+        tag = V11
+        tag = V12
+        tag = V13
+        tag = V14
+        tag = V15
+        tag = V16
+        tag = V18
+      }
+    }
+    visible = {
+      ROOT = {
+        has_country_flag = wet_hex_reward_L14
+      }
+    }
+    selectable = {
+      ROOT = {
+        tag = V04
+        has_country_flag = wet_hex_reward_L14
+        is_subject = no
+      }
+      wet_hex_sendable_integration = yes
+    }
+    can_be_sent = {
+      ROOT = {
+        tag = V04
+        has_country_flag = wet_hex_reward_L14
+        is_subject = no
+      }
+      wet_hex_sendable_integration = yes
+      ROOT = {
+        has_political_power
+        >
+        99
+      }
+    }
+    requires_acceptance = no
+    cost = 100
+    show_acceptance_on_action_button = no
+    icon = 1
+    send_description = wet_hex_integration_diplomacy_send
+    accept_title = wet_hex_integration_diplomacy_accept
+    accept_description = wet_hex_integration_diplomacy_accept_desc
+    complete_effect = {
+      custom_effect_tooltip = wet_hex_integration_diplomacy_effect_tt
+      hidden_effect = {
+        wet_hex_send_integration = yes
+      }
+    }
+    ai_desire = {
+      base = 50
+      modifier = {
+        factor = 0
+        NOT = {
+          OR = {
+            ROOT = {
+              tag = V04
+              has_country_flag = wet_hex_reward_L14
+              is_subject = no
+            }
+            wet_hex_sendable_integration = yes
+          }
+        }
+      }
+    }
+  }
+}

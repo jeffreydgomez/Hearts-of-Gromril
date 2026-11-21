@@ -572,130 +572,7 @@ wet_arc_campaigns = {
       factor = 5
     }
   }
-  wet_arc_unbind_vortex = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      original_tag = B99
-    }
-    visible = {
-      has_completed_focus = WET_ARC_KU13
-    }
-    cost = 100
-    available = {
-      AND = {
-        wet_arc_holds_vortex = yes
-        NOT = {
-          OR = {
-            has_global_flag = wet_story_vortex_unbound
-            has_global_flag = wet_story_vortex_stabilized
-            has_country_flag = wet_arc_vortex_salvaged
-          }
-        }
-      }
-    }
-    days_remove = 90
-    complete_effect = {
-      set_country_flag = wet_arc_unbind_vortex_active
-    }
-    remove_effect = {
-      effect_tooltip = {
-        if = {
-          limit = {
-            wet_arc_holds_vortex = yes
-            NOT = {
-              OR = {
-                has_global_flag = wet_story_vortex_unbound
-                has_global_flag = wet_story_vortex_stabilized
-              }
-            }
-          }
-          if = {
-            limit = {
-              has_country_flag = wet_arc_ward_knowledge
-            }
-            380 = {
-              remove_building = {
-                type = landmark_wet_gp_great_vortex
-                level = 1
-                province = 2343
-              }
-            }
-            add_timed_idea = {
-              idea = wet_arc_vortex_power
-              days = 365
-            }
-          }
-          else = {
-            random_list = {
-              70 = {
-                380 = {
-                  remove_building = {
-                    type = landmark_wet_gp_great_vortex
-                    level = 1
-                    province = 2343
-                  }
-                }
-                add_timed_idea = {
-                  idea = wet_arc_vortex_power
-                  days = 365
-                }
-              }
-              30 = {
-                add_stability = -0.03
-              }
-            }
-          }
-        }
-      }
-      hidden_effect = {
-        clr_country_flag = wet_arc_unbind_vortex_active
-        if = {
-          limit = {
-            wet_arc_holds_vortex = yes
-            NOT = {
-              OR = {
-                has_global_flag = wet_story_vortex_unbound
-                has_global_flag = wet_story_vortex_stabilized
-              }
-            }
-          }
-          if = {
-            limit = {
-              has_country_flag = wet_arc_ward_knowledge
-            }
-            wet_arc_unbind_vortex = yes
-          }
-          else = {
-            random_list = {
-              70 = {
-                wet_arc_unbind_vortex = yes
-              }
-              30 = {
-                add_stability = -0.03
-              }
-            }
-          }
-        }
-      }
-    }
-    cancel_trigger = {
-      OR = {
-        NOT = {
-          wet_arc_holds_vortex = yes
-        }
-        has_global_flag = wet_story_vortex_unbound
-        has_global_flag = wet_story_vortex_stabilized
-      }
-    }
-    cancel_effect = {
-      clr_country_flag = wet_arc_unbind_vortex_active
-    }
-    days_re_enable = 180
-    ai_will_do = {
-      factor = 5
-    }
-  }
+
   wet_arc_salvage_vortex = {
     desc = wet_decision_no_description
     icon = generic_political_discourse
@@ -2308,7 +2185,7 @@ wet_arc_campaigns = {
           uses = 1
           category = electronics
         }
-        unlock_decision_tooltip = wet_arc_unbind_vortex
+        unlock_decision_tooltip = wet_vortex_destroy
         unlock_decision_tooltip = wet_arc_salvage_vortex
       }
       hidden_effect = {

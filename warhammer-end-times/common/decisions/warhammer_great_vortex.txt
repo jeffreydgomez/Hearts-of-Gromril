@@ -1,0 +1,170 @@
+wet_vortex_category = {
+      wet_vortex_destroy = {
+        icon = generic_political_discourse
+        allowed = { NOT = { tag = WST } }
+        visible = { NOT = { has_global_flag = wet_story_vortex_unbound } controls_province = 2343 }
+        available = { wet_vortex_can_destroy = yes }
+        cost = 250
+        fire_only_once = yes
+        complete_effect = {
+          custom_effect_tooltip = wet_vortex_destroy_tt
+          hidden_effect = {
+            if = { limit = { wet_vortex_can_destroy = yes } wet_vortex_destroy_effect = yes }
+            else = { add_political_power = 250 }
+          }
+        }
+        ai_will_do = { factor = 100 modifier = { factor = 0 NOT = { wet_vortex_can_ai_destroy = yes } } }
+      }
+    wet_vortex_claim_aqshy = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_aqshy_claimed } NOT = { has_country_flag = wet_vortex_aqshy_pending } }
+          available = { wet_vortex_can_claim_aqshy = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_aqshy = yes NOT = { has_country_flag = wet_vortex_aqshy_pending } }
+                set_country_flag = wet_vortex_aqshy_pending
+                country_event = { id = wet_vortex.10 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_azyr = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_azyr_claimed } NOT = { has_country_flag = wet_vortex_azyr_pending } }
+          available = { wet_vortex_can_claim_azyr = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_azyr = yes NOT = { has_country_flag = wet_vortex_azyr_pending } }
+                set_country_flag = wet_vortex_azyr_pending
+                country_event = { id = wet_vortex.11 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_chamon = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_chamon_claimed } NOT = { has_country_flag = wet_vortex_chamon_pending } }
+          available = { wet_vortex_can_claim_chamon = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_chamon = yes NOT = { has_country_flag = wet_vortex_chamon_pending } }
+                set_country_flag = wet_vortex_chamon_pending
+                country_event = { id = wet_vortex.12 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_ghur = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_ghur_claimed } NOT = { has_country_flag = wet_vortex_ghur_pending } }
+          available = { wet_vortex_can_claim_ghur = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_ghur = yes NOT = { has_country_flag = wet_vortex_ghur_pending } }
+                set_country_flag = wet_vortex_ghur_pending
+                country_event = { id = wet_vortex.13 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_ghyran = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_ghyran_claimed } NOT = { has_country_flag = wet_vortex_ghyran_pending } }
+          available = { wet_vortex_can_claim_ghyran = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_ghyran = yes NOT = { has_country_flag = wet_vortex_ghyran_pending } }
+                set_country_flag = wet_vortex_ghyran_pending
+                country_event = { id = wet_vortex.14 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_hysh = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_hysh_claimed } NOT = { has_country_flag = wet_vortex_hysh_pending } }
+          available = { wet_vortex_can_claim_hysh = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_hysh = yes NOT = { has_country_flag = wet_vortex_hysh_pending } }
+                set_country_flag = wet_vortex_hysh_pending
+                country_event = { id = wet_vortex.15 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_shyish = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_shyish_claimed } NOT = { has_country_flag = wet_vortex_shyish_pending } }
+          available = { wet_vortex_can_claim_shyish = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_shyish = yes NOT = { has_country_flag = wet_vortex_shyish_pending } }
+                set_country_flag = wet_vortex_shyish_pending
+                country_event = { id = wet_vortex.16 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+wet_vortex_claim_ulgu = {
+          icon = generic_political_discourse
+          allowed = { NOT = { tag = WST } }
+          visible = { has_global_flag = wet_story_vortex_unbound NOT = { has_global_flag = wet_vortex_ulgu_claimed } NOT = { has_country_flag = wet_vortex_ulgu_pending } }
+          available = { wet_vortex_can_claim_ulgu = yes }
+          cost = 1000
+          days_re_enable = 1
+          complete_effect = {
+            custom_effect_tooltip = wet_vortex_claim_tt
+            hidden_effect = {
+              if = { limit = { wet_vortex_can_claim_ulgu = yes NOT = { has_country_flag = wet_vortex_ulgu_pending } }
+                set_country_flag = wet_vortex_ulgu_pending
+                country_event = { id = wet_vortex.17 }
+              }
+              else = { add_political_power = 1000 }
+            }
+          }
+          ai_will_do = { factor = 100 }
+        }
+}

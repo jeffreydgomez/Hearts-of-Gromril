@@ -1,0 +1,123 @@
+wet_hex_diplomacy = {
+  wet_hex_seek_ports = {
+    icon = generic_naval
+    target_trigger = {
+      wet_hex_sendable_ports = yes
+    }
+    target_root_trigger = {
+      tag = V04
+    }
+    visible = {
+      has_country_flag = wet_hex_reward_E05
+    }
+    available = {
+      FROM = {
+        wet_hex_sendable_ports = yes
+      }
+    }
+    cost = 0
+    complete_effect = {
+      FROM = {
+        wet_hex_send_ports = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_hex_retry_restitution = {
+    icon = generic_political_discourse
+    visible = {
+      has_country_flag = wet_hex_reward_N04
+    }
+    available = {
+      H12 = {
+        wet_hex_sendable_restitution = yes
+      }
+      NOT = {
+        has_country_flag = wet_hex_restitution
+      }
+    }
+    cost = 0
+    complete_effect = {
+      H12 = {
+        wet_hex_send_restitution = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_hex_retry_charter = {
+    icon = generic_political_discourse
+    visible = {
+      has_country_flag = wet_hex_reward_N06
+    }
+    available = {
+      H12 = {
+        wet_hex_sendable_charter = yes
+      }
+      NOT = {
+        wet_nag_protected_partner = yes
+      }
+    }
+    cost = 0
+    complete_effect = {
+      H12 = {
+        wet_hex_send_charter = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_hex_retry_shared_seas = {
+    icon = generic_political_discourse
+    visible = {
+      has_country_flag = wet_hex_reward_N08
+    }
+    available = {
+      H12 = {
+        wet_hex_sendable_shared_seas = yes
+      }
+      NOT = {
+        has_military_access_to = H12
+      }
+    }
+    cost = 0
+    complete_effect = {
+      H12 = {
+        wet_hex_send_shared_seas = yes
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+  wet_hex_retry_alliance = {
+    icon = generic_political_discourse
+    visible = {
+      has_country_flag = wet_hex_reward_E02
+    }
+    available = {
+      A01 = {
+        exists = yes
+        is_in_faction = yes
+        faction_leader = {
+          wet_hex_sendable_alliance = yes
+        }
+      }
+    }
+    cost = 0
+    complete_effect = {
+      A01 = {
+        faction_leader = {
+          wet_hex_send_alliance = yes
+        }
+      }
+    }
+    ai_will_do = {
+      factor = 5
+    }
+  }
+}

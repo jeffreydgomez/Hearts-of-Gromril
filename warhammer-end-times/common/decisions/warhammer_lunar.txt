@@ -1,0 +1,770 @@
+wet_lunar_category = {
+  wet_lunar_pull_0 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 0
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      4
+    }
+    cost = 50
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_0_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_0
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 5
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_0 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 0
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      4
+    }
+    cost = 50
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_0_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_0
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 5
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_pull_1 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 1
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      5
+    }
+    cost = 60
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_1_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_1
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 6
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_1 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 1
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      5
+    }
+    cost = 60
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_1_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_1
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 6
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_pull_2 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 2
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      6
+    }
+    cost = 70
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_2_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_2
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 7
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_2 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 2
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      6
+    }
+    cost = 70
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_2_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_2
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 7
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_pull_3 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 3
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      7
+    }
+    cost = 80
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_3_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_3
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 8
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_3 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 3
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      7
+    }
+    cost = 80
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_3_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_3
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 8
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_pull_4 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 4
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      8
+    }
+    cost = 90
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_4_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_4
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 9
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_4 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 4
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      8
+    }
+    cost = 90
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_4_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_4
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 9
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_pull_5 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = U25
+      check_variable = {
+        wet_lunar_uses = 5
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        >
+        0
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      9
+    }
+    cost = 100
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_pull_5_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_5
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 10
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = -1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+  wet_lunar_push_5 = {
+    icon = generic_scientific_research
+    visible = {
+      has_global_flag = wet_lunar_active
+      tag = V04
+      check_variable = {
+        wet_lunar_uses = 5
+      }
+    }
+    available = {
+      NOT = {
+        has_country_flag = wet_lunar_cooldown
+      }
+      check_variable = {
+        global.wet_lunar_range
+        <
+        7
+      }
+      num_of_civilian_factories_available_for_projects
+      >
+      9
+    }
+    cost = 100
+    complete_effect = {
+      custom_effect_tooltip = wet_lunar_push_5_tt
+      hidden_effect = {
+        set_country_flag = {
+          flag = wet_lunar_cooldown
+          days = 60
+        }
+        add_timed_idea = {
+          idea = wet_lunar_reservation_5
+          days = 60
+        }
+        set_variable = {
+          wet_lunar_days = 60
+        }
+        set_variable = {
+          wet_lunar_reserved = 10
+        }
+        add_to_variable = {
+          wet_lunar_uses = 1
+        }
+        clamp_variable = {
+          var = wet_lunar_uses
+          min = 0
+          max = 5
+        }
+        add_to_variable = {
+          global.wet_lunar_range = 1
+        }
+        clamp_variable = {
+          var = global.wet_lunar_range
+          min = 0
+          max = 7
+        }
+        wet_lunar_display = yes
+        wet_lunar_resolve_impact = yes
+      }
+    }
+    ai_will_do = {
+      factor = 30
+    }
+  }
+}

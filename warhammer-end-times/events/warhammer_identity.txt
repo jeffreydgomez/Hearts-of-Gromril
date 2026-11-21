@@ -1,0 +1,33 @@
+add_namespace = wet_identity
+country_event = {
+id = wet_identity.1
+hidden = yes
+is_triggered_only = yes
+immediate = {
+if = { limit = { has_country_flag = wet_id_busy } wet_id_daily = yes }
+if = { limit = { has_country_flag = wet_id_offer_pending } wet_id_offer_daily = yes }
+}
+
+}
+
+country_event = {
+id = wet_identity.15
+title = wet_identity.15.t
+desc = wet_identity.15.d
+is_triggered_only = yes
+option = {
+name = wet_identity.15.accept
+trigger = {
+wet_id_offer_acceptance = yes
+}
+ai_chance = { factor = 60 }
+custom_effect_tooltip = wet_id_trade_accept_tt
+hidden_effect = { wet_id_accept_offer = yes }
+}
+option = {
+name = wet_identity.15.decline
+ai_chance = { factor = 40 }
+hidden_effect = { wet_id_decline_offer = yes }
+}
+
+}

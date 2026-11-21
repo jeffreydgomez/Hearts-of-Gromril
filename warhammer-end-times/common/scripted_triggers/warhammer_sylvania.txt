@@ -1,0 +1,216 @@
+wet_syl_vampire_court = {
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+  OR = {
+    has_country_leader = {
+      character = WET_A13_leader
+      ruling_only = yes
+    }
+    has_country_leader = {
+      character = WET_SYL_Vlad
+      ruling_only = yes
+    }
+  }
+}
+wet_syl_nagash_active = {
+  has_country_flag = wet_syl_route_nagash
+  is_subject = no
+  is_in_faction_with = U24
+  U24 = {
+    exists = yes
+  }
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+}
+wet_syl_empire_active = {
+  has_country_flag = wet_syl_route_empire
+  is_subject = no
+  is_in_faction_with = A01
+  A01 = {
+    exists = yes
+  }
+}
+wet_syl_concord_active = {
+  has_country_flag = wet_syl_route_concord
+  is_faction_leader = yes
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+}
+wet_syl_sovereignty_protected = {
+  tag = A13
+  is_subject = no
+  OR = {
+    wet_syl_empire_active = yes
+    has_country_flag = wet_syl_stirland_compact
+  }
+}
+wet_syl_covenant_legal = {
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+  is_subject = no
+  NOT = {
+    OR = {
+      has_country_flag = wet_syl_route_empire
+      has_country_flag = wet_syl_route_concord
+    }
+  }
+  U24 = {
+    exists = yes
+  }
+  NOT = {
+    has_war_with = U24
+  }
+  wet_syl_vampire_court = yes
+}
+wet_syl_nagash_admission_legal = {
+  tag = A13
+  exists = yes
+  is_subject = no
+  NOT = {
+    OR = {
+      has_country_flag = wet_syl_route_nagash
+      has_country_flag = wet_syl_route_empire
+      has_country_flag = wet_syl_route_concord
+    }
+  }
+  has_idea = wet_ngs_covenant
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+  U24 = {
+    exists = yes
+    is_subject = no
+  }
+  OR = {
+    is_in_faction = no
+    is_in_faction_with = U24
+  }
+  NOT = {
+    has_war_with = U24
+  }
+}
+wet_syl_empire_admission_legal = {
+  tag = A13
+  exists = yes
+  is_subject = no
+  NOT = {
+    OR = {
+      has_country_flag = wet_syl_route_nagash
+      has_country_flag = wet_syl_route_empire
+      has_country_flag = wet_syl_route_concord
+    }
+  }
+  OR = {
+    NOT = {
+      has_country_flag = wet_syl_human_path
+    }
+    has_country_flag = wet_syl_uprising
+    has_government = democratic
+    NOT = {
+      has_idea = wet_deathless_hosts
+    }
+  }
+  A01 = {
+    exists = yes
+    is_subject = no
+  }
+  OR = {
+    is_in_faction = no
+    is_in_faction_with = A01
+  }
+}
+wet_syl_marriage_legal = {
+  has_country_leader = {
+    character = WET_A13_leader
+    ruling_only = yes
+  }
+  has_idea = wet_deathless_hosts
+  NOT = {
+    has_country_flag = wet_syl_human_path
+  }
+  is_subject = no
+  U18 = {
+    exists = yes
+    has_country_leader = {
+      character = WET_U18_leader
+      ruling_only = yes
+    }
+    OR = {
+      is_subject = no
+      is_subject_of = A13
+    }
+    OR = {
+      is_in_faction = no
+      is_in_faction_with = A13
+    }
+    NOT = {
+      has_war_with = A13
+    }
+    NOT = {
+      any_enemy_country = {
+        is_in_faction_with = A13
+      }
+    }
+  }
+}
+wet_syl_married = {
+  has_country_flag = wet_syl_married
+  has_country_leader = {
+    character = WET_A13_leader
+    ruling_only = yes
+  }
+  U18 = {
+    is_subject_of = A13
+    has_country_leader = {
+      character = WET_U18_leader
+      ruling_only = yes
+    }
+  }
+}
+wet_syl_human_government = {
+  has_country_flag = wet_syl_uprising
+  has_government = democratic
+  NOT = {
+    has_idea = wet_deathless_hosts
+  }
+}
+wet_syl_civil_war = {
+  has_country_flag = wet_syl_uprising
+  has_government = democratic
+  NOT = {
+    has_idea = wet_deathless_hosts
+  }
+  any_enemy_country = {
+    has_country_flag = wet_syl_vampire_revolter
+  }
+}
+wet_syl_human_victory = {
+  has_country_flag = wet_syl_uprising
+  has_government = democratic
+  NOT = {
+    has_idea = wet_deathless_hosts
+  }
+  237 = {
+    is_owned_by = A13
+    is_fully_controlled_by = A13
+  }
+  691 = {
+    is_owned_by = A13
+    is_fully_controlled_by = A13
+  }
+  NOT = {
+    any_country = {
+      has_country_flag = wet_syl_vampire_revolter
+      exists = yes
+    }
+  }
+}

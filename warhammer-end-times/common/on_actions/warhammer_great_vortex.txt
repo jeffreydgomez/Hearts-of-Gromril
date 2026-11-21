@@ -1,0 +1,9 @@
+on_actions = {
+          on_startup = { effect = { wet_vortex_cap_slots = yes } }
+          on_daily = { effect = {
+            wet_vortex_cap_slots = yes
+            if = { limit = { has_global_flag = wet_story_vortex_unbound }
+              every_country = { wet_vortex_restore_incarnate_traits = yes }
+            }
+          } }
+        }

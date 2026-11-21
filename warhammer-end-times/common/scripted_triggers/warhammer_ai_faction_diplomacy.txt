@@ -1,4 +1,3 @@
-# Ordinary AI diplomacy only; scripted and human-initiated admissions retain their existing rules.
 is_diplomatic_action_valid_join_faction = {
   OR = {
     FROM = {
@@ -218,111 +217,7 @@ is_diplomatic_action_valid_offer_join_faction = {
   }
 }
 is_diplomatic_action_valid_create_faction = {
-  OR = {
-    FROM = {
-      is_ai = no
-    }
-    AND = {
-      has_government = democratic
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = democratic
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = democratic
-            }
-          }
-        }
-      }
-    }
-    AND = {
-      has_government = neutrality
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = neutrality
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = neutrality
-            }
-          }
-        }
-      }
-    }
-    AND = {
-      has_government = fascism
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = fascism
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = fascism
-            }
-          }
-        }
-      }
-    }
-    AND = {
-      has_government = communism
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = communism
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = communism
-            }
-          }
-        }
-      }
-    }
-    AND = {
-      has_government = waaagh
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = waaagh
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = waaagh
-            }
-          }
-        }
-      }
-    }
-    AND = {
-      has_government = horned_rat
-      FROM = {
-        OR = {
-          AND = {
-            is_in_faction = no
-            has_government = horned_rat
-          }
-          AND = {
-            is_in_faction = yes
-            faction_leader = {
-              has_government = horned_rat
-            }
-          }
-        }
-      }
-    }
+  FROM = {
+    is_ai = no
   }
 }

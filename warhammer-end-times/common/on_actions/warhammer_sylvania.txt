@@ -1,0 +1,76 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      A13 = {
+        wet_syl_reconcile = yes
+      }
+    }
+  }
+  on_daily_A13 = {
+    effect = {
+      wet_syl_daily = yes
+    }
+  }
+  on_daily_A76 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_A20 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_B16 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_B27 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_U18 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_V01 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_V19 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_daily_I33 = {
+    effect = {
+      wet_syl_member_cleanup = yes
+    }
+  }
+  on_state_control_changed = {
+    effect = {
+      A13 = {
+        wet_syl_restore_parishes = yes
+      }
+    }
+  }
+  on_join_faction = {
+    effect = {
+      A13 = {
+        wet_syl_reconcile = yes
+      }
+    }
+  }
+  on_leave_faction = {
+    effect = {
+      wet_syl_member_cleanup = yes
+      A13 = {
+        wet_syl_reconcile = yes
+      }
+    }
+  }
+}

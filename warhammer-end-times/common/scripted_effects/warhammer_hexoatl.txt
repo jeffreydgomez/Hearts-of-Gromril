@@ -1,0 +1,6967 @@
+wet_hex_build_C02_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C02_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C02_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C02_industrial_complex_redeem = {
+  392 = {
+    wet_hex_build_C02_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C02_industrial_complex_place = yes
+  }
+  392 = {
+    wet_hex_build_C02_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C02_industrial_complex_place = yes
+  }
+}
+wet_hex_build_C04_infrastructure_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C04_infrastructure_placed
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C04_infrastructure
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        always = yes
+      }
+      add_building_construction = {
+        type = infrastructure
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C04_infrastructure = 1
+        }
+      }
+      set_state_flag = wet_hex_build_C04_infrastructure_placed
+    }
+  }
+}
+wet_hex_build_C04_infrastructure_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C04_infrastructure_placed
+      }
+    }
+    wet_hex_build_C04_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C04_infrastructure_placed
+      }
+    }
+    wet_hex_build_C04_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C04_infrastructure_placed
+      }
+    }
+    wet_hex_build_C04_infrastructure_place = yes
+  }
+}
+wet_hex_build_C07_infrastructure_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C07_infrastructure_placed
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C07_infrastructure
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        always = yes
+      }
+      add_building_construction = {
+        type = infrastructure
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C07_infrastructure = 1
+        }
+      }
+      set_state_flag = wet_hex_build_C07_infrastructure_placed
+    }
+  }
+}
+wet_hex_build_C07_infrastructure_redeem = {
+  488 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  491 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  493 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  525 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  526 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  700 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  701 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  704 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  710 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C07_infrastructure_placed
+      }
+    }
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  488 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  491 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  493 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  525 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  526 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  700 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  701 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  704 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  710 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C07_infrastructure_placed
+      }
+    }
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  488 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  491 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  493 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  525 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  526 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  700 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  701 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  704 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  710 = {
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_C07_infrastructure_placed
+      }
+    }
+    wet_hex_build_C07_infrastructure_place = yes
+  }
+}
+wet_hex_build_C08_arms_factory_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C08_arms_factory
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = arms_factory
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C08_arms_factory = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C08_arms_factory_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C08_arms_factory_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C08_arms_factory_place = yes
+  }
+}
+wet_hex_build_C11_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C11_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C11_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C11_industrial_complex_redeem = {
+  392 = {
+    wet_hex_build_C11_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C11_industrial_complex_place = yes
+  }
+  392 = {
+    wet_hex_build_C11_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C11_industrial_complex_place = yes
+  }
+}
+wet_hex_build_C12_arms_factory_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C12_arms_factory
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = arms_factory
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = arms_factory
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = arms_factory
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C12_arms_factory = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C12_arms_factory_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C12_arms_factory_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          arms_factory
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C12_arms_factory_place = yes
+  }
+}
+wet_hex_build_C13_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C13_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C13_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C13_industrial_complex_redeem = {
+  487 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  489 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  496 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  506 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  487 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  489 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  496 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  506 = {
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C13_industrial_complex_place = yes
+  }
+}
+wet_hex_build_C16_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_C16_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_C16_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_C16_industrial_complex_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C16_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C16_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_C16_industrial_complex_place = yes
+  }
+}
+wet_hex_build_X07_dockyard_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+      V04 = {
+        check_variable = {
+          wet_hex_build_X07_dockyard
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = dockyard
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_X07_dockyard = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_X07_dockyard_redeem = {
+  693 = {
+    wet_hex_build_X07_dockyard_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_X07_dockyard_place = yes
+  }
+  693 = {
+    wet_hex_build_X07_dockyard_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_X07_dockyard_place = yes
+  }
+}
+wet_hex_build_X09_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_X09_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_X09_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_X09_industrial_complex_redeem = {
+  873 = {
+    wet_hex_build_X09_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_X09_industrial_complex_place = yes
+  }
+  873 = {
+    wet_hex_build_X09_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_X09_industrial_complex_place = yes
+  }
+}
+wet_hex_build_X11_infrastructure_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_X11_infrastructure_placed
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_X11_infrastructure
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        always = yes
+      }
+      add_building_construction = {
+        type = infrastructure
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_X11_infrastructure = 1
+        }
+      }
+      set_state_flag = wet_hex_build_X11_infrastructure_placed
+    }
+  }
+}
+wet_hex_build_X11_infrastructure_redeem = {
+  706 = {
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_X11_infrastructure_placed
+      }
+    }
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+  706 = {
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_X11_infrastructure_placed
+      }
+    }
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+  706 = {
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          infrastructure
+          >
+          4
+        }
+      }
+      NOT = {
+        has_state_flag = wet_hex_build_X11_infrastructure_placed
+      }
+    }
+    wet_hex_build_X11_infrastructure_place = yes
+  }
+}
+wet_hex_build_X13_naval_base_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          naval_base
+          >
+          9
+        }
+      }
+      is_coastal = yes
+      V04 = {
+        check_variable = {
+          wet_hex_build_X13_naval_base
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        always = yes
+      }
+      add_building_construction = {
+        type = naval_base
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_X13_naval_base = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_X13_naval_base_redeem = {
+  508 = {
+    wet_hex_build_X13_naval_base_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          naval_base
+          >
+          9
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_X13_naval_base_place = yes
+  }
+}
+wet_hex_build_P11_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_P11_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_P11_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_P11_industrial_complex_redeem = {
+  900 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  901 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  902 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  900 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  901 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  902 = {
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_P11_industrial_complex_place = yes
+  }
+}
+wet_hex_build_F02_dockyard_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+      V04 = {
+        check_variable = {
+          wet_hex_build_F02_dockyard
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = dockyard
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = dockyard
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = dockyard
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_F02_dockyard = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_F02_dockyard_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_F02_dockyard_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_F02_dockyard_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          dockyard
+          >
+          4
+        }
+      }
+      is_coastal = yes
+    }
+    wet_hex_build_F02_dockyard_place = yes
+  }
+}
+wet_hex_monster_sites_B01_redeem = {
+  every_owned_state = {
+    limit = {
+      is_fully_controlled_by = V04
+      has_resources_amount = {
+        resource = rubber
+        amount
+        >
+        0
+      }
+      NOT = {
+        has_state_flag = wet_hex_monster_sites_B01_paid
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_monster_sites_B01
+          >
+          0
+        }
+      }
+    }
+    add_resource = {
+      type = rubber
+      amount = 5
+    }
+    set_state_flag = wet_hex_monster_sites_B01_paid
+    V04 = {
+      subtract_from_variable = {
+        wet_hex_monster_sites_B01 = 1
+      }
+    }
+  }
+}
+wet_hex_monster_sites_B07_redeem = {
+  every_owned_state = {
+    limit = {
+      is_fully_controlled_by = V04
+      has_resources_amount = {
+        resource = rubber
+        amount
+        >
+        0
+      }
+      NOT = {
+        has_state_flag = wet_hex_monster_sites_B07_paid
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_monster_sites_B07
+          >
+          0
+        }
+      }
+    }
+    add_resource = {
+      type = rubber
+      amount = 5
+    }
+    set_state_flag = wet_hex_monster_sites_B07_paid
+    V04 = {
+      subtract_from_variable = {
+        wet_hex_monster_sites_B07 = 1
+      }
+    }
+  }
+}
+wet_hex_build_M01_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_M01_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_M01_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_M01_industrial_complex_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_M01_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_M01_industrial_complex_place = yes
+  }
+}
+wet_hex_build_M03_industrial_complex_place = {
+  if = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+      V04 = {
+        check_variable = {
+          wet_hex_build_M03_industrial_complex
+          >
+          0
+        }
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          free_building_slots = {
+            building = industrial_complex
+            size
+            >
+            0
+            include_locked = yes
+          }
+        }
+      }
+      add_extra_state_shared_building_slots = 1
+    }
+    if = {
+      limit = {
+        free_building_slots = {
+          building = industrial_complex
+          size
+          >
+          0
+          include_locked = no
+        }
+      }
+      add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+      }
+      V04 = {
+        subtract_from_variable = {
+          wet_hex_build_M03_industrial_complex = 1
+        }
+      }
+    }
+  }
+}
+wet_hex_build_M03_industrial_complex_redeem = {
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_M03_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_M03_industrial_complex_place = yes
+  }
+  every_owned_state = {
+    limit = {
+      is_owned_by = V04
+      is_fully_controlled_by = V04
+      impassable = no
+      NOT = {
+        OR = {
+          industrial_complex
+          >
+          4
+        }
+      }
+    }
+    wet_hex_build_M03_industrial_complex_place = yes
+  }
+}
+wet_hex_count_industry = {
+  set_variable = {
+    wet_hex_factories = 0
+  }
+  every_owned_state = {
+    PREV = {
+      add_to_variable = {
+        wet_hex_factories = PREV.building_level@industrial_complex
+      }
+      add_to_variable = {
+        wet_hex_factories = PREV.building_level@arms_factory
+      }
+      add_to_variable = {
+        wet_hex_factories = PREV.building_level@dockyard
+      }
+    }
+  }
+}
+wet_hex_count_union = {
+  set_variable = {
+    wet_hex_subjects = 0
+  }
+  set_variable = {
+    wet_hex_union_realms = 0
+  }
+  if = {
+    limit = {
+      V03 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V03
+        V03 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V06 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V06
+        V06 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V07 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V07
+        V07 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V08 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V08
+        V08 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V09 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V09
+        V09 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V10 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V10
+        V10 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V11 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V11
+        V11 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V12 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V12
+        V12 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V13 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V13
+        V13 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V14 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V14
+        V14 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V15 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V15
+        V15 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V16 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V16
+        V16 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+  if = {
+    limit = {
+      V18 = {
+        wet_hex_temple = yes
+        is_subject_of = V04
+      }
+    }
+    add_to_variable = {
+      wet_hex_subjects = 1
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        has_country_flag = wet_hex_integrated_V18
+        V18 = {
+          wet_hex_temple = yes
+          is_subject_of = V04
+        }
+      }
+    }
+    add_to_variable = {
+      wet_hex_union_realms = 1
+    }
+  }
+}
+wet_hex_send_protection = {
+  if = {
+    limit = {
+      wet_hex_smaller_temple = yes
+      V04 = {
+        has_country_flag = wet_hex_reward_L03
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_protection
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_protection
+      }
+    }
+    set_country_flag = wet_hex_pending_protection
+    set_variable = {
+      wet_hex_offer_days_protection = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.4
+    }
+  }
+}
+wet_hex_send_integration = {
+  if = {
+    limit = {
+      wet_hex_integrable_temple = yes
+      V04 = {
+        has_country_flag = wet_hex_reward_L14
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_integration
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_integration
+      }
+    }
+    set_country_flag = wet_hex_pending_integration
+    set_variable = {
+      wet_hex_offer_days_integration = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.8
+    }
+  }
+}
+wet_hex_send_restitution = {
+  if = {
+    limit = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_restitution
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_restitution
+      }
+    }
+    set_country_flag = wet_hex_pending_restitution
+    set_variable = {
+      wet_hex_offer_days_restitution = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.12
+    }
+  }
+}
+wet_hex_send_charter = {
+  if = {
+    limit = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      wet_nag_compact_active = yes
+      V04 = {
+        has_country_flag = wet_hex_restitution
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_charter
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_charter
+      }
+    }
+    set_country_flag = wet_hex_pending_charter
+    set_variable = {
+      wet_hex_offer_days_charter = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.16
+    }
+  }
+}
+wet_hex_send_shared_seas = {
+  if = {
+    limit = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      V04 = {
+        wet_nag_protected_partner = yes
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_shared_seas
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_shared_seas
+      }
+    }
+    set_country_flag = wet_hex_pending_shared_seas
+    set_variable = {
+      wet_hex_offer_days_shared_seas = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.20
+    }
+  }
+}
+wet_hex_send_alliance = {
+  if = {
+    limit = {
+      exists = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      wet_can_join_faction = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+        is_in_faction = no
+        wet_can_join_faction = yes
+      }
+      NOT = {
+        has_war_with = V04
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = V04
+        }
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_alliance
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_alliance
+      }
+    }
+    set_country_flag = wet_hex_pending_alliance
+    set_variable = {
+      wet_hex_offer_days_alliance = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.24
+    }
+  }
+}
+wet_hex_send_ports = {
+  if = {
+    limit = {
+      exists = yes
+      is_subject = no
+      has_government = democratic
+      NOT = {
+        tag = V04
+      }
+      NOT = {
+        has_war_with = V04
+      }
+      any_owned_state = {
+        is_coastal = yes
+        naval_base
+        >
+        0
+      }
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      NOT = {
+        has_country_flag = wet_hex_pending_ports
+      }
+      NOT = {
+        has_country_flag = wet_hex_retry_ports
+      }
+    }
+    set_country_flag = wet_hex_pending_ports
+    set_variable = {
+      wet_hex_offer_days_ports = 30
+    }
+    V04 = {
+      if = {
+        limit = {
+          NOT = {
+            is_in_array = {
+              wet_hex_active_recipients = PREV
+            }
+          }
+        }
+        add_to_array = {
+          wet_hex_active_recipients = PREV
+        }
+      }
+    }
+    country_event = {
+      id = wet_hexoatl.28
+    }
+  }
+}
+wet_hex_tick_offers = {
+  wet_hex_count_industry = yes
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_protection
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            wet_hex_smaller_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L03
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_protection
+      set_variable = {
+        wet_hex_offer_days_protection = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_protection
+        days = 180
+      }
+      V04 = {
+        add_political_power = 50
+        country_event = {
+          id = wet_hexoatl.3
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_protection = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_protection
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_protection
+        set_variable = {
+          wet_hex_offer_days_protection = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_protection
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.2
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_integration
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            wet_hex_integrable_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L14
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_integration
+      set_variable = {
+        wet_hex_offer_days_integration = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_integration
+        days = 180
+      }
+      V04 = {
+        add_political_power = 100
+        country_event = {
+          id = wet_hexoatl.7
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_integration = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_integration
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_integration
+        set_variable = {
+          wet_hex_offer_days_integration = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_integration
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.6
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_restitution
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_restitution
+      set_variable = {
+        wet_hex_offer_days_restitution = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_restitution
+        days = 180
+      }
+      V04 = {
+        add_political_power = 0
+        country_event = {
+          id = wet_hexoatl.11
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_restitution = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_restitution
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_restitution
+        set_variable = {
+          wet_hex_offer_days_restitution = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_restitution
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.10
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_charter
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            wet_nag_compact_active = yes
+            V04 = {
+              has_country_flag = wet_hex_restitution
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_charter
+      set_variable = {
+        wet_hex_offer_days_charter = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_charter
+        days = 180
+      }
+      V04 = {
+        add_political_power = 0
+        country_event = {
+          id = wet_hexoatl.15
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_charter = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_charter
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_charter
+        set_variable = {
+          wet_hex_offer_days_charter = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_charter
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.14
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_shared_seas
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            V04 = {
+              wet_nag_protected_partner = yes
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_shared_seas
+      set_variable = {
+        wet_hex_offer_days_shared_seas = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_shared_seas
+        days = 180
+      }
+      V04 = {
+        add_political_power = 0
+        country_event = {
+          id = wet_hexoatl.19
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_shared_seas = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_shared_seas
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_shared_seas
+        set_variable = {
+          wet_hex_offer_days_shared_seas = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_shared_seas
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.18
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_alliance
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            exists = yes
+            is_faction_leader = yes
+            is_in_faction_with = A01
+            wet_can_join_faction = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+              is_in_faction = no
+              wet_can_join_faction = yes
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            NOT = {
+              any_enemy_country = {
+                is_in_faction_with = V04
+              }
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_alliance
+      set_variable = {
+        wet_hex_offer_days_alliance = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_alliance
+        days = 180
+      }
+      V04 = {
+        add_political_power = 0
+        country_event = {
+          id = wet_hexoatl.23
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_alliance = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_alliance
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_alliance
+        set_variable = {
+          wet_hex_offer_days_alliance = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_alliance
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.22
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_pending_ports
+    }
+    if = {
+      limit = {
+        NOT = {
+          AND = {
+            exists = yes
+            is_subject = no
+            has_government = democratic
+            NOT = {
+              tag = V04
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            any_owned_state = {
+              is_coastal = yes
+              naval_base
+              >
+              0
+            }
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+        }
+      }
+      clr_country_flag = wet_hex_pending_ports
+      set_variable = {
+        wet_hex_offer_days_ports = 0
+      }
+      set_country_flag = {
+        flag = wet_hex_retry_ports
+        days = 180
+      }
+      V04 = {
+        add_political_power = 0
+        country_event = {
+          id = wet_hexoatl.27
+        }
+      }
+    }
+    else = {
+      subtract_from_variable = {
+        wet_hex_offer_days_ports = 1
+      }
+      if = {
+        limit = {
+          check_variable = {
+            wet_hex_offer_days_ports
+            <
+            1
+          }
+        }
+        clr_country_flag = wet_hex_pending_ports
+        set_variable = {
+          wet_hex_offer_days_ports = 0
+        }
+        set_country_flag = {
+          flag = wet_hex_retry_ports
+          days = 180
+        }
+        V04 = {
+          country_event = {
+            id = wet_hexoatl.26
+          }
+        }
+      }
+    }
+  }
+}
+wet_hex_award_W00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_W00
+      NOT = {
+        has_country_flag = wet_hex_reward_W00
+      }
+    }
+    set_country_flag = wet_hex_reward_W00
+    army_experience = 50
+  }
+}
+wet_hex_award_C00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C00
+      NOT = {
+        has_country_flag = wet_hex_reward_C00
+      }
+    }
+    set_country_flag = wet_hex_reward_C00
+    add_political_power = 75
+    add_stability = 0.05
+  }
+}
+wet_hex_award_C01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C01
+      NOT = {
+        has_country_flag = wet_hex_reward_C01
+      }
+    }
+    set_country_flag = wet_hex_reward_C01
+    add_ideas = wet_hex_c01
+  }
+}
+wet_hex_award_C02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C02
+      NOT = {
+        has_country_flag = wet_hex_reward_C02
+      }
+    }
+    set_country_flag = wet_hex_reward_C02
+    add_to_variable = {
+      wet_hex_build_C02_industrial_complex = 2
+    }
+    wet_hex_build_C02_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_C03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C03
+      NOT = {
+        has_country_flag = wet_hex_reward_C03
+      }
+    }
+    set_country_flag = wet_hex_reward_C03
+    add_ideas = wet_hex_c03
+  }
+}
+wet_hex_award_C04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C04
+      NOT = {
+        has_country_flag = wet_hex_reward_C04
+      }
+    }
+    set_country_flag = wet_hex_reward_C04
+    add_to_variable = {
+      wet_hex_build_C04_infrastructure = 3
+    }
+    wet_hex_build_C04_infrastructure_redeem = yes
+  }
+}
+wet_hex_award_C05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C05
+      NOT = {
+        has_country_flag = wet_hex_reward_C05
+      }
+    }
+    set_country_flag = wet_hex_reward_C05
+    add_ideas = wet_hex_c05
+  }
+}
+wet_hex_award_C06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C06
+      NOT = {
+        has_country_flag = wet_hex_reward_C06
+      }
+    }
+    set_country_flag = wet_hex_reward_C06
+    add_ideas = wet_hex_c06
+  }
+}
+wet_hex_award_C07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C07
+      NOT = {
+        has_country_flag = wet_hex_reward_C07
+      }
+    }
+    set_country_flag = wet_hex_reward_C07
+    army_experience = 25
+    add_to_variable = {
+      wet_hex_build_C07_infrastructure = 3
+    }
+    wet_hex_build_C07_infrastructure_redeem = yes
+  }
+}
+wet_hex_award_C08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C08
+      NOT = {
+        has_country_flag = wet_hex_reward_C08
+      }
+    }
+    set_country_flag = wet_hex_reward_C08
+    add_to_variable = {
+      wet_hex_build_C08_arms_factory = 2
+    }
+    wet_hex_build_C08_arms_factory_redeem = yes
+  }
+}
+wet_hex_award_C09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C09
+      NOT = {
+        has_country_flag = wet_hex_reward_C09
+      }
+    }
+    set_country_flag = wet_hex_reward_C09
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.5
+      uses = 2
+      category = industry
+    }
+  }
+}
+wet_hex_award_C10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C10
+      NOT = {
+        has_country_flag = wet_hex_reward_C10
+      }
+    }
+    set_country_flag = wet_hex_reward_C10
+    add_stability = 0.05
+    add_ideas = wet_hex_c10
+  }
+}
+wet_hex_award_C11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C11
+      NOT = {
+        has_country_flag = wet_hex_reward_C11
+      }
+    }
+    set_country_flag = wet_hex_reward_C11
+    add_ideas = wet_hex_c11
+    add_to_variable = {
+      wet_hex_build_C11_industrial_complex = 2
+    }
+    wet_hex_build_C11_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_C12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C12
+      NOT = {
+        has_country_flag = wet_hex_reward_C12
+      }
+    }
+    set_country_flag = wet_hex_reward_C12
+    add_ideas = wet_hex_c12
+    add_to_variable = {
+      wet_hex_build_C12_arms_factory = 2
+    }
+    wet_hex_build_C12_arms_factory_redeem = yes
+  }
+}
+wet_hex_award_C13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C13
+      NOT = {
+        has_country_flag = wet_hex_reward_C13
+      }
+    }
+    set_country_flag = wet_hex_reward_C13
+    add_to_variable = {
+      wet_hex_build_C13_industrial_complex = 2
+    }
+    wet_hex_build_C13_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_C14 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C14
+      NOT = {
+        has_country_flag = wet_hex_reward_C14
+      }
+    }
+    set_country_flag = wet_hex_reward_C14
+    add_ideas = wet_hex_c14
+  }
+}
+wet_hex_award_C15 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C15
+      NOT = {
+        has_country_flag = wet_hex_reward_C15
+      }
+    }
+    set_country_flag = wet_hex_reward_C15
+    if = {
+      limit = {
+        num_research_slots
+        <
+        6
+      }
+      add_research_slot = 1
+    }
+    else = {
+      add_tech_bonus = {
+        name = wet_hex_studies
+        bonus = 0.5
+        uses = 2
+        category = wet_rr_research
+      }
+    }
+  }
+}
+wet_hex_award_C16 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C16
+      NOT = {
+        has_country_flag = wet_hex_reward_C16
+      }
+    }
+    set_country_flag = wet_hex_reward_C16
+    add_to_variable = {
+      wet_hex_build_C16_industrial_complex = 3
+    }
+    wet_hex_build_C16_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_C17 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_C17
+      NOT = {
+        has_country_flag = wet_hex_reward_C17
+      }
+    }
+    set_country_flag = wet_hex_reward_C17
+    add_stability = 0.1
+    add_political_power = 50
+  }
+}
+wet_hex_award_X00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X00
+      NOT = {
+        has_country_flag = wet_hex_reward_X00
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_X15_tt
+        wet_hex_goal_X15 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X00
+    create_wargoal = {
+      type = annex_everything
+      target = X15
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X02
+      NOT = {
+        has_country_flag = wet_hex_reward_X02
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_X29_tt
+        wet_hex_goal_X29 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X02
+    create_wargoal = {
+      type = annex_everything
+      target = X29
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X04
+      NOT = {
+        has_country_flag = wet_hex_reward_X04
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_H20_tt
+        wet_hex_goal_H20 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X04
+    create_wargoal = {
+      type = annex_everything
+      target = H20
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X06
+      NOT = {
+        has_country_flag = wet_hex_reward_X06
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_V05_tt
+        wet_hex_goal_V05 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X06
+    create_wargoal = {
+      type = annex_everything
+      target = V05
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X08
+      NOT = {
+        has_country_flag = wet_hex_reward_X08
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_V02_tt
+        wet_hex_goal_V02 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X08
+    create_wargoal = {
+      type = annex_everything
+      target = V02
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X10
+      NOT = {
+        has_country_flag = wet_hex_reward_X10
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_X14_tt
+        wet_hex_goal_X14 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X10
+    create_wargoal = {
+      type = annex_everything
+      target = X14
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X12
+      NOT = {
+        has_country_flag = wet_hex_reward_X12
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_X04_tt
+        wet_hex_goal_X04 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_X12
+    create_wargoal = {
+      type = annex_everything
+      target = X04
+      expire = 365
+    }
+  }
+}
+wet_hex_award_N05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N05
+      NOT = {
+        has_country_flag = wet_hex_reward_N05
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_H12_tt
+        wet_hex_goal_H12 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_N05
+    create_wargoal = {
+      type = annex_everything
+      target = H12
+      expire = 365
+    }
+    army_experience = 25
+  }
+}
+wet_hex_award_P04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P04
+      NOT = {
+        has_country_flag = wet_hex_reward_P04
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_U29_tt
+        wet_hex_goal_U29 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_P04
+    create_wargoal = {
+      type = annex_everything
+      target = U29
+      expire = 365
+    }
+  }
+}
+wet_hex_award_E09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E09
+      NOT = {
+        has_country_flag = wet_hex_reward_E09
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_goal_B99_tt
+        wet_hex_goal_B99 = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_E09
+    create_wargoal = {
+      type = annex_everything
+      target = B99
+      expire = 365
+    }
+  }
+}
+wet_hex_award_X01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X01
+      NOT = {
+        has_country_flag = wet_hex_reward_X01
+      }
+      88 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = X15
+      }
+      OR = {
+        NOT = {
+          X15 = {
+            exists = yes
+          }
+        }
+        X15 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_X15
+      }
+    }
+    set_country_flag = wet_hex_reward_X01
+    army_experience = 25
+    add_ideas = wet_hex_x01
+  }
+}
+wet_hex_award_X03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X03
+      NOT = {
+        has_country_flag = wet_hex_reward_X03
+      }
+      98 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = X29
+      }
+      OR = {
+        NOT = {
+          X29 = {
+            exists = yes
+          }
+        }
+        X29 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_X29
+      }
+    }
+    set_country_flag = wet_hex_reward_X03
+    army_experience = 25
+    add_ideas = wet_hex_x03
+  }
+}
+wet_hex_award_X05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X05
+      NOT = {
+        has_country_flag = wet_hex_reward_X05
+      }
+      230 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = H20
+      }
+      OR = {
+        NOT = {
+          H20 = {
+            exists = yes
+          }
+        }
+        H20 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_H20
+      }
+    }
+    set_country_flag = wet_hex_reward_X05
+    add_political_power = 50
+    add_timed_idea = {
+      idea = wet_hex_x05
+      days = 730
+    }
+  }
+}
+wet_hex_award_X07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X07
+      NOT = {
+        has_country_flag = wet_hex_reward_X07
+      }
+      693 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = V05
+      }
+      OR = {
+        NOT = {
+          V05 = {
+            exists = yes
+          }
+        }
+        V05 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_V05
+      }
+    }
+    set_country_flag = wet_hex_reward_X07
+    navy_experience = 25
+    add_to_variable = {
+      wet_hex_build_X07_dockyard = 2
+    }
+    wet_hex_build_X07_dockyard_redeem = yes
+  }
+}
+wet_hex_award_X09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X09
+      NOT = {
+        has_country_flag = wet_hex_reward_X09
+      }
+      873 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = V02
+      }
+      OR = {
+        NOT = {
+          V02 = {
+            exists = yes
+          }
+        }
+        V02 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_V02
+      }
+    }
+    set_country_flag = wet_hex_reward_X09
+    add_stability = 0.05
+    add_to_variable = {
+      wet_hex_build_X09_industrial_complex = 2
+    }
+    wet_hex_build_X09_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_X11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X11
+      NOT = {
+        has_country_flag = wet_hex_reward_X11
+      }
+      706 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = X14
+      }
+      OR = {
+        NOT = {
+          X14 = {
+            exists = yes
+          }
+        }
+        X14 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_X14
+      }
+    }
+    set_country_flag = wet_hex_reward_X11
+    army_experience = 25
+    add_to_variable = {
+      wet_hex_build_X11_infrastructure = 3
+    }
+    wet_hex_build_X11_infrastructure_redeem = yes
+  }
+}
+wet_hex_award_X13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_X13
+      NOT = {
+        has_country_flag = wet_hex_reward_X13
+      }
+      508 = {
+        is_owned_by = V04
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = X04
+      }
+      OR = {
+        NOT = {
+          X04 = {
+            exists = yes
+          }
+        }
+        X04 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_X04
+      }
+    }
+    set_country_flag = wet_hex_reward_X13
+    navy_experience = 25
+    add_to_variable = {
+      wet_hex_build_X13_naval_base = 1
+    }
+    wet_hex_build_X13_naval_base_redeem = yes
+  }
+}
+wet_hex_award_N00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N00
+      NOT = {
+        has_country_flag = wet_hex_reward_N00
+      }
+    }
+    set_country_flag = wet_hex_reward_N00
+    army_experience = 25
+    add_ideas = wet_hex_n00
+  }
+}
+wet_hex_award_N01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N01
+      NOT = {
+        has_country_flag = wet_hex_reward_N01
+      }
+      controls_province = 1049
+      controls_province = 3156
+      controls_province = 3233
+    }
+    set_country_flag = wet_hex_reward_N01
+    if = {
+      limit = {
+        controls_province = 1049
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 1049
+        instant_build = yes
+      }
+    }
+    if = {
+      limit = {
+        controls_province = 3156
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 3156
+        instant_build = yes
+      }
+    }
+    if = {
+      limit = {
+        controls_province = 3233
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 3233
+        instant_build = yes
+      }
+    }
+  }
+}
+wet_hex_award_N03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N03
+      NOT = {
+        has_country_flag = wet_hex_reward_N03
+      }
+      controls_province = 1049
+      controls_province = 3156
+      controls_province = 3233
+    }
+    set_country_flag = wet_hex_reward_N03
+    if = {
+      limit = {
+        controls_province = 1049
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 1049
+        instant_build = yes
+      }
+    }
+    if = {
+      limit = {
+        controls_province = 3156
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 3156
+        instant_build = yes
+      }
+    }
+    if = {
+      limit = {
+        controls_province = 3233
+      }
+      add_building_construction = {
+        type = bunker
+        level = 2
+        province = 3233
+        instant_build = yes
+      }
+    }
+    add_ideas = wet_hex_n03
+  }
+}
+wet_hex_award_N02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N02
+      NOT = {
+        has_country_flag = wet_hex_reward_N02
+      }
+    }
+    set_country_flag = wet_hex_reward_N02
+    add_political_power = 25
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.75
+      uses = 1
+      category = electronics
+    }
+  }
+}
+wet_hex_award_N07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N07
+      NOT = {
+        has_country_flag = wet_hex_reward_N07
+      }
+    }
+    set_country_flag = wet_hex_reward_N07
+    add_ideas = wet_hex_n07
+  }
+}
+wet_hex_award_N09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N09
+      NOT = {
+        has_country_flag = wet_hex_reward_N09
+      }
+      has_war_with = H12
+    }
+    set_country_flag = wet_hex_reward_N09
+    add_dynamic_modifier = {
+      modifier = wet_hex_naggaroth_campaign
+      days = 180
+    }
+  }
+}
+wet_hex_award_N10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N10
+      NOT = {
+        has_country_flag = wet_hex_reward_N10
+      }
+      NOT = {
+        has_war_with = H12
+      }
+      OR = {
+        NOT = {
+          H12 = {
+            exists = yes
+          }
+        }
+        H12 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_H12
+      }
+    }
+    set_country_flag = wet_hex_reward_N10
+    add_stability = 0.1
+    add_political_power = 75
+  }
+}
+wet_hex_award_N11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N11
+      NOT = {
+        has_country_flag = wet_hex_reward_N11
+      }
+      OR = {
+        wet_nag_protected_partner = yes
+        has_country_flag = wet_hex_reward_N10
+      }
+    }
+    set_country_flag = wet_hex_reward_N11
+    army_experience = 25
+    add_ideas = wet_hex_n11
+  }
+}
+wet_hex_award_P00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P00
+      NOT = {
+        has_country_flag = wet_hex_reward_P00
+      }
+    }
+    set_country_flag = wet_hex_reward_P00
+    army_experience = 25
+    add_ideas = wet_hex_p00
+  }
+}
+wet_hex_award_P01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P01
+      NOT = {
+        has_country_flag = wet_hex_reward_P01
+      }
+    }
+    set_country_flag = wet_hex_reward_P01
+    add_ideas = wet_hex_p01
+  }
+}
+wet_hex_award_P02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P02
+      NOT = {
+        has_country_flag = wet_hex_reward_P02
+      }
+    }
+    set_country_flag = wet_hex_reward_P02
+    add_ideas = wet_hex_p02
+  }
+}
+wet_hex_award_P03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P03
+      NOT = {
+        has_country_flag = wet_hex_reward_P03
+      }
+    }
+    set_country_flag = wet_hex_reward_P03
+    add_stability = 0.05
+    add_ideas = wet_hex_p03
+  }
+}
+wet_hex_award_P05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P05
+      NOT = {
+        has_country_flag = wet_hex_reward_P05
+      }
+    }
+    set_country_flag = wet_hex_reward_P05
+    add_ideas = wet_hex_p05
+  }
+}
+wet_hex_award_P06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P06
+      NOT = {
+        has_country_flag = wet_hex_reward_P06
+      }
+    }
+    set_country_flag = wet_hex_reward_P06
+    army_experience = 25
+    add_ideas = wet_hex_p06
+  }
+}
+wet_hex_award_P07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P07
+      NOT = {
+        has_country_flag = wet_hex_reward_P07
+      }
+    }
+    set_country_flag = wet_hex_reward_P07
+    add_stability = 0.05
+    add_ideas = wet_hex_p07
+  }
+}
+wet_hex_award_P08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P08
+      NOT = {
+        has_country_flag = wet_hex_reward_P08
+      }
+      has_war_with = U29
+    }
+    set_country_flag = wet_hex_reward_P08
+    add_dynamic_modifier = {
+      modifier = wet_hex_pestilens_campaign
+      days = 180
+    }
+  }
+}
+wet_hex_award_P09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P09
+      NOT = {
+        has_country_flag = wet_hex_reward_P09
+      }
+      901 = {
+        is_fully_controlled_by = V04
+      }
+    }
+    set_country_flag = wet_hex_reward_P09
+    add_political_power = 50
+    army_experience = 25
+  }
+}
+wet_hex_award_P10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P10
+      NOT = {
+        has_country_flag = wet_hex_reward_P10
+      }
+      900 = {
+        is_fully_controlled_by = V04
+      }
+      901 = {
+        is_fully_controlled_by = V04
+      }
+      902 = {
+        is_fully_controlled_by = V04
+      }
+      NOT = {
+        has_war_with = U29
+      }
+      OR = {
+        NOT = {
+          U29 = {
+            exists = yes
+          }
+        }
+        U29 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_U29
+      }
+    }
+    set_country_flag = wet_hex_reward_P10
+    add_stability = 0.1
+    add_ideas = wet_hex_p10
+  }
+}
+wet_hex_award_P11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_P11
+      NOT = {
+        has_country_flag = wet_hex_reward_P11
+      }
+    }
+    set_country_flag = wet_hex_reward_P11
+    add_ideas = wet_hex_p11
+    add_to_variable = {
+      wet_hex_build_P11_industrial_complex = 2
+    }
+    wet_hex_build_P11_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_F00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F00
+      NOT = {
+        has_country_flag = wet_hex_reward_F00
+      }
+    }
+    set_country_flag = wet_hex_reward_F00
+    navy_experience = 25
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.5
+      uses = 1
+      category = naval_equipment
+    }
+  }
+}
+wet_hex_award_F01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F01
+      NOT = {
+        has_country_flag = wet_hex_reward_F01
+      }
+    }
+    set_country_flag = wet_hex_reward_F01
+    add_equipment_to_stockpile = {
+      type = convoy_1
+      amount = 60
+      producer = V04
+    }
+    add_ideas = wet_hex_f01
+  }
+}
+wet_hex_award_F02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F02
+      NOT = {
+        has_country_flag = wet_hex_reward_F02
+      }
+    }
+    set_country_flag = wet_hex_reward_F02
+    add_to_variable = {
+      wet_hex_build_F02_dockyard = 3
+    }
+    wet_hex_build_F02_dockyard_redeem = yes
+  }
+}
+wet_hex_award_F03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F03
+      NOT = {
+        has_country_flag = wet_hex_reward_F03
+      }
+    }
+    set_country_flag = wet_hex_reward_F03
+    navy_experience = 25
+    add_ideas = wet_hex_f03
+  }
+}
+wet_hex_award_F04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F04
+      NOT = {
+        has_country_flag = wet_hex_reward_F04
+      }
+    }
+    set_country_flag = wet_hex_reward_F04
+    add_equipment_to_stockpile = {
+      type = convoy_1
+      amount = 60
+      producer = V04
+    }
+    add_ideas = wet_hex_f04
+  }
+}
+wet_hex_award_F05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F05
+      NOT = {
+        has_country_flag = wet_hex_reward_F05
+      }
+    }
+    set_country_flag = wet_hex_reward_F05
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.5
+      uses = 2
+      category = naval_equipment
+    }
+    add_ideas = wet_hex_f05
+  }
+}
+wet_hex_award_F06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F06
+      NOT = {
+        has_country_flag = wet_hex_reward_F06
+      }
+    }
+    set_country_flag = wet_hex_reward_F06
+    add_ideas = wet_hex_f06
+  }
+}
+wet_hex_award_F07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F07
+      NOT = {
+        has_country_flag = wet_hex_reward_F07
+      }
+    }
+    set_country_flag = wet_hex_reward_F07
+    add_ideas = wet_hex_f07
+  }
+}
+wet_hex_award_F08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F08
+      NOT = {
+        has_country_flag = wet_hex_reward_F08
+      }
+    }
+    set_country_flag = wet_hex_reward_F08
+    navy_experience = 25
+    add_ideas = wet_hex_f08
+  }
+}
+wet_hex_award_F09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F09
+      NOT = {
+        has_country_flag = wet_hex_reward_F09
+      }
+    }
+    set_country_flag = wet_hex_reward_F09
+    add_ideas = wet_hex_f09
+  }
+}
+wet_hex_award_F10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F10
+      NOT = {
+        has_country_flag = wet_hex_reward_F10
+      }
+    }
+    set_country_flag = wet_hex_reward_F10
+    add_ideas = wet_hex_f10
+  }
+}
+wet_hex_award_F11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F11
+      NOT = {
+        has_country_flag = wet_hex_reward_F11
+      }
+    }
+    set_country_flag = wet_hex_reward_F11
+    add_ideas = wet_hex_f11
+  }
+}
+wet_hex_award_F12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F12
+      NOT = {
+        has_country_flag = wet_hex_reward_F12
+      }
+    }
+    set_country_flag = wet_hex_reward_F12
+    add_equipment_to_stockpile = {
+      type = convoy_1
+      amount = 80
+      producer = V04
+    }
+    add_ideas = wet_hex_f12
+  }
+}
+wet_hex_award_F13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_F13
+      NOT = {
+        has_country_flag = wet_hex_reward_F13
+      }
+    }
+    set_country_flag = wet_hex_reward_F13
+    add_ideas = wet_hex_f13
+  }
+}
+wet_hex_award_E00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E00
+      NOT = {
+        has_country_flag = wet_hex_reward_E00
+      }
+    }
+    set_country_flag = wet_hex_reward_E00
+    add_war_support = 0.1
+    army_experience = 25
+  }
+}
+wet_hex_award_E01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E01
+      NOT = {
+        has_country_flag = wet_hex_reward_E01
+      }
+    }
+    set_country_flag = wet_hex_reward_E01
+    add_ideas = wet_hex_e01
+  }
+}
+wet_hex_award_E03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E03
+      NOT = {
+        has_country_flag = wet_hex_reward_E03
+      }
+    }
+    set_country_flag = wet_hex_reward_E03
+    add_political_power = 75
+    add_ideas = wet_hex_e03
+  }
+}
+wet_hex_award_E04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E04
+      NOT = {
+        has_country_flag = wet_hex_reward_E04
+      }
+      wet_hex_grand_alliance_member = yes
+    }
+    set_country_flag = wet_hex_reward_E04
+    army_experience = 25
+    add_ideas = wet_hex_e04
+  }
+}
+wet_hex_award_E06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E06
+      NOT = {
+        has_country_flag = wet_hex_reward_E06
+      }
+    }
+    set_country_flag = wet_hex_reward_E06
+    add_ideas = wet_hex_e06
+  }
+}
+wet_hex_award_E07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E07
+      NOT = {
+        has_country_flag = wet_hex_reward_E07
+      }
+    }
+    set_country_flag = wet_hex_reward_E07
+    army_experience = 25
+    add_ideas = wet_hex_e07
+  }
+}
+wet_hex_award_E08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E08
+      NOT = {
+        has_country_flag = wet_hex_reward_E08
+      }
+      wet_hex_overseas_route = yes
+    }
+    set_country_flag = wet_hex_reward_E08
+    add_ideas = wet_hex_e08
+  }
+}
+wet_hex_award_E10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E10
+      NOT = {
+        has_country_flag = wet_hex_reward_E10
+      }
+      wet_hex_chaos_war = yes
+    }
+    set_country_flag = wet_hex_reward_E10
+    army_experience = 25
+    add_ideas = wet_hex_e10
+  }
+}
+wet_hex_award_E11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E11
+      NOT = {
+        has_country_flag = wet_hex_reward_E11
+      }
+      has_war_with = B99
+    }
+    set_country_flag = wet_hex_reward_E11
+    add_dynamic_modifier = {
+      modifier = wet_hex_everchosen_campaign
+      days = 180
+    }
+  }
+}
+wet_hex_award_E12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E12
+      NOT = {
+        has_country_flag = wet_hex_reward_E12
+      }
+      has_country_flag = wet_hex_fought_everchosen
+    }
+    set_country_flag = wet_hex_reward_E12
+    add_war_support = 0.05
+    add_ideas = wet_hex_e12
+  }
+}
+wet_hex_award_E13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E13
+      NOT = {
+        has_country_flag = wet_hex_reward_E13
+      }
+      has_country_flag = wet_hex_fought_everchosen
+      NOT = {
+        has_war_with = B99
+      }
+      OR = {
+        NOT = {
+          B99 = {
+            exists = yes
+          }
+        }
+        B99 = {
+          is_subject_of = V04
+        }
+        has_country_flag = wet_hex_defeated_B99
+      }
+    }
+    set_country_flag = wet_hex_reward_E13
+    add_stability = 0.1
+    add_war_support = 0.1
+    add_ideas = wet_hex_e13
+  }
+}
+wet_hex_award_B00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B00
+      NOT = {
+        has_country_flag = wet_hex_reward_B00
+      }
+    }
+    set_country_flag = wet_hex_reward_B00
+    army_experience = 25
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.5
+      uses = 1
+      category = armor
+    }
+  }
+}
+wet_hex_award_B01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B01
+      NOT = {
+        has_country_flag = wet_hex_reward_B01
+      }
+      any_owned_state = {
+        is_fully_controlled_by = V04
+        has_resources_amount = {
+          resource = rubber
+          amount
+          >
+          0
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_B01
+    add_to_variable = {
+      wet_hex_monster_sites_B01 = 2
+    }
+    wet_hex_monster_sites_B01_redeem = yes
+  }
+}
+wet_hex_award_B07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B07
+      NOT = {
+        has_country_flag = wet_hex_reward_B07
+      }
+      any_owned_state = {
+        is_fully_controlled_by = V04
+        has_resources_amount = {
+          resource = rubber
+          amount
+          >
+          0
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_B07
+    add_to_variable = {
+      wet_hex_monster_sites_B07 = 1
+    }
+    wet_hex_monster_sites_B07_redeem = yes
+    add_ideas = wet_hex_b07
+  }
+}
+wet_hex_award_B02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B02
+      NOT = {
+        has_country_flag = wet_hex_reward_B02
+      }
+    }
+    set_country_flag = wet_hex_reward_B02
+    add_ideas = wet_hex_b02
+  }
+}
+wet_hex_award_B03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B03
+      NOT = {
+        has_country_flag = wet_hex_reward_B03
+      }
+    }
+    set_country_flag = wet_hex_reward_B03
+    add_tech_bonus = {
+      name = wet_hex_studies
+      bonus = 0.5
+      uses = 2
+      category = electronics
+    }
+  }
+}
+wet_hex_award_B04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B04
+      NOT = {
+        has_country_flag = wet_hex_reward_B04
+      }
+    }
+    set_country_flag = wet_hex_reward_B04
+    add_ideas = wet_hex_b04
+  }
+}
+wet_hex_award_B05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B05
+      NOT = {
+        has_country_flag = wet_hex_reward_B05
+      }
+    }
+    set_country_flag = wet_hex_reward_B05
+    add_ideas = wet_hex_b05
+  }
+}
+wet_hex_award_B06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B06
+      NOT = {
+        has_country_flag = wet_hex_reward_B06
+      }
+    }
+    set_country_flag = wet_hex_reward_B06
+    add_ideas = wet_hex_b06
+  }
+}
+wet_hex_award_B08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B08
+      NOT = {
+        has_country_flag = wet_hex_reward_B08
+      }
+    }
+    set_country_flag = wet_hex_reward_B08
+    add_ideas = wet_hex_b08
+  }
+}
+wet_hex_award_B09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B09
+      NOT = {
+        has_country_flag = wet_hex_reward_B09
+      }
+    }
+    set_country_flag = wet_hex_reward_B09
+    add_ideas = wet_hex_b09
+  }
+}
+wet_hex_award_B10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B10
+      NOT = {
+        has_country_flag = wet_hex_reward_B10
+      }
+    }
+    set_country_flag = wet_hex_reward_B10
+    army_experience = 25
+    add_ideas = wet_hex_b10
+  }
+}
+wet_hex_award_B11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B11
+      NOT = {
+        has_country_flag = wet_hex_reward_B11
+      }
+    }
+    set_country_flag = wet_hex_reward_B11
+    add_ideas = wet_hex_b11
+  }
+}
+wet_hex_award_B12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B12
+      NOT = {
+        has_country_flag = wet_hex_reward_B12
+      }
+    }
+    set_country_flag = wet_hex_reward_B12
+    add_ideas = wet_hex_b12
+  }
+}
+wet_hex_award_B13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B13
+      NOT = {
+        has_country_flag = wet_hex_reward_B13
+      }
+    }
+    set_country_flag = wet_hex_reward_B13
+    army_experience = 25
+    add_ideas = wet_hex_b13
+  }
+}
+wet_hex_award_B14 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B14
+      NOT = {
+        has_country_flag = wet_hex_reward_B14
+      }
+    }
+    set_country_flag = wet_hex_reward_B14
+    add_ideas = wet_hex_b14
+  }
+}
+wet_hex_award_B15 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B15
+      NOT = {
+        has_country_flag = wet_hex_reward_B15
+      }
+    }
+    set_country_flag = wet_hex_reward_B15
+    add_ideas = wet_hex_b15
+  }
+}
+wet_hex_award_B16 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B16
+      NOT = {
+        has_country_flag = wet_hex_reward_B16
+      }
+      has_character = WET_V04_leader
+      WET_V04_leader = {
+        OR = {
+          is_army_leader = yes
+          is_field_marshal = yes
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_B16
+    WET_V04_leader = {
+      add_unit_leader_trait = wet_hex_zlaaq
+    }
+  }
+}
+wet_hex_award_B17 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B17
+      NOT = {
+        has_country_flag = wet_hex_reward_B17
+      }
+    }
+    set_country_flag = wet_hex_reward_B17
+    add_ideas = wet_hex_b17
+  }
+}
+wet_hex_award_B18 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B18
+      NOT = {
+        has_country_flag = wet_hex_reward_B18
+      }
+    }
+    set_country_flag = wet_hex_reward_B18
+    add_ideas = wet_hex_b18
+  }
+}
+wet_hex_award_B19 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_B19
+      NOT = {
+        has_country_flag = wet_hex_reward_B19
+      }
+    }
+    set_country_flag = wet_hex_reward_B19
+    add_ideas = wet_hex_b19
+  }
+}
+wet_hex_award_M00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_M00
+      NOT = {
+        has_country_flag = wet_hex_reward_M00
+      }
+    }
+    set_country_flag = wet_hex_reward_M00
+    add_ideas = wet_hex_m00
+  }
+}
+wet_hex_award_M01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_M01
+      NOT = {
+        has_country_flag = wet_hex_reward_M01
+      }
+    }
+    set_country_flag = wet_hex_reward_M01
+    add_to_variable = {
+      wet_hex_build_M01_industrial_complex = 2
+    }
+    wet_hex_build_M01_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_M02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_M02
+      NOT = {
+        has_country_flag = wet_hex_reward_M02
+      }
+    }
+    set_country_flag = wet_hex_reward_M02
+    add_ideas = wet_hex_m02
+  }
+}
+wet_hex_award_M03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_M03
+      NOT = {
+        has_country_flag = wet_hex_reward_M03
+      }
+    }
+    set_country_flag = wet_hex_reward_M03
+    add_political_power = 50
+    add_to_variable = {
+      wet_hex_build_M03_industrial_complex = 3
+    }
+    wet_hex_build_M03_industrial_complex_redeem = yes
+  }
+}
+wet_hex_award_L00 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L00
+      NOT = {
+        has_country_flag = wet_hex_reward_L00
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_fifty_tt
+        check_variable = {
+          wet_hex_factories
+          >
+          49
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_L00
+    add_political_power = 75
+  }
+}
+wet_hex_award_L01 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L01
+      NOT = {
+        has_country_flag = wet_hex_reward_L01
+      }
+    }
+    set_country_flag = wet_hex_reward_L01
+    add_political_power = 25
+    V03 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V06 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V07 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V08 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V09 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V10 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V11 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V12 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V13 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V14 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V15 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V16 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+    V18 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_goodwill
+          days = 730
+        }
+      }
+    }
+  }
+}
+wet_hex_award_L02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L02
+      NOT = {
+        has_country_flag = wet_hex_reward_L02
+      }
+    }
+    set_country_flag = wet_hex_reward_L02
+    add_stability = 0.05
+  }
+}
+wet_hex_award_L03 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L03
+      NOT = {
+        has_country_flag = wet_hex_reward_L03
+      }
+    }
+    set_country_flag = wet_hex_reward_L03
+    set_country_flag = wet_hex_protection_open
+  }
+}
+wet_hex_award_L04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L04
+      NOT = {
+        has_country_flag = wet_hex_reward_L04
+      }
+    }
+    set_country_flag = wet_hex_reward_L04
+    add_political_power = 50
+    V03 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V06 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+  }
+}
+wet_hex_award_L05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L05
+      NOT = {
+        has_country_flag = wet_hex_reward_L05
+      }
+    }
+    set_country_flag = wet_hex_reward_L05
+    add_political_power = 50
+    V07 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V08 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V09 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V10 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V11 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V12 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V13 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V14 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V15 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V16 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+    V18 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_envoys
+          days = 730
+        }
+      }
+    }
+  }
+}
+wet_hex_award_L06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L06
+      NOT = {
+        has_country_flag = wet_hex_reward_L06
+      }
+    }
+    set_country_flag = wet_hex_reward_L06
+    add_ideas = wet_hex_banner_l06
+  }
+}
+wet_hex_award_L07 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L07
+      NOT = {
+        has_country_flag = wet_hex_reward_L07
+      }
+    }
+    set_country_flag = wet_hex_reward_L07
+    add_ideas = wet_hex_banner_l07
+  }
+}
+wet_hex_award_L09 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L09
+      NOT = {
+        has_country_flag = wet_hex_reward_L09
+      }
+    }
+    set_country_flag = wet_hex_reward_L09
+    army_experience = 25
+    add_ideas = wet_hex_banner_l09
+  }
+}
+wet_hex_award_L11 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L11
+      NOT = {
+        has_country_flag = wet_hex_reward_L11
+      }
+    }
+    set_country_flag = wet_hex_reward_L11
+    add_ideas = wet_hex_banner_l11
+  }
+}
+wet_hex_award_L08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L08
+      NOT = {
+        has_country_flag = wet_hex_reward_L08
+      }
+    }
+    set_country_flag = wet_hex_reward_L08
+    add_ideas = wet_hex_l08
+    V07 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V08 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V09 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V10 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V11 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V12 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V13 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V14 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V15 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V16 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+    V18 = {
+      if = {
+        limit = {
+          exists = yes
+        }
+        add_opinion_modifier = {
+          target = V04
+          modifier = wet_hex_council
+          days = 730
+        }
+      }
+    }
+  }
+}
+wet_hex_award_L10 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L10
+      NOT = {
+        has_country_flag = wet_hex_reward_L10
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_two_subjects_tt
+        check_variable = {
+          wet_hex_subjects
+          >
+          1
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_L10
+    add_stability = 0.05
+    add_political_power = 50
+  }
+}
+wet_hex_award_L12 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L12
+      NOT = {
+        has_country_flag = wet_hex_reward_L12
+      }
+    }
+    set_country_flag = wet_hex_reward_L12
+    add_ideas = wet_hex_l12
+  }
+}
+wet_hex_award_L13 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L13
+      NOT = {
+        has_country_flag = wet_hex_reward_L13
+      }
+    }
+    set_country_flag = wet_hex_reward_L13
+    add_ideas = wet_hex_l13
+    every_army_leader = {
+      gain_xp = 100
+    }
+  }
+}
+wet_hex_award_L14 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L14
+      NOT = {
+        has_country_flag = wet_hex_reward_L14
+      }
+    }
+    set_country_flag = wet_hex_reward_L14
+    set_country_flag = wet_hex_integration_open
+  }
+}
+wet_hex_award_L15 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_L15
+      NOT = {
+        has_country_flag = wet_hex_reward_L15
+      }
+      custom_trigger_tooltip = {
+        tooltip = wet_hex_three_realms_tt
+        check_variable = {
+          wet_hex_union_realms
+          >
+          2
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_L15
+    add_stability = 0.1
+    add_ideas = wet_hex_l15
+  }
+}
+wet_hex_award_N04 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N04
+      NOT = {
+        has_country_flag = wet_hex_reward_N04
+      }
+      H12 = {
+        wet_hex_sendable_restitution = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_N04
+    add_political_power = 25
+    H12 = {
+      wet_hex_send_restitution = yes
+    }
+  }
+}
+wet_hex_award_N06 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N06
+      NOT = {
+        has_country_flag = wet_hex_reward_N06
+      }
+      H12 = {
+        wet_hex_sendable_charter = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_N06
+    H12 = {
+      wet_hex_send_charter = yes
+    }
+  }
+}
+wet_hex_award_N08 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_N08
+      NOT = {
+        has_country_flag = wet_hex_reward_N08
+      }
+      H12 = {
+        wet_hex_sendable_shared_seas = yes
+      }
+    }
+    set_country_flag = wet_hex_reward_N08
+    add_ideas = wet_hex_n08
+    H12 = {
+      wet_hex_send_shared_seas = yes
+    }
+  }
+}
+wet_hex_award_E02 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E02
+      NOT = {
+        has_country_flag = wet_hex_reward_E02
+      }
+      A01 = {
+        exists = yes
+        is_in_faction = yes
+        faction_leader = {
+          wet_hex_sendable_alliance = yes
+        }
+      }
+    }
+    set_country_flag = wet_hex_reward_E02
+    A01 = {
+      faction_leader = {
+        wet_hex_send_alliance = yes
+      }
+    }
+  }
+}
+wet_hex_award_E05 = {
+  if = {
+    limit = {
+      tag = V04
+      has_country_flag = wet_hex_earned_E05
+      NOT = {
+        has_country_flag = wet_hex_reward_E05
+      }
+    }
+    set_country_flag = wet_hex_reward_E05
+    set_country_flag = wet_hex_ports_open
+    add_political_power = 25
+  }
+}
+wet_hex_resolve_earned = {
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C00
+      NOT = {
+        has_country_flag = wet_hex_reward_C00
+      }
+    }
+    wet_hex_award_C00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C01
+      NOT = {
+        has_country_flag = wet_hex_reward_C01
+      }
+    }
+    wet_hex_award_C01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C02
+      NOT = {
+        has_country_flag = wet_hex_reward_C02
+      }
+    }
+    wet_hex_award_C02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C03
+      NOT = {
+        has_country_flag = wet_hex_reward_C03
+      }
+    }
+    wet_hex_award_C03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C04
+      NOT = {
+        has_country_flag = wet_hex_reward_C04
+      }
+    }
+    wet_hex_award_C04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C05
+      NOT = {
+        has_country_flag = wet_hex_reward_C05
+      }
+    }
+    wet_hex_award_C05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C06
+      NOT = {
+        has_country_flag = wet_hex_reward_C06
+      }
+    }
+    wet_hex_award_C06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C07
+      NOT = {
+        has_country_flag = wet_hex_reward_C07
+      }
+    }
+    wet_hex_award_C07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C08
+      NOT = {
+        has_country_flag = wet_hex_reward_C08
+      }
+    }
+    wet_hex_award_C08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C09
+      NOT = {
+        has_country_flag = wet_hex_reward_C09
+      }
+    }
+    wet_hex_award_C09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C10
+      NOT = {
+        has_country_flag = wet_hex_reward_C10
+      }
+    }
+    wet_hex_award_C10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C11
+      NOT = {
+        has_country_flag = wet_hex_reward_C11
+      }
+    }
+    wet_hex_award_C11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C12
+      NOT = {
+        has_country_flag = wet_hex_reward_C12
+      }
+    }
+    wet_hex_award_C12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C13
+      NOT = {
+        has_country_flag = wet_hex_reward_C13
+      }
+    }
+    wet_hex_award_C13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C14
+      NOT = {
+        has_country_flag = wet_hex_reward_C14
+      }
+    }
+    wet_hex_award_C14 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C15
+      NOT = {
+        has_country_flag = wet_hex_reward_C15
+      }
+    }
+    wet_hex_award_C15 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C16
+      NOT = {
+        has_country_flag = wet_hex_reward_C16
+      }
+    }
+    wet_hex_award_C16 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_C17
+      NOT = {
+        has_country_flag = wet_hex_reward_C17
+      }
+    }
+    wet_hex_award_C17 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L00
+      NOT = {
+        has_country_flag = wet_hex_reward_L00
+      }
+    }
+    wet_hex_award_L00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L01
+      NOT = {
+        has_country_flag = wet_hex_reward_L01
+      }
+    }
+    wet_hex_award_L01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L02
+      NOT = {
+        has_country_flag = wet_hex_reward_L02
+      }
+    }
+    wet_hex_award_L02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L03
+      NOT = {
+        has_country_flag = wet_hex_reward_L03
+      }
+    }
+    wet_hex_award_L03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L04
+      NOT = {
+        has_country_flag = wet_hex_reward_L04
+      }
+    }
+    wet_hex_award_L04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L05
+      NOT = {
+        has_country_flag = wet_hex_reward_L05
+      }
+    }
+    wet_hex_award_L05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L06
+      NOT = {
+        has_country_flag = wet_hex_reward_L06
+      }
+    }
+    wet_hex_award_L06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L07
+      NOT = {
+        has_country_flag = wet_hex_reward_L07
+      }
+    }
+    wet_hex_award_L07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L08
+      NOT = {
+        has_country_flag = wet_hex_reward_L08
+      }
+    }
+    wet_hex_award_L08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L09
+      NOT = {
+        has_country_flag = wet_hex_reward_L09
+      }
+    }
+    wet_hex_award_L09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L10
+      NOT = {
+        has_country_flag = wet_hex_reward_L10
+      }
+    }
+    wet_hex_award_L10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L11
+      NOT = {
+        has_country_flag = wet_hex_reward_L11
+      }
+    }
+    wet_hex_award_L11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L12
+      NOT = {
+        has_country_flag = wet_hex_reward_L12
+      }
+    }
+    wet_hex_award_L12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L13
+      NOT = {
+        has_country_flag = wet_hex_reward_L13
+      }
+    }
+    wet_hex_award_L13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L14
+      NOT = {
+        has_country_flag = wet_hex_reward_L14
+      }
+    }
+    wet_hex_award_L14 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_L15
+      NOT = {
+        has_country_flag = wet_hex_reward_L15
+      }
+    }
+    wet_hex_award_L15 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_W00
+      NOT = {
+        has_country_flag = wet_hex_reward_W00
+      }
+    }
+    wet_hex_award_W00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X00
+      NOT = {
+        has_country_flag = wet_hex_reward_X00
+      }
+    }
+    wet_hex_award_X00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X01
+      NOT = {
+        has_country_flag = wet_hex_reward_X01
+      }
+    }
+    wet_hex_award_X01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X02
+      NOT = {
+        has_country_flag = wet_hex_reward_X02
+      }
+    }
+    wet_hex_award_X02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X03
+      NOT = {
+        has_country_flag = wet_hex_reward_X03
+      }
+    }
+    wet_hex_award_X03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X04
+      NOT = {
+        has_country_flag = wet_hex_reward_X04
+      }
+    }
+    wet_hex_award_X04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X05
+      NOT = {
+        has_country_flag = wet_hex_reward_X05
+      }
+    }
+    wet_hex_award_X05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X06
+      NOT = {
+        has_country_flag = wet_hex_reward_X06
+      }
+    }
+    wet_hex_award_X06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X07
+      NOT = {
+        has_country_flag = wet_hex_reward_X07
+      }
+    }
+    wet_hex_award_X07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X08
+      NOT = {
+        has_country_flag = wet_hex_reward_X08
+      }
+    }
+    wet_hex_award_X08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X09
+      NOT = {
+        has_country_flag = wet_hex_reward_X09
+      }
+    }
+    wet_hex_award_X09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X10
+      NOT = {
+        has_country_flag = wet_hex_reward_X10
+      }
+    }
+    wet_hex_award_X10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X11
+      NOT = {
+        has_country_flag = wet_hex_reward_X11
+      }
+    }
+    wet_hex_award_X11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X12
+      NOT = {
+        has_country_flag = wet_hex_reward_X12
+      }
+    }
+    wet_hex_award_X12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_X13
+      NOT = {
+        has_country_flag = wet_hex_reward_X13
+      }
+    }
+    wet_hex_award_X13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N00
+      NOT = {
+        has_country_flag = wet_hex_reward_N00
+      }
+    }
+    wet_hex_award_N00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N01
+      NOT = {
+        has_country_flag = wet_hex_reward_N01
+      }
+    }
+    wet_hex_award_N01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N02
+      NOT = {
+        has_country_flag = wet_hex_reward_N02
+      }
+    }
+    wet_hex_award_N02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N03
+      NOT = {
+        has_country_flag = wet_hex_reward_N03
+      }
+    }
+    wet_hex_award_N03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N04
+      NOT = {
+        has_country_flag = wet_hex_reward_N04
+      }
+    }
+    wet_hex_award_N04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N05
+      NOT = {
+        has_country_flag = wet_hex_reward_N05
+      }
+    }
+    wet_hex_award_N05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N06
+      NOT = {
+        has_country_flag = wet_hex_reward_N06
+      }
+    }
+    wet_hex_award_N06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N07
+      NOT = {
+        has_country_flag = wet_hex_reward_N07
+      }
+    }
+    wet_hex_award_N07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N08
+      NOT = {
+        has_country_flag = wet_hex_reward_N08
+      }
+    }
+    wet_hex_award_N08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N09
+      NOT = {
+        has_country_flag = wet_hex_reward_N09
+      }
+    }
+    wet_hex_award_N09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N10
+      NOT = {
+        has_country_flag = wet_hex_reward_N10
+      }
+    }
+    wet_hex_award_N10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_N11
+      NOT = {
+        has_country_flag = wet_hex_reward_N11
+      }
+    }
+    wet_hex_award_N11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P00
+      NOT = {
+        has_country_flag = wet_hex_reward_P00
+      }
+    }
+    wet_hex_award_P00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P01
+      NOT = {
+        has_country_flag = wet_hex_reward_P01
+      }
+    }
+    wet_hex_award_P01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P02
+      NOT = {
+        has_country_flag = wet_hex_reward_P02
+      }
+    }
+    wet_hex_award_P02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P03
+      NOT = {
+        has_country_flag = wet_hex_reward_P03
+      }
+    }
+    wet_hex_award_P03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P04
+      NOT = {
+        has_country_flag = wet_hex_reward_P04
+      }
+    }
+    wet_hex_award_P04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P05
+      NOT = {
+        has_country_flag = wet_hex_reward_P05
+      }
+    }
+    wet_hex_award_P05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P06
+      NOT = {
+        has_country_flag = wet_hex_reward_P06
+      }
+    }
+    wet_hex_award_P06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P07
+      NOT = {
+        has_country_flag = wet_hex_reward_P07
+      }
+    }
+    wet_hex_award_P07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P08
+      NOT = {
+        has_country_flag = wet_hex_reward_P08
+      }
+    }
+    wet_hex_award_P08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P09
+      NOT = {
+        has_country_flag = wet_hex_reward_P09
+      }
+    }
+    wet_hex_award_P09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P10
+      NOT = {
+        has_country_flag = wet_hex_reward_P10
+      }
+    }
+    wet_hex_award_P10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_P11
+      NOT = {
+        has_country_flag = wet_hex_reward_P11
+      }
+    }
+    wet_hex_award_P11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F00
+      NOT = {
+        has_country_flag = wet_hex_reward_F00
+      }
+    }
+    wet_hex_award_F00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F01
+      NOT = {
+        has_country_flag = wet_hex_reward_F01
+      }
+    }
+    wet_hex_award_F01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F02
+      NOT = {
+        has_country_flag = wet_hex_reward_F02
+      }
+    }
+    wet_hex_award_F02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F03
+      NOT = {
+        has_country_flag = wet_hex_reward_F03
+      }
+    }
+    wet_hex_award_F03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F04
+      NOT = {
+        has_country_flag = wet_hex_reward_F04
+      }
+    }
+    wet_hex_award_F04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F05
+      NOT = {
+        has_country_flag = wet_hex_reward_F05
+      }
+    }
+    wet_hex_award_F05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F06
+      NOT = {
+        has_country_flag = wet_hex_reward_F06
+      }
+    }
+    wet_hex_award_F06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F07
+      NOT = {
+        has_country_flag = wet_hex_reward_F07
+      }
+    }
+    wet_hex_award_F07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F08
+      NOT = {
+        has_country_flag = wet_hex_reward_F08
+      }
+    }
+    wet_hex_award_F08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F09
+      NOT = {
+        has_country_flag = wet_hex_reward_F09
+      }
+    }
+    wet_hex_award_F09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F10
+      NOT = {
+        has_country_flag = wet_hex_reward_F10
+      }
+    }
+    wet_hex_award_F10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F11
+      NOT = {
+        has_country_flag = wet_hex_reward_F11
+      }
+    }
+    wet_hex_award_F11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F12
+      NOT = {
+        has_country_flag = wet_hex_reward_F12
+      }
+    }
+    wet_hex_award_F12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_F13
+      NOT = {
+        has_country_flag = wet_hex_reward_F13
+      }
+    }
+    wet_hex_award_F13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E00
+      NOT = {
+        has_country_flag = wet_hex_reward_E00
+      }
+    }
+    wet_hex_award_E00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E01
+      NOT = {
+        has_country_flag = wet_hex_reward_E01
+      }
+    }
+    wet_hex_award_E01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E02
+      NOT = {
+        has_country_flag = wet_hex_reward_E02
+      }
+    }
+    wet_hex_award_E02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E03
+      NOT = {
+        has_country_flag = wet_hex_reward_E03
+      }
+    }
+    wet_hex_award_E03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E04
+      NOT = {
+        has_country_flag = wet_hex_reward_E04
+      }
+    }
+    wet_hex_award_E04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E05
+      NOT = {
+        has_country_flag = wet_hex_reward_E05
+      }
+    }
+    wet_hex_award_E05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E06
+      NOT = {
+        has_country_flag = wet_hex_reward_E06
+      }
+    }
+    wet_hex_award_E06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E07
+      NOT = {
+        has_country_flag = wet_hex_reward_E07
+      }
+    }
+    wet_hex_award_E07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E08
+      NOT = {
+        has_country_flag = wet_hex_reward_E08
+      }
+    }
+    wet_hex_award_E08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E09
+      NOT = {
+        has_country_flag = wet_hex_reward_E09
+      }
+    }
+    wet_hex_award_E09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E10
+      NOT = {
+        has_country_flag = wet_hex_reward_E10
+      }
+    }
+    wet_hex_award_E10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E11
+      NOT = {
+        has_country_flag = wet_hex_reward_E11
+      }
+    }
+    wet_hex_award_E11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E12
+      NOT = {
+        has_country_flag = wet_hex_reward_E12
+      }
+    }
+    wet_hex_award_E12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_E13
+      NOT = {
+        has_country_flag = wet_hex_reward_E13
+      }
+    }
+    wet_hex_award_E13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B00
+      NOT = {
+        has_country_flag = wet_hex_reward_B00
+      }
+    }
+    wet_hex_award_B00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B01
+      NOT = {
+        has_country_flag = wet_hex_reward_B01
+      }
+    }
+    wet_hex_award_B01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B02
+      NOT = {
+        has_country_flag = wet_hex_reward_B02
+      }
+    }
+    wet_hex_award_B02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B03
+      NOT = {
+        has_country_flag = wet_hex_reward_B03
+      }
+    }
+    wet_hex_award_B03 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B04
+      NOT = {
+        has_country_flag = wet_hex_reward_B04
+      }
+    }
+    wet_hex_award_B04 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B05
+      NOT = {
+        has_country_flag = wet_hex_reward_B05
+      }
+    }
+    wet_hex_award_B05 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B06
+      NOT = {
+        has_country_flag = wet_hex_reward_B06
+      }
+    }
+    wet_hex_award_B06 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B07
+      NOT = {
+        has_country_flag = wet_hex_reward_B07
+      }
+    }
+    wet_hex_award_B07 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B08
+      NOT = {
+        has_country_flag = wet_hex_reward_B08
+      }
+    }
+    wet_hex_award_B08 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B09
+      NOT = {
+        has_country_flag = wet_hex_reward_B09
+      }
+    }
+    wet_hex_award_B09 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B10
+      NOT = {
+        has_country_flag = wet_hex_reward_B10
+      }
+    }
+    wet_hex_award_B10 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B11
+      NOT = {
+        has_country_flag = wet_hex_reward_B11
+      }
+    }
+    wet_hex_award_B11 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B12
+      NOT = {
+        has_country_flag = wet_hex_reward_B12
+      }
+    }
+    wet_hex_award_B12 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B13
+      NOT = {
+        has_country_flag = wet_hex_reward_B13
+      }
+    }
+    wet_hex_award_B13 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B14
+      NOT = {
+        has_country_flag = wet_hex_reward_B14
+      }
+    }
+    wet_hex_award_B14 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B15
+      NOT = {
+        has_country_flag = wet_hex_reward_B15
+      }
+    }
+    wet_hex_award_B15 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B16
+      NOT = {
+        has_country_flag = wet_hex_reward_B16
+      }
+    }
+    wet_hex_award_B16 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B17
+      NOT = {
+        has_country_flag = wet_hex_reward_B17
+      }
+    }
+    wet_hex_award_B17 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B18
+      NOT = {
+        has_country_flag = wet_hex_reward_B18
+      }
+    }
+    wet_hex_award_B18 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_B19
+      NOT = {
+        has_country_flag = wet_hex_reward_B19
+      }
+    }
+    wet_hex_award_B19 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_M00
+      NOT = {
+        has_country_flag = wet_hex_reward_M00
+      }
+    }
+    wet_hex_award_M00 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_M01
+      NOT = {
+        has_country_flag = wet_hex_reward_M01
+      }
+    }
+    wet_hex_award_M01 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_M02
+      NOT = {
+        has_country_flag = wet_hex_reward_M02
+      }
+    }
+    wet_hex_award_M02 = yes
+  }
+  if = {
+    limit = {
+      has_country_flag = wet_hex_earned_M03
+      NOT = {
+        has_country_flag = wet_hex_reward_M03
+      }
+    }
+    wet_hex_award_M03 = yes
+  }
+}
+wet_hex_daily = {
+  if = {
+    limit = {
+      tag = V04
+      exists = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C02_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_C02_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C04_infrastructure
+          >
+          0
+        }
+      }
+      wet_hex_build_C04_infrastructure_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C07_infrastructure
+          >
+          0
+        }
+      }
+      wet_hex_build_C07_infrastructure_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C08_arms_factory
+          >
+          0
+        }
+      }
+      wet_hex_build_C08_arms_factory_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C11_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_C11_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C12_arms_factory
+          >
+          0
+        }
+      }
+      wet_hex_build_C12_arms_factory_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C13_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_C13_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_C16_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_C16_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_X07_dockyard
+          >
+          0
+        }
+      }
+      wet_hex_build_X07_dockyard_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_X09_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_X09_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_X11_infrastructure
+          >
+          0
+        }
+      }
+      wet_hex_build_X11_infrastructure_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_X13_naval_base
+          >
+          0
+        }
+      }
+      wet_hex_build_X13_naval_base_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_P11_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_P11_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_F02_dockyard
+          >
+          0
+        }
+      }
+      wet_hex_build_F02_dockyard_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_monster_sites_B01
+          >
+          0
+        }
+      }
+      wet_hex_monster_sites_B01_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_monster_sites_B07
+          >
+          0
+        }
+      }
+      wet_hex_monster_sites_B07_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_M01_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_M01_industrial_complex_redeem = yes
+    }
+    if = {
+      limit = {
+        check_variable = {
+          wet_hex_build_M03_industrial_complex
+          >
+          0
+        }
+      }
+      wet_hex_build_M03_industrial_complex_redeem = yes
+    }
+    wet_hex_count_industry = yes
+    wet_hex_count_union = yes
+    if = {
+      limit = {
+        has_war_with = B99
+      }
+      set_country_flag = wet_hex_fought_everchosen
+    }
+    for_each_scope_loop = {
+      array = wet_hex_active_recipients
+      wet_hex_tick_offers = yes
+    }
+    wet_hex_resolve_earned = yes
+    if = {
+      limit = {
+        has_country_flag = wet_hex_reward_B16
+        has_character = WET_V04_leader
+        WET_V04_leader = {
+          OR = {
+            is_army_leader = yes
+            is_field_marshal = yes
+          }
+          NOT = {
+            has_trait = wet_hex_zlaaq
+          }
+        }
+      }
+      WET_V04_leader = {
+        add_unit_leader_trait = wet_hex_zlaaq
+      }
+    }
+  }
+}
+wet_hex_member_daily = {
+  wet_hex_count_industry = yes
+  if = {
+    limit = {
+      is_subject_of = V04
+    }
+    add_to_variable = {
+      wet_hex_subject_days = 1
+    }
+  }
+  else = {
+    set_variable = {
+      wet_hex_subject_days = 0
+    }
+  }
+  if = {
+    limit = {
+      wet_hex_temple = yes
+      is_subject_of = V04
+      V04 = {
+        exists = yes
+        has_country_flag = wet_hex_reward_L06
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          has_idea = wet_hex_banner_l06
+        }
+      }
+      add_ideas = wet_hex_banner_l06
+    }
+  }
+  else = {
+    remove_ideas = wet_hex_banner_l06
+  }
+  if = {
+    limit = {
+      wet_hex_temple = yes
+      is_subject_of = V04
+      V04 = {
+        exists = yes
+        has_country_flag = wet_hex_reward_L07
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          has_idea = wet_hex_banner_l07
+        }
+      }
+      add_ideas = wet_hex_banner_l07
+    }
+  }
+  else = {
+    remove_ideas = wet_hex_banner_l07
+  }
+  if = {
+    limit = {
+      wet_hex_temple = yes
+      is_subject_of = V04
+      V04 = {
+        exists = yes
+        has_country_flag = wet_hex_reward_L09
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          has_idea = wet_hex_banner_l09
+        }
+      }
+      add_ideas = wet_hex_banner_l09
+    }
+  }
+  else = {
+    remove_ideas = wet_hex_banner_l09
+  }
+  if = {
+    limit = {
+      wet_hex_temple = yes
+      is_subject_of = V04
+      V04 = {
+        exists = yes
+        has_country_flag = wet_hex_reward_L11
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          has_idea = wet_hex_banner_l11
+        }
+      }
+      add_ideas = wet_hex_banner_l11
+    }
+  }
+  else = {
+    remove_ideas = wet_hex_banner_l11
+  }
+  if = {
+    limit = {
+      wet_hex_temple = yes
+      is_subject_of = V04
+      V04 = {
+        exists = yes
+        has_country_flag = wet_hex_reward_L12
+      }
+    }
+    add_ideas = wet_hex_union_administration
+  }
+  else = {
+    remove_ideas = wet_hex_union_administration
+  }
+}

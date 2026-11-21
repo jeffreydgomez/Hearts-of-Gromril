@@ -1,33 +1,76 @@
-# Diplomatic action: ROOT is the faction leader; THIS is the recipient.
 wet_faction_absorption_member = {
- ROOT = { exists = yes is_faction_leader = yes }
- exists = yes
- is_ai = yes
- is_major = no
- NOT = { tag = ROOT }
- is_in_faction_with = ROOT
- is_neighbor_of = ROOT
+  ROOT = {
+    exists = yes
+    is_faction_leader = yes
+  }
+  exists = yes
+  is_ai = yes
+  is_major = no
+  NOT = {
+    tag = ROOT
+  }
+  is_in_faction_with = ROOT
+  is_neighbor_of = ROOT
+  NOT = {
+    wet_syl_sovereignty_protected = yes
+  }
+  NOT = {
+    AND = {
+      has_country_flag = wet_syl_concord_invited
+      is_in_faction_with = A13
+      A13 = {
+        wet_syl_concord_active = yes
+      }
+    }
+  }
 }
 wet_faction_absorption_same_wars = {
- # A shared war alone is insufficient: neither side may have an extra enemy.
- OR = { has_war = no has_war_together_with = ROOT }
- NOT = { any_enemy_country = { NOT = { has_war_with = ROOT } } }
- ROOT = {
-  NOT = { any_enemy_country = { NOT = { has_war_with = PREV.PREV } } }
- }
+  OR = {
+    has_war = no
+    has_war_together_with = ROOT
+  }
+  NOT = {
+    any_enemy_country = {
+      NOT = {
+        has_war_with = ROOT
+      }
+    }
+  }
+  ROOT = {
+    NOT = {
+      any_enemy_country = {
+        NOT = {
+          has_war_with = PREV.PREV
+        }
+      }
+    }
+  }
 }
 wet_faction_absorption_same_continent = {
- # Native COUNTRY comparison uses each country's current capital state.
- is_on_same_continent_as = ROOT
+  is_on_same_continent_as = ROOT
 }
 wet_faction_absorption_ready = {
- check_variable = { wet_faction_absorption_cooldown < 1 }
+  check_variable = {
+    wet_faction_absorption_cooldown
+    <
+    1
+  }
 }
 wet_faction_absorption_target = {
- wet_faction_absorption_member = yes
- NOT = { threat < 1 }
- NOT = { has_war_with = ROOT }
- wet_faction_absorption_same_wars = yes
- wet_faction_absorption_same_continent = yes
- ROOT = { wet_faction_absorption_ready = yes }
+  wet_faction_absorption_member = yes
+  NOT = {
+    OR = {
+      threat
+      <
+      1
+    }
+  }
+  NOT = {
+    has_war_with = ROOT
+  }
+  wet_faction_absorption_same_wars = yes
+  wet_faction_absorption_same_continent = yes
+  ROOT = {
+    wet_faction_absorption_ready = yes
+  }
 }

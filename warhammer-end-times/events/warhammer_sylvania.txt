@@ -1,0 +1,2750 @@
+add_namespace = wet_sylvania
+country_event = {
+  id = wet_sylvania.100
+  title = wet_sylvania.100.t
+  desc = wet_sylvania.100.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.100.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.101
+  title = wet_sylvania.101.t
+  desc = wet_sylvania.101.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.101.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.102
+  title = wet_sylvania.102.t
+  desc = wet_sylvania.102.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.102.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.103
+  title = wet_sylvania.103.t
+  desc = wet_sylvania.103.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.103.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      exists = yes
+      is_subject = no
+      OR = {
+        AND = {
+          tag = U24
+          is_in_faction = no
+        }
+        AND = {
+          is_faction_leader = yes
+          OR = {
+            tag = U24
+            is_in_faction_with = U24
+          }
+        }
+      }
+      A13 = {
+        has_country_flag = wet_syl_admission_pending
+        check_variable = {
+          wet_syl_admission_kind = 1
+        }
+        check_variable = {
+          wet_syl_admission_days
+          >
+          0
+        }
+        wet_syl_nagash_admission_legal = yes
+        has_country_flag = wet_syl_leader_reply
+        is_in_array = {
+          wet_syl_admission_leader = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          is_subject = no
+          OR = {
+            AND = {
+              tag = U24
+              is_in_faction = no
+            }
+            AND = {
+              is_faction_leader = yes
+              OR = {
+                tag = U24
+                is_in_faction_with = U24
+              }
+            }
+          }
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 1
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_nagash_admission_legal = yes
+            has_country_flag = wet_syl_leader_reply
+            is_in_array = {
+              wet_syl_admission_leader = PREV
+            }
+          }
+        }
+        wet_syl_admit_nagash = yes
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.103.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          is_subject = no
+          OR = {
+            AND = {
+              tag = U24
+              is_in_faction = no
+            }
+            AND = {
+              is_faction_leader = yes
+              OR = {
+                tag = U24
+                is_in_faction_with = U24
+              }
+            }
+          }
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 1
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_nagash_admission_legal = yes
+            has_country_flag = wet_syl_leader_reply
+            is_in_array = {
+              wet_syl_admission_leader = PREV
+            }
+          }
+        }
+        A13 = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_admission_pending
+              check_variable = {
+                wet_syl_admission_kind = 1
+              }
+              check_variable = {
+                wet_syl_admission_days
+                >
+                0
+              }
+              wet_syl_nagash_admission_legal = yes
+            }
+            wet_syl_clear_admission = yes
+            uncomplete_national_focus = {
+              focus = WET_SYL_N01
+              uncomplete_children = no
+            }
+            country_event = {
+              id = wet_sylvania.101
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.104
+  title = wet_sylvania.104.t
+  desc = wet_sylvania.104.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.104.0
+    ai_chance = {
+      factor = 100
+    }
+    trigger = {
+      tag = U24
+      A13 = {
+        has_country_flag = wet_syl_admission_pending
+        check_variable = {
+          wet_syl_admission_kind = 1
+        }
+        check_variable = {
+          wet_syl_admission_days
+          >
+          0
+        }
+        wet_syl_nagash_admission_legal = yes
+        NOT = {
+          has_country_flag = wet_syl_leader_reply
+        }
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = WET_SYL_nagash_admission_effect_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = U24
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 1
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_nagash_admission_legal = yes
+            NOT = {
+              has_country_flag = wet_syl_leader_reply
+            }
+          }
+        }
+        if = {
+          limit = {
+            OR = {
+              is_in_faction = no
+              is_faction_leader = yes
+            }
+          }
+          wet_syl_admit_nagash = yes
+        }
+        else = {
+          faction_leader = {
+            A13 = {
+              set_country_flag = wet_syl_leader_reply
+              add_to_array = {
+                wet_syl_admission_leader = PREV
+              }
+            }
+            country_event = {
+              id = wet_sylvania.103
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.104.1
+    ai_chance = {
+      factor = 0
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = U24
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 1
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_nagash_admission_legal = yes
+            NOT = {
+              has_country_flag = wet_syl_leader_reply
+            }
+          }
+        }
+        A13 = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_admission_pending
+              check_variable = {
+                wet_syl_admission_kind = 1
+              }
+              check_variable = {
+                wet_syl_admission_days
+                >
+                0
+              }
+              wet_syl_nagash_admission_legal = yes
+            }
+            wet_syl_clear_admission = yes
+            uncomplete_national_focus = {
+              focus = WET_SYL_N01
+              uncomplete_children = no
+            }
+            country_event = {
+              id = wet_sylvania.101
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.105
+  title = wet_sylvania.105.t
+  desc = wet_sylvania.105.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.105.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.106
+  title = wet_sylvania.106.t
+  desc = wet_sylvania.106.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.106.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.107
+  title = wet_sylvania.107.t
+  desc = wet_sylvania.107.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.107.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.108
+  title = wet_sylvania.108.t
+  desc = wet_sylvania.108.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.108.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      exists = yes
+      is_subject = no
+      OR = {
+        AND = {
+          tag = A01
+          is_in_faction = no
+        }
+        AND = {
+          is_faction_leader = yes
+          OR = {
+            tag = A01
+            is_in_faction_with = A01
+          }
+        }
+      }
+      A13 = {
+        has_country_flag = wet_syl_admission_pending
+        check_variable = {
+          wet_syl_admission_kind = 2
+        }
+        check_variable = {
+          wet_syl_admission_days
+          >
+          0
+        }
+        wet_syl_empire_admission_legal = yes
+        has_country_flag = wet_syl_leader_reply
+        is_in_array = {
+          wet_syl_admission_leader = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          is_subject = no
+          OR = {
+            AND = {
+              tag = A01
+              is_in_faction = no
+            }
+            AND = {
+              is_faction_leader = yes
+              OR = {
+                tag = A01
+                is_in_faction_with = A01
+              }
+            }
+          }
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 2
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_empire_admission_legal = yes
+            has_country_flag = wet_syl_leader_reply
+            is_in_array = {
+              wet_syl_admission_leader = PREV
+            }
+          }
+        }
+        wet_syl_admit_empire = yes
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.108.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          is_subject = no
+          OR = {
+            AND = {
+              tag = A01
+              is_in_faction = no
+            }
+            AND = {
+              is_faction_leader = yes
+              OR = {
+                tag = A01
+                is_in_faction_with = A01
+              }
+            }
+          }
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 2
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_empire_admission_legal = yes
+            has_country_flag = wet_syl_leader_reply
+            is_in_array = {
+              wet_syl_admission_leader = PREV
+            }
+          }
+        }
+        A13 = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_admission_pending
+              check_variable = {
+                wet_syl_admission_kind = 2
+              }
+              check_variable = {
+                wet_syl_admission_days
+                >
+                0
+              }
+              wet_syl_empire_admission_legal = yes
+            }
+            wet_syl_clear_admission = yes
+            uncomplete_national_focus = {
+              focus = WET_SYL_E00
+              uncomplete_children = no
+            }
+            country_event = {
+              id = wet_sylvania.106
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.109
+  title = wet_sylvania.109.t
+  desc = wet_sylvania.109.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.109.0
+    ai_chance = {
+      factor = 100
+    }
+    trigger = {
+      tag = A01
+      A13 = {
+        has_country_flag = wet_syl_admission_pending
+        check_variable = {
+          wet_syl_admission_kind = 2
+        }
+        check_variable = {
+          wet_syl_admission_days
+          >
+          0
+        }
+        wet_syl_empire_admission_legal = yes
+        NOT = {
+          has_country_flag = wet_syl_leader_reply
+        }
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = WET_SYL_empire_admission_effect_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 2
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_empire_admission_legal = yes
+            NOT = {
+              has_country_flag = wet_syl_leader_reply
+            }
+          }
+        }
+        if = {
+          limit = {
+            OR = {
+              is_in_faction = no
+              is_faction_leader = yes
+            }
+          }
+          wet_syl_admit_empire = yes
+        }
+        else = {
+          faction_leader = {
+            A13 = {
+              set_country_flag = wet_syl_leader_reply
+              add_to_array = {
+                wet_syl_admission_leader = PREV
+              }
+            }
+            country_event = {
+              id = wet_sylvania.108
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.109.1
+    ai_chance = {
+      factor = 0
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A01
+          A13 = {
+            has_country_flag = wet_syl_admission_pending
+            check_variable = {
+              wet_syl_admission_kind = 2
+            }
+            check_variable = {
+              wet_syl_admission_days
+              >
+              0
+            }
+            wet_syl_empire_admission_legal = yes
+            NOT = {
+              has_country_flag = wet_syl_leader_reply
+            }
+          }
+        }
+        A13 = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_admission_pending
+              check_variable = {
+                wet_syl_admission_kind = 2
+              }
+              check_variable = {
+                wet_syl_admission_days
+                >
+                0
+              }
+              wet_syl_empire_admission_legal = yes
+            }
+            wet_syl_clear_admission = yes
+            uncomplete_national_focus = {
+              focus = WET_SYL_E00
+              uncomplete_children = no
+            }
+            country_event = {
+              id = wet_sylvania.106
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.110
+  title = wet_sylvania.110.t
+  desc = wet_sylvania.110.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.110.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.111
+  title = wet_sylvania.111.t
+  desc = wet_sylvania.111.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.111.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.112
+  title = wet_sylvania.112.t
+  desc = wet_sylvania.112.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.112.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.113
+  title = wet_sylvania.113.t
+  desc = wet_sylvania.113.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.113.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_A76
+      check_variable = {
+        wet_syl_offer_invite_A76_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_A76
+          check_variable = {
+            wet_syl_offer_invite_A76_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_A76
+          set_variable = {
+            wet_syl_offer_invite_A76_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.110
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_A76
+            }
+            clr_country_flag = wet_syl_offer_invite_A76
+            set_variable = {
+              wet_syl_offer_invite_A76_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.112
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_A76
+          }
+          clr_country_flag = wet_syl_offer_invite_A76
+          set_variable = {
+            wet_syl_offer_invite_A76_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.112
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.113.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_A76
+        }
+        clr_country_flag = wet_syl_offer_invite_A76
+        set_variable = {
+          wet_syl_offer_invite_A76_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.111
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.114
+  title = wet_sylvania.114.t
+  desc = wet_sylvania.114.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.114.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.115
+  title = wet_sylvania.115.t
+  desc = wet_sylvania.115.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.115.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.116
+  title = wet_sylvania.116.t
+  desc = wet_sylvania.116.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.116.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.117
+  title = wet_sylvania.117.t
+  desc = wet_sylvania.117.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.117.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_A20
+      check_variable = {
+        wet_syl_offer_invite_A20_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_A20
+          check_variable = {
+            wet_syl_offer_invite_A20_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_A20
+          set_variable = {
+            wet_syl_offer_invite_A20_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.114
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_A20
+            }
+            clr_country_flag = wet_syl_offer_invite_A20
+            set_variable = {
+              wet_syl_offer_invite_A20_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.116
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_A20
+          }
+          clr_country_flag = wet_syl_offer_invite_A20
+          set_variable = {
+            wet_syl_offer_invite_A20_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.116
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.117.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_A20
+        }
+        clr_country_flag = wet_syl_offer_invite_A20
+        set_variable = {
+          wet_syl_offer_invite_A20_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.115
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.118
+  title = wet_sylvania.118.t
+  desc = wet_sylvania.118.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.118.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.119
+  title = wet_sylvania.119.t
+  desc = wet_sylvania.119.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.119.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.120
+  title = wet_sylvania.120.t
+  desc = wet_sylvania.120.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.120.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.121
+  title = wet_sylvania.121.t
+  desc = wet_sylvania.121.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.121.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_B16
+      check_variable = {
+        wet_syl_offer_invite_B16_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_B16
+          check_variable = {
+            wet_syl_offer_invite_B16_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_B16
+          set_variable = {
+            wet_syl_offer_invite_B16_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.118
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_B16
+            }
+            clr_country_flag = wet_syl_offer_invite_B16
+            set_variable = {
+              wet_syl_offer_invite_B16_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.120
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_B16
+          }
+          clr_country_flag = wet_syl_offer_invite_B16
+          set_variable = {
+            wet_syl_offer_invite_B16_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.120
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.121.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_B16
+        }
+        clr_country_flag = wet_syl_offer_invite_B16
+        set_variable = {
+          wet_syl_offer_invite_B16_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.119
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.122
+  title = wet_sylvania.122.t
+  desc = wet_sylvania.122.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.122.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.123
+  title = wet_sylvania.123.t
+  desc = wet_sylvania.123.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.123.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.124
+  title = wet_sylvania.124.t
+  desc = wet_sylvania.124.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.124.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.125
+  title = wet_sylvania.125.t
+  desc = wet_sylvania.125.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.125.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_B27
+      check_variable = {
+        wet_syl_offer_invite_B27_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_B27
+          check_variable = {
+            wet_syl_offer_invite_B27_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_B27
+          set_variable = {
+            wet_syl_offer_invite_B27_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.122
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_B27
+            }
+            clr_country_flag = wet_syl_offer_invite_B27
+            set_variable = {
+              wet_syl_offer_invite_B27_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.124
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_B27
+          }
+          clr_country_flag = wet_syl_offer_invite_B27
+          set_variable = {
+            wet_syl_offer_invite_B27_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.124
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.125.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_B27
+        }
+        clr_country_flag = wet_syl_offer_invite_B27
+        set_variable = {
+          wet_syl_offer_invite_B27_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.123
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.126
+  title = wet_sylvania.126.t
+  desc = wet_sylvania.126.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.126.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.127
+  title = wet_sylvania.127.t
+  desc = wet_sylvania.127.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.127.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.128
+  title = wet_sylvania.128.t
+  desc = wet_sylvania.128.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.128.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.129
+  title = wet_sylvania.129.t
+  desc = wet_sylvania.129.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.129.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_U18
+      check_variable = {
+        wet_syl_offer_invite_U18_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_U18
+          check_variable = {
+            wet_syl_offer_invite_U18_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_U18
+          set_variable = {
+            wet_syl_offer_invite_U18_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.126
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_U18
+            }
+            clr_country_flag = wet_syl_offer_invite_U18
+            set_variable = {
+              wet_syl_offer_invite_U18_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.128
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_U18
+          }
+          clr_country_flag = wet_syl_offer_invite_U18
+          set_variable = {
+            wet_syl_offer_invite_U18_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.128
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.129.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_U18
+        }
+        clr_country_flag = wet_syl_offer_invite_U18
+        set_variable = {
+          wet_syl_offer_invite_U18_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.127
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.130
+  title = wet_sylvania.130.t
+  desc = wet_sylvania.130.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.130.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.131
+  title = wet_sylvania.131.t
+  desc = wet_sylvania.131.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.131.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.132
+  title = wet_sylvania.132.t
+  desc = wet_sylvania.132.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.132.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.133
+  title = wet_sylvania.133.t
+  desc = wet_sylvania.133.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.133.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_V01
+      check_variable = {
+        wet_syl_offer_invite_V01_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_V01
+          check_variable = {
+            wet_syl_offer_invite_V01_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_V01
+          set_variable = {
+            wet_syl_offer_invite_V01_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.130
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_V01
+            }
+            clr_country_flag = wet_syl_offer_invite_V01
+            set_variable = {
+              wet_syl_offer_invite_V01_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.132
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_V01
+          }
+          clr_country_flag = wet_syl_offer_invite_V01
+          set_variable = {
+            wet_syl_offer_invite_V01_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.132
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.133.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_V01
+        }
+        clr_country_flag = wet_syl_offer_invite_V01
+        set_variable = {
+          wet_syl_offer_invite_V01_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.131
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.134
+  title = wet_sylvania.134.t
+  desc = wet_sylvania.134.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.134.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.135
+  title = wet_sylvania.135.t
+  desc = wet_sylvania.135.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.135.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.136
+  title = wet_sylvania.136.t
+  desc = wet_sylvania.136.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.136.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.137
+  title = wet_sylvania.137.t
+  desc = wet_sylvania.137.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.137.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_V19
+      check_variable = {
+        wet_syl_offer_invite_V19_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_V19
+          check_variable = {
+            wet_syl_offer_invite_V19_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_V19
+          set_variable = {
+            wet_syl_offer_invite_V19_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.134
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_V19
+            }
+            clr_country_flag = wet_syl_offer_invite_V19
+            set_variable = {
+              wet_syl_offer_invite_V19_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.136
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_V19
+          }
+          clr_country_flag = wet_syl_offer_invite_V19
+          set_variable = {
+            wet_syl_offer_invite_V19_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.136
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.137.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_V19
+        }
+        clr_country_flag = wet_syl_offer_invite_V19
+        set_variable = {
+          wet_syl_offer_invite_V19_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.135
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.138
+  title = wet_sylvania.138.t
+  desc = wet_sylvania.138.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.138.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.139
+  title = wet_sylvania.139.t
+  desc = wet_sylvania.139.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.139.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.140
+  title = wet_sylvania.140.t
+  desc = wet_sylvania.140.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.140.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.141
+  title = wet_sylvania.141.t
+  desc = wet_sylvania.141.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.141.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_invite_I33
+      check_variable = {
+        wet_syl_offer_invite_I33_days
+        >
+        0
+      }
+      exists = yes
+      wet_rr_vampires_access = yes
+      has_idea = wet_deathless_hosts
+      OR = {
+        is_subject = no
+        is_subject_of = A13
+      }
+      is_in_faction = no
+      NOT = {
+        has_war_with = A13
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = A13
+        }
+      }
+      A13 = {
+        exists = yes
+        wet_syl_concord_active = yes
+      }
+    }
+    effect_tooltip = {
+      add_ideas = wet_syl_concord_member
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_I33
+          check_variable = {
+            wet_syl_offer_invite_I33_days
+            >
+            0
+          }
+          exists = yes
+          wet_rr_vampires_access = yes
+          has_idea = wet_deathless_hosts
+          OR = {
+            is_subject = no
+            is_subject_of = A13
+          }
+          is_in_faction = no
+          NOT = {
+            has_war_with = A13
+          }
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = A13
+            }
+          }
+          A13 = {
+            exists = yes
+            wet_syl_concord_active = yes
+          }
+        }
+        A13 = {
+          add_to_faction = PREV
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          set_country_flag = wet_syl_concord_invited
+          add_ideas = wet_syl_concord_member
+        }
+        if = {
+          limit = {
+            is_in_faction_with = A13
+          }
+          clr_country_flag = wet_syl_offer_invite_I33
+          set_variable = {
+            wet_syl_offer_invite_I33_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.138
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_invite_I33
+            }
+            clr_country_flag = wet_syl_offer_invite_I33
+            set_variable = {
+              wet_syl_offer_invite_I33_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.140
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_invite_I33
+          }
+          clr_country_flag = wet_syl_offer_invite_I33
+          set_variable = {
+            wet_syl_offer_invite_I33_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.140
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.141.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_invite_I33
+        }
+        clr_country_flag = wet_syl_offer_invite_I33
+        set_variable = {
+          wet_syl_offer_invite_I33_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.139
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.142
+  title = wet_sylvania.142.t
+  desc = wet_sylvania.142.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.142.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.143
+  title = wet_sylvania.143.t
+  desc = wet_sylvania.143.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.143.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.144
+  title = wet_sylvania.144.t
+  desc = wet_sylvania.144.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.144.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.145
+  title = wet_sylvania.145.t
+  desc = wet_sylvania.145.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.145.0
+    ai_chance = {
+      factor = 100
+    }
+    trigger = {
+      has_country_flag = wet_syl_offer_marriage
+      check_variable = {
+        wet_syl_offer_marriage_days
+        >
+        0
+      }
+      A13 = {
+        wet_syl_marriage_legal = yes
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = WET_SYL_marriage_effect_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_marriage
+          check_variable = {
+            wet_syl_offer_marriage_days
+            >
+            0
+          }
+          A13 = {
+            wet_syl_marriage_legal = yes
+          }
+        }
+        A13 = {
+          set_autonomy = {
+            target = U18
+            autonomy_state = autonomy_puppet
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = A13
+          }
+          A13 = {
+            set_country_flag = wet_syl_married
+            if = {
+              limit = {
+                is_in_faction = yes
+              }
+              faction_leader = {
+                add_to_faction = U18
+              }
+            }
+          }
+        }
+        if = {
+          limit = {
+            is_subject_of = A13
+          }
+          clr_country_flag = wet_syl_offer_marriage
+          set_variable = {
+            wet_syl_offer_marriage_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.142
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_marriage
+            }
+            clr_country_flag = wet_syl_offer_marriage
+            set_variable = {
+              wet_syl_offer_marriage_days = 0
+            }
+            A13 = {
+              country_event = {
+                id = wet_sylvania.144
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_marriage
+          }
+          clr_country_flag = wet_syl_offer_marriage
+          set_variable = {
+            wet_syl_offer_marriage_days = 0
+          }
+          A13 = {
+            country_event = {
+              id = wet_sylvania.144
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.145.1
+    ai_chance = {
+      factor = 0
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_syl_offer_marriage
+        }
+        clr_country_flag = wet_syl_offer_marriage
+        set_variable = {
+          wet_syl_offer_marriage_days = 0
+        }
+        A13 = {
+          country_event = {
+            id = wet_sylvania.143
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.146
+  title = wet_sylvania.146.t
+  desc = wet_sylvania.146.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.146.0
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = WET_SYL_uprising_allocation_effect_tt
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.147
+  title = wet_sylvania.147.t
+  desc = wet_sylvania.147.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.147.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.148
+  title = wet_sylvania.148.t
+  desc = wet_sylvania.148.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.148.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.149
+  title = wet_sylvania.149.t
+  desc = wet_sylvania.149.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.149.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.150
+  title = wet_sylvania.150.t
+  desc = wet_sylvania.150.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.150.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.151
+  title = wet_sylvania.151.t
+  desc = wet_sylvania.151.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.151.0
+    ai_chance = {
+      factor = 100
+    }
+    trigger = {
+      exists = yes
+      A05 = {
+        tag = A05
+        exists = yes
+        NOT = {
+          has_war_with = A13
+        }
+        OR = {
+          is_subject = no
+          overlord = {
+            NOT = {
+              has_war_with = A13
+            }
+          }
+        }
+        A13 = {
+          exists = yes
+          is_subject = no
+          wet_syl_human_government = yes
+        }
+        has_country_flag = wet_syl_offer_stirland
+        check_variable = {
+          wet_syl_offer_stirland_days
+          >
+          0
+        }
+        has_country_flag = wet_syl_stirland_overlord_reply
+        is_subject_of = PREV
+        is_in_array = {
+          wet_syl_stirland_overlord = PREV
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          A05 = {
+            tag = A05
+            exists = yes
+            NOT = {
+              has_war_with = A13
+            }
+            OR = {
+              is_subject = no
+              overlord = {
+                NOT = {
+                  has_war_with = A13
+                }
+              }
+            }
+            A13 = {
+              exists = yes
+              is_subject = no
+              wet_syl_human_government = yes
+            }
+            has_country_flag = wet_syl_offer_stirland
+            check_variable = {
+              wet_syl_offer_stirland_days
+              >
+              0
+            }
+            has_country_flag = wet_syl_stirland_overlord_reply
+            is_subject_of = PREV
+            is_in_array = {
+              wet_syl_stirland_overlord = PREV
+            }
+          }
+        }
+        A05 = {
+          wet_syl_ratify_stirland = yes
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.151.1
+    ai_chance = {
+      factor = 0
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          exists = yes
+          A05 = {
+            tag = A05
+            exists = yes
+            NOT = {
+              has_war_with = A13
+            }
+            OR = {
+              is_subject = no
+              overlord = {
+                NOT = {
+                  has_war_with = A13
+                }
+              }
+            }
+            A13 = {
+              exists = yes
+              is_subject = no
+              wet_syl_human_government = yes
+            }
+            has_country_flag = wet_syl_offer_stirland
+            check_variable = {
+              wet_syl_offer_stirland_days
+              >
+              0
+            }
+            has_country_flag = wet_syl_stirland_overlord_reply
+            is_subject_of = PREV
+            is_in_array = {
+              wet_syl_stirland_overlord = PREV
+            }
+          }
+        }
+        A05 = {
+          if = {
+            limit = {
+              has_country_flag = wet_syl_offer_stirland
+            }
+            clr_country_flag = wet_syl_offer_stirland
+            clr_country_flag = wet_syl_stirland_overlord_reply
+            set_variable = {
+              wet_syl_offer_stirland_days = 0
+            }
+            clear_array = wet_syl_stirland_overlord
+            A13 = {
+              country_event = {
+                id = wet_sylvania.150
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_sylvania.152
+  title = wet_sylvania.152.t
+  desc = wet_sylvania.152.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_sylvania.152.0
+    ai_chance = {
+      factor = 100
+    }
+    trigger = {
+      tag = A05
+      exists = yes
+      NOT = {
+        has_war_with = A13
+      }
+      OR = {
+        is_subject = no
+        overlord = {
+          NOT = {
+            has_war_with = A13
+          }
+        }
+      }
+      A13 = {
+        exists = yes
+        is_subject = no
+        wet_syl_human_government = yes
+      }
+      has_country_flag = wet_syl_offer_stirland
+      check_variable = {
+        wet_syl_offer_stirland_days
+        >
+        0
+      }
+      NOT = {
+        has_country_flag = wet_syl_stirland_overlord_reply
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = WET_SYL_stirland_effect_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          tag = A05
+          exists = yes
+          NOT = {
+            has_war_with = A13
+          }
+          OR = {
+            is_subject = no
+            overlord = {
+              NOT = {
+                has_war_with = A13
+              }
+            }
+          }
+          A13 = {
+            exists = yes
+            is_subject = no
+            wet_syl_human_government = yes
+          }
+          has_country_flag = wet_syl_offer_stirland
+          check_variable = {
+            wet_syl_offer_stirland_days
+            >
+            0
+          }
+          NOT = {
+            has_country_flag = wet_syl_stirland_overlord_reply
+          }
+        }
+        if = {
+          limit = {
+            is_subject = no
+          }
+          wet_syl_ratify_stirland = yes
+        }
+        else = {
+          set_country_flag = wet_syl_stirland_overlord_reply
+          overlord = {
+            A05 = {
+              add_to_array = {
+                wet_syl_stirland_overlord = PREV
+              }
+            }
+            country_event = {
+              id = wet_sylvania.151
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_sylvania.152.1
+    ai_chance = {
+      factor = 0
+    }
+    hidden_effect = {
+      A05 = {
+        if = {
+          limit = {
+            has_country_flag = wet_syl_offer_stirland
+          }
+          clr_country_flag = wet_syl_offer_stirland
+          clr_country_flag = wet_syl_stirland_overlord_reply
+          set_variable = {
+            wet_syl_offer_stirland_days = 0
+          }
+          clear_array = wet_syl_stirland_overlord
+          A13 = {
+            country_event = {
+              id = wet_sylvania.150
+            }
+          }
+        }
+      }
+    }
+  }
+}

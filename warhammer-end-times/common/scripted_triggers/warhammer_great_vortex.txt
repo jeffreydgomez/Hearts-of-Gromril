@@ -1,0 +1,195 @@
+wet_vortex_ulthuan_state = { OR = { state = 5 state = 6 state = 8 state = 33 state = 36 state = 200 state = 277 state = 110 state = 111 state = 916 state = 150 state = 200 state = 236 state = 275 state = 277 state = 734 state = 310 state = 380 state = 386 state = 483 state = 679 state = 687 state = 694 state = 695 state = 483 state = 8 state = 748 state = 891 state = 761 state = 771 state = 891 } }
+wet_vortex_can_destroy = {
+      NOT = { tag = WST }
+      NOT = { has_global_flag = wet_story_vortex_unbound }
+      controls_province = 2343
+      OR = { is_ai = no AND = { NOT = { original_tag = H06 } NOT = { has_government = democratic } } }
+    }
+    wet_vortex_can_ai_destroy = {
+      NOT = { original_tag = H06 }
+      NOT = { has_government = democratic }
+    }
+wet_vortex_can_claim_aqshy = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_aqshy_claimed }
+          OR = { AND = { has_character = WET_U06_leader
+
+    WET_U06_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_VTX_Caradryan
+
+    WET_VTX_Caradryan = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_H07_leader
+
+    WET_H07_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_azyr = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_azyr_claimed }
+          OR = { AND = { has_character = WET_A01_leader
+
+    WET_A01_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_V04_leader
+
+    WET_V04_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_VTX_Tettoeko
+
+    WET_VTX_Tettoeko = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_chamon = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_chamon_claimed }
+          OR = { AND = { has_character = WET_VTX_Gelt
+
+    WET_VTX_Gelt = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_U04_leader
+
+    WET_U04_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_I22_leader
+
+    WET_I22_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_ghur = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_ghur_claimed }
+          OR = { AND = { has_character = WET_G24_leader
+
+    WET_G24_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_VTX_Orion
+
+    WET_VTX_Orion = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_X16_leader
+
+    WET_X16_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_ghyran = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_ghyran_claimed }
+          OR = { AND = { has_character = WET_H08_leader
+
+    WET_H08_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_B01_leader
+
+    WET_B01_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_VTX_Durthu
+
+    WET_VTX_Durthu = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_hysh = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_hysh_claimed }
+          OR = { AND = { has_character = WET_ULT_Tyrion
+
+    WET_ULT_Tyrion = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_VTX_Teclis
+
+    WET_VTX_Teclis = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_A80_leader
+
+    WET_A80_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_shyish = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_shyish_claimed }
+          OR = { AND = { has_character = WET_U24_leader
+    has_global_flag = wet_story_nagash_resurrected
+    WET_U24_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_Z02_leader
+
+    WET_Z02_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_A13_leader
+
+    WET_A13_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }
+wet_vortex_can_claim_ulgu = {
+          has_global_flag = wet_story_vortex_unbound
+          NOT = { has_global_flag = wet_vortex_ulgu_claimed }
+          OR = { AND = { has_character = WET_H12_leader
+
+    WET_H12_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_H13_leader
+
+    WET_H13_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } AND = { has_character = WET_B84_leader
+
+    WET_B84_leader = {
+      is_army_leader = yes
+      NOT = { has_character_flag = wet_vortex_incarnate }
+      NOT = { has_character_flag = wet_ruler_command_suspended }
+    } } }
+        }

@@ -229,11 +229,13 @@ guiTypes = {
 	### country filter
 	containerWindowType = {
 		name = "country_filter"
-		size = { width = 149 height = 33 }
+		size = { width = 220 height = 34 }
 
 		buttonType = {
 			name = "button"
-			quadTextureSprite = "GFX_country_filter_entry"
+			size = { x = 220 y = 34 }
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_wet_country_filter_compact"
 			buttonText = "FILTER"
 			buttonFont = "hoi_16mbs"
 			clicksound = click_default
@@ -565,14 +567,15 @@ guiTypes = {
 
 		containerWindowType = {
 			name ="bookmarks"
+			clipping = yes
 			position = { x = 43 y = 55 }
-			size = { width = -10 height = 120}
+			size = { width = 520 height = 220 }
 
 			gridboxType = {
 				name ="bookmarks_grid"
-				position = { x = 0 y = 0 }
+				position = { x = 130 y = 0 }
 				size = { width = 100%% height = 100%% }
-				slotsize = { width = 260 height = 0 }
+				slotsize = { width = 2600 height = 0 }
 				add_horizontal = yes
 				max_slots_vertical = 1
 				format = "UPPER_LEFT"
@@ -706,7 +709,7 @@ guiTypes = {
 			position = { x = 22 y = 321 }
 			size = { x = 1181 y = 34 }
 			format = center
-			spacing = 57.0
+			spacing = 8.0
 			Orientation = "UPPER_LEFT"
 		}
 

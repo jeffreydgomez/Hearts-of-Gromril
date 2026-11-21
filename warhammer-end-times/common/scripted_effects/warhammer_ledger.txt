@@ -1,0 +1,160 @@
+wet_ledger_build_page = {
+clear_array = wet_ledger_rows
+if = {
+limit = {
+NOT = { check_variable = { wet_ledger_offset < wet_ledger_countries^num } }
+}
+set_variable = { wet_ledger_offset = 0 }
+
+}
+set_variable = { wet_ledger_first = wet_ledger_offset }
+add_to_variable = { wet_ledger_first = 1 }
+set_variable = { wet_ledger_last = wet_ledger_offset }
+add_to_variable = { wet_ledger_last = 16 }
+clamp_variable = { var = wet_ledger_last max = wet_ledger_countries^num }
+if = {
+limit = {
+check_variable = { wet_ledger_countries^num = 0 }
+}
+set_variable = { wet_ledger_first = 0 }
+
+}
+for_loop_effect = {
+start = wet_ledger_offset
+end = wet_ledger_last
+value = wet_ledger_row_index
+add_to_array = { wet_ledger_rows = wet_ledger_row_index }
+}
+add_to_variable = { wet_ledger_version = 1 }
+
+}
+
+wet_ledger_refresh = {
+if = {
+limit = {
+check_variable = { wet_ledger_sort = 1 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_industry
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 2 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_army
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 3 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_navy
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 4 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_air
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 5 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_manpower
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 6 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_losses
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+else_if = {
+limit = {
+check_variable = { wet_ledger_sort = 7 }
+}
+get_sorted_scored_countries = {
+scorer = wet_ledger_by_land
+array = wet_ledger_sorted
+scores = wet_ledger_scores
+}
+
+}
+clear_array = wet_ledger_countries
+clear_array = wet_ledger_ranks
+clear_array = wet_ledger_industry
+clear_array = wet_ledger_army
+clear_array = wet_ledger_navy
+clear_array = wet_ledger_air
+clear_array = wet_ledger_manpower
+clear_array = wet_ledger_losses
+clear_array = wet_ledger_land
+for_each_scope_loop = {
+array = wet_ledger_sorted
+if = {
+limit = {
+exists = yes NOT = { tag = WST }
+}
+ROOT = {
+add_to_array = { wet_ledger_countries = PREV }
+add_to_array = { wet_ledger_ranks = wet_ledger_countries^num }
+add_to_array = { wet_ledger_industry = PREV.num_of_factories }
+add_to_array = { wet_ledger_army = PREV.num_divisions }
+add_to_array = { wet_ledger_navy = PREV.num_ships }
+add_to_array = { wet_ledger_air = PREV.num_deployed_planes }
+add_to_array = { wet_ledger_manpower = PREV.manpower_k }
+add_to_array = { wet_ledger_losses = PREV.casualties_k }
+add_to_array = { wet_ledger_land = PREV.num_owned_states }
+
+}
+
+}
+
+}
+set_variable = { wet_ledger_date = date }
+clear_array = wet_ledger_sorted
+clear_array = wet_ledger_scores
+wet_ledger_build_page = yes
+
+}
+
+wet_ledger_open = {
+if = {
+limit = {
+NOT = { has_variable = wet_ledger_sort }
+}
+set_variable = { wet_ledger_sort = 1 }
+
+}
+set_variable = { wet_ledger_offset = 0 }
+set_country_flag = wet_ledger_open
+country_event = { id = wet_ledger.1 }
+
+}

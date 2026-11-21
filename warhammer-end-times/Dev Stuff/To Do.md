@@ -1,54 +1,72 @@
 # To Do
 
+#### Playtests Done ###
+
+Bretonnia, Archaon, Nagash
+
+
 #### URGENT / QUICK #####
 
 	Redo racial bonuses
-
-	Nehekhara should have chariots
 
 	Once the empire is under reikland, and world tension is at 100% or at war with the everchosen, then fully annex the empire or give them big bonuses?
 
 	Encourage AI to build different divisions & not retire divisions?
 
-	For the Custom Equipment, compare to baseline equipment.
-
-	Can we add a ledger? That includes resources produced?
-
 	Fix Nation selection page
 
 	Make sure the tech bonuses are for that whole tech type, not just for a specific tech
-
-	For unique equipment, put in quote the equipment that it replaces.
-
-	Some focuses track and frequently reference external values that aren't obvious to the player, such as council authority (we got rid of that) and somethign for Nagash. Get rid of those concepts.
 
 	Better intro loading images & background image
 
 	Make call to chaos and spread the waaagh automatic and every 30 or 45 days?
 
-	Various decisions based on race/religion
+	Various decisions based on race/religion (Codex brainstormed)
 
-	Make sure the everchosen's spirit is a cool icon, and that autonomy change is working correctly
+	Make sure the Everchosen's autonomy change is working correctly
 
 	Give the terrain map more texture
 
-	Nagash - Can artifacts be lost? Can ARkhan or Nagash be in the wrong place? If not, remove all that wording.
+	Make sure the Aliathra thing is right.
 
-	Get rid of the cores on Nagash's starting land
+	Nagashizzar and the Swords of Chaos colors are too similar. Make them purple? Green?
 
-	Nagash doesn't need an event both for sending the mission to take the captive, and the result of the capture.
-
-	Nagash - too much text in the capture effect
-
-	Is it possible to lose captives? It shouldn't be normally. And we should definitely get an event? And then, I guess, a decision to take them back?
-
-### Confirm ####
+	More stuff with Volunteers?
 
 	Rebalance resources - particularly metal, horses, and food.
 
+	Make sure that all nations with custom focus trees are in the intro starter
+		Unique Content
+		Other Interesting
+
+### Confirm ####
+
+	Can we add a ledger? That includes resources produced?
+
+	Make sure the everchosen's spirit is a cool icon, 
+
+	Give all national spirits an approprite icon
+
 	Add a skaven operation to detonate a doomsphere.
 
-	Ruler traits for all rulers
+	Nagash - Can artifacts be lost? Can ARkhan or Nagash be in the wrong place? If not, remove all that wording.
+
+	Make sure everybody gets an event when Nagash returns, and make it longer and more flavorful
+
+	Get rid of the cores on Nagash's starting land
+
+	For unique equipment, put in parenthesis the equipment that it replaces.
+
+	Nagash - too much text in the capture effect
+
+	Add a decision to destroy the great vortex if you control it.
+		this has a variety of effects, including mostly sinking Ulthuan - putting a -25% factory output and instantly killing 25% of all population in every Ulthuan state.
+		The Great vortext state should be a special state with only 1 slot.
+		AI Ulthuan will never destroy the great vortex. Only non-order aligned people will.
+		The decision costs 250 pp.
+		Once the great vortex is destroyed everybody gets an event saying what has happened, a decision for each wind becomes availble for everybody to claim that wind and become an incarnate.
+			Claiming a wind/incarnate requires 1000 pp. For each wind you need to have one of three generals (from lore and those you think most appropriate). Once you claim the wind, that general gets massive bonuses. Everybody gets an event saying what has happened.
+		When the vortex is destroyed, give Archaon a +20% organization national spirit for "The Winds of Chaos are Loose"
 
 #### LESS URGENT TO DO ####
 
@@ -64,25 +82,17 @@
 
 	Make/Get flier 3d models
 
-	Get countries to produce what they should produce, and get resource and food balance right.
-
 	Add the future **Lady of the Lake = Lileath revelation event chain**, with faith, conditional cooperation and rejection responses; account for actual surviving characters and Elven diplomacy.
 
 	Incursions should be triggered from the chaos gods mission tree
 
 #### Tier 2 Focus trees ####
 
-	Better Icons for mission trees
-
-	Sylvania, Nehekhara, Hexoatl, Grand Cathay
-
-	Araby, Mousoilon, Chaos Gods
+	Nehekhara, Grand Cathay, Athel Loren, Zharr NaggrundnAraby, Chaos Gods
 
 	Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
 
 	Design a **Mousillon mission tree**, including build-up, ducal infiltration, Arkhan support, a warned declaration, the shared exact 50/50 duel and recovery/succession on either result.
-
-	Design a **Sylvania mission tree**, including Mannfred and shared captive/relic custody. The installed Nagashi route requires seven relics and three living sacrificial victims alongside one of three power sources. Preserve Ulthuan's custody generations and the existing Volkmar/Aliathra handover paths; never create a second captive.
 
 #### DLC and system reference #####
 

@@ -52,7 +52,7 @@ wet_ngs_named_agent_present = {
   OR = {
     AND = {
       tag = A13
-      has_character = WET_A13_leader
+      wet_syl_vampire_court = yes
     }
     AND = {
       tag = B16
@@ -92,6 +92,12 @@ wet_ngs_court_eligible = {
     has_war_with = U24
   }
   wet_ngs_court_country = yes
+  OR = {
+    NOT = {
+      tag = A13
+    }
+    wet_syl_covenant_legal = yes
+  }
 }
 wet_ngs_agent_A13 = {
   A13 = {
@@ -100,7 +106,7 @@ wet_ngs_agent_A13 = {
     NOT = {
       has_war_with = U24
     }
-    has_character = WET_A13_leader
+    wet_syl_vampire_court = yes
     wet_ngs_court_supports_restoration = yes
   }
 }
@@ -460,59 +466,7 @@ wet_ngs_dolmen_access = {
     }
   }
 }
-wet_ngs_three_donors = {
-  count_triggers = {
-    amount = 3
-    AND = {
-      wet_ngs_agent_A13 = yes
-      A13 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_B16 = yes
-      B16 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_A20 = yes
-      A20 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_A68 = yes
-      A68 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_B27 = yes
-      B27 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_V01 = yes
-      V01 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_U18 = yes
-      U18 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-    AND = {
-      wet_ngs_agent_A74 = yes
-      A74 = {
-        has_country_flag = wet_ngs_soul_donor
-      }
-    }
-  }
-}
+
 wet_ngs_charge_ready = {
   OR = {
     wet_ngs_power_valaya_ready = yes
@@ -1156,7 +1110,7 @@ wet_ngs_power_warpstone_ready = {
 }
 wet_ngs_power_souls_ready = {
   has_country_flag = wet_ngs_charge_souls
-  wet_ngs_three_donors = yes
+  wet_ngs_body_materials_ready = yes
 }
 wet_ngs_restoration_supplies = {
   208 = {
@@ -1228,6 +1182,19 @@ wet_ngs_active_court = {
       U24 = {
         wet_ngs_agent_A74 = yes
       }
+    }
+  }
+}
+
+wet_ngs_body_materials_ready = {
+  208 = {
+    is_owned_by = U24
+    is_fully_controlled_by = U24
+    has_resources_amount = {
+      resource = rubber
+      amount
+      >
+      0
     }
   }
 }

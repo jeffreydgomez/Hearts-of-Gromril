@@ -1,0 +1,1803 @@
+add_namespace = wet_hexoatl
+country_event = {
+  id = wet_hexoatl.1
+  title = wet_hexoatl.1.t
+  desc = wet_hexoatl.1.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.1.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.2
+  title = wet_hexoatl.2.t
+  desc = wet_hexoatl.2.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.2.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.3
+  title = wet_hexoatl.3.t
+  desc = wet_hexoatl.3.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.3.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.4
+  title = wet_hexoatl.4.t
+  desc = wet_hexoatl.4.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.4.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_protection
+        }
+        if = {
+          limit = {
+            wet_hex_smaller_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L03
+            }
+          }
+          clr_country_flag = wet_hex_pending_protection
+          set_variable = {
+            wet_hex_offer_days_protection = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_protection
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.2
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_protection
+          set_variable = {
+            wet_hex_offer_days_protection = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_protection
+            days = 180
+          }
+          V04 = {
+            add_political_power = 50
+            country_event = {
+              id = wet_hexoatl.3
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.4.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      wet_hex_smaller_temple = yes
+      V04 = {
+        has_country_flag = wet_hex_reward_L03
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_hex_protection_terms_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_protection
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            wet_hex_smaller_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L03
+            }
+          }
+          V04 = {
+            set_autonomy = {
+              target = PREV
+              autonomy_state = autonomy_puppet
+            }
+          }
+          set_variable = {
+            wet_hex_subject_days = 0
+          }
+          if = {
+            limit = {
+              is_subject_of = V04
+            }
+            clr_country_flag = wet_hex_pending_protection
+            set_variable = {
+              wet_hex_offer_days_protection = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_protection
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.1
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_protection
+            set_variable = {
+              wet_hex_offer_days_protection = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_protection
+              days = 180
+            }
+            V04 = {
+              add_political_power = 50
+              country_event = {
+                id = wet_hexoatl.3
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_protection
+          set_variable = {
+            wet_hex_offer_days_protection = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_protection
+            days = 180
+          }
+          V04 = {
+            add_political_power = 50
+            country_event = {
+              id = wet_hexoatl.3
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.5
+  title = wet_hexoatl.5.t
+  desc = wet_hexoatl.5.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.5.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.6
+  title = wet_hexoatl.6.t
+  desc = wet_hexoatl.6.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.6.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.7
+  title = wet_hexoatl.7.t
+  desc = wet_hexoatl.7.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.7.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.8
+  title = wet_hexoatl.8.t
+  desc = wet_hexoatl.8.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.8.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_integration
+        }
+        if = {
+          limit = {
+            wet_hex_integrable_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L14
+            }
+          }
+          clr_country_flag = wet_hex_pending_integration
+          set_variable = {
+            wet_hex_offer_days_integration = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_integration
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.6
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_integration
+          set_variable = {
+            wet_hex_offer_days_integration = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_integration
+            days = 180
+          }
+          V04 = {
+            add_political_power = 100
+            country_event = {
+              id = wet_hexoatl.7
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.8.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      wet_hex_integrable_temple = yes
+      V04 = {
+        has_country_flag = wet_hex_reward_L14
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_hex_integration_terms_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_integration
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            wet_hex_integrable_temple = yes
+            V04 = {
+              has_country_flag = wet_hex_reward_L14
+            }
+          }
+          every_army_leader = {
+            set_nationality = V04
+          }
+          V04 = {
+            annex_country = {
+              target = PREV
+              transfer_troops = yes
+            }
+            if = {
+              limit = {
+                PREV = {
+                  NOT = {
+                    exists = yes
+                  }
+                }
+              }
+              every_owned_state = {
+                limit = {
+                  is_core_of = PREV.PREV
+                }
+                add_core_of = V04
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V03
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V03
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V06
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V06
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V07
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V07
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V08
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V08
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V09
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V09
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V10
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V10
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V11
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V11
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V12
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V12
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V13
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V13
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V14
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V14
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V15
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V15
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V16
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V16
+              }
+              if = {
+                limit = {
+                  PREV = {
+                    tag = V18
+                  }
+                }
+                set_country_flag = wet_hex_integrated_V18
+              }
+            }
+          }
+          if = {
+            limit = {
+              NOT = {
+                exists = yes
+              }
+            }
+            clr_country_flag = wet_hex_pending_integration
+            set_variable = {
+              wet_hex_offer_days_integration = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_integration
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.5
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_integration
+            set_variable = {
+              wet_hex_offer_days_integration = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_integration
+              days = 180
+            }
+            V04 = {
+              add_political_power = 100
+              country_event = {
+                id = wet_hexoatl.7
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_integration
+          set_variable = {
+            wet_hex_offer_days_integration = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_integration
+            days = 180
+          }
+          V04 = {
+            add_political_power = 100
+            country_event = {
+              id = wet_hexoatl.7
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.9
+  title = wet_hexoatl.9.t
+  desc = wet_hexoatl.9.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.9.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.10
+  title = wet_hexoatl.10.t
+  desc = wet_hexoatl.10.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.10.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.11
+  title = wet_hexoatl.11.t
+  desc = wet_hexoatl.11.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.11.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.12
+  title = wet_hexoatl.12.t
+  desc = wet_hexoatl.12.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.12.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_restitution
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+          clr_country_flag = wet_hex_pending_restitution
+          set_variable = {
+            wet_hex_offer_days_restitution = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_restitution
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.10
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_restitution
+          set_variable = {
+            wet_hex_offer_days_restitution = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_restitution
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.11
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.12.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_hex_restitution_terms_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_restitution
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+          diplomatic_relation = {
+            country = V04
+            relation = non_aggression_pact
+            active = yes
+          }
+          V04 = {
+            set_country_flag = wet_hex_restitution
+          }
+          if = {
+            limit = {
+              has_non_aggression_pact_with = V04
+            }
+            clr_country_flag = wet_hex_pending_restitution
+            set_variable = {
+              wet_hex_offer_days_restitution = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_restitution
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.9
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_restitution
+            set_variable = {
+              wet_hex_offer_days_restitution = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_restitution
+              days = 180
+            }
+            V04 = {
+              add_political_power = 0
+              country_event = {
+                id = wet_hexoatl.11
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_restitution
+          set_variable = {
+            wet_hex_offer_days_restitution = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_restitution
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.11
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.13
+  title = wet_hexoatl.13.t
+  desc = wet_hexoatl.13.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.13.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.14
+  title = wet_hexoatl.14.t
+  desc = wet_hexoatl.14.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.14.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.15
+  title = wet_hexoatl.15.t
+  desc = wet_hexoatl.15.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.15.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.16
+  title = wet_hexoatl.16.t
+  desc = wet_hexoatl.16.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.16.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_charter
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            wet_nag_compact_active = yes
+            V04 = {
+              has_country_flag = wet_hex_restitution
+            }
+          }
+          clr_country_flag = wet_hex_pending_charter
+          set_variable = {
+            wet_hex_offer_days_charter = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_charter
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.14
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_charter
+          set_variable = {
+            wet_hex_offer_days_charter = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_charter
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.15
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.16.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      wet_nag_compact_active = yes
+      V04 = {
+        has_country_flag = wet_hex_restitution
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_charter
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            wet_nag_compact_active = yes
+            V04 = {
+              has_country_flag = wet_hex_restitution
+            }
+          }
+          V04 = {
+            set_country_flag = wet_nag_charter_signatory
+            add_opinion_modifier = {
+              target = H12
+              modifier = wet_hex_goodwill
+              days = 730
+            }
+          }
+          add_opinion_modifier = {
+            target = V04
+            modifier = wet_hex_goodwill
+            days = 730
+          }
+          wet_nag_clean_goals = yes
+          if = {
+            limit = {
+              V04 = {
+                wet_nag_protected_partner = yes
+              }
+            }
+            clr_country_flag = wet_hex_pending_charter
+            set_variable = {
+              wet_hex_offer_days_charter = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_charter
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.13
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_charter
+            set_variable = {
+              wet_hex_offer_days_charter = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_charter
+              days = 180
+            }
+            V04 = {
+              add_political_power = 0
+              country_event = {
+                id = wet_hexoatl.15
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_charter
+          set_variable = {
+            wet_hex_offer_days_charter = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_charter
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.15
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.17
+  title = wet_hexoatl.17.t
+  desc = wet_hexoatl.17.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.17.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.18
+  title = wet_hexoatl.18.t
+  desc = wet_hexoatl.18.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.18.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.19
+  title = wet_hexoatl.19.t
+  desc = wet_hexoatl.19.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.19.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.20
+  title = wet_hexoatl.20.t
+  desc = wet_hexoatl.20.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.20.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_shared_seas
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            V04 = {
+              wet_nag_protected_partner = yes
+            }
+          }
+          clr_country_flag = wet_hex_pending_shared_seas
+          set_variable = {
+            wet_hex_offer_days_shared_seas = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_shared_seas
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.18
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_shared_seas
+          set_variable = {
+            wet_hex_offer_days_shared_seas = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_shared_seas
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.19
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.20.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      exists = yes
+      tag = H12
+      is_subject = no
+      NOT = {
+        has_war_with = V04
+      }
+      wet_nag_clean_court = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+      V04 = {
+        wet_nag_protected_partner = yes
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_shared_seas
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            exists = yes
+            tag = H12
+            is_subject = no
+            NOT = {
+              has_war_with = V04
+            }
+            wet_nag_clean_court = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+            V04 = {
+              wet_nag_protected_partner = yes
+            }
+          }
+          give_military_access = V04
+          V04 = {
+            give_military_access = H12
+          }
+          if = {
+            limit = {
+              has_military_access_to = V04
+              V04 = {
+                has_military_access_to = PREV
+              }
+            }
+            clr_country_flag = wet_hex_pending_shared_seas
+            set_variable = {
+              wet_hex_offer_days_shared_seas = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_shared_seas
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.17
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_shared_seas
+            set_variable = {
+              wet_hex_offer_days_shared_seas = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_shared_seas
+              days = 180
+            }
+            V04 = {
+              add_political_power = 0
+              country_event = {
+                id = wet_hexoatl.19
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_shared_seas
+          set_variable = {
+            wet_hex_offer_days_shared_seas = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_shared_seas
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.19
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.21
+  title = wet_hexoatl.21.t
+  desc = wet_hexoatl.21.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.21.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.22
+  title = wet_hexoatl.22.t
+  desc = wet_hexoatl.22.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.22.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.23
+  title = wet_hexoatl.23.t
+  desc = wet_hexoatl.23.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.23.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.24
+  title = wet_hexoatl.24.t
+  desc = wet_hexoatl.24.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.24.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_alliance
+        }
+        if = {
+          limit = {
+            exists = yes
+            is_faction_leader = yes
+            is_in_faction_with = A01
+            wet_can_join_faction = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+              is_in_faction = no
+              wet_can_join_faction = yes
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            NOT = {
+              any_enemy_country = {
+                is_in_faction_with = V04
+              }
+            }
+          }
+          clr_country_flag = wet_hex_pending_alliance
+          set_variable = {
+            wet_hex_offer_days_alliance = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_alliance
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.22
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_alliance
+          set_variable = {
+            wet_hex_offer_days_alliance = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_alliance
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.23
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.24.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      exists = yes
+      is_faction_leader = yes
+      is_in_faction_with = A01
+      wet_can_join_faction = yes
+      V04 = {
+        exists = yes
+        is_subject = no
+        is_in_faction = no
+        wet_can_join_faction = yes
+      }
+      NOT = {
+        has_war_with = V04
+      }
+      NOT = {
+        any_enemy_country = {
+          is_in_faction_with = V04
+        }
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_alliance
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            exists = yes
+            is_faction_leader = yes
+            is_in_faction_with = A01
+            wet_can_join_faction = yes
+            V04 = {
+              exists = yes
+              is_subject = no
+              is_in_faction = no
+              wet_can_join_faction = yes
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            NOT = {
+              any_enemy_country = {
+                is_in_faction_with = V04
+              }
+            }
+          }
+          add_to_faction = V04
+          if = {
+            limit = {
+              is_in_faction_with = V04
+            }
+            clr_country_flag = wet_hex_pending_alliance
+            set_variable = {
+              wet_hex_offer_days_alliance = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_alliance
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.21
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_alliance
+            set_variable = {
+              wet_hex_offer_days_alliance = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_alliance
+              days = 180
+            }
+            V04 = {
+              add_political_power = 0
+              country_event = {
+                id = wet_hexoatl.23
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_alliance
+          set_variable = {
+            wet_hex_offer_days_alliance = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_alliance
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.23
+            }
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.25
+  title = wet_hexoatl.25.t
+  desc = wet_hexoatl.25.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.25.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.26
+  title = wet_hexoatl.26.t
+  desc = wet_hexoatl.26.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.26.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.27
+  title = wet_hexoatl.27.t
+  desc = wet_hexoatl.27.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_hexoatl.27.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_hexoatl.28
+  title = wet_hexoatl.28.t
+  desc = wet_hexoatl.28.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  immediate = {
+    wet_hex_count_industry = yes
+    V04 = {
+      wet_hex_count_industry = yes
+    }
+  }
+  option = {
+    name = wet_hexoatl.28.0
+    ai_chance = {
+      factor = 40
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_ports
+        }
+        if = {
+          limit = {
+            exists = yes
+            is_subject = no
+            has_government = democratic
+            NOT = {
+              tag = V04
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            any_owned_state = {
+              is_coastal = yes
+              naval_base
+              >
+              0
+            }
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+          clr_country_flag = wet_hex_pending_ports
+          set_variable = {
+            wet_hex_offer_days_ports = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_ports
+            days = 180
+          }
+          V04 = {
+            country_event = {
+              id = wet_hexoatl.26
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_ports
+          set_variable = {
+            wet_hex_offer_days_ports = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_ports
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.27
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_hexoatl.28.1
+    ai_chance = {
+      factor = 60
+      modifier = {
+        add = 10
+        V04 = {
+          has_country_flag = wet_hex_reward_L02
+        }
+      }
+      modifier = {
+        add = 20
+        has_opinion = {
+          target = V04
+          value
+          >
+          49
+        }
+      }
+      modifier = {
+        add = 20
+        has_war_together_with = V04
+      }
+    }
+    trigger = {
+      exists = yes
+      is_subject = no
+      has_government = democratic
+      NOT = {
+        tag = V04
+      }
+      NOT = {
+        has_war_with = V04
+      }
+      any_owned_state = {
+        is_coastal = yes
+        naval_base
+        >
+        0
+      }
+      V04 = {
+        exists = yes
+        is_subject = no
+      }
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          has_country_flag = wet_hex_pending_ports
+        }
+        wet_hex_count_industry = yes
+        V04 = {
+          wet_hex_count_industry = yes
+        }
+        if = {
+          limit = {
+            exists = yes
+            is_subject = no
+            has_government = democratic
+            NOT = {
+              tag = V04
+            }
+            NOT = {
+              has_war_with = V04
+            }
+            any_owned_state = {
+              is_coastal = yes
+              naval_base
+              >
+              0
+            }
+            V04 = {
+              exists = yes
+              is_subject = no
+            }
+          }
+          give_military_access = V04
+          diplomatic_relation = {
+            country = V04
+            relation = docking_rights
+            active = yes
+          }
+          set_country_flag = wet_hex_port_partner
+          if = {
+            limit = {
+              V04 = {
+                has_military_access_to = PREV
+              }
+            }
+            clr_country_flag = wet_hex_pending_ports
+            set_variable = {
+              wet_hex_offer_days_ports = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_ports
+              days = 180
+            }
+            V04 = {
+              country_event = {
+                id = wet_hexoatl.25
+              }
+            }
+          }
+          else = {
+            clr_country_flag = wet_hex_pending_ports
+            set_variable = {
+              wet_hex_offer_days_ports = 0
+            }
+            set_country_flag = {
+              flag = wet_hex_retry_ports
+              days = 180
+            }
+            V04 = {
+              add_political_power = 0
+              country_event = {
+                id = wet_hexoatl.27
+              }
+            }
+          }
+        }
+        else = {
+          clr_country_flag = wet_hex_pending_ports
+          set_variable = {
+            wet_hex_offer_days_ports = 0
+          }
+          set_country_flag = {
+            flag = wet_hex_retry_ports
+            days = 180
+          }
+          V04 = {
+            add_political_power = 0
+            country_event = {
+              id = wet_hexoatl.27
+            }
+          }
+        }
+      }
+    }
+  }
+}

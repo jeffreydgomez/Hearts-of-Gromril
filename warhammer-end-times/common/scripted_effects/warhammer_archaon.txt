@@ -311151,20 +311151,7 @@ wet_arc_spend_construction_credits = {
     wet_arc_place_energy_infrastructure = yes
   }
 }
-wet_arc_unbind_vortex = {
-  set_global_flag = wet_story_vortex_unbound
-  380 = {
-    remove_building = {
-      type = landmark_wet_gp_great_vortex
-      level = 1
-      province = 2343
-    }
-  }
-  add_timed_idea = {
-    idea = wet_arc_vortex_power
-    days = 365
-  }
-}
+wet_arc_unbind_vortex = { wet_vortex_destroy_effect = yes }
 wet_arc_destroy_pyramid = {
   wet_skv_pyramid_damage_838 = yes
   set_global_flag = wet_story_black_pyramid_destroyed

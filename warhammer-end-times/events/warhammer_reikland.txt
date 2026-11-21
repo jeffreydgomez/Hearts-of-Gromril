@@ -4153,13 +4153,22 @@ country_event = {
     }
     effect_tooltip = {
       A01 = {
-
+        
       }
       A01 = {
-        create_wargoal = {
-          type = annex_everything
-          target = A13
-          expire = 180
+        if = {
+          limit = {
+            A13 = {
+              NOT = {
+                wet_syl_sovereignty_protected = yes
+              }
+            }
+          }
+          create_wargoal = {
+            type = annex_everything
+            target = A13
+            expire = 180
+          }
         }
       }
       A01 = {
@@ -4187,13 +4196,22 @@ country_event = {
           }
         }
         A01 = {
-
+          
         }
         A01 = {
-          create_wargoal = {
-            type = annex_everything
-            target = A13
-            expire = 180
+          if = {
+            limit = {
+              A13 = {
+                NOT = {
+                  wet_syl_sovereignty_protected = yes
+                }
+              }
+            }
+            create_wargoal = {
+              type = annex_everything
+              target = A13
+              expire = 180
+            }
           }
         }
         clr_country_flag = wet_rei_offer_relief
