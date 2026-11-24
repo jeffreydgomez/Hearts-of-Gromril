@@ -278,4 +278,65 @@ wet_realm_measures = {
       }
     }
   }
+  wet_gather_arms_from_populace = {
+    icon = generic_prepare_civil_war
+    visible = {
+      always = yes
+    }
+    available = {
+      any_owned_state = {
+        state_population_k
+        >
+        0
+      }
+    }
+    cost = 100
+    fire_only_once = no
+    days_re_enable = 90
+    complete_effect = {
+      add_stability = -0.05
+      add_war_support = -0.05
+      custom_effect_tooltip = wet_gather_arms_from_populace_effect_tt
+      hidden_effect = {
+        every_owned_state = {
+          ROOT = {
+            set_temp_variable = {
+              wet_populace_arms = PREV.state_population_k
+            }
+            multiply_temp_variable = {
+              wet_populace_arms = 10
+            }
+            round_temp_variable = wet_populace_arms
+            add_equipment_to_stockpile = {
+              type = infantry_equipment_0
+              amount = wet_populace_arms
+              producer = ROOT
+            }
+          }
+        }
+      }
+    }
+    ai_will_do = {
+      base = 0
+      modifier = {
+        add = 1
+        has_stability
+        >
+        0.85
+        has_war_support
+        >
+        0.85
+        has_equipment = {
+          infantry_equipment
+          <
+          0
+        }
+      }
+    }
+    allowed = {
+      NOT = {
+        tag = WST
+      }
+    }
+  }
 }

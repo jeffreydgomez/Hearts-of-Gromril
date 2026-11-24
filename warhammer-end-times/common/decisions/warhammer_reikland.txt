@@ -694,48 +694,6 @@ wet_rei_campaigns = {
       factor = 5
     }
   }
-  wet_rei_claim_I10 = {
-    desc = wet_decision_no_description
-    icon = generic_political_discourse
-    allowed = {
-      tag = A01
-    }
-    visible = {
-      has_completed_focus = WET_REI_I10
-      has_country_flag = wet_rei_claim_I10
-      NOT = {
-        has_country_flag = wet_rei_claim_I10_done
-      }
-    }
-    cost = 0
-    available = {
-      AND = {
-        has_country_flag = wet_rei_claim_I10
-        wet_rei_restored_empire = yes
-      }
-    }
-    complete_effect = {
-      effect_tooltip = {
-        add_ideas = wet_rei_restored
-        add_manpower = 2000
-        custom_effect_tooltip = WET_REI_I10_construction_0_tt
-      }
-      hidden_effect = {
-        add_ideas = wet_rei_restored
-        add_manpower = 2000
-        add_to_variable = {
-          wet_rei_infrastructure_credits = 1
-        }
-        wet_rei_spend_construction_credits = yes
-        clr_country_flag = wet_rei_claim_I10
-        set_country_flag = wet_rei_claim_I10_done
-      }
-    }
-    days_re_enable = 0
-    ai_will_do = {
-      factor = 5
-    }
-  }
   wet_rei_claim_I13 = {
     desc = wet_decision_no_description
     icon = generic_political_discourse

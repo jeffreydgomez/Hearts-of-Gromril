@@ -12627,70 +12627,7 @@ wet_ult_send_amends = {
     }
   }
 }
-wet_ult_send_empire = {
-  if = {
-    limit = {
-      exists = yes
-      is_faction_leader = yes
-      is_in_faction_with = A01
-      has_government = democratic
-      H06 = {
-        wet_ult_empire_ready = yes
-        NOT = {
-          any_enemy_country = {
-            is_in_faction_with = PREV.PREV
-          }
-        }
-      }
-      NOT = {
-        has_country_flag = wet_ult_offer_empire
-      }
-      check_variable = {
-        wet_ult_offer_empire_cooldown
-        <
-        1
-      }
-      OR = {
-        NOT = {
-          has_country_flag = wet_ult_offer_empire_attempted
-        }
-        H06 = {
-          always = yes
-        }
-      }
-    }
-    if = {
-      limit = {
-        has_country_flag = wet_ult_offer_empire_attempted
-      }
-      H06 = {
 
-      }
-    }
-    set_country_flag = wet_ult_offer_empire_attempted
-    set_country_flag = wet_ult_offer_empire
-    set_variable = {
-      wet_ult_offer_empire_days = 30
-    }
-    H06 = {
-      if = {
-        limit = {
-          NOT = {
-            is_in_array = {
-              wet_ult_active_recipients = PREV
-            }
-          }
-        }
-        add_to_array = {
-          wet_ult_active_recipients = PREV
-        }
-      }
-    }
-    country_event = {
-      id = wet_ulthuan.101
-    }
-  }
-}
 wet_ult_send_pact_B01 = {
   if = {
     limit = {
@@ -14824,8 +14761,6 @@ wet_ult_rebel_cleanup = {
   clr_country_flag = wet_ult_custody_transfer_accepted
   clr_country_flag = wet_ult_druchii_aid_open
   clr_country_flag = wet_ult_eltharion_committed
-  clr_country_flag = wet_ult_empire_application
-  clr_country_flag = wet_ult_empire_envoys
   clr_country_flag = wet_ult_empire_policy
   clr_country_flag = wet_ult_expedition_active
   clr_country_flag = wet_ult_expedition_failed
@@ -14868,8 +14803,6 @@ wet_ult_rebel_cleanup = {
   clr_country_flag = wet_ult_offer_dossier
   clr_country_flag = wet_ult_offer_dossier_accepted
   clr_country_flag = wet_ult_offer_dossier_attempted
-  clr_country_flag = wet_ult_offer_empire
-  clr_country_flag = wet_ult_offer_empire_attempted
   clr_country_flag = wet_ult_offer_malekith_crown
   clr_country_flag = wet_ult_offer_malekith_crown_accepted
   clr_country_flag = wet_ult_offer_malekith_crown_attempted
@@ -14974,65 +14907,6 @@ wet_ult_tick_recipient = {
         }
         set_variable = {
           wet_ult_offer_amends_cooldown = 180
-        }
-      }
-    }
-  }
-  if = {
-    limit = {
-      check_variable = {
-        wet_ult_offer_empire_cooldown
-        >
-        0
-      }
-    }
-    subtract_from_variable = {
-      wet_ult_offer_empire_cooldown = 1
-    }
-  }
-  if = {
-    limit = {
-      has_country_flag = wet_ult_offer_empire
-    }
-    subtract_from_variable = {
-      wet_ult_offer_empire_days = 1
-    }
-    if = {
-      limit = {
-        OR = {
-          check_variable = {
-            wet_ult_offer_empire_days
-            <
-            1
-          }
-          NOT = {
-            AND = {
-              exists = yes
-              is_faction_leader = yes
-              is_in_faction_with = A01
-              has_government = democratic
-              H06 = {
-                wet_ult_empire_ready = yes
-                NOT = {
-                  any_enemy_country = {
-                    is_in_faction_with = PREV.PREV
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      if = {
-        limit = {
-          has_country_flag = wet_ult_offer_empire
-        }
-        clr_country_flag = wet_ult_offer_empire
-        set_variable = {
-          wet_ult_offer_empire_days = 0
-        }
-        set_variable = {
-          wet_ult_offer_empire_cooldown = 180
         }
       }
     }
@@ -16698,12 +16572,6 @@ wet_ult_daily = {
                 >
                 0
               }
-              has_country_flag = wet_ult_offer_empire
-              check_variable = {
-                wet_ult_offer_empire_cooldown
-                >
-                0
-              }
               has_country_flag = wet_ult_offer_pact_B01
               check_variable = {
                 wet_ult_offer_pact_B01_cooldown
@@ -17779,6 +17647,7 @@ wet_ult_award_D01 = {
     }
     set_country_flag = wet_ult_reward_D01
     set_country_flag = wet_ult_empire_policy
+    add_political_power = 50
     wet_ult_reconcile_benefits = yes
   }
 }
@@ -17817,8 +17686,34 @@ wet_ult_award_D04 = {
       }
     }
     set_country_flag = wet_ult_reward_D04
-    set_country_flag = wet_ult_empire_envoys
-    army_experience = 15
+    if = {
+      limit = {
+        A01 = {
+          exists = yes
+          is_in_faction = yes
+          faction_leader = {
+            NOT = {
+              has_war_with = H06
+            }
+          }
+        }
+      }
+      A01 = {
+        faction_leader = {
+          add_opinion_modifier = {
+            target = H06
+            modifier = wet_ult_friendship
+          }
+          H06 = {
+            add_opinion_modifier = {
+              target = PREV
+              modifier = wet_ult_friendship
+            }
+          }
+        }
+      }
+    }
+    add_political_power = 25
     wet_ult_reconcile_benefits = yes
   }
 }
@@ -18021,136 +17916,11 @@ wet_ult_award_D08 = {
       NOT = {
         has_country_flag = wet_ult_reward_D08
       }
-      NOT = {
-
-      }
-      wet_ult_amends_clear = yes
-      A01 = {
-        exists = yes
-        is_in_faction = yes
-      }
-      always = yes
-      wet_ult_sovereign = yes
-      is_in_faction = no
-      always = yes
-      NOT = {
-
-      }
-      wet_ult_amends_clear = yes
-      A01 = {
-        exists = yes
-        is_in_faction = yes
-        faction_leader = {
-          has_government = democratic
-          NOT = {
-            has_war_with = H06
-          }
-          NOT = {
-            any_enemy_country = {
-              is_in_faction_with = H06
-            }
-          }
-        }
-      }
-      A01 = {
-        faction_leader = {
-          exists = yes
-          is_faction_leader = yes
-          is_in_faction_with = A01
-          has_government = democratic
-          H06 = {
-            wet_ult_sovereign = yes
-            is_in_faction = no
-            always = yes
-            NOT = {
-
-            }
-            wet_ult_amends_clear = yes
-            A01 = {
-              exists = yes
-              is_in_faction = yes
-              faction_leader = {
-                has_government = democratic
-                NOT = {
-                  has_war_with = H06
-                }
-                NOT = {
-                  any_enemy_country = {
-                    is_in_faction_with = H06
-                  }
-                }
-              }
-            }
-            NOT = {
-              any_enemy_country = {
-                is_in_faction_with = PREV.PREV
-              }
-            }
-          }
-          NOT = {
-            has_country_flag = wet_ult_offer_empire
-          }
-          check_variable = {
-            wet_ult_offer_empire_cooldown
-            <
-            1
-          }
-          OR = {
-            NOT = {
-              has_country_flag = wet_ult_offer_empire_attempted
-            }
-            H06 = {
-              always = yes
-            }
-          }
-        }
-      }
+      wet_ult_grand_member = yes
     }
     set_country_flag = wet_ult_reward_D08
-    set_country_flag = wet_ult_empire_application
-    if = {
-      limit = {
-        has_completed_focus = WET_ULT_D08
-        wet_ult_empire_ready = yes
-        A01 = {
-          faction_leader = {
-            exists = yes
-            is_faction_leader = yes
-            is_in_faction_with = A01
-            has_government = democratic
-            H06 = {
-              wet_ult_empire_ready = yes
-              NOT = {
-                any_enemy_country = {
-                  is_in_faction_with = PREV.PREV
-                }
-              }
-            }
-            NOT = {
-              has_country_flag = wet_ult_offer_empire
-            }
-            check_variable = {
-              wet_ult_offer_empire_cooldown
-              <
-              1
-            }
-            OR = {
-              NOT = {
-                has_country_flag = wet_ult_offer_empire_attempted
-              }
-              H06 = {
-                always = yes
-              }
-            }
-          }
-        }
-      }
-      A01 = {
-        faction_leader = {
-          wet_ult_send_empire = yes
-        }
-      }
-    }
+    army_experience = 25
+    navy_experience = 25
     wet_ult_reconcile_benefits = yes
   }
 }

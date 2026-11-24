@@ -37,7 +37,7 @@ focus_tree = {
       add_ideas = wet_arc_everchosen
       add_offsite_building = {
         type = arms_factory
-        level = 20
+        level = 50
       }
     }
     completion_reward = {
@@ -45,7 +45,7 @@ focus_tree = {
         add_ideas = wet_arc_everchosen
         add_offsite_building = {
           type = arms_factory
-          level = 20
+          level = 50
         }
       }
       hidden_effect = {
@@ -75,7 +75,7 @@ focus_tree = {
           }
           add_offsite_building = {
             type = arms_factory
-            level = 20
+            level = 50
           }
           set_country_flag = wet_arc_claim_C01_done
         }
@@ -103,38 +103,16 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ARC_K00_special_tt
+      army_experience = 25
       unlock_decision_tooltip = wet_arc_restore_R01
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ARC_K00_special_tt
+        army_experience = 25
         unlock_decision_tooltip = wet_arc_restore_R01
       }
       hidden_effect = {
-        if = {
-          limit = {
-            R01 = {
-              is_in_faction_with = B99
-            }
-          }
-          add_political_power = 10
-        }
-        else_if = {
-          limit = {
-            R01 = {
-              wet_arc_offer_target = yes
-            }
-          }
-          R01 = {
-            country_event = {
-              id = wet_archaon.10
-            }
-          }
-        }
-        else = {
-          add_political_power = 25
-        }
+        army_experience = 25
         wet_arc_count_industry = yes
       }
     }
@@ -4543,37 +4521,30 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ARC_T00_special_tt
+      add_tech_bonus = {
+        name = wet_arc_research_bonus
+        bonus = 1.0
+        uses = 1
+        category = electronics
+      }
       unlock_decision_tooltip = wet_arc_restore_R03
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ARC_T00_special_tt
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
+        }
         unlock_decision_tooltip = wet_arc_restore_R03
       }
       hidden_effect = {
-        if = {
-          limit = {
-            R03 = {
-              is_in_faction_with = B99
-            }
-          }
-          add_political_power = 10
-        }
-        else_if = {
-          limit = {
-            R03 = {
-              wet_arc_offer_target = yes
-            }
-          }
-          R03 = {
-            country_event = {
-              id = wet_archaon.11
-            }
-          }
-        }
-        else = {
-          add_political_power = 25
+        add_tech_bonus = {
+          name = wet_arc_research_bonus
+          bonus = 1.0
+          uses = 1
+          category = electronics
         }
         wet_arc_count_industry = yes
       }
@@ -6369,38 +6340,16 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ARC_N00_special_tt
+      add_manpower = 25000
       unlock_decision_tooltip = wet_arc_restore_R02
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ARC_N00_special_tt
+        add_manpower = 25000
         unlock_decision_tooltip = wet_arc_restore_R02
       }
       hidden_effect = {
-        if = {
-          limit = {
-            R02 = {
-              is_in_faction_with = B99
-            }
-          }
-          add_political_power = 10
-        }
-        else_if = {
-          limit = {
-            R02 = {
-              wet_arc_offer_target = yes
-            }
-          }
-          R02 = {
-            country_event = {
-              id = wet_archaon.12
-            }
-          }
-        }
-        else = {
-          add_political_power = 25
-        }
+        add_manpower = 25000
         wet_arc_count_industry = yes
       }
     }
@@ -8626,38 +8575,16 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ARC_S00_special_tt
+      add_political_power = 100
       unlock_decision_tooltip = wet_arc_restore_R04
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ARC_S00_special_tt
+        add_political_power = 100
         unlock_decision_tooltip = wet_arc_restore_R04
       }
       hidden_effect = {
-        if = {
-          limit = {
-            R04 = {
-              is_in_faction_with = B99
-            }
-          }
-          add_political_power = 10
-        }
-        else_if = {
-          limit = {
-            R04 = {
-              wet_arc_offer_target = yes
-            }
-          }
-          R04 = {
-            country_event = {
-              id = wet_archaon.13
-            }
-          }
-        }
-        else = {
-          add_political_power = 25
-        }
+        add_political_power = 100
         wet_arc_count_industry = yes
       }
     }

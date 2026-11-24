@@ -2,11 +2,11 @@
  WET_DIRECT_A03_ulthuan_builder:0 "Gain one civilian factory in an owned, controlled island state."
  WET_DIRECT_A06_ulthuan_builder:0 "Offer 500 Infantry Equipment."
  WET_DIRECT_A09_ulthuan_builder:0 "Gain 25 Navy Experience and send the two-crowns constitutional offer."
- WET_DIRECT_D04_ulthuan_builder:0 "Establish an embassy to the Grand Alliance and gain 25 Political Power."
+ WET_DIRECT_D04_ulthuan_builder:0 "Gain 25 Political Power and +25 mutual opinion with the current Grand Alliance leader if at peace with Ulthuan."
  WET_DIRECT_D05_ulthuan_builder:0 "Offer a non-aggression pact to §Y[B01.GetNameDef]§!. Invite it into the §YPhoenix Concord§! if the faction has been formed and its membership requirements are met."
  WET_DIRECT_D06_ulthuan_builder:0 "Offer a non-aggression pact to §Y[H19.GetNameDef]§!. Invite it into the §YPhoenix Concord§! if the faction has been formed and its membership requirements are met."
  WET_DIRECT_D07_ulthuan_builder:0 "Offer §Y500 Infantry Equipment§! to eligible Dwarfen realms. Acceptance improves relations and satisfies the Dwarfen settlement requirement."
- WET_DIRECT_D08_ulthuan_builder:0 "Request admission from the Grand Alliance’s current leader."
+
  WET_DIRECT_D09_ulthuan_builder:0 "Create the §YPhoenix Concord§! faction."
  WET_DIRECT_I08_ulthuan_builder:0 "Send a reconciliation offer to the claimant government."
  WET_DIRECT_I09_ulthuan_builder:0 "Gain +10% Attack on occupied Ulthuan cores for 90 days."
@@ -116,15 +116,15 @@
  WET_ULT_D00:0 "Beyond the Shrouded Isle"
  WET_ULT_D00_desc:0 "Debate the realm’s place in the wider resistance. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D01:0 "Stand with the Empire"
- WET_ULT_D01_desc:0 "Commit to seeking the Empire’s Grand Alliance. No alliance can endure without the willing support of the realms that join it."
- WET_ULT_D01_special_tt:0 "Propose talks with the leader of the §YGrand Alliance§!."
+ WET_ULT_D01_desc:0 "Commit to cooperation with the Empire’s Grand Alliance. No alliance can endure without the willing support of the realms that join it."
+
  WET_ULT_D02:0 "Raise the Phoenix Concord"
  WET_ULT_D02_desc:0 "Commit to leading an independent Order alliance. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D02_special_tt:0 "Commit to forming the §YPhoenix Concord§!. It can be established after agreeing its charter, at §Y100%§! World Tension."
  WET_ULT_D03:0 "The Grudges Between Us"
- WET_ULT_D03_desc:0 "Identify the Dwarfen members whose assent is needed. No alliance can endure without the willing support of the realms that join it."
+ WET_ULT_D03_desc:0 "Open a diplomatic dialogue with the Dwarfen members of the Grand Alliance. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D04:0 "Envoys to Altdorf"
- WET_ULT_D04_desc:0 "Prepare a lawful invitation through the Empire’s coalition programme. No alliance can endure without the willing support of the realms that join it."
+ WET_ULT_D04_desc:0 "Establish an embassy and strengthen relations with the Grand Alliance’s current leader. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D05:0 "An Embassy to the Forest"
  WET_ULT_D05_desc:0 "Invite the Wood Elves to cooperate with the new league. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D05_special_tt:0 "Offer a non-aggression pact to §Y[B01.GetNameDef]§!. Invite it into the §YPhoenix Concord§! if the faction has been formed and its membership requirements are met."
@@ -133,11 +133,11 @@
  WET_ULT_D06_special_tt:0 "Offer a non-aggression pact to §Y[H19.GetNameDef]§!. Invite it into the §YPhoenix Concord§! if the faction has been formed and its membership requirements are met."
  WET_ULT_D07:0 "A Reckoning for the War of the Beard"
  WET_ULT_D07_desc:0 "Offer public acknowledgement and reparations without claiming an artifact we do not possess. No alliance can endure without the willing support of the realms that join it."
- WET_ULT_D07_special_tt:0 "Offer §Y500 Infantry Equipment§! to eligible Dwarfen realms. Acceptance improves relations and satisfies the Dwarfen settlement requirement."
+ WET_ULT_D07_special_tt:0 "Offer §Y500 Infantry Equipment§! to eligible Dwarfen realms. Acceptance improves relations and opens the reconciliation reward. Faction entry does not require amends."
  WET_ULT_D08:0 "Seats at the War Council"
- WET_ULT_D08_desc:0 "Translate accepted diplomacy into a seat in the Grand Alliance. No alliance can endure without the willing support of the realms that join it."
- WET_ULT_D08_requirements:0 "§Y100%§! world tension.\nAll independent Dwarfen members accepted amends.\nCurrent alliance leader consents."
- WET_ULT_D08_special_tt:0 "Request admission from the Grand Alliance’s current leader."
+ WET_ULT_D08_desc:0 "Share the experience of our army and fleet with the allied war council. No alliance can endure without the willing support of the realms that join it."
+ WET_ULT_D08_requirements:0 "Current Grand Alliance membership."
+
  WET_ULT_D09:0 "The Charter of the Concord"
  WET_ULT_D09_desc:0 "Write the terms of a sovereign defensive league. No alliance can endure without the willing support of the realms that join it."
  WET_ULT_D09_requirements:0 "Ulthuan is sovereign and fully controls its capital. The §YPhoenix Concord§! has not already been founded."
@@ -470,10 +470,10 @@
  wet_ult_draw_sword_effect:0 "Pay §Y75§! Political Power for Tyrion to draw Widowmaker once. Requires the controlled shrine and either war with an enemy-held core state or §Y100%§! world tension. Lose one stability point every seven days even at peace.\nWhile at war gain §Y+15%§! attack, §Y+10%§! breakthrough and §Y+10%§! recovery."
  wet_ult_draw_sword_outcome_tt:0 "Tyrion draws the Sword of Khaine. While at war: §G+15%§! Division Attack, §G+10%§! Breakthrough and §G+10%§! Recovery Rate. Lose §R1%§! Stability every seven days."
  wet_ult_draw_sword_requirements:0 "Pay §Y75§! Political Power for Tyrion to draw Widowmaker once. Requires the controlled shrine and either war with an enemy-held core state or §Y100%§! world tension. Lose one stability point every seven days even at peace.\nWhile at war gain §Y+15%§! attack, §Y+10%§! breakthrough and §Y+10%§! recovery."
- wet_ult_empire_application:0 "Apply to the Grand Alliance"
- wet_ult_empire_application_desc:0 "Request membership from the alliance leader after all current Dwarfen amends and 100% tension. The leader may decline."
- wet_ult_empire_application_effect:0 "Request membership from the alliance leader after all current Dwarfen amends and §Y100%§! tension. The leader may decline."
- wet_ult_empire_application_requirements:0 "Request membership from the alliance leader after all current Dwarfen amends and §Y100%§! tension. The leader may decline."
+
+
+
+
  wet_ult_found_concord:0 "Proclaim the Phoenix Concord"
  wet_ult_found_concord_desc:0 "Form the Phoenix Concord for 100 Political Power at 100% world tension. This is Ulthuan’s one authorised additional Order faction; it begins with no forced members."
  wet_ult_found_concord_effect:0 "Form the Phoenix Concord for §Y100§! Political Power at §Y100%§! world tension. This is Ulthuan’s one authorised additional Order faction.\nIt begins with no forced members."
@@ -951,15 +951,15 @@
  wet_ulthuan.100.0:0 "Decline the request."
  wet_ulthuan.100.0_effect:0 "Decline without payment or forced commitments."
  wet_ulthuan.100.1:0 "Accept the terms."
- wet_ulthuan.100.1_effect:0 "Ulthuan acknowledges the old wrongs and offers §Y500§! existing infantry equipment. Accepting settles our objection to its joining the Empire.\nEquipment is delivered on acceptance."
+ wet_ulthuan.100.1_effect:0 "Ulthuan offers §Y500 Infantry Equipment§! to settle the old grievance. Acceptance improves relations and opens the reconciliation reward. These optional amends do not restrict faction membership."
  wet_ulthuan.100.d:0 "An Elven embassy has come bearing words few Dwarfs expected to hear. Ulthuan offers amends for an ancient wrong, though no gift can easily balance the weight of the Book of Grudges."
  wet_ulthuan.100.t:0 "Amends for the War of the Beard"
- wet_ulthuan.101.0:0 "Decline the request."
- wet_ulthuan.101.0_effect:0 "Decline without payment or forced commitments."
- wet_ulthuan.101.1:0 "Accept the terms."
- wet_ulthuan.101.1_effect:0 "Admit Ulthuan under the ordinary obligations of membership. The island has debated intervention, reached §Y100%§! world tension and satisfied every current independent Dwarfen ally. No war is declared by this offer."
- wet_ulthuan.101.d:0 "Ulthuan’s envoys have crossed the sea to seek common cause with the free realms. The Phoenix Throne sees a darkness approaching that even the strength of the island kingdoms cannot face alone."
- wet_ulthuan.101.t:0 "Ulthuan Seeks the Grand Alliance"
+
+
+
+
+
+
  wet_ulthuan.102.0:0 "Decline the request."
  wet_ulthuan.102.0_effect:0 "Decline without payment or forced commitments."
  wet_ulthuan.102.1:0 "Accept the terms."
@@ -1106,3 +1106,4 @@
  wet_ulthuan.23.d:0 "The expedition’s ships have returned, weathered by the voyage and the struggle beyond it. On the quays, waiting families search the decks while messengers hurry toward the palace."
  wet_ulthuan.23.t:0 "The Expedition Returns"
  WET_DIRECT_R10_ulthuan_builder:0 "After the first expedition fails and its §Y90-day§! cooldown ends, spend §Y500 Infantry Equipment§! and §Y100 Elite Equipment§! to launch the second and final §Y60-day§! rescue expedition."
+ WET_ULT_D04_special_tt:0 "Gain §G+25 mutual opinion§! with the current Grand Alliance leader if at peace with Ulthuan."

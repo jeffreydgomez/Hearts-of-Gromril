@@ -326,10 +326,30 @@ Eight paintings were copied from the EU4 mod. File-level artist assignments were
 
 **OpenAI image generation (image_gen), prompted for this project:** the five alignment emblems, horse resource icon, Realms of Chaos sky, Wasteland mountain portrait, research/equipment illustrations, racial national-spirit emblems, the dedicated Everchosen crown-and-Chaos-star emblem, the Veiled Watch agency emblem, and The End Times Approach scenario illustration (Chaos host, city and twin-tailed comet). Focus-granted spirits reuse the credited fantasy illustrations by theme; their assignments and source hashes are retained in the national-spirit icon register. These are generated assets, not attributed to the artists in the inherited credits. Resizing, cropping, DDS conversion, silhouettes and native-frame composites are documented in the conversion tooling.
 
+Eighteen original fictional Chaos tribal advisor portraits (six each for Norscan, Kurgan and Hung cultures) were also generated with **OpenAI image generation (image_gen)**. These replace generic advisor art only. Their full prompts, cached originals, hashes, 65 × 67 DDS conversions and cabinet assignments are retained in the Chaos advisor generation record. Superseded imported portraits retain their original credits.
+
 Original prompts, cached PNGs and recorded hashes are retained in the local development archive. The inventory below names those records and includes retained earlier versions as well as current artwork.
 
 | Asset | Cached artwork | Generation record |
 | --- | --- | --- |
+| Hung Counselor | hung_counselor.png | Prompt / provenance |
+| Hung Enforcer | hung_enforcer.png | Prompt / provenance |
+| Hung Marshal | hung_marshal.png | Prompt / provenance |
+| Hung Raider | hung_raider.png | Prompt / provenance |
+| Hung Seer | hung_seer.png | Prompt / provenance |
+| Hung Smith | hung_smith.png | Prompt / provenance |
+| Kurgan Counselor | kurgan_counselor.png | Prompt / provenance |
+| Kurgan Enforcer | kurgan_enforcer.png | Prompt / provenance |
+| Kurgan Marshal | kurgan_marshal.png | Prompt / provenance |
+| Kurgan Raider | kurgan_raider.png | Prompt / provenance |
+| Kurgan Seer | kurgan_seer.png | Prompt / provenance |
+| Kurgan Smith | kurgan_smith.png | Prompt / provenance |
+| Norscan Counselor | norscan_counselor.png | Prompt / provenance |
+| Norscan Enforcer | norscan_enforcer.png | Prompt / provenance |
+| Norscan Marshal | norscan_marshal.png | Prompt / provenance |
+| Norscan Raider | norscan_raider.png | Prompt / provenance |
+| Norscan Seer | norscan_seer.png | Prompt / provenance |
+| Norscan Smith | norscan_smith.png | Prompt / provenance |
 | Realms Of Chaos | realms_of_chaos.png | Prompt / provenance |
 | Chaos | chaos.png | Prompt / provenance |
 | Evil | evil.png | Prompt / provenance |

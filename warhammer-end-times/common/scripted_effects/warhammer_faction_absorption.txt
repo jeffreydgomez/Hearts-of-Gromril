@@ -14,9 +14,22 @@ wet_ai_faction_absorption = {
  # Check it before scanning neighbors, and again in the completion effect.
  if = {
   limit = { is_ai = yes is_faction_leader = yes NOT = { threat < 1 } wet_faction_absorption_ready = yes }
-  random_neighbor_country = {
-   limit = { wet_faction_absorption_target = yes }
-   wet_faction_absorption_complete = yes
+  if = {
+   limit = {
+    tag = A01
+    has_completed_focus = WET_REI_I10
+    any_neighbor_country = { wet_faction_absorption_imperial_target = yes }
+   }
+   random_neighbor_country = {
+    limit = { wet_faction_absorption_imperial_target = yes }
+    wet_faction_absorption_complete = yes
+   }
+  }
+  else = {
+   random_neighbor_country = {
+    limit = { wet_faction_absorption_target = yes }
+    wet_faction_absorption_complete = yes
+   }
   }
  }
 }

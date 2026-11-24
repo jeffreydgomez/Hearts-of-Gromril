@@ -1,3 +1,4 @@
+# Diplomatic action: ROOT is the faction leader; THIS is the recipient.
 wet_faction_absorption_member = {
   ROOT = {
     exists = yes
@@ -24,53 +25,34 @@ wet_faction_absorption_member = {
     }
   }
 }
+wet_faction_absorption_small_minor = {
+ OR = { num_of_factories < 10 num_divisions < 10 }
+}
 wet_faction_absorption_same_wars = {
-  OR = {
-    has_war = no
-    has_war_together_with = ROOT
-  }
-  NOT = {
-    any_enemy_country = {
-      NOT = {
-        has_war_with = ROOT
-      }
-    }
-  }
-  ROOT = {
-    NOT = {
-      any_enemy_country = {
-        NOT = {
-          has_war_with = PREV.PREV
-        }
-      }
-    }
-  }
+ # A shared war alone is insufficient: neither side may have an extra enemy.
+ OR = { has_war = no has_war_together_with = ROOT }
+ NOT = { any_enemy_country = { NOT = { has_war_with = ROOT } } }
+ ROOT = {
+  NOT = { any_enemy_country = { NOT = { has_war_with = PREV.PREV } } }
+ }
 }
 wet_faction_absorption_same_continent = {
-  is_on_same_continent_as = ROOT
+ # Native COUNTRY comparison uses each country's current capital state.
+ is_on_same_continent_as = ROOT
 }
 wet_faction_absorption_ready = {
-  check_variable = {
-    wet_faction_absorption_cooldown
-    <
-    1
-  }
+ check_variable = { wet_faction_absorption_cooldown < 1 }
 }
 wet_faction_absorption_target = {
-  wet_faction_absorption_member = yes
-  NOT = {
-    OR = {
-      threat
-      <
-      1
-    }
-  }
-  NOT = {
-    has_war_with = ROOT
-  }
-  wet_faction_absorption_same_wars = yes
-  wet_faction_absorption_same_continent = yes
-  ROOT = {
-    wet_faction_absorption_ready = yes
-  }
+ wet_faction_absorption_member = yes
+ wet_faction_absorption_small_minor = yes
+ NOT = { threat < 1 }
+ NOT = { has_war_with = ROOT }
+ wet_faction_absorption_same_wars = yes
+ wet_faction_absorption_same_continent = yes
+ ROOT = { wet_faction_absorption_ready = yes }
+}
+wet_faction_absorption_imperial_target = {
+ wet_faction_absorption_target = yes
+ OR = { wet_rei_elector = yes tag = A12 tag = A13 }
 }

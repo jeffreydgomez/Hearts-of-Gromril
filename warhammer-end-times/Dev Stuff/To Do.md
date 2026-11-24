@@ -9,19 +9,11 @@ Bretonnia, Archaon, Nagash
 
 	Redo racial bonuses
 
-	Once the empire is under reikland, and world tension is at 100% or at war with the everchosen, then fully annex the empire or give them big bonuses?
-
-	Encourage AI to build different divisions & not retire divisions?
-
-	Fix Nation selection page
-
 	Make sure the tech bonuses are for that whole tech type, not just for a specific tech
 
 	Better intro loading images & background image
 
 	Make call to chaos and spread the waaagh automatic and every 30 or 45 days?
-
-	Various decisions based on race/religion (Codex brainstormed)
 
 	Make sure the Everchosen's autonomy change is working correctly
 
@@ -29,35 +21,29 @@ Bretonnia, Archaon, Nagash
 
 	Make sure the Aliathra thing is right.
 
-	Nagashizzar and the Swords of Chaos colors are too similar. Make them purple? Green?
-
 	More stuff with Volunteers?
 
 	Rebalance resources - particularly metal, horses, and food.
 
-	Make sure that all nations with custom focus trees are in the intro starter
-		Unique Content
-		Other Interesting
+	Generic decisions
+
+	Winds of Magic Sfuff?
+
+	Archaone still gets a million decisions from his missoins
+
+	The racial and religious decisions should not say "Not AI" - that should be a hidden trigger.
+
+	Can skaven get more out of Warpstone than other people? A decision to ... eat it?
+
+	Why can't Reikland usually take the final empire unification decision?
+
+	Get better portraits for chaos tribes.
 
 ### Confirm ####
 
-	Can we add a ledger? That includes resources produced?
-
-	Make sure the everchosen's spirit is a cool icon, 
-
-	Give all national spirits an approprite icon
-
 	Add a skaven operation to detonate a doomsphere.
 
-	Nagash - Can artifacts be lost? Can ARkhan or Nagash be in the wrong place? If not, remove all that wording.
-
 	Make sure everybody gets an event when Nagash returns, and make it longer and more flavorful
-
-	Get rid of the cores on Nagash's starting land
-
-	For unique equipment, put in parenthesis the equipment that it replaces.
-
-	Nagash - too much text in the capture effect
 
 	Add a decision to destroy the great vortex if you control it.
 		this has a variety of effects, including mostly sinking Ulthuan - putting a -25% factory output and instantly killing 25% of all population in every Ulthuan state.
@@ -67,6 +53,8 @@ Bretonnia, Archaon, Nagash
 		Once the great vortex is destroyed everybody gets an event saying what has happened, a decision for each wind becomes availble for everybody to claim that wind and become an incarnate.
 			Claiming a wind/incarnate requires 1000 pp. For each wind you need to have one of three generals (from lore and those you think most appropriate). Once you claim the wind, that general gets massive bonuses. Everybody gets an event saying what has happened.
 		When the vortex is destroyed, give Archaon a +20% organization national spirit for "The Winds of Chaos are Loose"
+
+	Encourage AI to build different divisions & not retire divisions?
 
 #### LESS URGENT TO DO ####
 
@@ -88,7 +76,7 @@ Bretonnia, Archaon, Nagash
 
 #### Tier 2 Focus trees ####
 
-	Nehekhara, Grand Cathay, Athel Loren, Zharr NaggrundnAraby, Chaos Gods
+	Nehekhara, Grand Cathay, Athel Loren, Zharr Naggrundn, Araby, Chaos Gods
 
 	Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
 
@@ -133,11 +121,7 @@ The four integrated expansions are explicitly included in the [current base-game
 Before changing a system, inspect its current `has_dlc`, technology and scripted UI gates, then design the supported DLC combinations. This reference is a planning inventory, not an instruction to switch anything off now.
 
 
-
-
 #### Notes ####
-
-
 
 ## Doctrines and non-equipment military research
 

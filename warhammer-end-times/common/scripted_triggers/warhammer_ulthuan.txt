@@ -687,62 +687,8 @@ wet_ult_amends_clear = {
     }
   }
 }
-wet_ult_entry_allowed = {
-  OR = {
-    NOT = {
-      tag = H06
-    }
-    is_in_faction = yes
-    AND = {
-      NOT = {
-        OR = {
-          threat
-          <
-          1.0
-        }
-      }
-      OR = {
-        has_country_flag = wet_ult_concord_transaction
-        AND = {
-          has_completed_focus = WET_ULT_D08
-          wet_ult_amends_clear = yes
-          OR = {
-            has_country_flag = wet_ult_empire_transaction
-            wet_rei_coalition_transaction = yes
-          }
-        }
-      }
-    }
-  }
-}
-wet_ult_empire_ready = {
-  wet_ult_sovereign = yes
-  is_in_faction = no
-  has_completed_focus = WET_ULT_D08
-  NOT = {
-    OR = {
-      threat
-      <
-      1.0
-    }
-  }
-  wet_ult_amends_clear = yes
-  A01 = {
-    exists = yes
-    is_in_faction = yes
-    faction_leader = {
-      has_government = democratic
-      NOT = {
-        has_war_with = H06
-      }
-      NOT = {
-        any_enemy_country = {
-          is_in_faction_with = H06
-        }
-      }
-    }
-  }
-}
+
+
 wet_ult_concord_can_form = {
   wet_ult_sovereign = yes
   is_in_faction = no

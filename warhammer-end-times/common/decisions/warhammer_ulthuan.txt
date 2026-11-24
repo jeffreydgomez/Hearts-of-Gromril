@@ -613,95 +613,18 @@ wet_ult_recovery = {
     cost = 0
     days_re_enable = 0
     available = {
-      NOT = {
-
-      }
-      A01 = {
-        exists = yes
-        is_in_faction = yes
-      }
-      is_in_faction = no
       AND = {
         has_country_flag = wet_ult_earned_D08
         NOT = {
           has_country_flag = wet_ult_reward_D08
         }
-        wet_ult_amends_clear = yes
-        always = yes
-        wet_ult_sovereign = yes
-        A01 = {
-          exists = yes
-          is_in_faction = yes
-          faction_leader = {
-            has_government = democratic
-            NOT = {
-              has_war_with = H06
-            }
-            NOT = {
-              any_enemy_country = {
-                is_in_faction_with = H06
-              }
-            }
-          }
-        }
-        A01 = {
-          faction_leader = {
-            exists = yes
-            is_faction_leader = yes
-            is_in_faction_with = A01
-            has_government = democratic
-            H06 = {
-              wet_ult_sovereign = yes
-              is_in_faction = no
-              always = yes
-              NOT = {
-
-              }
-              wet_ult_amends_clear = yes
-              A01 = {
-                exists = yes
-                is_in_faction = yes
-                faction_leader = {
-                  has_government = democratic
-                  NOT = {
-                    has_war_with = H06
-                  }
-                  NOT = {
-                    any_enemy_country = {
-                      is_in_faction_with = H06
-                    }
-                  }
-                }
-              }
-              NOT = {
-                any_enemy_country = {
-                  is_in_faction_with = PREV.PREV
-                }
-              }
-            }
-            NOT = {
-              has_country_flag = wet_ult_offer_empire
-            }
-            check_variable = {
-              wet_ult_offer_empire_cooldown
-              <
-              1
-            }
-            OR = {
-              NOT = {
-                has_country_flag = wet_ult_offer_empire_attempted
-              }
-              H06 = {
-                always = yes
-              }
-            }
-          }
-        }
+        wet_ult_grand_member = yes
       }
     }
     complete_effect = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ULT_D08_special_tt
+        army_experience = 25
+        navy_experience = 25
       }
       hidden_effect = {
         wet_ult_award_D08 = yes

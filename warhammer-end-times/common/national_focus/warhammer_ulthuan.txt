@@ -2138,11 +2138,11 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ULT_D01_special_tt
+      add_political_power = 50
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ULT_D01_special_tt
+        add_political_power = 50
       }
       hidden_effect = {
         set_country_flag = wet_ult_earned_D01
@@ -2150,7 +2150,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 100
       modifier = {
         factor = 0
         threat
@@ -2200,7 +2200,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 1
       modifier = {
         factor = 0
         threat
@@ -2258,7 +2258,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 50
     }
     search_filters = {
       FOCUS_FILTER_STABILITY
@@ -2277,11 +2277,13 @@ focus_tree = {
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      army_experience = 15
+      add_political_power = 25
+      custom_effect_tooltip = WET_ULT_D04_special_tt
     }
     completion_reward = {
       effect_tooltip = {
-        army_experience = 15
+        add_political_power = 25
+        custom_effect_tooltip = WET_ULT_D04_special_tt
       }
       hidden_effect = {
         set_country_flag = wet_ult_earned_D04
@@ -2289,7 +2291,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 50
       modifier = {
         factor = 0
         threat
@@ -2299,7 +2301,6 @@ focus_tree = {
     }
     search_filters = {
       FOCUS_FILTER_POLITICAL
-      FOCUS_FILTER_ARMY
     }
     available = {
       OR = {
@@ -2442,7 +2443,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 50
       modifier = {
         factor = 0
         threat
@@ -2474,95 +2475,9 @@ focus_tree = {
       focus = WET_ULT_D04
     }
     available = {
-      NOT = {
-        OR = {
-          threat
-          <
-          1.0
-        }
-      }
-      A01 = {
-        exists = yes
-        is_in_faction = yes
-      }
-      is_in_faction = no
       custom_trigger_tooltip = {
         tooltip = WET_ULT_D08_requirements
-        wet_ult_amends_clear = yes
-        always = yes
-        wet_ult_sovereign = yes
-        A01 = {
-          exists = yes
-          is_in_faction = yes
-          faction_leader = {
-            has_government = democratic
-            NOT = {
-              has_war_with = H06
-            }
-            NOT = {
-              any_enemy_country = {
-                is_in_faction_with = H06
-              }
-            }
-          }
-        }
-        A01 = {
-          faction_leader = {
-            exists = yes
-            is_faction_leader = yes
-            is_in_faction_with = A01
-            has_government = democratic
-            H06 = {
-              wet_ult_sovereign = yes
-              is_in_faction = no
-              always = yes
-              NOT = {
-                OR = {
-                  threat
-                  <
-                  1.0
-                }
-              }
-              wet_ult_amends_clear = yes
-              A01 = {
-                exists = yes
-                is_in_faction = yes
-                faction_leader = {
-                  has_government = democratic
-                  NOT = {
-                    has_war_with = H06
-                  }
-                  NOT = {
-                    any_enemy_country = {
-                      is_in_faction_with = H06
-                    }
-                  }
-                }
-              }
-              NOT = {
-                any_enemy_country = {
-                  is_in_faction_with = PREV.PREV
-                }
-              }
-            }
-            NOT = {
-              has_country_flag = wet_ult_offer_empire
-            }
-            check_variable = {
-              wet_ult_offer_empire_cooldown
-              <
-              1
-            }
-            OR = {
-              NOT = {
-                has_country_flag = wet_ult_offer_empire_attempted
-              }
-              H06 = {
-                always = yes
-              }
-            }
-          }
-        }
+        wet_ult_grand_member = yes
       }
       OR = {
         is_ai = no
@@ -2573,18 +2488,17 @@ focus_tree = {
         }
       }
     }
-    bypass = {
-      wet_ult_grand_member = yes
-    }
     cancel_if_invalid = no
     continue_if_invalid = yes
     available_if_capitulated = no
     complete_tooltip = {
-      custom_effect_tooltip = WET_ULT_D08_special_tt
+      army_experience = 25
+      navy_experience = 25
     }
     completion_reward = {
       effect_tooltip = {
-        custom_effect_tooltip = WET_ULT_D08_special_tt
+        army_experience = 25
+        navy_experience = 25
       }
       hidden_effect = {
         set_country_flag = wet_ult_earned_D08
@@ -2592,7 +2506,7 @@ focus_tree = {
       }
     }
     ai_will_do = {
-      factor = 10
+      factor = 50
       modifier = {
         factor = 0
         threat
@@ -2601,7 +2515,8 @@ focus_tree = {
       }
     }
     search_filters = {
-      FOCUS_FILTER_POLITICAL
+      FOCUS_FILTER_ARMY
+      FOCUS_FILTER_NAVY
     }
   }
   focus = {
