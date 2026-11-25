@@ -1,0 +1,29 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      B17 = {
+        wet_zhr_apply_programmes = yes
+      }
+    }
+  }
+  on_daily_B17 = {
+    effect = {
+      wet_zhr_daily = yes
+    }
+  }
+  on_capitulation = {
+    effect = {
+      if = {
+        limit = {
+          tag = B99
+          B17 = {
+            has_war_with = B99
+          }
+        }
+        B17 = {
+          set_country_flag = wet_zhr_everchosen_defeated
+        }
+      }
+    }
+  }
+}

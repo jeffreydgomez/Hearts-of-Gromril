@@ -1,0 +1,216 @@
+wet_zhr_target_W02 = {
+  is_subject = no
+  B25 = {
+    exists = yes
+    is_subject = no
+    is_neighbor_of = B17
+    NOT = {
+      is_in_faction_with = B17
+    }
+  }
+  NOT = {
+    is_subject_of = B25
+  }
+  OR = {
+    is_ai = no
+    B25 = {
+      is_in_faction = no
+    }
+  }
+}
+wet_zhr_target_W05 = {
+  is_subject = no
+  G25 = {
+    exists = yes
+    is_subject = no
+    is_neighbor_of = B17
+    NOT = {
+      is_in_faction_with = B17
+    }
+  }
+  NOT = {
+    is_subject_of = G25
+  }
+  OR = {
+    is_ai = no
+    G25 = {
+      is_in_faction = no
+    }
+  }
+}
+wet_zhr_target_W08 = {
+  is_subject = no
+  G32 = {
+    exists = yes
+    is_subject = no
+    is_neighbor_of = B17
+    NOT = {
+      is_in_faction_with = B17
+    }
+  }
+  NOT = {
+    is_subject_of = G32
+  }
+  OR = {
+    is_ai = no
+    G32 = {
+      is_in_faction = no
+    }
+  }
+}
+wet_zhr_chaos_member = {
+  tag = B17
+  is_subject = no
+  has_government = fascism
+  any_country = {
+    is_faction_leader = yes
+    has_country_flag = wet_everchosen_leader
+    has_government = fascism
+    is_in_faction_with = B17
+  }
+}
+wet_zhr_order_member = {
+  tag = B17
+  is_subject = no
+  has_government = democratic
+  any_country = {
+    is_faction_leader = yes
+    has_government = democratic
+    is_in_faction_with = B17
+  }
+}
+wet_zhr_greenskin_member = {
+  tag = B17
+  is_subject = no
+  has_government = waaagh
+  any_country = {
+    wet_waaagh_leader = yes
+    has_government = waaagh
+    is_in_faction_with = B17
+  }
+  has_country_flag = wet_zhr_uprising
+  has_government = waaagh
+}
+wet_zhr_sovereignty_protected = {
+  tag = B17
+  is_subject = no
+  OR = {
+    has_completed_focus = WET_ZHR_C00
+    has_completed_focus = WET_ZHR_O00
+    has_completed_focus = WET_ZHR_N00
+    has_completed_focus = WET_ZHR_G00
+  }
+}
+wet_zhr_river_control = {
+  893 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  676 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  71 = {
+    OR = {
+      is_controlled_by = B17
+      controller = {
+        exists = yes
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          has_military_access_to = PREV
+        }
+      }
+    }
+  }
+  661 = {
+    OR = {
+      is_controlled_by = B17
+      controller = {
+        exists = yes
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          has_military_access_to = PREV
+        }
+      }
+    }
+  }
+  728 = {
+    OR = {
+      is_controlled_by = B17
+      controller = {
+        exists = yes
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          has_military_access_to = PREV
+        }
+      }
+    }
+  }
+  OR = {
+    has_war = no
+    has_naval_control = 91
+  }
+}
+wet_zhr_dawi = {
+  has_idea = wet_race_chaos_dwarf
+  NOT = {
+    has_country_flag = wet_zhr_uprising
+  }
+}
+wet_zhr_green = {
+  has_country_flag = wet_zhr_uprising
+  has_government = waaagh
+}
+wet_zhr_uprising_won = {
+  has_country_flag = wet_zhr_uprising
+  has_government = waaagh
+  675 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  676 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  893 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  NOT = {
+    any_country = {
+      exists = yes
+      has_country_flag = wet_zhr_priesthood
+    }
+  }
+}
+wet_zhr_uprising_ready = {
+  tag = B17
+  is_subject = no
+  is_in_faction = no
+  has_war = no
+  NOT = {
+    has_civil_war = yes
+  }
+  NOT = {
+    has_country_flag = wet_zhr_uprising
+  }
+  has_country_flag = wet_zhr_weapons_reserved
+  675 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  676 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+  893 = {
+    is_owned_by = B17
+    is_fully_controlled_by = B17
+  }
+}

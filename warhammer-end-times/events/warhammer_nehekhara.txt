@@ -1,0 +1,512 @@
+add_namespace = wet_nehekhara
+country_event = {
+  id = wet_nehekhara.1
+  title = wet_nehekhara.1.t
+  desc = wet_nehekhara.1.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.1.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.2
+  title = wet_nehekhara.2.t
+  desc = wet_nehekhara.2.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.2.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.3
+  title = wet_nehekhara.3.t
+  desc = wet_nehekhara.3.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.3.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.4
+  title = wet_nehekhara.4.t
+  desc = wet_nehekhara.4.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.4.0
+    ai_chance = {
+      factor = 70
+    }
+    trigger = {
+      Z01 = {
+        has_country_flag = wet_neh_offer_araby
+        check_variable = {
+          wet_neh_offer_araby_days
+          >
+          0
+        }
+      }
+      tag = Z14
+      exists = yes
+      is_subject = no
+      is_in_faction = no
+      has_government = neutrality
+      NOT = {
+        has_war_with = Z01
+      }
+      Z01 = {
+        exists = yes
+        is_subject = no
+        is_in_faction = no
+        has_government = neutrality
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_neh_araby_offer_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          Z01 = {
+            has_country_flag = wet_neh_offer_araby
+            check_variable = {
+              wet_neh_offer_araby_days
+              >
+              0
+            }
+          }
+          tag = Z14
+          exists = yes
+          is_subject = no
+          is_in_faction = no
+          has_government = neutrality
+          NOT = {
+            has_war_with = Z01
+          }
+          Z01 = {
+            exists = yes
+            is_subject = no
+            is_in_faction = no
+            has_government = neutrality
+          }
+        }
+        Z01 = {
+          set_country_flag = wet_neh_faction_transaction
+          set_rule = {
+            can_create_factions = yes
+            can_join_factions = yes
+            can_join_opposite_factions = yes
+          }
+          create_faction = WET_NEH_COVENANT
+          if = {
+            limit = {
+              is_faction_leader = yes
+            }
+            add_to_faction = Z14
+            if = {
+              limit = {
+                is_in_faction_with = Z14
+              }
+              set_country_flag = wet_neh_covenant
+            }
+          }
+          clr_country_flag = wet_neh_faction_transaction
+          wet_apply_political_permissions = yes
+        }
+        if = {
+          limit = {
+            is_in_faction_with = Z01
+            Z01 = {
+              is_subject = no
+              is_faction_leader = yes
+            }
+          }
+          Z01 = {
+            clr_country_flag = wet_neh_offer_araby
+            set_variable = {
+              wet_neh_offer_araby_days = 0
+            }
+            set_variable = {
+              wet_neh_offer_araby_cooldown = 180
+            }
+            country_event = {
+              id = wet_nehekhara.1
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              Z01 = {
+                has_country_flag = wet_neh_offer_araby
+              }
+            }
+            Z01 = {
+              clr_country_flag = wet_neh_offer_araby
+              set_variable = {
+                wet_neh_offer_araby_days = 0
+              }
+              set_variable = {
+                wet_neh_offer_araby_cooldown = 180
+              }
+              country_event = {
+                id = wet_nehekhara.3
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            Z01 = {
+              has_country_flag = wet_neh_offer_araby
+            }
+          }
+          Z01 = {
+            clr_country_flag = wet_neh_offer_araby
+            set_variable = {
+              wet_neh_offer_araby_days = 0
+            }
+            set_variable = {
+              wet_neh_offer_araby_cooldown = 180
+            }
+            country_event = {
+              id = wet_nehekhara.3
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nehekhara.4.1
+    ai_chance = {
+      factor = 30
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          Z01 = {
+            has_country_flag = wet_neh_offer_araby
+          }
+        }
+        Z01 = {
+          clr_country_flag = wet_neh_offer_araby
+          set_variable = {
+            wet_neh_offer_araby_days = 0
+          }
+          set_variable = {
+            wet_neh_offer_araby_cooldown = 180
+          }
+          country_event = {
+            id = wet_nehekhara.2
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.5
+  title = wet_nehekhara.5.t
+  desc = wet_nehekhara.5.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.5.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.6
+  title = wet_nehekhara.6.t
+  desc = wet_nehekhara.6.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.6.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.7
+  title = wet_nehekhara.7.t
+  desc = wet_nehekhara.7.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.7.0
+    ai_chance = {
+      factor = 1
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.8
+  title = wet_nehekhara.8.t
+  desc = wet_nehekhara.8.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.8.0
+    ai_chance = {
+      factor = 80
+    }
+    trigger = {
+      Z01 = {
+        has_country_flag = wet_neh_offer_nagash
+        check_variable = {
+          wet_neh_offer_nagash_days
+          >
+          0
+        }
+      }
+      tag = U24
+      exists = yes
+      is_subject = no
+      OR = {
+        is_in_faction = no
+        is_faction_leader = yes
+      }
+      Z01 = {
+        exists = yes
+        is_subject = no
+        is_in_faction = no
+        has_government = communism
+        has_country_flag = wet_neh_uprising
+      }
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_neh_nagash_offer_tt
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          Z01 = {
+            has_country_flag = wet_neh_offer_nagash
+            check_variable = {
+              wet_neh_offer_nagash_days
+              >
+              0
+            }
+          }
+          tag = U24
+          exists = yes
+          is_subject = no
+          OR = {
+            is_in_faction = no
+            is_faction_leader = yes
+          }
+          Z01 = {
+            exists = yes
+            is_subject = no
+            is_in_faction = no
+            has_government = communism
+            has_country_flag = wet_neh_uprising
+          }
+        }
+        if = {
+          limit = {
+            Z01 = {
+              has_war_with = U24
+            }
+          }
+          Z01 = {
+            white_peace = {
+              tag = U24
+            }
+          }
+        }
+        every_other_country = {
+          limit = {
+            is_in_faction_with = U24
+            has_war_with = Z01
+            NOT = {
+              has_country_flag = wet_neh_royalist
+            }
+          }
+          Z01 = {
+            white_peace = {
+              tag = PREV
+            }
+          }
+        }
+        set_country_flag = wet_neh_faction_transaction
+        set_rule = {
+          can_create_factions = yes
+        }
+        if = {
+          limit = {
+            is_in_faction = no
+          }
+          create_faction = WET_FACTION_UNDEAD_1
+        }
+        if = {
+          limit = {
+            is_faction_leader = yes
+            Z01 = {
+              is_subject = no
+              is_in_faction = no
+              NOT = {
+                has_war_with = U24
+              }
+              NOT = {
+                any_enemy_country = {
+                  is_in_faction_with = U24
+                }
+              }
+            }
+          }
+          Z01 = {
+            set_country_flag = wet_neh_faction_transaction
+            set_rule = {
+              can_join_factions = yes
+              can_join_opposite_factions = yes
+            }
+          }
+          add_to_faction = Z01
+          Z01 = {
+            clr_country_flag = wet_neh_faction_transaction
+            wet_apply_political_permissions = yes
+          }
+        }
+        clr_country_flag = wet_neh_faction_transaction
+        wet_apply_political_permissions = yes
+        if = {
+          limit = {
+            is_in_faction_with = Z01
+            Z01 = {
+              is_subject = no
+              NOT = {
+                has_war_with = U24
+              }
+            }
+          }
+          Z01 = {
+            clr_country_flag = wet_neh_offer_nagash
+            set_variable = {
+              wet_neh_offer_nagash_days = 0
+            }
+            set_variable = {
+              wet_neh_offer_nagash_cooldown = 180
+            }
+            country_event = {
+              id = wet_nehekhara.5
+            }
+          }
+        }
+        else = {
+          if = {
+            limit = {
+              Z01 = {
+                has_country_flag = wet_neh_offer_nagash
+              }
+            }
+            Z01 = {
+              clr_country_flag = wet_neh_offer_nagash
+              set_variable = {
+                wet_neh_offer_nagash_days = 0
+              }
+              set_variable = {
+                wet_neh_offer_nagash_cooldown = 180
+              }
+              country_event = {
+                id = wet_nehekhara.7
+              }
+            }
+          }
+        }
+      }
+      else = {
+        if = {
+          limit = {
+            Z01 = {
+              has_country_flag = wet_neh_offer_nagash
+            }
+          }
+          Z01 = {
+            clr_country_flag = wet_neh_offer_nagash
+            set_variable = {
+              wet_neh_offer_nagash_days = 0
+            }
+            set_variable = {
+              wet_neh_offer_nagash_cooldown = 180
+            }
+            country_event = {
+              id = wet_nehekhara.7
+            }
+          }
+        }
+      }
+    }
+  }
+  option = {
+    name = wet_nehekhara.8.1
+    ai_chance = {
+      factor = 20
+    }
+    hidden_effect = {
+      if = {
+        limit = {
+          Z01 = {
+            has_country_flag = wet_neh_offer_nagash
+          }
+        }
+        Z01 = {
+          clr_country_flag = wet_neh_offer_nagash
+          set_variable = {
+            wet_neh_offer_nagash_days = 0
+          }
+          set_variable = {
+            wet_neh_offer_nagash_cooldown = 180
+          }
+          country_event = {
+            id = wet_nehekhara.6
+          }
+        }
+      }
+    }
+  }
+}
+country_event = {
+  id = wet_nehekhara.9
+  title = wet_nehekhara.9.t
+  desc = wet_nehekhara.9.d
+  picture = GFX_report_event_generic_sign_treaty2
+  is_triggered_only = yes
+  timeout_days = 30
+  option = {
+    name = wet_nehekhara.9.0
+    ai_chance = {
+      factor = 1
+    }
+    effect_tooltip = {
+      custom_effect_tooltip = wet_neh_civil_war_notice_tt
+    }
+  }
+}

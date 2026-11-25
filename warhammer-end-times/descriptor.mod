@@ -1,7 +1,7 @@
 version="0.1"
 tags={ "Alternative History" "Map" "National Focuses" "Events" }
 name="Warhammer: The End Times"
-supported_version="1.19.4.2"
+supported_version="1.20"
 replace_path="common/abilities"
 replace_path="common/ai_areas"
 replace_path="common/ai_equipment"

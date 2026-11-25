@@ -7,6 +7,8 @@ Bretonnia, Archaon, Nagash
 
 #### URGENT / QUICK #####
 
+	Fix the "No Compromise, No Surrender" issues
+
 	Redo racial bonuses
 
 	Make sure the tech bonuses are for that whole tech type, not just for a specific tech
@@ -76,7 +78,7 @@ Bretonnia, Archaon, Nagash
 
 #### Tier 2 Focus trees ####
 
-	Nehekhara, Grand Cathay, Athel Loren, Zharr Naggrundn, Araby, Chaos Gods
+	Grand Cathay, Athel Loren, Araby
 
 	Design a **Kemmler mission tree**, sharing the unique Krell, escape/return and relic records with Bretonnia.
 

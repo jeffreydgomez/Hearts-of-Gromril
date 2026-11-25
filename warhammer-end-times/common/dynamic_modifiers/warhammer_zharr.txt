@@ -1,0 +1,190 @@
+wet_zhr_occupation_L12 = {
+  icon = GFX_idea_wet_spirit_command
+  enable = {
+    is_controlled_by = B17
+    NOT = {
+      is_core_of = B17
+    }
+    B17 = {
+      has_idea = wet_race_chaos_dwarf
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+      has_country_flag = wet_zhr_reward_L12
+    }
+  }
+  local_factories = 0.05
+}
+wet_zhr_occupation_L15 = {
+  icon = GFX_idea_wet_spirit_command
+  enable = {
+    is_controlled_by = B17
+    NOT = {
+      is_core_of = B17
+    }
+    B17 = {
+      has_idea = wet_race_chaos_dwarf
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+      has_country_flag = wet_zhr_reward_L15
+    }
+  }
+  local_factories = 0.05
+}
+wet_zhr_occupation_L19 = {
+  icon = GFX_idea_wet_spirit_command
+  enable = {
+    is_controlled_by = B17
+    NOT = {
+      is_core_of = B17
+    }
+    B17 = {
+      has_idea = wet_race_chaos_dwarf
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+      has_country_flag = wet_zhr_reward_L19
+    }
+  }
+  local_factories = 0.05
+}
+wet_zhr_ogre_labor = {
+  icon = GFX_idea_wet_spirit_command
+  enable = {
+    is_owned_by = B17
+    is_controlled_by = B17
+    B17 = {
+      has_idea = wet_race_chaos_dwarf
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+    }
+  }
+  compliance_gain = 0.02
+}
+wet_zhr_ogre_auxiliaries = {
+  icon = GFX_idea_wet_spirit_command
+  enable = {
+    is_owned_by = B17
+    is_controlled_by = B17
+    B17 = {
+      has_country_flag = wet_zhr_uprising
+      has_government = waaagh
+    }
+  }
+  local_manpower = 0.01
+}
+wet_zhr_programme_common = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    tag = B17
+  }
+  army_core_defence_factor = wet_zhr_common_army_core_defence_factor
+  army_org_factor = wet_zhr_common_army_org_factor
+  breakthrough_factor = wet_zhr_common_breakthrough_factor
+  convoy_escort_efficiency = wet_zhr_common_convoy_escort_efficiency
+  dig_in_speed_factor = wet_zhr_common_dig_in_speed_factor
+  equipment_capture_factor = wet_zhr_common_equipment_capture_factor
+  industrial_capacity_dockyard = wet_zhr_common_industrial_capacity_dockyard
+  industrial_capacity_factory = wet_zhr_common_industrial_capacity_factory
+  industry_air_damage_factor = wet_zhr_common_industry_air_damage_factor
+  industry_repair_factor = wet_zhr_common_industry_repair_factor
+  line_change_production_efficiency_factor = wet_zhr_common_line_change_production_efficiency_factor
+  local_resources_factor = wet_zhr_common_local_resources_factor
+  max_dig_in = wet_zhr_common_max_dig_in
+  max_planning_factor = wet_zhr_common_max_planning_factor
+  modifier_army_sub_unit_artillery_attack_factor = wet_zhr_common_modifier_army_sub_unit_artillery_attack_factor
+  modifier_army_sub_unit_artillery_brigade_attack_factor = wet_zhr_common_modifier_army_sub_unit_artillery_brigade_attack_factor
+  modifier_army_sub_unit_infantry_defence_factor = wet_zhr_common_modifier_army_sub_unit_infantry_defence_factor
+  naval_detection = wet_zhr_common_naval_detection
+  navy_max_range_factor = wet_zhr_common_navy_max_range_factor
+  planning_speed = wet_zhr_common_planning_speed
+  production_factory_efficiency_gain_factor = wet_zhr_common_production_factory_efficiency_gain_factor
+  production_factory_max_efficiency_factor = wet_zhr_common_production_factory_max_efficiency_factor
+  production_factory_start_efficiency_factor = wet_zhr_common_production_factory_start_efficiency_factor
+  production_speed_buildings_factor = wet_zhr_common_production_speed_buildings_factor
+  repair_speed_factor = wet_zhr_common_repair_speed_factor
+  supply_consumption_factor = wet_zhr_common_supply_consumption_factor
+}
+wet_zhr_programme_labor = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    has_idea = wet_race_chaos_dwarf
+    NOT = {
+      has_country_flag = wet_zhr_uprising
+    }
+  }
+  compliance_gain = wet_zhr_labor_compliance_gain
+  industrial_capacity_factory = wet_zhr_labor_industrial_capacity_factory
+  local_resources_factor = wet_zhr_labor_local_resources_factor
+  min_export = wet_zhr_labor_min_export
+  non_core_manpower = wet_zhr_labor_non_core_manpower
+  required_garrison_factor = wet_zhr_labor_required_garrison_factor
+  resistance_damage_to_garrison = wet_zhr_labor_resistance_damage_to_garrison
+  resistance_growth = wet_zhr_labor_resistance_growth
+  resistance_target = wet_zhr_labor_resistance_target
+  training_time_army_factor = wet_zhr_labor_training_time_army_factor
+}
+wet_zhr_programme_chaos = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    wet_zhr_chaos_member = yes
+  }
+  industrial_capacity_factory = wet_zhr_chaos_industrial_capacity_factory
+  max_planning_factor = wet_zhr_chaos_max_planning_factor
+  modifier_army_sub_unit_artillery_attack_factor = wet_zhr_chaos_modifier_army_sub_unit_artillery_attack_factor
+  modifier_army_sub_unit_artillery_brigade_attack_factor = wet_zhr_chaos_modifier_army_sub_unit_artillery_brigade_attack_factor
+  non_core_manpower = wet_zhr_chaos_non_core_manpower
+  supply_consumption_factor = wet_zhr_chaos_supply_consumption_factor
+}
+wet_zhr_programme_order = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    wet_zhr_order_member = yes
+  }
+  industrial_capacity_factory = wet_zhr_order_industrial_capacity_factory
+}
+wet_zhr_programme_neutral = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    has_government = neutrality
+    is_in_faction = no
+    is_subject = no
+  }
+  army_core_defence_factor = wet_zhr_neutral_army_core_defence_factor
+  industrial_capacity_factory = wet_zhr_neutral_industrial_capacity_factory
+  min_export = wet_zhr_neutral_min_export
+  political_power_factor = wet_zhr_neutral_political_power_factor
+  production_factory_max_efficiency_factor = wet_zhr_neutral_production_factory_max_efficiency_factor
+  production_speed_buildings_factor = wet_zhr_neutral_production_speed_buildings_factor
+  supply_consumption_factor = wet_zhr_neutral_supply_consumption_factor
+  surrender_limit = wet_zhr_neutral_surrender_limit
+  trade_opinion_factor = wet_zhr_neutral_trade_opinion_factor
+}
+wet_zhr_programme_green = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    has_country_flag = wet_zhr_uprising
+    has_government = waaagh
+  }
+  industrial_capacity_factory = wet_zhr_green_industrial_capacity_factory
+  modifier_army_sub_unit_artillery_attack_factor = wet_zhr_green_modifier_army_sub_unit_artillery_attack_factor
+  modifier_army_sub_unit_artillery_brigade_attack_factor = wet_zhr_green_modifier_army_sub_unit_artillery_brigade_attack_factor
+}
+wet_zhr_programme_waaagh = {
+  icon = GFX_idea_wet_spirit_construction
+  enable = {
+    tag = B17
+    wet_zhr_greenskin_member = yes
+  }
+  conscription = wet_zhr_waaagh_conscription
+  industrial_capacity_factory = wet_zhr_waaagh_industrial_capacity_factory
+  modifier_army_sub_unit_infantry_attack_factor = wet_zhr_waaagh_modifier_army_sub_unit_infantry_attack_factor
+}

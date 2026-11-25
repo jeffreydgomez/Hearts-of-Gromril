@@ -1,6 +1,21 @@
 wet_nagash_majority_eligible = {
- exists = yes
- NOT = { tag = WST }
- NOT = { has_government = communism }
- communism > 0.50
+  exists = yes
+  NOT = {
+    tag = WST
+  }
+  NOT = {
+    has_government = communism
+  }
+  communism
+  >
+  0.50
+  NOT = {
+    AND = {
+      tag = Z01
+      has_country_flag = wet_neh_embrace
+      NOT = {
+        has_country_flag = wet_neh_uprising
+      }
+    }
+  }
 }

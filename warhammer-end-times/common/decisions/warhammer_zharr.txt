@@ -1,0 +1,374 @@
+wet_zhr_envoys = {
+  wet_zhr_retry_chaos = {
+    icon = generic_diplomacy
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_C02
+    }
+    available = {
+      tag = B17
+      NOT = {
+        has_country_flag = wet_zhr_offer_chaos
+      }
+      check_variable = {
+        wet_zhr_offer_chaos_cooldown
+        <
+        1
+      }
+      any_country = {
+        is_faction_leader = yes
+        has_country_flag = wet_everchosen_leader
+        has_government = fascism
+        exists = yes
+        is_subject = no
+        is_faction_leader = yes
+        has_country_flag = wet_everchosen_leader
+        has_government = fascism
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          exists = yes
+          is_subject = no
+          is_in_faction = no
+          has_government = fascism
+          wet_can_join_faction = yes
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = PREV.PREV
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      wet_zhr_send_chaos = yes
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+  wet_zhr_retry_order = {
+    icon = generic_diplomacy
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_O02
+    }
+    available = {
+      tag = B17
+      NOT = {
+        has_country_flag = wet_zhr_offer_order
+      }
+      check_variable = {
+        wet_zhr_offer_order_cooldown
+        <
+        1
+      }
+      any_country = {
+        is_faction_leader = yes
+        has_government = democratic
+        exists = yes
+        is_subject = no
+        is_faction_leader = yes
+        has_government = democratic
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          exists = yes
+          is_subject = no
+          is_in_faction = no
+          has_government = democratic
+          wet_can_join_faction = yes
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = PREV.PREV
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      wet_zhr_send_order = yes
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+  wet_zhr_retry_greenskin = {
+    icon = generic_diplomacy
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_G07
+    }
+    available = {
+      tag = B17
+      NOT = {
+        has_country_flag = wet_zhr_offer_greenskin
+      }
+      check_variable = {
+        wet_zhr_offer_greenskin_cooldown
+        <
+        1
+      }
+      any_country = {
+        wet_waaagh_leader = yes
+        has_government = waaagh
+        exists = yes
+        is_subject = no
+        wet_waaagh_leader = yes
+        has_government = waaagh
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          exists = yes
+          is_subject = no
+          is_in_faction = no
+          has_government = waaagh
+          wet_can_join_faction = yes
+          NOT = {
+            any_enemy_country = {
+              is_in_faction_with = PREV.PREV
+            }
+          }
+        }
+        B17 = {
+          has_country_flag = wet_zhr_uprising
+          has_government = waaagh
+        }
+      }
+    }
+    complete_effect = {
+      wet_zhr_send_greenskin = yes
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+  wet_zhr_retry_pigbarter = {
+    icon = generic_diplomacy
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_R09
+    }
+    available = {
+      tag = B17
+      NOT = {
+        has_country_flag = wet_zhr_offer_pigbarter
+      }
+      check_variable = {
+        wet_zhr_offer_pigbarter_cooldown
+        <
+        1
+      }
+      any_country = {
+        owns_state = 661
+        NOT = {
+          tag = B17
+        }
+        owns_state = 661
+        NOT = {
+          tag = B17
+        }
+        exists = yes
+        is_subject = no
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          exists = yes
+          is_subject = no
+          NOT = {
+            AND = {
+              has_country_flag = wet_zhr_river_pigbarter_signed
+              is_in_array = {
+                wet_zhr_river_pigbarter_partner = PREV
+              }
+              has_military_access_to = PREV
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      wet_zhr_send_pigbarter = yes
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+  wet_zhr_retry_fortress = {
+    icon = generic_diplomacy
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_R10
+    }
+    available = {
+      tag = B17
+      NOT = {
+        has_country_flag = wet_zhr_offer_fortress
+      }
+      check_variable = {
+        wet_zhr_offer_fortress_cooldown
+        <
+        1
+      }
+      any_country = {
+        owns_state = 728
+        NOT = {
+          tag = B17
+        }
+        owns_state = 728
+        NOT = {
+          tag = B17
+        }
+        exists = yes
+        is_subject = no
+        NOT = {
+          has_war_with = B17
+        }
+        B17 = {
+          exists = yes
+          is_subject = no
+          NOT = {
+            AND = {
+              has_country_flag = wet_zhr_river_fortress_signed
+              is_in_array = {
+                wet_zhr_river_fortress_partner = PREV
+              }
+              has_military_access_to = PREV
+            }
+          }
+        }
+      }
+    }
+    complete_effect = {
+      wet_zhr_send_fortress = yes
+    }
+    ai_will_do = {
+      factor = 1
+    }
+  }
+  wet_zhr_renew_fascism = {
+    icon = generic_political_discourse
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_C00
+      NOT = {
+        has_idea = wet_zhr_influence_fascism
+      }
+      NOT = {
+        has_government = fascism
+      }
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+    }
+    available = {
+      is_subject = no
+    }
+    complete_effect = {
+      add_timed_idea = {
+        idea = wet_zhr_influence_fascism
+        days = 365
+      }
+    }
+    ai_will_do = {
+      factor = 100
+    }
+  }
+  wet_zhr_renew_democratic = {
+    icon = generic_political_discourse
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_O00
+      NOT = {
+        has_idea = wet_zhr_influence_democratic
+      }
+      NOT = {
+        has_government = democratic
+      }
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+    }
+    available = {
+      is_subject = no
+    }
+    complete_effect = {
+      add_timed_idea = {
+        idea = wet_zhr_influence_democratic
+        days = 365
+      }
+    }
+    ai_will_do = {
+      factor = 100
+    }
+  }
+  wet_zhr_renew_neutrality = {
+    icon = generic_political_discourse
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_N00
+      NOT = {
+        has_idea = wet_zhr_influence_neutrality
+      }
+      NOT = {
+        has_government = neutrality
+      }
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+    }
+    available = {
+      is_subject = no
+    }
+    complete_effect = {
+      add_timed_idea = {
+        idea = wet_zhr_influence_neutrality
+        days = 365
+      }
+    }
+    ai_will_do = {
+      factor = 100
+    }
+  }
+  wet_zhr_renew_waaagh = {
+    icon = generic_political_discourse
+    cost = 0
+    visible = {
+      tag = B17
+      has_completed_focus = WET_ZHR_G00
+      NOT = {
+        has_idea = wet_zhr_influence_waaagh
+      }
+      NOT = {
+        has_government = waaagh
+      }
+      NOT = {
+        has_country_flag = wet_zhr_uprising
+      }
+    }
+    available = {
+      is_subject = no
+    }
+    complete_effect = {
+      add_timed_idea = {
+        idea = wet_zhr_influence_waaagh
+        days = 365
+      }
+    }
+    ai_will_do = {
+      factor = 100
+    }
+  }
+}

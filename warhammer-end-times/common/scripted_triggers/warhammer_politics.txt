@@ -1,5 +1,79 @@
-wet_curated_major = { OR = { tag = A01 tag = A15 tag = A29 tag = B99 tag = U25 tag = U04 tag = H06 tag = H12 tag = Z01 tag = I25 tag = A13 tag = B01 tag = V04 tag = G24 tag = I01 tag = B17 tag = V01 tag = Z14 tag = A57 tag = A41 } }
-wet_ideology_has_faction = { OR = { AND = { has_government = democratic any_country = { exists = yes is_faction_leader = yes has_government = democratic } } AND = { has_government = fascism any_country = { exists = yes is_faction_leader = yes has_government = fascism } } AND = { has_government = communism any_country = { exists = yes is_faction_leader = yes has_government = communism } } AND = { has_government = neutrality any_country = { exists = yes is_faction_leader = yes has_government = neutrality } } AND = { has_government = waaagh any_country = { exists = yes is_faction_leader = yes has_government = waaagh } } AND = { has_government = horned_rat any_country = { exists = yes is_faction_leader = yes has_government = horned_rat } } } }
+wet_curated_major = {
+  OR = {
+    tag = A01
+    tag = A15
+    tag = A29
+    tag = B99
+    tag = U25
+    tag = U04
+    tag = H06
+    tag = H12
+    tag = Z01
+    tag = I25
+    tag = A13
+    tag = B01
+    tag = V04
+    tag = G24
+    tag = I01
+    tag = B17
+    tag = V01
+    tag = Z14
+    tag = A57
+    tag = A41
+  }
+}
+wet_ideology_has_faction = {
+  OR = {
+    AND = {
+      has_government = democratic
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = democratic
+      }
+    }
+    AND = {
+      has_government = fascism
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = fascism
+      }
+    }
+    AND = {
+      has_government = communism
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = communism
+      }
+    }
+    AND = {
+      has_government = neutrality
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = neutrality
+      }
+    }
+    AND = {
+      has_government = waaagh
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = waaagh
+      }
+    }
+    AND = {
+      has_government = horned_rat
+      any_country = {
+        exists = yes
+        is_faction_leader = yes
+        has_government = horned_rat
+      }
+    }
+  }
+}
 wet_can_join_faction = {
   OR = {
     has_country_flag = wet_syl_faction_transaction
@@ -40,6 +114,13 @@ wet_can_join_faction = {
         wet_rei_coalition_transaction = yes
       }
     }
+    AND = {
+      OR = {
+        tag = Z01
+        tag = U24
+      }
+      has_country_flag = wet_neh_faction_transaction
+    }
   }
 }
 wet_can_create_faction = {
@@ -57,6 +138,13 @@ wet_can_create_faction = {
         }
       }
       wet_can_join_faction = yes
+    }
+    AND = {
+      OR = {
+        tag = Z01
+        tag = U24
+      }
+      has_country_flag = wet_neh_faction_transaction
     }
   }
 }

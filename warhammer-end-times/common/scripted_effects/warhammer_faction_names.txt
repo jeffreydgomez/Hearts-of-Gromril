@@ -22,123 +22,130 @@ wet_assign_faction_name = {
         has_country_flag = wet_syl_named_concord
       }
     }
-    clr_country_flag = wet_faction_nagash
-    clr_country_flag = wet_faction_grand_alliance
-    clr_country_flag = wet_faction_name_context_order
-    clr_country_flag = wet_faction_name_context_chaos
-    clr_country_flag = wet_faction_name_context_undead
-    clr_country_flag = wet_faction_name_context_waaagh
-    clr_country_flag = wet_faction_name_context_horned_rat
-    clr_country_flag = wet_faction_name_context_unaligned
-    clr_country_flag = wet_faction_name_context_tri_elven
-    clr_country_flag = wet_faction_name_context_elven
-    clr_country_flag = wet_faction_name_context_dwarf
-    clr_country_flag = wet_faction_name_context_skaven
-    clr_country_flag = wet_faction_name_context_greenskin
-    clr_country_flag = wet_faction_name_context_imperial
-    clr_country_flag = wet_faction_name_context_mixed
-    clr_country_flag = wet_faction_name_context_crusade
     if = {
       limit = {
-        wet_first_order_faction_name_available = yes
+        NOT = {
+          has_country_flag = wet_neh_covenant
+        }
       }
-      wet_choose_order_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_first_skaven_faction_name_available = yes
+      clr_country_flag = wet_faction_nagash
+      clr_country_flag = wet_faction_grand_alliance
+      clr_country_flag = wet_faction_name_context_order
+      clr_country_flag = wet_faction_name_context_chaos
+      clr_country_flag = wet_faction_name_context_undead
+      clr_country_flag = wet_faction_name_context_waaagh
+      clr_country_flag = wet_faction_name_context_horned_rat
+      clr_country_flag = wet_faction_name_context_unaligned
+      clr_country_flag = wet_faction_name_context_tri_elven
+      clr_country_flag = wet_faction_name_context_elven
+      clr_country_flag = wet_faction_name_context_dwarf
+      clr_country_flag = wet_faction_name_context_skaven
+      clr_country_flag = wet_faction_name_context_greenskin
+      clr_country_flag = wet_faction_name_context_imperial
+      clr_country_flag = wet_faction_name_context_mixed
+      clr_country_flag = wet_faction_name_context_crusade
+      if = {
+        limit = {
+          wet_first_order_faction_name_available = yes
+        }
+        wet_choose_order_faction_name = yes
       }
-      wet_choose_skaven_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_first_greenskin_faction_name_available = yes
+      else_if = {
+        limit = {
+          wet_first_skaven_faction_name_available = yes
+        }
+        wet_choose_skaven_faction_name = yes
       }
-      wet_choose_greenskin_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_tri_elven = yes
+      else_if = {
+        limit = {
+          wet_first_greenskin_faction_name_available = yes
+        }
+        wet_choose_greenskin_faction_name = yes
       }
-      wet_choose_tri_elven_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_elven = yes
+      else_if = {
+        limit = {
+          wet_name_context_tri_elven = yes
+        }
+        wet_choose_tri_elven_faction_name = yes
       }
-      wet_choose_elven_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_dwarf = yes
+      else_if = {
+        limit = {
+          wet_name_context_elven = yes
+        }
+        wet_choose_elven_faction_name = yes
       }
-      wet_choose_dwarf_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_skaven = yes
+      else_if = {
+        limit = {
+          wet_name_context_dwarf = yes
+        }
+        wet_choose_dwarf_faction_name = yes
       }
-      wet_choose_skaven_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_greenskin = yes
+      else_if = {
+        limit = {
+          wet_name_context_skaven = yes
+        }
+        wet_choose_skaven_faction_name = yes
       }
-      wet_choose_greenskin_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_imperial = yes
+      else_if = {
+        limit = {
+          wet_name_context_greenskin = yes
+        }
+        wet_choose_greenskin_faction_name = yes
       }
-      wet_choose_imperial_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_mixed = yes
+      else_if = {
+        limit = {
+          wet_name_context_imperial = yes
+        }
+        wet_choose_imperial_faction_name = yes
       }
-      wet_choose_mixed_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_crusade = yes
+      else_if = {
+        limit = {
+          wet_name_context_mixed = yes
+        }
+        wet_choose_mixed_faction_name = yes
       }
-      wet_choose_crusade_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_order = yes
+      else_if = {
+        limit = {
+          wet_name_context_crusade = yes
+        }
+        wet_choose_crusade_faction_name = yes
       }
-      wet_choose_order_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_chaos = yes
+      else_if = {
+        limit = {
+          wet_name_context_order = yes
+        }
+        wet_choose_order_faction_name = yes
       }
-      wet_choose_chaos_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_undead = yes
+      else_if = {
+        limit = {
+          wet_name_context_chaos = yes
+        }
+        wet_choose_chaos_faction_name = yes
       }
-      wet_choose_undead_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_waaagh = yes
+      else_if = {
+        limit = {
+          wet_name_context_undead = yes
+        }
+        wet_choose_undead_faction_name = yes
       }
-      wet_choose_waaagh_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_horned_rat = yes
+      else_if = {
+        limit = {
+          wet_name_context_waaagh = yes
+        }
+        wet_choose_waaagh_faction_name = yes
       }
-      wet_choose_horned_rat_faction_name = yes
-    }
-    else_if = {
-      limit = {
-        wet_name_context_unaligned = yes
+      else_if = {
+        limit = {
+          wet_name_context_horned_rat = yes
+        }
+        wet_choose_horned_rat_faction_name = yes
       }
-      wet_choose_unaligned_faction_name = yes
+      else_if = {
+        limit = {
+          wet_name_context_unaligned = yes
+        }
+        wet_choose_unaligned_faction_name = yes
+      }
     }
   }
 }
@@ -151,66 +158,73 @@ wet_update_faction_name = {
     }
     if = {
       limit = {
-        is_faction_leader = yes
         NOT = {
-          has_country_flag = wet_ult_concord
-        }
-        NOT = {
-          has_faction_template = wet_ult_phoenix_concord
-        }
-        NOT = {
-          has_country_flag = wet_faction_nagash
-        }
-        NOT = {
-          has_faction_template = wet_faction_nagash
-        }
-        NOT = {
-          wet_is_everchosen_leader = yes
-        }
-        NOT = {
-          AND = {
-            tag = B99
-            has_faction_template = wet_faction_everchosen
-          }
+          has_country_flag = wet_neh_covenant
         }
       }
       if = {
         limit = {
-          is_ai = yes
+          is_faction_leader = yes
           NOT = {
+            has_country_flag = wet_ult_concord
+          }
+          NOT = {
+            has_faction_template = wet_ult_phoenix_concord
+          }
+          NOT = {
+            has_country_flag = wet_faction_nagash
+          }
+          NOT = {
+            has_faction_template = wet_faction_nagash
+          }
+          NOT = {
+            wet_is_everchosen_leader = yes
+          }
+          NOT = {
+            AND = {
+              tag = B99
+              has_faction_template = wet_faction_everchosen
+            }
+          }
+        }
+        if = {
+          limit = {
+            is_ai = yes
+            NOT = {
+              has_country_flag = wet_faction_auto_named
+            }
+          }
+          wet_assign_faction_name = yes
+        }
+        else_if = {
+          limit = {
             has_country_flag = wet_faction_auto_named
+            wet_name_context_tri_elven = yes
+            NOT = {
+              has_country_flag = wet_faction_name_context_tri_elven
+            }
+            NOT = {
+              has_country_flag = wet_faction_grand_alliance
+            }
           }
+          clr_country_flag = wet_faction_nagash
+          clr_country_flag = wet_faction_grand_alliance
+          clr_country_flag = wet_faction_name_context_order
+          clr_country_flag = wet_faction_name_context_chaos
+          clr_country_flag = wet_faction_name_context_undead
+          clr_country_flag = wet_faction_name_context_waaagh
+          clr_country_flag = wet_faction_name_context_horned_rat
+          clr_country_flag = wet_faction_name_context_unaligned
+          clr_country_flag = wet_faction_name_context_tri_elven
+          clr_country_flag = wet_faction_name_context_elven
+          clr_country_flag = wet_faction_name_context_dwarf
+          clr_country_flag = wet_faction_name_context_skaven
+          clr_country_flag = wet_faction_name_context_greenskin
+          clr_country_flag = wet_faction_name_context_imperial
+          clr_country_flag = wet_faction_name_context_mixed
+          clr_country_flag = wet_faction_name_context_crusade
+          wet_choose_tri_elven_faction_name = yes
         }
-        wet_assign_faction_name = yes
-      }
-      else_if = {
-        limit = {
-          has_country_flag = wet_faction_auto_named
-          wet_name_context_tri_elven = yes
-          NOT = {
-            has_country_flag = wet_faction_name_context_tri_elven
-          }
-          NOT = {
-            has_country_flag = wet_faction_grand_alliance
-          }
-        }
-        clr_country_flag = wet_faction_nagash
-        clr_country_flag = wet_faction_grand_alliance
-        clr_country_flag = wet_faction_name_context_order
-        clr_country_flag = wet_faction_name_context_chaos
-        clr_country_flag = wet_faction_name_context_undead
-        clr_country_flag = wet_faction_name_context_waaagh
-        clr_country_flag = wet_faction_name_context_horned_rat
-        clr_country_flag = wet_faction_name_context_unaligned
-        clr_country_flag = wet_faction_name_context_tri_elven
-        clr_country_flag = wet_faction_name_context_elven
-        clr_country_flag = wet_faction_name_context_dwarf
-        clr_country_flag = wet_faction_name_context_skaven
-        clr_country_flag = wet_faction_name_context_greenskin
-        clr_country_flag = wet_faction_name_context_imperial
-        clr_country_flag = wet_faction_name_context_mixed
-        clr_country_flag = wet_faction_name_context_crusade
-        wet_choose_tri_elven_faction_name = yes
       }
     }
   }

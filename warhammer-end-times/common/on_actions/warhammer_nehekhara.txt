@@ -1,0 +1,210 @@
+on_actions = {
+  on_startup = {
+    effect = {
+      37 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      38 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      39 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      40 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      41 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      42 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      43 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      44 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      45 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      46 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      47 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      48 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      49 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      50 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      51 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      52 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      54 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      55 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      56 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      57 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      58 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      59 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      222 = {
+        set_state_flag = wet_neh_badlands_state
+      }
+      14 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      15 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      18 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      19 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      20 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      21 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      22 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      23 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      24 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      25 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      27 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      28 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      29 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      30 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      334 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      335 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      337 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      338 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      339 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      388 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      692 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      736 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      738 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      739 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      740 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      741 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      742 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      743 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      744 = {
+        set_state_flag = wet_neh_arabyan_home
+      }
+      Z01 = {
+        if = {
+          limit = {
+            NOT = {
+              has_country_flag = wet_neh_ai_rolled
+            }
+          }
+          set_country_flag = wet_neh_ai_rolled
+          random_list = {
+            1 = {
+              set_country_flag = wet_neh_rare_campaign
+            }
+            99 = {
+              
+            }
+          }
+        }
+      }
+    }
+  }
+  on_daily_Z01 = {
+    effect = {
+      wet_neh_daily = yes
+    }
+  }
+  on_daily_Z14 = {
+    effect = {
+      wet_neh_reconcile_partnership = yes
+    }
+  }
+  on_daily_U24 = {
+    effect = {
+      wet_neh_reconcile_partnership = yes
+    }
+  }
+  on_capitulation = {
+    effect = {
+      if = {
+        limit = {
+          tag = U24
+          Z01 = {
+            has_war_with = U24
+          }
+        }
+        Z01 = {
+          set_country_flag = wet_neh_defeated_nagash
+        }
+      }
+    }
+  }
+}
